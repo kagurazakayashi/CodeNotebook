@@ -1,0 +1,91 @@
+
+
+
+注：Xcode 编译32位还是64位要和系统的一样，否则出错3-OC学习日志鈥斺>属性，成员变量设置器和访问器的快速建立
+    
+
+1.@property ( 参数  )  类型  属性名
+
+      自动生成设置器和访问器，设置器和访问器名字和属性一样。
+
+  线程安全
+
+nonatomic 非原子性，不保证多线程安全
+
+atomic    原子性，多线程访问时较安全
+
+  内存管理
+
+copy        制作一个值的副本，传入到成员变量
+
+assign      默认值，直接赋值，不关心内存管理，修饰所有数字
+
+retain       关心内存管理，对象类型，所有带＊的
+
+内部设置器如下 ：
+
+-（void） setName:(NSString *)name
+
+{
+
+if(_name!=name)//
+
+{
+
+[_name release];//释放内存，
+
+_name=[name retain];//内存保存，防止赋值的对象内存释放后，无内存
+
+}
+
+ 
+
+}
+
+strong      新加入的关键字
+
+ 2
+
+@property (nonatomic retain) NSString *name;
+
+@synthesize  name = _name;
+
+ 
+
+用属性声明“成员变量”时，成员变量可省略，成员变量带_，属性不带，用以区分。
+
+在实现文件里，设置器里用self.name代替_name接收参数（定义初始化）
+
+属性用（.）来调用 
+
+属性用readonly修饰的属性，只能自己类内部修改，在.m内部用方法修改，属性name被只读修饰，所以修改赋值时要用对应的成员变量_name来修改赋值，对象.属性名在=左边调用设置器，在对象右边调用访问器
+
+ “=”值相等 ，定义成员变量
+
+ 
+
+例子：
+
+//Person.h文件
+
+@interface Person : NSObject
+
+@property (nonatomic,retain) NSString *name;
+
+@property (nonatomic,assign) int grade, k;
+
+@end
+
+//Person.m
+
+ 
+
+#import "Person.h"
+
+@implementation Person
+
+@synthesize name=_name;
+
+@synthesize grade=_grade,k=_k;
+
+@end

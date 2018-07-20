@@ -1,0 +1,3 @@
+mssql_fetch_array()，是mssql_fetch_row()的扩展版本。除了将数据以数字索引方式储存在数组中之外，还可以将数据作为关联索引储存，用字段名作为键名。
+因此这里使用$row['key值']和$row[索引值]皆可以取到值。
+你可以用mssql_fetch_assoc() 或者mssql_fetch_row() 试试

@@ -1,0 +1,53 @@
+定义和用法
+<a> 标签的 target 属性规定在何处打开链接文档。
+如果在一个 <a> 标签内包含一个 target 属性，浏览器将会载入和显示用这个标签的 href 属性命名的、名称与这个目标吻合的框架或者窗口中的文档。如果这个指定名称或 id 的框架或者窗口不存在，浏览器将打开一个新的窗口，给这个窗口一个指定的标记，然后将新的文档载入那个窗口。从此以后，超链接文档就可以指向这个新的窗口。
+打开新窗口
+被指向的超链接使得创建高效的浏览工具变得很容易。例如，一个简单的内容文档的列表，可以将文档重定向到一个单独的窗口：
+<h3>Table of Contents</h3>
+<ul>
+  <li><a href="pref.html" target="view_window">Preface</a></li>
+  <li><a href="chap1.html" target="view_window">Chapter 1</a></li>
+  <li><a href="chap2.html" target="view_window">Chapter 2</a></li>
+  <li><a href="chap3.html" target="view_window">Chapter 3</a></li>
+</ul>
+亲自试一试
+当用户第一次选择内容列表中的某个链接时，浏览器将打开一个新的窗口，将它标记为 "view_window"，然后在其中显示希望显示的文档内容。如果用户从这个内容列表中选择另一个链接，且这个 "view_window" 仍处于打开状态，浏览器就会再次将选定的文档载入那个窗口，取代刚才的那些文档。
+在整个过程中，这个包含了内容列表的窗口是用户可以访问的。通过单击窗口中的一个连接，可使另一个窗口的内容发生变化。
+在框架中打开窗口
+不用打开一个完整的浏览器窗口，使用 target 更通常的方法是在一个 <frameset> 显示中将超链接内容定向到一个或者多个框架中。可以将这个内容列表放入一个带有两个框架的文档的其中一个框架中，并用这个相邻的框架来显示选定的文档：
+<frameset cols="100,*">
+  <frame src="toc.html">
+  <frame src="pref.html" name="view_frame">
+</frameset>
+亲自试一试
+当浏览器最初显示这两个框架的时候，左边这个框架包含目录，右边这个框架包含前言。
+这是 "toc.html" 的源代码：
+<h3>Table of Contents</h3>
+<ul>
+  <li><a href="pref.html" target="view_frame">Preface</a></li>
+  <li><a href="chap1.html" target="view_frame">Chapter 1</a></li>
+  <li><a href="chap2.html" target="view_frame">Chapter 2</a></li>
+  <li><a href="chap3.html" target="view_frame">Chapter 3</a></li>
+</ul>
+请注意，在文档 "toc.html" 中，每个链接的目标都是 "view_frame"，也就是右边的框架。
+当用户从左边框架中的目录中选择一个链接时，浏览器会将这个关联的文档载入并显示在右边这个 "view_frame" 框架中。当其他链接被选中时，右边这个框架中的内容也会发生变化，而左边这个框架始终保持不变。
+特殊的目标
+有 4 个保留的目标名称用作特殊的文档重定向操作：
+_blank
+浏览器总在一个新打开、未命名的窗口中载入目标文档。
+_self
+这个目标的值对所有没有指定目标的 <a> 标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 <base> 标签中的 target 属性一起使用。
+_parent
+这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 _self 等效。
+_top
+这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。
+提示：这些 target 的所有 4 个值都以下划线开始。任何其他用一个下划线作为开头的窗口或者目标都会被浏览器忽略，因此，不要将下划线作为文档中定义的任何框架 name 或 id 的第一个字符。
+语法
+<a target="value">
+属性值
+值 描述
+_blank 在新窗口中打开被链接文档。
+_self 默认。在相同的框架中打开被链接文档。
+_parent 在父框架集中打开被链接文档。
+_top 在整个窗口中打开被链接文档。
+framename 在指定的框架中打开被链接文档。
