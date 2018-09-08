@@ -1,0 +1,25 @@
+/* text-decoration : none || underline || blink || overline || line-through
+text-decoration下划线CSS单词值参数：
+none : 　无装饰
+blink : 　闪烁
+underline : 　下划线
+line-through : 　贯穿线
+overline : 　上划线
+*/
+div {
+/* 无装饰，通常对html下划线标签去掉下划线样式 */
+ext-decoration:none;
+/* 下划线样式 */
+text-decoration:underline;
+/* 删除线样式-贯穿线样式 */
+text-decoration:line-through;
+/* 上划线样式 */
+text-decoration:overline;
+}
+
+/* <u>我被U标签加下滑线</u> */
+
+.yangshi a{ text-decoration:none;}
+/* css注释： 鼠标经过热点文字被加下划线 */
+.yangshi a:hover{ text-decoration:underline;}
+/* 鼠标经过热点文字被加下划线 */

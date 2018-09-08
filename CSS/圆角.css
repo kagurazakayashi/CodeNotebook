@@ -1,0 +1,31 @@
+/* 向 div 元素添加圆角边框
+语法
+border-radius: 1-4 length|% / 1-4 length|%;
+length:定义圆角的形状。
+%:以百分比定义圆角的形状。
+*/
+div
+{
+border:2px solid;
+border-radius:25px;
+}
+
+/* 例子 1 */
+div {border-radius:2em;}
+/* 等价于： */
+div {
+border-top-left-radius:2em;
+border-top-right-radius:2em;
+border-bottom-right-radius:2em;
+border-bottom-left-radius:2em;
+}
+
+/* 例子 2 */
+div {border-radius: 2em 1em 4em / 0.5em 3em;}
+/* 等价于： */
+div {
+border-top-left-radius: 2em 0.5em;
+border-top-right-radius: 1em 3em;
+border-bottom-right-radius: 4em 0.5em;
+border-bottom-left-radius: 1em 3em;
+}

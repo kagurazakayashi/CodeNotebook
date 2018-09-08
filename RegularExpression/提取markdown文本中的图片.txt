@@ -1,0 +1,12 @@
+例如：
+![描述]( http://baidu.com/images/1.jpg)
+![描述](/upload/images/1.jpg)
+需要的结果分别是：
+http://baidu.com/images/1.jpg
+/upload/images/1.jpg
+
+方式1：
+/!\[.*\]\((.+)\)/ $1
+
+方式2：
+/(?<=\().+?(?=\))/

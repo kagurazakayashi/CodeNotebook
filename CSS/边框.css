@@ -1,0 +1,37 @@
+#line1 {border-top: 1px solid red;}
+
+#line2 {border-top: 1px solid red; transform: scaleY(0.5); }
+
+/* 边框的样式 凸起按钮 */
+a:link img {border-style: outset;}
+
+/* 定义多种样式 实线上边框、点线右边框、虚线下边框和一个双线左边框 */
+p.aside {border-style: solid dotted dashed double;}
+
+p {border-style: solid solid solid none;}
+p {border-style: solid; border-left-style: none;}
+
+/* 边框的颜色 */
+p {
+  border-style: solid;
+  border-color: blue rgb(25%,35%,45%) #909090 red;
+}
+p {
+  border-style: solid;
+  border-color: blue red;
+}
+
+/* 定义单边颜色 */
+h1 {
+  border-style: solid;
+  border-color: black;
+  border-right-color: red;
+}
+
+/* 透明边框 */
+a:link, a:visited {
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent;
+  }
+a:hover {border-color: gray;}

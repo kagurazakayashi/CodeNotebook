@@ -1,0 +1,157 @@
+/* 从上到下的线性渐变： */
+
+#grad {
+  background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+  background: linear-gradient(red, blue); /* 标准的语法 */
+}
+
+/* 从左到右的线性渐变： */
+
+#grad {
+  background: -webkit-linear-gradient(left, red , blue); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, red, blue); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, red, blue); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, red , blue); /* 标准的语法 */
+}
+
+/* 从左上角到右下角的线性渐变： */
+
+#grad {
+  background: -webkit-linear-gradient(left top, red , blue); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(bottom right, red, blue); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(bottom right, red, blue); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom right, red , blue); /* 标准的语法 */
+}
+
+/* 使用角度
+语法
+background: linear-gradient(angle, color-stop1, color-stop2);
+角度是指水平线和渐变线之间的角度，逆时针方向计算。换句话说，0deg 将创建一个从下到上的渐变，90deg 将创建一个从左到右的渐变。
+旧的标准，即 0deg 将创建一个从左到右的渐变，90deg 将创建一个从下到上的渐变。换算公式 90 - x = y 其中 x 为标准角度，y为非标准角度。
+*/
+
+/* 带有指定的角度的线性渐变： */
+
+#grad {
+  background: -webkit-linear-gradient(180deg, red, blue); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(180deg, red, blue); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(180deg, red, blue); /* Firefox 3.6 - 15 */
+  background: linear-gradient(180deg, red, blue); /* 标准的语法 */
+}
+
+/* 带有多个颜色结点的从上到下的线性渐变： */
+
+#grad {
+  background: -webkit-linear-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(red, green, blue); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+  background: linear-gradient(red, green, blue); /* 标准的语法 */
+}
+
+/* 带有彩虹颜色和文本的线性渐变： */
+
+#grad {
+  /* Safari 5.1 - 6.0 */
+  background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  /* Opera 11.1 - 12.0 */
+  background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  /* Firefox 3.6 - 15 */
+  background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+  /* 标准的语法 */
+  background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+/* 从左到右的线性渐变，带有透明度： */
+
+#grad {
+  background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /* Safari 5.1 - 6 */
+  background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /* Opera 11.1 - 12*/
+  background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /* Firefox 3.6 - 15*/
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* 标准的语法 */
+}
+
+/* 一个重复的线性渐变： */
+
+#grad {
+  /* Safari 5.1 - 6.0 */
+  background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
+  /* Opera 11.1 - 12.0 */
+  background: -o-repeating-linear-gradient(red, yellow 10%, green 20%);
+  /* Firefox 3.6 - 15 */
+  background: -moz-repeating-linear-gradient(red, yellow 10%, green 20%);
+  /* 标准的语法 */
+  background: repeating-linear-gradient(red, yellow 10%, green 20%);
+}
+
+/* CSS3 径向渐变
+径向渐变由它的中心定义。
+为了创建一个径向渐变，你也必须至少定义两种颜色结点。颜色结点即你想要呈现平稳过渡的颜色。同时，你也可以指定渐变的中心、形状（圆形或椭圆形）、大小。默认情况下，渐变的中心是 center（表示在中心点），渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）。
+语法
+background: radial-gradient(center, shape size, start-color, ..., last-color);
+*/
+
+/* 颜色结点均匀分布的径向渐变： */
+
+#grad {
+  background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(red, green, blue); /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+  background: radial-gradient(red, green, blue); /* 标准的语法 */
+}
+
+/* 颜色结点不均匀分布的径向渐变： */
+
+#grad {
+  background: -webkit-radial-gradient(red 5%, green 15%, blue 60%); /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(red 5%, green 15%, blue 60%); /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(red 5%, green 15%, blue 60%); /* Firefox 3.6 - 15 */
+  background: radial-gradient(red 5%, green 15%, blue 60%); /* 标准的语法 */
+}
+
+/* 形状为圆形的径向渐变： */
+
+#grad {
+  background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 - 15 */
+  background: radial-gradient(circle, red, yellow, green); /* 标准的语法 */
+}
+
+/* 带有不同尺寸大小关键字的径向渐变： */
+
+#grad1 {
+  /* Safari 5.1 - 6.0 */
+  background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+  /* Opera 11.6 - 12.0 */
+  background: -o-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+  /* Firefox 3.6 - 15 */
+  background: -moz-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+  /* 标准的语法 */
+  background: radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+}
+
+#grad2 {
+  /* Safari 5.1 - 6.0 */
+  background: -webkit-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+  /* Opera 11.6 - 12.0 */
+  background: -o-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+  /* Firefox 3.6 - 15 */
+  background: -moz-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+  /* 标准的语法 */
+  background: radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+}
+
+/* 重复的径向渐变 repeating-radial-gradient() 函数用于重复径向渐变 */
+
+#grad {
+  /* Safari 5.1 - 6.0 */
+  background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%);
+  /* Opera 11.6 - 12.0 */
+  background: -o-repeating-radial-gradient(red, yellow 10%, green 15%);
+  /* Firefox 3.6 - 15 */
+  background: -moz-repeating-radial-gradient(red, yellow 10%, green 15%);
+  /* 标准的语法 */
+  background: repeating-radial-gradient(red, yellow 10%, green 15%);
+}

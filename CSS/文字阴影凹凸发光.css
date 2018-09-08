@@ -1,0 +1,203 @@
+/* 利用text-shadow属性的特性，同时在上，下，左，右中个方向为文字设置多个阴影，且不设置模糊作用距离(即默认没有模糊效果)，就可以实现文本的描边效果了。 */
+p{
+	padding:50px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	font-size:36px;
+	background-color:#ccc;
+	color:#ddd;
+	/*普通的描边*/
+	text-shadow:-1px 0px #333;		/*向左阴影*/
+				/*0px -1px #333;*/	/*向上阴影*/
+				/*1px 0 #333;*/		/*向右阴影*/
+				/*0px 1px #333;*/	/*向下阴影*/
+}
+
+/* 如果将向左和向上的阴影颜色设置为白色，文字就会有凸起的效果。 */
+
+p{
+	padding:50px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	font-size:36px;
+	background-color:#ccc;
+	color:#ddd;
+
+	/*文字凸起的效果*/
+	text-shadow:-1px 0 #fff,	/*向左阴影*/
+				0 -1px #fff,	/*向上阴影*/
+				1px 0 #333,		/*向右阴影*/
+				0 1px #333;		/*向下阴影*/
+}
+
+/* 如果将向右和向下的阴影颜色设置为白色，文字就会有凹陷的效果。 */
+
+p{
+	padding:50px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	font-size:36px;
+	background-color:#ccc;
+	color:#ddd;
+
+	/*文字凹陷的效果*/
+	text-shadow:-1px 0 #333,	/*向左阴影*/
+				0 -1px #333,	/*向上阴影*/
+				1px 0 #fff,		/*向右阴影*/
+				0 1px #fff;		/*向下阴影*/
+}
+
+/* 也可以利用text-shadow属性的特性，不设置水平和垂直的偏移距离，仅设置模糊作用距离，这样就可以通过修改模糊值来实现强度不同的发光效果了。 */
+
+p{
+	padding:50px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	font-size:36px;
+	background-color:#ccc;
+	color:#ddd;
+	text-shadow:0 0 10px #00F;		/*没有偏移的模糊设置*/
+}
+
+/* box动画外发光效果（发光半径及光颜色可以根据喜好自行修改）
+box-shadow:inset x-offset y-offset blur-radius spread-radius color
+换句说：
+对象选择器 {box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}
+简单发光效果 ：0px 0px 25px rgba(255,0,0,1)：水平偏移(右为正) 垂直偏移(下为正) 半径  颜色
+*/
+/* 动画发光效果---------------------------------- */
+@-webkit-keyframes glowing {
+  /* line 11, ../scss/partials/_glow.scss */
+  from {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 12, ../scss/partials/_glow.scss */
+  50% {
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 13, ../scss/partials/_glow.scss */
+  to {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@-moz-keyframes glowing {
+  /* line 17, ../scss/partials/_glow.scss */
+  from {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 18, ../scss/partials/_glow.scss */
+  50% {
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 19, ../scss/partials/_glow.scss */
+  to {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@-o-keyframes glowing {
+  /* line 23, ../scss/partials/_glow.scss */
+  from {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 24, ../scss/partials/_glow.scss */
+  50% {
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 25, ../scss/partials/_glow.scss */
+  to {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes glowing {
+  /* line 29, ../scss/partials/_glow.scss */
+  from {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 30, ../scss/partials/_glow.scss */
+  50% {
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* line 31, ../scss/partials/_glow.scss */
+  to {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 0px rgba(0, 255, 178, 1), 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.shine-shadow-box {
+	/* 旋转效果 */
+	/* -moz-transform: rotate(5deg) scale(1.00, 1.00) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-moz-transform-origin: 0% 0%;
+	-webkit-transform: rotate(5deg) scale(1.00, 1.00) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-webkit-transform-origin: 0% 0%;
+	-o-transform: rotate(5deg) scale(1.00, 1.00) translate(0px, 0px)
+		skew(0deg, 0deg);
+	-o-transform-origin: 0% 0%;
+	transform: rotate(5deg) scale(1.00, 1.00) translate(0px, 0px)
+		skew(0deg, 0deg);
+	transform-origin: 0% 0% */
+
+	-webkit-animation-duration: 3s;
+  	-moz-animation-duration: 3s;
+  	-ms-animation-duration: 3s;
+  	-o-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-khtml-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: glowing;
+	-khtml-animation-name: glowing;
+	-moz-animation-name: glowing;
+	-ms-animation-name: glowing;
+	-o-animation-name: glowing;
+	animation-name: glowing;
+
+	/* box-shadow:inset x-offset y-offset blur-radius spread-radius color
+	换句说：
+	对象选择器 {box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色} */
+
+	/* 简单发光效果 ：0px 0px 25px rgba(0, 255, 178, 1)：水平偏移(右为正) 垂直偏移(下为正) 半径  颜色 */
+	/* -moz-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1);
+	-webkit-box-shadow: 0px 0px 25px rgba(0, 255, 178, 1);
+	box-shadow: 0px 0px 25px rgba(0, 255, 178, 1); */
+}
+/* 动画发光效果 end---------------------------------- */
