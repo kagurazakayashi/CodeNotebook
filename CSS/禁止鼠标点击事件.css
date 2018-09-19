@@ -1,0 +1,12 @@
+/*
+JS:
+event.preventDefault();
+这种方法可以阻止当前元素的浏览器默认行为，但并不阻止事件被父级及document响应。如果想彻底取消事件，则可使用stopPropagation
+event.stopPropagation();
+
+CSS:
+ */
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
