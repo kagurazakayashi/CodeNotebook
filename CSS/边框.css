@@ -1,3 +1,9 @@
+/* 删除浏览器自带蓝框 */
+div {
+    outline:none;
+}
+
+/* 线条 */
 #line1 {border-top: 1px solid red;}
 
 #line2 {border-top: 1px solid red; transform: scaleY(0.5); }
