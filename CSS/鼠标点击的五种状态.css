@@ -1,0 +1,15 @@
+/* 未访问时的状态（鼠标点击前显示的状态） */
+a:link{color:#fff}
+
+/* 鼠标悬停时的状态 */
+a:hover{color:#fff}
+
+/* 已访问过的状态（鼠标点击后的状态） */
+a:visited{color:#fff}
+
+/* 鼠标点击时的状态 */
+a:active{color:#fff}
+
+/* 点击后鼠标移开保持鼠标点击时的状态
+（只有在<a href="#"></a>时标签中有效）*/
+a:focus{color:#fff}

@@ -1,0 +1,7 @@
+# 编辑 pubspec.yaml：
+
+dependencies:
+  flutter:
+    camera: ^0.2.6 #添加相机库
+
+# flutter packages get
