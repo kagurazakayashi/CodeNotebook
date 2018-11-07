@@ -1,5 +1,5 @@
 #批量
-for file in *.tif; do echo $file ${file%%.*}.bmp; convert $file ${file%%.*}.bmp; done
+for file in *.png; do echo "$file ${file%%.*}.bmp"; convert "$file" "${file%%.*}.bmp"; done
 for file in *.tif; do echo $file ${file%%.*}.jpg; convert -resize 1024x1024 $file ${file%%.*}.jpg; done
 
 #缩放
