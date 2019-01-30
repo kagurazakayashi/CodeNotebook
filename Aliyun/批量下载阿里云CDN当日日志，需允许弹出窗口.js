@@ -12,4 +12,7 @@ function adownload() {
         atimer = null;
     }
 }
-var atimer = self.setInterval("adownload()",1000);
+var atimer = self.setInterval("adownload()",100);
+
+//ziped
+var aspan=document.getElementsByClassName("next-table-cell last"),alength=aspan.length,aii=0;function adownload(){if(aii<alength){var a=aspan[aii].getElementsByTagName("a")[0].attributes.href.value;console.log(aii+1+"/"+alength+" : "+a),window.open(a),aii++}else window.clearInterval(atimer),atimer=null}var atimer=self.setInterval("adownload()",100);
