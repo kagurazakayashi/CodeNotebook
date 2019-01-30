@@ -1,0 +1,13 @@
+在网站目录中找到这个 wp-includes/http.php 文件，编辑 http.php
+
+查找
+$same_host = strtolower( $parsed_home['host'] ) === strtolower( $parsed_url['host'] );
+
+替换成
+if ( isset( $parsed_home['host'] ) ) { $same_host = ( strtolower( $parsed_home['host'] ) === strtolower( $parsed_url['host'] ) || 'localhost' === strtolower( $parsed_url['host'] ) ); } else { $same_host = false; };
+
+查找
+if ( 127 === $parts[0] || 10 === $parts[0] || 0 === $parts[0]
+
+替换成
+if ( 127 === $parts[0] || 10 === $parts[0] || 0 === $parts[0] || 0 === $parts[0]

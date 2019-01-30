@@ -1,5 +1,6 @@
-git fetch && git status
-git add . && git status && git commit -m 'Initial commit' && git status
+git fetch && git status && git pull
+git add . && git status && git commit -m hahaha && git status
+git push
 
 git init #初始化本地git环境
 git clone XXX #克隆一份代码到本地仓库
@@ -27,3 +28,8 @@ git diff HEAD #上面两个内容的合并
 git reset --hard HEAD #撤销本地修改
 echo $HOME #查看git config的HOME路径
 export $HOME=/c/gitconfig #配置git config的HOME路径
+
+# HTTPS换SSH
+git remote rm origin
+git remote add origin git@u1.github.com:xxx/xxxxx.git
+git remote -v

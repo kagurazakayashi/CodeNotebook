@@ -227,3 +227,6 @@ adb shell ps
 # top  查看进程的资源占用情况
 
 # https://blog.csdn.net/zhonglunshun/article/details/78362439
+
+#投屏 install ffmpeg mpv
+adb exec-out "while true;do screenrecord --bit-rate=16m --output-format=h264 --size 720x1080 - ;done" | mpv --fps=60 --framedrop=no -
