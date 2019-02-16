@@ -1,6 +1,8 @@
 git fetch && git status && git pull
 git add . && git status && git commit -m hahaha && git status
 git push
+# clone到指定的目录
+git clone https://github.com/jquery/jquery.git JQuery/
 
 git init #初始化本地git环境
 git clone XXX #克隆一份代码到本地仓库

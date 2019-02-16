@@ -1,0 +1,1 @@
+find / -type f -size +1000M 2>/dev/null

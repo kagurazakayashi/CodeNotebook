@@ -1,0 +1,1 @@
+pmset -a hibernatemode 0 && pmset -a autopoweroff 0 && pmset -a standby 0 && rm /var/vm/sleepimage
