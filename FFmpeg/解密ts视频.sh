@@ -1,1 +1,0 @@
-ffmpeg -allowed_extensions ALL -i local.m3u8 -c copy v.mp4
