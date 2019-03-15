@@ -1,0 +1,1 @@
+ffmpeg -i <> -b:v 1500k -s 1280x720 -acodec copy <>

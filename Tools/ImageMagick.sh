@@ -3,12 +3,18 @@ for file in *.png; do echo "$file ${file%%.*}.bmp"; convert "$file" "${file%%.*}
 for file in *.bmp; do echo "$file ${file%%}.jpg"; convert "$file" "${file%%}.jpg"; done
 for file in *.tif; do echo $file ${file%%.*}.jpg; convert -resize 1024x1024 $file ${file%%.*}.jpg; done
 
+# Windows
+setlocal enabledelayedexpansion
+for %%x in (*.png) do (
+    "C:\Program Files\ImageMagick-7.0.8-Q16\magick.exe" "%%x" "%%x.bmp"
+)
+
+#旋转
+convert -rotate 90 foo.png bar.png
 #缩放
 convert -resize 100x100 foo.jpg thumbnail.jpg
 convert -resize 50%x50% foo.jpg thumbnail.jpg
 mogrify -sample 80x60 *.jpg
-#旋转
-convert -rotate 90 foo.png bar.png
 #上下翻转
 convert -flip foo.png bar.png
 #左右翻转
