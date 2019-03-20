@@ -1,6 +1,8 @@
 # 解密
 ffmpeg -allowed_extensions ALL -i local.m3u8 -c copy v.mp4
 
+ffmpeg -allowed_extensions ALL -i http://.m3u8 -vcodec copy -acodec copy -c copy v.mp4
+
 # 加密
 # 1、生成公有key
 openssl rand 16 > encrypt.key

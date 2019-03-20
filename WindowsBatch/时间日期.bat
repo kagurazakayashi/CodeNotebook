@@ -1,0 +1,19 @@
+REM 取年份：
+echo %date:~0,4% 
+REM 取月份：
+echo %date:~5,2% 
+REM 取日期：
+echo %date:~8,2% 
+REM 取星期：
+echo %date:~10,6% 
+REM 取小时：
+echo %time:~0,2% 
+REM 取分钟：
+echo %time:~3,2% 
+REM 取秒：
+echo %time:~6,2% 
+REM 取毫秒：
+echo %time:~9,2%
+
+set datetime=%date:~0,4%-%date:~5,2%-%date:~8,2%_%time:~0,2%-%time:~3,2%-%time:~6,2%
+echo %datetime%

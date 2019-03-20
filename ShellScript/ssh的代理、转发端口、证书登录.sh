@@ -1,0 +1,1 @@
+ssh -o ProxyCommand="nc -X 5 -x 127.0.0.1:1080 %h %p" -L 5999:localhost:5901 -i /Users/yashi/sshkey/yashi_rsa_key.rsa 100.100.100.100 -p 23 -l yashi

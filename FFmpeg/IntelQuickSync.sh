@@ -1,0 +1,1 @@
+ffmpeg -re -s 1280x720 -i src_1280_720.yuv -c:v h264_qsv enc_qsv.264

@@ -17,6 +17,9 @@ $ cat test2.log
 # ./test.sh: line 1: t: command not found
 # Tue Oct 9 20:53:44 CST 2007
 
+# 标准输处和标准错误重定向到同一log文件中(追加)
+./test.sh >>pp.txt 2>&1
+
 # 标准输处和标准错误重定向到不同log文件中
 sh mr_add_test.sh 1>log.log 2>log_err.log
 

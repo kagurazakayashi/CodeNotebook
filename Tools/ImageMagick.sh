@@ -3,12 +3,16 @@ for file in *.png; do echo "$file ${file%%.*}.bmp"; convert "$file" "${file%%.*}
 for file in *.bmp; do echo "$file ${file%%}.jpg"; convert "$file" "${file%%}.jpg"; done
 for file in *.tif; do echo $file ${file%%.*}.jpg; convert -resize 1024x1024 $file ${file%%.*}.jpg; done
 
+convert fm.jpg -resize 1024x1024 -quality 80% fmz.jpg
+
 # Windows
 setlocal enabledelayedexpansion
 for %%x in (*.png) do (
     "C:\Program Files\ImageMagick-7.0.8-Q16\magick.exe" "%%x" "%%x.bmp"
 )
 
+#压缩比
+-quality 80%
 #旋转
 convert -rotate 90 foo.png bar.png
 #缩放

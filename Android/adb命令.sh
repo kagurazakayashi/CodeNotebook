@@ -5,7 +5,7 @@ adb shell screencap -p /storage/emulated/0/t.png
 # 下载
 adb pull /storage/emulated/0/t.png /Volumes/RamDisk/1.png
 # 截图到电脑
-adb exec-out screencap -p > /Volumes/RamDisk/sc.png
+adb exec-out screencap -p > "/Volumes/RamDisk/`date`.png"
 # 输入文本
 adb shell input text hello
 
