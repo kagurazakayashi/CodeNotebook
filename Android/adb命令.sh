@@ -1,5 +1,7 @@
 # 已连接设备
 adb devices
+# 操作到指定设备
+adb -s emulator-5554 shell
 # 截图
 adb shell screencap -p /storage/emulated/0/t.png
 # 下载

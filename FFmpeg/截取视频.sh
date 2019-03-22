@@ -1,4 +1,4 @@
-ffmpeg  -i ./plutopr.mp4 -vcodec copy -acodec copy -ss 00:00:10 -to 00:00:15 ./cutout1.mp4 -y
+ffmpeg -i ./plutopr.mp4 -vcodec copy -acodec copy -ss 00:00:10 -to 00:00:15 ./cutout1.mp4 -y
 
 # -ss time_off        set the start time offset 设置从视频的哪个时间点开始截取，上文从视频的第10s开始截取
 # -to 截到视频的哪个时间点结束。上文到视频的第15s结束。截出的视频共5s.
