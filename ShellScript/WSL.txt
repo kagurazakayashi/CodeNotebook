@@ -1,0 +1,25 @@
+图形画面安装：Server\vncserver.sh
+
+vim /etc/profile：
+
+export DISPLAY=localhost:0
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+
+source /etc/profile
+
+输入法：
+sudo apt install --assume-yes fcitx dbus-x11 fcitx-libs libfcitx-qt0 fcitx-sunpinyin
+
+Windows字体安装到WSL：
+#安装字体管理包
+sudo apt-get install --assume-yes fontconfig
+#安装中文字体
+sudo mkdir -p /usr/share/fonts/windows
+sudo cp -r /mnt/c/Windows/Fonts/*.ttf /usr/share/fonts/windows/
+#清除字体缓存
+fc-cache
+#生成中文环境
+sudo locale-gen zh_CN.UTF-8
+

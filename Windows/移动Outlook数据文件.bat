@@ -1,0 +1,1 @@
+mklink /d "C:\Users\yashi\AppData\Local\Microsoft\Outlook" "D:\Outlook"

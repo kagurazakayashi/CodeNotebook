@@ -5,7 +5,7 @@ yum groupinstall "X Window system" "xfce4" -y
 # View
 vncviewer xxx:5901
 # Start
-vncserver -localhost no -geometry 1024x768 -depth 24
+vncserver -localhost no -geometry 1280x720 -depth 24
 # Close
 vncserver -kill :1
 

@@ -41,7 +41,7 @@ notepad "C:\ProgramData\chocolatey\lib\redis-64\redis.windows-service.conf"
 bind 127.0.0.1
 dbfilename redis_dump.rdb
 dir C:\redisdb
-logfile "C:\redisdb\redis.log"
+logfile redis.log
 requirepass <512PWD>
 
 > net stop redis && net start redis
