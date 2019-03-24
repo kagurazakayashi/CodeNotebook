@@ -35,3 +35,15 @@ export $HOME=/c/gitconfig #配置git config的HOME路径
 git remote rm origin
 git remote add origin git@u1.github.com:xxx/xxxxx.git
 git remote -v
+
+
+# Github撤销提交并清除痕迹
+# 1.在命令行工具中进入项目目录
+cd /xxx
+# 2.
+sudo git reset --hard HEAD~1
+# 根据提示输入本系统登录密码，代表你有sudo权限。
+# 其中最后的1代表撤退几次提交，这里撤销4次提交。
+# 3.强制更新远程的历史
+git push -f
+# 根据提示输入GitHub的账号和密码
