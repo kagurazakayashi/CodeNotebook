@@ -1,0 +1,1 @@
+subscription-manager register --username=用户名  --password=密码  --auto-attach
