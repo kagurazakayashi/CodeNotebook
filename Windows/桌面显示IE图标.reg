@@ -1,0 +1,85 @@
+Windows Registry Editor Version 5.00
+;
+;win10 64位显示IE图标注册表
+;
+;桌面显示IE图标
+[-HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
+@="Internet Explorer"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\DefaultIcon]
+@="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe,-32528"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell]
+@=""
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns]
+@="在没有加载项的情况下启动(&N)"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns\Command]
+@="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe about:NoAdd-ons"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open]
+@="打开主页(&H)"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open\Command]
+@="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set]
+@="属性(&R)"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set\Command]
+@="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
+
+[HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\ShellFolder]
+@="C:\\Windows\\system32\\ieframe.dll,-190"
+"Attributes"=dword:00000030
+"HideFolderVerbs"=""
+"WantsParseDisplayName"=""
+"HideOnDesktopPerUser"=""
+"HideAsDeletePerUser"=""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
+@="Internet Explorer"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\DefaultIcon]
+@="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe,-32528"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell]
+@=""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns]
+@="在没有加载项的情况下启动(&N)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns\Command]
+@="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe about:NoAdd-ons"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open]
+@="打开主页(&H)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open\Command]
+@="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set]
+@="属性(&R)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set\Command]
+@="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\ShellFolder]
+@="C:\\Windows\\system32\\ieframe.dll,-190"
+"Attributes"=dword:00000030
+"HideFolderVerbs"=""
+"WantsParseDisplayName"=""
+"HideOnDesktopPerUser"=""
+"HideAsDeletePerUser"=""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
+@="Internet Explorer"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
+@="Internet Explorer"
+;
