@@ -24,4 +24,7 @@ Private key  #  上面生成的16进制的私有key
 #           源视频文件 |单片时长(s) |             key信息文件           | 设置为点播，切片不会变   |                 分片名字          |  m3u8名字
 ffmpeg -y -i test.mp4 -hls_time 5 -hls_key_info_file encrypt.keyinfo -hls_playlist_type vod -hls_segment_filename "test_%d.ts" index.m3u8
 
+# 不加密
+ffmpeg -y -i test.mp4 -hls_time 5 -hls_playlist_type vod -hls_segment_filename "test_%d.ts" index.m3u8
+
 # https://www.jianshu.com/p/00e7eb104df0
