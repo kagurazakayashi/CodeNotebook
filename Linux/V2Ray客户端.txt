@@ -1,0 +1,40 @@
+1. 安装V2ray客户端
+去Github搜索V2RAY，到release中下载不同平台的安装包https://github.com/v2ray/v2ray-core
+
+V2RAY的客户端（你需要走代理的电脑）和服务端（搭建了V2RAY服务的VPS）共用一套配置文件：config.json
+
+1.1 在线安装
+sudo su
+bash <(curl -L -s https://install.direct/go.sh)
+该安装脚本会下载v2ray-linux-64.zip文件，如果是没有FQ的情况下，速度简直是不可忍受，不太推荐在没有vpn的情况下使用该方式安装
+
+1.2 离线安装
+先到github上下载v2ray-linux-64.zip压缩包，并放在ubuntu的本地
+
+wget https://install.direct/go.sh
+sudo bash go.sh --local ./v2ray-linux-64.zip 
+其中go.sh是安装自动化脚本，使用该脚本执行下载下来的离线安装包，安装过程需要root权限.
+
+1.3 安装说明
+使用go.sh安装完成后会在系统中自动安装以下组件：
+
+/usr/bin/v2ray/v2ray：V2Ray 程序；
+/usr/bin/v2ray/v2ctl：V2Ray 工具；
+/etc/v2ray/config.json：配置文件；
+/usr/bin/v2ray/geoip.dat：IP 数据文件
+/usr/bin/v2ray/geosite.dat：域名数据文件
+
+此脚本会配置自动运行脚本。自动运行脚本会在系统重启之后，自动运行 V2Ray。目前自动运行脚本只支持带有 Systemd 的系统，以及 Debian / Ubuntu 全系列。
+
+运行脚本位于系统的以下位置：
+
+/etc/systemd/system/v2ray.service: Systemd
+/etc/init.d/v2ray: SysV
+
+脚本运行完成后，你需要：
+
+编辑 /etc/v2ray/config.json 文件来配置你需要的代理方式；
+运行 service v2ray start 来启动 V2Ray 进程；
+之后可以使用 service v2ray start|stop|status|reload|restart|force-reload 控制 V2Ray 的运行。
+
+https://www.wandouip.com/t5i197953/
