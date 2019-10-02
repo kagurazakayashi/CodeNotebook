@@ -31,3 +31,5 @@ docker ps -l
 # 移除WEB应用容器
 docker stop ID/名字
 docker rm ID/名字
+# 解除被锁定的文件
+chattr -i <file>
