@@ -114,6 +114,7 @@ adb shell wm overscan 0,0,0,200
 # 模拟点击
 # 在屏幕上点击坐标点x=50 y=250的位置：
 adb shell input tap 50 250
+while true;do input tap 350 230;done; #自动点击
 # 按物理按钮：
 db shell input keyevent xx
 # 3  HOME 键
