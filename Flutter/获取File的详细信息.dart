@@ -1,0 +1,20 @@
+File file = File("");
+file.stat().then((onValue) {
+  print(onValue);
+});
+print("路径");
+print(file.path);
+print("type");
+print(file.statSync().type);
+print("changed");
+print(file.statSync().changed);
+print("modified");
+print(file.statSync().modified);
+print("accessed");
+print(file.statSync().accessed);
+print("mode");
+print(file.statSync().modeString());
+print("modified");
+print(file.statSync().modified);
+print("size");
+print(file.statSync().size);
