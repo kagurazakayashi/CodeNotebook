@@ -35,3 +35,5 @@ AuthorizedKeysFile .ssh/authorized_keys
 
 # 有了证书登录了，就禁用密码登录吧，安全要紧
 PasswordAuthentication no
+
+systemctl restart sshd
