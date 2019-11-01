@@ -29,7 +29,7 @@ print(res)
 print(res.decode(encoding='utf-8'))
 #输出内容:登录成功
 
-POST请求：
+# POST请求：
 
 # python2.7:
 import json,urllib2
