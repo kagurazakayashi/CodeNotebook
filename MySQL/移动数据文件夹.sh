@@ -1,7 +1,7 @@
 # 1.检查mysql数据库存放目录
-mysql -u root -prootadmin
+mysql -u root -p
 #进入数据库
-show variables like '%dir%';        
+show variables like '%dir%';
 #查看sql存储路径
 （查看datadir 那一行所指的路径）
 quit;
