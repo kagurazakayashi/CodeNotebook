@@ -1,2 +1,15 @@
-
+._*
 .DS_Store
+Thumbs.db
+vendor
+__pycache__
+.vs*
+node_modules
+__debug_bin
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
