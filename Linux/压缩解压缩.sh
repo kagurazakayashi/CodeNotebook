@@ -4,7 +4,7 @@ tar -xf dir.tar
 tar -cf dir.tar dir/
 
 # 单文件压成 xz
-xz -k -9 -T 4 -z a.tar
+xz -k -9 -T 0 -z a.tar
 -k: 保留原文件
 -9: 压缩比 0-9
 -T 4: 4个线程进行压缩,0=尽可能多

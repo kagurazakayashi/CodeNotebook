@@ -12,6 +12,7 @@ ssh-keygen -t rsa -b 4096 -C ssh.rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 0700 ~/.ssh
 chmod 0644 ~/.ssh/authorized_keys
+chattr +i ~/.ssh/authorized_keys
 chown -R root:root /root
 chown -R yashi:yashi /home/yashi
 
