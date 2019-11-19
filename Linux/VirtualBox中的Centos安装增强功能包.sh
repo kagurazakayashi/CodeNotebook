@@ -1,7 +1,7 @@
 # 安装增强功能
 yum update -y
 yum groupinstall "Development Tools" -y
-yum install kernel-headers kernel-devel gcc make -y
+yum install kernel-headers kernel-devel gcc make elfutils-libelf-devel -y
 mkdir /mnt/cd
 mount -t auto /dev/cdrom /mnt/cd
 cd /mnt/cd

@@ -20,6 +20,10 @@ date -d next-month +%Y%m
 # 获取明年的年份
 date -d next-year +%Y
 
+# 生成带日期的文件名
+echo access_`date +%Y-%m-%d_%H-%M-%S`.log
+# access_2019-12-20_00-19-40.log
+
 # % : 印出
 # % %n : 下一行
 # %t : 跳格

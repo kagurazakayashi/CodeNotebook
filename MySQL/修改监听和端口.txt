@@ -1,0 +1,17 @@
+Mysql默认在本地环路地址127.0.0.1的3306端口监听，要使用其它IP地址需要修改配置文件。
+
+1.编辑/etc/my.cnf
+
+[client]
+port=3306
+[mysqld]
+bind-address=0.0.0.0  #全部地址或者指定的ip地址
+port=3306
+
+2.重启服务
+
+service mysqld restart
+
+3.验证
+
+netstat -tln
