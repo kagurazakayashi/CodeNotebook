@@ -1,3 +1,4 @@
+// 神楽坂雅詩
 var aspan = document.getElementsByClassName("next-table-cell last");
 var alength = aspan.length;
 var aii = 0;

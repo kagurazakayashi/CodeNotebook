@@ -12,3 +12,8 @@ for i in {1..348}
 do 
 echo $i 
 done
+
+for j in $(seq 1 5)
+do
+    echo $j
+done

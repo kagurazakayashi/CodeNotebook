@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# 神楽坂雅詩
 # pip3 install pyperclip
 
 import sys
