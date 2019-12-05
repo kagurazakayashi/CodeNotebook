@@ -6,3 +6,6 @@ nice -n -5 htop
 
 # 修改已有进程优先级
 renice -5 -p <PID>
+
+# 最低优先级跑压缩
+nice -n 19 7za a -mx9

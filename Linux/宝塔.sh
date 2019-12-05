@@ -175,3 +175,8 @@ cat /www/server/data/*.err
 /etc/init.d/memcached restart
 # 启载
 /etc/init.d/memcached reload
+
+
+# pip 清空修复 https://blog.chrxw.com/archives/2019/11/11/657.html
+cd /www/server/panel/
+pip3 install -r requirements.txt

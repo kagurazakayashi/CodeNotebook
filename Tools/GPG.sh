@@ -31,7 +31,7 @@ gpg -o 1.txt.asc.sig -ab 1.txt.asc
 gpg --verify 1.txt.asc.sig 1.txt.asc
 
 导入钥：
-# gpg --import mail.key
+# gpg --import --pinentry-mode=loopback mail.key
 删除私钥：
 # gpg --delete-secret-key newkey
 删除公钥：

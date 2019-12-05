@@ -17,6 +17,15 @@ yum install postgresql-devel -y
 # 上传图片失败
 yum install ImageMagick -y
 
+# Unable to load application: NameError: uninitialized constant ActiveRecordQueryTrace
+gem install rails
+rake migrate
+# NameError: uninitialized xxx
+gem install xxx
+
+# You have already activated rake 12.3.2, but your Gemfile requires rake 12.3.3
+gem install rake
+
 # /var/run/postgresql
 ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432
 
