@@ -1,8 +1,8 @@
 # 以下实例将数组编码为 JSON 格式数据：
 import json
 data = [ { 'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5 } ]
-json = json.dumps(data)
-print json
+jsondata = json.dumps(data)
+print jsondata
 # 以上代码执行结果为：
 [{"a": 1, "c": 3, "b": 2, "e": 5, "d": 4}]
 # 使用参数让 JSON 数据格式化输出：
