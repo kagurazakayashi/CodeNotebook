@@ -1,0 +1,1 @@
+echo 'source ~/.bash_profile' >> ~/.zshrc

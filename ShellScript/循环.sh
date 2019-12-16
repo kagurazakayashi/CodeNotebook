@@ -8,9 +8,9 @@ done
 for f in *.png; do echo $f; done
 
 # 次数
-for i in {1..348} 
-do 
-echo $i 
+for i in {1..348}
+do
+echo $i
 done
 
 for j in $(seq 1 5)

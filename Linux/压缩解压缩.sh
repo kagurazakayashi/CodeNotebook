@@ -1,7 +1,7 @@
 # 解 tar
 tar -xf dir.tar
 # 创建 tar
-tar -cf dir.tar dir/
+tar -cf dir.tar dir
 
 # 单文件压成 xz
 xz -k -9 -T 0 -z a.tar
@@ -12,7 +12,8 @@ xz -k -9 -T 0 -z a.tar
 xz -k -d a.xz
 -k: 保留原文件
 # 多文件压成 tar.xz
-tar -Jcf dir.tar.xz dir/
+tar -Jcf dir.tar.xz dir
+XZ="-9 -T 0" tar -Jcf dir.tar.xz dir
 # 解压 tar.xz
 tar -Jxf dir.tar.xz
 # 查看 CPU 核心数
