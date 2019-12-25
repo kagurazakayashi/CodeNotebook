@@ -16,6 +16,7 @@ if(!empty($imgval)){
 }else{
     echo 'no';
 }
+?>
 
 详细版：
 

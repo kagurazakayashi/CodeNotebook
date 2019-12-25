@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# 神楽坂雅詩
+# 临时解 base64 密码文件并复制密码到剪贴板，三秒后清除
+# 参数1： base64 密码文件路径
+# by 神楽坂雅詩
 # pip3 install pyperclip
 
 import sys

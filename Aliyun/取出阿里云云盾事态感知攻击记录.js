@@ -1,4 +1,6 @@
-// 神楽坂雅詩
+// 取出阿里云云盾事态感知攻击记录，便于统计
+// 粘贴到浏览器控制台执行
+// by 神楽坂雅詩
 
 //转换为 CSV
 var cell = document.getElementsByTagName("table")[0].getElementsByTagName("tr");

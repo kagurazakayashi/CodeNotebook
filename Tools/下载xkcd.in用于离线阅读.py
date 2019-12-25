@@ -5,7 +5,7 @@ import bs4
 import sys
 # 命令行参数：
 # python xkcd_dl.py [cn/en] [id]
-# 神楽坂雅詩
+# by 神楽坂雅詩
 # pip install beautifulsoup4
 # pip install lxml
 # pip install html5lib

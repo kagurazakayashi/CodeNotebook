@@ -1,5 +1,6 @@
 #!/bin/sh
-# 神楽坂雅詩
+# 检查网站是否正常，不正常则采取某项操作
+# by 神楽坂雅詩
 httpRes=`curl -I http://127.0.0.1 2>/dev/null | grep 200 | awk '{print $2}'`
 if [ "$httpRes" = "200" ]
 then

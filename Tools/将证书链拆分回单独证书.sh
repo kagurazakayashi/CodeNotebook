@@ -1,5 +1,6 @@
 #!/usr/bin/bash
-# 神楽坂雅詩
+# 将证书链拆分回单独证书.sh
+# by 神楽坂雅詩
 rm "cert.pem"
 rm "ca.pem"
 fileid=0

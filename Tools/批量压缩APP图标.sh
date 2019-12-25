@@ -1,4 +1,5 @@
-# 神楽坂雅詩
+#!/bin/sh
+# by 神楽坂雅詩
 mkdir AndroidIcons
 mkdir AndroidIcons/mipmap-mdpi
 convert icon.png -resize 48x48 AndroidIcons/mipmap-mdpi/ic_launcher.png

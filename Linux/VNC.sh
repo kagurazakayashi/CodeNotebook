@@ -2,8 +2,10 @@
 dnf groupinstall "workstation"
 dnf groupinstall "Server with GUI"
 
-# 启用图形模式
+# 主机默认启用图形模式
 systemctl set-default graphical
+# 主机默认启用命令行模式
+systemctl set-default multi-user
 
 vim /etc/gdm/custom.conf
 # WaylandEnable=false

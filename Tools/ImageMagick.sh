@@ -12,6 +12,9 @@ for %%x in (*.png) do (
     "C:\Program Files\ImageMagick-7.0.8-Q16\magick.exe" "%%x" "%%x.bmp"
 )
 
+#将一个巨大图片拆分成一个一个小块：每512px一块
+convert -crop 512x512 +repage product1024.png product_%d.jpg
+
 #压缩比
 -quality 80%
 #旋转

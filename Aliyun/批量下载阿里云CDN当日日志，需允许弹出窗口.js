@@ -1,4 +1,6 @@
-// 神楽坂雅詩
+// 批量下载阿里云CDN当日日志
+// 粘贴到浏览器控制台执行，需允许弹出窗口
+// by 神楽坂雅詩
 var aspan = document.getElementsByClassName("next-table-cell last");
 var alength = aspan.length;
 var aii = 0;

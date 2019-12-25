@@ -1,4 +1,4 @@
-REM 神楽坂雅詩
+REM by神楽坂雅詩
 echo 正在处理中...
 date /T > C:\l.ys
 time /T >> C:\l.ys

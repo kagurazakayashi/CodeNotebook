@@ -1,6 +1,6 @@
 #!/bin/sh
 # 自动检查网站可访问性，出现异常自动重启 tomcat 。
-# (c) 神楽坂雅詩
+# by 神楽坂雅詩
 #
 url="http://www.mytongdy.com/observer/client/"
 log="/var/log/autoRestartTomcat.log"
