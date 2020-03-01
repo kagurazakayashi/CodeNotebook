@@ -7,18 +7,26 @@
 
 <body style="height: 100%; margin: 0">
     <div id="container" style="height: 100%"></div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.common.js"></script>
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script> -->
+    <!-- <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script> -->
     <script type="text/javascript">
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
         var app = {};
         option = null;
         option = {
-            title: {
-                text: '折线图堆叠'
-            },
             tooltip: {
-                trigger: 'axis'
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
+                },
             },
             legend: {
                 data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
@@ -46,62 +54,68 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['1', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7', '2', '3', '4', '5', '6', '7']
+                data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100']
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                //     gridIndex: 0
             },
             series: [
                 {
                     name: '邮件营销',
                     type: 'line',
-                    stack: '总量',
+                    // stack: '总量',
                     itemStyle: {
                         color: '#FEDFE1',
                     },
+                    smooth: true,
                     data: [120, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210, 132, 101, 134, 90, 230, 210]
                 },
                 {
                     name: '联盟广告',
                     type: 'line',
-                    stack: '总量',
+                    // stack: '总量',
                     itemStyle: {
                         color: '#DB4D6D',
                     },
+                    smooth: true,
                     data: [220, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310, 330, 310, 330, 310]
                 },
                 {
                     name: '视频广告',
                     type: 'line',
-                    stack: '总量',
+                    // stack: '总量',
                     itemStyle: {
                         color: '#D05A6E',
                     },
+                    smooth: true,
                     data: [150, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410]
                 },
                 {
                     name: '直接访问',
                     type: 'line',
-                    stack: '总量',
+                    // stack: '总量',
                     itemStyle: {
                         color: '#E87A90',
                     },
+                    smooth: true,
                     data: [320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320, 332, 301, 334, 390, 330, 320]
                 },
                 {
                     name: '搜索引擎',
                     type: 'line',
-                    stack: '总量',
+                    // stack: '总量',
                     itemStyle: {
                         color: '#B5495B',
                     },
+                    smooth: true,
                     data: [820, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320, 932, 901, 934, 1290, 1330, 1320]
                 }
             ]
         };
 
         if (option && typeof option === "object") {
-            myChart.setOption(option, true);
+            myChart.setOption(option);
         }
     </script>
 </body>
