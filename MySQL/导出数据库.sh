@@ -11,7 +11,7 @@ mysqldump -u root -p sys > sys.sql
 tar -zcvf sql.tar.gz *.sql
 7za a -mx9 sql.7z *.sql -v100m -p1cYnVDicm4FBwOvy
 # 恢复
-mysqldump -u root -p mytongdy < mytongdy.sql
+#mysqldump -u root -p mytongdy < mytongdy.sql
 mysql -uusername -ppassword db1 <tb1tb2.sql
 
 # 备份还原

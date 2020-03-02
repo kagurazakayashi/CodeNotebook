@@ -5,7 +5,7 @@ cd yasm-1.3.0
 ./configure
 make
 sudo make install
-cd..
+cd ..
 git clone https://git.ffmpeg.org/ffmpeg.git
 # ffmpeg 编译
 cd ./ffmpeg
@@ -17,7 +17,7 @@ sudo cp ./host/lib/* /usr/bin/
 ./configure
 make
 sudo make install
-
+cd ..
 git clone git://git.videolan.org/vlc.git
 sudo ./bootstrap
 # Successfully bootstrapped

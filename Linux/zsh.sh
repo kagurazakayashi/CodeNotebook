@@ -31,3 +31,15 @@ ls ~/.oh-my-zsh/themes
 # 编辑~/.zshrc文件，将ZSH_THEME="candy",即将主题修改为candy。我采用的steeef。
 
 # https://segmentfault.com/a/1190000013612471
+
+
+# OhMyZsh 配置 Agnoster 主题
+vim ~/.zshrc
+# 找到 ZSH_THEME 修改为：ZSH_THEME="agnoster"
+# 安装Powerline 对应的字体库
+dnf install powerline-fonts
+# 手动安装
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+# 字体修改为 ：Meslo LG S DZ Regular for Powerline

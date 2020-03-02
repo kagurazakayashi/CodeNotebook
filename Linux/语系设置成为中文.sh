@@ -3,7 +3,7 @@ vim /etc/sysconfig/i18n
 LANG="zh_CN.UTF-8"
 SYSFONT="latarcyrheb-sun16"
 
-vim /etc/locale.conf
+vim /etc/locale.conf
 
 LANG="zh_CN.UTF-8"
 LANGUAGE="zh_CN.UTF-8:zh_CN.GB2312:zh_CN"

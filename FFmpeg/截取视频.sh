@@ -13,3 +13,24 @@ ffmpeg -i ./plutopr.mp4 -vcodec copy -acodec copy -ss 00:00:10 -to 00:00:15 ./cu
  
 # -i 表示源视频文件
 # -y 表示如果输出文件已存在则覆盖。
+
+# 精准切割（占CPU）
+ffmpeg -y -i filename -ss 00:00:10 -t 00:00:15 -codec copy
+
+# 快速切割（占内存）
+ffmpeg -y -ss 00:00:10 -t 00:00:15 -I filename -c:v libx264 -perset superfast -c:a copy
+
+# libx264 -perset：
+# ultrafast
+# superfast
+# veryfast
+# faster
+# fast
+# medium – default preset
+# slow
+# slower
+# veryslow
+# placebo – ignore this as it is not useful (see FAQ)
+
+# 测试成功，音视频能对上：
+ffmpeg -i fk.flv -ss 00:06:05 -to 00:06:38 -c:v libx264 -preset placebo -c:a copy fkk.mp4 -y

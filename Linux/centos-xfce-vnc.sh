@@ -32,3 +32,21 @@ vncconfig -iconic &
 startxfce4 &
 
 systemctl start vncserver@:1.service
+
+
+# CentOS8服务可用
+vim /etc/systemd/system/vncserver@.service
+
+[Unit]
+Description=Remote Desktop VNC Service
+After=syslog.target network.target
+[Service]
+Type=forking
+WorkingDirectory=/home/yashi
+User=yashi
+Group=yashi
+ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill :%i > /dev/null 2>&1 || :'
+ExecStart=/usr/bin/vncserver -autokill :%i
+ExecStop=/usr/bin/vncserver -kill :%i
+[Install]
+WantedBy=multi-user.target

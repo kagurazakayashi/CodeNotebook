@@ -12,6 +12,18 @@ for %%x in (*.png) do (
     "C:\Program Files\ImageMagick-7.0.8-Q16\magick.exe" "%%x" "%%x.bmp"
 )
 
+
+# 水印
+#图片水印
+convert pic.jpg sy.jpg -gravity southeast -geometry +20+20 -composite ok.jpg
+#图片水印+调整大小+调整清晰度
+convert pic.jpg -resize 1000x1000 sy.jpg -gravity southeast -geometry +20+20 -quality 80% -composite ok.jpg
+#文字水印
+convert pic.jpg -gravity southeast -fill black -font Arial -pointsize 16 -draw "text 5,5 'zeze'" ok.jpg
+#图片本体调整大小+图片水印+文字水印+调整清晰度
+convert pic.jpg -resize 1000x1000 sy.jpg -gravity southeast -geometry +0+20 -gravity southeast -fill white -font Arial -pointsize 20 -draw "text 5,5 'zeze'" -quality 80% -composite ok.jpg
+
+
 #将一个巨大图片拆分成一个一个小块：每512px一块
 convert -crop 512x512 +repage product1024.png product_%d.jpg
 

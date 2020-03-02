@@ -1,3 +1,6 @@
+Integer.parseInt(mysqlvar);
+String.valueOf(rs);
+
 // 1、如何将字符串String转化为整数int
   int i = Integer.parseInt(str);
   int i = Integer.valueOf(my_str).intValue();

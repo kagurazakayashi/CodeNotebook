@@ -14,7 +14,7 @@ forward-socks5 / 127.0.0.1:1080 .
 listen-address 127.0.0.1:1081
 
 # 重启privoxy
-systemctl restart privoxy
+systemctl start privoxy
+systemctl stop privoxy
 
-export http_proxy=http://127.0.0.1:1081/
-export https_proxy=http://127.0.0.1:1081/
+export http_proxy=http://127.0.0.1:1081/ && export https_proxy=http://127.0.0.1:1081/

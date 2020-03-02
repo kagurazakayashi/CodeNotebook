@@ -30,6 +30,7 @@ WantedBy=multi-user.target
 
 systemctl daemon-reload
 systemctl start vncserver@:1.service
+systemctl status vncserver@:1.service
 systemctl enable vncserver@:1.service
 firewall-cmd --permanent --add-port=5901/tcp
 firewall-cmd --reload
