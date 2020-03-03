@@ -14,6 +14,7 @@ xz -k -d a.xz
 # 多文件压成 tar.xz
 tar -Jcf dir.tar.xz dir
 XZ="-9 -T 0" tar -Jcf dir.tar.xz dir
+tar -c dir | xz -9 --threads=48 >dir.tar.xz
 # 解压 tar.xz
 tar -Jxf dir.tar.xz
 # 查看 CPU 核心数

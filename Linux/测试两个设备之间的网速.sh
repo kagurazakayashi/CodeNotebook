@@ -1,4 +1,5 @@
 # https://code.google.com/archive/p/iperf/downloads
+# wget http://www.yoooooooooo.com/d/iperf-3.0b5.tar.gz
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/iperf/iperf-3.0b5.tar.gz
 tar zxvf iperf-3.0b5.tar.gz
 cd iperf-3.0b5
@@ -6,7 +7,9 @@ cd iperf-3.0b5
 make -j`grep -c ^processor /proc/cpuinfo`
 make install
 
-firewall-cmd --permanent --add-port=5201/tcp
+cd .. && rm -rf iperf-3.0b5 && rm -f iperf-3.0b5.tar.gz
+
+firewall-cmd --add-port=5201/tcp # --permanent 不用永久开端口
 firewall-cmd --reload
 
 # 在 192.168.0.1 的这台服务器上，开启服务模式。

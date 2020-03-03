@@ -1,0 +1,16 @@
+[Unit]
+Description=EyeblueTank
+Documentation=https://tank-doc.eyeblue.cn
+Wants=network.target
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/tank.pid
+#DynamicUser=yes
+ExecStart=/disk/tank
+#Restart=always
+#RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

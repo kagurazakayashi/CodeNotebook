@@ -34,3 +34,6 @@ systemctl status vncserver@:1.service
 systemctl enable vncserver@:1.service
 firewall-cmd --permanent --add-port=5901/tcp
 firewall-cmd --reload
+
+systemctl start vncserver@:1.service && systemctl status vncserver@:1.service
+systemctl stop vncserver@:1.service && systemctl status vncserver@:1.service

@@ -2,10 +2,11 @@
 
 - `mvn -X` 命令可以查看settings.xml文件的读取顺序（可以直接看到）
 
-- 创建 settings.xml： `cp /usr/share/maven/conf/settings.xml ~/.m2/setting.xml`
+- 所有用户： `/usr/share/maven/conf/settings.xml`
+- 自己用户： `~/.m2/settings.xml`
+- 创建自己用户设置： `cp /usr/share/maven/conf/settings.xml ~/.m2/settings.xml`
 
 # 设置代理
-`vim ~/.m2/setting`
 ```
 <proxies>
     <proxy>
@@ -20,7 +21,6 @@
 ```
 
 # 使用国内的阿里源
-`vim ~/.m2/setting`
 ```
 <mirror>
     <id>alimaven</id>

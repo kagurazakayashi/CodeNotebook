@@ -10,6 +10,7 @@ grep SwapTotal /proc/meminfo
 
 swapoff /pagefile.sys
 rm -f /pagefile.sys
+vim /etc/fstab
 
 # 1. 添加swap文件大小为2G
 # 默认情况下， of=/swapfile 即swapfile文件创建在/var/目录下。 
@@ -34,7 +35,8 @@ grep SwapTotal  /proc/meminfo
 swapoff /swapfile
 # 8. 删除SWAP文件
 rm -fr /swapfile
-
+# 9. 取消自动挂载SWAP文件
+vim /etc/fstab
 
 
 # 物理分区方式
@@ -74,13 +76,14 @@ swapoff /dev/xvdc #卸载
 # /dev/xvdc swap swap defaults 0 0
 # 方法2: 使用dd生成大文件
 # 1.用dd生成一个大文件
-dd if=/dev/zero of=/root/BIGFILE bs=1M  count=1024
+dd if=/dev/zero of=/pagefile.sys bs=1M count=1024
 # 2.将文件制作成swap分区
-mkswap /root/BIGFILE 
+mkswap /pagefile.sys
 # 3.挂载swap
-swapon /root/BIGFILE
+swapon /pagefile.sys
 # 4.写入fstab
-/root/BIGFILE   swap    swap    defaults        0 0
+vim /etc/fstab
+# /pagefile.sys swap swap defaults 0 0
 
 
 # 设置虚拟内存比例：

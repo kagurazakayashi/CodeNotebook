@@ -1,3 +1,4 @@
+docker container ls -a
 # 1、导出容器
 # 导出容器可以导出一个已经创建的容器到一个文件，不管容器处于什么状态，可以使用docker export 命令。
 # 命令格式为：docker export [-o|--output[=""]] CONTATINER

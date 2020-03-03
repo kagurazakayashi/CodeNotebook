@@ -8,8 +8,8 @@ convert fm.jpg -resize 1024x1024 -quality 80% fmz.jpg
 
 # Windows
 setlocal enabledelayedexpansion
-for %%x in (*.png) do (
-    "C:\Program Files\ImageMagick-7.0.8-Q16\magick.exe" "%%x" "%%x.bmp"
+for %%x in (*.tif) do (
+    "magick.exe" "%%x" -rotate 90 "%%x.bmp"
 )
 
 

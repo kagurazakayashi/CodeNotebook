@@ -4,6 +4,9 @@ hostname newHostname
 vi /etc/sysconfig/network
 # Redhat / CentOS / Fedora系列
 vi /etc/sysconfig/network
+# Redhat 8 / CentOS 8
+vi /etc/hostname
+vi /etc/hosts
 # Debian / Ubuntu系列
 vi /etc/hostname
 # 修改其中的HOSTNAME项，不过此种方法需要重启后生效。
