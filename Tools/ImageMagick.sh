@@ -9,9 +9,8 @@ convert fm.jpg -resize 1024x1024 -quality 80% fmz.jpg
 # Windows
 setlocal enabledelayedexpansion
 for %%x in (*.tif) do (
-    "magick.exe" "%%x" -rotate 90 "%%x.bmp"
+    "magick.exe" "%%x" -rotate 90 "%%~nx.bmp"
 )
-
 
 # 水印
 #图片水印
