@@ -1,0 +1,1 @@
+hdiutil makehybrid -o -iso <待制作成ISO的文件夹> <iso 文件输出路径> #-joliet

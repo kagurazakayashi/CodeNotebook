@@ -24,3 +24,16 @@ vim /usr/libexec/urlgrabber-ext-down
 # RHEL8 Python3
 ln -s /usr/bin/python3 /usr/bin/python
 ln -s /usr/bin/pip3 /usr/bin/pip
+
+# macOS
+which python3
+ls -al /usr/local/bin/python3
+ls /usr/local/Cellar/python/3.7.7/bin/python3
+# 1，首先打开终端,打开配置文件
+open ~/.zshrc
+# 2. 写入python的外部环境变量
+export PATH=${PATH}:/usr/local/Cellar/python/3.7.7/bin/python3
+# 3.重命名python（这步很重要，直接关系到默认启动的python版本是否修改）
+alias python="/usr/local/bin/python3"
+# 4.更新环境变量
+source ~/.zshrc

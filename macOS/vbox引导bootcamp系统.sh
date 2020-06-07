@@ -38,6 +38,4 @@ sudo chown yashi *.vmdk
 # 挂载 U 盘
 diskutil list
 
-rm -f ~/*.vmdk && diskutil unmountDisk /dev/disk5 && sudo chown $(whoami) /dev/disk5 && VBoxManage internalcommands createrawvmdk -filename ~/usb.vmdk -rawdisk /dev/disk5
-
-rm -f ~/*.vmdk
+tovmdisk=disk2 && rm -f ~/usb.vmdk && diskutil unmountDisk /dev/$tovmdisk && sudo chown $(whoami) /dev/$tovmdisk && VBoxManage internalcommands createrawvmdk -filename ~/usb.vmdk -rawdisk /dev/$tovmdisk

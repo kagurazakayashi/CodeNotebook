@@ -1,0 +1,4 @@
+Info.plist
+CFBundleShortVersionString = FLUTTER_BUILD_NAME
+CFBundleVersion = FLUTTER_BUILD_NUMBER
+PRODUCT_NAME
