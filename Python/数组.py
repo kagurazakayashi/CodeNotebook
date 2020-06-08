@@ -25,6 +25,8 @@ book.pop(0) #删除指定位置的内容，0-x
 #
 # pop()  :  主要用来做删除列表中的指定对象,pop()括号内参数是，要删除对象的python list 索引。如果为空则默认为-1最后一项。
 
+# 数组长度
+len(book)
 
 # 遍历：
 for key in book.keys():

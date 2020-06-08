@@ -79,3 +79,10 @@ f.close()
 
 # https://zhuanlan.zhihu.com/p/42784651
 # https://www.jianshu.com/p/a672f39287c4
+
+
+# 'gbk' codec can't decode byte 0xae in position 106: illegal multibyte sequence
+# 解决办法1.
+FILE_OBJECT= open('order.log','r', encoding='UTF-8')
+# 解决办法2.
+FILE_OBJECT= open('order.log','rb')

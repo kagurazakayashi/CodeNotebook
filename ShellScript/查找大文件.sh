@@ -1,1 +1,2 @@
-find / -type f -size +1000M 2>/dev/null
+# 查找大文件
+find / -type f -size +100M 2>/dev/null

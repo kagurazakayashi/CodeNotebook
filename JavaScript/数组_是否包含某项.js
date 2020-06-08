@@ -1,0 +1,1 @@
+array.hasOwnProperty("key");

@@ -28,3 +28,29 @@ done
 # 如"$@"用「"」括起来的情况、以"$1" "$2" … "$n" 的形式输出所有参数。
 # $-	显示Shell使用的当前选项，与set命令功能相同。
 # $?	显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
+
+
+# 传具体参数
+while getopts ":a:b:c:" opt
+do
+    case $opt in
+        a)
+        echo "参数a的值$OPTARG"
+        ;;
+        b)
+        echo "参数b的值$OPTARG"
+        ;;
+        c)
+        echo "参数c的值$OPTARG"
+        ;;
+        ?)
+        echo "未知参数"
+        exit 1;;
+    esac
+done
+# 运行
+./test.sh -a 1 -b 2 -c 3
+#在shell中的输出
+# 参数a的值1
+# 参数b的值2
+# 参数c的值3
