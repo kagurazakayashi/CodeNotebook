@@ -37,3 +37,11 @@ export PATH=${PATH}:/usr/local/Cellar/python/3.7.7/bin/python3
 alias python="/usr/local/bin/python3"
 # 4.更新环境变量
 source ~/.zshrc
+
+# linux
+which python
+# /usr/bin/python
+which python3
+# /usr/bin/python3
+unlink /usr/bin/python
+ln -s /usr/bin/python3 /usr/bin/python

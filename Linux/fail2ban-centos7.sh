@@ -9,7 +9,7 @@ systemctl start firewalld
 systemctl enable firewalld.service
 # 启用Firewalld后会禁止所有端口连接，因此请务必放行常用的端口，以免被阻挡在外，以下是放行SSH端口（22）示例，供参考：
 #放行22端口
-firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=22/tcp --permanent
 #重载配置
 firewall-cmd --reload
 #查看已放行端口

@@ -16,7 +16,7 @@ gnome-panel &
 gnome-settings-daemon &
 metacity &
 nautilus &
-gnome-terminal &
+-terminal &
 
 vi /etc/systemd/system/vncserver@.service
 [Unit]

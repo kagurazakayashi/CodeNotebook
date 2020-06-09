@@ -1,5 +1,5 @@
 yum install gnome-tweak-tool -y
-yum install gnome-shell-extension-* -y
+yum install "gnome-shell-extension-*" -y
 # https://extensions.gnome.org/
 # https://linux.cn/article-3887-1.html
 
