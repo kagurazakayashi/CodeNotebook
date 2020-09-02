@@ -1,30 +1,30 @@
 在wordpress插件和主题开发中经常需要获取各种URL路径，wordpress提供了以下集中方法获得URL路径：
 
-- plugins_url() — 插件目录的 URL (例如：http://www.hujuntao.com/wp-content/plugins)
-- includes_url() — includes 目录的 URL (例如：http://www.hujuntao.com/wp-includes)
-- content_url() — content 目录的 URL (例如：http://www.hujuntao.com/wp-content)
-- admin_url() — admin 目录的 URL (例如：http://www.hujuntao.com/wp-admin/)
-- site_url() — 当前网站的 URL (例如：http://www.hujuntao.com)
-- home_url() — 当前网站首页的 URL (例如：http://www.hujuntao.com)
+- `plugins_url()` — 插件目录的 URL (例如：http://www.hujuntao.com/wp-content/plugins)
+- `includes_url()` — includes 目录的 URL (例如：http://www.hujuntao.com/wp-includes)
+- `content_url()` — content 目录的 URL (例如：http://www.hujuntao.com/wp-content)
+- `admin_url()` — admin 目录的 URL (例如：http://www.hujuntao.com/wp-admin/)
+- `site_url()` — 当前网站的 URL (例如：http://www.hujuntao.com)
+- `home_url()` — 当前网站首页的 URL (例如：http://www.hujuntao.com)
 
 要获得首页地址有很多方法：site_url()、home_url()、bloginfo(‘url’)、get_bloginfo(‘url’)、get_site_url()、get_home_url()。它们之间有什么区别呢？
 
-# 首先来认识下site_url()和home_url()这两个函数
+# 首先来认识下 site_url() 和 home_url() 这两个函数
 
-site_url() 和 home_url() 很相似，容易混淆。
+`site_url()` 和 `home_url()` 很相似，容易混淆。
 
-site_url() 返回的是数据库中 wp_options 表里面的 siteurl 字段值。这是指向 WordPress 核心文件的 URL,也就是你的wordpress安装路径。如果你的 WordPress 核心文件在你的服务器的子目录中，比如 /wordpress，那么 site_url() 的值就会是 http://www.uedsc.com/tag/wordpress 。在控制面板==>> 设置 ==>> WordPress 地址（URL）修改。（在非不得已的情况下不要修改，一般在安装成功后这个值是自动生成。修改错误的地址会导致页面打不开，后台管理也进不去，出现这种情 况只能通过修改数据库来修复。）
+`site_url()` 返回的是数据库中 wp_options 表里面的 siteurl 字段值。这是指向 WordPress 核心文件的 URL,也就是你的wordpress安装路径。如果你的 WordPress 核心文件在你的服务器的子目录中，比如 /wordpress，那么 site_url() 的值就会是 http://www.uedsc.com/tag/wordpress 。在控制面板==>> 设置 ==>> WordPress 地址（URL）修改。（在非不得已的情况下不要修改，一般在安装成功后这个值是自动生成。修改错误的地址会导致页面打不开，后台管理也进不去，出现这种情 况只能通过修改数据库来修复。）
 
-home_url() 则从 wp_option 表中取得 home 字段的值。这个地址是你希望访问你的 WordPress 网站的 URL 地址。例如，你的 WordPres 核心文件放在 /wordpress 目录下，但是你希望你的 URL是 http://www.uedsc.com，那么就要把 home 的值设置成 http://www.hujuntao.com。在控制面板==>> 设置 ==>> 站点地址（URL）。
+`home_url()` 则从 wp_option 表中取得 home 字段的值。这个地址是你希望访问你的 WordPress 网站的 URL 地址。例如，你的 WordPres 核心文件放在 /wordpress 目录下，但是你希望你的 URL是 http://www.uedsc.com，那么就要把 home 的值设置成 http://www.hujuntao.com。在控制面板==>> 设置 ==>> 站点地址（URL）。
 
 如果你的博客安装在跟目录这个两个函数获得的值就是一样的，在插件和主题开发中为了使用中得到兼容，所以在选择的时候需要慎重。
 
 总的来讲
 
-- home_url()就是首页地址，主要用在需要返回首页的时候。比如logo的链接，“面包屑”的“首页”链接等等。
-- site_url() wordpress安装路径，主要用在获得本地文件路径。
+- `home_url()` 就是首页地址，主要用在需要返回首页的时候。比如logo的链接，“面包屑”的“首页”链接等等。
+- `site_url()` wordpress安装路径，主要用在获得本地文件路径。
 
-# bloginfo()函数参数使用
+# bloginfo() 函数参数使用
 
 bloginfo用于获得博客的相关信息，包括主页，安装路径地址。
 

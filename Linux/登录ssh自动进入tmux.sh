@@ -1,3 +1,5 @@
+# Linux用户登录1
+# 安装 tmux
 yum install tmux -y
 
 vim /etc/profile

@@ -1,4 +1,4 @@
-implode 使用一个字符串将数组变成字符串
+implode 数组 → 字符串
 
 <?php
  
@@ -6,13 +6,13 @@ $array = array('lastname', 'email', 'phone');
 $comma_separated = implode(",", $array);
  
 echo $comma_separated; // lastname,email,phone
- 
+
 // Empty string when using an empty array:
 var_dump(implode('hello', array())); // string(0) ""
  
 ?>
 
-explode — 使用一个字符串分割另一个字符串，返回一个数组
+explode — 字符串 → 数组
 
 <?php
 // 示例 1

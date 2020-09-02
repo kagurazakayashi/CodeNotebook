@@ -11,6 +11,16 @@ ln -s /usr/lib64/libgd.so.3.0.5 /usr/local/libgd.so.3.0.5
 yum install make cmake gcc gcc-c++ gcc-g77 flex bison file libtool libtool-libs autoconf kernel-devel patch wget libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel gd gd-devel libxml2 libxml2-devel zlib zlib-devel glib2 glib2-devel tar bzip2 bzip2-devel libevent libevent-devel ncurses ncurses-devel curl curl-devel libcurl libcurl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel vim-minimal gettext gettext-devel ncurses-devel gmp-devel pspell-devel libcap diffutils ca-certificates net-tools libc-client-devel psmisc libXpm-devel git-core c-ares-devel libicu-devel libxslt libxslt-devel zip unzip glibc.i686 libstdc++.so.6 cairo-devel bison-devel ncurses-devel libaio-devel perl perl-devel perl-Data-Dumper lsof pcre pcre-devel vixie-cron crontabs expat-devel readline-devel -y
 yum install yum-utils -y
 package-cleanup --cleandupes
+# 关闭SSL
+rm -f /www/server/panel/data/ssl.pl && /etc/init.d/bt restart
+# 重新安装所有python依赖
+cd /www/server/panel
+pip uninstall -r requirements.txt -y
+pip install -r requirements.txt
+# 申请LE证书出大串错
+echo 'curl' > /www/server/panel/data/http_type.pl
+# 修复升级
+curl https://download.bt.cn/install/update_panel.sh|bash
 
 # 宝塔linux面板命令大全
 # 安装宝塔
@@ -175,8 +185,3 @@ cat /www/server/data/*.err
 /etc/init.d/memcached restart
 # 启载
 /etc/init.d/memcached reload
-
-
-# pip 清空修复 https://blog.chrxw.com/archives/2019/11/11/657.html
-cd /www/server/panel/
-pip3 install -r requirements.txt

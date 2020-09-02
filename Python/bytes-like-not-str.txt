@@ -1,0 +1,10 @@
+TypeError: a bytes-like object is required, not 'str'
+
+问题出在python3.5和Python2.7在套接字返回值解码上有区别:
+python bytes和str两种类型可以通过函数encode()和decode()相互转换，
+str→bytes：encode()方法。str通过encode()方法可以转换为bytes。
+bytes→str：decode()方法。如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法。
+
+line.strip().split(",")
+改为  
+line.decode().strip().split(",")

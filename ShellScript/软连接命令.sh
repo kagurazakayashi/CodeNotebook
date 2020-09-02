@@ -1,4 +1,4 @@
-# ln -s 源文件 目标文件。
+# ln -s 源文件(已有) 目标文件(新建)。
 ln -s /usr/local/imagemagick/bin/convert /usr/local/bin/convert
 ln -s /usr/local/imagemagick/bin/identify /usr/local/bin/identify
 # 不论是硬连结或软链结都不会将原本的档案复制一份，只会占用非常少量的磁碟空间。

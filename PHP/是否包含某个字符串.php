@@ -14,6 +14,6 @@ start 可选。规定开始搜索的位置。
 该函数对大小写敏感。如需进行对大小写不敏感的搜索，请使用 stripos()函数。
 
 <?php
-　　echo strpos(www.aaabbb.com,"aaa");
+　　echo strpos("www.aaabbb.com","aaa");
 ?>
 输出：4

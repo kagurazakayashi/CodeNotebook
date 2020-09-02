@@ -1,6 +1,9 @@
+# Linux用户登录2
+yum install figlet -y
 # 用户登录进去后显示一些信息
 vim /etc/profile
 # 如果使用 登录ssh自动进入tmux.sh 则在 export TERM=xterm 之前加
+# LoginInfo
 CNAME="Yashi ECS"
 echo "======== $CNAME ========"
 df -hl
