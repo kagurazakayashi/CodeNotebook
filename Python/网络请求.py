@@ -77,3 +77,17 @@ request.install_opener(opener)
 # ......
 
 # https://www.cnblogs.com/goldd/p/5457229.html
+
+
+# 使用代理
+# 设置网址和代理服务器
+url = 'https://www.google.com/'
+proxies = {
+  "http": "http://user:password@112.25.41.136:80",
+  "https": "http://user:password@112.25.41.136:80",
+}
+proxy = urllib.request.ProxyHandler(proxies)
+# 创建全局默认opener对象使urlopen()使用opener
+opener = urllib.request.build_opener(proxy, urllib.request.HTTPHandler)
+urllib.request.install_opener(opener)
+data = urllib.request.urlopen(url).read().decode('utf-8')

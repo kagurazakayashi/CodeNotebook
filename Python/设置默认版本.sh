@@ -1,4 +1,7 @@
 # MAC 修改为 Python3.x 为默认 :
+ln -s /usr/local/lib/python3.8/site-packages/pip /usr/local/bin/pip
+ln -s 
+
 # 查看默认 python 所在目录
 which python
 # 查看 Python3 所在目录
