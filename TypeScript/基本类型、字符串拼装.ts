@@ -6,6 +6,7 @@ function 基本类型() {
     let d: null = null
     let e: string = "yashi"
     console.log(a, b, c, d, e)
+    // 模板字符串
     console.log("字符串组装：")
     let info: string = `名字：${e}，编号：${c + 1}`
     let info2: string = "名字：" + e + "，编号：" + (c + 1)
