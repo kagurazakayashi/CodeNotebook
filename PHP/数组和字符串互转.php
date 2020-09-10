@@ -20,7 +20,7 @@ $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
 $pieces = explode(" ", $pizza);
 echo $pieces[0]; // piece1
 echo $pieces[1]; // piece2
- 
+
 // 示例 2
 $data = "foo:*:1023:1000::/home/foo:/bin/sh";
 list($user, $pass, $uid, $gid, $gecos, $home, $shell) = explode(":", $data);
@@ -31,15 +31,15 @@ echo $pass; // *
 str_split — 将字符串按位数转换为数组
 
 <?php
- 
+
 $str = "Hello Friend";
- 
+
 $arr1 = str_split($str); //每个字符
 $arr2 = str_split($str, 3); //每3个字符
- 
+
 print_r($arr1);
 print_r($arr2);
- 
+
 ?>
 
 没有规律的数组转化为字符串

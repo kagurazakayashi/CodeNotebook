@@ -1,7 +1,7 @@
 # 以下实例将数组编码为 JSON 格式数据：
 import json
 data = [ { 'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5 } ]
-jsondata = json.dumps(data)
+jsondata = json.dumps(data) # 数组→字符串
 print jsondata
 # 以上代码执行结果为：
 [{"a": 1, "c": 3, "b": 2, "e": 5, "d": 4}]
@@ -15,8 +15,8 @@ print json.dumps({'a': 'Runoob', 'b': 7}, sort_keys=True, indent=4, separators=(
 
 # 以下实例展示了Python 如何解码 JSON 对象：
 import json
-jsonData = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
-text = json.loads(jsonData)
+jsonData = '{"a":1,"b":2,"c":3,"d":4,"e":5}'
+text = json.loads(jsonData) # 字符串→数组
 print text
 # 以上代码执行结果为：
 {u'a': 1, u'c': 3, u'b': 2, u'e': 5, u'd': 4}
