@@ -1,0 +1,4 @@
+binutils
+gcc
+gcc-mingw
+gdb
