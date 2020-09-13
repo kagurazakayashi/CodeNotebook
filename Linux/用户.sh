@@ -4,9 +4,9 @@
 useradd yashi
 
 # 创建用户并创建用户文件夹
-useradd -m yashi
-# 或
 adduser yashi
+# 或
+useradd -m yashi
 
 # 设置某个用户的密码
 passwd yashi

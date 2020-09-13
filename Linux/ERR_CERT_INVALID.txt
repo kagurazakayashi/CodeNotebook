@@ -1,0 +1,38 @@
+Chrome访问https页面显示ERR_CERT_INVALID，且无法跳过继续访问
+
+在访问网页的时候，因为浏览器自身的安全设置问题，
+对于https的网页访问会出现安全隐私的提示，
+甚至无法访问对应的网站，尤其是chrome浏览器，
+因此本文主要讲解如何设置chrome浏览器的设置，来解决该问题，具体如下：
+问题
+Chrome访问https页面显示ERR_CERT_INVALID，以往版本可以选择跳过，继续访问，但是新版本Chrome不允许继续，且提示：您的连接不是私密连接攻击者可能会试图从 XX.XX.XX.XX 窃取您的信息（例如：密码、通讯内容或信用卡信息）。了解详情 ，NET::ERR_CERT_INVALID，将您访问的部分网页的网址、有限的系统信息以及部分网页内容发送给 Google，以帮助我们提升 Chrome 的安全性。隐私权政策，如下图所示：
+
+解决方案
+方案一
+在chrome该页面上，直接键盘敲入这12个字符：`thisisunsafe`
+
+**注意：鼠标点击当前页面任意位置，让页面处于最上层即可输入**
+方案二
+在chrome的地址栏里输入 chrome://net-internals/#hsts，把对应的域名从HSTS中删除，如下图：
+image.png
+
+方案三
+Chrome地址栏输入：chrome://flags/#allow-insecure-localhost
+允许无效证书选项：
+image.png
+
+方案四（windows系统）
+1.  找到你的Chrome快捷方式.
+2.  右键图标,选择属性
+3.  找到”目标”文本框,里面的内容是你的Chrome程序路径,类似这样C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe
+4.  在这段文本的后面输入一个空格,然后输入-ignore-certificate-errors
+5.  修改后的文本应该类似于这样:C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe -ignore-certificate-errors
+6.  点击确定
+7.  重新打开你的Chrome浏览器
+方案五（mac系统）
+打开 /etc/chromium.d/default-flags 编辑，添加一行：
+Disable HTTPS Error Report
+export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --ignore-certificate-errors --test-type"
+其中 --ignore-certificate-errors 是重点，跳过不信任 Error。不加 --test-type 打开浏览器会有警告，加上之后就没事儿了。
+
+https://segmentfault.com/a/1190000021843971

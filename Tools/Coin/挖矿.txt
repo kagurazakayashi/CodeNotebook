@@ -1,0 +1,42 @@
+# 哈鱼
+nohup nice -19 xmrig/xmrig -o et.poolhf.com:8190 -u ph_r19+FVCAQExwfBo= -p @@yse -k --coin=ETH &
+nohup nice -19 xmrig/xmrig -o cn.poolhf.com:19891 -u ph_r19+FVCAQExwfBo= -p @@yse -k --coin=XMR &   # 可用
+nohup nice -19 xmrig/xmrig -o eq.poolhf.com:18290 -u ph_r19+FVCAQExwfBo= -p @@yse -k --coin=ZEC &
+# 鱼池 XMR
+nohup nice -19 xmrig/xmrig -o xmr.f2pool.com:13531 -u 42MC9YEBhqweUQ8XoZcrJiTZxskqyZZbacSPUxQYZLXR1iy6N5QS2M42YR7Nc9j1h212jJP8a8DViBaSKkDhWxGq9ijZsdA.m9f6gq6d12jv8wj -p x -k &
+
+# https://xmrig.com/wizard
+
+./xmrig --donate-level 1 -o xmr.f2pool.com:13531 -u 42MC9YEBhqweUQ8XoZcrJiTZxskqyZZbacSPUxQYZLXR1iy6N5QS2M42YR7Nc9j1h212jJP8a8DViBaSKkDhWxGq9ijZsdA.m9f6gq6d12jv8wj -p x -k --coin monero
+
+./xmrig -c config.json
+
+{
+    "autosave": true,
+    "donate-level": 1,
+    "cpu": {
+        "enabled": true,
+        "priority": 0
+    },
+    "randomx": {
+        "1gb-pages": true
+    }
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "coin": "monero",
+            "algo": null,
+            "url": "xmr.f2pool.com:13531",
+            "user": "42MC9YEBhqweUQ8XoZcrJiTZxskqyZZbacSPUxQYZLXR1iy6N5QS2M42YR7Nc9j1h212jJP8a8DViBaSKkDhWxGq9ijZsdA.yashipublic1",
+            "pass": "x",
+            "tls": false,
+            "keepalive": true,
+            "nicehash": false
+        }
+    ],
+    "background": true,
+    "colors": false,
+    "syslog": false,
+    "log-file": "l.log"
+}

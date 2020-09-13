@@ -21,6 +21,6 @@ cp /i/glibc-build/math/libm.so.6 ~/monero
 ./monerod
 
 # 挖矿
-xmrig.exe -o xmr.f2pool.com:13531 -u wallet_address.m9f6gq6d12jv8wj -p x -k
+nohup nice -19 xmrig/xmrig -o xmr.f2pool.com:13531 -u 42MC9YEBhqweUQ8XoZcrJiTZxskqyZZbacSPUxQYZLXR1iy6N5QS2M42YR7Nc9j1h212jJP8a8DViBaSKkDhWxGq9ijZsdA.yashipublic1 -p x -k &
 # https://f2pool.io/mining/guides/how-to-mine-monero/
 # http://www.bit-king.net/h-nd-53.html
