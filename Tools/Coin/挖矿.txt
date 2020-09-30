@@ -18,9 +18,6 @@ nohup nice -19 xmrig/xmrig -o xmr.f2pool.com:13531 -u 42MC9YEBhqweUQ8XoZcrJiTZxs
         "enabled": true,
         "priority": 0
     },
-    "randomx": {
-        "1gb-pages": true
-    }
     "opencl": false,
     "cuda": false,
     "pools": [

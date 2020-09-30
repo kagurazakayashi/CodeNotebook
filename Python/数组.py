@@ -28,7 +28,14 @@ book.pop(0) #删除指定位置的内容，0-x
 # 数组长度
 len(book)
 
+# 数组最后一位
+print(book[-1])
+
 # 遍历：
+# 遍历数组
+for item in book:
+    print(item)
+# 遍历字典
 for key in book.keys():
     print(key)
 for value in book.values():
