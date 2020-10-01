@@ -59,6 +59,8 @@ pwd
 # ..  # 表示上层目录
 # 不带任何参数 cd ：回到用户主目录（等同于 cd ~ ）
 # root 用户的主目录是 /root （root 用户登录系统以后，默认进入 /root 目录）
+# 进入某个用户的主目录
+cd ~yashi
 
 # 建立子目录
 mkdir
@@ -83,7 +85,18 @@ ls
 ls -l # long 长格式 显示文件详细信息
 # 权限 0 用户名 主名 大小 时间
 # drwxr-xr-x 12 yashi  staff   384  9 12 21:37 meow
+# 更多 -> ls.sh
 
 # 类型 用户权限 组权限 其他用户权限
 #  d    rwx    r-x      r-x
 # d 文件夹,  - 文件,  r 可读,  w 可写,  x 可运行
+
+# 查看命令历史记录
+history
+
+# 关机
+halt
+shutdown -h now
+# 重启
+reboot
+shutdown -r now
