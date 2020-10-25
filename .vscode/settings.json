@@ -14,5 +14,6 @@
         "statusBarItem.hoverBackground": "#9453af",
         "statusBar.foreground": "#e7e7e7"
     },
-    "peacock.color": "#77428D"
+    "peacock.color": "#77428D",
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }
