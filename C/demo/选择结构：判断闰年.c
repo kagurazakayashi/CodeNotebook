@@ -15,8 +15,8 @@ int main()
     printf("Please input the year:\n");
     scanf("%d", &year);
     if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-        printf("year %d is YES", year);
+        printf("%d 是闰年", year);
     else
-        printf("year %d is NO", year);
+        printf("%d 不是闰年", year);
     return 0;
 }
