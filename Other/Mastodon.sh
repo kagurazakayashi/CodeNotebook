@@ -86,9 +86,6 @@ systemctl status mastodon-streaming.service -l
 # mastodon uninitialized constant ActiveRecordQueryTrace
 bundle install --deployment --with development
 
-
-
-
 # 修复权限
 chown -R mastodon:mastodon /home/mastodon/live
 chmod -R 755 /home/mastodon/live
@@ -183,7 +180,8 @@ bin/tootctl cache clear
 # 配置文件
 vim /home/mastodon/live/.env.production
 # 备份
-pg_dump -h 127.0.0.1 -U mastodon -Fc mastodon -f backup.dump
+/www/server/pgsql/bin/pg_dump -h 127.0.0.1 -U mastodon -Fc mastodon -f backup.dump
+/www/server/pgsql/bin/pg_dump -h 127.0.0.1 -U mastodon --coluwn-inserts -f mastodon.sql mastodon
 # 还原
 docker exec -it  mastodon_db_1 /bin/bash
 su - postgres
@@ -193,3 +191,6 @@ psql
     GRANT ALL PRIVILEGES ON DATABASE mastodon_production TO mastodon;
 \q
 pg_restore -U mastodon -n public --no-owner --role=mastodon -d mastodon_production backup.dump
+
+# 在数据库直接更改主题
+UPDATE `mastodon`.`settings` SET value = 'mastodon-light' WHERE id=9;

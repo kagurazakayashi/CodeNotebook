@@ -1,0 +1,15 @@
+p {
+    text-indent: 2em;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*
+
+text-indent
+2em定义了文本缩进2em，em是相对长度单位，在这里你设置的字体大小有多大(px)，1em就是多大。
+
+padding:0px margin:0px
+正常情况下两段落之间会有一个空白的行，加入之后两段之间就不会有空行了。
+
+*/

@@ -1,0 +1,2602 @@
+Linux介绍
+在PC机上运行的类似UNIX的操作系统。
+多任务和多用户操作系统。
+Linux内核和大多数应用程序在Internet上免费提供。
+最初的内核由芬兰赫尔辛基大学的Linus Torvalds于1991年创建。
+支持命令行和图形用户接口。
+
+安装Linux
+使用Linux安装光盘启动计算机。
+选择在安装过程中使用的语言。
+选择键盘类型和鼠标类型。
+设置磁盘分区。
+选择安装软件包组件。
+配置显示器和定制图形化配置。
+
+磁盘名称
+IDE接口硬盘和SCSI接口硬盘。
+IDE0的主盘称为/dev/hda。
+IDE0的从盘称为/dev/hdb。
+SCSI0的主盘称为/dev/sda。
+SCSI0的从盘称为/dev/sdb。
+IDE0的主盘的第一个主分区称为/dev/hda1。
+IDE0的主盘的第一个逻辑分区称为/dev/hda5。
+
+磁盘分区
+安装Linux至少需要两个分区。
+交换分区 用于实现虚拟存储器。文件系统类型是swap。
+根(/)分区 用于存储系统文件和用户文件。文件系统是ext3。
+
+多重引导
+可以把Linux和其他操作系统(Windows)安装在同一个磁盘上。
+多重引导加载程序允许用户选择启动的操作系统。
+Linux可以使用的多重引导程序是LILO和GRUB。
+LILO是LInux LOader(Linux加载器)。
+GRUB是GRand Unified Bootloader。
+
+linux的结构
+内核 管理计算机系统的所有资源。
+Shell 提供用户和内核之间的接口。
+X Window 为用户提供图形化的操作接口。
+应用程序 完成特定功能的软件。
+
+Shell
+是一种命令解释器，面向命令行接口。
+可以用于Linux的Shell有多种。
+常用的Shell有Bourne Shell(bsh), C Shell(csh)和Korn Shell(ksh)。
+Bourne Shell由Steven Bourne编写，是UNIX的缺省Shell。
+Bourne Again Shell(bash)是Linux的缺省Shell。
+
+bash
+是大多数Linux系统的缺省Shell。
+bash的特点：
+补全命令行 输入部分命令或者程序名称，按Tab键，bash补全名称。
+通配符 *表示多个任意字符，?表示一个任意字符。
+历史命令 输入的命令被保存在历史命令缓冲区中，缓冲区的大小由HISTSIZE变量控制。
+别名 使用alias和unalias命令设置和清除别名。
+输入/输出重定向 改变输入源和输出目的。
+
+登录系统
+根用户的名字是root。
+在login:后面输入用户名。
+在password:后面输入密码。
+
+关闭系统
+使用halt或shutdown -h now命令立即关闭系统。
+使用reboot或shutdown -r now命令重新启动系统。
+
+Shell命令
+每一个命令可以是以下三种情况：
+Shell可以识别的命令
+可执行程序的名称
+Shell命令脚本文件
+
+注意：命令区分大小写。
+Shell命令分为内部命令和外部命令。
+执行内部命令的代码是Shell的一部分。
+执行外部命令的代码在可执行文件或Shell脚本文件中。
+
+按下Ctrl-C停止执行命令。
+
+输入长命令可以用反斜线分割为多行。
+如：
+$ cp -i \
+mydata \
+newdata
+
+在一个命令行中执行多个命令，用分号；分隔命令。
+举例
+# date; who
+先执行date命令，再执行who命令。
+
+按下制表符Tab完成命令字。
+
+
+获取帮助信息
+man命令
+man <command>显示指定命令的使用手册。
+
+使用手册页的组织格式
+组成段      说明
+Name        命令的名称及简单说明
+Synopsis    如何使用这个命令及命令行参数
+Description 对这个程序命令及其参数的解释
+Files       这个命令用到的文件清单和它们存放的位置
+See Also    有相互联系的使用手册页的清单
+Diagnostics 特殊输出情况的说明
+Bugs        编程漏洞
+Author      程序的主要编写者和其他维护人员
+
+
+--help选项
+<command> --help显示指定命令的帮助信息。
+
+whatis命令
+whatis <command>显示指定命令的简要信息。
+
+whoami命令
+显示当前登录的用户名。
+
+hostname命令
+显示当前主机名称。
+
+who命令
+显示当前系统所有登录用户。
+
+uname命令
+显示当前UNIX操作系统的名字。
+
+uptime命令
+显示当前系统启动时间和统计信息。
+
+date命令
+data命令显示当前系统日期和时间。
+date -d mm/dd/yyyy设置日期。
+date -s hh:mm:ss设置时间。
+
+cal命令
+cal [[month] year]显示指定年月的日历。
+不带参数显示当月日历。
+cal -3显示上个月，当月和下个月的日历。
+
+pwd命令
+显示当前工作目录
+
+cd命令
+改变当前工作路径。
+不带任何参数改变当前目录为用户主目录。
+
+mkdir命令
+建立子目录。
+
+rmdir命令
+删除一个空子目录。
+
+ls命令
+显示当前目录中文件列表。
+
+-l选项
+长格式打印每个文件的信息。
+第一个字符表示文件类型。
+-表示普通文件，d表示目录，c表示字符特别文件，
+b表示块特别文件，p表示先进先出(管道)文件。
+所有者权限，同组用户权限，其它用户权限。
+r表示可读，w表示可写，x表示可执行，-表示没有权限。
+联结数。
+文件所有者。
+组名。
+文件长度，以字节为单位。
+修改日期。
+文件名。
+
+-t选项
+按照文件修改日期排列文件。
+
+-d选项
+显示目录信息。
+
+-a选项
+显示名字以“.”开始的文件。
+
+cat命令
+显示指定文本文件内容。
+连接指定文本文件。
+
+more命令
+分屏显示指定文本文件内容。
+
+tail命令
+tail -n <number> <filename>
+显示指定文本文件的结尾部分。
+
+clear命令
+清除当前终端显示内容。
+
+wc命令
+显示文本文件的行数，字数和字符数。
+
+
+alias命令
+为命令起别名。
+$ alias list=ls
+$ ls
+mydata today
+$ list
+mydata today
+$
+
+带有可选项的命令放在单引号之间。
+$ alias lss='ls -s'
+$ lss
+mydata 14   today  6   reports  1
+$ alias lsa='ls -F'
+$ lsa
+mydata today reports/
+$
+
+echo命令
+显示指定信息。
+
+
+环境变量(Environment Variable)
+为Shell和其他应用程序提供配置信息。
+bash Shell缺省的全局系统环境变量存储在文件/etc/profile中。
+用户定义的环境变量存储在主目录的文件.bashrc中。
+使用printenv命令或者set命令显示当前的环境变量。
+SHELL 当前Shell名称
+PATH 当前执行外部命令的搜索路径。
+HOME 当前用户的主目录。
+
+输入的命令将会保存在历史列表中。按上箭头和下箭头键可以在选择历史命令。
+
+history命令
+显示在历史列表中的命令。
+$ history
+1 cp mydata today
+2 vi mydata
+3 mv mydata reports
+4 cd reports
+5 ls
+
+!命令
+执行指定历史命令，可以输入历史列表序号或者命令的起始字符。
+$ !3
+mv mydata reports
+$ !mv
+mv mydata reports
+
+
+系统变量HISTSIZE存储历史命令列表的长度。
+系统变量HISTFILE指定存储历史命令的文件名。
+历史列表文件的缺省文件名是.bash_history。
+
+
+编辑器
+能够用在Linux操作系统的文本编辑器超过了100种。
+
+vi(Visual)
+linux中最常用的文本编辑器。
+
+两种模式
+命令模式(Command Mode)，输入控制命令。
+插入模式(Insert Mode)，编辑文件。
+
+启动vi时，进入命令模式。
+在插入模式时，按Esc进入命令模式。
+输入插入命令，进入插入模式。
+
+启动vi，vi [filename]
+
+重要的插入模式命令
+a 从光标后面开始输入文本。
+A 从光标的行后面开始输入文本。
+i 从光标前面开始输入文本。
+I 从光标的行前面开始输入文本。
+o 在光标的行后面插入一行。
+O 在光标的行前面插入一行。
+
+
+重要的命令模式命令
+:help 帮助
+:q 退出vi
+:w <filename> 存盘
+:w! <filename> 存盘，覆盖指定文件
+:wq 存盘退出
+:q! 不存盘退出
+:! <command> 执行Shell命令
+:r <filename> 读和插入指定文件内容到当前光标位置
+
+d 删除字(word)，行(line)
+u 撤销最后的编辑操作
+p 在当前行后粘贴已复制或删除的行
+P 在当前行前粘贴已复制或删除的行
+
+命令的格式
+一般命令的按键语法如下
+[#1]operation[#2]target
+
+#1是可选的数字，指定操作的次数
+operation指定操作
+#2是可选的数字，指定操作影响的目标的数目
+target指定操作的目标
+
+如果当前行是操作的目标，目标的语法和操作的语法相同。
+
+命令举例
+5dw 删除5个字(word)，从当前光标位置开始
+7dd 删除7行，从当前行开始
+d7,14 删除从第7行到第14行
+1G 把光标移动到文件的第一行
+10yy 复制10行到临时缓冲中，从当前行开始
+
+查找和替换
+使用替换(substitute)命令完成操作。
+
+替换命令的格式
+:[range]s/old_string/new_string[/option]
+
+range 指定搜索范围，如果忽略，那么指定当前行
+s 指定替换命令
+/ 搜索定界符
+old_string 将要被替换的文本
+/ 替换定界符
+new_string 替换后的新文本
+/option 修饰符，g表示全部(global)
+
+替换命令举例
+:s/john/jane/ 把john替换为jane，在当前行中，替换一次
+:s/john/jane/g 把john替换为jane，在当前行中，全部替换
+:1,10s/john/jane/g 把john替换为jane，在1行到10行中，全部替换
+:1,$s/john/jane/g 把john替换为jane，在整个文件中，全部替换
+
+设置vi环境
+使用set命令设置vi工作环境。
+
+选项		缩写	功能
+autoindent	ai	自动缩近
+ignorecase	ic	忽略大小写
+number		nu	行号
+showmode	smd	显示模式
+warpmargin	wm	换行边界
+
+设置环境只对当前会话有效。
+可以把环境设置保存在用户主目录的.exrc文件中。
+$ cat .exrc
+set wm=5 shm nu ic
+$
+
+
+emacs
+Editor Macros(编辑器宏命令)，最初主要是用来编辑宏命令的。
+这个程序最早的开发者是Richard Stallman。
+自由软件基金会(Free Software Foundation, FSF的创始人。
+
+编辑文本
+阅读Usenet新闻
+个人日历和日记功能
+发送电子邮件
+程序语言解释器
+游戏
+一种Linux操作系统的Shell。
+
+emacs教程
+按Ctrl-H帮助,在命令行的提示符后输入t。
+
+启动emacs,emacs [-nw] [finename]
+退出emacs, Ctrl-X, Ctrl-C
+保存文件，Ctrl-X, Ctrl-S
+保存文件，Ctrl-X, Ctrl-W
+打开文件，Ctrl-X, Ctrl-R
+插入文件，Ctrl-X, Ctrl-I
+撤销操作，Ctrl-X,U
+
+键盘宏(Keyboard Macros)命令
+定义键盘按键的集合或者序列。
+
+开始宏定义，Ctrl-X,(
+结束宏定义，Ctrl-X,)
+执行最近定义的键盘宏，Ctrl-X,E
+
+复制和粘贴
+定义块，Ctrl-@
+复制选定区域，Esc-W
+粘贴文本，Ctrl-Y
+
+替换
+无条件替换字符串，Esc-X,replace-string
+交互替换字符串，Esc-X,query-replace
+按Y或空格，替换文本
+按N或Delete，不替换文本。
+按Enter，不进行替换，退出替换。
+按.，替换当前词，退出替换。
+
+
+使用不同的Shell
+可以使用多种Shell，每一种都有各自的特点。
+可用的Shell注册在文件/etc/shells中。
+使用命令more /etc/shells查看可用的Shell。
+输入Shell的名称，可以改变当前的Shell。
+输入命令exit，返回以前的Shell。
+
+
+管理用户和组
+多个用户可以访问系统，他们可以属于多个组。
+不同的用户和组在系统中具有不同的权限。
+根用户root具有不受限制的最大权限。
+
+查看系统的用户
+可以在文件/etc/passwd中查看系统的用户。
+内容一般是如下形式：
+<username>:<password>:<userid>:<groupid>:<fullname>:<homedirectory>:<shell>
+<username> 用于登录系统的用户名。
+<password> 用于登录系统的密码。加密的密码存放于文件etc/shadow中。
+<userid> 用户ID。
+<groupid> 用户组ID。
+<fullname> 用户的全名。
+<homedirectory> 用户的主目录。
+<shell> 用户登录后的Shell。
+
+可以在文件/etc/group中，查看系统的组。
+内容一般是如下形式：
+<groupname>:<password>:<groupid>:<userlist>
+<groupname> 组的名称。
+<password> 组的密码，通常没有密码。
+<groupid> 组ID。
+<userlist> 用户列表，用逗号分隔。
+
+增加用户
+使用命令useradd向系统加入新用户。
+
+输入以下命令增加新用户user01
+# useradd user01
+这个命令完成以下操作：
+在/etc/passwd文件中建立没有密码的用户项目。
+为用户指定用户ID。缺省的ID大于或等于100或500，并大于其它所有用户ID。
+把用户加入相应的组中。缺省建立与用户名相同的组。
+建立用户的主目录，并把/etc/skel的内容复制到目录中。
+
+useradd命令的选项
+-u 指定新用户的ID。
+-g 指定新用户的组。
+-d 指定新用户的主目录。
+
+# useradd -u 10001 user01
+# useradd -g users user01
+# useradd -d /other/home/directory user01
+
+改变useradd命令的缺省设置
+使用-D选项改变useradd命令的缺省设置。
+使用-b选项改变主目录缺省路径。
+使用-g选项改变缺省的组。
+
+# useradd -D -b /users
+# useradd -D -g users
+# useradd -D -b /users -g users
+
+设定新用户的密码
+多数系统要求指定密码的用户可以登录。
+使用passwd命令设置指定用户的新密码。
+# passwd user01
+不指定用户名，将设置当前用户的新密码。
+# passwd
+
+删除用户
+使用命令userdel命令删除用户。
+userdel [-r] <username>
+选项-r删除用户的主目录。
+
+建立组
+使用groupadd命令建立新组。
+# groupadd group01
+建立新组group01,缺省组ID大于500和其它组ID。
+# groupadd -g 503 group01
+选项-g指定组号。
+
+删除组
+使用groupdel命令删除组。
+# groupdel group01
+删除组group01。
+属于组的文件不会被删除，也不会改变文件所属的组。
+如果是用户的基本组，这个组无法被删除。
+
+把用户加入组
+没有标准程序可以方便地把用户加入组中。
+编辑/etc/group文件，把用户名加入到组的成员列表中。
+
+
+更改用户文件的权限
+使用命令chmod更改文件的权限。
+chmod {a,u,g,o} {+,-} {r,w,x} <filename>
+
+{a,u,g,o}
+a 表示所有用户
+u 表示当前用户
+g 表示同组用户
+o 用户组以外的其他用户
+
+{+,-}
++ 添加访问权
+- 去掉访问权
+
+{r,w,x}
+r 表示可读。
+w 表示可写。
+x 表示可执行。
+
+<filename>
+表示指定的文件名。
+
+chmod <code> <filename>
+<code> 指定访问权限的代码。
+可以使用3个整数组成的代码，对应3组权限。
+每一位具有权限就取1，不具有权限就取0。
+
+举例：
+代码755，表示111 101 101
+对应权限 rwx r-x r-x
+
+chown命令
+改变文件所有者
+chown <owner>[:<group>] <filename>
+
+chgrp命令
+改变文件属于的组。
+chgrp <group> <filename>
+
+usermod命令
+改变用户属性。
+usermod [option] <username>
+
+su命令
+转换用户身份，用不同的用户和组运行Shell。
+su [<user>]
+使用exit命令返回到注册用户的Shell。
+
+文件系统
+
+文件概念
+所有系统资源具有一致的视图。
+系统资源包括：网络接口卡，磁盘驱动器，键盘，打印机，普通文件，目录等。
+所有的输入设备和输出设备被认为是文件。
+一个文件是一个字节的序列。
+
+文件类型
+简单/普通文件 simple/ordinary file
+目录 directory
+符号链接 symbolic (soft) link
+特殊文件 special file (device)
+命名管道 named pipe (FIFO)
+
+简单/普通文件 simple/ordinary file
+在辅助存储器上存储信息和数据。
+操作系统认为所有的文件是没有格式的字节序列。
+应用程序负责处理文件的格式。
+
+目录 directory
+包含其它文件和目录的名字。
+目录文件由目录项的序列组成。
+
+符号链接 symbolic (soft) link
+链接文件可以用于实现文件共享。
+系统为已存在文件创建符号链接时创建链接文件。
+
+特殊文件 special file (device)
+是系统访问硬件设备的一种方式。
+每一个硬件设备和至少一个特殊文件相关联。
+命令和应用程序通过访问特殊文件而访问硬件设备。
+特殊文件分为两种：字符特殊文件和块特殊文件。
+字符特殊文件关联字符设备，如键盘。
+块特殊文件关联块设备，如磁盘。
+
+命名管道 named pipe (FIFO)
+管道可以用于进程间通信(interprocess communiction, IPC)。
+管道是内核存储器中的区域，允许两个文件互相通信。
+在不同的计算机上的两个进程之间的通信，可以使用套接字(socket)。
+
+文件系统组织
+所有文件组织为树形层次结构。
+文件系统结构从一个主目录开始，即根目录(root directory)。
+
+主目录和当前工作目录
+用户登录后进入一个特定的目录，称为用户的主目录(home/login directory)。
+当时所在的目录称为当前工作目录(present working directory)。
+当前工作目录可以表示为.。
+当前工作目录的上级目录可以表示为..。
+
+绝对路径和相对路径
+从一个目录到另一个目录或者文件的相对位置称为路径(path)。
+可以使用三种方式指定路径：
+从根目录开始，称为绝对路径。
+从当前工作目录开始，称为相对路径。
+从用户的主目录开始，称为相对路径。
+
+标准目录
+根目录(/)
+树形文件系统的顶级目录，包含其他所有的目录和文件。
+
+/bin
+binary，包含大多数命令二进制(可执行)映像。
+这些命令包括cat, csh, date, ls, more, vi等。
+所有文件是可执行文件或者是可执行文件的符号链接。
+这个目录常常是/usr/bin目录的符号链接。
+
+/dev
+device，包含对应于连接到计算机的设备的文件。
+这些设备包括终端，磁盘驱动器，CD-ROM驱动器，打印机等。
+
+/etc
+包含系统管理员的命令和文件，系统配置文件。
+这些文件包括group, passwd, shells等。
+
+/lib
+libary，包含一些档案(archive)文件。
+一个档案文件包含了一种语言的相关文件的集合。
+典型的系统包含了C, C++和FORTRAN的库。
+一些库也存储在目录/usr/lib中，/lib中包含了所有必要的库。
+这个目录常常是/usr/lib的符号链接。
+
+/lost+found
+包含所有的没有连接到任何目录的文件。
+这些文件是系统工具fsck(file system check)发现的。
+系统管理员决定如何处理这些文件。
+
+/tmp
+temporary，包含一些命令和应用程序使用的临时文件。
+这些文件的生存期由系统管理员决定，而且和系统相关。
+这些文件常常存在几分钟。
+
+/home
+保存用户的主目录。
+可以把所有用户组织为一个新的树形目录结构。
+
+/usr
+包含一些子目录。
+这些子目录包含系统的工具，语言库，手册页等。
+两个最重要的子目录是bin和lib，他们分别包含了大部分系统命令和语言库。
+
+/var
+系统登录记录，spool队列子目录及经过压缩的使用手册页等。
+
+
+一个典型的Linux文件系统结构
+/-—根目录
+|
+|-- bin —被认为是必须具有的程序
+|-- boot —Linux的开机启动映像
+|-- dev —设备，如串行口，打印机及硬盘驱动器等等
+|-- etc—网络，X11，电子邮件等等的配置文件
+|-- home —各类用户“生活”的地方(包括作为一个用户的根操作员)
+|-- lib —各种软件库，内核模块
+|-- lost+found —(使用e2fsck命令)恢复的文件
+|-- mnt --挂装(mount)其他文件系统的地方
+|    |-- cdrom(CD-ROM光盘)
+|    |-- dos(DOS文件系统)
+|    |-- flash(闪存)
+|    |-- floppy(软盘驱动器)
+|    |-- zip(zip软盘驱动器)
+|-- opt —选装软件(比如Applix，KDE桌面环境，Netscape或者WordPerfect等)
+|-- proc —内核，设备，进程状态文件
+|-- root —系统管理员工作的地方
+|-- sbin —系统二进制文件(大多数只允许根操作员使用)
+|-- tmp—在这儿保存或者删除各种临时文件
+|-- usr—存放有许许多多的软件、各种库等等的地方
+|    |-- X11R6 —X窗口系统软件
+|    |-- bin —更多的软件
+|    |-- dict —各种字典
+|    |-- doc —常见问题答疑，HOWTO及软件文档等帮助性文件
+|    |-- etc —软件的配置文件
+|    |-- game —娱乐游戏软件
+|    |-- i386-linux —Linux的开发工具程序
+|    |-- include —编制程序的时候使用的头文件
+|    |-- info —关于GNU的信息资料
+|    |-- lib —更多的软件库文件
+|    |-- libexec —sendmail程序及news程序的配置文件
+|    |-- local —本地开发的程序
+|    |    |-- bin
+|    |    |-- doc
+|    |    |-- etc
+|    |    |-- games
+|    |    |-- info
+|    |    |-- lib
+|    |    |-- man
+|    |    |-- sbin
+|    |    |-- src —本地开发的程序源代码
+|    |-- man —使用手册页
+|    |    |-- man1 . . 9n
+|    |-- sbin
+|    |-- share
+|    |-- src —Linux内核的源代码
+|    |    |-- linux --> Linux - 2.0.35
+|    |    |-- linux -- 2.0.35
+|    |-- tmp --> ../var/tmp
+|-- var --系统登录记录，spool队列子目录及经过压缩的使用手册页等
+
+
+file命令
+测试文件的内容，确定文件的类型。
+file <filename>
+
+复制和删除文件
+
+复制文件
+cp命令
+cp [<option>] <source> <destination>
+把<source>文件复制到<destination>位置。
+
+举例
+# cp ThisFile ThisFile-Acopy
+把当前目录中名字是ThisFile的文件复制到同一目录并命名为ThisFile-Acopy。
+
+# cp ThisFile /tmp
+把文件ThisFile复制到目录/tmp中，文件名不变。
+
+# cp ThisFile /tmp/ThisFile-Acopy
+把文件ThisFile复制到目录/tmp中，文件名为ThisFile-Acopy。
+
+# cp -i ThisFile NewFile
+在复制文件重名时提示是否覆盖文件。
+
+# cp FileOne FileTwo FileThree /tmp
+复制三个文件到目录/tmp中。
+
+# cp *.txt *.doc *.bak /tmp
+复制三种文件到目录/tmp中。
+
+# cp -R SomDir /tmp
+把SomeDir目录和所有子目录及文件复制到目录/tmp中。
+
+增强的复制功能
+复制的新文件和被复制文件的属性会有些不同。
+新文件的所有权属于复制者，不属于原文件的所有者。
+新文件的权限被设置为目的目录的缺省权限。
+为了尽量使新文件保留原文件的属性，可以使用-p选项。
+# cp -p /tmp/TheFile ~/NewFile
+
+删除文件
+rm命令
+rm [option] <filename>
+删除指定文件。
+
+举例
+# rm ThisFile
+删除当前目录中名称为ThisFile的文件。
+
+# rm *.txt
+删除当前目录中名称以.txt结尾的文件。
+
+# rm ThisFile *.txt
+同时删除多个文件。
+
+# rm -i thesis.doc
+删除文件thesis时进行提示。
+
+# rm -r ThisDir
+删除目录ThisDir。
+
+# rm -rf ThisDir
+选项-f强制删除目录，不进行提示。
+
+移动和更名文件
+mv命令
+mv <source> <destination>
+把文件source移动到destination位置上。
+
+# mv FileOne /tmp
+把文件FileOne移动到目录/tmp中。
+
+# mv FileOne /tmp/NewFileName
+把文件FileOne移动到目录/tmp中，并改名为NewFileName。
+
+# mv FileOne NewFileName
+把文件FileOne的名称改变为NewFileName。
+
+# mv *.bak *.tmp *.old /tmp
+把多种文件移动到目录/tmp中。
+
+# mv TheDir/ /tmp
+把目录TheDir移动到/tmp目录中。
+
+
+touch命令
+改变文件的时间标志，不改变文件的内容。
+缺省使用当前时间作为新的时间标志。
+如果文件不存在，建立长度为0的文件。
+touch <filename>
+
+
+建立目录和删除目录
+mkdir命令和rmdir命令
+
+硬链接(hard links)和符号链接(symbolic links)
+硬链接直接链接两个同时保存在相同的文件系统上的文件。
+符号链接用来在扩展到不同的文件系统上的子目录或者文件之间建立链接。
+
+硬链接可以一个文件建立多个名字。
+只有一个物理文件存在。
+可以通过任何一个硬链接访问文件。
+要删除文件，必须删除所有的硬链接。
+不可以建立目录的硬链接。
+# ln <original-file-name> <added-file-name>
+
+举例：
+建立文件monday的硬链接storm。
+# ls
+monday
+# ln monday storm
+# ls
+monday storm
+#
+
+删除文件today后，仍然可以使用硬链接weather访问文件。
+# ln today weather
+# rm today
+# cat weather
+The storm broke today
+and the sun came out.
+#
+
+符号链接建立到另一个文件的链接。
+要删除文件，只需要删除这个文件的所有硬链接。
+已经删除的原始文件的符号链接不可以访问文件。
+# ln -s <original-file-name> <added-file-name>
+
+举例：
+建立文件today的符号链接weather。
+# ls
+today
+# ln -s today weather
+# ls
+today weather
+
+建立目录的符号链接
+# ln -s /usr/local/games play
+# ls -l play
+lrwxrwxrwx 1 bball users 16 Jan 5 14:12 play -> /usr/local/games
+现在，不必键入一个向下面那么长的命令：
+# cd /usr/local/games
+而只需要使用：
+# cd play
+命令就可以进入子目录/usr/local/games了。
+
+
+more命令
+连接或显示文件到标准输出，每次输出一页。
+more [options] [file-list]
++/str 从包含字符串str的前两行开始。
+-n 每页显示n行。
++n 从第n行开始输出。
+
+more命令中使用的命令
+space 阅读下一页
+enter 阅读下一行
+B 阅读上一页
+H 帮助
+! 执行其它命令
+
+less命令
+功能和more命令相同，分页显示文件。
+less命令提供更多的功能：
+使用光标键在文本文件中前后滚屏。
+用行号或百分比作为书签来浏览文件。
+实现在多个文件中进行复杂的检索，格式匹配，高亮度显示等操作。
+键盘操作与字处理程序如emacs兼容。
+阅读到文件结束或者标准输入结束的时候less命令不会退出。
+屏幕底部的信息提示更容易控制使用，而且提供了更多的信息。
+带有许多的附件，包括一个独立的键定义程序lesskey，这样就可以定义使用哪些按键来控
+制less命令.
+
+head命令
+显示文件的起始内容。
+head -n <number> <filename>
+显示文件的前number行。
+
+tail命令
+显示文件的结尾内容。
+tail -n <number> <filename>
+显示文件的最后number行。
+
+find命令
+按照指定信息，对指定目录进行文件搜索。
+find <pathname> <options> [-print -exec -ok]
+<pathname> 开始搜索文件的路径
+
+<options>
+-name 指定文件名
+-perm 按照文件权限查找文件
+-user 按照文件属主查找文件
+-group 按照文件所属的组查找文件
+-mtime -n +n 按照文件的更改时间查找文件
+   -n 表示文件更改时间距现在n天以内
+   +n 表示文件更改时间距现在n天以前
+-atime和-ctime选项，和-mtime选项相似
+-nogroup 查找无有效所属组的文件，即该文件所属的组在/etc/group中不存在
+-nouser 查找无有效属主的文件，即该文件的属主在/etc/passwd中不存在
+-newer file1 ! file2 查找更改时间比文件file1新但比文件file2旧的文件
+-type 查找某一类型的文件：
+   b - 块设备文件
+   d - 目录
+   c - 字符设备文件
+   p - 管道文件
+   l - 符号链接文件
+   f - 普通文件
+-size n[c] 查找文件长度为n块的文件，带有c时表示文件长度以字节计
+-depth 在查找文件时，首先查找当前目录中的文件，然后在子目录中查找
+-fstype 查找位于某一类型文件系统中的文件，这些文件系统类型通常可以在配置文件
+/etc/fstab中找到，该配置文件中包含了本系统中有关文件系统的信息
+-mount 在查找文件时不跨越文件系统mount点
+-follow 如果find命令遇到符号链接文件，就跟踪至链接所指向的文件
+-cpio 对匹配的文件使用cpio命令，将这些文件备份到磁带设备中
+
+-print 搜索结果的文件输出到标准输出
+-exec 对搜索结果的文件执行指定的Shell命令，格式为'command' {} \;
+-ok 对搜索结果的文件执行指定的Shell命令，每次提示用户执行
+
+举例
+# find / -name foo -print
+/tmp/foo
+/home/armand/foo
+/home/tdanesh/foo
+
+包含通配符的文件名要使用引号。
+# find / -name 'fo*' -print
+
+查找子目录/usr/bin中最近100天没有使用过的程序
+# find /usr/bin -type f -atime +100 -print
+
+在子目录/usr/bin中查找建立不到1天的新文件或者1天内修改过的文件
+# find /usr/bin -type f -mtime -1 -print
+
+搜索用户ID是503的文件，输出到标准输出，删除这些文件。
+# find / -type f -uid 503 -print -exec rm {} \;
+
+在当前目录下查找文件权限位为755的文件
+# find . -perm 755 -print
+
+在当前目录下查找所有用户都可读,写,执行的文件,在权限位数字前面加-
+# find . -perm -007 -print
+
+在$HOME目录中查找文件属主为dave的文件
+# find ~ -user dave -print
+
+查找属主帐户已经被删除的文件
+# find /home -nouser -print
+
+在系统根目录下查找更改时间在5日以内的文件
+# find / -mtime -5 -print
+
+在/var/adm目录下查找更改时间在3日以前的文件
+# find /var/adm -mtime +3 -print
+
+wheris命令
+迅速找到文件，还可以提供这个文件的二进制可执行文件，源代码文件和使用手册页存放的
+位置。
+whereis [option] <filename>
+
+查找find命令是放在子目录/usr/bin中，使用手册页是放在子目录/usr/man/man1中
+# whereis find
+find：/usr/bin/find /usr/man/man1/find.1.gz
+
+只查找find程序的二进制可执行文件
+# whereis -b find
+find：/usr/bin/find
+
+locate命令
+使用文件名数据库，不搜索文件子目录。
+使用locate命令查找文件比使用find命令快得多。
+locate命令直接检索数据库文件，从中找到匹配的文件名。
+locate <filename>
+
+举例
+查找系统中所有PostScript格式的文件
+# locate *.ps
+
+updatedb命令
+更新文件名数据库，存储在/var/state中数据库文件locatedb。
+updatedb
+
+举例
+更新文件名数据库
+# updatedb
+
+
+cat命令
+concatenate(v. 连接)
+连接一个或多个文件，输出到指定文件。
+没有指定源文件，从标准输入设备输入。
+没有指定目的文件，输出到标准输出设备。
+cat [file-list] > [destination-file]
+
+举例
+把文件text1.txt输出到标准输出设备。
+# cat text1.txt
+
+把文件text1.txt和text2.txt输出到标准输出设备。
+# cat text1.txt text2.txt
+
+从标准输入设备输入，输出到newfile.txt，Ctrl-D结束。
+# cat > newfile.txt
+
+把文件text1.txt和text2.txt输出新文件newfile.txt。
+# cat text1.txt text2.txt > newfile.txt
+
+规则表达式(Regular Expression)
+使用特殊格式的字符串，匹配指定格式的字符串。
+指定格式的字符串可以具有不同的字符组合方式。
+
+常用规则表达式
+表达式		匹配
+---------------------------------------------------
+* 		任意字符
+?或者.		一个字符
+{x}		前导字符x个
+{x,y}		前导字符至少x个，但是不超过y个
+{x,}		前导字符至少x个
+(xxx)|(XXX)	字符串xxx或者XXX
+[xxx]或者[x-x]	在方括号中的字符范围内中的某个字符
+[XYZ]+		X，Y，Z至少一次
+\x		表示特殊字符，$ . ' " * [ ] ^ | 0 \ + ?
+^pattern	一行开头的字符排列形式
+$pattern	一行结尾的字符排列形式
+
+举例
+*.txt
+以.txt结尾。
+
+??R*
+以任意两个字符开头，接着是R，后面跟任何字符。
+
+io*
+以io开头。
+
+[io]*
+以i或o开头。
+
+*2*
+含有数字2。
+
+*[0123456789]*
+含有数字。
+
+*[0-9]*
+含有数字。
+
+[a-zA-Z0-9]
+任意字母和数字
+
+[Cc]omputer
+Computer和computer
+
+[S,s]ystem\.
+System.和system.
+
+[A-Za-z]*
+所有字符串
+
+[^A-Za-z]
+任一个非字母
+
+*\?*
+含有?。
+
+[!0-9]*
+非数字开头。
+
+^comp
+以comp开头。
+
+comp$
+以comp结尾。
+
+^USER$
+只有USER。
+
+\*\.pas
+以*.pas结尾。
+
+A\{2\}B
+A出现2次，并以B结尾，即AAB。
+
+A\{4,\}B
+A至少4次，并以B结尾，可匹配AAAAB或AAAAAB。
+
+A\{2,4\}B
+A出现2次和4次之间，即匹配AAB，AAAB或AAAAB。
+
+[0-9]\{4\}xx[0-9]\{4\}
+数字出现4次，xx,数字出现4次。
+
+[0-9]\{2\}-[0-9]\{2\}-[0-9]\{4\}
+日期格式dd-mm-yyyy
+
+[0-9]\{3\}\.[0-9]\{3\}\.[0-9]\{3\}\.[0-9]\{3\}
+IP地址格式nnn.nnn.nnn.nnn
+
+[^.*$]
+任意行
+
+
+grep命令
+从文件中查找匹配指定模式的文本。
+# grep [option] <text-pattern> <file-list>
+[option]常用的选项有：
+-c 只输出匹配行的计数。
+-i 不区分大小写(只适用于单字符)。
+-h 查询多文件时不显示文件名。
+-l 查询多文件时只输出包含匹配字符的文件名。
+-n 显示匹配行及行号。
+-s 不显示不存在或无匹配文本的错误信息。
+-v 显示不包含匹配文本的所有行。
+<text-pattern> 文本模式，简单的字，短语或规则表达式。
+<file-list> 文件列表。
+
+举例
+在文件file.txt中搜索文本"radio"。
+# grep radio file.txt
+
+在文件file.txt中搜索文本"is a test"。
+# grep "is a test" file.txt
+
+在文件/etc/passwd中搜索文本"louise"
+# grep "louise" /etc/passwd
+
+查找在文件data.f中48出现的次数。
+# grep -c "48" data.f
+4
+
+显示所有不包含48的各行。
+# grep -v "48" data.f
+
+显示包含48的各行的行号。
+# grep -n "48" data.f
+
+查找含有制表符的字符串。
+# grep "48<tab>" data.f
+
+忽略字母大小写。
+# grep -i "sept" data.f
+
+在grep中使用规则表达式
+查找包含483或484的行。
+# grep '48[34]' data.f
+
+查找不是以48开头的行。
+# grep '^[^48]' data.f
+
+
+tar命令
+tape archives, 磁带文档
+最初用于建立磁带备份系统。
+建立新文档，把指定的文件存放于新文档中。
+tar [option] <tar-file-name> <file-list>
+option选项
+c 建立新文档，存储指定文件。
+v 命令以长方式运行，每个文件名在复制到文档时都会显示。
+f 存档到文件而不是磁带机。
+t 浏览文档中存储的文件清单。
+x 取出文档中存储的文件。
+z 建立使用gzip压缩的新文档。
+
+举例
+把当前所有*.txt文件存储到文档text.tar。
+# tar cvf text.tar *.txt
+ab.txt
+pop.txt
+
+把目录vnc存储到文档vnc.tar中，包括所有子目录和文件。
+# tar cvf vnc.tar vnc
+vnc/
+vnc/license.txt
+vnc/readme
+vnc/readme.vncserver
+
+浏览文档vnc.tar中存储的文件。
+# tar tvf vnc.tar
+drwxr-xr-x root/root        0 2001-05-16 23:55 vnc/
+-rw-r--r-- root/root    18000 2001-01-23 16:52 vnc/license.txt
+-rw-r--r-- root/root     6142 2001-01-23 16:53 vnc/readme
+-rw-r--r-- root/root      601 2001-01-23 16:28 vnc/readme.vncserver
+
+把文档中文件取到当前目录
+# tar xvf vnc.tar
+vnc/
+vnc/license.txt
+vnc/readme
+vnc/readme.vncserver
+
+
+gzip命令
+压缩文件以节省磁盘空间，在压缩文件名后加.gz。
+可以和tar命令构成流行的压缩文件格式。
+新软件常常是.tgz或.tar.gz格式的。
+gzip [option] <file-list>
+d 解压缩文件，并去掉文件名后的.gz。
+
+举例
+压缩文件test.pdf，变成文件test.pdf.gz。
+# gzip test.pdf
+
+压缩当前目录中所有文件，不包括子目录中的文件。
+# gzip *
+
+解压缩文件test.pdf.gz。
+# gzip -d test.pdf.gz
+
+解压缩文件test.pdf.gz。
+# gunzip test.pdf.gz
+
+
+重定向(redirection)和管道(pipe)
+每一个程序运行时，至少打开3个文件：
+标准输入(stdin)，缺省指键盘。
+标准输出(stdout)，缺省指显示器。
+标准错误(stderr)，缺省指显示器。
+
+每个打开的文件分配一个编号。
+标准输入(stdin)的编号是0。
+标准输出(stdout)的编号是1。
+标准错误(stderr)的编号是2。
+打开的其它文件分配接下来的有效编号。
+
+Shell重定向语法
+语法       含义
+------------------------------------------------------
+> file     把标准输出写入文件
+>> file    把标准输出追加写入文件
+< file     从文件中输入
+n > file   把数据流号n的输出写入文件
+n >> file  把数据流号n的输出追加写入文件
+n > &m     把数据流号n的输出重定向到数据流号m的文件
+
+举例
+# ls > namelist
+把命令ls显示的文件列表输出到文件namelist中。
+当前目录的文件列表不会显示在显示器上。
+如果没有文件namelist，建立这个文件。
+如果已存在文件namelist，覆盖这个文件。
+
+# ls >> namelist
+如果文件namelist已存在，把ls输出内容追加到这个文件后。
+
+# make >mlist 2>merror
+执行make实用程序，输出写入文件mlist，错误写入文件merror中。
+
+
+管道是把一个命令的标准输出作为另一个命令的标准输入。
+
+举例
+把命令ls的标准输出作为命令grep的标准输入。
+显示目录/bin中包含sh的行。
+# ls -l /bin | grep sh
+
+显示目录/usr/bin中包含to的行，分页显示。
+# ls -l /usr/bin | grep "to" | more
+
+
+Shell脚本(Shell script)
+Shell不但是命令解释器，也可以执行Shell程序。
+在普通文件中存储一组Shell命令，它们可以被Shell执行。
+Shell脚本可以访问Shell变量(Shell variable)。
+
+有三种方法执行Bourne Shell脚本文件。
+为脚本文件设置可执行权限。
+# chmod u+x script_file
+
+指定执行Shell脚本的Shell名称。
+# /bin/bash script_file
+
+在Shell脚本文件中指定执行脚本的Shell。
+#!后面的文本被认为是指定Shell的绝对路径。
+#!/bin/bash
+
+Shell变量和相关的命令
+Shell变量由数字，字母，下划线组成。
+第一个字符是字母或下划线。
+
+Shell环境变量(Shell environment variable)
+设置Shell的执行环境。
+用户登录时，/etc/profile文件执行时，对环境变量初始化。
+用户可以在主目录中的.bash_profile文件中，对环境变量设置不同的值。
+一些变量是只读的，以下变量可以用于向脚本传递参数。
+
+环境变量  意义
+-------------------------------
+$0      程序的名字
+$1-$9   命令行参数1-9的值
+$*      所有命令行参数的值
+$@      与$#相同，但是使用时加引号，并在引号中返回每个参数
+$#      命令行参数的数目
+$$      当前进程的进程ID
+$?      最近执行命令的返回状态
+$!      最近执行后台命令的进程ID
+
+举例
+# cat argdemo
+#!/bin/bash
+echo "the program name is $0."
+echo "the arguments are $@."
+echo "the number of arguments is $#."
+echo "the first three arguments are: $1 $2 $3."
+# /bin/bash argdemo arg01 arg02 arg03
+the program name is argdemo.
+the arguments are arg01 arg02 arg03.
+the number of arguments is 3.
+the first three arguments are: arg01 arg02 arg03.
+
+用户自定义变量(User-defined variable)
+用户可以设置自定义Shell变量。
+
+set命令
+显示当前Shell环境变量。
+env(System V)和printenv(BSD)命令也可以显示环境变量。
+
+设置Shell变量的值
+variable1=value1 [variable2=value2 ...]
+
+举例
+# name=John
+# echo $name
+John
+
+# name="John Doe"
+# echo $name
+John Doe
+# echo "name is $name"
+name is John Doe
+
+命令替换
+如果命令包含在反引号中，Shell执行这个命令。
+
+举例
+# mywork=pwd
+# echo $mywork
+pwd
+# mywork=`pwd`
+# echo $mywork
+/root
+
+清除变量
+使用unset命令清除指定环境变量。
+unset <name-list>
+把环境变量赋值为空值。
+<variable-name>=
+
+检查变量取值
+检查变量是否已经被设置，如果没有设置就取缺省值。
+${variable-name:-default-value}
+
+检查变量是否已经被设置，如果没有设置就设置缺省值。
+${variable-name:=default-value}
+
+举例
+# colour=blue
+# echo "the sky is ${colour:-grey} today"
+the sky is blue today
+# colour=
+# echo "the sky is ${colour:-grey} today"
+the sky is grey today
+# echo $colour
+
+# echo "the sky is ${colour:=grey} today"
+the sky is grey today
+# echo $colour
+grey
+
+设置只读变量
+把变量设置为只读，以后不可以改变变量的值。
+不带有任何选项，显示所有只读变量。
+readonly <variable-name>
+
+举例
+# colour=grey
+# readonly colour
+# echo $colour
+grey
+# colour=blue
+bash: colour: readonly variable
+
+条件测试
+测试数字和字符串的值，文件的类型。
+依据判断的结果执行相应的操作。
+
+测试文件状态
+对文件的类型，权限和长度进行测试。
+test <condition>
+或者
+[ <condition> ]
+使用命令echo $?检查测试返回值。
+返回0表示成功，非0表示不成功。
+
+常用的文件状态
+-d 目录
+-s 文件长度大于0，非空
+-f 正规文件
+-w 可写
+-L 符号连接
+-u 文件有suid位设置
+-r 可读
+-x 可执行
+
+举例
+# ls -l myfile1
+-rw-r--r--    1 root     root         1309  9月 10 18:02 myfile1
+# test -f myfile1
+# echo $?
+0
+# [ -f myfile1 ]
+# echo $?
+0
+# [ -r myfile1 ]
+# echo $?
+0
+# [ -x myfile1 ]
+# echo $?
+1
+
+
+逻辑操作符
+对多个条件进行测试。
+-a 逻辑与，操作符两边均为真，结果为真，否则为假。
+-o 逻辑或，操作符两边一边为真，结果为真，否则为假。
+! 逻辑否，条件为假，结果为真。
+
+举例
+# ls -l myfile1 myfile2
+-rw-r--r--    1 root     root         1309  9月 10 18:02 myfile1
+-rw-r--r--    1 root     root          831  9月 17 17:32 myfile2
+# test -f myfile1 -a -f myfile2
+# echo $?
+0
+# test -f myfile1 -a -d myfile2
+# echo $?
+1
+# test -f myfile1 -o -d myfile2
+# echo $?
+0
+# test ! -d myfile1
+# echo $?
+0
+# test ! -f myfile1
+# echo $?
+1
+
+字符串比较
+= 两个字符串相等。
+!= 两个字符串不等。
+-z 空串。
+-n 非空串。
+
+举例
+# test "abc" = "abc"
+# echo $?
+0
+# test "abc" != "abc"
+# echo $?
+1
+
+测试数值关系
+-eq 数值相等。
+-ne 数值不相等。
+-gt 第一个数大于第二个数。
+-lt 第一个数小于第二个数。
+-le 第一个数小于等于第二个数。
+-ge 第一个数大于等于第二个数。
+
+举例
+# test 3 -eq 5
+# echo $?
+1
+# test 3 -ne 5
+# echo $?
+0
+
+
+所有Shell变量的值作为字符串格式存储。
+这种方法对符号数据处理简单而且容易。
+整数变量数据也是存储为字符串格式的。
+整数变量在运算之前由字符串转换为整数。
+整数变量在运算之后由整数转换为字符串。
+
+expr命令
+计算表达式的值，输出结果到标准输出。
+一般用于整数值，但也可用于字符串。
+也是一个手工命令行计数器。
+expr <argument> <operator> <argument>
+
+\| 返回第一个不是0，null的操作数，否则返回第二个操作数。
+\& 返回第一个操作数，如果都不是0，null。否则返回0。
+＝  \>  \>=  \<  \<=  != 关系操作符
++  -  \*  /  % 算术操作符
+
+举例
+# expr 10 + 12
+22
+
+# expr 2 + 6 / 3
+4
+
+# expr 2 \* 3
+6
+
+# expr 3 \| 5
+3
+# expr 0 \| 5
+5
+# expr 3 \| 0
+3
+# expr 0 \| 0
+0
+# expr 3 \& 5
+3
+# expr 0 \& 5
+0
+# expr 3 \& 0
+0
+# expr 0 \& 0
+0
+
+# expr 5 \> 3
+1
+# expr 5 \<= 3
+0
+
+
+退出状态
+Shell脚本执行时，向系统传递的返回值。
+使用exit命令返回值。
+exit <number>，<number>是一个整数。
+一般返回值0表示执行成功，非0表示有错误发生。
+
+echo命令
+在标准输出上显示消息。
+echo [option] <string>
+-n 不输出换行符
+-e 允许转换转义序列
+-E 禁止解释转义序列
+
+\NNN   the character whose ASCII code is NNN (octal)
+\\     backslash
+\a     alert (BEL)
+\b     backspace
+\c     suppress trailing newline
+\f     form feed
+\n     new line
+\r     carriage return
+\t     horizontal tab
+\v     vertical tab
+
+举例
+＃echo "hello'
+hello
+#
+
+# echo -n "hello"
+hello#
+
+# echo "\101\102\103"
+\101\102\103
+
+# echo -e "\101\102\103"
+ABC
+
+
+以符号#开头的文本是注释。
+
+程序控制流命令
+
+if-then-elif-else-fi命令
+if <expression>
+then
+   <then-command-list>
+else
+   <else-command-list>
+fi
+
+<expression> 命令，返回状态表示成功或者失败。
+
+举例
+判断指定文件是不是普通文件。
+#!/bin/bash
+if test "$#" -ne "1"
+then
+   echo "Usage: $0 ordinary_file."
+   exit 1
+fi
+ 
+if test ! -f "$1"
+then
+   echo "$1 is not a ordinary file."
+   exit 2
+else
+   echo "$1 is a ordinary file."
+   exit 0
+fi
+
+# /bin/bash ifdemo
+Usage: ifdemo ordinary_file.
+# /bin/bash ifdemo file1 file2
+Usage: ifdemo ordinary_file.
+# /bin/bash ifdemo file1
+file1 is not a ordinary file.
+# /bin/bash ifdemo hello.c
+hello.c is a ordinary file.
+
+多分支if语句
+if <expression>
+then
+   <then-command-list>
+elif <expression>
+then
+   <then-command-list>
+else
+   <else-command-list>
+fi
+
+case语句
+用<test-string>和每一个<pattern>依此比较。
+从匹配位置开始执行命令，直到遇到;;结束。
+所有<pattern>中，只执行一个匹配位置的命令。
+case <test-string> in
+<pattern1>) <command-list1>
+   ;;
+<pattern2>) <command-list2>
+   ;;
+...
+<patternN>) <command-listN>
+   ;;
+esac
+
+举例
+执行与选定字母对应的命令。
+echo "Make a choice:"
+echo "d: date"
+echo "l: ls"
+echo "w: who"
+echo "q: quit"
+echo -n "Enter you option and hit <Enter>: "
+read option
+case "$option" in
+d) date
+   ;;
+l) ls
+   ;;
+w) who
+   ;;
+q) exit 0
+   ;;
+*) echo "Invalid option"
+   ;;
+esac
+exit 0
+
+# /bin/bash casedemo
+Enter you option and hit <Enter>: d
+四 11月 17 17:34:57 CST 2005
+# /bin/bash casedemo
+Enter you option and hit <Enter>: q
+# /bin/bash casedemo
+Enter you option and hit <Enter>: a
+Invalid option
+#
+
+使用"|"与多项匹配。
+echo -n "Do you wish to proceed? [y..n] "
+read ANSWER
+case $ANSWER in
+y|Y)
+   echo "you entered 'y' or 'Y'"
+   ;;
+n|N)
+   echo "you entered 'n' or 'N'"
+   ;;
+esac
+
+for语句
+对每一个在argument-list中的值，重复执行命令列表。
+variable依次取argument-list中的值。
+如果没有指定argument-list，从命令行参数中取值。
+for <variable> [in argument-list]
+do
+   <command-list>
+done
+
+举例
+for LETTER in a b c d e
+do
+   echo $LETTER
+done
+exit 0
+# /bin/bash fordemo
+a
+b
+c
+d
+e
+
+
+for LETTER in "abcde"
+do
+   echo $LETTER
+done
+exit 0
+# /bin/bash fordemo
+abcde
+
+如果不指定argument-list，使用命令行参数$@。
+for LETTER
+do
+   echo $LETTER
+done
+exit 0
+# /bin/bash fordemo a b c d e
+a
+b
+c
+d
+e
+
+计算当前目录中*.txt文件的数目。
+#!/bin/bash
+counter=0
+for MYFILE in *.txt
+do
+   counter=`expr $counter + 1`
+done
+echo "total of *.txt files: $counter"
+exit 0
+
+
+while语句
+在expression成立的情况下重复执行command-list。
+while <expression>
+do
+   <command-list>
+done
+
+举例
+在终端上显示整数1-5。
+#!/bin/bash
+COUNTER=0
+while [ $COUNTER -lt 5 ]
+do
+   COUNTER=`expr $COUNTER + 1`
+   echo $COUNTER
+done
+
+# /bin/bash whiledemo
+1
+2
+3
+4
+5
+
+显示一个文件的所有行，使用重定向。
+if test "$#" -ne "1"
+then
+   echo "Usage: $0 ordinary_file."
+   exit 1
+fi
+ 
+while read LINE
+do
+   echo $LINE
+done < "$1"
+
+until语句
+重复执行command-list，直到expression值是true
+until expression
+do
+   command-list
+done
+
+输出0-4
+COUNTER=0
+until [ $COUNTER -eq 5 ]
+do
+   echo $COUNTER
+   COUNTER=`expr $COUNTER + 1`
+done
+
+# bash whiledemo
+0
+1
+2
+3
+4
+
+
+
+break语句和continue语句
+可以终止执行for, while, until循环。
+
+read命令
+从标准输入读取数据，存储到变量中。
+read variable_name
+
+举例
+# echo $myvar
+ 
+# read myvar
+abc de
+# echo $myvar
+abc de
+#
+
+
+本地文档(here document)
+执行命令，以本地文档作为输入。
+用于菜单，避免使用大量的echo语句，而且容易对齐文本。
+
+command << input_marker
+   ... input data ...
+input_marker
+
+input_marker 限定文档的范围
+
+举例
+显示一个简单的菜单。
+#!/bin/bash
+MYDATE=`date +%F`
+MYHOST=`hostname -s`
+MYUSER=`whoami`
+while :
+do
+
+echo -e "\n"
+cat << MYMENU
+-------------------------------------------
+User: $MYUSER  Host: $MYHOST  Date: $MYDATE
+-------------------------------------------
+p : Show present working directory
+w : See who is on the system
+q : Exit
+-------------------------------------------
+MYMENU
+
+   echo -n "Enter your choice: "
+   read MYCHOICE
+   case $MYCHOICE in
+   p) pwd
+      ;;
+   w) who
+      ;;
+   q) break
+      ;;
+   *) echo -e "\007Invalid choice."
+      ;;
+   esac
+done
+exit 0
+
+Shell函数
+包含一组相关的语句。
+function_name()
+{
+   body_of_function
+   return return_value
+}
+
+举例
+在命令行上定义函数。
+# myfunc()
+> {
+> echo "in myfunc ..."
+> date
+> pwd
+> return 0
+> }
+# set
+...
+XMODIFIERS=@im=Chinput
+_=echo
+i=/etc/profile.d/which-2.sh
+myfunc ()
+{
+    echo "in myfunc ...";
+    date;
+    pwd;
+    return 0
+}
+# myfunc
+in myfunc ...
+一 11月 28 07:20:22 CST 2005
+/root
+#
+
+hello函数，显示信息。
+#!/bin/bash
+hello()
+{
+   echo "hello, here is a function."
+}
+hello
+exit 0
+
+在命令行上执行函数。
+建立新文件hello.func，内容如下。
+#!/bin/bash
+hello()
+{
+   echo "hello, here is a function."
+   return 0
+}
+存盘后，输入以下命令。
+先装入函数，然后在命令行上执行函数。
+
+# . hello.func
+# set
+...
+XMODIFIERS=@im=Chinput
+_=hello.func
+i=/etc/profile.d/which-2.sh
+hello ()
+{
+    echo "hello, here is a function.";
+    return 0
+}
+# hello
+hello, here is a function.
+# unset hello
+# set
+...
+XMODIFIERS=@im=Chinput
+_=hello.func
+i=/etc/profile.d/which-2.sh
+#
+
+向函数传递参数
+在函数中，可以使用环境变量。
+从$0--$9中读取参数值。
+
+举例
+函数isfile判断是否普通文件。
+#!/bin/bash
+isfile()
+{
+   if test -f "$1"
+   then
+      return 0
+   else
+      return 1
+   fi
+}
+ 
+echo -n "Enter filename: "
+read MYFILE
+if isfile $MYFILE
+then
+   echo "$MYFILE is a file."
+else
+   echo "$MYFILE is not a file."
+fi
+exit 0
+
+或者调用函数后，从环境变量$?判断函数返回值。
+#!/bin/bash
+isfile()
+{
+   if test -f "$1"
+   then
+      return 0
+   else
+      return 1
+   fi
+}
+
+echo -n "Enter filename: "
+read MYFILE
+isfile $MYFILE
+if test "$?" = "0"
+then
+   echo "$MYFILE is a file."
+else
+   echo "$MYFILE is not a file."
+fi
+exit 0
+
+shift命令
+从环境变量$1-$9可以取得前9个参数。
+shift命令可以把以后的参数向前移动。
+
+举例
+在标准输出上显示所有参数，可以多于9个。
+#!/bin/bash
+while [ "$#" -ne "0" ]
+do
+   echo "$1"
+   shift
+done
+exit 0
+
+
+文件系统装载和卸载
+外部设备的文件系统在装载以后使用。
+把外部设备映射到指定的目录。
+
+mount命令
+把外部设备的文件系统装载到指定目录。
+mount [-rw] [-t vfstype] device dir
+-rw 设置只读或者读写方式。
+vfstype 文件系统类型。
+device 外部设备。
+dir 装载目录。
+
+举例
+显示已经装载的文件系统
+# mount
+/dev/hda3 on / type ext3 (rw)
+none on /proc type proc (rw)
+usbdevfs on /proc/bus/usb type usbdevfs (rw)
+none on /dev/pts type devpts (rw,gid=5,mode=620)
+none on /dev/shm type tmpfs (rw)
+
+多数CD-ROM使用ISO9660格式。
+把CD-ROM装载到目录/mnt/cdrom。
+# mount -t iso9660 /dev/cdrom /mnt/cdrom
+
+把u盘装载到目录/mnt/usb
+# mount -t vfat /dev/sda1 /mnt/usb
+
+umount命令
+卸载文件系统
+umount dir
+
+举例
+卸载CD-ROM
+# umount /mnt/cdrom
+
+卸载u盘
+# umount /mnt/usb
+
+磁盘管理
+
+df命令
+报告文件系统磁盘空间使用。
+df [option]
+-a 显示所有文件系统。
+-h 以用户易读的形式显示。
+
+举例
+# df -a
+文件系统               1K-块        已用     可用 已用% 挂载点
+/dev/hda3              7297416   3324660   3602060  48% /
+none                         0         0         0   -  /proc
+usbdevfs                     0         0         0   -  /proc/bus/usb
+none                         0         0         0   -  /dev/pts
+none                     95344         0     95344   0% /dev/shm
+# df -h
+文件系统              容量  已用 可用 已用% 挂载点
+/dev/hda3             7.0G  3.2G  3.5G  48% /
+none                   94M     0   94M   0% /dev/shm
+# df
+文件系统               1K-块        已用     可用 已用% 挂载点
+/dev/hda3              7297416   3324660   3602060  48% /
+none                     95344         0     95344   0% /dev/shm
+#
+
+
+du命令
+估计文件空间使用。
+du [option] [dir | file]
+-a 对所有目录和文件进行计算。
+-b 以字节为单位计算。
+-c 显示总计。
+-h 以用户易读的形式显示。
+-s 只显示总计信息。
+
+举例
+# du -a
+...
+4       ./osfile
+4       ./hello.c
+108     .
+# du -b
+110592  .
+# du -bh
+108K    .
+# du -s
+108     .
+#
+
+
+进程(process)
+进程是处于运行状态的程序。
+执行一个外部命令，系统就创建一个进程。
+外部命令执行结束后，系统删除相应的进程。
+
+优先级
+进程具有优先级，用整数表示。
+进程优先级数值越小，表示优先级越高。
+Priority value = Threshold priority + Nice value + (Recent CPU usage / 2)
+
+nice命令
+运行程序，指定优先级的nice值。
+nice [option] [command [arg]...]
+-n nice值，从-20(高优先级)到19(低优先级)，缺省值10
+
+# nice -19 pwd
+/root
+
+
+Foregroud and Background Processed
+前台进程和后台进程
+
+前台进程
+在终端上输入命令，按下回车键，开始执行。
+在命令执行结束之前，用户不可以使用Shell。
+命令执行结束之后，用户可以执行下一个命令。
+
+后台进程
+在终端上输入命令，按下回车键，开始执行。
+命令执行的时候，用户可以使用Shell。
+后台进程具有比较大的nice值，即较低的优先级。
+
+执行前台进程和后台进程的命令
+command
+command &
+
+举例
+在后台执行pwd命令。
+方括号中的数字是作业号(job number)。
+另一个数字是进程ID。
+# pwd &
+[1] 2058
+/root
+
+
+fg命令
+在前台继续执行指定作业号jobid的进程。
+把后台进程移动到前台执行。
+缺省把当前作业移动到前台执行。
+fg [%jobid]
+
+<Ctrl-Z>挂起(suspend)当前前台任务。
+
+举例
+# vi
+input to vi editor...
+<Esc>
+<Ctrl-Z>
+
+[1]+  Stopped                 vim
+# ps
+  PID TTY          TIME CMD
+ 2073 pts/1    00:00:00 bash
+ 2168 pts/1    00:00:00 vim
+ 2169 pts/1    00:00:00 ps
+# fg
+vim
+input to vi editor...
+:q!
+# ps
+  PID TTY          TIME CMD
+ 2073 pts/1    00:00:00 bash
+ 2170 pts/1    00:00:00 ps
+#
+
+
+bg命令
+继续执行挂起的进程或者任务，在后台执行。
+不指定参数，缺省把当前进程在后台执行。
+
+
+jobs命令
+显示挂起的和后台进程。
+jobs [option] [%jobid]
+-l 显示进程ID和状态。
++表示当前进程。
+-表示前一个进程。
+
+举例
+# vi
+
+[1]+  Stopped                 vim
+# jobs
+[1]+  Stopped                 vim
+# vi
+
+[2]+  Stopped                 vim
+# jobs
+[1]-  Stopped                 vim
+[2]+  Stopped                 vim
+# vi
+
+[3]+  Stopped                 vim
+# jobs
+[1]   Stopped                 vim
+[2]-  Stopped                 vim
+[3]+  Stopped                 vim
+# 
+
+# jobs -l
+[1]   2078 停止                    vim
+[2]-  2080 停止                    vim
+[3]+  2081 停止                    vim
+
+顺序执行命令
+在一个命令行上顺序执行命令。
+cmd1; cmd2; ...; cmdN
+
+举例
+# pwd; date; whoami
+/root
+日 12月  4 16:20:02 CST 2005
+root
+#
+
+并行执行命令
+在一个命令行上并行执行多个命令。
+并行执行的命令是后台命令。
+cmd1& cmd2& ...& cmdN&
+
+举例
+# pwd& date& whoami&
+[1] 2125
+[2] 2126
+[3] 2127
+/root
+日 12月  4 16:26:47 CST 2005
+root
+#
+
+
+命令组
+多个命令在一个进程中执行。
+(cmd1; cmd2; ...; cmdN)
+
+举例
+# (pwd; date; whoami)
+/root
+日 12月  4 16:29:03 CST 2005
+root
+[1]   Done                    pwd
+[2]-  Done                    date
+[3]+  Done                    whoami
+#
+
+
+ps命令
+报告当前进程状态，当前进程的快照snapshot。
+ps [options]
+-a 在当前终端上运行的进程，正在登录的Shell除外。
+-e 在系统中运行的所有进程。
+-f 显示父进程PID。
+-l 以长列表格式显示进程状态(14列)。
+-u 进程的所有者。
+-x 没有控制终端的进程。
+
+-l选项
+Field  Meaning
+F      Flag：指定是用户进程或者内核进程，进程为什么停止和休眠。
+S      State：进程的状态。
+         O 正在运行
+         R 准备运行
+         S 休眠，等待事件
+         T 停止，后台进程，挂起，正在被跟踪。
+         Z 结束
+UID    进程所有者用户ID
+PID    进程ID
+PPID   父进程ID
+C      CPU使用
+PRI    进程优先级
+NI     Nice值，用于计算进程优先级
+ADDR   进程在主存储器或者磁盘中的地址
+SZ     进程的存储器映象的长度，单位是块
+WCHAN  等待通道
+TTY    终端，进程相关的终端名称
+TIME   进程已经运行的时间
+CMD    启动进程的命令
+
+举例
+# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR    SZ WCHAN  TTY          TIME CMD
+0 S     0 13590 13588  0  75   0    -  1401 wait4  pts/0    00:00:00 bash
+0 R     0 13683 13590  0  81   0    -   780 -      pts/0    00:00:00 ps
+#
+
+
+top命令
+动态显示系统中最高占用CPU的进程的状态。
+top [option]
+-d delay 延迟，间隔时间
+-n iter 重复显示的次数
+子命令h和?显示top命令的帮助信息。
+
+
+kill命令
+向进程发送信号(signal)或者软件中断(software interrupt)。
+kill [-signal_number] proc-list
+-s signal_number 信号编号
+proc-list 进程ID列表，作业号以%开头。
+
+显示所有信号和名字。
+kill -l
+常用的信号编号
+1  Hangup
+2  Interrupt(<Ctrl+C>)
+3  Quit(<Ctrl+\>)
+9  Sure kill
+15 Software signal(default signal number)
+
+举例
+# vi
+ 
+[1]+  Stopped                 vim
+# jobs
+[1]+  Stopped                 vim
+# kill %1
+ 
+[1]+  Stopped                 vim
+Vim: CVim: 拦截到信号(signal) TERM
+Vim: 保留文件中...
+Vim: 结束.
+ 
+[1]+  已终止                  vim
+# jobs
+#
+
+# kill -l
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
+ 5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
+ 9) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2
+13) SIGPIPE     14) SIGALRM     15) SIGTERM     17) SIGCHLD
+...
+#
+
+
+free命令
+显示系统中空闲的和已用的存储器空间。
+空闲的存储空间。
+已用的物理存储器的空间。
+交换存储器的空间。
+内核使用的缓冲(buffer)和缓存(cache)。
+free [opetion]
+-bkmg 以字节，K，M，G字节为单位。
+-l 显示存储器低端和高端空间使用。
+-c 连续显示存储器使用。
+-s 显示存储器使用，间隔时间。
+
+举例
+# free
+             total       used       free     shared    buffers     cached
+Mem:        190692     187672       3020          0       7140      74440
+-/+ buffers/cache:     106092      84600
+Swap:       393584      23492     370092
+# free -l
+             total       used       free     shared    buffers     cached
+Mem:        190692     187672       3020          0       7148      74440
+Low:        190692     187672       3020          0          0          0
+High:            0          0          0          0          0          0
+-/+ buffers/cache:     106084      84608
+Swap:       393584      23492     370092
+# free -c 2 -s 3
+#
+ 
+
+vmstat命令
+报告虚拟存储器使用统计。
+vmstat [-n] [delay [count]]
+-n 不重复显示统计信息标题。
+delay 延时，显示信息的间隔时间。
+count 计数，显示信息的次数。
+
+显示各项信息
+FIELD DESCRIPTIONS
+Procs
+   r: The number of processes waiting for run time.
+   b: The number of processes in uninterruptable sleep.
+   w: The number of processes swapped out but otherwise runnable.  This
+      field is calculated, but Linux never desperation swaps.
+
+Memory
+   swpd: the amount of virtual memory used (kB).
+   free: the amount of idle memory (kB).
+   buff: the amount of memory used as buffers (kB).
+
+Swap
+   si: Amount of memory swapped in from disk (kB/s).
+   so: Amount of memory swapped to disk (kB/s).
+
+IO
+   bi: Blocks sent to a block device (blocks/s).
+   bo: Blocks received from a block device (blocks/s).
+
+System
+   in: The number of interrupts per second, including the clock.
+   cs: The number of context switches per second.
+
+CPU
+   These are percentages of total CPU time.
+   us: user time
+   sy: system time
+   id: idle time
+
+举例
+# vmstat
+   procs                      memory      swap          io     system      cpu
+ r  b  w   swpd   free   buff  cache   si   so    bi    bo   in    cs us sy id
+ 2  0  0  24240   2944   7972  72544    1    6    75    23  137   393 10  2 88
+#
+
+
+init进程
+在基于UNIX的系统中，这个进程是第一个运行的进程。
+init进程的PID是1，永远不会停止。
+这个进程是所有其它进程的最终的父进程。
+init进程在进入一个运行级别(runlevel)时运行相应的程序。
+
+/etc/inittab文件
+包括所有init启动运行级别的信息。
+文件的每一行语句具有以下形式：
+id : runlevels : action : prcess
+以符号#开头的语句是注释。
+
+/etc/inittab文件的组成
+id 由1到4个字符组成，是数据项的唯一标识字符串。
+runlevel 指出在哪些运行级别下必须运行这个进程。
+         如果设置为空，在所有运行级别运行。
+action 指出需要执行的操作。
+process 进入一个运行级别后需要执行的进程。
+
+/etc/inittab文件中action域的参数
+respawn 进程被终止时立即重新启动。
+wait 进入运行级别需要运行的进程，init等待它运行结束。
+once 进入运行级别需要运行的进程，init不需要等待它运行结束，
+     可以执行这个运行级别中的其它进程。
+boot 在系统引导时运行的进程。运行级别域的数据不起作用。
+bootwait 在系统引导时运行的进程。init等待它运行结束。
+ondemand, initdefault, sysinit, powerwait,
+powerfail, powerokwait, ctrlaltdel
+
+
+
+文件/etc/protocols
+系统使用的协议。
+
+文件/etc/services
+系统提供的服务。
+
+文件/etc/sysconfig/network-scripts/ifcfg-eth0
+每一个网卡都有一个配置文件。
+存储IP地址，子网掩码，网关等信息。
+
+# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=192.168.1.1
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+#
+
+
+文件/etc/hosts
+存储主机地址和名称的映射。格式如下：
+IP地址  计算机名(包括域名)  别名
+185.36.20.3 blue.colors.org blue
+
+# cat /etc/hosts
+# Do not remove the following line, or various programs
+# that require network functionality will fail.
+127.0.0.1               localhost.localdomain localhost
+#
+
+
+文件/etc/sysconfig/network
+设置主机名称和域名。
+
+# cat /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=localhost.localdomain
+#
+
+
+文件/etc/host.conf
+名字解析服务器的配置信息。
+
+/etc/host.conf文件中的选项
+alert On或者Off
+监察是否有尝试进行IP地址欺诈的操作。
+如设置为on，任何类似的尝试都就被记录在日志文件中。
+
+multi On或者Off
+决定主机是否允许在/etc/hosts文件中有不止一个IP地址。
+
+nospoof On或者Off
+通过使用反向DNS域名解析方法匹配连接的主机名及其IP地址。
+防止IP地址欺诈。
+
+order
+hosts，bind，nis
+指定各种DNS域名解析服务的使用顺序。
+host 告诉系统检查/etc/hosts文件。
+bind 告诉系统去咨询某个DNS服务器。
+nis 指向网络信息服务(Network Information Service)解析主机名。
+
+trim
+告诉系统删除某个域名。
+只查看/etc/hosts文件来解析IP地址。
+
+# cat /etc/host.conf
+order hosts,bind
+#
+
+
+文件/etc/resolv.conf
+用于名字解析的名字服务器的信息。
+
+resolv.conf文件中的选项
+domain 告诉DNS域名解析用户LAN的域名是什么。
+nameserver 服务器的一个或者多个I P地址。
+告诉系统到什么地方把域名解析为IP地址。
+用户可以列出最多3个域名服务器的IP地址。
+如果其中的某个没有解析成功，解析器程序会转向下一个。
+search 一个或者多个域名设置人们在LAN上经常使用的缺省域名。
+如果域名没有被包括一个查询中，尝试使用search选项列出的域名。
+
+# cat /etc/resolv.conf
+search localdomain
+nameserver 192.168.1.1
+#
+
+
+ifconfig命令
+配置网络接口。
+ifconfig [interface] [option]
+netmask 子网掩码
+broadcast 广播地址
+up 激活接口
+down 关闭接口
+
+举例
+设置IP地址是192.168.1.1
+#ifconfig eth0 192.168.1.1
+
+设置子网掩码是255.255.255.0
+#ifconfig eth0 netmask 255.255.255.0
+
+设置广播地址是192.168.1.255
+#ifconfig eth0 broadcast 192.168.1.255
+
+关闭接口eth0。
+# ifconfig eth0 down
+
+激活接口eth0。
+# ifconfig eth0 up
+
+
+ftp服务
+文件/etc/vsftpd/vsftpd.conf
+存储vsftp服务的配置信息。
+
+文件/etc/vsftpd.ftpusers
+指出不可以通过ftp登录的用户。
+
+文件/etc/vsftpd.user_list
+
+匿名用户的主目录是/var/ftp。
+用户的主目录是系统的主目录。
+
+使用ftp命令连接ftp服务器。
+ftp的子命令：open, quit, help, ls, get, put.
+
+www服务
+文件/etc/httpd/conf/httpd.conf
+存储www服务的配置信息。
+
+缺省主目录是/var/www
+
+httpd命令
+httpd是Apache HTTP服务器程序。
+httpd建立一个由多个子进程组成的池，以处理请求。
+
+httpd [-d serverroot] [-f config] [-C directive] [-c directive]
+
+-d serverroot
+设置ServerRoot指令的初始值。
+ServerRoot指令的缺省值是/etc/httpd。
+
+-f config
+启动时执行指定文件中的命令。
+指定文件的路径如果不是以/开始，认为是ServerRoot的相对路径。
+缺省文件是conf/http.conf。
+
+-C directive
+在读取配置文件之前，处理配置指令。
+
+-c directive
+在读取配置文件之后，处理配置指令。
+
+
+apachectl script
+apachectl command [...]
+控制Apache httpd守护进程的功能。
+
+option 选项
+start      启动Apache守护进程。
+stop       停止Apache守护进程。
+restart    重新启动Apache守护进程，通过发送信号SIGHUP。
+fullstatus 显示全部报告。
+status     显示简短状态报告。
+graceful   重新启动Apache守护进程，通过发送信号SIGUSR1。
+configtest 运行配置文件语法测试。
+help       显示帮助信息。

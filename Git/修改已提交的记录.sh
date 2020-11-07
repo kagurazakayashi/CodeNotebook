@@ -1,9 +1,10 @@
-# Windows（中文提交者名会乱码）
+# Windows 安装
 # https://github.com/PotatoLabs/git-redate
 copy git-redate "C:\Program Files\Git\mingw64\libexec\git-core\"
-
 "
-# macOS
+# 用 Git Bash ， CMD 中文会乱码
+
+# macOS 安装
 brew tap PotatoLabs/homebrew-git-redate
 brew install git-redate
 
@@ -15,3 +16,8 @@ git redate --commits [[number of commits to view]]
 git redate --all
 
 # 你只需要运行git redate并且你将能够编辑最近5次提交的vim中的所有日期（还有一个-c选项，你想要返回多少次提交，它只是默认为5）。
+
+# 强制提交
+git push -f
+
+# Github 的话会要求同户名和 token（代替密码）

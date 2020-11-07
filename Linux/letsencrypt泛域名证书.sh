@@ -41,4 +41,4 @@ openssl dhparam -out /mnt/data/docker/volumes/ip/_data/c/yoo.pem 4096
 
 nginx -s reload
 
-https://juejin.im/post/5b6542ed51882519d3468d6d
+# https://juejin.im/post/5b6542ed51882519d3468d6d
