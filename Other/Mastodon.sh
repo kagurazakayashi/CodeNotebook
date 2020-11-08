@@ -88,8 +88,11 @@ bundle install --deployment --with development
 
 # 修复权限
 chown -R mastodon:mastodon /home/mastodon/live
+# docker权限
 chmod -R 755 /home/mastodon/live
-chown -R 991:991 /home/mastodon/live/public/system
+chown -R 991:991 /home/mastodon/live/public
+# 软连接时更新源文件权限
+
 # 将用户加入到www组
 usermod -a -G www mastodon
 

@@ -15,5 +15,10 @@
         "statusBar.foreground": "#e7e7e7"
     },
     "peacock.color": "#77428D",
-    "compile-hero.disable-compile-files-on-did-save-code": false
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "files.associations": {
+        "random": "c",
+        "limits": "c",
+        "sstream": "c"
+    }
 }
