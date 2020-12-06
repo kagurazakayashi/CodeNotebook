@@ -20,6 +20,9 @@ tar -Jxf dir.tar.xz
 # 查看 CPU 核心数
 more /proc/cpuinfo |grep "physical id"|uniq|wc -l
 
+# 最低优先级跑压缩
+nice -n 19 ...
+
 # 创建 tar.gz
 tar -czf all.tar.gz *.jpg
 # 解压 tar.gz
