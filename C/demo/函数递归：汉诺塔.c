@@ -223,12 +223,13 @@ unsigned long long int i = 0;
 int main(int argc, char *argv[])
 {
      void hanoi(int n, char one, char two, char three);
-     int m = atoi(argv[1]); // 利用命令行参数输入汉诺塔层数，测试 37 以上过卡
+     int m = atoi(argv[1]); // 利用命令行参数输入汉诺塔层数
      // printf("the number of diskes:");
      // scanf("%d", &m);
      printf("move %d diskes:\n", m);
      hanoi(m, 'A', 'B', 'C');
      printf("all step : %lld\n", i);
+     return 0;
 }
 void hanoi(int n, char one, char two, char three)
 {
