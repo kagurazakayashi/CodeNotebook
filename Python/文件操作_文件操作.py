@@ -60,3 +60,25 @@ fp.seek(offset[,whence])
 
 # 判断文件是否存在
 os.path.exists('test_file.txt')
+
+# 逐行读取文件
+f = open("1.txt")
+line = f.readline()
+while line:
+    print(line, end = '')
+f.close()
+
+# 整读并逐行
+f = open("1.txt","r")
+lines = f.readlines() #读取全部内容 ，并以列表方式返回
+for line in lines
+    print line
+
+# 整读
+file_object = open('1.txt')
+try:
+    all_the_text = file_object.read()
+finally:
+    file_object.close()
+
+# https://blog.csdn.net/zhengxiangwen/article/details/55148287

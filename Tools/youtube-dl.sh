@@ -2,9 +2,9 @@
 # install youtube-dlg/youtube-dl-gui
 
 # 最简单的方式就是直接加上视频链接地址就可以自动下载到当前文件夹：
-youtube-dl url
+youtube-dl <url>
 # 使用代理
-youtube-dl url --proxy http://127.0.0.1:1080
+youtube-dl <url> --proxy http://127.0.0.1:1080
 # 下载列表
 youtube-dl --yes-playlist https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG --proxy http://127.0.0.1:1080
 # 下载字幕

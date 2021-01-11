@@ -4,6 +4,9 @@ Ctrl + P + Q
 docker start ID/名字
 # 运行状况
 docker stats
+# 进入容器
+docker exec -it 容器名 /bin/bash
+docker exec -ti -u root 容器名 /bin/bash
 # 拉取镜像
 docker pull training/webapp
 # 创建和启动容器

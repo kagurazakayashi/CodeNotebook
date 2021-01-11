@@ -1,1 +1,0 @@
-rm -f a.out && gcc a.c && ./a.out
