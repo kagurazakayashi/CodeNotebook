@@ -4,6 +4,11 @@ do
     echo $f
 done
 
+for f in ./GIF/*.gif
+do
+    echo ${f%%.*} #去除扩展名
+done
+
 # 单行
 for f in *.png; do echo $f; done
 

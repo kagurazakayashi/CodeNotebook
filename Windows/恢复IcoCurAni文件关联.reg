@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT/anifile/DefaultIcon]
+@="%%1"
+[HKEY_CLASSES_ROOT/curfile/DefaultIcon]
+@="%%1"
+[HKEY_CLASSES_ROOT/icofile/DefaultIcon]
+@="%%1"

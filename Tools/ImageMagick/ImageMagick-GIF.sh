@@ -5,3 +5,6 @@ convert 2.gif -layers Optimize 1.gif
 # 拆分GIF
 convert 1.gif 1.png
 convert -strip 1.gif 1.png # 重新渲染
+
+# 批量调整 GIF 尺寸
+for file in *.gif; do convert $file -coalesce -set dispose previous $file; convert -resize 512x512 $file $file; convert $file -layers Optimize $file; done

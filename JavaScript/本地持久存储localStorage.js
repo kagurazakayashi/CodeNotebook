@@ -11,15 +11,15 @@ localStorage.clear();
 // 是否存在
 if (localStorage.getItem("key") != null) {
     alert('key 存在');
-} else { 
+} else {
     alert('key 不存在');
 }
 
 // 以下实例用于记录点击按钮的次数
 function clickCounter() {
-    if(typeof(Storage) !== "undefined") {
+    if (typeof(Storage) !== "undefined") {
         if (localStorage.clickcount) {
-            localStorage.clickcount = Number(localStorage.clickcount)+1;
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
         } else {
             localStorage.clickcount = 1;
         }

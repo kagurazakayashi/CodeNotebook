@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\Hidden\SHOWALL] 
+
+"CheckedValue"=dword:00000001
+
+
+
+有很多病毒，为了隐藏自己，就修改系统文件夹设置，使你用常规方法不能看到隐藏文件。
+请确保在“文件夹选项”中去掉“隐藏已知文件类型的扩展名”，双击运行此文件，再重新到“文件夹选项”中设置显示隐藏文件。
