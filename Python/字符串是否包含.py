@@ -1,8 +1,8 @@
 s = "This be a string"
 
 
-if "is"  in s:
-     print('Found 'is' in the string.') 
+if "is" in s:
+    print('Found ' is ' in the string.')
 
 
 if s.find("is") == -1:
