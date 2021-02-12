@@ -23,3 +23,6 @@ Number.prototype.toPrecision();
 Number.prototype.toSource();
 Number.prototype.toString();
 Number.prototype.valueOf();
+
+
+Number.toString();

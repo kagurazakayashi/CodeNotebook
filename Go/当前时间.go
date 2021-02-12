@@ -32,7 +32,7 @@ formatTimeStr:=time.Unix(timeUnix,0).Format("2006-01-02 15:04:05")
 fmt.Println(formatTimeStr)   //打印结果：2017-04-11 13:30:39
 
 // 时间字符串转时间(string  —>  Time)
-formatTimeStr=”2017-04-11 13:33:37”
+formatTimeStr="2017-04-11 13:33:37"
 formatTime,err:=time.Parse("2006-01-02 15:04:05",formatTimeStr)
 if err==nil{
 	fmt.Println(formatTime) //打印结果：2017-04-11 13:33:37 +0000 UTC
