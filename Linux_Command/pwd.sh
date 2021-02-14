@@ -1,3 +1,3 @@
-# 输出当前工作目录
+# 查看当前工作目录路径
 pwd
-# /Users/yashi
+# /home/yashi

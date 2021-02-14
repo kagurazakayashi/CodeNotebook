@@ -1,3 +1,3 @@
-# 显示当前登录的用户名（Windows可用）
+# 查看当前用户名
 whoami
 # yashi
