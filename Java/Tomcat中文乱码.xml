@@ -1,0 +1,23 @@
+<!-- tomcat 的 server.xml 配置，找到 Connector 加入 URIEncoding="UTF-8" -->
+<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+
+<!-- 设置tomcat的 web.xml，找到 servlet 此处加入 fileEncoding -->
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+        	<param-name>fileEncoding</param-name>
+        	<param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+<!-- https://blog.csdn.net/iBuDongIt/article/details/89492517?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-0&spm=1001.2101.3001.4242 -->

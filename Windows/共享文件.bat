@@ -1,4 +1,4 @@
-REM 共享 share-b ，share读写，yashi完全控制，最多3个用户连接：
+REM 共享文件夹 share-b ，share读写，yashi完全控制，最多3个用户连接：
 
 net share "share-b"=B:\share-b /GRANT:share,CHANGE /GRANT:yashi,FULL /USERS:3
 

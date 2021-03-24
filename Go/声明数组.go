@@ -46,3 +46,8 @@ func rangeObjPrint(array []string) {
 }
 
 // https://blog.csdn.net/books1958/article/details/21460673
+
+// 通过长度变量创建指定长度数组
+func makeArr(array []string) {
+	dp := make([]int, length)
+}
