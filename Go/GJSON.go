@@ -246,6 +246,13 @@ func main() {
 	// 信息
 	// miyabi
 
+	// 不存在的值
+	result = gjson.Get(json, "不存在的值")
+	if result.String() == "" {
+		println("不存在的值！")
+	}
+	// 不存在的值！
+
 	/*
 		简化写法，以下作用等同：
 		gjson.Parse(json).Get("name").Get("last")

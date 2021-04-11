@@ -1,6 +1,72 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "target": "es6",
-    }
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* 基本选项 Basic Options */
+    // "incremental": true,                         /* 启用增量编译 Enable incremental compilation */
+    "target": "es5",                                /* 指定ECMAScript的目标版本 Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "commonjs",                           /* 指定模块代码生成 Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    // "lib": [],                                   /* 指定要包含在编译中的库文件 Specify library files to be included in the compilation. */
+    // "allowJs": true,                             /* 允许编译javascript文件 Allow javascript files to be compiled. */
+    // "checkJs": true,                             /* 报告.js文件中的错误 Report errors in .js files. */
+    // "jsx": "preserve",                           /* 指定JSX代码生成 Specify JSX code generation: 'preserve', 'react-native', 'react', 'react-jsx' or 'react-jsxdev'. */
+    // "declaration": true,                         /* 生成相应的.d.ts的文件 Generates corresponding '.d.ts' file. */
+    // "declarationMap": true,                      /* 为每个对应的.d.ts生成一个sourcemap的文件 Generates a sourcemap for each corresponding '.d.ts' file. */
+    // "sourceMap": true,                           /* 生成相应的.map映射的文件 Generates corresponding '.map' file. */
+    // "outFile": "./",                             /* 连接并将输出输出到单个文件 Concatenate and emit output to single file. */
+    "outDir": "./dist",                             /* 重定向输出结构目录 Redirect output structure to the directory. */
+    "rootDir": "./src",                             /* 指定输入文件的根目录。使用——outDir控制输出目录结构 Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    // "composite": true,                           /* 使项目编译 Enable project compilation */
+    // "tsBuildInfoFile": "./",                     /* 指定文件以存储增量编译信息 Specify file to store incremental compilation information */
+    // "removeComments": true,                      /* 不发出注释输出 Do not emit comments to output. */
+    // "noEmit": true,                              /* 不输出 Do not emit outputs. */
+    // "importHelpers": true,                       /* 从'tslib'导入emit helpers. Import emit helpers from 'tslib'. */
+    // "downlevelIteration": true,                  /* 在以“ES5”或“ES3”为目标时，在“for-of”、“spread”和“destructuring”中提供对可迭代对象的全面支持。 Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
+    // "isolatedModules": true,                     /* 将每个文件转换为一个单独的模块(类似于'ts.transpileModule')。 Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+
+    /* 严格的类型检查选项 Strict Type-Checking Options */
+    "strict": true,                                 /* 启用所有严格的类型检查选项 Enable all strict type-checking options. */
+    // "noImplicitAny": true,                       /* 对于隐含有'any'类型的表达式和声明引发错误 Raise error on expressions and declarations with an implied 'any' type. */
+    // "strictNullChecks": true,                    /* 启用严格的空检查 Enable strict null checks. */
+    // "strictFunctionTypes": true,                 /* 启用严格的功能类型检查 Enable strict checking of function types. */
+    // "strictBindCallApply": true,                 /* 在函数上启用严格的'bind'，'call'和'apply'方法 Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    // "strictPropertyInitialization": true,        /* 在类中启用严格的属性初始化检查 Enable strict checking of property initialization in classes. */
+    // "noImplicitThis": true,                      /* 在隐含有'any'类型的'this'表达式上引发错误 Raise error on 'this' expressions with an implied 'any' type. */
+    // "alwaysStrict": true,                        /* 在严格模式下解析并为每个源文件发出“use strict”(使用严格) Parse in strict mode and emit "use strict" for each source file. */
+
+    /* 额外的检查 Additional Checks */
+    // "noUnusedLocals": true,                      /* 报告未使用的局部变量的错误 Report errors on unused locals. */
+    // "noUnusedParameters": true,                  /* 报告未使用参数的错误 Report errors on unused parameters. */
+    // "noImplicitReturns": true,                   /* 当函数中不是所有代码路径都返回值时，报告错误 Report error when not all code paths in function return a value. */
+    // "noFallthroughCasesInSwitch": true,          /* 报告switch语句中失败情况的错误 Report errors for fallthrough cases in switch statement. */
+    // "noUncheckedIndexedAccess": true,            /* 在索引签名结果中包含'undefined' Include 'undefined' in index signature results */
+    // "noPropertyAccessFromIndexSignature": true,  /* 需要索引签名中未声明的属性才能使用元素访问 Require undeclared properties from index signatures to use element accesses. */
+
+    /* 模块解析选项 Module Resolution Options */
+    // "moduleResolution": "node",                  /* 指定模块解析策略 Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    // "baseUrl": "./",                             /* 用于解析非绝对模块名称的基本目录 Base directory to resolve non-absolute module names. */
+    // "paths": {},                                 /* 一系列条目将导入重新映射到相对于“baseUrl”的查找位置 A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    // "rootDirs": [],                              /* 根文件夹的列表，其组合内容表示运行时项目的结构 List of root folders whose combined content represents the structure of the project at runtime. */
+    // "typeRoots": [],                             /* 包含类型定义的文件夹列表 List of folders to include type definitions from. */
+    // "types": [],                                 /* 要包含在编译中的类型声明文件 Type declaration files to be included in compilation. */
+    // "allowSyntheticDefaultImports": true,        /* 允许从没有默认导出的模块中进行默认导入。这并不影响代码发出，只是类型检查 Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    "esModuleInterop": true,                        /* 通过为所有导入创建名称空间对象，实现CommonJS和ES模块之间的互操作性。
+    意味着“allowSyntheticDefaultImports”。 Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    // "preserveSymlinks": true,                    /* 不能解决符号链接的真实路径 Do not resolve the real path of symlinks. */
+    // "allowUmdGlobalAccess": true,                /* 允许从模块中访问UMD全局变量 Allow accessing UMD globals from modules. */
+
+    /* 源地图选项 Source Map Options */
+    // "sourceRoot": "",                            /* 指定调试器应该定位TypeScript文件的位置，而不是源文件的位置 Specify the location where debugger should locate TypeScript files instead of source locations. */
+    // "mapRoot": "",                               /* 指定调试器定位映射文件的位置，而不是生成的位置 Specify the location where debugger should locate map files instead of generated locations. */
+    // "inlineSourceMap": true,                     /* 使用源映射生成单个文件，而不是使用单独的文件 Emit a single file with source maps instead of having a separate file. */
+    // "inlineSources": true,                       /* 在单个文件中，在sourcemaps的旁边发出源;需要设置'——inlineSourceMap'或'——sourceMap'。 Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+
+    /* 实验选项 Experimental Options */
+    // "experimentalDecorators": true,              /* 支持对ES7装饰器的实验性支持 Enables experimental support for ES7 decorators. */
+    // "emitDecoratorMetadata": true,               /* 为装饰器发送类型元数据提供实验性支持 Enables experimental support for emitting type metadata for decorators. */
+
+    /* 高级选项 Advanced Options */
+    "skipLibCheck": true,                           /* 跳过声明文件的类型检查 Skip type checking of declaration files. */
+    "forceConsistentCasingInFileNames": true        /* 禁止对同一文件使用大小写不一致的引用 Disallow inconsistently-cased references to the same file. */
+  }
 }
