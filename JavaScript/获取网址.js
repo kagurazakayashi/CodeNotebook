@@ -46,7 +46,7 @@ function getQueryString(name) {
     var r = window.location.search.substr(1).match(reg);
 
     if (r != null) {
-       return unescape(r[2]);
+        return unescape(r[2]);
     }
     return null;
 }
@@ -61,13 +61,13 @@ function GetRequest() {
     var theRequest = new Object();
 
     if (url.indexOf("?") != -1) {
-            var str = url.substr(1);
-            strs = str.split("&");
-         for(var i = 0; i < strs.length; i ++) {
-                 theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
-          }
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
     }
-return theRequest;
+    return theRequest;
 }
 var Request = new Object();
 Request = GetRequest(); // var id=Request["id"]; 
@@ -79,13 +79,13 @@ Request = GetRequest(); // var id=Request["id"];
 
 // 三、指定取
 // 比如说一个url：http://i.cnblogs.com/?j=js, 我们想得到参数j的值，可以通过以下函数调用。
-function GetQueryString(name) { 
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
-    var context = ""; 
-    if (r != null) context = r[2]; 
-    reg = null; 
-    r = null; 
+    var context = "";
+    if (r != null) context = r[2];
+    reg = null;
+    r = null;
     return context == null || context == "" || context == "undefined" ? "" : context;
 }
 alert(GetQueryString("j"));

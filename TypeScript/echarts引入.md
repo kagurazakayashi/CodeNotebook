@@ -1,3 +1,16 @@
+`import * as echarts from 'echarts';`
+
+# 错误
+`ERROR in ./node_modules/echarts/index.js 44:0-38
+Module not found: Error: Can't resolve './lib/extension' in`
+
+解决： webpack.config.js :
+```
+resolve: {
+    extensions: ['.ts', '.js'],
+},
+```
+
 # 在typescript+Vue的项目中引用echarts
 
 ## 为了加强引用，引入echarts和@types/echarts两个包，一个是工程依赖，一个是声明依赖。

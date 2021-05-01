@@ -1,0 +1,19 @@
+/* 【先做大屏再做小屏】如果浏览器窗口小于 500px, 背景将变为浅蓝色： */
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* 【先做小屏再做大屏】如果浏览器窗口大于 768px */
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+}
+
+/* 【屏幕大于600px但小于768px】 */
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+}
