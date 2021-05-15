@@ -95,3 +95,6 @@ echo vm.swappiness = 100 >> /etc/sysctl.conf
 # 临时配置方法：
 sysctl -w vm.swappiness=0
 # 手动更改/sys/fs/cgroup/memory下子目录对应的memory.swappiness值
+
+# 查看
+sysctl vm.swappiness

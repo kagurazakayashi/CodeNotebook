@@ -9,6 +9,7 @@ void (*signal(int sig, void (*func)(int)))(int);
 #include <signal.h>
 
 void sigHandle(int sig) {
+    printf("[SIGNAL] %d\n", sig);
     switch(sig) {
     case SIGINT:
         printf("sigHandle: %d, SIGINT\n", sig);

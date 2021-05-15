@@ -31,7 +31,7 @@ module.exports = {
     'no-extra-semi': 'error',
     // 强制使用一致的换行风格
     'linebreak-style': ['error', 'unix'],
-    // 空格2个
+    // 空格2个 // SwitchCase 修正 switch缩进错误
     'indent': ['error', 2, { 'SwitchCase': 1 }],
     // 指定数组的元素之间要以空格隔开(,后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格
     'array-bracket-spacing': [2, 'never'],

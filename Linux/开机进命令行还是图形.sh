@@ -1,3 +1,10 @@
+# 修改默认启动级别
+
+# 主机默认启用图形模式
+systemctl set-default graphical
+# 主机默认启用命令行模式
+systemctl set-default multi-user
+
 # 0：停机或者关机（千万不能将initdefault设置为0）
 # 1：单用户模式，只root用户进行维护
 # 2：多用户模式，不能使用NFS(Net File System)
