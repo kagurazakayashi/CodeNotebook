@@ -1,5 +1,11 @@
 // 条件编译
 #include <stdio.h>
+#if defined(__linux__) || defined(macintosh)
+#include <unistd.h>
+#endif
+#ifdef _WIN32
+#include <windows.h>
+#endif
 int main(void)
 {
     /*
