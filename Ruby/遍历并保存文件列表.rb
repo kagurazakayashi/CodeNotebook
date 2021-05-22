@@ -1,4 +1,5 @@
-puts "# 雅诗运维工具 文件列表生成器"
+puts "文件列表生成器"
+# 神楽坂雅詩
 @allfile = 0
 @alldir = 0
 @allsize = 0

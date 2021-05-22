@@ -1,4 +1,5 @@
-puts "# 雅诗运维工具 Nginx 日志文件解析"
+puts "# Nginx 日志文件解析"
+# 神楽坂雅詩
 puts "- 正在读入Nginx日志文件 #{ARGV[0]} ..."
 if !ARGV[0]
     puts "- 没有指定文件。"
@@ -192,7 +193,7 @@ def getSort(arr2,arr)
     end
 end
 
-puts "\n# 雅诗运维工具 Nginx 日志文件解析结果"
+puts "\n# Nginx 日志文件解析结果"
 puts "- 报告生成时间: #{Time.new.strftime("%Y-%m-%d %H:%M:%S")}"
 puts "## HTTP请求结果状态码返回次数："
 httpcodes.each{|nkey,nval|

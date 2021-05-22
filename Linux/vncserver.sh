@@ -41,5 +41,5 @@ xfce4 插件
 yum install xfce4-*-plugin
 yum install adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme -y
 apt install xfce4-goodies -y
-apt install xfce4-*-plugin -y
+apt install xfce4-\*-plugin -y
 apt install adwaita-icon-theme-full gnome-themes-extra gnome-themes-extra-data -y

@@ -44,3 +44,7 @@ export ENV_A
 # -f 　代表[变量名称]中为函数名称。
 # -n 　删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。
 # -p 　列出所有的shell赋予程序的环境变量。
+
+# go path 写入环境变量文件
+$HOME/.profile
+/etc/profile #(for a system-wide installation)

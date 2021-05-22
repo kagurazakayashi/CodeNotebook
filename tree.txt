@@ -117,9 +117,11 @@
 │   ├── ./C/HelloWorld.c
 │   ├── ./C/if语句.c
 │   ├── ./C/makefile
+│   ├── ./C/redis.c
 │   ├── ./C/一维数组.c
 │   ├── ./C/三目运算符条件表达式.c
 │   ├── ./C/不同的操作系统编译不同的代码.c
+│   ├── ./C/为字符串开辟指定大小内存空间.c
 │   ├── ./C/乘除法与移位关系.md
 │   ├── ./C/二维数组.c
 │   ├── ./C/二维数组指针.c
@@ -134,7 +136,7 @@
 │   ├── ./C/响应CTRL+C中断.c
 │   ├── ./C/基本输入输出scanf-printf.c
 │   ├── ./C/基础变量和运算.md
-│   ├── ./C/复制字符串数组.c
+│   ├── ./C/复制字符串.c
 │   ├── ./C/字符串处理函数.c
 │   ├── ./C/字符数组.c
 │   ├── ./C/得到数字中的每一位数字.c
@@ -143,22 +145,32 @@
 │   ├── ./C/指针.c
 │   ├── ./C/指针遍历数组.c
 │   ├── ./C/数字类型转换.c
+│   ├── ./C/数据类型长度、输出方式、最大最小值.c
 │   ├── ./C/格式占位符.md
 │   ├── ./C/检查文件中是否都是ASCII表内字符.c
+│   ├── ./C/毫秒纳秒时间戳.c
 │   ├── ./C/浮点数精度测试.c
 │   ├── ./C/添加ico图标.md
+│   ├── ./C/组装字符串.c
 │   ├── ./C/结构体.c
+│   ├── ./C/编译openssl库.sh
+│   ├── ./C/编译redis库.sh
 │   ├── ./C/自增自减.c
 │   ├── ./C/获取时间日期.c
 │   ├── ./C/运算精度测试.c
+│   ├── ./C/逐行读取文件.c
 │   ├── ./C/递归极限测试.c
 │   ├── ./C/逻辑运算符和表达式.md
 │   ├── ./C/遍历字符串数组.c
 │   ├── ./C/链表动态.c
-│   └── ./C/链表单向.c
+│   ├── ./C/链表单向.c
+│   └── ./C/随时接受用户命令.c
 ├── ./C#
+│   ├── ./C#/CA1305 的行为可能因当前用户的区域设置而异.cs
 │   ├── ./C#/HelloWorld.cs
 │   ├── ./C#/List的增删改查.cs
+│   ├── ./C#/ref和out将引用传入函数.cs
+│   ├── ./C#/Winform窗体打开时闪烁问题.cs
 │   ├── ./C#/上传文件同时提交参数.cs
 │   ├── ./C#/代理.cs
 │   ├── ./C#/以管理员身份运行.cs
@@ -171,6 +183,7 @@
 │   ├── ./C#/获取工作路径.cs
 │   ├── ./C#/获取文件信息.cs
 │   ├── ./C#/计算时间差.cs
+│   ├── ./C#/访问修饰符.md
 │   ├── ./C#/读写INI文件.cs
 │   ├── ./C#/运行外部程序.cs
 │   └── ./C#/进程优先级.cs
@@ -215,16 +228,19 @@
 │   ├── ./Docker/Tomcat.sh
 │   ├── ./Docker/WSL2发行版迁移数据文件.bat
 │   ├── ./Docker/修改存储位置.sh
+│   ├── ./Docker/修改窗口管理器.sh
 │   ├── ./Docker/可视化管理.sh
 │   ├── ./Docker/容器.sh
 │   ├── ./Docker/导入导出.sh
 │   ├── ./Docker/批处理.sh
+│   ├── ./Docker/拷贝主机和容器之间的文件.sh
 │   ├── ./Docker/无损修改端口映射.sh
+│   ├── ./Docker/查看状态.sh
 │   ├── ./Docker/用FTP管理文件.sh
+│   ├── ./Docker/登入控制台.sh
 │   ├── ./Docker/移动数据到其它盘.sh
 │   ├── ./Docker/端口映射.sh
 │   ├── ./Docker/虚拟盘.sh
-│   ├── ./Docker/连接.sh
 │   └── ./Docker/镜像.sh
 ├── ./Electron
 │   ├── ./Electron/BrowserWindow.md
@@ -353,7 +369,10 @@
 │   ├── ./IoT/COM口的数据不换行.md
 │   ├── ./IoT/mosquitto命令行订阅和发送消息.sh
 │   ├── ./IoT/mosquitto桥接.md
-│   └── ./IoT/mosquitto编译安装.sh
+│   ├── ./IoT/mosquitto编译安装.sh
+│   ├── ./IoT/mosquitto设置用户名和密码.md
+│   ├── ./IoT/paho.mqtt.c订阅.c
+│   └── ./IoT/编译mqtt库.sh
 ├── ./Java
 │   ├── ./Java/HelloWorld.java
 │   ├── ./Java/int和string相互转换.java
@@ -365,6 +384,7 @@
 │   ├── ./Java/Tomcat中文乱码.xml
 │   ├── ./Java/tomcat安装和文件路径.md
 │   ├── ./Java/主线程更新UI.java
+│   ├── ./Java/切换java版本和降级到8.sh
 │   ├── ./Java/创建ZIP压缩文件.java
 │   ├── ./Java/删除文件夹和文件.java
 │   ├── ./Java/判断文件夹文件是否存在否则创建文件夹.java
@@ -381,14 +401,14 @@
 │   ├── ./JavaScript/Array.js
 │   ├── ./JavaScript/checkbox是否被选中.js
 │   ├── ./JavaScript/Date.js
-│   ├── ./JavaScript/dist
-│   │   └── ./JavaScript/dist/HelloWorld.dev.js
 │   ├── ./JavaScript/ECharts
-│   │   ├── ./JavaScript/ECharts/js
-│   │   │   ├── ./JavaScript/ECharts/js/echarts.common.js
-│   │   │   ├── ./JavaScript/ECharts/js/echarts.common.min.js
-│   │   │   └── ./JavaScript/ECharts/js/echarts.diy.js
-│   │   └── ./JavaScript/ECharts/多线折线图.html
+│   │   ├── ./JavaScript/ECharts/平台echart带标准区分的图表.js
+│   │   └── ./JavaScript/ECharts/示例
+│   │       ├── ./JavaScript/ECharts/示例/js
+│   │       │   ├── ./JavaScript/ECharts/示例/js/echarts.common.js
+│   │       │   ├── ./JavaScript/ECharts/示例/js/echarts.common.min.js
+│   │       │   └── ./JavaScript/ECharts/示例/js/echarts.diy.js
+│   │       └── ./JavaScript/ECharts/示例/多线折线图.html
 │   ├── ./JavaScript/gulpfile.js
 │   ├── ./JavaScript/HelloWorld.js
 │   ├── ./JavaScript/JSON编码解码.js
@@ -404,6 +424,7 @@
 │   ├── ./JavaScript/字符串中是否包含某个字符串.js
 │   ├── ./JavaScript/字符串替换.js
 │   ├── ./JavaScript/字符串裁剪.js
+│   ├── ./JavaScript/字符串转换为变量名.js
 │   ├── ./JavaScript/屏幕宽高.md
 │   ├── ./JavaScript/执行浏览器命令.js
 │   ├── ./JavaScript/数组与字符串相互转换.js
@@ -427,6 +448,7 @@
 │   ├── ./JavaScript/键盘按键和鼠标滚轮.js
 │   └── ./JavaScript/随机数.js
 ├── ./Linux
+│   ├── ./Linux/apt-install通配符.sh
 │   ├── ./Linux/CentOS8网络配置.sh
 │   ├── ./Linux/clamtk杀毒.sh
 │   ├── ./Linux/CPU温度.sh
@@ -438,7 +460,6 @@
 │   ├── ./Linux/exit退出会话.sh
 │   ├── ./Linux/fail2ban-centos7.sh
 │   ├── ./Linux/fail2ban.sh
-│   ├── ./Linux/firewalld防火墙.sh
 │   ├── ./Linux/free内存使用.sh
 │   ├── ./Linux/Gnome美化.sh
 │   ├── ./Linux/hostname.sh
@@ -463,16 +484,17 @@
 │   ├── ./Linux/VirtualBox中的Centos安装增强功能包.sh
 │   ├── ./Linux/VirtualBox压缩磁盘镜像.sh
 │   ├── ./Linux/VNC-Centos-xfce.sh
+│   ├── ./Linux/VNC-Debian10.sh
 │   ├── ./Linux/VNC-RDP-Ubuntu.sh
 │   ├── ./Linux/VNC-RH8.sh
 │   ├── ./Linux/vncserver.sh
 │   ├── ./Linux/vsftpd.md
 │   ├── ./Linux/WSL.txt
+│   ├── ./Linux/xsession-errors文件过大.sh
 │   ├── ./Linux/xterm美化.sh
 │   ├── ./Linux/yum安装位置.sh
 │   ├── ./Linux/zsh.sh
 │   ├── ./Linux/主机多终端切换快捷键.txt
-│   ├── ./Linux/修改默认启动级别.sh
 │   ├── ./Linux/内存盘.sh
 │   ├── ./Linux/内核升级失败回滚.sh
 │   ├── ./Linux/列出系统服务.sh
@@ -489,6 +511,7 @@
 │   ├── ./Linux/开启和断开网络连接.sh
 │   ├── ./Linux/开机显示详细过程.sh
 │   ├── ./Linux/开机运行一个脚本.sh
+│   ├── ./Linux/开机进命令行还是图形.sh
 │   ├── ./Linux/志愿计算：FAHClient.sh
 │   ├── ./Linux/挖矿病毒.sh
 │   ├── ./Linux/文件权限.sh
@@ -497,6 +520,7 @@
 │   ├── ./Linux/更改默认shell.sh
 │   ├── ./Linux/杀死指定进程名称.sh
 │   ├── ./Linux/查找最大文件夹.sh
+│   ├── ./Linux/检查nginx是否有网页文件访问权.sh
 │   ├── ./Linux/正则表达式.md
 │   ├── ./Linux/正常关闭指定关键字名称进程.sh
 │   ├── ./Linux/测试两个设备之间的网速.sh
@@ -512,6 +536,7 @@
 │   ├── ./Linux/磁盘测速.sh
 │   ├── ./Linux/禁止控制台自动黑屏.sh
 │   ├── ./Linux/离线下载镜像.sh
+│   ├── ./Linux/端口.sh
 │   ├── ./Linux/系统服务创建systemctl.md
 │   ├── ./Linux/系统版本.sh
 │   ├── ./Linux/绝对路径和相对路径.md
@@ -524,6 +549,9 @@
 │   ├── ./Linux/配置ssh的超时时间.sh
 │   ├── ./Linux/锁定文件.sh
 │   ├── ./Linux/防止文件被修改.sh
+│   ├── ./Linux/防火墙-firewalld.sh
+│   ├── ./Linux/防火墙-iptables.sh
+│   ├── ./Linux/防火墙-ufw.sh
 │   ├── ./Linux/阿里云源.sh
 │   └── ./Linux/默认启动项.sh
 ├── ./Linux_Command
@@ -540,6 +568,7 @@
 │   ├── ./Linux_Command/curl.sh
 │   ├── ./Linux_Command/date.sh
 │   ├── ./Linux_Command/df.sh
+│   ├── ./Linux_Command/dos2unix.sh
 │   ├── ./Linux_Command/echo.sh
 │   ├── ./Linux_Command/exit.sh
 │   ├── ./Linux_Command/fg.sh
@@ -593,6 +622,7 @@
 │   ├── ./Linux_Command/usermod.sh
 │   ├── ./Linux_Command/vi.md
 │   ├── ./Linux_Command/vmstat.sh
+│   ├── ./Linux_Command/watch.sh
 │   ├── ./Linux_Command/wc.sh
 │   ├── ./Linux_Command/wheris.sh
 │   ├── ./Linux_Command/which.sh
@@ -629,6 +659,7 @@
 │   ├── ./MySQL/大于或小于当前时间.sql
 │   ├── ./MySQL/大批量数据操作崩溃.sql
 │   ├── ./MySQL/导出数据库.sh
+│   ├── ./MySQL/导出数据库中每个表的前100条.sh
 │   ├── ./MySQL/批量修改某列的值.sql
 │   ├── ./MySQL/批量查找替换字符串.sql
 │   ├── ./MySQL/最大的id.sql
@@ -642,8 +673,6 @@
 ├── ./Node
 │   ├── ./Node/Mac上完整卸载nodejs.sh
 │   └── ./Node/npm检查包更新.sh
-├── ./Note
-│   └── ./Note/常用密码长度.md
 ├── ./Objective-C
 │   ├── ./Objective-C/arc4random.m
 │   ├── ./Objective-C/Autoreleasepool.m
@@ -692,6 +721,7 @@
 │   ├── ./Other/Mastodon.sh
 │   ├── ./Other/切噜.c
 │   ├── ./Other/喵.c
+│   ├── ./Other/常用密码长度.md
 │   └── ./Other/生僻字.md
 ├── ./Parse
 │   ├── ./Parse/安装控制面板.sh
@@ -822,6 +852,10 @@
 │   ├── ./Python/读取yaml.py
 │   ├── ./Python/通配符.py
 │   └── ./Python/遍历所有文件.py
+├── ./Q
+│   ├── ./Q/按键精灵小说刷屏.Q
+│   ├── ./Q/按键精灵小说刷屏-微信双群.Q
+│   └── ./Q/按键精灵微信自动退群.Q
 ├── ./React
 │   ├── ./React/react-native-cli.sh
 │   ├── ./React/修改CSS样式.js
@@ -848,7 +882,6 @@
 │   ├── ./Ruby/Gem命令.sh
 │   ├── ./Ruby/HelloWorld.rb
 │   ├── ./Ruby/nginxlog.rb
-│   ├── ./Ruby/sqllog.rb
 │   ├── ./Ruby/windows-mysql.bat
 │   ├── ./Ruby/以指定编码读取文件.rb
 │   ├── ./Ruby/保留几位小数.rb
@@ -972,7 +1005,9 @@
 │   ├── ./TypeScript/tsconfig.json
 │   ├── ./TypeScript/vscode格式化文档与eslint冲突.md
 │   ├── ./TypeScript/webpack.config.js
+│   ├── ./TypeScript/webpack参数.txt
 │   ├── ./TypeScript/二维数组.ts
+│   ├── ./TypeScript/全局变量.ts
 │   ├── ./TypeScript/创建HTML元素.ts
 │   ├── ./TypeScript/唯一值symbol.ts
 │   ├── ./TypeScript/基本类型、字符串拼装.ts
@@ -984,10 +1019,6 @@
 │   ├── ./TypeScript/枚举.ts
 │   ├── ./TypeScript/泛型.ts
 │   └── ./TypeScript/迭代函数、生成器generator.ts
-├── ./VisualBasic
-│   ├── ./VisualBasic/按键精灵小说刷屏.Q
-│   ├── ./VisualBasic/按键精灵小说刷屏-微信双群.Q
-│   └── ./VisualBasic/按键精灵微信自动退群.Q
 ├── ./Windows
 │   ├── ./Windows/Administrator帐户设为不隐藏.reg
 │   ├── ./Windows/anyconnect临时开启服务.bat
@@ -1054,4 +1085,4 @@
     ├── ./WordPress/获取所有分类信息.php
     └── ./WordPress/获取特色图像.php
 
-57 directories, 997 files
+56 directories, 1029 files

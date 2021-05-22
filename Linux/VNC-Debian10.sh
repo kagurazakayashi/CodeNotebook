@@ -6,9 +6,9 @@ apt install tightvncserver
 vncserver
 # 关闭默认启动的VNC
 vncserver -kill :1
+
 # 配置VNC服务器，建议先cp备份
 vim ~/.vnc/xstartup
-
 # xfce4：
 # #!/bin/bash
 # xrdb $HOME/.Xresources
@@ -37,3 +37,8 @@ sudo vim /etc/systemd/system/vncserver@.service
 
 systemctl daemon-reload
 systemctl enable vncserver@1.service
+
+# 用以下命令设置默认的启动项目：
+update-alternatives --config x-window-manager
+
+# 官方介绍： https://wiki.debian.org/zh_CN/Xfce

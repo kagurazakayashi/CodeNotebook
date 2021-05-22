@@ -9,7 +9,7 @@
 3. 创建用户名和密码、打开命令窗口 键入如下命令：
 - `mosquitto_passwd -c /etc/mosquitto/pwfile.example admin`
 - 提示连续两次输入密码、创建成功。命令解释：
-    - c 创建一个用户
+    - c 创建一个用户（覆盖密码文件）
     - /etc/mosquitto/pwfile.example 是将用户创建到 pwfile.example 文件中
     - admin 是用户名。
 

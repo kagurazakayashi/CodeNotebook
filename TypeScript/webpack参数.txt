@@ -1,0 +1,3 @@
+webpack --mode=production  生产环境
+webpack --mode=development 测试环境
+webpack --progress         显示进度

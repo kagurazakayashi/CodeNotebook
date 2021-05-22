@@ -1,4 +1,5 @@
-puts "[雅诗运维工具] Nginx 日志文件解析"
+puts "Nginx 日志文件解析"
+# 神楽坂雅詩
 puts "正在读入Nginx日志文件 #{ARGV[0]} ..."
 file = File.open(ARGV[0],"r")
 while line = file.gets

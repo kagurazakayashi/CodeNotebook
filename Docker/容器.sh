@@ -7,6 +7,9 @@ docker stats
 # 进入容器
 docker exec -it 容器名 /bin/bash
 docker exec -ti -u root 容器名 /bin/bash
+# 导出/导入已停止容器的文件
+docker cp web_1:/root/web.log .
+docker cp web_1:/www /tmp/
 # 拉取镜像
 docker pull training/webapp
 # 创建和启动容器
