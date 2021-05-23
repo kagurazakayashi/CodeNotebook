@@ -39,4 +39,11 @@ AuthorizedKeysFile .ssh/authorized_keys
 # 有了证书登录了，就禁用密码登录吧，安全要紧
 PasswordAuthentication no
 
+# 重启SSH服务以生效
 systemctl restart sshd
+
+# SSH超时时间
+vi /etc/ssh/sshd_config
+# ClientAliveInterval 10m         # 10 minutes
+# ClientAliveCountMax 2           # 2 次
+# 如果客户端处于非活动状态10分钟，则从客户端请求响应。 sshd守护程序将最多发送这些消息两次。 如果在发送客户端活动消息时达到此阈值，sshd将断开客户端的连接。

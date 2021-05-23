@@ -1,3 +1,5 @@
+# 中文
+
 vim /etc/sysconfig/i18n
 
 LANG="zh_CN.UTF-8"
