@@ -8,7 +8,7 @@ cd clamav-0.103.2
 setsebool -P antivirus_can_scan_system 1
 
 # 升级我的病毒库
-freshclam
+freshclam --show-progress --verbose
 
 # 扫描我计算机中的文件
 clamscan -r /
@@ -46,7 +46,7 @@ clamscan --no-summary -ri /data
 #扫描并将发现的病毒文件移动至对应的路径下
 /usr/local/clamav/bin/clamscan -r --move 路径
 
-#扫描显示发现的病毒文件，一般文件后面会显示FOUND
+#扫描显示发现的病毒文件，一般文件后面会显示 FOUND
 /usr/local/clamav/bin/clamscan -r --infected -i
 
 #扫描指定的单个文件
@@ -79,6 +79,8 @@ rm -f /var/log/clamscan.log && freshclam && clamscan -i -l /var/log/clamscan.log
 # -r 递归扫描，即扫描指定目录下的子目录
 # --move=<目录> 把感染病毒的文件移动到指定目录
 # --remove 删除感染病毒的文件
+
+# 发现病毒： FOUND
 
 # ----------- SCAN SUMMARY -----------     #扫描摘要
 # Known viruses: 6377069                   #已知病毒：6377069

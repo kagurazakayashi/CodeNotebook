@@ -1,0 +1,42 @@
+.linebr {
+  clear: both; /* 清除左右浮动 */
+  width: 100px; /* 必须定义宽度 */
+  border: 1px solid; /*定义容器外边框*/
+  word-break: break-word; /* 文本行的任意字内断开 */
+  word-wrap: break-word; /* IE */
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -hp-pre-wrap; /* HP printers */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+}
+
+/*
+word-break属性
+word-wrap 属性允许长单词或 URL 地址换行到下一行。
+
+语法：
+word-wrap: normal|break-word;
+属性值：
+normal 只在允许的断字点换行（浏览器保持默认处理）。
+break-word 在长单词或 URL 地址内部进行换行。
+white-space属性
+white-space 属性设置如何处理元素内的空白。
+
+
+white-space属性
+white-space 属性设置如何处理元素内的空白。
+
+语法：
+word-wrap: normal|break-word;
+
+属性值：
+normal 默认。空白会被浏览器忽略。
+pre 空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+nowrap 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+pre-wrap 保留空白符序列，但是正常地进行换行。
+pre-line 合并空白符序列，但是保留换行符。
+inherit 规定应该从父元素继承 white-space 属性的值。
+*/

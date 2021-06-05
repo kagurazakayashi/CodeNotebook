@@ -168,17 +168,13 @@ systemctl status mastodon-web -l
 cd /home/mastodon/live
 /usr/bin/node ./streaming
 
-# 清理
+#
 su mastodon
 export RAILS_ENV=production
 # 永久 export
 echo "export RAILS_ENV=production" >> ~/.bashrc
 cd /home/mastodon/live
 RAILS_ENV=production bin/tootctl help
-# 清除缓存存储
-bin/tootctl cache clear
-# 更多命令
-# https://docs.joinmastodon.org/zh-cn/admin/tootctl/#cache
 
 # 配置文件
 vim /home/mastodon/live/.env.production
