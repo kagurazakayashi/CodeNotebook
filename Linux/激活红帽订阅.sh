@@ -13,4 +13,4 @@ proxy_hostname =
 proxy_port = 
 
 # 网页管理注册
-https://access.redhat.com/management/products
+# https://access.redhat.com/management/products

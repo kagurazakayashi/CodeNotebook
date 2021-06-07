@@ -14,3 +14,8 @@ document.write(str.slice(4)); // 567890ABCD
 document.write(str.slice(4, 10)); // 567890
 
 // https://www.runoob.com/w3cnote/js-extract-string.html
+
+// 取第一个字符
+str.substring(0, 1);
+// 取最后一个字符
+str.substring(str.length - 1);

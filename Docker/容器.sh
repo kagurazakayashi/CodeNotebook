@@ -5,8 +5,8 @@ docker start ID/名字
 # 运行状况
 docker stats
 # 进入容器
-docker exec -it 容器名 /bin/bash
-docker exec -ti -u root 容器名 /bin/bash
+docker exec -it 容器名 /bin/sh
+docker exec -ti -u root 容器名 /bin/sh
 # 导出/导入已停止容器的文件
 docker cp web_1:/root/web.log .
 docker cp web_1:/www /tmp/
