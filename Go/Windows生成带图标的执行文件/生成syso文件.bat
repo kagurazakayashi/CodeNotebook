@@ -1,0 +1,1 @@
+rsrc -manifest manifest.xml -ico icon.ico -o main.syso
