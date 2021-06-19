@@ -1,0 +1,1 @@
+nohup nice -19 ./a.out | xz -z -9 -e -T 0 -c >a.log.xz

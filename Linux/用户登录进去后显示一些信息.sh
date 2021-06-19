@@ -10,8 +10,8 @@ CNAME="Yashi ECS"
 echo "======== $CNAME ========"
 df -hl
 ps -fa
-sensors
+# sensors
 figlet -c $CNAME
 date
 echo "Welcome," `logname` "."
-#(普通用户用 ps -f 不显示root的)
+# (普通用户用 ps -f 不显示root的)
