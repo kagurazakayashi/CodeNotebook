@@ -9,6 +9,7 @@ chown -R yashi:yashi ~/p && chmod -R -rw------- ~/p
 # 解密：
 gpg -o 1.txt --decrypt 1.txt.asc
 # 加密：
+gpg -e -r li@outlook.com 1.txt
 gpg -ea -r li@outlook.com 1.txt
 # (+a:文本输出)
 
