@@ -2,6 +2,10 @@
 
 TextField(
   keyboardType: TextInputType.text,
+  //过滤输入内容
+  inputFormatters: [
+    FilteringTextInputFormatter.allow(RegExp("[0-9]"))
+  ],
   decoration: InputDecoration(
     contentPadding: EdgeInsets.all(10.0),
     hintText: 'Search',

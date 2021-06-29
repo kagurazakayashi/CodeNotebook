@@ -5,7 +5,7 @@ class NotificationCenter {
   factory NotificationCenter() => _getInstance();
 
   static NotificationCenter get instance => _getInstance();
-  static NotificationCenter _instance;
+  static NotificationCenter? _instance;
 
   NotificationCenter._internal() {
     // 初始化
@@ -15,7 +15,7 @@ class NotificationCenter {
     if (_instance == null) {
       _instance = new NotificationCenter._internal();
     }
-    return _instance;
+    return _instance!;
   }
 
   //创建Map来记录名称
@@ -36,7 +36,7 @@ class NotificationCenter {
     if (postNameMap.containsKey(postName)) {
       postNameMap[postName] = object;
       // = object;
-      getObject[postName](postNameMap[postName]);
+      getObject[postName]!(postNameMap[postName]);
     }
   }
 
