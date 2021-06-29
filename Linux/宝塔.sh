@@ -185,3 +185,25 @@ cat /www/server/data/*.err
 /etc/init.d/memcached restart
 # 启载
 /etc/init.d/memcached reload
+
+# pip is configured with locations that require TLS/SSL, however the ssl modul
+# 删除已安装
+# 编译 OpenSSL 库 (见相关笔记)
+# 下载独立 py 环境版本
+# 然后编辑安装文件 install_panel.sh 找到 Python 编译部分，加入:
+./configure --prefix=$pyenv_path/pyenv --with-openssl=/usr/local/openssl
+                                       ^++++++++++++++++++++++++++++++++
+# 修复
+bt 16
+# ModuleNotFoundError: No module named '_sqlite3'
+# 通过编译安装sqlite3，下载地址:http://www.sqlite.org/download.html
+
+# Oracle Cloud Ubuntu 装 宝塔以后 no route to host
+# 卸载 ufw , 恢复路由表
+apt remove ufw
+iptables-restore < /etc/iptables/rules.v4
+# 安装 firewalld，并开放端口
+apt install firewalld
+firewall-cmd  --permanent --zone=public --add-port=80/tcp
+firewall-cmd  --permanent --zone=public --add-port=443/tcp
+firewall-cmd  --reload

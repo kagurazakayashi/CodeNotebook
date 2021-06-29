@@ -1,0 +1,1 @@
+C:\Windows\System32\runas.exe /profile /user:YASHI-PC\yashi /savecred "C:\Windows\System32\cmd.exe /k cd C:\Users\yashi"

@@ -7,7 +7,7 @@ JSON.parse(text, reviver);
 
 // 将对象转换为JSON文本。
 JSON.stringify(value, replacer, space);
-// text
+// value
 //    必选项。要转换为JSON文本的对象。
 // reviver
 //    可选项。该参数是个替换函数。在转换中，遍历的每个节点，都将执行该函数，该函数的返回值将替代转换结果的相应节点值。
