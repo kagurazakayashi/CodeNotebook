@@ -1,0 +1,59 @@
+# 这是帮助您开始使用Actions的基本工作流程
+# https://www.cnblogs.com/weihanli/archive/2020/08/17/docfx-docs-auto-update.html
+
+name: BuildIndex
+
+# 控制工作流何时运行
+on:
+  # 在推或拉请求事件上触发工作流，但仅用于主分支
+  push: # 整个流程在 main 分支发生push事件时触发。
+    branches: [ master ]
+  # pull_request:
+  #   branches: [ main ]
+
+  # 允许您从Actions选项卡手动运行此工作流
+  workflow_dispatch:
+
+# 一个工作流运行由一个或多个作业组成，这些作业可以顺序地或并行地运行
+jobs:
+  # 此工作流包含一个名为“构建”的作业
+  buildtree:
+    # 作业将在其上运行的运行器类型
+    runs-on: ubuntu-latest
+
+    # 步骤表示将作为作业的一部分执行的任务序列
+    steps:
+      # 签出 $GITHUB_WORKSPACE 下的存储库，以便您的作业可以访问它
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # 使用运行程序 shell 运行一组命令
+      - name: BuildTree
+        run: tree -n -f > tree.txt
+
+      - name: Push
+        run: |
+          dt=`date +%Y%m%d%H%M%S-%s`
+          echo "$dt 准备提交目录："
+          ds=`git diff --stat`
+          echo $ds
+          if [[ -n $ds  ]]
+          then
+            h1=`git show -s --format='自动更新：为分支 %H 创建目录文件'`
+            h2=`git show -s --format='该分支由 %an(%al) 提交于 %ai'`
+            h3="https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}"
+            echo $h1
+            echo $h2
+            echo $h3
+            echo "正在提交..."
+            git add -A
+            git config --global user.name "神楽みやび[bot]"
+            git config --global user.email "kaguramiyabi@foxmail.com"
+            git commit -m "$h1" -m "$h2"
+            git remote set-url origin "$h3"
+            git push #master
+            echo "提交完毕。"
+          else
+            echo "没有变更需要提交，跳过。"
+          fi
+        working-directory: ./
