@@ -33,4 +33,5 @@
 # 目录 INDEX
 
 - 参见 [tree.txt](tree.txt)
-  - 该文件在 Linux 环境中使用 `tree -n -f > tree.txt` 生成。
+  - 该文件在 Linux 环境中使用 `tree -n -f > tree.txt` 生成，便于使用搜索查找需要的文件名。
+  - 该文件已在 Actions 中自动生成，无需手工修改或生成它。
