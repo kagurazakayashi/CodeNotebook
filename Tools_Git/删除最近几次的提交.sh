@@ -3,6 +3,8 @@
 # 1. 回滚到上一次提交
 git reset --hard HEAD^
 # 每执行一次回滚一次的提交。
+# 显示 More? ：
+git reset --hard "HEAD^"
 
 # 2. 强制提交本地代码
 git push origin master -f

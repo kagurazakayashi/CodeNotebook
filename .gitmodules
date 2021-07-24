@@ -1,0 +1,3 @@
+[submodule "TypeScript/yq"]
+	path = TypeScript/yq
+	url = https://github.com/kagurazakayashi/yq.git

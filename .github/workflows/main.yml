@@ -36,8 +36,8 @@ jobs:
           echo $ds
           if [[ -n $ds  ]]
           then
-            h1=`git show -s --format='自动更新：为分支 %H 创建目录文件'`
-            h2=`git show -s --format='该分支由 %an(%al) 提交于 %ai'`
+            h1=`git show -s --format='自动更新：为 %H 创建目录文件'`
+            h2=`git show -s --format='由 %an(%al) 提交于 %ai'`
             h3="https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}"
             echo $h1
             echo $h2

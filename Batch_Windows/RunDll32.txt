@@ -1,0 +1,65 @@
+RunDll32 executable can be used to start various Windows utilities like the Control Panel. Note that they are not guaranteed to work across all Windows versions.
+Here a list of what is available
+
+rundll32 shell32,Control_RunDLL                     Run The Control Panel
+rundll32 shell32,Control_RunDLL X                   Start applet X of Control Panel
+                                                    ("X" = any CPL filename)
+rundll32.exe shell32.dll,Control_RunDLL intl.cpl,,4 Regional setting, Date tab
+
+rundll32 shell32,OpenAs_RunDLL \dir\filename.txt    Open The 'Open With...' Window
+rundll32 shell32,ShellAboutA Info-Box               Open 'About Window Window'
+rundll32 shell32,Control_RunDLL desk.cpl            Open Display Properties
+rundll32 user,cascadechildwindows                   Cascade All Windows
+rundll32 user,tilechildwindows                      Minimize All Child-Windows
+rundll32 user,repaintscreen                         Refresh Desktop
+rundll32 keyboard,disable                           Lock The Keyboard
+rundll32 mouse,disable                              Disable Mouse
+rundll32 user,swapmousebutton                       Swap Mouse Buttons
+rundll32 user,setcursorpos                          Set Cursor Position To (0,0)
+rundll32 user,wnetconnectdialog                     Show 'Map Network Drive' Window
+rundll32 user,wnetdisconnectdialog                  Show 'Disconnect Network Disk' Window
+rundll32 user,disableoemlayer                       Display The BSOD (blue screen of death)Window
+rundll32 diskcopy,DiskCopyRunDll                    Show Copy Disk Window
+rundll32 rnaui.dll,RnaWizard                        Run 'Internet Connection Wizard'
+rundll32 shell32,SHFormatDrive                      Run 'Format Disk (A)' Window
+rundll32 shell32,SHExitWindowsEx -1                 Cold Restart Of Windows Explorer
+rundll32 shell32,SHExitWindowsEx 1                  Shut Down Computer
+rundll32 shell32,SHExitWindowsEx 0                  Logoff Current User
+rundll32 shell32,SHExitWindowsEx 2                  Windows9x Quick Reboot
+rundll32 krnl386.exe,exitkernel                     Force Windows 9x To Exit (no confirmation)
+rundll32 rnaui.dll,RnaDial "MyConnect"              Run 'Net Connection' Dialog
+rundll32 msprint2.dll,RUNDLL_PrintTestPage          Choose & Print Test Page Of Current Printer
+rundll32 user,setcaretblinktime                     Set New Cursor Rate Speed
+rundll32 user, setdoubleclicktime                   Set New DblClick Speed (Rate)
+rundll32 sysdm.cpl,InstallDevice_Rundll             Hardware installation wizard
+rundll32 user,MessageBeep                           Default beep sound
+rundll32 user32.dll,MessageBeep                     Default beep sound (XP)
+rundll32 shell32.dll,Control_RunDLL appwiz.cpl      Add/remove programs
+rundll32 shell32.dll,Control_RunDLL timedate.cpl,,0 Date/time settings
+rundll32 shell32.dll,Control_RunDLL odbccp32.cpl    ODBC settings
+
+rundll32.exe url.dll,FileProtocolHandler http:\\www.rgagnon.com
+rundll32.exe url.dll,FileProtocolHandler c:\mypdf.pdf
+                                                    Open the associated application
+rundll32 amovie.ocx,RunDll /play /close c:\mymovie.mpg                                    
+                                                    Play multimedia (movie or sound)
+
+Rundll32.exe powrprof.dll,SetSuspendState Sleep     Put the computer in Sleep mode 
+
+                                                    
+Privacy (IE)  
+rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 8   Internet temporary files
+rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 2   Cookies 
+rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 1   History
+rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 16  Forms Data
+rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 32  Passwords
+rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 255 Delete everything 
+The Windows Fax viewer is used to view a variety of graphic format like .bmp, .dib, .emf, .gif, .jpeg, .png, .tif or .wmf extensions
+rundll32.exe shimgvw.dll,ImageView_Fullscreen 
+  "C:\Documents and Settings\username\My Documents\logo.bmp"
+
+In Powerbuilder to launch the rundll32 utility, use the Powerscript Run function.
+string command
+
+command='rundll32.exe InetCpl.cpl,ClearMyTracksByProcess 8'
+Run(command)

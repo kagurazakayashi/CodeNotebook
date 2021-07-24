@@ -1,0 +1,25 @@
+/* 
+forwards : 动画结束后停止在动画结束后的位置
+可用于 transform 动画
+ */
+
+@keyframes div0ani {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1);
+    -webkit-transform: translateY(1);
+    -moz-transform: translateY(1);
+    -ms-transform: translateY(1);
+    -o-transform: translateY(1);
+  }
+}
+#div0 {
+  -webkit-animation: rowup div0ani linear forwards;
+  animation: rowup div0ani linear forwards;
+}

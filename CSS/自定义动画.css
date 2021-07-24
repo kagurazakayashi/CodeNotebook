@@ -1,0 +1,13 @@
+/* 先为要运行动画的对象设置过渡时间 */
+div {
+    transition: 0.4s;
+    opacity: 1;
+}
+/* 然后JS直接修改CSS值即可出现动画 */
+div {
+    opacity: 0;
+}
+/*
+div.style.opacity = "1"
+div.style.width = "50%"
+*/
