@@ -42,6 +42,7 @@
 │   ├── ./Batch/映射rm.bat
 │   ├── ./Batch/服务开关_已启动则停止_已停止则启动，参数①服务名.bat
 │   ├── ./Batch/检查是否有管理员权限.bat
+│   ├── ./Batch/检查是否有管理员权限，否则以管理员运行.bat
 │   ├── ./Batch/清空某个文件夹里的所有内容.bat
 │   ├── ./Batch/清除字体缓存.bat
 │   ├── ./Batch/环境变量.bat
@@ -94,6 +95,7 @@
 │   ├── ./Batch_Windows/磁盘碎片整理.bat
 │   ├── ./Batch_Windows/禁用文件管理左侧快速访问.reg
 │   ├── ./Batch_Windows/移动Outlook数据文件.bat
+│   ├── ./Batch_Windows/移除迅雷xlwfp服务.bat
 │   ├── ./Batch_Windows/管理员取得所有权.reg
 │   ├── ./Batch_Windows/编辑hosts.bat
 │   ├── ./Batch_Windows/自动登录选项消失.reg
@@ -843,6 +845,7 @@
 │   ├── ./ShellScript_Linux/常用目录和配置文件.md
 │   ├── ./ShellScript_Linux/常用路径.md
 │   ├── ./ShellScript_Linux/开启和断开网络连接.sh
+│   ├── ./ShellScript_Linux/开机启动图形程序.sh
 │   ├── ./ShellScript_Linux/开机时间.sh
 │   ├── ./ShellScript_Linux/开机显示详细过程.sh
 │   ├── ./ShellScript_Linux/开机运行一个脚本.sh
@@ -1178,4 +1181,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-65 directories, 1113 files
+65 directories, 1116 files
