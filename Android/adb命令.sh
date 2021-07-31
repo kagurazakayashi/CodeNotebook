@@ -1,5 +1,7 @@
 # 已连接设备
 adb devices
+# 连接远程设备
+adb connect 127.0.0.1:7555
 # 操作到指定设备
 adb -s emulator-5554 shell
 # 截图

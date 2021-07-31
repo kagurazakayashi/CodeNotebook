@@ -1,4 +1,20 @@
 # 创建容器时网络端口映射
+# -p 主机:容器
+
+# 将容器暴露的所有端口，都随机映射到宿主机上
+docker run -P -it ubuntu /bin/bash
+# 将容器指定端口随机映射到宿主机一个端口上
+docker run -P 80 -it ubuntu /bin/bash
+# 将容器指定端口指定映射到宿主机的一个端口上（容器端口80，宿主机端口8000）
+docker run -p 8000:80 -it ubuntu /bin/bash
+# 将容器ip和端口，指定映射到宿主机上
+docker run -P 192.168.0.100::80 -it ubuntu /bin/bash
+# 将容器ip和端口，指定映射到宿主机上
+docker run -p 192.168.0.100:8000:80 -it ubuntu /bin/bash
+# 查看映射端口配置
+docker port container_ID #容器ID
+#输出 80/tcp -> 0.0.0.0:8000
+
 # -P :是容器内部端口随机映射到主机的高端口。
 # -p : 是容器内部端口绑定到指定的主机端口。
 docker run -d -P training/webapp python app.py
