@@ -24,6 +24,10 @@ jobs:
         uses: actions/checkout@v2
 
       # 使用 shell 运行命令
+      - name: UpdateSubmodule
+        run: git submodule update --remote
+        working-directory: ./
+
       - name: BuildTree
         run: tree -n -f > tree.txt
         working-directory: ./

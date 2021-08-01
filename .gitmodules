@@ -1,3 +1,6 @@
 [submodule "TypeScript/yq"]
 	path = TypeScript/yq
 	url = https://github.com/kagurazakayashi/yq.git
+[submodule "RaspberryPi"]
+	path = RaspberryPi
+	url = https://github.com/kagurazakayashi/pi.git
