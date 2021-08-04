@@ -11,6 +11,31 @@
 │   ├── ./Android/adb文件双击安装.bat
 │   ├── ./Android/使用adb命令取出手机中已安装的apk.sh
 │   └── ./Android/导出游戏数据包.sh
+├── ./Android_Kotlin
+│   ├── ./Android_Kotlin/List.kt
+│   ├── ./Android_Kotlin/Map字典.kt
+│   ├── ./Android_Kotlin/Math计算.kt
+│   ├── ./Android_Kotlin/When条件选择.txt
+│   ├── ./Android_Kotlin/enum枚举.kt
+│   ├── ./Android_Kotlin/for循环和区间数组.kt
+│   ├── ./Android_Kotlin/代理：1代理委托.kt
+│   ├── ./Android_Kotlin/代理：2单例.kt
+│   ├── ./Android_Kotlin/函数.kt
+│   ├── ./Android_Kotlin/函数_用var声明.kt
+│   ├── ./Android_Kotlin/命令行输入和!断言.kt
+│   ├── ./Android_Kotlin/字符串_模板.kt
+│   ├── ./Android_Kotlin/字符串_比较.kt
+│   ├── ./Android_Kotlin/尾递归.kt
+│   ├── ./Android_Kotlin/数据类型和取值范围.kt
+│   ├── ./Android_Kotlin/数组操作.kt
+│   ├── ./Android_Kotlin/空值.kt
+│   ├── ./Android_Kotlin/类.kt
+│   ├── ./Android_Kotlin/类_1抽象.kt
+│   ├── ./Android_Kotlin/类_2多态.kt
+│   ├── ./Android_Kotlin/类_3接口.kt
+│   ├── ./Android_Kotlin/类_印章类.kt
+│   ├── ./Android_Kotlin/类_继承.kt
+│   └── ./Android_Kotlin/递归和BigInteger.kt
 ├── ./Assembly
 │   ├── ./Assembly/1基础知识.md
 │   ├── ./Assembly/2寄存器.md
@@ -514,46 +539,6 @@
 │   └── ./MySQL/记录查询日志.sh
 ├── ./Network
 │   └── ./Network/CIDR网段格式.md
-├── ./Objective-C
-│   ├── ./Objective-C/Autoreleasepool.m
-│   ├── ./Objective-C/CGAffineTransform.m
-│   ├── ./Objective-C/Delegate.m
-│   ├── ./Objective-C/HelloWorld.m
-│   ├── ./Objective-C/MPMoviePlayerController.m
-│   ├── ./Objective-C/NSArray_NSMutableArray.m
-│   ├── ./Objective-C/NSDate.m
-│   ├── ./Objective-C/NSDictionary_NSMutableDictionary.m
-│   ├── ./Objective-C/NSMutableURLRequest.m
-│   ├── ./Objective-C/NSNotification.m
-│   ├── ./Objective-C/NSString_NSMutableString.m
-│   ├── ./Objective-C/NSThread.m
-│   ├── ./Objective-C/NSTimeZone.m
-│   ├── ./Objective-C/NSURLRequestCachePolicy.txt
-│   ├── ./Objective-C/NSURLSession.m
-│   ├── ./Objective-C/NSUserDefaults_standardUserDefaults.m
-│   ├── ./Objective-C/UIAlertView.m
-│   ├── ./Objective-C/UIButton.m
-│   ├── ./Objective-C/UIDevice.m
-│   ├── ./Objective-C/UILabel.m
-│   ├── ./Objective-C/UIScrollView.txt
-│   ├── ./Objective-C/UITextField.m
-│   ├── ./Objective-C/UITouch.m
-│   ├── ./Objective-C/UIview动画.m
-│   ├── ./Objective-C/arc4random.m
-│   ├── ./Objective-C/presentModalViewControllerAnimated.m
-│   ├── ./Objective-C/return键隐藏键盘.m
-│   ├── ./Objective-C/scrollview中双击定点放大.m
-│   ├── ./Objective-C/冒泡排序.m
-│   ├── ./Objective-C/判断ios中是否安装了某些软件.m
-│   ├── ./Objective-C/判断设备屏幕尺寸分辨率.m
-│   ├── ./Objective-C/基础.m
-│   ├── ./Objective-C/基础变量类型定义.txt
-│   ├── ./Objective-C/属性，成员变量设置器和访问器.txt
-│   ├── ./Objective-C/手势.m
-│   ├── ./Objective-C/手表从主程序请求数据.m
-│   ├── ./Objective-C/指定锚点旋转.m
-│   ├── ./Objective-C/生成随机数.m
-│   └── ./Objective-C/获取文件列表并按扩展名过滤.m
 ├── ./Other
 │   ├── ./Other/IPv4地址段.md
 │   ├── ./Other/Mastodon.sh
@@ -637,8 +622,6 @@
 │   ├── ./PHP_WordPress/自定义菜单.php
 │   ├── ./PHP_WordPress/获取所有分类信息.php
 │   └── ./PHP_WordPress/获取特色图像.php
-├── ./Pi
-│   └── ./Pi/目标磁盘模式.sh
 ├── ./PostgreSQL
 │   ├── ./PostgreSQL/PostgreSQL常用命令.md
 │   ├── ./PostgreSQL/创建新用户并给权限.sh
@@ -993,14 +976,6 @@
 │   ├── ./ShellScript_macOS/禁用虚拟内存.sh
 │   ├── ./ShellScript_macOS/连接串口.sh
 │   └── ./ShellScript_macOS/驱动.sh
-├── ./Swift
-│   ├── ./Swift/AppGroup.swift
-│   ├── ./Swift/Array.swift
-│   ├── ./Swift/Delegate.swift
-│   ├── ./Swift/HelloWorld.swift
-│   ├── ./Swift/NSError.swift
-│   ├── ./Swift/iOS7_8_AlertView兼容.swift
-│   └── ./Swift/is_as.swift
 ├── ./Tools
 │   ├── ./Tools/ACFan连点器.js
 │   ├── ./Tools/CD抓轨.sh
@@ -1025,7 +1000,7 @@
 │   ├── ./Tools/临时解b64密码文件并复制到剪贴板，三秒后清除.py
 │   ├── ./Tools/从rediveestertionwin同步资源.js
 │   ├── ./Tools/公主连结刷初始.sh
-│   ├── ./Tools/删除注释.txt
+│   ├── ./Tools/删除注释和空行.txt
 │   ├── ./Tools/剪贴板.sh
 │   ├── ./Tools/压缩炸弹.sh
 │   ├── ./Tools/图标转换和压缩
@@ -1085,6 +1060,7 @@
 │   ├── ./Tools_Docker/拷贝主机和容器之间的文件.sh
 │   ├── ./Tools_Docker/无损修改端口映射.sh
 │   ├── ./Tools_Docker/查看状态.sh
+│   ├── ./Tools_Docker/检查容器健康状态.md
 │   ├── ./Tools_Docker/用FTP管理文件.sh
 │   ├── ./Tools_Docker/登入控制台.sh
 │   ├── ./Tools_Docker/移动数据到其它盘.sh
@@ -1114,6 +1090,7 @@
 │   └── ./Tools_FFmpeg/转AAC.sh
 ├── ./Tools_Git
 │   ├── ./Tools_Git/Github创建新分支.sh
+│   ├── ./Tools_Git/gitignore忽略规则.md
 │   ├── ./Tools_Git/git常用命令.sh
 │   ├── ./Tools_Git/gpg_failed_to_sign_the_data.sh
 │   ├── ./Tools_Git/代码量统计.sh
@@ -1176,6 +1153,54 @@
 │   ├── ./TypeScript/迭代函数、生成器generator.ts
 │   └── ./TypeScript/颜色亮度.ts
 ├── ./desktop.ini
+├── ./iOS_Objective-C
+│   ├── ./iOS_Objective-C/Autoreleasepool.m
+│   ├── ./iOS_Objective-C/CGAffineTransform.m
+│   ├── ./iOS_Objective-C/Delegate.m
+│   ├── ./iOS_Objective-C/HelloWorld.m
+│   ├── ./iOS_Objective-C/MPMoviePlayerController.m
+│   ├── ./iOS_Objective-C/NSArray_NSMutableArray.m
+│   ├── ./iOS_Objective-C/NSDate.m
+│   ├── ./iOS_Objective-C/NSDictionary_NSMutableDictionary.m
+│   ├── ./iOS_Objective-C/NSMutableURLRequest.m
+│   ├── ./iOS_Objective-C/NSNotification.m
+│   ├── ./iOS_Objective-C/NSString_NSMutableString.m
+│   ├── ./iOS_Objective-C/NSThread.m
+│   ├── ./iOS_Objective-C/NSTimeZone.m
+│   ├── ./iOS_Objective-C/NSURLRequestCachePolicy.txt
+│   ├── ./iOS_Objective-C/NSURLSession.m
+│   ├── ./iOS_Objective-C/NSUserDefaults_standardUserDefaults.m
+│   ├── ./iOS_Objective-C/UIAlertView.m
+│   ├── ./iOS_Objective-C/UIButton.m
+│   ├── ./iOS_Objective-C/UIDevice.m
+│   ├── ./iOS_Objective-C/UILabel.m
+│   ├── ./iOS_Objective-C/UIScrollView.txt
+│   ├── ./iOS_Objective-C/UITextField.m
+│   ├── ./iOS_Objective-C/UITouch.m
+│   ├── ./iOS_Objective-C/UIview动画.m
+│   ├── ./iOS_Objective-C/arc4random.m
+│   ├── ./iOS_Objective-C/presentModalViewControllerAnimated.m
+│   ├── ./iOS_Objective-C/return键隐藏键盘.m
+│   ├── ./iOS_Objective-C/scrollview中双击定点放大.m
+│   ├── ./iOS_Objective-C/冒泡排序.m
+│   ├── ./iOS_Objective-C/判断ios中是否安装了某些软件.m
+│   ├── ./iOS_Objective-C/判断设备屏幕尺寸分辨率.m
+│   ├── ./iOS_Objective-C/基础.m
+│   ├── ./iOS_Objective-C/基础变量类型定义.txt
+│   ├── ./iOS_Objective-C/属性，成员变量设置器和访问器.txt
+│   ├── ./iOS_Objective-C/手势.m
+│   ├── ./iOS_Objective-C/手表从主程序请求数据.m
+│   ├── ./iOS_Objective-C/指定锚点旋转.m
+│   ├── ./iOS_Objective-C/生成随机数.m
+│   └── ./iOS_Objective-C/获取文件列表并按扩展名过滤.m
+├── ./iOS_Swift
+│   ├── ./iOS_Swift/AppGroup.swift
+│   ├── ./iOS_Swift/Array.swift
+│   ├── ./iOS_Swift/Delegate.swift
+│   ├── ./iOS_Swift/HelloWorld.swift
+│   ├── ./iOS_Swift/NSError.swift
+│   ├── ./iOS_Swift/iOS7_8_AlertView兼容.swift
+│   └── ./iOS_Swift/is_as.swift
 ├── ./icon
 │   ├── ./icon/icon.icns
 │   ├── ./icon/icon.ico
@@ -1183,4 +1208,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-66 directories, 1117 files
+66 directories, 1142 files
