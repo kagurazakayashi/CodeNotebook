@@ -1,0 +1,15 @@
+// 类似于Java中的switch
+
+when(变量) {
+    分支A -> 表达式
+    else -> 表达式
+}
+
+// 带有返回值的When表达式：
+
+var result = when(变量) {
+    分支A -> 表达式（要有返回值，最终将值赋给result）
+    else -> 表达式（要有返回值，最终将值赋给result）
+}
+
+// https://www.jianshu.com/p/b8eb0fe28dad
