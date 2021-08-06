@@ -12,4 +12,11 @@ var result = when(变量) {
     else -> 表达式（要有返回值，最终将值赋给result）
 }
 
-// https://www.jianshu.com/p/b8eb0fe28dad
+
+when (x) {
+    1 -> print("x == 1")
+    2 -> print("x == 2")
+    else -> {
+        print("x 不是 1 ，也不是 2")
+    }
+}

@@ -20,3 +20,14 @@ fun getRoundArea(PI: Float = Pi, radius: Float): Float {
 var a = getRoundArea(3.14f, 5.0f)
 // 我们需要的PI值与默认值一致，此时不需要再传入PI值。只需要通过 radius=5.0f 声明我们传入了半径值
 var a = getRoundArea(radius = 5.0f)
+
+
+// @NonNull 不可为空
+// override 重写某个函数
+override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+    if (call.method == "getPlatformVersion") {
+        result.success("Android ${android.os.Build.VERSION.RELEASE}")
+    } else {
+        result.notImplemented()
+    }
+}
