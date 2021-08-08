@@ -682,6 +682,7 @@
 │   ├── ./Python/字符串_数组互转.py
 │   ├── ./Python/字符串_是否包含.py
 │   ├── ./Python/字符串_替换.py
+│   ├── ./Python/字符串_清理.py
 │   ├── ./Python/字符串_类型.py
 │   ├── ./Python/字符串_裁剪.py
 │   ├── ./Python/字符串_遍历.py
@@ -1103,7 +1104,9 @@
 │   ├── ./Tools_Git/删除最近几次的提交.sh
 │   ├── ./Tools_Git/子模块.sh
 │   ├── ./Tools_Git/常用设置.sh
-│   └── ./Tools_Git/彻底删除某文件包括历史版本中.sh
+│   ├── ./Tools_Git/彻底删除某文件包括历史版本中.sh
+│   ├── ./Tools_Git/换行符控制.sh
+│   └── ./Tools_Git/换行符控制gitattributes.txt
 ├── ./Tools_IoT
 │   ├── ./Tools_IoT/COM口的数据不换行.md
 │   ├── ./Tools_IoT/CentOS7安装MQTT协议服务器mosquitto.sh
@@ -1213,4 +1216,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-67 directories, 1146 files
+67 directories, 1149 files
