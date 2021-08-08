@@ -1,0 +1,17 @@
+# 左边表示匹配的文件，右边表示针对匹配的文件适用的换行符
+# text=auto      一般用来表示默认选项，表示由git确定换行符
+# text           表示匹配的文件的换行符转换为平台指定的换行符（windows: crlf | OS X and Linux: lf）
+# text eol=crlf  用于将匹配的文件的换行符强制保留为crlf，即使是在OS X或者Linux上，一般用于指定Windows特定文件
+# text eol=lf    用于将匹配的文件的换行符强制保留为lf，即使是在Windows上，适用于大部分文本文件
+# binary         一般用于图片、视频等二进制文件，通知git不要对其做任何处理
+
+* text eol=lf
+*.sln text eol=crlf
+*.reg text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ini text eol=crlf
+*.png binary
+*.jpg binary
+*.ico binary
+*.icns binary

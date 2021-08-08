@@ -16,3 +16,4 @@ __debug_bin
 test.*
 Temp
 .vscode
+./web.config

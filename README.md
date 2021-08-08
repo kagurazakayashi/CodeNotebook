@@ -34,4 +34,15 @@
 
 - 参见 [tree.txt](tree.txt)
   - 该文件在 Linux 环境中使用 `tree -n -f > tree.txt` 生成，便于使用搜索查找需要的文件名。
-  - 该文件已在 Actions 中自动生成，无需手工修改或生成它。
+  - 该文件已在 Actions 中自动生成（见 [.github/workflows/main.yml](.github/workflows/main.yml) 文件），无需手工修改或生成它。
+
+# 其他
+
+- 更新时请同时更新子模块:
+  - `git submodule update --remote`
+  - 详细见 [Tools_Git/子模块.sh](Tools_Git/子模块.sh) 和 [.gitmodules](.gitmodules) 文件。
+- 换行符规则:
+  - Windows 上专用格式使用 `crlf`，其他均使用 `lf` 。
+  - 详细见 [.gitattributes](.gitattributes) 文件。
+- 部分不需要的系统生成文件和二进制生成后文件不会进行同步。
+  - 详细见 [.gitignore](.gitignore) 文件。

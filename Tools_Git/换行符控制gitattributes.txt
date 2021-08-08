@@ -1,0 +1,23 @@
+Git换行符控制，将 .gitattributes 文件放在工程根目录下
+
+# 左边表示匹配的文件，右边表示针对匹配的文件适用的换行符
+# text=auto      一般用来表示默认选项，表示由git确定换行符
+# text           表示匹配的文件的换行符转换为平台指定的换行符（windows: crlf | OS X and Linux: lf）
+# text eol=crlf  用于将匹配的文件的换行符强制保留为crlf，即使是在OS X或者Linux上，一般用于指定Windows特定文件
+# text eol=lf    用于将匹配的文件的换行符强制保留为lf，即使是在Windows上，适用于大部分文本文件
+# binary         一般用于图片、视频等二进制文件，通知git不要对其做任何处理
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.c text
+*.h text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
