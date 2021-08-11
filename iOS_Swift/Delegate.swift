@@ -27,7 +27,7 @@ class SqliteLogManager : LogManagerDelegate {
         print("将日志记录到sqlite数据库中")
     }
 }
- 
+
  
 //使用
 let userController = UserController()
@@ -36,4 +36,5 @@ userController.login()  //不做任何事
 let sqliteLogManager = SqliteLogManager()
 userController.delegate = sqliteLogManager
 userController.login()  //输出“将日志记录到sqlite数据库中”
-// 原文出自：www.hangge.com  转载请保留原文链接：http://www.hangge.com/blog/cache/detail_810.html
+
+// http://www.hangge.com/blog/cache/detail_810.html
