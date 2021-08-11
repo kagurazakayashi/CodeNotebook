@@ -322,6 +322,7 @@
 │   ├── ./Flutter/推到新页.dart
 │   ├── ./Flutter/插件与原生交互
 │   │   ├── ./Flutter/插件与原生交互/Android端Kotlin与Flutter插件交互.kt
+│   │   ├── ./Flutter/插件与原生交互/iOS插件引入pod库.md
 │   │   └── ./Flutter/插件与原生交互/插件建立与原生的通知渠道.dart
 │   ├── ./Flutter/文件读写.dart
 │   ├── ./Flutter/新建页面.dart
@@ -971,6 +972,7 @@
 │   ├── ./ShellScript_macOS/vbox引导bootcamp系统.sh
 │   ├── ./ShellScript_macOS/zsh加入bash环境.sh
 │   ├── ./ShellScript_macOS/为任意程序设置代理.sh
+│   ├── ./ShellScript_macOS/允许任何来源.sh
 │   ├── ./ShellScript_macOS/关闭SIP.sh
 │   ├── ./ShellScript_macOS/关闭超线程技术.sh
 │   ├── ./ShellScript_macOS/制作iso文件.sh
@@ -980,6 +982,7 @@
 │   ├── ./ShellScript_macOS/显示隐藏文件.sh
 │   ├── ./ShellScript_macOS/禁止生成sleepimage.sh
 │   ├── ./ShellScript_macOS/禁用虚拟内存.sh
+│   ├── ./ShellScript_macOS/第二个管理员账户没有usr_local权限.sh
 │   ├── ./ShellScript_macOS/连接串口.sh
 │   └── ./ShellScript_macOS/驱动.sh
 ├── ./Tools
@@ -1207,8 +1210,41 @@
 │   ├── ./iOS_Swift/Delegate.swift
 │   ├── ./iOS_Swift/HelloWorld.swift
 │   ├── ./iOS_Swift/NSError.swift
+│   ├── ./iOS_Swift/enum枚举.swift
+│   ├── ./iOS_Swift/for-in遍历数组、字典、数字区间.swift
 │   ├── ./iOS_Swift/iOS7_8_AlertView兼容.swift
-│   └── ./iOS_Swift/is_as.swift
+│   ├── ./iOS_Swift/is_as.swift
+│   ├── ./iOS_Swift/try和error.swift
+│   ├── ./iOS_Swift/while循环.swift
+│   ├── ./iOS_Swift/代理.swift
+│   ├── ./iOS_Swift/元组.swift
+│   ├── ./iOS_Swift/元组_交换值.swift
+│   ├── ./iOS_Swift/函数.swift
+│   ├── ./iOS_Swift/判断_guard.swift
+│   ├── ./iOS_Swift/判断_if.swift
+│   ├── ./iOS_Swift/判断_switch.swift
+│   ├── ./iOS_Swift/可选类型、可选绑定.swift
+│   ├── ./iOS_Swift/基本运算符.md
+│   ├── ./iOS_Swift/字典Dictionary(无序的Key-Value对).swift
+│   ├── ./iOS_Swift/字符串.swift
+│   ├── ./iOS_Swift/字符串中是否含有某个单词.swift
+│   ├── ./iOS_Swift/常量、变量、类型.swift
+│   ├── ./iOS_Swift/数组_Array(有序数据集).swift
+│   ├── ./iOS_Swift/数组_中每个元素的值乘以2.swift
+│   ├── ./iOS_Swift/数组_最大最小元素.swift
+│   ├── ./iOS_Swift/数组_过滤，取出所有小于60的数.swift
+│   ├── ./iOS_Swift/求一组数字的和.swift
+│   ├── ./iOS_Swift/祝你生日快乐.swift
+│   ├── ./iOS_Swift/类.swift
+│   ├── ./iOS_Swift/结构体.swift
+│   ├── ./iOS_Swift/获取并解析XML.swift
+│   ├── ./iOS_Swift/计时器Timer.swift
+│   ├── ./iOS_Swift/读取一个文件.swift
+│   ├── ./iOS_Swift/闭包_值捕获.swift
+│   ├── ./iOS_Swift/闭包_尾随.swift
+│   ├── ./iOS_Swift/闭包_普通.swift
+│   ├── ./iOS_Swift/闭包_逃逸.swift
+│   └── ./iOS_Swift/集合Set(无序无重复数据).swift
 ├── ./icon
 │   ├── ./icon/icon.icns
 │   ├── ./icon/icon.ico
@@ -1216,4 +1252,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-67 directories, 1149 files
+67 directories, 1185 files
