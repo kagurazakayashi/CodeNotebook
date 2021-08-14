@@ -207,3 +207,8 @@ apt install firewalld
 firewall-cmd  --permanent --zone=public --add-port=80/tcp
 firewall-cmd  --permanent --zone=public --add-port=443/tcp
 firewall-cmd  --reload
+
+# src/gevent/libev/corecext.c:92:10: 致命错误：Python.h：没有那个文件或目录
+yum install python2-devel.x86_64 -y
+pip install gevent
+bt 16
