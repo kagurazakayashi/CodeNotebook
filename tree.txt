@@ -95,9 +95,11 @@
 │   ├── ./Batch_Windows/任务栏时间显示秒钟.reg
 │   ├── ./Batch_Windows/使用旧版的图片查看器.reg
 │   ├── ./Batch_Windows/修复EXE文件关联.reg
+│   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
 │   ├── ./Batch_Windows/共享文件.bat
 │   ├── ./Batch_Windows/创建常用模式启动项.bat
 │   ├── ./Batch_Windows/删除OneDrive.reg
+│   ├── ./Batch_Windows/删除内核转储.bat
 │   ├── ./Batch_Windows/删除右键打印.reg
 │   ├── ./Batch_Windows/删除此电脑页上方几个文档文件夹.reg
 │   ├── ./Batch_Windows/卸载cygwin.bat
@@ -703,6 +705,7 @@
 │   ├── ./Python/文件操作_遍历文件夹.py
 │   ├── ./Python/网络请求.py
 │   ├── ./Python/获取当前py文件所在目录.py
+│   ├── ./Python/解压egg包文件.sh
 │   ├── ./Python/设置默认版本.sh
 │   ├── ./Python/读写文本.py
 │   ├── ./Python/读取DOM.py
@@ -1109,7 +1112,8 @@
 │   ├── ./Tools_Git/常用设置.sh
 │   ├── ./Tools_Git/彻底删除某文件包括历史版本中.sh
 │   ├── ./Tools_Git/换行符控制.sh
-│   └── ./Tools_Git/换行符控制gitattributes.txt
+│   ├── ./Tools_Git/换行符控制gitattributes.txt
+│   └── ./Tools_Git/输出日志.sh
 ├── ./Tools_IoT
 │   ├── ./Tools_IoT/COM口的数据不换行.md
 │   ├── ./Tools_IoT/CentOS7安装MQTT协议服务器mosquitto.sh
@@ -1252,4 +1256,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-67 directories, 1185 files
+67 directories, 1189 files
