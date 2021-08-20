@@ -1,4 +1,4 @@
-# Centos7 搭建 Mastodon 实例
+# Centos7 搭建 Mastodon 长毛象实例
 https://www.rin404.com/Building/BTmastodon.html
 
 # 加入建表权限
@@ -193,12 +193,3 @@ pg_restore -U mastodon -n public --no-owner --role=mastodon -d mastodon_producti
 
 # 在数据库直接更改主题
 UPDATE `mastodon`.`settings` SET value = 'mastodon-light' WHERE id=9;
-
-# docker 上清理
-docker exec -it mastodon_web_1 /bin/bash
-# 移除本地缓存的其它实例媒体附件
-tootctl media remove --days 7 --concurrency 1 --verbose
-# 移除本地预览卡片缩略图
-tootctl preview_cards remove --days 180 --concurrency 1 --verbose
-# 从数据库中删除未被引用的嘟文
-tootctl statuses remove --days 90
