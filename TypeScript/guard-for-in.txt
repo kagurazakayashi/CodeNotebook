@@ -1,0 +1,20 @@
+// 使用循环对对象进行for in循环将包括通过原型链继承的属性。此行为可能会导致for循环中出现意外的项目。
+for (key in foo) {
+    doSomething(key);
+}
+
+// 规则细节
+// 此规则旨在防止在for in不对循环中的结果进行过滤的情况下使用循环可能产生的意外行为。因此，当for in循环不使用if语句过滤其结果时，它将发出警告。
+// 以下模式被认为是问题：
+/*eslint guard-for-in: 2*/
+for (key in foo) {    /*error The body of a for-in should be wrapped in an if statement to filter     unwanted properties from the prototype.*/
+    doSomething(key);
+}
+
+// 以下模式不被视为问题：
+/*eslint guard-for-in: 2*/
+for (key in foo) {
+    if ({}.hasOwnProperty.call(foo, key)) {
+        doSomething(key);
+    }
+}

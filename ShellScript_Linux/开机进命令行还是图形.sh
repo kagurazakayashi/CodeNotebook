@@ -24,3 +24,7 @@ systemctl set-default multi-user.target
 
 # 开机以图形界面启动，执行：
 systemctl set-default graphical.target
+
+# 切换控制台
+# Ctrl+Alt+F1、Ctrl+Alt+F2、...、Ctrl+Alt+F7
+# 其中 7 是图形

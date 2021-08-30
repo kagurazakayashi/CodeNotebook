@@ -137,3 +137,6 @@ set expandtab     当设置成 expandtab 时，缩进用空格来表示，noexpa
 - 设置环境只对当前会话有效。
 - 可以把环境设置保存在用户主目录的 `~/.exrc` 文件中，可单行可多行。
   - 单行： `set ts=4 nu ai`
+
+## 其他
+禁用鼠标操作（可视）： `set mouse=`

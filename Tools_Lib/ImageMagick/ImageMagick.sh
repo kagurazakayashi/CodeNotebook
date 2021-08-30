@@ -12,6 +12,11 @@ for %%x in (*.tif) do (
     "magick.exe" "%%x" -rotate 90 "%%~nx.bmp"
 )
 
+setlocal enabledelayedexpansion
+for %%x in (*.ARW) do (
+    "magick.exe" "%%x" "%%~nx.png"
+)
+
 # 水印
 #图片水印
 convert pic.jpg sy.jpg -gravity southeast -geometry +20+20 -composite ok.jpg
