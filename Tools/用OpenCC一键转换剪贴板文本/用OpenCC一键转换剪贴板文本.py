@@ -1,7 +1,9 @@
 #!coding=utf-8
 # 神楽坂雅詩
+# 使用： .py 语言json名称，不含'.json'
 import sys
 # pip3 install opencc
+# pip3 install opencc-python-reimplemented
 import opencc
 # pip3 install pyperclip
 import pyperclip
@@ -15,7 +17,7 @@ if len(clipin) == 0:
     quit()
 # https://github.com/BYVoid/OpenCC#%E9%A0%90%E8%A8%AD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
 mode = 's2twp.json'
-if len(sys.argv) > 1 :
+if len(sys.argv) > 1:
     mode = sys.argv[1]+'.json'
 converter = opencc.OpenCC(mode)
 clipout = str(converter.convert(clipin))

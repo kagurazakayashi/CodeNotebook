@@ -9,6 +9,8 @@ flutter upgrade
 # 切换 flutter 测试版
 flutter channel # 输出channel
 flutter channel dev # 切换到dev channel
+# 预下载所有工具
+flutter precache
 
 ### 创建 ###
 
