@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 // 创建抽象类
-abstract class YaWebsocketDelegate {
+    abstract class YaWebsocketDelegate {
     yaWebsocketDelegateOnOpen(String httpStatus, String httpStatusMessage, String? tag);
     yaWebsocketDelegateOnConnecting(String? tag);
     yaWebsocketDelegateOnMessage(String message, String? tag);
@@ -15,8 +15,10 @@ class YaWebsocket {
     YaWebsocketDelegate? delegate;
 
     eventChannelData() {
-        delegate!.yaWebsocketDelegateOnMessage(arguments["message"], arguments["tag"] ?? null);
-        break;
+        if (delegate != null) {
+            delegate!.yaWebsocketDelegateOnMessage(arguments["message"], arguments["tag"] ?? null);
+            break;
+        }
     }
 }
 

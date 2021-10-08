@@ -37,6 +37,9 @@ ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
 # 给服务分配独立的临时空间
 PrivateTmp=true
+# 以指定用户启动
+User=pi
+Group=pi
 
 [Install]
 # 服务安装的用户模式，从字面上看，就是想要使用这个服务的有是谁？multi-user.target 就是指想要使用这个服务的目录是多用户。
