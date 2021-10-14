@@ -332,6 +332,7 @@
 │   ├── ./Dart_Flutter/新建页面.dart
 │   ├── ./Dart_Flutter/方法接受传值.dart
 │   ├── ./Dart_Flutter/毛玻璃.dart
+│   ├── ./Dart_Flutter/申请权限.dart
 │   ├── ./Dart_Flutter/获取File的详细信息.dart
 │   ├── ./Dart_Flutter/获得窗口尺寸.dart
 │   ├── ./Dart_Flutter/页面布局Container.dart
@@ -981,6 +982,7 @@
 │   ├── ./ShellScript_macOS/Windows_VirtualBox_macOS11.bat
 │   ├── ./ShellScript_macOS/mumu服务启动.sh
 │   ├── ./ShellScript_macOS/nginx-php.sh
+│   ├── ./ShellScript_macOS/ssh报错NoMatchingKeyExchangeMethodFound.sh
 │   ├── ./ShellScript_macOS/vbox引导bootcamp系统.sh
 │   ├── ./ShellScript_macOS/zsh加入bash环境.sh
 │   ├── ./ShellScript_macOS/为任意程序设置代理.sh
@@ -1270,4 +1272,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-68 directories, 1202 files
+68 directories, 1204 files
