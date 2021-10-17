@@ -80,9 +80,9 @@
 │   ├── ./Batch_Windows/Administrator帐户设为不隐藏.reg
 │   ├── ./Batch_Windows/Alt-code符号输入.md
 │   ├── ./Batch_Windows/CompactOS压缩系统.bat
-│   ├── ./Batch_Windows/OpenCC快捷转换.bat
 │   ├── ./Batch_Windows/RunDll32.txt
 │   ├── ./Batch_Windows/WSL2.bat
+│   ├── ./Batch_Windows/Win11绕过硬件检测.bat
 │   ├── ./Batch_Windows/WindowsTerminal.json
 │   ├── ./Batch_Windows/anyconnect临时开启服务.bat
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
@@ -104,6 +104,7 @@
 │   ├── ./Batch_Windows/删除此电脑页上方几个文档文件夹.reg
 │   ├── ./Batch_Windows/卸载cygwin.bat
 │   ├── ./Batch_Windows/卸载系统组件.bat
+│   ├── ./Batch_Windows/双击使用OpenJDK运行.reg
 │   ├── ./Batch_Windows/取消任务管理器被禁用.reg
 │   ├── ./Batch_Windows/取消磁盘的自动扫描.reg
 │   ├── ./Batch_Windows/取消禁止显示隐藏文件.reg
@@ -299,6 +300,8 @@
 │   ├── ./Dart_Flutter/Flutter的四种运行模式.md
 │   ├── ./Dart_Flutter/GirdView用Build创建.dart
 │   ├── ./Dart_Flutter/GirdView用Count创建.dart
+│   ├── ./Dart_Flutter/Map字典.dart
+│   ├── ./Dart_Flutter/Row的两个子控件分别左对齐和右对齐.dart
 │   ├── ./Dart_Flutter/Scaffold_MD布局结构.dart
 │   ├── ./Dart_Flutter/TextField.dart
 │   ├── ./Dart_Flutter/Timer与计时器.dart
@@ -308,9 +311,12 @@
 │   ├── ./Dart_Flutter/initStste类初始化方法.dart
 │   ├── ./Dart_Flutter/ios滚动选择器.dart
 │   ├── ./Dart_Flutter/notificationCenter.dart
+│   ├── ./Dart_Flutter/notificationCenter无空安全.dart
+│   ├── ./Dart_Flutter/padding边距.dart
 │   ├── ./Dart_Flutter/setbuttonstyle.dart
 │   ├── ./Dart_Flutter/web编译.bat
 │   ├── ./Dart_Flutter/代理.dart
+│   ├── ./Dart_Flutter/判断数据类型.dart
 │   ├── ./Dart_Flutter/去除右上角Debug标签.dart
 │   ├── ./Dart_Flutter/增加三方包.yaml
 │   ├── ./Dart_Flutter/安卓按返回键回到手机桌面,不退出app
@@ -334,6 +340,8 @@
 │   ├── ./Dart_Flutter/毛玻璃.dart
 │   ├── ./Dart_Flutter/申请权限.dart
 │   ├── ./Dart_Flutter/获取File的详细信息.dart
+│   ├── ./Dart_Flutter/获取应用版本号.dart
+│   ├── ./Dart_Flutter/获取设备信息.dart
 │   ├── ./Dart_Flutter/获得窗口尺寸.dart
 │   ├── ./Dart_Flutter/页面布局Container.dart
 │   └── ./Dart_Flutter/预设文字样式.dart
@@ -676,6 +684,7 @@
 │   ├── ./Python/Windows屏幕截图.py
 │   ├── ./Python/base64.py
 │   ├── ./Python/bytes-like-not-str.txt
+│   ├── ./Python/ctrl+c.py
 │   ├── ./Python/matplotlib画饼图.py
 │   ├── ./Python/pacman常用命令.md
 │   ├── ./Python/pip无法运行.sh.py
@@ -702,6 +711,7 @@
 │   ├── ./Python/接收用户输入.py
 │   ├── ./Python/操作剪贴板.py
 │   ├── ./Python/数字_取出每一位.py
+│   ├── ./Python/数字_移除或保留小数.py
 │   ├── ./Python/数组.py
 │   ├── ./Python/数组和字符串长度.py
 │   ├── ./Python/文件操作_os模块和shutil模块.py
@@ -984,6 +994,7 @@
 │   ├── ./ShellScript_macOS/nginx-php.sh
 │   ├── ./ShellScript_macOS/ssh报错NoMatchingKeyExchangeMethodFound.sh
 │   ├── ./ShellScript_macOS/vbox引导bootcamp系统.sh
+│   ├── ./ShellScript_macOS/xip解压到指定文件夹.sh
 │   ├── ./ShellScript_macOS/zsh加入bash环境.sh
 │   ├── ./ShellScript_macOS/为任意程序设置代理.sh
 │   ├── ./ShellScript_macOS/允许任何来源.sh
@@ -1042,6 +1053,8 @@
 │   │   ├── ./Tools/清理文件夹信息文件/清理文件夹信息文件.bat
 │   │   └── ./Tools/清理文件夹信息文件/清理文件夹信息文件.sh
 │   ├── ./Tools/用OpenCC一键转换剪贴板文本
+│   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.bat
+│   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.mac.sh
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.ps1
 │   │   └── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.py
 │   ├── ./Tools/编译安装htop.sh
@@ -1272,4 +1285,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-68 directories, 1204 files
+68 directories, 1217 files
