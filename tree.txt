@@ -84,6 +84,7 @@
 │   ├── ./Batch_Windows/RunDll32.txt
 │   ├── ./Batch_Windows/WSL2.bat
 │   ├── ./Batch_Windows/Win11绕过硬件检测.bat
+│   ├── ./Batch_Windows/Win11绕过硬件检测iso.txt
 │   ├── ./Batch_Windows/WindowsTerminal.json
 │   ├── ./Batch_Windows/anyconnect临时开启服务.bat
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
@@ -115,6 +116,7 @@
 │   ├── ./Batch_Windows/增加特殊模式启动项.bat
 │   ├── ./Batch_Windows/安装重启挂起.reg
 │   ├── ./Batch_Windows/实现sudo，参数①提升启动权限的程序.vbs
+│   ├── ./Batch_Windows/开机显示详细信息.txt
 │   ├── ./Batch_Windows/恢复IcoCurAni文件关联.reg
 │   ├── ./Batch_Windows/恢复新建文本文档.reg
 │   ├── ./Batch_Windows/手动安装CAB和MSU格式更新包.md
@@ -1148,6 +1150,7 @@
 │   ├── ./Tools_IoT/COM口的数据不换行.md
 │   ├── ./Tools_IoT/CentOS7安装MQTT协议服务器mosquitto.sh
 │   ├── ./Tools_IoT/CentOS8安装mosquitto.sh
+│   ├── ./Tools_IoT/googleiot.md
 │   ├── ./Tools_IoT/mosquitto命令行订阅和发送消息.sh
 │   ├── ./Tools_IoT/mosquitto桥接.md
 │   ├── ./Tools_IoT/mosquitto编译安装.sh
@@ -1289,4 +1292,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-68 directories, 1221 files
+68 directories, 1224 files
