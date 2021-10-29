@@ -1,4 +1,4 @@
-@REM 查询系统状态
+@REM 查询系统状态 压缩系统压缩
 compact /compactos:query
 
 @REM 开启CompactOS

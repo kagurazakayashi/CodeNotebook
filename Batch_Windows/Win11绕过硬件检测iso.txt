@@ -1,0 +1,17 @@
+方法一、替换或删除DLL文件
+
+在Win10 ISO（21H1正式版ISO）找到appraiserres.dll（在sources文件夹下），用它替换Win11 ISO中的同名文件或者在Win11 ISO中直接删除该dll文件。
+
+方法二、修改注册表
+
+安装Win11是遇到该电脑无法运行”时，按Shift+F10打开命令行界面，输入regedit进入注册表编辑器，然后定位到如下位置
+
+HKEY_LOCAL_MACHINE\SYSTEM\Setup
+
+创建一个名为LabConfig”的项，接着在LabConfig”下创建两个DWORD值：
+
+键名BypassTPMCheck”，赋值00000001”
+
+键名BypassSecureBootCheck”，赋值00000001”
+
+保存退出后，无法安装的提示就消失了。
