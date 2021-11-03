@@ -1,0 +1,1 @@
+VBoxManage clonehd "1.vdi" "2.vdi"

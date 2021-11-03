@@ -1,0 +1,15 @@
+from faker import Faker # pip install faker
+from faker.providers import internet
+fake = Faker()
+print("随机生成IP")
+print("ipv4带掩码", fake.ipv4(network=True))
+print("ipv4无掩码", fake.ipv4(network=False))
+print("ipv4私网带掩码", fake.ipv4(network=True, address_class='a', private=None))
+print("ipv4公网带掩码", fake.ipv4(network=True, address_class='b', private=None))
+print("ipv4某类带掩码", fake.ipv4(network=True, address_class='c', private=None))
+print("ipv4私网无掩码", fake.ipv4(network=False, address_class='a', private=None))
+print("ipv4公网无掩码", fake.ipv4(network=False, address_class='b', private=None))
+print("ipv4某类无掩码", fake.ipv4(network=False, address_class='c', private=None))
+print("ipv6带掩码", fake.ipv6(network=True))
+print("ipv6无掩码", fake.ipv6(network=False))
+print("MAC地址", fake.mac_address())

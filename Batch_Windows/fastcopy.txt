@@ -1,0 +1,60 @@
+FastCopy 批处理命令
+
+fastcopy.exe [/options] file1 file2 ... [/to=dest_dir]
+
+例子：
+FastCopy.exe /cmd=diff "C:\Test Folder" /to="D:\Backup Folder\"
+
+参数：
+/cmd=(noexist_only|diff|update|sync|force_copy|move|delete)
+noexist_only            复制-如重名,则不复制
+diff                    复制-如重名,则公复制大小与时间不同的文件
+update                  复制-如重名,则复制较新的源文件
+sync                    同步-如重名,则复制大小与时间不同的文件
+force_copy              复制-覆盖重名文件
+move                    移动-覆盖重名文件并强行删除源文件
+delete                  删除-强行删除指定的文件与目录
+
+/speed=(full|autoslow|9-1(90%-10%)|suspend)     指定速度控制级别
+/auto_close                     拷贝结束后,自动关闭
+/force_close                    如果拷贝结束后,发生错误,也强行关闭
+/open_window                    显示Fastcopy窗口界面
+/estimate                       预测拷贝完成时间
+/balloon(=FALSE)                完成时显示气球通知（禁用: /balloon=FALSE） 
+/no_ui                          不显示确认对话框,为后台任务(如果使用/no_ui,则会自动设置/no_confirm_del /no_confirm_stop /force_close)
+/no_confirm_del                 当用/delete参数时,不显示确认界面
+/no_confirm_stop                不要显示错误对话框,即使发生严重错误
+/no_exec                        对Fastcopy窗口界面设置参数,但是不执行
+/error_stop                     发生错误时中止动作（禁用: /error_stop=FALSE）
+/bufsize=N(MB)                  用MB单位来指定缓冲器大小
+/log                            将操作/错误信息写入日志文件（FastCopy.log）（禁用: /log=FALSE）
+/logfile=filename               指定日志文件的文件名
+/filelog                        写入文件日志（复制/删除文件的详细信息）（指定filelogname,/filelog=filename）
+/utf8                           使用UTF-8编码写入日志文件（支持Unicode）
+/skip_empty_dir                 启用过滤,不拷贝空文件夹（在/skip_empty_dir=FALSE抑制）
+/job=job_name                   任务名称 执行指定的任务
+/force_start(=N)                立即开始，不用等待其他FastCopy执行完成。 （/force_start=2-N 指定最大并行进程数）
+/disk_mode=(auto|same|diff)     指定自动/恒等性/其他HDD方式。(债务不履行声明：) auto)
+/srcfile="files.txt"            通过文本文件指定源文件,用户每行可以描述1个文件名
+/srcfile_w="files.txt"          与“/srcfile=”相同，除了由UNICODE描述
+/include="..."                  指定Include过滤器
+/exclude="..."                  指定Exclude过滤器
+/from_date                      指定最旧的时间戳过滤器
+/to_date                        指定最新的时间戳过滤器
+/min_size="..."                 指定最小尺寸过滤器
+/max_size="..."                 指定最大尺寸过滤器
+/wipe_del                       在删除之前重命名文件名并擦除（覆盖随机数据）
+/acl                            复制ACL/EA（仅限于NTFS）（禁用:/acl=FALSE）
+/stream                         复制备用流（仅限于NTFS）（禁用:/stream=FALSE）
+/reparse                        复制联结/装载点/符号链接本身（禁用:/reparse=FALSE）
+/verify                         通过MD5验证写入的文件数据（/SHA-1/SHA-256/xxHash）（禁用:/verify=FALSE）
+/linkdest                       尽可能重现硬链接
+/recreate                       将更新行为更改为“覆盖目标”，以“删除并重新创建目标”
+/postproc=action_name           指定后处理操作名称（禁用:/postproc=FALSE）
+/to=dest_dir                    目标路径
+
+官网
+https://ipmsg.org/tools/fastcopy.html.en
+
+
+https://blog.csdn.net/ttt111zzz/article/details/78811381

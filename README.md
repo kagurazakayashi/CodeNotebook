@@ -39,6 +39,7 @@
 # 其他
 
 - 更新时请同时更新子模块:
+  - `git submodule init` (第一次下载子模块)
   - `git submodule update --remote`
   - 详细见 [Tools_Git/子模块.sh](Tools_Git/子模块.sh) 和 [.gitmodules](.gitmodules) 文件。
 - 换行符规则:
