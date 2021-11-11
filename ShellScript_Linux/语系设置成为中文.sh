@@ -1,5 +1,13 @@
 # 中文
 
+# Debian
+
+apt-get install locales
+dpkg-reconfigure locales # 在界面中钩选上“zh_CN.UTF-8”即可。
+
+
+# Linux
+
 vim /etc/sysconfig/i18n
 
 LANG="zh_CN.UTF-8"

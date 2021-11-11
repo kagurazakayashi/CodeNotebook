@@ -41,3 +41,13 @@ tootctl media remove --days 7 --concurrency 1 --verbose
 tootctl preview_cards remove --days 180 --concurrency 1 --verbose
 # 从数据库中删除未被引用的嘟文
 tootctl statuses remove --days 90
+# 彻底清理媒体文件
+tootctl preview_cards remove
+tootctl media remove
+tootctl media remove-orphans
+
+# 定时清理脚本
+docker exec mastodon_web_1 /bin/bash -c "tootctl preview_cards remove --days 180 --concurrency 1 --verbose" >/var/log/yashi/mastodonclean.log
+docker exec mastodon_web_1 /bin/bash -c "tootctl media remove --days 7 --concurrency 1 --verbose" >>/var/log/yashi/mastodonclean.log
+docker exec mastodon_web_1 /bin/bash -c "tootctl media remove-orphans --days 7 --concurrency 1 --verbose" >>/var/log/yashi/mastodonclean.log
+docker exec mastodon_web_1 /bin/bash -c "tootctl statuses remove --days 90 --verbose" >>/var/log/yashi/mastodonclean.log
