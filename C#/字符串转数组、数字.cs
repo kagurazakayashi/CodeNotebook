@@ -1,8 +1,18 @@
 // 转数组
 
 string[] strs=str.Split('-');
+string[] strs=str.Split(new char[]{'<','=','>'});
 
 string menuclassids = string.Join(",", cid_arr);
+
+string aa = "aa<=>bb<cc=dd>ee<=>ff";
+string[] bb = Regex.Split(aa, "<=>", RegexOptions.IgnoreCase);
+string cc = "";
+foreach (string b in bb)
+{
+    cc += b + "\r\n";
+}
+MessageBox.Show(cc);
 
 // 转数字
 

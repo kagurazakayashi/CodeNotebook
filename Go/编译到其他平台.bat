@@ -1,3 +1,5 @@
+@REM 查看支持列表
+go tool dist list
 @REM Windows 下编译 Mac 和 Linux 64位可执行程序
 
 @REM Mac
