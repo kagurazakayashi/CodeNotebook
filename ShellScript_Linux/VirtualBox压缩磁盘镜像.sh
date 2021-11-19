@@ -8,4 +8,9 @@ VBoxManage clonehd "cloned.vdi" "compressed.vmdk" --format vmdk
 vmware-vdiskmanager -k disk.vmdk
 
 # vdi 批量压缩
-for f in *.vdi; do echo $f;VBoxManage modifyhd $f --compact; done
+for f in *.vdi; do echo $f; "%ProgramFiles%\Oracle\VirtualBox\VboxManage.exe" modifyhd $f --compact; done
+
+# vdi 批量压缩
+for /R %%s in (*.vdi) do (
+    "%ProgramFiles%\Oracle\VirtualBox\VboxManage.exe" modifyhd %%s --compact
+)
