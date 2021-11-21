@@ -77,6 +77,10 @@
 │   ├── ./Batch/过滤掉扩展名.bat
 │   ├── ./Batch/遍历文件夹.bat
 │   └── ./Batch/钥匙盘.bat
+├── ./Batch_IIS
+│   ├── ./Batch_IIS/Flarum升级.bat
+│   ├── ./Batch_IIS/Flarum的URL重写.config
+│   └── ./Batch_IIS/WordPress的URL重写web.config
 ├── ./Batch_Windows
 │   ├── ./Batch_Windows/Administrator帐户设为不隐藏.reg
 │   ├── ./Batch_Windows/Alt-code符号输入.md
@@ -1314,4 +1318,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-68 directories, 1246 files
+69 directories, 1249 files
