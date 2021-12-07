@@ -8,7 +8,7 @@ import (
 func f() {
 	// "name" 参数表示参数名称
 	// "123" 参数表示默认值
-	// "name" 说明和描述
+	// "your name" 说明和描述
 	// 像 flag.Int、flag.Bool、flag.String 这样的函数格式都是一样的
 	var name string
 	flag.StringVar(&name, "name", "123", "your name")
