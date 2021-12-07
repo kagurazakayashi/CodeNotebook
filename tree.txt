@@ -411,7 +411,8 @@
 │   ├── ./Go/编译到其他平台.bat
 │   ├── ./Go/编译到其他平台.sh
 │   ├── ./Go/获得当前系统状态信息.go
-│   └── ./Go/键盘输入.go
+│   ├── ./Go/键盘输入.go
+│   └── ./Go/随机数.go
 ├── ./HTML
 │   ├── ./HTML/Chrome标题栏颜色.html
 │   ├── ./HTML/head头标签.html
@@ -1318,4 +1319,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-69 directories, 1249 files
+69 directories, 1250 files
