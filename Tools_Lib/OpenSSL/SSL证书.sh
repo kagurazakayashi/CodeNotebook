@@ -1,8 +1,18 @@
+# SSL 证书 自签名证书
+
 # 1、生成服务器私钥
 openssl genrsa -out client.key 4096
 
 # 2、生成证书签名请求（CSR）
 openssl req -new -key client.key -out client.csr
+# Country Name (2 letter code) [AU]:JP
+# State or Province Name (full name) [Some-State]:Tokyo
+# Locality Name (eg, city) []:Tokyo
+# Organization Name (eg, company) [Internet Widgits Pty Ltd]:KagurazakaYashi
+# Organizational Unit Name (eg, section) []:personal
+# Common Name (e.g. server FQDN or YOUR name) []:uuu.moe  // 必填项：在这里填写域名
+
+# 把 client.csr 请求给服务商 或 继续3.自签
 
 # 3、使用上一步的证书签名请求签发证书
 openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt
@@ -13,6 +23,14 @@ openssl req -new -x509 -newkey rsa:4096 -keyout client.key -out client.crt
 # 转换为 IIS 用的
 openssl pkcs12 -export -out client.pfx -inkey client.key -in client.crt
 
+
+
+# IIS 转回 pem
+openssl pkcs12 -in xxx.pfx -nodes -out server.pem
+# 从.pem文件中导出私钥server.key
+openssl rsa -in server.pem -out server.key
+# 从.pem文件中导出证书server.crt
+openssl x509 -in server.pem -out server.crt
 
 
 

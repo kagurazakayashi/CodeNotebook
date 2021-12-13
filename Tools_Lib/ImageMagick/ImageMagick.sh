@@ -1,4 +1,5 @@
 #批量
+for file in *.jfif; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done
 for file in *.png; do echo "$file ${file%%.*}.bmp"; convert "$file" "${file%%.*}.bmp"; done
 for file in *.bmp; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done
 for file in *.png; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done

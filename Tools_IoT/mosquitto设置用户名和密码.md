@@ -4,17 +4,17 @@
 
 2. 找到password_file节点，这个节点是告诉服务器你要配置的用户将存放在哪里。打开此配置并指定pwfile.example文件路劲（注意是绝对路劲）
 - 修改前：#password_file
-- 修改后：password_file /etc/mosquitto/pwfile.example （这里的地址根据自己文件实际位置填写）
+- 修改后：password_file /mosquitto/data/pwfile.conf （这里的地址根据自己文件实际位置填写）
 
 3. 创建用户名和密码、打开命令窗口 键入如下命令：
-- `mosquitto_passwd -c /etc/mosquitto/pwfile.example admin`
+- `mosquitto_passwd -c /mosquitto/data/pwfile.conf admin`
 - 提示连续两次输入密码、创建成功。命令解释：
-    - c 创建一个用户（覆盖密码文件）
-    - /etc/mosquitto/pwfile.example 是将用户创建到 pwfile.example 文件中
+    - c 创建一个用户（覆盖密码文件）。**注意第二次创建用户时不用加 -c 如果加 -c 会把第一次创建的用户覆盖。**
+    - /mosquitto/data/pwfile.conf 是将用户创建到 pwfile.example 文件中
     - admin 是用户名。
 
-4. 创建mosquitto用户。在命令窗口键入如下命令：
-- `mosquitto_passwd /etc/mosquitto/pwfile.example mosquitto`
+4. 创建更多用户：创建mosquitto用户。在命令窗口键入如下命令：
+- `mosquitto_passwd /mosquitto/data/pwfile.conf mosquitto`
 - 同样连续会提示连续输入两次密码。**注意第二次创建用户时不用加 -c 如果加 -c 会把第一次创建的用户覆盖。**
 - 至此两个用户创建成功，此时如果查看 pwfile.example 文件会发现其中多了两个用户。
 

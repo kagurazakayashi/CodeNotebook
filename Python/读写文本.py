@@ -97,11 +97,12 @@ FILE_OBJECT= open('order.log','rb')
 #  a+  附加读写方式打开
 #  rb  按照二进制位进行读取的，不会将读取的字节转换成字符，二进制文件用
 #  rt  在读取文本时会自动把\r\n转换成\n，文本文件用二进制读取用
-fd = open("1.txt",'w+')
-fd.write('123')
-fd = open("1.txt",'r+')
-fd.write('456')
-fd = open("1.txt",'a+')
-fd.write('789')
+fw = open("1.txt",'w+')
+fw.write('123')
+fw = open("1.txt",'r+')
+fw.write('456')
+fw = open("1.txt",'a+')
+fw.write('789')
 # 结果：456789
+fw.close()
 # https://blog.csdn.net/ztf312/article/details/47259805

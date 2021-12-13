@@ -43,3 +43,7 @@ git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 # 字体修改为 ：Meslo LG S DZ Regular for Powerline
+
+
+# 更新 oh-my-zsh
+omz update
