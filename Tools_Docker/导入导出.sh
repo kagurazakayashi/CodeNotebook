@@ -1,3 +1,25 @@
+# 备份与迁移
+
+# 容器保存为镜像
+# 我们可以通过以下命令将容器保存为镜像
+docker commit pyg_nginx mynginx
+# pyg_nginx是容器名称
+# mynginx是新的镜像名称
+# 此镜像的内容就是你当前容器的内容，接下来你可以用此镜像再次运行新的容器
+
+# 镜像备份
+docker save -o mynginx.tar mynginx
+# -o 输出到的文件
+# 执行后，运行ls命令即可看到打成的tar包
+
+# 镜像恢复与迁移
+# 首先我们先删除掉mynginx镜像
+# 然后执行此命令进行恢复
+docker load -i mynginx.tar
+# -i 输入的文件
+# 执行后再次查看镜像，可以看到镜像已经恢复
+
+
 docker container ls -a
 # 1、导出容器
 # 导出容器可以导出一个已经创建的容器到一个文件，不管容器处于什么状态，可以使用docker export 命令。
