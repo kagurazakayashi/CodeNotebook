@@ -1,0 +1,41 @@
+﻿{
+    "ver":"5.0",
+    "tag":"ipproto",
+    "data":[
+        {
+            "direction":0,
+            "laddr":"*",
+            "protocol":6,
+            "log":true,
+            "lport":"*",
+            "procname":"D:\\飞秋\\FeiQ.exe",
+            "enabled":true,
+            "block":1,
+            "raddr":"*",
+            "rport":"*",
+            "id":1,
+            "recname":"飞秋外网阻止",
+            "icmp_type":0,
+            "priority":2
+        },
+        {
+            "enabled":true,
+            "tmp_field_desc_detail":"本地IP：任意IP 本地端口：任意端口 远程IP：192.168.1.0/24 远程端口：任意端口 ",
+            "direction":0,
+            "protocol":6,
+            "laddr":"*",
+            "log":true,
+            "lport":"*",
+            "tmp_field_desc_overview":"操作：放行 方向：所有 协议：TCP",
+            "procname":"D:\\飞秋\\FeiQ.exe",
+            "block":0,
+            "raddr":"192.168.0.0/16",
+            "rport":"*",
+            "id":2,
+            "recname":"飞秋内网允许",
+            "icmp_type":0,
+            "priority":1,
+            "tmp_field_sel":false
+        }
+    ]
+}

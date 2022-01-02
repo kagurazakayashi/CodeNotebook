@@ -1,0 +1,20 @@
+﻿{
+    "ver":"5.0",
+    "tag":"hipsuser",
+    "data":[
+        {
+            "id":2,
+            "power":1,
+            "name":"电报聊天记录",
+            "procname":"*",
+            "treatment":3,
+            "policies":[
+                {
+                    "montype":1,
+                    "action_type":15,
+                    "res_path":"C:\\Users\\*\\AppData\\Roaming\\Telegram Desktop\\tdata\\*"
+                }
+            ]
+        }
+    ]
+}

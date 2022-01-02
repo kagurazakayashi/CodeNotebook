@@ -1,0 +1,14 @@
+{
+    "ver":"5.0",
+    "tag":"hipsuser_auto",
+    "data":{
+        "C:\\Users\\*\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe":[
+            {
+                "res_path":"C:\\Users\\*\\AppData\\Roaming\\Telegram Desktop\\tdata\\*",
+                "montype":1,
+                "action_type":15,
+                "treatment":0
+            }
+        ]
+    }
+}

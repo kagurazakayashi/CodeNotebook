@@ -1,0 +1,18 @@
+﻿{
+    "ver":"5.0",
+    "tag":"ipblacklist",
+    "data":[
+        {
+            "id":2,
+            "raddr":"182.43.124.6",
+            "tmp_field_sel":true,
+            "memo":"反诈河蟹页-电信"
+        },
+        {
+            "id":3,
+            "raddr":"39.102.194.95",
+            "tmp_field_sel":true,
+            "memo":"反诈河蟹页-联通"
+        }
+    ]
+}

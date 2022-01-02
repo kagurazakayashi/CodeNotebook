@@ -11,7 +11,7 @@ cat .gitmodules
 #   url = https://github.com/kagurazakayashi/yq.git
 #   branch = main   # 指定分支的要在这里加上指定的分支，默认分支的话不用加
 
-# 查看子模块
+# 查看
 git submodule
 # 78ff77391b006f07edacbabe89e4431328cabd54 src/yqfatal: no submodule mapping found in .gitmodules for path 'yq' (heads/master)
 

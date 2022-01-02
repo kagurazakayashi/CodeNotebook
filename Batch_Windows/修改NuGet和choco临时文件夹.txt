@@ -1,4 +1,5 @@
-设置环境变量
+修改 NuGet 临时文件夹
+设置环境变量： NuGetCachePath
 
-NuGetCachePath  <-
-NUGET_PACKAGES
+修改 choco 临时文件夹
+choco config set cacheLocation B:\Cache\Choco

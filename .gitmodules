@@ -4,3 +4,6 @@
 [submodule "RaspberryPi"]
 	path = RaspberryPi
 	url = https://github.com/kagurazakayashi/pi.git
+[submodule "Config/火绒设置/Huorong-Rules"]
+	path = Config/火绒设置/Huorong-Rules
+	url = https://github.com/tutugreen/Huorong-Rules.git
