@@ -894,6 +894,7 @@
 │   ├── ./ShellScript_Linux/开机运行一个脚本.sh
 │   ├── ./ShellScript_Linux/开机进命令行还是图形.sh
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
+│   ├── ./ShellScript_Linux/挂载U盘.sh
 │   ├── ./ShellScript_Linux/挖矿病毒.sh
 │   ├── ./ShellScript_Linux/文件权限.sh
 │   ├── ./ShellScript_Linux/无法识别软驱.sh
@@ -1320,4 +1321,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-69 directories, 1251 files
+69 directories, 1252 files
