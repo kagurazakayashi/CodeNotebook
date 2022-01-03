@@ -27,7 +27,7 @@ location ~ \.php$ {
 
 # 路径
 cd /usr/local/var/www
-wget https://api.inn-studio.com/download/?id=xprober # PHP探针
+curl -o index.php "https://api.inn-studio.com/download/?id=xprober" # PHP探针
 
 # ImageMagick
 pecl install imagick
