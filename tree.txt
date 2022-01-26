@@ -1195,7 +1195,8 @@
 ├── ./Tools_Lib
 │   ├── ./Tools_Lib/ImageMagick
 │   │   ├── ./Tools_Lib/ImageMagick/ImageMagick-GIF.sh
-│   │   └── ./Tools_Lib/ImageMagick/ImageMagick.sh
+│   │   ├── ./Tools_Lib/ImageMagick/ImageMagick.sh
+│   │   └── ./Tools_Lib/ImageMagick/图片拆分.bat
 │   ├── ./Tools_Lib/OpenSSL
 │   │   ├── ./Tools_Lib/OpenSSL/RSA密钥对生成和加解密.sh
 │   │   └── ./Tools_Lib/OpenSSL/SSL证书.sh
@@ -1331,4 +1332,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-70 directories, 1261 files
+70 directories, 1262 files
