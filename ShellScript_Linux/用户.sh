@@ -55,6 +55,9 @@ useradd -g group1 -G group2,group3 user1
 # 由于指定了初始组，因此不会在创建 user1 默认群组
 more /etc/group | grep user1
 
+# 用户组配置文件
+vi /etc/group
+
 # 综合
 useradd -g www -m yashi
 passwd yashi

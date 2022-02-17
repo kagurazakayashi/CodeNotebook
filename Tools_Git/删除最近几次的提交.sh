@@ -3,11 +3,12 @@
 # 1. 回滚到上一次提交
 git reset --hard HEAD^
 # 每执行一次回滚一次的提交。
-# 显示 More? ：
+# 如果上面命令显示 More? 则用这个代替：
 git reset --hard "HEAD^"
 
-# 2. 强制提交本地代码
+# 2. 强制提交本地代码 master:main:分支名称
 git push origin master -f
+git push origin main -f
 
 
 # 删除指定commit提交

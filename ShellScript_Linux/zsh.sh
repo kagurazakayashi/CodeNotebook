@@ -9,11 +9,19 @@ brew install zsh # mac安装（已自带）
 
 # 将zsh设置为默认shell
 chsh -s /bin/zsh # CentOS
-# Mac如下
+
+# Mac 如下
 # 在 /etc/shells 文件中加入如下一行
 /usr/local/bin/zsh
 # 接着运行
 chsh -s /usr/local/bin/zsh
+
+# msys2 如下
+pacman -S zsh
+# 在msys2的安装目录(c:\msys64)下打开msys2_shell.cmd文件。修改文件中LOGINSHELL变量如下
+set "LOGINSHELL=zsh"
+# 第三方终端命令行修改为
+# C:\tools\msys64\usr\bin\zsh.exe --login
 
 # 可以通过echo $SHELL查看当前默认的shell，如果没有改为/bin/zsh，那么需要重启shell。
 
