@@ -37,3 +37,8 @@ brew services stop nginx
 brew services stop php
 brew services start php
 brew services start nginx
+
+# 403
+vim /usr/local/etc/nginx/nginx.conf
+# 加入 user root owner;
+sudo nginx -s reload

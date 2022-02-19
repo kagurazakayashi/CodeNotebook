@@ -18,6 +18,7 @@ book.pop(0) #删除指定位置的内容，0-x
 # insert :  向列表里面田间新元素 例:array.insert(0,'AAA') array代表某个自定义的列表 0 代表插入的位置，列表的索引值
 #
 # 从列表里删除元素
+del book[0]
 #
 # remove() : 从列表里删除元素 例:array.remove('AAA') array代表某个自定义的列表 括号里面填写的是元素名
 #
@@ -30,19 +31,3 @@ len(book)
 
 # 数组最后一位
 print(book[-1])
-
-# 遍历：
-# 遍历数组
-for item in book:
-    print(item)
-# 遍历字典
-for key in book.keys():
-    print(key)
-for value in book.values():
-    print (value)
-for item in book.items():
-    print(item)
-for key,value in book.items():
-    print(key,value)
-for (key,value) in book.items():
-    print(key,value)
