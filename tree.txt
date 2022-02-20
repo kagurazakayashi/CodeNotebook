@@ -737,6 +737,7 @@
 │   ├── ./Python/matplotlib画饼图.py
 │   ├── ./Python/pacman常用命令.md
 │   ├── ./Python/pip无法运行.sh.py
+│   ├── ./Python/redis.py
 │   ├── ./Python/windows安装pycrypto.bat
 │   ├── ./Python/写入txt文件.py
 │   ├── ./Python/判断对象类型.py
@@ -763,6 +764,7 @@
 │   ├── ./Python/数字_移除或保留小数.py
 │   ├── ./Python/数组.py
 │   ├── ./Python/数组和字符串长度.py
+│   ├── ./Python/数组遍历.py
 │   ├── ./Python/文件操作_os模块和shutil模块.py
 │   ├── ./Python/文件操作_判断是否为文件夹和是否存在.py
 │   ├── ./Python/文件操作_文件夹操作.py
@@ -778,7 +780,8 @@
 │   ├── ./Python/读取yaml.py
 │   ├── ./Python/路径合并.py
 │   ├── ./Python/通配符.py
-│   └── ./Python/遍历所有文件.py
+│   ├── ./Python/遍历所有文件.py
+│   └── ./Python/随机数.py
 ├── ./Q
 │   ├── ./Q/按键精灵小说刷屏-微信双群.Q
 │   ├── ./Q/按键精灵小说刷屏.Q
@@ -866,6 +869,8 @@
 │   ├── ./ShellScript_Linux/VNC-Debian10.sh
 │   ├── ./ShellScript_Linux/VNC-RDP-Ubuntu.sh
 │   ├── ./ShellScript_Linux/VNC-RH8.sh
+│   ├── ./ShellScript_Linux/VNC-树莓派.sh
+│   ├── ./ShellScript_Linux/VNC.sh
 │   ├── ./ShellScript_Linux/VirtualBox中的Centos安装增强功能包.sh
 │   ├── ./ShellScript_Linux/VirtualBox压缩磁盘镜像.sh
 │   ├── ./ShellScript_Linux/WSL.txt
@@ -885,9 +890,9 @@
 │   ├── ./ShellScript_Linux/pureFTPd端口范围.sh
 │   ├── ./ShellScript_Linux/rsync文件同步命令.sh
 │   ├── ./ShellScript_Linux/signal信号列表.md
+│   ├── ./ShellScript_Linux/smb-samba文件共享.sh
 │   ├── ./ShellScript_Linux/snap安装.sh
 │   ├── ./ShellScript_Linux/ssGUI配置文件转sh脚本.py
-│   ├── ./ShellScript_Linux/vncserver.sh
 │   ├── ./ShellScript_Linux/vsftpd.md
 │   ├── ./ShellScript_Linux/wifi.sh
 │   ├── ./ShellScript_Linux/xsession-errors文件过大.sh
@@ -1062,6 +1067,7 @@
 │   ├── ./ShellScript_macOS/强行安装旧版本Java.scpt
 │   ├── ./ShellScript_macOS/显示隐藏文件.sh
 │   ├── ./ShellScript_macOS/禁止生成sleepimage.sh
+│   ├── ./ShellScript_macOS/禁用休眠文件.sh
 │   ├── ./ShellScript_macOS/禁用虚拟内存.sh
 │   ├── ./ShellScript_macOS/第二个管理员账户没有usr_local权限.sh
 │   ├── ./ShellScript_macOS/连接串口.sh
@@ -1354,4 +1360,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-76 directories, 1278 files
+76 directories, 1284 files
