@@ -1,5 +1,5 @@
-sudo apt-get install samba samba-common-bin
-sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.back
+sudo apt install samba-common-bin samba -y
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
 sudo vim /etc/samba/smb.conf
 # shift-g 跳到最后一行，加入如下语句：
 # 在末尾加入如下内容
