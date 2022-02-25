@@ -85,6 +85,8 @@
 │   ├── ./Batch_Windows/Administrator帐户设为不隐藏.reg
 │   ├── ./Batch_Windows/Alt-code符号输入.md
 │   ├── ./Batch_Windows/CompactOS压缩系统.bat
+│   ├── ./Batch_Windows/MSYS2更新.sh
+│   ├── ./Batch_Windows/MSYS2连接串口.sh
 │   ├── ./Batch_Windows/RunDll32.txt
 │   ├── ./Batch_Windows/WSL2.bat
 │   ├── ./Batch_Windows/WSL使用Windows中已安装字体.sh
@@ -128,7 +130,6 @@
 │   ├── ./Batch_Windows/恢复IcoCurAni文件关联.reg
 │   ├── ./Batch_Windows/恢复新建文本文档.reg
 │   ├── ./Batch_Windows/手动安装CAB和MSU格式更新包.md
-│   ├── ./Batch_Windows/更新MSYS2.sh
 │   ├── ./Batch_Windows/桌面显示IE图标.reg
 │   ├── ./Batch_Windows/清理Adobe.bat
 │   ├── ./Batch_Windows/磁盘碎片整理.bat
@@ -412,6 +413,7 @@
 │   ├── ./Go/取出map中的所有key.go
 │   ├── ./Go/命令行参数.go
 │   ├── ./Go/在当前行输出.go
+│   ├── ./Go/声明变量.go
 │   ├── ./Go/声明数组.go
 │   ├── ./Go/字符串与数组互转.go
 │   ├── ./Go/字符串和数字互转.go
@@ -424,10 +426,15 @@
 │   ├── ./Go/当前时间.go
 │   ├── ./Go/排序数字.go
 │   ├── ./Go/整数转字符串.go
+│   ├── ./Go/枚举.go
 │   ├── ./Go/混合内容的字典.go
+│   ├── ./Go/终端彩色输出.go
+│   ├── ./Go/终端彩色输出.png
 │   ├── ./Go/编译到其他平台.bat
 │   ├── ./Go/编译到其他平台.sh
 │   ├── ./Go/获得当前系统状态信息.go
+│   ├── ./Go/读写文本文档1.go
+│   ├── ./Go/读写文本文档2.go
 │   ├── ./Go/键盘输入.go
 │   └── ./Go/随机数.go
 ├── ./HTML
@@ -1254,6 +1261,7 @@
 │   ├── ./TypeScript/webpack参数.txt
 │   ├── ./TypeScript/yq
 │   ├── ./TypeScript/二维数组.ts
+│   ├── ./TypeScript/代理.ts
 │   ├── ./TypeScript/全局变量.ts
 │   ├── ./TypeScript/创建HTML元素.ts
 │   ├── ./TypeScript/唯一值symbol.ts
@@ -1360,4 +1368,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-76 directories, 1284 files
+76 directories, 1292 files
