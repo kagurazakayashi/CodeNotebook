@@ -5,7 +5,7 @@ ufw reload
 sudo apt update
 sudo apt install ufw
 
-检查 UFW 的状态
+# 检查 UFW 的状态
 # 安装过程不会自动激活防火墙，以避免服务器被锁住。你可以检查 UFW 的状态，输入：
 sudo ufw status verbose
 # 输出如下：
@@ -85,3 +85,48 @@ sudo ufw enable
 sudo ufw reset
 
 # https://cloud.tencent.com/developer/article/1626614
+
+# 查询已有规则
+sudo ufw status numbered
+
+# 拦截特定IP地址
+sudo ufw deny from {ip-address-here} to any
+# 为拦截或拒绝来自192.168.1.5的所有数据包，可以输入：
+sudo ufw deny from 192.168.1.5 to any
+
+# 拦截特定IP及端口
+ufw deny from {ip-address-here} to any port {port-number-here}
+# 为阻断或拒绝IP地址202.54.1.5访问80端口的请求
+sudo ufw deny from 202.54.1.5 to any port 80
+# 插入规则到指定位置顺序
+sudo ufw insert 1 deny from 202.54.1.5 to any port 80
+
+# 拦截特定IP、端口以及协议
+sudo ufw deny proto {tcp|udp} from {ip-address-here} to any port {port-number-here}
+# 阻断黑客IP地址202.54.1.1访问tcp 22端口(FTP协议)，可以输入：
+sudo ufw deny proto tcp from 202.54.1.1 to any port 22 sudo ufw status numbered
+# UFW拦截子网
+sudo ufw deny proto tcp from sub/net to any port 22 sudo ufw deny proto tcp from 202.54.1.0/24 to any port 22
+
+# 查询已有规则
+sudo ufw status numbered
+# 删除被拦截的IP地址或再次放行特定IP地址
+sudo ufw status numbered sudo ufw delete {NUM}
+# 删除编号为4的规则，输入：
+sudo ufw delete 4
+
+# UFW(iptables)规则的匹配基于规则出现的顺序，一旦匹配某个规则，检查便会停止。因此，如果某个规则允许访问TCP端口22(如使用udo ufw allow 22)，后面另一个规则指示拦截某个IP地址(如使用 ufw deny proto tcp from 202.54.1.1 to any port 22)。最终，允许访问TCP端口22的规则会被使用，而后一个拦截黑客IP地址 202.54.1.1 却没有被使用。这都是由于规则的顺序造成的。为避免这类问题，你需要编辑 /etc/ufw/before.rules文件，在“# End required lines”之后"Block an IP Address"添加规则。
+
+vim /etc/ufw/before.rules
+# 查找如下所示的行：
+
+# End required lines
+# 添加规则来拦截黑客或垃圾信息传播者：
+# Block spammers
+-A ufw-before-input -s 178.137.80.191 -j DROP
+# Block ip/net (subnet)
+-A ufw-before-input -s 202.54.1.0/24 -j DROP
+# 保存并关闭文件。***，让防火墙重新加载配置信息：
+sudo ufw reload
+
+# https://blog.csdn.net/lichao_3013/article/details/100112602

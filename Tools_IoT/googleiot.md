@@ -71,3 +71,23 @@ writing EC key
 使用以下命令拉取设备发布的消息：
 - `gcloud pubsub subscriptions pull --auto-ack projects/[项目名称]/subscriptions/[订阅名称]`
   - `gcloud pubsub subscriptions pull --auto-ack projects/testproject/subscriptions/test-subscription`
+
+# 更新 SDK
+gcloud components update
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      These components will be updated.                      │
+├─────────────────────────────────────────────────────┬────────────┬──────────┤
+│                         Name                        │  Version   │   Size   │
+├─────────────────────────────────────────────────────┼────────────┼──────────┤
+│ BigQuery Command Line Tool                          │     2.0.74 │  1.0 MiB │
+│ Bundled Python 3.8                                  │     3.8.10 │ 19.4 MiB │
+│ Cloud Storage Command Line Tool                     │        5.8 │ 19.1 MiB │
+│ Cloud Storage Command Line Tool (Platform Specific) │        5.6 │  < 1 MiB │
+│ Google Cloud CLI Core Libraries                     │ 2022.03.25 │ 22.6 MiB │
+│ Windows command line ssh tools                      │            │  3.3 MiB │
+│ anthoscli                                           │     0.2.25 │ 46.4 MiB │
+│ gcloud cli dependencies                             │ 2022.03.18 │ 10.9 MiB │
+└─────────────────────────────────────────────────────┴────────────┴──────────┘
+```

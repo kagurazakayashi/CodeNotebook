@@ -133,7 +133,7 @@ set shiftwidth=4  表示每一级缩进的长度，一般设置成跟 softtabsto
 set expandtab     当设置成 expandtab 时，缩进用空格来表示，noexpandtab 则是用制表符表示一个缩进。
 ```
 
-# 持久设置
+# vim设置 持久设置
 - 设置环境只对当前会话有效。
 - 可以把环境设置保存在用户主目录的 `~/.exrc` 文件中，可单行可多行。
   - 单行： `set ts=4 nu ai`

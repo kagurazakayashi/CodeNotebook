@@ -1,8 +1,8 @@
-图形画面安装：Server\vncserver.sh
-
+WSL中文：
 vim /etc/profile：
 
-export DISPLAY=localhost:0
+# choco install VcXsrv -y / choco install Xming -y
+export DISPLAY=127.0.0.1:0
 export LANG=zh_CN.UTF-8
 export LANGUAGE=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
@@ -12,7 +12,7 @@ source /etc/profile
 输入法：
 sudo apt install --assume-yes fcitx dbus-x11 fcitx-libs libfcitx-qt0 fcitx-sunpinyin
 
-Windows字体安装到WSL：
+Windows字体安装到WSL安装Windows字体：
 #安装字体管理包
 sudo apt-get install --assume-yes fontconfig
 #安装中文字体
@@ -23,3 +23,6 @@ fc-cache
 #生成中文环境
 sudo locale-gen zh_CN.UTF-8
 
+
+xfce4-session: failed to execute child process "dbus-launch":
+sudo apt install x11-xserver-utils dconf-editor dbus-x11 -y

@@ -1,5 +1,5 @@
 # 将远程项目 https://github.com/kagurazakayashi/yq.git 克隆到本地 yq 文件夹
-git submodule add https://github.com/kagurazakayashi/yq.git yq
+git submodule add https://github.com/kagurazakayashi/libNyaruko_TS.git nyalib
 # 将子模块设定为指定分支 release
 git submodule add https://github.com/kagurazakayashi/digital-numbers-font.git numbers
 cd numbers
@@ -49,7 +49,7 @@ git push origin HEAD:master
 # 删除子模块
 # 删除子模块比较麻烦，需要手动删除相关的文件，否则在添加子模块时有可能出现错误
 # 同样以删除assets文件夹为例
-# 1. 删除子模块文件夹
+# 1. 删除子模块文件夹（结尾不加 / ）
 git rm --cached assets
 rm -rf assets
 # 2. 删除 .gitmodules 文件中相关子模块信息
@@ -61,3 +61,19 @@ rm -rf assets
 #   url = https://github.com/maonx/vimwiki-assets.git
 # 4. 删除.git文件夹中的相关子模块文件
 rm -rf .git/modules/assets
+
+
+# 删除一个submodule
+# 1.删除 .gitsubmodule中对应submodule的条目
+# 2.删除 .git/config 中对应submodule的条目
+# 3.执行。
+git rm --cached {submodule_path}
+# 注意，路径不要加后面的“/”。
+# 例如：你的 submodule 保存在 supports/libs/websocket/ 目录。执行命令为： 
+git rm --cached supports/libs/websocket
+
+# 更新submodule的URL
+# 1.更新 .gitsubmodule 中对应 submodule 的条目 URL
+# 2.更新 .git/config 中对应 submodule 的条目的 URL
+# 3.执行
+git submodule sync

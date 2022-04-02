@@ -14,20 +14,20 @@ dnf install tigervnc-server tigervnc-server-module -y
 vncpasswd
 
 vim /etc/systemd/system/vncserver@.service
-[Unit]
-Description=Remote Desktop VNC Service
-After=syslog.target network.target
-[Service]
-Type=forking
-WorkingDirectory=/home/用户名
-User=用户名
-Group=用户组
-ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-# ExecStart=/usr/bin/vncserver -autokill %i
-ExecStart=/usr/bin/vncserver -localhost no -geometry 1280x720
-ExecStop=/usr/bin/vncserver -kill %i
-[Install]
-WantedBy=multi-user.target
+# [Unit]
+# Description=Remote Desktop VNC Service
+# After=syslog.target network.target
+# [Service]
+# Type=forking
+# WorkingDirectory=/home/用户名
+# User=用户名
+# Group=用户组
+# ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+# # ExecStart=/usr/bin/vncserver -autokill %i
+# ExecStart=/usr/bin/vncserver -localhost no -geometry 1280x720
+# ExecStop=/usr/bin/vncserver -kill %i
+# [Install]
+# WantedBy=multi-user.target
 
 systemctl daemon-reload
 systemctl start vncserver@:1.service

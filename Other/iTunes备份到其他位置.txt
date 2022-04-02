@@ -1,0 +1,1 @@
+MKLINK /D D:\iOS_Backup C:\Users\[用户名]\AppData\Roaming\Apple Computer\MobileSync\Backup

@@ -46,6 +46,7 @@ vim ~/.zshrc
 # 找到 ZSH_THEME 修改为：ZSH_THEME="agnoster"
 # 安装Powerline 对应的字体库
 dnf install powerline-fonts
+apt install fonts-powerline -y
 # 手动安装
 git clone https://github.com/powerline/fonts.git
 cd fonts
@@ -55,3 +56,9 @@ cd fonts
 
 # 更新 oh-my-zsh
 omz update
+
+# (anon):12: character not in range
+apt install locales -y
+# .zshrc添加
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8

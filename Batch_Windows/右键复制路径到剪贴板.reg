@@ -1,20 +1,20 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\*\shell\copypath]
-@="å¤åˆ¶è·¯å¾„"
+@="¸´ÖÆÂ·¾¶"
 [HKEY_CLASSES_ROOT\*\shell\copypath\command]
 @="cmd /c echo %1 | clip"
 
 [HKEY_CLASSES_ROOT\*\shell\copypathwithquote]
-@="å¤åˆ¶è·¯å¾„(å¸¦å¼•å·)"
+@="¸´ÖÆÂ·¾¶(´øÒıºÅ)"
 [HKEY_CLASSES_ROOT\*\shell\copypathwithquote\command]
 @="cmd /c echo \"%1\" | clip"
 
 [HKEY_CLASSES_ROOT\Directory\shell\copypath]
-@="å¤åˆ¶è·¯å¾„"
+@="¸´ÖÆÂ·¾¶"
 [HKEY_CLASSES_ROOT\Directory\shell\copypath\command]
 @="cmd /c echo %1 | clip"
 [HKEY_CLASSES_ROOT\Directory\shell\copypathwithquote]
-@="å¤åˆ¶è·¯å¾„(å¸¦å¼•å·)"
+@="¸´ÖÆÂ·¾¶(´øÒıºÅ)"
 [HKEY_CLASSES_ROOT\Directory\shell\copypathwithquote\command]
 @="cmd /c echo \"%1\" | clip"

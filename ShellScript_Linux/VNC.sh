@@ -37,7 +37,7 @@ unset DBUS_SESSION_BUS_ADDRESS
 vncconfig -iconic &
 xfce4-session & startxfce4 &
 
-xfce4 插件
+# xfce4 插件
 yum install xfce4-*-plugin
 yum install adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme -y
 apt install xfce4-goodies -y

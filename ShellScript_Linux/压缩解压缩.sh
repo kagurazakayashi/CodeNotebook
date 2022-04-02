@@ -29,6 +29,11 @@ tar -czf all.tar.gz *.jpg
 # 解压 tar.gz
 tar -zxvf ×××.tar.gz
 
+# 创建 .gz
+gzip -c -9 a.txt -v > a.txt.gz
+# 解压 .gz
+gzip -d a.txt.gz
+
 # 创建 tar.bz2
 tar -cjf all.tar.bz2 *.jpg
 # 解压 tar.bz2

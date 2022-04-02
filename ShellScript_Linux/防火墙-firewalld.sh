@@ -29,6 +29,9 @@ firewall-cmd --zone=public --add-port=100-500/tcp --permanent
 firewall-cmd --zone=public --remove-port=100-500/tcp --permanent
 
 # 开放或限制IP
+# REJECT:回复拒绝  DROP:直接丢弃
+#禁止IP(123.56.161.140)访问机器
+firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address="123.56.161.140" drop'
 # 限制IP地址访问 限制IP为192.168.0.200的地址禁止访问80端口
 firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.0.200" port protocol="tcp" port="80" reject'
 # 解除IP地址限制 解除刚才被限制的192.168.0.200
@@ -85,7 +88,9 @@ firewall-cmd --remove-masquerade
 # 如果配置好端口转发之后不能用，可以检查下面两个问题：
 # 比如我将80端口转发至8080端口，首先检查本地的80端口和目标的8080端口是否开放监听了其次检查是否允许伪装IP，没允许的话要开启伪装IP
 # 下面是在同一台服务器上将 80 端口的流量转发到 12345 端口。
-firewall-cmd --zone="public" --add-forward-port=port=80:proto=tcp:toport=12345
+firewall-cmd --zone="public" --add-forward-port=port=80:proto=tcp:toport=12345 --permanent
+# 将本服务的8056端口转发到ip地址为XXX.XX.XX.XXX的3356端口上,只能使用IP地址，不能使用主机名：
+firewall-cmd --permanent --zone=public --add-forward-port=port=8056:proto=tcp:toaddr=xxx.xx.xx.xxx:toport=3356
 # 将端口转发到另外一台服务器上：
 # 1、 在需要的区域中激活 masquerade。
 firewall-cmd --zone=public --add-masquerade
@@ -93,6 +98,9 @@ firewall-cmd --zone=public --add-masquerade
 firewall-cmd --zone="public" --add-forward-port=port=80:proto=tcp:toport=8080:toaddr=123.456.78.9
 # 要删除规则，用 --remove 替换 --add。比如：
 firewall-cmd --zone=public --remove-masquerade
+# 查看转发列表
+firewall-cmd --list-forward-ports
+# 输出 port=4489:proto=tcp:toport=3389:toaddr=192.168.1.55
 # 添加删除
 firewall-cmd --permanent --add-forward-port=port=80:proto=tcp:toport=3000
 firewall-cmd --permanent --remove-forward-port=port=80:proto=tcp:toport=3000
@@ -171,6 +179,7 @@ systemctl restart firewalld
 systemctl restart firewalld.service 
 
 # 屏蔽IP：
+# REJECT:回复拒绝  DROP:直接丢弃
 firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address="103.43.17.18" drop'
 
 # 允许IP： 
@@ -184,5 +193,8 @@ firewall-cmd --permanent --add-port=3128/tcp
 
 # 列出所有区域规则：
 firewall-cmd --list-all-zones
+
+# 重新加载 FirewallD 让规则立即生效
+firewall-cmd --reload
 
 # http://www.centoscn.com/CentOS/Intermediate/2015/0313/4879.html
