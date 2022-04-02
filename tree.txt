@@ -92,7 +92,7 @@
 │   ├── ./Batch_Windows/WSL使用Windows中已安装字体.sh
 │   ├── ./Batch_Windows/Win11绕过硬件检测.bat
 │   ├── ./Batch_Windows/Win11绕过硬件检测iso.txt
-│   ├── ./Batch_Windows/WindowsTerminal.json
+│   ├── ./Batch_Windows/WindowsTerminal.md
 │   ├── ./Batch_Windows/anyconnect临时开启服务.bat
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
 │   ├── ./Batch_Windows/cygwin-mingw.txt
@@ -107,6 +107,7 @@
 │   ├── ./Batch_Windows/修复EXE文件关联.reg
 │   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
 │   ├── ./Batch_Windows/共享文件.bat
+│   ├── ./Batch_Windows/关闭MSI信息信号中断模式.md
 │   ├── ./Batch_Windows/创建常用模式启动项.bat
 │   ├── ./Batch_Windows/删除OneDrive.reg
 │   ├── ./Batch_Windows/删除内核转储.bat
@@ -119,11 +120,13 @@
 │   ├── ./Batch_Windows/取消磁盘的自动扫描.reg
 │   ├── ./Batch_Windows/取消磁盘空间低提示.reg
 │   ├── ./Batch_Windows/取消禁止显示隐藏文件.reg
+│   ├── ./Batch_Windows/右键复制文件内容到剪贴板.reg
 │   ├── ./Batch_Windows/右键复制路径到剪贴板.reg
 │   ├── ./Batch_Windows/右键添加打开命令窗口.reg
 │   ├── ./Batch_Windows/启动文件夹.md
 │   ├── ./Batch_Windows/启动项禁用Hyper-V.bat
 │   ├── ./Batch_Windows/增加特殊模式启动项.bat
+│   ├── ./Batch_Windows/备份WSL.bat
 │   ├── ./Batch_Windows/安装重启挂起.reg
 │   ├── ./Batch_Windows/实现sudo，参数①提升启动权限的程序.vbs
 │   ├── ./Batch_Windows/开机显示详细信息.txt
@@ -137,6 +140,7 @@
 │   ├── ./Batch_Windows/移动Outlook数据文件.bat
 │   ├── ./Batch_Windows/移除迅雷xlwfp服务.bat
 │   ├── ./Batch_Windows/管理员取得所有权.reg
+│   ├── ./Batch_Windows/系统自带图标.md
 │   ├── ./Batch_Windows/编辑hosts.bat
 │   ├── ./Batch_Windows/自动登录选项消失.reg
 │   ├── ./Batch_Windows/蓝屏允许手动触发.reg
@@ -401,10 +405,15 @@
 │   ├── ./Go/Unix的三种输入输出输入模式.go
 │   ├── ./Go/Windows生成带图标的执行文件
 │   │   ├── ./Go/Windows生成带图标的执行文件/manifest.xml
+│   │   ├── ./Go/Windows生成带图标的执行文件/windows-manifest-SupportedOS.txt
 │   │   └── ./Go/Windows生成带图标的执行文件/生成syso文件.bat
 │   ├── ./Go/bad_file_descriptor.md
 │   ├── ./Go/cmap排序.go
+│   ├── ./Go/filepath.go
+│   ├── ./Go/int和byte互转.go
 │   ├── ./Go/linux使用最新版本.sh
+│   ├── ./Go/map.go
+│   ├── ./Go/map_concurrent-map.go
 │   ├── ./Go/string和byte互相转换.go
 │   ├── ./Go/uint64转byte保留源数字.go
 │   ├── ./Go/上传和输出某个文件.go
@@ -414,7 +423,6 @@
 │   ├── ./Go/命令行参数.go
 │   ├── ./Go/在当前行输出.go
 │   ├── ./Go/声明变量.go
-│   ├── ./Go/声明数组.go
 │   ├── ./Go/字符串与数组互转.go
 │   ├── ./Go/字符串和数字互转.go
 │   ├── ./Go/字符串和时间戳互相转换.go
@@ -425,9 +433,11 @@
 │   ├── ./Go/引用github私有库报错.md
 │   ├── ./Go/当前时间.go
 │   ├── ./Go/排序数字.go
+│   ├── ./Go/数组.go
 │   ├── ./Go/整数转字符串.go
 │   ├── ./Go/枚举.go
 │   ├── ./Go/混合内容的字典.go
+│   ├── ./Go/环境变量.sh
 │   ├── ./Go/终端彩色输出.go
 │   ├── ./Go/终端彩色输出.png
 │   ├── ./Go/编译到其他平台.bat
@@ -587,15 +597,21 @@
 │   ├── ./JavaScript_React/页面载入状态事件.js
 │   └── ./JavaScript_React/鼠标事件和移过提示框.js
 ├── ./MySQL
+│   ├── ./MySQL/DISTINCT返回不重复的数据.sql
+│   ├── ./MySQL/HAVING筛选分组后的各组数据.sql
+│   ├── ./MySQL/IN.sql
+│   ├── ./MySQL/IS_NULL.sql
 │   ├── ./MySQL/MySQL8_Docker忘记密码.sh
 │   ├── ./MySQL/MySQL8修改root密码.sql
 │   ├── ./MySQL/MySQL主从备份配置.md
 │   ├── ./MySQL/RH8编译报错rpcgen.sh
 │   ├── ./MySQL/SSL连接到MySQL.md
+│   ├── ./MySQL/like.txt
 │   ├── ./MySQL/修改监听和端口.txt
 │   ├── ./MySQL/允许外网登录root用户.sql
 │   ├── ./MySQL/全文搜索.sql
 │   ├── ./MySQL/关闭log-bin.sh
+│   ├── ./MySQL/内连接外连接.txt
 │   ├── ./MySQL/删除和创建用户.sql
 │   ├── ./MySQL/大于或小于当前时间.sql
 │   ├── ./MySQL/大批量数据操作崩溃.sql
@@ -605,9 +621,11 @@
 │   ├── ./MySQL/批量查找替换字符串.sql
 │   ├── ./MySQL/最大的id.sql
 │   ├── ./MySQL/查找指定日期.sql
+│   ├── ./MySQL/根据出生日期计算年龄.sql
 │   ├── ./MySQL/清空表.sql
 │   ├── ./MySQL/移动数据文件夹.sh
 │   ├── ./MySQL/索引类型.md
+│   ├── ./MySQL/统计不含空和不含重复值的数量.sql
 │   ├── ./MySQL/自增长id从1000开始.sql
 │   ├── ./MySQL/表有多少行.sql
 │   └── ./MySQL/记录查询日志.sh
@@ -617,7 +635,10 @@
 │   ├── ./Other/IPv4地址段.md
 │   ├── ./Other/Mastodon-docker迁移.sh
 │   ├── ./Other/Mastodon.sh
+│   ├── ./Other/iTunes备份到其他位置.txt
 │   ├── ./Other/mastodon清理.sh
+│   ├── ./Other/xmrig编译.sh
+│   ├── ./Other/xmrig配置参数.md
 │   ├── ./Other/切噜.c
 │   ├── ./Other/喵.c
 │   ├── ./Other/常用密码长度.md
@@ -1089,6 +1110,7 @@
 │   │   ├── ./Tools/Coin/挖矿.txt
 │   │   └── ./Tools/Coin/门罗币钱包.sh
 │   ├── ./Tools/GPG.sh
+│   ├── ./Tools/IP地址段.md
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/PhotoGIMP.sh
 │   ├── ./Tools/exiftool.sh
@@ -1259,7 +1281,6 @@
 │   ├── ./TypeScript/tsconfig.json
 │   ├── ./TypeScript/webpack.config.js
 │   ├── ./TypeScript/webpack参数.txt
-│   ├── ./TypeScript/yq
 │   ├── ./TypeScript/二维数组.ts
 │   ├── ./TypeScript/代理.ts
 │   ├── ./TypeScript/全局变量.ts
@@ -1368,4 +1389,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-76 directories, 1292 files
+75 directories, 1314 files
