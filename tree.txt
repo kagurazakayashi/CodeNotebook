@@ -1297,6 +1297,7 @@
 │   ├── ./TypeScript/数组遍历、迭代器iterator.ts
 │   ├── ./TypeScript/枚举.ts
 │   ├── ./TypeScript/泛型.ts
+│   ├── ./TypeScript/清除监听.ts
 │   ├── ./TypeScript/计算区间.ts
 │   ├── ./TypeScript/迭代函数、生成器generator.ts
 │   └── ./TypeScript/颜色亮度.ts
@@ -1389,4 +1390,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-75 directories, 1314 files
+75 directories, 1315 files
