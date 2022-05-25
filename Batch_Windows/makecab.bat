@@ -11,6 +11,7 @@
 @REM compressionmemory 压缩率，在lzx类型下需指定：范围15--21
 @REM value：指定值
 @REM 例：
+@REM cab最大压缩
 makecab /d compressiontype=lzx /d compressionmemory=21 xxx.xxx
 @REM 意思：以lzx压缩方式最高（21）压缩xxx.xxx文件
 @REM /l <dir>

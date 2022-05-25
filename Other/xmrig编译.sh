@@ -1,3 +1,5 @@
+#XMRig编译
+
 sudo apt install git build-essential cmake libuv1-dev libmicrohttpd-dev -y
 
 git clone https://github.com/open-mpi/hwloc.git

@@ -1,4 +1,4 @@
-# Ubuntu 树莓派 防火墙
+# Ubuntu 树莓派 Debian防火墙
 
 apt-get install ufw
 ufw enable
