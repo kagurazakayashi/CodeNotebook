@@ -4,3 +4,9 @@
 [submodule "Config/火绒设置/Huorong-Rules"]
 	path = Config/火绒设置/Huorong-Rules
 	url = https://github.com/tutugreen/Huorong-Rules.git
+[submodule "Go/libNyaruko_Go"]
+	path = Go/libNyaruko_Go
+	url = https://github.com/kagurazakayashi/libNyaruko_Go.git
+[submodule "TypeScript/libNyaruko_TS"]
+	path = TypeScript/libNyaruko_TS
+	url = https://github.com/kagurazakayashi/libNyaruko_TS.git

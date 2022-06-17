@@ -18,3 +18,16 @@ docker save 镜像名 | xz -z -9 -e -T 0 >file.tar.xz
 docker stop ID/名字
 docker rm ID/名字
 docker rmi 镜像名
+
+# 导出镜像
+docker image save -o imageName.tar imageName
+# --output, -o 写入一个文件，而不是STDOUT
+# 压缩导出
+docker image save imageName | xz -z -e -9 -T 0 > imageName.tar.xz
+
+# 导入镜像
+docker image load -i imageName.tar
+# --input, -i 从tar档案文件(而不是STDIN)读取
+# --quiet, -q 抑制加载输出
+# 解压导入
+xz -d imageName.tar.xz -c | docker image load
