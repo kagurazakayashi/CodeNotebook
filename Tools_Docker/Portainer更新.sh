@@ -8,3 +8,11 @@ docker rmi portainer/portainer-ce
 docker pull portainer/portainer-ce
 # 5. 使用新的镜像启动新的容器
 docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+# 离线更新
+# 导出镜像（普通/压缩）
+docker image save portainer/portainer-ce -o portainer.tar
+docker image save portainer/portainer-ce | xz -z -9 -e -T 0 >portainer.tar.xz
+# 导入镜像（普通/压缩）
+docker image load -i portainer.tar
+xz -d portainer.tar.xz -c | docker image load
