@@ -4,4 +4,5 @@ choco config set proxyUser bob
 choco config set proxyPassword 123Sup#rSecur3
 choco config set proxyBypassList "'http://localhost,http://this.location/'" #0.10.4 required
 choco config set proxyBypassOnLocal true #0.10.4 required
+@REM 取消代理
 choco config unset proxy
