@@ -435,11 +435,14 @@
 │   ├── ./Go/字符串和数字互转.go
 │   ├── ./Go/字符串和时间戳互相转换.go
 │   ├── ./Go/字符串操作.go
+│   ├── ./Go/字符串是否包含子字符串.go
+│   ├── ./Go/字符串是否在某个数组中.go
 │   ├── ./Go/字符串长度.go
 │   ├── ./Go/安装Go.sh
 │   ├── ./Go/安装库到GO_PATH.sh
 │   ├── ./Go/引用github私有库报错.md
 │   ├── ./Go/当前时间.go
+│   ├── ./Go/彩色输出.go
 │   ├── ./Go/排序数字.go
 │   ├── ./Go/数组.go
 │   ├── ./Go/整数转字符串.go
@@ -1407,4 +1410,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-75 directories, 1332 files
+75 directories, 1335 files
