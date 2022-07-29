@@ -1,4 +1,4 @@
 function 定长数组() {
-    let arr = new Array<number>(3);
-    console.log(arr); // [undefined × 3]
+    const nums: number[] = new Array<number>(3);
+    console.log(nums); // [undefined × 3]
 }

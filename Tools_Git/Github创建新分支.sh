@@ -26,3 +26,6 @@ git branch -d [branch name]
 git push origin :[branch name]
 
 # https://blog.csdn.net/top_code/article/details/51931916
+
+为某个版本创建新的分支
+git checkout -b [新建分支名] [要被复制的版本哈希]
