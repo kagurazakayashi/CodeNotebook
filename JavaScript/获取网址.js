@@ -1,3 +1,4 @@
+// 获取网址：
 // 下面我们举例一个URL，然后获得它的各个组成部分：
 // http://i.cnblogs.com/EditPosts.aspx?opt=1
 

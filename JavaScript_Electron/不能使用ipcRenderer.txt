@@ -1,0 +1,14 @@
+const electron = window.require('electron'); window.require is not a function
+window.ipcRenderer = ipcRenderer; window.ipcRenderer Undefined
+无法引入ipcRenderer 无法使用ipcRenderer
+
+main:
+
+webPreferences: {
+  nodeIntegration: true, // 修改后
+  enableRemoteModule: false,
+  contextIsolation: false, // 修改后
+  nodeIntegrationInWorker: false,
+  nodeIntegrationInSubFrames: false,
+  preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+},
