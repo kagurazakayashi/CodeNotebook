@@ -1176,6 +1176,8 @@
 │   ├── ./Tools_Aliyun/从API下载CDN日志.py
 │   ├── ./Tools_Aliyun/取出阿里云云盾事态感知攻击记录.js
 │   ├── ./Tools_Aliyun/批量下载阿里云CDN当日日志，需允许弹出窗口.js
+│   ├── ./Tools_Aliyun/日志归档v2-CDN.sh
+│   ├── ./Tools_Aliyun/日志归档v2-OSS.sh
 │   ├── ./Tools_Aliyun/视频点播提交转码任务.py
 │   ├── ./Tools_Aliyun/解压缩下载的当日日志并压缩，参数①新文件夹名.bat
 │   ├── ./Tools_Aliyun/解压缩下载的当日日志并归档，参数①新文件夹名.bat
@@ -1416,4 +1418,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-75 directories, 1341 files
+75 directories, 1343 files
