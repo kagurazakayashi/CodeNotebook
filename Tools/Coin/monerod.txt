@@ -1,0 +1,414 @@
+Monero 'Oxygen Orion' (v0.17.3.2-release)
+门罗币
+
+Usage 用法: ./monerod [options|settings] [daemon_command...]
+
+Options 选项:
+  --help                                Produce help message 生成帮助信息
+  --version                             Output version information 输出版本信息
+  --os-version                          OS for which this executable was 
+                                        compiled 此可执行文件所在的操作系统编译
+  --config-file arg (=/home/yashi/.bitmonero/bitmonero.conf, /home/yashi/.bitmonero/testnet/bitmonero.conf if 'testnet', /home/yashi/.bitmonero/stagenet/bitmonero.conf if 'stagenet')
+                                        Specify configuration file 指定配置文件
+  --detach                              Run as daemon 作为守护进程运行
+  --pidfile arg                         File path to write the daemon's PID to 
+                                        (optional, requires --detach)
+                                        将守护进程的 PID 写入到的文件路径（可选，需要 --detach）
+  --non-interactive                     Run non-interactive 运行非交互式
+
+Settings:
+  --log-file arg (=/home/yashi/.bitmonero/bitmonero.log, /home/yashi/.bitmonero/testnet/bitmonero.log if 'testnet', /home/yashi/.bitmonero/stagenet/bitmonero.log if 'stagenet')
+                                        Specify log file 指定日志文件
+  --log-level arg 日志级别 参数
+  --max-log-file-size arg (=104850000)  Specify maximum log file size [B] 指定最大日志文件大小 [B]
+  --max-log-files arg (=50)             Specify maximum number of rotated log 
+                                        files to be saved (no limit by setting 
+                                        to 0) 指定旋转日志的最大数量
+                                        要保存的文件（通过设置没有限制
+                                        到 0)
+  --max-concurrency arg (=0)            Max number of threads to use for a 
+                                        parallel job 并行作业最大线程数
+  --proxy arg                           Network communication through proxy: 
+                                        <socks-ip:port> i.e. "127.0.0.1:9050"
+                                        通过代理进行网络通信
+  --proxy-allow-dns-leaks               Allow DNS leaks outside of proxy
+                                        允许代理之外的 DNS 泄漏
+  --public-node                         Allow other users to use the node as a 
+                                        remote (restricted RPC mode, view-only 
+                                        commands) and advertise it over P2P
+                                        允许其他用户使用该节点作为
+                                        远程（受限 RPC 模式，仅查看
+                                        命令）并通过 P2P 进行宣传
+  --zmq-rpc-bind-ip arg (=127.0.0.1)    IP for ZMQ RPC server to listen on
+                                        用于 ZMQ RPC 服务器侦听的 IP
+  --zmq-rpc-bind-port arg (=18082, 28082 if 'testnet', 38082 if 'stagenet')
+                                        Port for ZMQ RPC server to listen on
+                                        ZMQ RPC 服务器监听的端口
+  --zmq-pub arg                         Address for ZMQ pub - tcp://ip:port or 
+                                        ipc://path
+                                        ZMQ pub 地址 - tcp://ip:port 或
+                                        ipc://路径
+  --no-zmq                              Disable ZMQ RPC server 禁用 ZMQ RPC 服务器
+  --data-dir arg (=/home/yashi/.bitmonero, /home/yashi/.bitmonero/testnet if 'testnet', /home/yashi/.bitmonero/stagenet if 'stagenet')
+                                        Specify data directory
+                                        指定数据目录
+  --test-drop-download                  For net tests: in download, discard ALL
+                                        blocks instead checking/saving them 
+                                        (very fast)
+                                        对于网络测试：在下载中，丢弃所有
+                                        块而不是检查/保存它们
+                                        （非常快）
+  --test-drop-download-height arg (=0)  Like test-drop-download but discards 
+                                        only after around certain height
+                                        类似 test-drop-download 但丢弃
+                                        只有在大约一定高度之后
+  --testnet                             Run on testnet. The wallet must be 
+                                        launched with --testnet flag.
+                                        在测试网上运行。钱包必须是
+                                        使用 --testnet 标志启动。
+  --stagenet                            Run on stagenet. The wallet must be 
+                                        launched with --stagenet flag.
+                                        在 stagenet 上运行。钱包必须是
+                                        使用 --stagenet 标志启动。
+  --regtest                             Run in a regression testing mode.
+                                        在回归测试模式下运行。
+  --keep-fakechain                      Don't delete any existing database when
+                                        in fakechain mode.
+                                        不删除任何现有数据库
+                                        在假链模式下。
+  --fixed-difficulty arg (=0)           Fixed difficulty used for testing.
+                                        用于测试的固定难度。
+  --enforce-dns-checkpointing           checkpoints from DNS server will be 
+                                        enforced
+                                        来自 DNS 服务器的检查点将是
+                                        强制执行
+  --prep-blocks-threads arg (=4)        Max number of threads to use when 
+                                        preparing block hashes in groups.
+                                        最大线程数
+                                        分组准备块哈希。
+  --fast-block-sync arg (=1)            Sync up most of the way by using 
+                                        embedded, known block hashes.
+                                        通过使用同步大部分方式
+                                        嵌入的已知块哈希。
+  --show-time-stats arg (=0)            Show time-stats when processing 
+                                        blocks/txs and disk synchronization.
+                                        处理时显示时间统计
+                                        块/txs 和磁盘同步。
+  --block-sync-size arg (=0)            How many blocks to sync at once during 
+                                        chain synchronization (0 = adaptive).
+                                        一次同步多少块
+                                        链同步（0 = 自适应）。
+  --check-updates arg (=notify)         Check for new versions of monero: 
+                                        [disabled|notify|download|update]
+                                        检查门罗币的新版本：
+                                        [禁用|通知|下载|更新]
+  --fluffy-blocks                       Relay blocks as fluffy blocks 
+                                        (obsolete, now default)
+                                        将块中继为蓬松块
+                                        （已过时，现在默认）
+  --no-fluffy-blocks                    Relay blocks as normal blocks
+                                        中继块作为普通块
+  --test-dbg-lock-sleep arg (=0)        Sleep time in ms, defaults to 0 (off), 
+                                        used to debug before/after locking 
+                                        mutex. Values 100 to 1000 are good for 
+                                        tests.
+                                        睡眠时间，以毫秒为单位，默认为 0（关闭），
+                                        用于在锁定之前/之后进行调试
+                                        互斥体。值 100 到 1000 适合
+                                        测试。
+  --offline                             Do not listen for peers, nor connect to
+                                        any
+                                        不监听对等点，也不连接到
+                                        任何
+  --disable-dns-checkpoints             Do not retrieve checkpoints from DNS
+                                        不从 DNS 检索检查点
+  --block-download-max-size arg (=0)    Set maximum size of block download 
+                                        queue in bytes (0 for default)
+                                        设置块下载的最大大小
+                                        以字节为单位的队列（默认为 0）
+  --sync-pruned-blocks                  Allow syncing from nodes with only 
+                                        pruned blocks
+                                        只允许从节点同步
+                                        修剪块
+  --max-txpool-weight arg (=648000000)  Set maximum txpool weight in bytes.
+                                        设置最大 txpool 权重（以字节为单位）。
+  --block-notify arg                    Run a program for each new block, '%s' 
+                                        will be replaced by the block hash
+                                        为每个新块运行一个程序，'%s'
+                                        将被区块哈希取代
+  --prune-blockchain                    Prune blockchain 修剪区块链
+  --reorg-notify arg                    Run a program for each reorg, '%s' will
+                                        be replaced by the split height, '%h' 
+                                        will be replaced by the new blockchain 
+                                        height, '%n' will be replaced by the 
+                                        number of new blocks in the new chain, 
+                                        and '%d' will be replaced by the number
+                                        of blocks discarded from the old chain
+                                        为每个重组运行一个程序，'%s' 将
+                                        被分割高度替换，'%h'
+                                        将被新的区块链取代
+                                        高度，“%n”将被替换为
+                                        新链中新区块的数量，
+                                        并且 '%d' 将被替换为数字
+                                        从旧链中丢弃的块
+  --block-rate-notify arg               Run a program when the block rate 
+                                        undergoes large fluctuations. This 
+                                        might be a sign of large amounts of 
+                                        hash rate going on and off the Monero 
+                                        network, and thus be of potential 
+                                        interest in predicting attacks. %t will
+                                        be replaced by the number of minutes 
+                                        for the observation window, %b by the 
+                                        number of blocks observed within that 
+                                        window, and %e by the number of blocks 
+                                        that was expected in that window. It is
+                                        suggested that this notification is 
+                                        used to automatically increase the 
+                                        number of confirmations required before
+                                        a payment is acted upon.
+                                        当阻塞率时运行程序
+                                        经历较大的波动。这个
+                                        可能是大量的迹象
+                                        门罗币上下的哈希率
+                                        网络，因此具有潜力
+                                        对预测攻击的兴趣。 %t 将
+                                        替换为分钟数
+                                        对于观察窗口，%b 由
+                                        在其中观察到的块数
+                                        窗口，%e 按块数
+                                        在那个窗口中是预期的。这是
+                                        建议此通知是
+                                        用于自动增加
+                                        之前需要的确认次数
+                                        付款被执行。
+  --keep-alt-blocks                     Keep alternative blocks on restart
+                                        在重启时保留替代块
+  --extra-messages-file arg             Specify file for extra messages to 
+                                        include into coinbase transactions
+                                        指定额外消息的文件
+                                        包含在 coinbase 交易中
+  --start-mining arg                    Specify wallet address to mining for
+                                        指定要挖矿的钱包地址
+  --mining-threads arg                  Specify mining threads count
+                                        指定挖矿线程数
+  --bg-mining-enable                    enable background mining
+                                        启用后台挖掘
+  --bg-mining-ignore-battery            if true, assumes plugged in when unable
+                                        to query system power status
+                                        如果为真，则在无法插入时假定已插入
+                                        查询系统电源状态
+  --bg-mining-min-idle-interval arg     Specify min lookback interval in 
+                                        seconds for determining idle state
+                                        指定最小回溯间隔
+                                        确定空闲状态的秒数
+  --bg-mining-idle-threshold arg        Specify minimum avg idle percentage 
+                                        over lookback interval
+                                        指定最小平均空闲百分比
+                                        过回溯间隔
+  --bg-mining-miner-target arg          Specify maximum percentage cpu use by 
+                                        miner(s)
+                                        指定 CPU 使用的最大百分比
+                                        矿工
+  --db-sync-mode arg (=fast:async:250000000bytes)
+                                        Specify sync option, using format 
+                                        [safe|fast|fastest]:[sync|async]:[<nblo
+                                        cks_per_sync>[blocks]|<nbytes_per_sync>
+                                        [bytes]].
+                                        指定同步选项，使用格式
+                                        [安全|快速|最快]:[同步|异步]:[<nblo
+                                        cks_per_sync>[块]|<nbytes_per_sync>
+                                        [字节]]。
+  --db-salvage                          Try to salvage a blockchain database if
+                                        it seems corrupted
+                                        尝试挽救区块链数据库，如果
+                                        它似乎已损坏
+  --p2p-bind-ip arg (=0.0.0.0)          Interface for p2p network protocol 
+                                        (IPv4)
+                                        p2p网络协议接口
+                                        (IPv4)
+  --p2p-bind-ipv6-address arg (=::)     Interface for p2p network protocol 
+                                        (IPv6)
+                                        p2p网络协议接口
+                                        (IPv6)
+  --p2p-bind-port arg (=18080, 28080 if 'testnet', 38080 if 'stagenet')
+                                        Port for p2p network protocol (IPv4)
+                                        p2p 网络协议 (IPv4) 的端口
+  --p2p-bind-port-ipv6 arg (=18080, 28080 if 'testnet', 38080 if 'stagenet')
+                                        Port for p2p network protocol (IPv6)
+                                        p2p 网络协议 (IPv6) 的端口
+  --p2p-use-ipv6                        Enable IPv6 for p2p
+                                        为 p2p 启用 IPv6
+  --p2p-ignore-ipv4                     Ignore unsuccessful IPv4 bind for p2p
+                                        忽略 p2p 的不成功 IPv4 绑定
+  --p2p-external-port arg (=0)          External port for p2p network protocol 
+                                        (if port forwarding used with NAT)
+                                        p2p 网络协议的外部端口
+                                        （如果端口转发与 NAT 一起使用）
+  --allow-local-ip                      Allow local ip add to peer list, mostly
+                                        in debug purposes
+                                        允许本地 ip 添加到对等列表，主要是
+                                        出于调试目的
+  --add-peer arg                        Manually add peer to local peerlist
+                                        手动将 peer 添加到本地 peerlist
+  --add-priority-node arg               Specify list of peers to connect to and
+                                        attempt to keep the connection open
+                                        指定要连接的对等点列表和
+                                        尝试保持连接打开
+  --add-exclusive-node arg              Specify list of peers to connect to 
+                                        only. If this option is given the 
+                                        options add-priority-node and seed-node
+                                        are ignored
+                                        指定要连接的节点列表
+                                        只要。如果给出这个选项
+                                        选项添加优先级节点和种子节点
+                                        被忽略
+  --seed-node arg                       Connect to a node to retrieve peer 
+                                        addresses, and disconnect
+                                        连接到一个节点以检索对等点
+                                        地址，并断开连接
+  --tx-proxy arg                        Send local txes through proxy: 
+                                        <network-type>,<socks-ip:port>[,max_con
+                                        nections][,disable_noise] i.e. 
+                                        "tor,127.0.0.1:9050,100,disable_noise"
+                                        通过代理发送本地交易
+  --anonymous-inbound arg               <hidden-service-address>,<[bind-ip:]por
+                                        t>[,max_connections] i.e. 
+                                        "x.onion,127.0.0.1:18083,100"
+  --ban-list arg                        Specify ban list file, one IP address 
+                                        per line
+                                        指定禁止列表文件，一个IP地址
+                                        每行
+  --hide-my-port                        Do not announce yourself as peerlist 
+                                        candidate
+                                        不要宣布自己为 peerlist
+                                        候选人
+  --no-sync                             Don't synchronize the blockchain with 
+                                        other peers
+                                        不同步区块链
+                                        其他同行
+  --enable-dns-blocklist                Apply realtime blocklist from DNS
+                                        从 DNS 应用实时阻止列表
+  --no-igd                              Disable UPnP port mapping
+                                        禁用 UPnP 端口映射
+  --igd arg (=delayed)                  UPnP port mapping (disabled, enabled, 
+                                        delayed)
+                                        UPnP 端口映射（禁用、启用、
+                                        延迟）
+  --out-peers arg (=-1)                 set max number of out peers
+                                        设置最大输出节点数
+  --in-peers arg (=-1)                  set max number of in peers
+                                        设置最大节点数
+  --tos-flag arg (=-1)                  set TOS flag
+                                        设置 TOS 标志
+  --limit-rate-up arg (=2048)           set limit-rate-up [kB/s]
+  --limit-rate-down arg (=8192)         set limit-rate-down [kB/s]
+  --limit-rate arg (=-1)                set limit-rate [kB/s]
+                                        设置限制速率 [kB/s]
+  --pad-transactions                    Pad relayed transactions to help defend
+                                        against traffic volume analysis
+                                        垫中继交易以帮助防御
+                                        针对流量分析
+  --rpc-bind-port arg (=18081, 28081 if 'testnet', 38081 if 'stagenet')
+                                        Port for RPC server
+                                        RPC 服务器的端口
+  --rpc-restricted-bind-port arg        Port for restricted RPC server
+                                        受限 RPC 服务器的端口
+  --restricted-rpc                      Restrict RPC to view only commands and 
+                                        do not return privacy sensitive data in
+                                        RPC calls
+                                        限制 RPC 只查看命令和
+                                        不返回隐私敏感数据
+                                        RPC 调用
+  --bootstrap-daemon-address arg        URL of a 'bootstrap' remote daemon that
+                                        the connected wallets can use while 
+                                        this daemon is still not fully synced.
+                                        Use 'auto' to enable automatic public 
+                                        nodes discovering and bootstrap daemon 
+                                        switching
+                                        远程守护进程的 URL
+                                        连接的钱包可以同时使用
+                                        这个守护进程还没有完全同步。
+                                        使用“auto”启用自动公开
+                                        节点发现和引导守护进程
+                                        交换
+  --bootstrap-daemon-login arg          Specify username:password for the 
+                                        bootstrap daemon login
+                                        指定用户名：密码
+                                        引导守护进程登录
+  --bootstrap-daemon-proxy arg          <ip>:<port> socks proxy to use for 
+                                        bootstrap daemon connections
+                                        <ip>:<port> socks 代理用于
+                                        引导守护程序连接
+  --rpc-bind-ip arg (=127.0.0.1)        Specify IP to bind RPC server
+                                        指定IP绑定RPC服务器
+  --rpc-bind-ipv6-address arg (=::1)    Specify IPv6 address to bind RPC server
+                                        指定IPv6地址绑定RPC服务器
+  --rpc-restricted-bind-ip arg (=127.0.0.1)
+                                        Specify IP to bind restricted RPC 
+                                        server
+                                        指定 IP 绑定受限 RPC
+                                        服务器
+  --rpc-restricted-bind-ipv6-address arg (=::1)
+                                        Specify IPv6 address to bind restricted
+                                        RPC server
+                                        指定 IPv6 地址绑定受限
+                                        RPC 服务器
+  --rpc-use-ipv6                        Allow IPv6 for RPC 允许 RPC 使用 IPv6
+  --rpc-ignore-ipv4                     Ignore unsuccessful IPv4 bind for RPC
+                                        忽略不成功的 RPC 绑定 IPv4
+  --rpc-login arg                       Specify username[:password] required 
+                                        for RPC server
+                                        指定用户名[:password] 必填
+                                        用于 RPC 服务器
+  --confirm-external-bind               Confirm rpc-bind-ip value is NOT a 
+                                        loopback (local) IP
+                                        确认 rpc-bind-ip 值不是
+                                        环回（本地）IP
+  --rpc-access-control-origins arg      Specify a comma separated list of 
+                                        origins to allow cross origin resource 
+                                        sharing
+                                        指定一个逗号分隔的列表
+                                        origins 允许跨源资源
+                                        分享
+  --rpc-ssl arg (=autodetect)           Enable SSL on RPC connections: 
+                                        enabled|disabled|autodetect
+                                        在 RPC 连接上启用 SSL：
+                                        启用|禁用|自动检测
+  --rpc-ssl-private-key arg             Path to a PEM format private key 格式私钥的路径
+  --rpc-ssl-certificate arg             Path to a PEM format certificate 格式证书的路径
+  --rpc-ssl-ca-certificates arg         Path to file containing concatenated 
+                                        PEM format certificate(s) to replace 
+                                        system CA(s).
+                                        包含连接的文件的路径
+                                        要替换的 PEM 格式证书
+                                        系统 CA。
+  --rpc-ssl-allowed-fingerprints arg    List of certificate fingerprints to 
+                                        allow
+                                        证书指纹列表
+                                        允许
+  --rpc-ssl-allow-chained               Allow user (via --rpc-ssl-certificates)
+                                        chain certificates
+                                        允许用户（通过 --rpc-ssl-certificates）
+                                        链式证书
+  --disable-rpc-ban                     Do not ban hosts on RPC errors
+                                        不禁止主机出现 RPC 错误
+  --rpc-ssl-allow-any-cert              Allow any peer certificate
+                                        允许任何对等证书
+  --rpc-payment-address arg             Restrict RPC to clients sending 
+                                        micropayment to this address
+                                        将 RPC 限制为客户端发送
+                                        小额支付到这个地址
+  --rpc-payment-difficulty arg (=1000)  Restrict RPC to clients sending 
+                                        micropayment at this difficulty
+                                        将 RPC 限制为客户端发送
+                                        这种困难的小额支付
+  --rpc-payment-credits arg (=100)      Restrict RPC to clients sending 
+                                        micropayment, yields that many credits 
+                                        per payment
+                                        将 RPC 限制为客户端发送
+                                        小额支付，产生那么多信用
+                                        每次付款
+  --rpc-payment-allow-free-loopback     Allow free access from the loopback 
+                                        address (ie, the local host)
+                                        允许从环回免费访问
+                                        地址（即本地主机）

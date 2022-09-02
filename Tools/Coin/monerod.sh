@@ -1,0 +1,1 @@
+./monerod --rpc-bind-ip 127.0.0.1 --rpc-bind-port 18081 --rpc-restricted-bind-ip 127.0.0.1 --rpc-login yashi:*** --data-dir /volume2/coin/monero/data

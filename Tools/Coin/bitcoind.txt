@@ -1,0 +1,946 @@
+Bitcoin Core version v22.0.0 比特币核心
+Copyright (C) 2009-2021 The Bitcoin Core developers
+
+Please contribute if you find Bitcoin Core useful. Visit
+<https://bitcoincore.org/> for further information about the software.
+The source code is available from <https://github.com/bitcoin/bitcoin>.
+
+This is experimental software.
+Distributed under the MIT software license, see the accompanying file COPYING
+or <https://opensource.org/licenses/MIT>
+
+
+Usage:  bitcoind [options] Start Bitcoin Core
+用法：bitcoind [选项] 启动比特币核心
+
+Options 选项:
+
+  -?
+       Print this help message and exit
+       打印此帮助信息并退出
+
+  -alertnotify=<cmd>
+       Execute command when a relevant alert is received or we see a really
+       long fork (%s in cmd is replaced by message)
+       当收到相关警报或我们看到一个真正的警报时执行命令
+       长叉（cmd 中的 %s 被替换为消息）
+
+  -assumevalid=<hex>
+       If this block is in the chain assume that it and its ancestors are valid
+       and potentially skip their script verification (0 to verify all,
+       default:
+       00000000000000000008a89e854d57e5667df88f1cdef6fde2fbca1de5b639ad,
+       testnet:
+       0000000000004ae2f3896ca8ecd41c460a35bf6184e145d91558cece1c688a76,
+       signet:
+       000000187d4440e5bff91488b700a140441e089a8aaea707414982460edbfe54)如果这个块在链中，假设它和它的祖先是有效的
+       并可能跳过他们的脚本验证（0 来验证所有，
+       默认：测试网：签名：
+
+  -blockfilterindex=<type>
+       Maintain an index of compact filters by block (default: 0, values:
+       basic). If <type> is not supplied or if <type> = 1, indexes for
+       all known types are enabled.
+       按块维护紧凑过滤器的索引（默认值：0，值：
+       基本的）。如果未提供 <type> 或如果 <type> = 1，则索引
+       所有已知类型均已启用。
+
+  -blocknotify=<cmd>
+       Execute command when the best block changes (%s in cmd is replaced by
+       block hash)
+       最佳块发生变化时执行命令（cmd中的%s被替换为
+       块哈希）
+
+  -blockreconstructionextratxn=<n>
+       Extra transactions to keep in memory for compact block reconstructions
+       (default: 100)
+       为紧凑块重建保留在内存中的额外事务
+       （默认值：100）
+
+  -blocksdir=<dir>
+       Specify directory to hold blocks subdirectory for *.dat files (default:
+       <datadir>)
+       指定目录以保存 *.dat 文件的块子目录（默认值：
+       <数据目录>)
+
+  -blocksonly
+       Whether to reject transactions from network peers. Automatic broadcast
+       and rebroadcast of any transactions from inbound peers is
+       disabled, unless the peer has the 'forcerelay' permission. RPC
+       transactions are not affected. (default: 0)
+       是否拒绝来自网络对等方的交易。自动广播
+       并且来自入站对等方的任何交易的重播是
+       禁用，除非对等方具有“forcerelay”权限。 RPC
+       交易不受影响。 （默认值：0）
+
+  -coinstatsindex
+       Maintain coinstats index used by the gettxoutsetinfo RPC (default: 0)
+       维护 gettxoutsetinfo RPC 使用的 coinstats 索引（默认值：0）
+
+  -conf=<file>
+       Specify path to read-only configuration file. Relative paths will be
+       prefixed by datadir location. (default: bitcoin.conf)
+       指定只读配置文件的路径。相对路径将是
+       以 datadir 位置为前缀。 （默认：bitcoin.conf）
+
+  -daemon -守护进程
+       Run in the background as a daemon and accept commands (default: 0)
+       作为守护进程在后台运行并接受命令（默认值：0）
+
+  -daemonwait -守护进程等待
+       Wait for initialization to be finished before exiting. This implies
+       -daemon (default: 0)
+       等待初始化完成后再退出。这意味着
+       -守护进程（默认值：0）
+
+  -datadir=<dir>
+       Specify data directory
+       指定数据目录
+
+  -dbcache=<n>
+       Maximum database cache size <n> MiB (4 to 16384, default: 450). In
+       addition, unused mempool memory is shared for this cache (see
+       -maxmempool).
+       最大数据库缓存大小 <n> MiB（4 到 16384，默认值：450）。在
+       此外，未使用的 mempool 内存为此缓存共享（请参阅
+       -maxmempool）。
+
+  -debuglogfile=<file>
+       Specify location of debug log file. Relative paths will be prefixed by a
+       net-specific datadir location. (-nodebuglogfile to disable;
+       default: debug.log)
+       指定调试日志文件的位置。相对路径将以 a 为前缀
+       网络特定的数据目录位置。 (-nodebuglogfile 禁用；
+       默认值：调试日志）
+
+  -includeconf=<file>
+       Specify additional configuration file, relative to the -datadir path
+       (only useable from configuration file, not command line)
+       指定额外的配置文件，相对于 -datadir 路径
+       （只能从配置文件使用，不能从命令行使用）
+       
+
+  -loadblock=<file>
+       Imports blocks from external file on startup
+       启动时从外部文件导入块
+
+  -maxmempool=<n>
+       Keep the transaction memory pool below <n> megabytes (default: 300)
+       将事务内存池保持在 <n> 兆字节以下（默认值：300）
+
+  -maxorphantx=<n>
+       Keep at most <n> unconnectable transactions in memory (default: 100)
+       在内存中最多保留 <n> 个不可连接的事务（默认值：100）
+
+  -mempoolexpiry=<n>
+       Do not keep transactions in the mempool longer than <n> hours (default:
+       336)
+       不要在内存池中保留交易超过 <n> 小时（默认值：
+       336)
+
+  -par=<n>
+       Set the number of script verification threads (-4 to 15, 0 = auto, <0 =
+       leave that many cores free, default: 0)
+       设置脚本验证线程数（-4 到 15, 0 = auto, <0 =
+       保留那么多内核，默认值：0）
+
+  -persistmempool
+       Whether to save the mempool on shutdown and load on restart (default: 1)
+       是否在关闭时保存内存池并在重启时加载（默认值：1）
+
+  -pid=<file>
+       Specify pid file. Relative paths will be prefixed by a net-specific
+       datadir location. (default: bitcoind.pid)
+       指定 pid 文件。相对路径将以网络特定为前缀
+       数据目录位置。 （默认：bitcoind.pid）
+
+  -prune=<n>
+       Reduce storage requirements by enabling pruning (deleting) of old
+       blocks. This allows the pruneblockchain RPC to be called to
+       delete specific blocks, and enables automatic pruning of old
+       blocks if a target size in MiB is provided. This mode is
+       incompatible with -txindex, -coinstatsindex and -rescan. Warning:
+       Reverting this setting requires re-downloading the entire
+       blockchain. (default: 0 = disable pruning blocks, 1 = allow
+       manual pruning via RPC, >=550 = automatically prune block files
+       to stay under the specified target size in MiB)
+       通过启用旧的修剪（删除）来减少存储需求
+       块。这允许调用 pruneblockchain RPC
+       删除特定块，并启用旧块的自动修剪
+       如果提供了以 MiB 为单位的目标大小，则阻止。这种模式是
+       与 -txindex、-coinstatsindex 和 -rescan 不兼容。警告：
+       恢复此设置需要重新下载整个
+       区块链。 （默认值：0 = 禁用修剪块，1 = 允许
+       通过 RPC 手动修剪，>=550 = 自动修剪块文件
+       保持在以 MiB 为单位的指定目标大小以下）
+
+  -reindex
+       Rebuild chain state and block index from the blk*.dat files on disk
+       从磁盘上的 blk*.dat 文件重建链状态和块索引
+
+  -reindex-chainstate
+       Rebuild chain state from the currently indexed blocks. When in pruning
+       mode or if blocks on disk might be corrupted, use full -reindex
+       instead.
+       从当前索引的块重建链状态。修剪时
+       模式，或者如果磁盘上的块可能已损坏，请使用 full -reindex
+       反而。
+
+  -settings=<file>
+       Specify path to dynamic settings data file. Can be disabled with
+       -nosettings. File is written at runtime and not meant to be
+       edited by users (use bitcoin.conf instead for custom settings).
+       Relative paths will be prefixed by datadir location. (default:
+       settings.json)
+       指定动态设置数据文件的路径。可以禁用
+       -nosettings。文件是在运行时写入的，并不意味着
+       由用户编辑（使用 bitcoin.conf 代替自定义设置）。
+       相对路径将以 datadir 位置为前缀。 （默认：settings.json)
+
+  -startupnotify=<cmd>
+       Execute command on startup.
+       启动时执行命令。
+
+  -sysperms
+       Create new files with system default permissions, instead of umask 077
+       (only effective with disabled wallet functionality)
+       使用系统默认权限创建新文件，而不是 umask 077
+       （仅对禁用的钱包功能有效）
+
+  -txindex
+       Maintain a full transaction index, used by the getrawtransaction rpc
+       call (default: 0)
+       维护完整的事务索引，由 getrawtransaction rpc 使用
+       调用（默认值：0）
+
+  -version
+       Print version and exit
+       打印版本并退出
+
+Connection options:
+
+  -addnode=<ip>
+       Add a node to connect to and attempt to keep the connection open (see
+       the addnode RPC help for more info). This option can be specified
+       multiple times to add multiple nodes; connections are limited to
+       8 at a time and are counted separately from the -maxconnections
+       limit.
+       添加要连接的节点并尝试保持连接打开（请参阅
+       addnode RPC 帮助以获取更多信息）。可以指定这个选项
+       多次添加多个节点；连接仅限于
+       一次 8 个，与 -maxconnections 分开计算
+       限制。
+
+  -asmap=<file>
+       Specify asn mapping used for bucketing of the peers (default:
+       ip_asn.map). Relative paths will be prefixed by the net-specific
+       datadir location.
+       指定用于对等点的分桶的 asn 映射（默认值：
+       ip_asn.map)。相对路径将以网络特定为前缀
+       数据目录位置。
+
+  -bantime=<n>
+       Default duration (in seconds) of manually configured bans (default:
+       86400)
+       手动配置禁令的默认持续时间（以秒为单位）（默认值：
+       86400)
+
+  -bind=<addr>[:<port>][=onion]
+       Bind to given address and always listen on it (default: 0.0.0.0). Use
+       [host]:port notation for IPv6. Append =onion to tag any incoming
+       connections to that address and port as incoming Tor connections
+       (default: 127.0.0.1:8334=onion, testnet: 127.0.0.1:18334=onion,
+       signet: 127.0.0.1:38334=onion, regtest: 127.0.0.1:18445=onion)
+       绑定到给定地址并始终监听它（默认值：0.0.0.0）。利用
+       [主机]：IPv6 的端口表示法。附加 =onion 以标记任何传入
+       与该地址和端口的连接作为传入 Tor 连接
+       （默认：127.0.0.1:8334=onion，测试网：127.0.0.1:18334=onion，
+       签名：127.0.0.1:38334=onion，注册测试：127.0.0.1:18445=onion）
+
+  -connect=<ip>
+       Connect only to the specified node; -noconnect disables automatic
+       connections (the rules for this peer are the same as for
+       -addnode). This option can be specified multiple times to connect
+       to multiple nodes.
+       只连接到指定节点； -noconnect 禁用自动
+       连接（此对等点的规则与
+       -添加节点）。该选项可以指定多次进行连接
+       到多个节点。
+
+  -discover
+       Discover own IP addresses (default: 1 when listening and no -externalip
+       or -proxy)
+       发现自己的 IP 地址（默认值：监听时为 1，无 -externalip
+       或-代理）
+
+  -dns
+       Allow DNS lookups for -addnode, -seednode and -connect (default: 1)
+       允许对 -addnode、-seednode 和 -connect 进行 DNS 查找（默认值：1）
+
+  -dnsseed
+       Query for peer addresses via DNS lookup, if low on addresses (default: 1
+       unless -connect used)
+       如果地址不足，则通过 DNS 查找查询对等地址（默认值：1
+       除非使用-connect）
+
+  -externalip=<ip>
+       Specify your own public address
+       指定您自己的公共地址
+
+  -fixedseeds
+       Allow fixed seeds if DNS seeds don't provide peers (default: 1)
+       如果 DNS 种子不提供对等点，则允许固定种子（默认值：1）
+
+  -forcednsseed
+       Always query for peer addresses via DNS lookup (default: 0)
+       始终通过 DNS 查找查询对等地址（默认值：0）
+
+  -i2pacceptincoming
+       If set and -i2psam is also set then incoming I2P connections are
+       accepted via the SAM proxy. If this is not set but -i2psam is set
+       then only outgoing connections will be made to the I2P network.
+       Ignored if -i2psam is not set. Listening for incoming I2P
+       connections is done through the SAM proxy, not by binding to a
+       local address and port (default: 1)
+       如果已设置且 -i2psam 也已设置，则传入的 I2P 连接是
+       通过 SAM 代理接受。如果未设置但设置了 -i2psam
+       那么只有传出的连接才会连接到 I2P 网络。
+       如果未设置 -i2psam，则忽略。监听传入的 I2P
+       连接是通过 SAM 代理完成的，而不是通过绑定到
+       本地地址和端口（默认值：1）
+
+  -i2psam=<ip:port>
+       I2P SAM proxy to reach I2P peers and accept I2P connections (default:
+       none)
+       I2P SAM 代理到达 I2P 对等点并接受 I2P 连接（默认：
+       没有任何）
+
+  -listen
+       Accept connections from outside (default: 1 if no -proxy or -connect)
+       接受来自外部的连接（默认值：如果没有 -proxy 或 -connect，则为 1）
+
+  -listenonion
+       Automatically create Tor onion service (default: 1)
+       自动创建 Tor 洋葱服务（默认值：1）
+
+  -maxconnections=<n>
+       Maintain at most <n> connections to peers (default: 125). This limit
+       does not apply to connections manually added via -addnode or the
+       addnode RPC, which have a separate limit of 8.
+       最多保持与对等点的 <n> 连接（默认值：125）。这个限制
+       不适用于通过 -addnode 或
+       addnode RPC，有一个单独的限制为 8。
+
+  -maxreceivebuffer=<n>
+       Maximum per-connection receive buffer, <n>*1000 bytes (default: 5000)
+       每个连接的最大接收缓冲区，<n>*1000 字节（默认值：5000）
+
+  -maxsendbuffer=<n>
+       Maximum per-connection send buffer, <n>*1000 bytes (default: 1000)
+       每个连接的最大发送缓冲区，<n>*1000 字节（默认值：1000）
+
+  -maxtimeadjustment
+       Maximum allowed median peer time offset adjustment. Local perspective of
+       time may be influenced by peers forward or backward by this
+       amount. (default: 4200 seconds)
+       最大允许中值对等时间偏移调整。地方视角
+       时间可能会受到同行向前或向后的影响
+       数量。 （默认：4200 秒）
+
+  -maxuploadtarget=<n>
+       Tries to keep outbound traffic under the given target (in MiB per 24h).
+       Limit does not apply to peers with 'download' permission. 0 = no
+       limit (default: 0)
+       尝试将出站流量保持在给定目标以下（每 24 小时以 MiB 为单位）。
+       限制不适用于具有“下载”权限的对等方。 0 = 否
+       限制（默认值：0）
+
+  -natpmp
+       Use NAT-PMP to map the listening port (default: 0)
+       使用 NAT-PMP 映射监听端口（默认值：0）
+
+  -networkactive
+       Enable all P2P network activity (default: 1). Can be changed by the
+       setnetworkactive RPC command
+       启用所有 P2P 网络活动（默认值：1）。可以通过
+       setnetworkactive RPC 命令
+
+  -onion=<ip:port>
+       Use separate SOCKS5 proxy to reach peers via Tor onion services, set
+       -noonion to disable (default: -proxy)
+       使用单独的 SOCKS5 代理通过 Tor 洋葱服务到达对等点，设置
+       -noonion 禁用（默认值：-proxy）
+
+  -onlynet=<net>
+       Make outgoing connections only through network <net> (ipv4, ipv6, onion,
+       i2p). Incoming connections are not affected by this option. This
+       option can be specified multiple times to allow multiple
+       networks. Warning: if it is used with non-onion networks and the
+       -onion or -proxy option is set, then outbound onion connections
+       will still be made; use -noonion or -onion=0 to disable outbound
+       onion connections in this case.
+       仅通过网络 <net> 进行传出连接（ipv4、ipv6、onion、
+       i2p)。传入连接不受此选项的影响。这个
+       可以多次指定选项以允许多个
+       网络。警告：如果它与非洋葱网络和
+       -onion 或 -proxy 选项设置，然后出站洋葱连接
+       仍会制作；使用 -noonion 或 -onion=0 禁用出站
+       在这种情况下洋葱连接。
+
+  -peerblockfilters
+       Serve compact block filters to peers per BIP 157 (default: 0)
+       根据 BIP 157 向对等方提供紧凑块过滤器（默认值：0）
+
+  -peerbloomfilters
+       Support filtering of blocks and transaction with bloom filters (default:
+       0)
+       支持使用布隆过滤器过滤块和事务（默认：
+       0)
+
+  -permitbaremultisig
+       Relay non-P2SH multisig (default: 1)
+       中继非 P2SH 多重签名（默认值：1）
+
+  -port=<port>
+       Listen for connections on <port>. Nodes not using the default ports
+       (default: 8333, testnet: 18333, signet: 38333, regtest: 18444)
+       are unlikely to get incoming connections. Not relevant for I2P
+       (see doc/i2p.md).
+       监听 <port> 上的连接。不使用默认端口的节点
+       （默认：8333，testnet：18333，signet：38333，regtest：18444）
+
+  -proxy=<ip:port>
+       Connect through SOCKS5 proxy, set -noproxy to disable (default:
+       disabled)
+       通过 SOCKS5 代理连接，设置 -noproxy 为禁用（默认：
+       禁用）
+
+  -proxyrandomize
+       Randomize credentials for every proxy connection. This enables Tor
+       stream isolation (default: 1)
+       为每个代理连接随机化凭据。这使 Tor
+       流隔离（默认值：1）
+
+  -seednode=<ip>
+       Connect to a node to retrieve peer addresses, and disconnect. This
+       option can be specified multiple times to connect to multiple
+       nodes.
+       连接到节点以检索对等地址，然后断开连接。这个
+       可以多次指定选项以连接到多个
+       节点。
+
+  -timeout=<n>
+       Specify socket connection timeout in milliseconds. If an initial attempt
+       to connect is unsuccessful after this amount of time, drop it
+       (minimum: 1, default: 5000)
+       以毫秒为单位指定套接字连接超时。如果初次尝试
+       在这段时间后连接不成功，放弃它
+       （最小值：1，默认值：5000）
+
+  -torcontrol=<ip>:<port>
+       Tor control port to use if onion listening enabled (default:
+       127.0.0.1:9051)
+       启用洋葱监听时使用的 Tor 控制端口（默认值：
+       127.0.0.1:9051)
+
+  -torpassword=<pass>
+       Tor control port password (default: empty)
+       Tor控制端口密码（默认：空）
+
+  -upnp
+       Use UPnP to map the listening port (default: 0)
+       使用 UPnP 映射监听端口（默认值：0）
+
+  -whitebind=<[permissions@]addr>
+       Bind to the given address and add permission flags to the peers
+       connecting to it. Use [host]:port notation for IPv6. Allowed
+       permissions: bloomfilter (allow requesting BIP37 filtered blocks
+       and transactions), noban (do not ban for misbehavior; implies
+       download), forcerelay (relay transactions that are already in the
+       mempool; implies relay), relay (relay even in -blocksonly mode,
+       and unlimited transaction announcements), mempool (allow
+       requesting BIP35 mempool contents), download (allow getheaders
+       during IBD, no disconnect after maxuploadtarget limit), addr
+       (responses to GETADDR avoid hitting the cache and contain random
+       records with the most up-to-date info). Specify multiple
+       permissions separated by commas (default:
+       download,noban,mempool,relay). Can be specified multiple times.
+       绑定到给定地址并向对等方添加权限标志
+       连接到它。对 IPv6 使用 [host]:port 表示法。允许
+       权限：bloomfilter（允许请求 BIP37 过滤块
+       和交易），noban（不禁止不当行为；暗示
+       下载），forcerelay（中继交易已经在
+       内存池；暗示中继），中继（中继即使在 -blocksonly 模式下，
+       和无限的交易公告），内存池（允许
+       请求 BIP35 内存池内容），下载（允许 getheaders
+       在 IBD 期间，在 maxuploadtarget 限制后不断开连接），addr
+       （对GETADDR的响应避免命中缓存并包含随机
+       最新信息的记录）。指定多个
+       以逗号分隔的权限（默认值：
+       下载，noban，内存池，中继）。可以多次指定。
+
+  -whitelist=<[permissions@]IP address or network>
+       Add permission flags to the peers connecting from the given IP address
+       (e.g. 1.2.3.4) or CIDR-notated network (e.g. 1.2.3.0/24). Uses
+       the same permissions as -whitebind. Can be specified multiple
+       times.
+       向从给定 IP 地址连接的对等方添加权限标志
+       （例如 1.2.3.4）或 CIDR 标记的网络（例如 1.2.3.0/24）。用途
+       与 -whitebind 相同的权限。可以指定多个
+       次。
+
+Wallet options 钱包选项:
+
+  -addresstype
+       What type of addresses to use ("legacy", "p2sh-segwit", or "bech32",
+       default: "bech32")
+       使用什么类型的地址（“legacy”、“p2sh-segwit”或“bech32”，
+       默认值：“bech32”）
+
+  -avoidpartialspends
+       Group outputs by address, selecting many (possibly all) or none, instead
+       of selecting on a per-output basis. Privacy is improved as
+       addresses are mostly swept with fewer transactions and outputs
+       are aggregated in clean change addresses. It may result in higher
+       fees due to less optimal coin selection caused by this added
+       limitation and possibly a larger-than-necessary number of inputs
+       being used. Always enabled for wallets with "avoid_reuse"
+       enabled, otherwise default: 0.
+       按地址对输出进行分组，选择许多（可能全部）或无
+       在每个输出的基础上进行选择。隐私被改进为
+       地址大多以较少的交易和输出进行扫描
+       汇总在干净的零钱地址中。可能会导致更高
+       由于这增加了由于不太理想的硬币选择而导致的费用
+       限制和可能大于必要数量的输入
+       正在使用。始终为带有“avoid_reuse”的钱包启用
+       启用，否则默认：0。
+
+  -changetype
+       What type of change to use ("legacy", "p2sh-segwit", or "bech32").
+       Default is same as -addresstype, except when
+       -addresstype=p2sh-segwit a native segwit output is used when
+       sending to a native segwit address)
+       使用什么类型的更改（“legacy”、“p2sh-segwit”或“bech32”）。
+       默认值与 -addresstype 相同，除非当
+       -addresstype=p2sh-segwit 使用原生 segwit 输出
+       发送到本地隔离见证地址）
+
+  -disablewallet
+       Do not load the wallet and disable wallet RPC calls
+       不要加载钱包并禁用钱包 RPC 调用
+
+  -discardfee=<amt>
+       The fee rate (in BTC/kvB) that indicates your tolerance for discarding
+       change by adding it to the fee (default: 0.0001). Note: An output
+       is discarded if it is dust at this rate, but we will always
+       discard up to the dust relay fee and a discard fee above that is
+       limited by the fee estimate for the longest target
+       表示您对丢弃的容忍度的费率（以 BTC/kvB 为单位）
+       通过将其添加到费用中进行更改（默认值：0.0001）。注意：输出
+       如果以这种速度是灰尘，则将被丢弃，但我们将始终
+       丢弃至灰尘中继费和高于此的丢弃费
+       受最长目标的费用估算限制
+
+  -fallbackfee=<amt>
+       A fee rate (in BTC/kvB) that will be used when fee estimation has
+       insufficient data. 0 to entirely disable the fallbackfee feature.
+       (default: 0.00)
+       费用估算时将使用的费用率（以 BTC/kvB 为单位）
+       数据不足。 0 完全禁用 fallbackfee 功能。
+       （默认值：0.00）
+
+  -keypool=<n>
+       Set key pool size to <n> (default: 1000). Warning: Smaller sizes may
+       increase the risk of losing funds when restoring from an old
+       backup, if none of the addresses in the original keypool have
+       been used.
+       将密钥池大小设置为 <n>（默认值：1000）。警告：较小的尺寸可能
+       从旧的恢复时增加损失资金的风险
+       备份，如果原始密钥池中的地址都没有
+       被使用。
+
+  -maxapsfee=<n>
+       Spend up to this amount in additional (absolute) fees (in BTC) if it
+       allows the use of partial spend avoidance (default: 0.00)
+       如果花费不超过此金额的额外（绝对）费用（以 BTC 为单位）
+       允许使用部分支出避免（默认值：0.00）
+
+  -mintxfee=<amt>
+       Fee rates (in BTC/kvB) smaller than this are considered zero fee for
+       transaction creation (default: 0.00001)
+       低于此的费用率（以 BTC/kvB 为单位）被视为零费用
+       事务创建（默认值：0.00001）
+
+  -paytxfee=<amt>
+       Fee rate (in BTC/kvB) to add to transactions you send (default: 0.00)
+       添加到您发送的交易的费率（以 BTC/kvB 为单位）（默认值：0.00）
+
+  -rescan
+       Rescan the block chain for missing wallet transactions on startup
+       重新扫描区块链以查找启动时丢失的钱包交易
+
+  -signer=<cmd>
+       External signing tool, see doc/external-signer.md
+       外部签名工具，见 doc/external-signer.md
+
+  -spendzeroconfchange
+       Spend unconfirmed change when sending transactions (default: 1)
+       发送交易时花费未确认的零钱（默认值：1）
+
+  -txconfirmtarget=<n>
+       If paytxfee is not set, include enough fee so transactions begin
+       confirmation on average within n blocks (default: 6)
+       如果未设置 paytxfee，请包含足够的费用以便开始交易
+       在 n 个块内平均确认（默认值：6）
+
+  -wallet=<path>
+       Specify wallet path to load at startup. Can be used multiple times to
+       load multiple wallets. Path is to a directory containing wallet
+       data and log files. If the path is not absolute, it is
+       interpreted relative to <walletdir>. This only loads existing
+       wallets and does not create new ones. For backwards compatibility
+       this also accepts names of existing top-level data files in
+       <walletdir>.
+       指定在启动时加载的钱包路径。可以多次使用
+       加载多个钱包。路径是指向包含钱包的目录
+       数据和日志文件。如果路径不是绝对的，它是
+       相对于 <walletdir> 进行解释。这只加载现有的
+       钱包并且不会创建新钱包。为了向后兼容
+       这也接受现有顶级数据文件的名称
+       <钱包目录>。
+
+  -walletbroadcast
+       Make the wallet broadcast transactions (default: 1)
+       使钱包广播交易（默认：1）
+
+  -walletdir=<dir>
+       Specify directory to hold wallets (default: <datadir>/wallets if it
+       exists, otherwise <datadir>)
+       指定存放钱包的目录（默认：<datadir>/wallets，如果它
+       存在，否则 <datadir>)
+
+  -walletnotify=<cmd>
+       Execute command when a wallet transaction changes. %s in cmd is replaced
+       by TxID, %w is replaced by wallet name, %b is replaced by the
+       hash of the block including the transaction (set to 'unconfirmed'
+       if the transaction is not included) and %h is replaced by the
+       block height (-1 if not included). %w is not currently
+       implemented on windows. On systems where %w is supported, it
+       should NOT be quoted because this would break shell escaping used
+       to invoke the command.
+       当钱包交易发生变化时执行命令。 cmd中的%s被替换
+       通过 TxID，%w 替换为钱包名称，%b 替换为
+       包括交易的块的哈希（设置为“未确认”
+       如果事务不包括在内）并且 %h 被替换为
+       块高度（如果不包括，则为 -1）。 %w 目前没有
+       在windows上实现。在支持 %w 的系统上，它
+       不应引用，因为这会破坏使用的 shell 转义
+       调用命令。
+
+  -walletrbf
+       Send transactions with full-RBF opt-in enabled (RPC only, default: 0)
+       发送启用全 RBF 选择加入的事务（仅限 RPC，默认值：0）
+
+ZeroMQ notification options 通知选项:
+
+  -zmqpubhashblock=<address>
+       Enable publish hash block in <address>
+       在 <address> 中启用发布哈希块
+
+  -zmqpubhashblockhwm=<n>
+       Set publish hash block outbound message high water mark (default: 1000)
+       设置发布哈希块出站消息高水位标记（默认值：1000）
+
+  -zmqpubhashtx=<address>
+       Enable publish hash transaction in <address>
+       在 <address> 中启用发布哈希事务
+
+  -zmqpubhashtxhwm=<n>
+       Set publish hash transaction outbound message high water mark (default:
+       1000)
+       设置发布哈希交易出站消息高水位标记（默认：
+       1000)
+
+  -zmqpubrawblock=<address>
+       Enable publish raw block in <address>
+       在 <address> 中启用发布原始块
+
+  -zmqpubrawblockhwm=<n>
+       Set publish raw block outbound message high water mark (default: 1000)
+       设置发布原始块出站消息高水位标记（默认值：1000）
+
+  -zmqpubrawtx=<address>
+       Enable publish raw transaction in <address>
+       在 <address> 中启用发布原始交易
+
+  -zmqpubrawtxhwm=<n>
+       Set publish raw transaction outbound message high water mark (default:
+       1000)
+       设置发布原始交易出站消息高水位标记（默认：
+       1000)
+
+  -zmqpubsequence=<address>
+       Enable publish hash block and tx sequence in <address>
+       在 <address> 中启用发布哈希块和 tx 序列
+
+  -zmqpubsequencehwm=<n>
+       Set publish hash sequence message high water mark (default: 1000)
+       设置发布哈希序列消息高水位标记（默认：1000）
+
+Debugging/Testing options:
+
+  -debug=<category>
+       Output debugging information (default: -nodebug, supplying <category> is
+       optional). If <category> is not supplied or if <category> = 1,
+       output all debugging information. <category> can be: net, tor,
+       mempool, http, bench, zmq, walletdb, rpc, estimatefee, addrman,
+       selectcoins, reindex, cmpctblock, rand, prune, proxy, mempoolrej,
+       libevent, coindb, qt, leveldb, validation, i2p, ipc. This option
+       can be specified multiple times to output multiple categories.
+       输出调试信息（默认：-nodebug，提供 <category> 为
+       可选的）。如果未提供 <category> 或如果 <category> = 1，
+       输出所有调试信息。 <category> 可以是：net、tor、
+       mempool，http，bench，zmq，walletdb，rpc，estimatefee，addrman，
+       selectcoins, reindex, cmpctblock, rand, prune, proxy, mempoolrej,
+       libevent、coindb、qt、leveldb、验证、i2p、ipc。这个选项
+       可以多次指定输出多个类别。
+
+  -debugexclude=<category>
+       Exclude debugging information for a category. Can be used in conjunction
+       with -debug=1 to output debug logs for all categories except the
+       specified category. This option can be specified multiple times
+       to exclude multiple categories.
+       排除某个类别的调试信息。可以配合使用
+       使用 -debug=1 输出所有类别的调试日志，除了
+       指定的类别。该选项可以指定多次
+       排除多个类别。
+
+  -help-debug
+       Print help message with debugging options and exit
+       打印带有调试选项的帮助消息并退出
+
+  -logips
+       Include IP addresses in debug output (default: 0)
+       在调试输出中包含 IP 地址（默认值：0）
+
+  -logsourcelocations
+       Prepend debug output with name of the originating source location
+       (source file, line number and function name) (default: 0)
+       在调试输出前加上原始源位置的名称
+       （源文件、行号和函数名）（默认值：0）
+
+  -logtimestamps
+       Prepend debug output with timestamp (default: 1)
+       在调试输出前加上时间戳（默认值：1）
+
+  -maxtxfee=<amt>
+       Maximum total fees (in BTC) to use in a single wallet transaction;
+       setting this too low may abort large transactions (default: 0.10)
+       在单个钱包交易中使用的最高总费用（以 BTC 为单位）；
+       将此设置得太低可能会中止大型事务（默认值：0.10）
+
+  -printtoconsole
+       Send trace/debug info to console (default: 1 when no -daemon. To disable
+       logging to file, set -nodebuglogfile)
+       将跟踪/调试信息发送到控制台（默认值：没有 -daemon 时为 1。禁用
+       记录到文件，设置-nodebuglogfile）
+
+  -shrinkdebugfile
+       Shrink debug.log file on client startup (default: 1 when no -debug)
+       在客户端启动时收缩 debug.log 文件（默认值：无 -debug 时为 1）
+
+  -uacomment=<cmt>
+       Append comment to the user agent string
+       将注释附加到用户代理字符串
+
+Chain selection options 区块链选择选项:
+
+  -chain=<chain>
+       Use the chain <chain> (default: main). Allowed values: main, test,
+       signet, regtest
+       使用链 <chain>（默认值：main）。允许值：主要、测试、
+       签名，注册测试
+
+  -signet
+       Use the signet chain. Equivalent to -chain=signet. Note that the network
+       is defined by the -signetchallenge parameter
+       使用签名链。等效于 -chain=signet。注意网络
+       由 -signetchallenge 参数定义
+
+  -signetchallenge
+       Blocks must satisfy the given script to be considered valid (only for
+       signet networks; defaults to the global default signet test
+       network challenge)
+       块必须满足给定的脚本才能被认为是有效的（仅适用于
+       签名网络；默认为全局默认签章测试
+       网络挑战）
+
+  -signetseednode
+       Specify a seed node for the signet network, in the hostname[:port]
+       format, e.g. sig.net:1234 (may be used multiple times to specify
+       multiple seed nodes; defaults to the global default signet test
+       network seed node(s))
+       在主机名[:port] 中为签名网络指定种子节点
+       格式，例如sig.net:1234（可以多次使用来指定
+       多个种子节点；默认为全局默认签章测试
+       网络种子节点）
+
+  -testnet
+       Use the test chain. Equivalent to -chain=test.
+       使用测试链。相当于 -chain=test。
+
+Node relay options 节点中继选项:
+
+  -bytespersigop
+       Equivalent bytes per sigop in transactions for relay and mining
+       (default: 20)
+       中继和挖矿交易中每 sigop 的等效字节数
+       （默认：20）
+
+  -datacarrier
+       Relay and mine data carrier transactions (default: 1)
+       中继和挖掘数据载体交易（默认：1）
+
+  -datacarriersize
+       Maximum size of data in data carrier transactions we relay and mine
+       (default: 83)
+       我们中继和挖掘的数据载体交易中的最大数据大小
+       （默认：83）
+
+  -minrelaytxfee=<amt>
+       Fees (in BTC/kvB) smaller than this are considered zero fee for
+       relaying, mining and transaction creation (default: 0.00001)
+       小于此的费用（以 BTC/kvB 为单位）被视为零费用
+       中继、挖掘和交易创建（默认值：0.00001）
+
+  -whitelistforcerelay
+       Add 'forcerelay' permission to whitelisted inbound peers with default
+       permissions. This will relay transactions even if the
+       transactions were already in the mempool. (default: 0)
+       将“forcerelay”权限添加到默认的白名单入站对等方
+       权限。这将中继交易，即使
+       交易已经在内存池中。 （默认值：0）
+
+  -whitelistrelay
+       Add 'relay' permission to whitelisted inbound peers with default
+       permissions. This will accept relayed transactions even when not
+       relaying transactions (default: 1)
+       将“中继”权限添加到默认的白名单入站对等方
+       权限。即使没有，这也将接受中继交易
+       中继交易（默认值：1）
+
+Block creation options 块创建选项:
+
+  -blockmaxweight=<n>
+       Set maximum BIP141 block weight (default: 3996000)
+       设置最大 BIP141 块权重（默认值：3996000）
+
+  -blockmintxfee=<amt>
+       Set lowest fee rate (in BTC/kvB) for transactions to be included in
+       block creation. (default: 0.00001)
+       为要包含的交易设置最低费率（以 BTC/kvB 为单位）
+       块创建。 （默认值：0.00001）
+
+RPC server options  RPC服务器选项:
+
+  -rest
+       Accept public REST requests (default: 0)
+       接受公共 REST 请求（默认值：0）
+
+  -rpcallowip=<ip>
+       Allow JSON-RPC connections from specified source. Valid for <ip> are a
+       single IP (e.g. 1.2.3.4), a network/netmask (e.g.
+       1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This
+       option can be specified multiple times
+       允许来自指定源的 JSON-RPC 连接。对 <ip> 有效的是
+       单个 IP（例如 1.2.3.4）、网络/网络掩码（例如
+       1.2.3.4/255.255.255.0）或网络/CIDR（例如 1.2.3.4/24）。这个
+       选项可以指定多次
+
+  -rpcauth=<userpw>
+       Username and HMAC-SHA-256 hashed password for JSON-RPC connections. The
+       field <userpw> comes in the format: <USERNAME>:<SALT>$<HASH>. A
+       canonical python script is included in share/rpcauth. The client
+       then connects normally using the
+       rpcuser=<USERNAME>/rpcpassword=<PASSWORD> pair of arguments. This
+       option can be specified multiple times
+       JSON-RPC 连接的用户名和 HMAC-SHA-256 散列密码。这
+       <userpw> 字段采用以下格式：<USERNAME>:<SALT>$<HASH>。一个
+       规范的 python 脚本包含在 share/rpcauth 中。客户端
+       然后使用正常连接
+       rpcuser=<USERNAME>/rpcpassword=<PASSWORD> 对参数。这个
+       选项可以指定多次
+
+  -rpcbind=<addr>[:port]
+       Bind to given address to listen for JSON-RPC connections. Do not expose
+       the RPC server to untrusted networks such as the public internet!
+       This option is ignored unless -rpcallowip is also passed. Port is
+       optional and overrides -rpcport. Use [host]:port notation for
+       IPv6. This option can be specified multiple times (default:
+       127.0.0.1 and ::1 i.e., localhost)
+       绑定到给定地址以侦听 JSON-RPC 连接。不要暴露
+       将 RPC 服务器连接到不受信任的网络，例如公共互联网！
+       除非还传递了 -rpcallowip，否则将忽略此选项。端口是
+       可选并覆盖 -rpcport。使用 [host]:port 表示法
+       IPv6。可以多次指定此选项（默认值：
+       127.0.0.1 和 ::1 即本地主机）
+
+  -rpccookiefile=<loc>
+       Location of the auth cookie. Relative paths will be prefixed by a
+       net-specific datadir location. (default: data dir)
+       身份验证 cookie 的位置。相对路径将以 a 为前缀
+       网络特定的数据目录位置。 （默认：数据目录）
+
+  -rpcpassword=<pw>
+       Password for JSON-RPC connections
+       JSON-RPC 连接的密码
+
+  -rpcport=<port>
+       Listen for JSON-RPC connections on <port> (default: 8332, testnet:
+       18332, signet: 38332, regtest: 18443)
+       监听 <port> 上的 JSON-RPC 连接（默认：8332，测试网：
+       18332，签名：38332，regtest：18443）
+
+  -rpcserialversion
+       Sets the serialization of raw transaction or block hex returned in
+       non-verbose mode, non-segwit(0) or segwit(1) (default: 1)
+       设置原始交易或块十六进制的序列化返回
+       非详细模式，非隔离见证（0）或隔离见证（1）（默认值：1）
+
+  -rpcthreads=<n>
+       Set the number of threads to service RPC calls (default: 4)
+       设置服务 RPC 调用的线程数（默认值：4）
+
+  -rpcuser=<user>
+       Username for JSON-RPC connections
+       JSON-RPC 连接的用户名
+
+  -rpcwhitelist=<whitelist>
+       Set a whitelist to filter incoming RPC calls for a specific user. The
+       field <whitelist> comes in the format: <USERNAME>:<rpc 1>,<rpc
+       2>,...,<rpc n>. If multiple whitelists are set for a given user,
+       they are set-intersected. See -rpcwhitelistdefault documentation
+       for information on default whitelist behavior.
+       设置白名单以过滤特定用户的传入 RPC 调用。这
+       <whitelist> 字段格式为：<USERNAME>:<rpc 1>,<rpc
+       2>,...,<rpc n>。如果为给定用户设置了多个白名单，
+       它们是集合相交的。请参阅 -rpcwhitelistdefault 文档
+       有关默认白名单行为的信息。
+
+  -rpcwhitelistdefault
+       Sets default behavior for rpc whitelisting. Unless rpcwhitelistdefault
+       is set to 0, if any -rpcwhitelist is set, the rpc server acts as
+       if all rpc users are subject to empty-unless-otherwise-specified
+       whitelists. If rpcwhitelistdefault is set to 1 and no
+       -rpcwhitelist is set, rpc server acts as if all rpc users are
+       subject to empty whitelists.
+       设置 rpc 白名单的默认行为。除非 rpcwhitelistdefault
+       设置为 0，如果设置了任何 -rpcwhitelist，则 rpc 服务器充当
+       如果所有 rpc 用户都受制于 empty-unless-other-specified
+       白名单。如果 rpcwhitelistdefault 设置为 1 并且没有
+       -rpcwhitelist 已设置，rpc 服务器就像所有 rpc 用户都是
+       受限于空白名单。
+
+  -server
+       Accept command line and JSON-RPC commands
+       接受命令行和 JSON-RPC 命令

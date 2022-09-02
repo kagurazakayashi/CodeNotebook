@@ -1,0 +1,122 @@
+Bitcoin Core bitcoin-wallet version v22.0.0
+Bitcoin Core 比特币钱包 CLI
+
+bitcoin-wallet is an offline tool for creating and interacting with Bitcoin Core wallet files.
+By default bitcoin-wallet will act on wallets in the default mainnet wallet dire
+ctory in the datadir.
+To change the target wallet, use the -datadir, -wallet and -testnet/-regtest arg
+uments.
+比特币钱包是一个离线工具，用于创建比特币核心钱包文件并与之交互。
+默认情况下，比特币钱包将作用于默认主网钱包中的钱包
+数据目录中的目录。
+要更改目标钱包，请使用 -datadir、-wallet 和 -testnet/-regtest 参数
+意见。
+
+Usage 用法:
+  bitcoin-wallet [options] <command>
+  比特币钱包 [选项] <命令>
+
+Options 选项:
+
+  -?
+       Print this help message and exit
+       打印此帮助信息并退出
+
+  -datadir=<dir>
+       Specify data directory
+       指定数据目录
+
+  -descriptors -描述符
+       Create descriptors wallet. Only for 'create'
+       创建描述符钱包。仅用于“创建”
+
+  -dumpfile=<file name>
+       When used with 'dump', writes out the records to this file. When used
+       with 'createfromdump', loads the records into a new wallet.
+       当与 'dump' 一起使用时，将记录写出到这个文件中。使用时
+       使用“createfromdump”，将记录加载到新钱包中。
+
+  -format=<format>
+       The format of the wallet file to create. Either "bdb" or "sqlite". Only
+       used with 'createfromdump'
+       要创建的钱包文件的格式。 “bdb”或“sqlite”。仅有的
+       与“createfromdump”一起使用
+
+  -version -版本
+       Print version and exit
+       打印版本并退出
+
+  -wallet=<wallet-name>
+       Specify wallet name
+       指定钱包名称
+
+Debugging/Testing options 调试/测试选项:
+
+  -debug=<category>
+       Output debugging information (default: 0).
+       输出调试信息（默认值：0）。
+
+  -printtoconsole
+       Send trace/debug info to console (default: 1 when no -debug is true, 0
+       otherwise).
+       将跟踪/调试信息发送到控制台（默认值：当 no -debug 为 true 时为 1)
+
+Chain selection options 区块链选择选项:
+
+  -chain=<chain>
+       Use the chain <chain> (default: main). Allowed values: main, test,
+       signet, regtest
+       使用链 <chain>（默认值：main）。允许值：主要、测试、
+       签名，注册测试
+
+  -signet -签名
+       Use the signet chain. Equivalent to -chain=signet. Note that the network
+       is defined by the -signetchallenge parameter
+       使用签名链。等效于 -chain=signet。注意网络
+       由 -signetchallenge 参数定义
+
+  -signetchallenge -签名挑战
+       Blocks must satisfy the given script to be considered valid (only for
+       signet networks; defaults to the global default signet test
+       network challenge)
+       块必须满足给定的脚本才能被认为是有效的（仅适用于
+       签名网络；默认为全局默认签章测试
+       网络挑战）
+
+  -signetseednode
+       Specify a seed node for the signet network, in the hostname[:port]
+       format, e.g. sig.net:1234 (may be used multiple times to specify
+       multiple seed nodes; defaults to the global default signet test
+       network seed node(s))
+       在主机名[:port] 中为签名网络指定种子节点
+       格式，例如sig.net:1234（可以多次使用来指定
+       多个种子节点；默认为全局默认签章测试
+       网络种子节点）
+
+  -testnet -测试网
+       Use the test chain. Equivalent to -chain=test.
+       使用测试链。相当于-chain=test。
+
+Commands:
+
+  create 创造
+       Create new wallet file
+       创建新的钱包文件
+
+  createfromdump 从转储创建
+       Create new wallet file from dumped records
+       从转储记录创建新的钱包文件
+
+  dump 导出
+       Print out all of the wallet key-value records
+       打印出所有钱包键值记录
+
+  info 信息
+       Get wallet info
+       获取钱包信息
+
+  salvage 救援
+       Attempt to recover private keys from a corrupt wallet. Warning:
+       'salvage' is experimental.
+       尝试从损坏的钱包中恢复私钥。警告：
+       “打捞”是实验性的。

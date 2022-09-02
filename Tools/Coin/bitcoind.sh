@@ -1,0 +1,1 @@
+./bitcoind -datadir=/volume2/coin/bitcoin/data -walletdir=/volume2/coin/bitcoin/wallet -wallet=/volume2/coin/bitcoin/wallet/yashi -rpcbind=127.0.0.1 -rpcallowip=127.0.0.1 -rpcport=30011 -rpcuser=yashi -rpcpassword=*** -txindex -server #-daemon 

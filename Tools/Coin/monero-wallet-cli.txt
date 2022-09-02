@@ -1,0 +1,236 @@
+Monero 'Oxygen Orion' (v0.17.3.2-release)
+门罗币
+
+This is the command line monero wallet. It needs to connect to a monero
+daemon to work correctly.
+这是命令行门罗币钱包。它需要连接到门罗币
+守护进程正常工作。
+
+Usage 用法:
+  monero-wallet-cli [--wallet-file=<filename>|--generate-new-wallet=<filename>] [<COMMAND>]
+
+General options:
+  --help                                Produce help message
+                                        生成帮助信息
+  --version                             Output version information
+                                        生成帮助信息
+
+Wallet options:
+  --daemon-address arg                  Use daemon instance at <host>:<port>
+                                        在 <host>:<port> 使用守护程序实例
+  --daemon-host arg                     Use daemon instance at host <arg> 
+                                        instead of localhost
+                                        在主机 <arg> 上使用守护程序实例
+                                        而不是本地主机
+  --proxy arg                           [<ip>:]<port> socks proxy to use for 
+                                        daemon connections
+                                        用于的 socks 代理
+                                        守护程序连接
+  --trusted-daemon                      Enable commands which rely on a trusted
+                                        daemon
+                                        启用依赖于受信任的命令
+                                        守护进程
+  --untrusted-daemon                    Disable commands which rely on a 
+                                        trusted daemon
+                                        禁用依赖于
+                                        受信任的守护进程
+  --password arg                        Wallet password (escape/quote as 
+                                        needed)
+                                        钱包密码（转义/引用为
+                                        需要）
+  --password-file arg                   Wallet password file 钱包密码文件
+  --daemon-port arg (=0)                Use daemon instance at port <arg> 
+                                        instead of 18081
+                                        在端口 <arg> 使用守护程序实例
+                                        而不是 18081
+  --daemon-login arg                    Specify username[:password] for daemon 
+                                        RPC client
+                                        指定守护进程的用户名[:password]
+                                        RPC 客户端
+  --daemon-ssl arg (=autodetect)        Enable SSL on daemon RPC connections: 
+                                        enabled|disabled|autodetect
+                                        在守护进程 RPC 连接上启用 SSL：
+                                        启用|禁用|自动检测
+  --daemon-ssl-private-key arg          Path to a PEM format private key
+                                        PEM 格式私钥的路径
+  --daemon-ssl-certificate arg          Path to a PEM format certificate
+                                        PEM 格式证书的路径
+  --daemon-ssl-ca-certificates arg      Path to file containing concatenated 
+                                        PEM format certificate(s) to replace 
+                                        system CA(s).
+                                        包含连接的文件的路径
+                                        要替换的 PEM 格式证书
+                                        系统 CA。
+  --daemon-ssl-allowed-fingerprints arg List of valid fingerprints of allowed 
+                                        RPC servers
+                                        允许的有效指纹列表
+                                        RPC 服务器
+  --daemon-ssl-allow-any-cert           Allow any SSL certificate from the 
+                                        daemon
+                                        允许来自
+                                        守护进程
+  --daemon-ssl-allow-chained            Allow user (via --daemon-ssl-ca-certifi
+                                        cates) chain certificates
+                                        允许用户（通过 --daemon-ssl-ca-certifi
+                                        cates) 链式证书
+  --testnet                             For testnet. Daemon must also be 
+                                        launched with --testnet flag
+                                        用于测试网。守护进程也必须是
+                                        使用 --testnet 标志启动
+  --stagenet                            For stagenet. Daemon must also be 
+                                        launched with --stagenet flag
+                                        用于 stagenet。守护进程也必须是
+                                        使用 --stagenet 标志启动
+  --shared-ringdb-dir arg (=/home/cxc/.shared-ringdb, /home/cxc/.shared-ringdb/testnet if 'testnet', /home/cxc/.shared-ringdb/stagenet if 'stagenet')
+                                        Set shared ring database path
+                                        设置共享环数据库路径
+  --kdf-rounds arg (=1)                 Number of rounds for the key derivation
+                                        function
+                                        密钥推导的轮数
+                                        功能
+  --bitmessage-address arg (=http://localhost:8442/)
+                                        Use PyBitmessage instance at URL <arg>
+                                        在 URL <arg> 处使用 PyBitmessage 实例
+  --bitmessage-login arg (=username:password)
+                                        Specify <arg> as username:password for 
+                                        PyBitmessage API
+                                        将 <arg> 指定为用户名：密码
+                                        PyBitmessage API
+  --hw-device arg                       HW device to use
+                                        要使用的硬件设备
+  --hw-device-deriv-path arg            HW device wallet derivation path (e.g.,
+                                        SLIP-10)
+                                        硬件设备钱包派生路径（例如，
+                                        SLIP-10)
+  --tx-notify arg                       Run a program for each new incoming 
+                                        transaction, '%s' will be replaced by 
+                                        the transaction hash
+                                        为每个新传入运行一个程序
+                                        事务，“%s”将被替换为
+                                        交易哈希
+  --no-dns                              Do not use DNS 不使用 DNS
+  --offline                             Do not connect to a daemon, nor use DNS
+                                        不连接到守护进程，也不使用 DNS
+  --extra-entropy arg                   File containing extra entropy to 
+                                        initialize the PRNG (any data, aim for 
+                                        256 bits of entropy to be useful, which
+                                        typically means more than 256 bits of 
+                                        data)
+                                        包含额外熵的文件
+                                        初始化 PRNG（任何数据，针对
+                                        256 位熵是有用的，这
+                                        通常意味着超过 256 位
+                                        数据）
+  --wallet-file arg                     Use wallet <arg> 使用钱包 <arg>
+  --generate-new-wallet arg             Generate new wallet and save it to 
+                                        <arg>
+                                        生成新钱包并保存到
+                                        <参数>
+  --generate-from-device arg            Generate new wallet from device and 
+                                        save it to <arg>
+                                        从设备生成新钱包并
+                                        保存到 <arg>
+  --generate-from-view-key arg          Generate incoming-only wallet from view
+                                        key
+                                        从视图中生成仅限传入的钱包
+                                        钥匙
+  --generate-from-spend-key arg         Generate deterministic wallet from 
+                                        spend key
+                                        生成确定性钱包
+                                        花键
+  --generate-from-keys arg              Generate wallet from private keys
+                                        从私钥生成钱包
+  --generate-from-multisig-keys arg     Generate a master wallet from multisig 
+                                        wallet keys
+                                        从多重签名生成主钱包
+                                        钱包钥匙
+  --generate-from-json arg              Generate wallet from JSON format file
+  从 JSON 格式文件生成钱包
+  --mnemonic-language arg               Language for mnemonic
+  助记符语言
+  --command arg
+  --restore-deterministic-wallet        Recover wallet using Electrum-style 
+                                        mnemonic seed
+                                        使用 Electrum 风格恢复钱包
+                                        助记种子
+  --restore-from-seed                   alias for --restore-deterministic-walle
+                                        t
+                                        --restore-deterministic-wallet 的别名
+  --restore-multisig-wallet             Recover multisig wallet using 
+                                        Electrum-style mnemonic seed
+                                        使用恢复多重签名钱包
+                                        Electrum 式助记种子
+  --non-deterministic                   Generate non-deterministic view and 
+                                        spend keys
+                                        生成非确定性视图和
+                                        花钥匙
+  --electrum-seed arg                   Specify Electrum seed for wallet 
+                                        recovery/creation
+                                        指定钱包的 Electrum 种子
+                                        恢复/创造
+  --allow-mismatched-daemon-version     Allow communicating with a daemon that 
+                                        uses a different RPC version
+                                        允许与一个守护进程通信
+                                        使用不同的 RPC 版本
+  --restore-height arg (=0)             Restore from specific blockchain height
+                                        从特定区块链高度恢复
+  --restore-date arg                    Restore from estimated blockchain 
+                                        height on specified date
+                                        从估计的区块链恢复
+                                        指定日期的身高
+  --do-not-relay                        The newly created transaction will not 
+                                        be relayed to the monero network
+                                        新创建的事务不会
+                                        被中继到门罗网络
+  --create-address-file                 Create an address file for new wallets
+                                        为新钱包创建地址文件
+  --subaddress-lookahead arg            Set subaddress lookahead sizes to 
+                                        <major>:<minor>
+                                        将子地址前瞻大小设置为
+                                        <主要>:<次要>
+  --use-english-language-names          Display English language names
+                                        显示英文名称
+  --rpc-client-secret-key arg           Set RPC client secret key for RPC 
+                                        payments
+                                        为 RPC 设置 RPC 客户端密钥
+                                        付款
+  --log-file arg                        Specify log file
+                                        指定日志文件
+  --log-level arg                       0-4 or categories
+                                        0-4 或类别
+  --max-log-file-size arg (=104850000)  Specify maximum log file size [B]
+                                        指定最大日志文件大小 [B]
+  --max-log-files arg (=50)             Specify maximum number of rotated log 
+                                        files to be saved (no limit by setting 
+                                        to 0)
+                                        指定旋转日志的最大数量
+                                        要保存的文件（通过设置没有限制
+                                        到 0)
+  --max-concurrency arg (=0)            Max number of threads to use for a 
+                                        parallel job
+                                        用于 a 的最大线程数
+                                        并行作业
+  --config-file arg                     Config file
+                                        配置文件
+
+Important commands:
+
+"welcome" - Show welcome message. 显示欢迎信息。
+"help all" - Show the list of all available commands.
+"help <command>" - Show a command's documentation.
+"apropos <keyword>" - Show commands related to a keyword.
+
+"wallet_info" - Show wallet main address and other info.
+"balance" - Show balance.
+"address all" - Show all addresses.
+"address new" - Create new subaddress.
+"transfer <address> <amount>" - Send XMR to an address.
+"show_transfers [in|out|pending|failed|pool]" - Show transactions.
+"sweep_all <address>" - Send whole balance to another wallet.
+"seed" - Show secret 25 words that can be used to recover this wallet.
+"refresh" - Synchronize wallet with the Monero network.
+"status" - Check current status of wallet.
+"version" - Check software version.
+"exit" - Exit wallet.
+
+"donate <amount>" - Donate XMR to the development team.
