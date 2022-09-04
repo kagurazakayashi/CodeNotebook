@@ -92,6 +92,7 @@
 │   ├── ./Batch_Windows/WSL使用Windows中已安装字体.sh
 │   ├── ./Batch_Windows/Win11绕过硬件检测.bat
 │   ├── ./Batch_Windows/Win11绕过硬件检测iso.txt
+│   ├── ./Batch_Windows/Windows11开启IE.vbs
 │   ├── ./Batch_Windows/WindowsTerminal.md
 │   ├── ./Batch_Windows/anyconnect临时开启服务.bat
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
@@ -889,6 +890,7 @@
 │   ├── ./ShellScript/获取时间日期数值.sh
 │   ├── ./ShellScript/计数器变量自增.sh
 │   ├── ./ShellScript/逐行读取文本文件.sh
+│   ├── ./ShellScript/遍历文件.sh
 │   ├── ./ShellScript/重定向和管道
 │   │   ├── ./ShellScript/重定向和管道/重定向和管道.md
 │   │   ├── ./ShellScript/重定向和管道/重定向和管道1.c
@@ -1122,6 +1124,16 @@
 │   ├── ./Tools/ACFan连点器.js
 │   ├── ./Tools/CD抓轨.sh
 │   ├── ./Tools/Coin
+│   │   ├── ./Tools/Coin/bitcoin-cli.sh
+│   │   ├── ./Tools/Coin/bitcoin-cli.txt
+│   │   ├── ./Tools/Coin/bitcoin-wallet.sh
+│   │   ├── ./Tools/Coin/bitcoin-wallet.txt
+│   │   ├── ./Tools/Coin/bitcoind.sh
+│   │   ├── ./Tools/Coin/bitcoind.txt
+│   │   ├── ./Tools/Coin/monero-wallet-cli.sh
+│   │   ├── ./Tools/Coin/monero-wallet-cli.txt
+│   │   ├── ./Tools/Coin/monerod.sh
+│   │   ├── ./Tools/Coin/monerod.txt
 │   │   ├── ./Tools/Coin/xmrig.json
 │   │   ├── ./Tools/Coin/xmrig.md
 │   │   ├── ./Tools/Coin/挖矿.txt
@@ -1155,6 +1167,7 @@
 │   │   ├── ./Tools/图标转换和压缩/雅诗GIF表情包压缩.sh
 │   │   └── ./Tools/图标转换和压缩/雅诗批量压缩APP图标.sh
 │   ├── ./Tools/宝塔续签LetsEncrypt证书.sh
+│   ├── ./Tools/将文件名写入EXIF标题.sh
 │   ├── ./Tools/将要下载的文件分成小块依次请求下载.py
 │   ├── ./Tools/将证书链拆分回单独证书.sh
 │   ├── ./Tools/小米路由器mixbox.sh
@@ -1248,6 +1261,7 @@
 │   ├── ./Tools_Git/代码量统计.sh
 │   ├── ./Tools_Git/以指定日期提交.sh
 │   ├── ./Tools_Git/修改已提交的记录.sh
+│   ├── ./Tools_Git/删除所有变更.sh
 │   ├── ./Tools_Git/删除最近几次的提交.sh
 │   ├── ./Tools_Git/子模块.sh
 │   ├── ./Tools_Git/常用设置.sh
@@ -1418,4 +1432,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-75 directories, 1343 files
+75 directories, 1357 files
