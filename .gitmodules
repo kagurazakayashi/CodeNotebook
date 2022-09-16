@@ -10,3 +10,6 @@
 [submodule "TypeScript/libNyaruko_TS"]
 	path = TypeScript/libNyaruko_TS
 	url = https://github.com/kagurazakayashi/libNyaruko_TS.git
+[submodule "PHP/libNyaruko_PHP"]
+	path = PHP/libNyaruko_PHP
+	url = https://github.com/kagurazakayashi/libNyaruko_PHP.git

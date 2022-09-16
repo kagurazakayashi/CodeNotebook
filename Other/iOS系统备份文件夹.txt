@@ -1,0 +1,2 @@
+iOS系统备份文件夹
+C:\Users\当前用户名\AppData\Roaming\Apple Computer\MobileSync

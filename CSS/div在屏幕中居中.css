@@ -1,0 +1,59 @@
+/*
+HTML+CSS，让div在屏幕中居中（水平居中+垂直居中）方法总结
+最近写网页经常需要将div在屏幕中居中显示，遂记录下几个常用的方法，都比较简单。
+水平居中直接加上<center>标签即可，或者设置margin:auto;当然也可以用下面的方法
+
+下面说两种在屏幕正中（水平居中+垂直居中）的方法
+放上示范的html代码：
+<body>
+	<div class="main">
+		<h1>MAIN</h1>
+	</div>
+</body>
+*/
+
+/* 
+方法一：
+div使用绝对布局，设置margin:auto;并设置top、left、right、bottom的值相等即可，不一定要都是0。
+*/
+.main {
+	text-align: center;
+	/*让div内部文字居中*/
+	background-color: #fff;
+	border-radius: 20px;
+	width: 300px;
+	height: 350px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* 
+方法二：
+仍然是绝对布局，让left和top都是50%，这在水平方向上让div的最左与屏幕的最左相距50%，垂直方向上一样，所以再用transform向左（上）平移它自己宽度（高度）的50%，也就达到居中效果了，效果图和上方相同。
+*/
+.main {
+	text-align: center;
+	background-color: #fff;
+	border-radius: 20px;
+	width: 300px;
+	height: 350px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* 
+方法三：
+对于水平居中，可以使用最简单的<center>标签，不过已经过时了，用法如下：
+<p><center>123</center></p>
+这个<center>标签就是相对于<p>标签里的文字，可以使其居中。
+由于center标签已经过时了，所以正规一点的话还是不建议使用的，可以使用如下的方式代替：
+*/
+p {
+	text-align: center;
+}
