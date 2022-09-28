@@ -1,0 +1,57 @@
+/*
+<div>
+    xx
+    <img src="../img/1.jpg" alt="" />
+    <span>I am a page.</span>
+</div>
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    width: 200px;
+    line-height: 60px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: aquamarine;
+}
+
+img {
+    width: 20px;
+}
+
+span {
+    background-color: antiquewhite;
+}
+
+/*
+1 baseline 让元素的基线 与父元素文本的基线对齐。
+2.1 sub 把元素放在下标处，即元素的基线（对置换元素来说是底边线）低于父元素的基线。但是具体低多少是没有规定的，不同的用户代理中可能不同。
+2.2 super 和sub相反，让元素的基线高于父元素的基线，具体高多少由用户代理来决定。
+3.1 top 使元素及其后代元素的顶部与整行的顶部对齐。
+*/
+img {
+    vertical-align: top;
+}
+/*
+3.2 bottom 与 top 相反。使元素及其后代元素的底部与整行的底部对齐。
+4.1 text-top 使元素的顶部与父元素的字体顶部对齐。注意：这个是与父元素的字体顶部对齐，即使给子元素设置了不同大小的 font-size，也是按照父元素的字体来对齐。
+4.2 text-bottom 使元素的底部与父元素的字体底部对齐。注意：这个是与父元素的字体底部对齐，即使给子元素设置了不同大小的 font-size，也是按照父元素的字体来对齐。
+5 middle 中线对齐 使元素的中部与父元素的基线向上偏移0.5ex处的线对齐（1ex等于父元素的font-size）
+6 % 百分比
+百分数不能像align="middle”那样对齐图像。把vertical-align的值设为百分数，效果是把元素的基线（或置换元素的底边）相对父元素的基线抬升或下沉指定的量（指定的百分数相对元素自身而非父元素的line-height 计算）。正百分数抬升元素，负百分数下沉元素。如果抬升或下沉的量足够大，目标元素可能会出现在相邻的行上（见图6-20），因此使用百分数时要小心。
+*/
+img {
+    vertical-align: 100%;
+    line-height: 20px;
+}
+/*
+7 具体的值
+vertical-align的效果很简单：把元素抬升或下沉声明的距离。因此，vertical-align：5px；把元素从原位置向上抬升5像素。长度值为负时，下沉元素。vertical-align设置为负值时，在原来基础上下移。
+*/
+img {
+    vertical-align: 10px;
+}
