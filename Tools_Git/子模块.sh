@@ -63,9 +63,9 @@ rm -rf assets
 rm -rf .git/modules/assets
 
 
-# 删除一个submodule
-# 1.删除 .gitsubmodule中对应submodule的条目
-# 2.删除 .git/config 中对应submodule的条目
+# 删除一个 submodule
+# 1.删除 .gitsubmodule 中对应 submodule 的条目
+# 2.删除 .git/config 中对应 submodule 的条目
 # 3.执行。
 git rm --cached {submodule_path}
 # 注意，路径不要加后面的“/”。

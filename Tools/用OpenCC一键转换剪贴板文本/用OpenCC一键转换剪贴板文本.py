@@ -1,14 +1,17 @@
 #!coding=utf-8
 # 神楽坂雅詩
+# 注：本文件文件名不能命名为 opencc.py
 # 使用： .py 语言json名称，不含'.json'
 import sys
-# pip3 install opencc
-# pip3 install opencc-python-reimplemented
+# pip3 install opencc opencc-python-reimplemented pyperclip
 import opencc
-# pip3 install pyperclip
 import pyperclip
 
-clipin = pyperclip.paste()
+try:
+    clipin = pyperclip.paste()
+except pyperclip.PyperclipException:
+    print('E: 读取剪贴板失败')
+    quit()
 if type(clipin) != str:
     print('E: 不支持的剪贴板数据格式')
     quit()
@@ -27,4 +30,12 @@ if clipin == clipout:
     quit()
 print(str(len(clipin))+' -> '+mode+' -> '+str(len(clipout)))
 print(clipout)
-pyperclip.copy(clipout)
+try:
+    pyperclip.copy(str(clipout))
+except pyperclip.PyperclipException as e:
+    print('E: 无法写入剪贴板', str(e))
+    quit()
+clipin = pyperclip.paste()
+if clipin != clipout:
+    print('E: 写入剪贴板失败')
+    quit()

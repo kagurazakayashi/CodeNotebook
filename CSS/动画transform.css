@@ -1,0 +1,99 @@
+/* CSS动画transform */
+
+div {
+    margin: 30px;
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    /* Rotate div */
+    transform: rotate(9deg);
+    -ms-transform: rotate(9deg);
+    /* Internet Explorer */
+    -moz-transform: rotate(9deg);
+    /* Firefox */
+    -webkit-transform: rotate(9deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(9deg);
+    /* Opera */
+}
+
+/*
+语法：   transform: none|transform-functions;
+
+| transform | 功能 |
+| --------- | ---- |
+| none | 定义不进行转换。 |
+| matrix(n,n,n,n,n,n) | 定义 2D 转换，使用六个值的矩阵。 |
+| matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n) | 定义 3D 转换，使用 16 个值的 4x4 矩阵。 |
+| translate(x,y) | 定义 2D 转换。 |
+| translate3d(x,y,z) | 定义 3D 转换。 |
+| translateX(x) | 定义转换，只是用 X 轴的值。 |
+| translateY(y) | 定义转换，只是用 Y 轴的值。 |
+| translateZ(z) | 定义 3D 转换，只是用 Z 轴的值。 |
+| scale(x,y) | 定义 2D 缩放转换。 |
+| scale3d(x,y,z) | 定义 3D 缩放转换。 |
+| scaleX(x) | 通过设置 X 轴的值来定义缩放转换。 |
+| scaleY(y) | 通过设置 Y 轴的值来定义缩放转换。 |
+| scaleZ(z) | 通过设置 Z 轴的值来定义 3D 缩放转换。 |
+| rotate(angle) | 定义 2D 旋转，在参数中规定角度。 |
+| rotate3d(x,y,z,angle) | 定义 3D 旋转。 |
+| rotateX(angle) | 定义沿着 X 轴的 3D 旋转。 |
+| rotateY(angle) | 定义沿着 Y 轴的 3D 旋转。 |
+| rotateZ(angle) | 定义沿着 Z 轴的 3D 旋转。 |
+| skew(x-angle,y-angle) | 定义沿着 X 和 Y 轴的 2D 倾斜转换。 |
+| skewX(angle) | 定义沿着 X 轴的 2D 倾斜转换。 |
+| skewY(angle) | 定义沿着 Y 轴的 2D 倾斜转换。 |
+| perspective(n) | 为 3D 转换元素定义透视视图。 |
+
+https://www.w3school.com.cn/cssref/pr_transform.asp
+*/
+
+div {
+    /* 旋转；其中“10deg”表示“10度”。 */
+    transform: rotate(10deg);
+    /* 倾斜 */
+    transform: skew(20deg);
+    /* 比例；“1.5”表示以1.5的比例放大，如果要放大2倍，须写成“2.0”，缩小则为负“-”。 */
+    transform: scale(1.5);
+    /* 变动，位移；如下表示向右位移120像素，如果向上位移，把后面的“0”改个值就行，向左向下位移则为负“-”。 */
+    transform: translate(120px, 0);
+}
+
+/* 综合在一起：(效果是动态) */
+.demo {
+    transition: all 1s ease-in-out;
+}
+
+.demo:hover {
+    transform: rotate(360deg) skew(-20deg) scale(3.0) translate(100px, 0);
+}
+
+/* transition: 允许css的属性值在一定的时间区间内平滑地过渡。 */
+div {
+    /* transition-property是用来指定当元素其中一个属性改变时执行transition效果，其主要有以下几个值：
+    none(没有属性改变)；
+    all（所有属性改变）这个也是其默认值；
+    indent（元素属性名）。
+    none时，transition马上停止执行，
+    all时，则元素产生任何属性值变化时都将执行transition效果，
+    ident是可以指定元素的某一个属性值。 */
+    transition-property: all;
+    /* transition-duration是用来指定元素,转换过程的持续时间 */
+    transition-duration: 0.5s;
+    /* linear 匀速，
+    ease 逐渐慢下来，
+    ease-in 加速，
+    ease-out 减速，
+    ease-in-out 先加速后减速 */
+    transition-timing-function: linear;
+    /* 延迟: 是用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行transition效果 */
+    transition-delay: 0.1s;
+}
+
+a {
+    /* http://codepen.io/SitePoint/pen/akAmPw */
+    transition: background 0.5s ease-in, color 0.3s ease-out;
+    transition: transform .4s ease-in-out;
+}
+
+/* https://segmentfault.com/a/1190000004460780 */

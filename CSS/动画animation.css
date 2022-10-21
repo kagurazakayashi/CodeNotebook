@@ -1,0 +1,94 @@
+/*
+CSS动画animation CSS动画keyframes
+CSS3中添加的新属性animation是用来为元素实现动画效果的，但是animation无法单独担当起实现动画的效果。承载动画的另一个属性——@keyframes。使用的时候为了兼容可加上-webkit-、-o-、-ms-、-moz-、-khtml-等前缀以适应不同的浏览器。
+- 创建动画的原理是，将一套 CSS 样式逐渐变化为另一套样式。
+- 通过 @keyframes 规则，您能够创建动画。
+- @keyframes定义一个动画，并定义具体的动画效果，比如是放大还是位移等等。
+- @keyframes 它定义的动画并不直接执行，需要借助animation来运转。
+- 在动画过程中，您能够多次改变这套 CSS 样式。
+- 以百分比来规定改变发生的时间，或者通过关键词 "from" 和 "to"，等价于 0% 和 100%。
+  - 百分比是指动画完成一遍的时间长度的的百分比 ，0% 是动画的开始时间，50%是动画完成一半的时间，100% 动画的结束时间。百分比后面的花括号写：在动画执行过程中的某时间点要完成的变化。
+- 为了获得最佳的浏览器支持，您应该始终定义 0% 和 100% 选择器。
+
+语法
+@keyframes animationname {keyframes-selector {css-styles;}}
+
+| 值              	 | 描述                   |
+| ------------------ | ---------------------- |
+| animationname      | 必需。定义动画的名称。 |
+| keyframes-selector | 必需。定义动画的名称。 |
+|                    | 合法的值：             |
+|                    | 1. 0-100%              |
+|                    | 2. from（与 0% 相同）  |
+|                    | 3. to（与 100% 相同）  |
+| css-styles         | 必需。一个或多个合法的 CSS 样式属性。 |
+*/
+
+/* 例子1：名字为gif的@keyframes ，动画完成需要的总时长为1.4s,刚开始的时候图片旋转为0度，动画完成的时候图片旋转360度 */
+.load-border {
+  width: 120px;
+  height: 120px;
+  background: url(../images/loading_icon.png) no-repeat center center;
+  -webkit-animation: gif 1.4s infinite linear;
+  animation: gif 1.4s infinite linear;
+}
+
+@keyframes gif {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* 例子2：名字为mymove的@keyframes ，动画完成需要的总时长为1s,刚开始的时候图片距顶部距离为0px，0.25s后图片距顶部距离为200px，0.5s后图片距顶部的距离为100px，以此类推 */
+.img {
+  width: 120px;
+  height: 120px;
+  background: url(../images/icon.png) no-repeat center center;
+  -webkit-animation: gif 1.4s infinite linear;
+  animation: mymove 1s infinite linear;
+}
+
+@keyframes mymove {
+  0% {
+    top: 0px;
+  }
+
+  25% {
+    top: 200px;
+  }
+
+  50% {
+    top: 100px;
+  }
+
+  75% {
+    top: 200px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+/* 例子3：在一个动画中改变多个 CSS 样式： */
+@keyframes mymove {
+  0% {
+    top: 0px;
+    background: red;
+    width: 100px;
+  }
+
+  100% {
+    top: 200px;
+    background: yellow;
+    width: 300px;
+  }
+}
+
+/* https://segmentfault.com/a/1190000004460780 */
