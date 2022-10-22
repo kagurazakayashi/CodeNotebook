@@ -1,0 +1,5 @@
+windows装了高版本的nodejs 使用时会出现 error:0308010C:digital envelope routines::unsupported 的错误。我的解决方式是配置环境变量：
+
+变量名：NODE_OPTIONS
+
+变量值：--openssl-legacy-provider

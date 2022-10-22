@@ -1,0 +1,28 @@
+# [*]
+# indent_style = space # 空格縮排
+# indent_size = 2 # 縮排大小
+# end_of_line = lf # 換行符號
+# charset = utf-8 # 字元編碼
+# trim_trailing_whitespace = true # 移除行尾空白
+# insert_final_newline = true # 確保檔案最後有一個空行
+# curly_bracket_next_line = false # 大括號是否換行
+# spaces_around_operators = true # 運算子前後是否加空格
+# indent_brace_style = 1tbs # 大括號縮排樣式
+# quote_type = double # 字串引號類型
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{js,ts,sh}]
+indent_style = space
+
+[*.{htm,html}]
+indent_size = 4
+
+[*.{bat,cmd,ini,ps1}]
+charset = ansi
+end_of_line = crlf
+indent_size = 4
