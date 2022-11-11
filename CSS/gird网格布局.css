@@ -1,0 +1,124 @@
+/* Grid 网格布局
+<div>
+  <div><p>1</p></div>
+  <div><p>2</p></div>
+  <div><p>3</p></div>
+</div>
+*/
+
+div {
+    display: grid; /* 指定一个容器采用网格布局。 */
+    /*
+    AAA
+    123
+    456
+    789
+    BBB
+    */
+    display: inline-grid; /* 元素内部采用网格布局 */
+    /*
+    AAA123BBB
+       456
+       789
+    */
+}
+
+/* 设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。 */
+
+.container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px; /* 定义每一列的列宽 */
+    grid-template-rows: 100px 100px 100px; /* 定义每一行的行高 */
+    /* 上面代码指定了一个三行三列的网格，列宽和行高都是100px。
+    1 2 3
+    4 5 6
+    7 8[9]-> 100px
+    */
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    /* 除了使用绝对单位，也可以使用百分比。
+    有时候，重复写同样的值非常麻烦，尤其网格很多时。这时，可以使用repeat()函数，简化重复的值。上面的代码用repeat()改写如下。
+    */
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(3, 33.33%);
+    /* repeat()接受两个参数，第一个参数是重复的次数（上例是3），第二个参数是所要重复的值。 */
+    grid-template-columns: repeat(2, 100px 20px 80px);
+    /* 上面代码定义了6列，第一列和第四列的宽度为100px，第二列和第五列为20px，第三列和第六列为80px。 
+    | 100 | 20 | 80 | 100 | 20 | 80 |
+    | 100 | 20 | 80 |
+    */
+}
+
+/*
+auto-fill 关键字
+有时，单元格的大小是固定的，但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用auto-fill关键字表示自动填充。
+*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    /* 上面代码表示每列宽度100px，然后自动填充，直到容器不能放置更多的列。（块自动换行）
+    | 1 2 3 4 5 |
+    | 6 7 8 9   |
+    */
+}
+
+/*
+为了方便表示比例关系，网格布局提供了fr关键字（fraction 的缩写，意为"片段"）。如果两列的宽度分别为1fr和2fr，就表示后者是前者的两倍。
+*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 上面代码表示两个相同宽度的列。
+    50%  50%
+    50%  50%
+    50%
+    fr可以与绝对长度的单位结合使用，这时会非常方便：
+    */
+    grid-template-columns: 150px 1fr 2fr;
+    /* 上面代码表示，第一列的宽度为150像素，第二列的宽度是第三列的一半。
+    150 75 150
+    150 75 150
+    150 75 150
+    */
+}
+
+/*
+minmax()
+minmax()函数产生一个长度范围，表示长度就在这个范围之中。它接受两个参数，分别为最小值和最大值。
+*/
+.container {
+    grid-template-columns: 1fr 1fr minmax(100px, 1fr);
+}
+/*
+上面代码中，minmax(100px, 1fr)表示列宽不小于100px，不大于1fr。
+
+auto 关键字
+auto关键字表示由浏览器自己决定长度。
+*/
+.container {
+    grid-template-columns: 100px auto 100px;
+}
+/*
+上面代码中，第二列的宽度，基本上等于该列单元格的最大宽度，除非单元格内容设置了min-width，且这个值大于最大宽度。
+*/
+
+/* 布局实例 */
+.wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /* 上面代码将左边栏设为70%，右边栏设为30%。
+    传统的十二网格布局，写起来也很容易： */
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* 行间距 列间距 */
+.container {
+    grid-row-gap: 20px; /* 行与行的间隔（行间距）*/
+    row-gap: 20px; /* 新写法 */
+    grid-column-gap: 20px; /* 列与列的间隔（列间距） */
+    column-gap: 20px; /* 新写法 */
+    grid-gap: 20px 20px; /* <grid-row-gap> <grid-column-gap> */
+    gap: 20px 20px; /* 新写法 */
+}
+
+/* https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html */

@@ -1,9 +1,9 @@
+/* flex块自动换行布局 */
+
 .box {
     display: flex;
-    justify-content: center;
-    /* 水平居中 */
-    align-items: center;
-    /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
     width: 1000px;
     height: 600px;
     border: 1px solid red;

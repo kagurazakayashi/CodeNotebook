@@ -85,3 +85,18 @@ docker-compose down
 docker-compose up -d
 
 # https://pullopen.github.io/%E7%AB%99%E7%82%B9%E7%BB%B4%E6%8A%A4/2020/10/21/migrate-Mastodon-to-Docker.html
+
+
+# 升级
+cd /home/mastodon/mastodon
+docker pull tootsuite/mastodon:latest #或者将latest改成版本号如v3.2.1
+
+docker-compose up -d
+docker-compose run --rm web rails db:migrate
+docker system prune -a
+
+# 如果在操作过程中出现了任何问题……
+docker-compose down
+docker-compose up -d
+
+# https://pullopen.github.io/%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA/2020/10/19/Mastodon-on-Docker.html
