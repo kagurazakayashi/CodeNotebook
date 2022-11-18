@@ -1,6 +1,10 @@
 // 父文件 index.ts:
 // import PageLogin, { PageLoginDelegate } from './login';
 class Main implements PageLoginDelegate { // 使用子代理名
+    loginPage = new PageLogin();
+    constructor() {
+        this.loginPage.delegate = this;
+    }
     pageLoginStatus(status: number): void { // 使用子代理方法
         console.log(status);
     }
