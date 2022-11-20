@@ -1,8 +1,8 @@
-//要使用本计算机,用户必须输入用户名和密码 选项不见了怎么办
+; 要使用本计算机,用户必须输入用户名和密码 选项不见了怎么办
 
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device]
 "DevicePasswordLessBuildVersion"=dword:00000002
 "DevicePasswordLessBuildVersion"=dword:00000000
 
-//control userpasswords2
+; control userpasswords2
