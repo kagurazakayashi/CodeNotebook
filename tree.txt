@@ -75,6 +75,7 @@
 │   ├── ./Batch/环境变量.bat
 │   ├── ./Batch/端口映射.bat
 │   ├── ./Batch/过滤掉扩展名.bat
+│   ├── ./Batch/遍历文件.bat
 │   ├── ./Batch/遍历文件夹.bat
 │   └── ./Batch/钥匙盘.bat
 ├── ./Batch_IIS
@@ -128,7 +129,6 @@
 │   ├── ./Batch_Windows/右键添加打开命令窗口.reg
 │   ├── ./Batch_Windows/启动文件夹.md
 │   ├── ./Batch_Windows/启动项禁用Hyper-V.bat
-│   ├── ./Batch_Windows/增加特殊模式启动项.bat
 │   ├── ./Batch_Windows/备份WSL.bat
 │   ├── ./Batch_Windows/安装重启挂起.reg
 │   ├── ./Batch_Windows/实现sudo，参数①提升启动权限的程序.vbs
@@ -152,7 +152,6 @@
 │   ├── ./Batch_Windows/虚拟内存.bat
 │   ├── ./Batch_Windows/解禁注册表编辑器.reg
 │   ├── ./Batch_Windows/还原文件权限.bat
-│   ├── ./Batch_Windows/遍历文件.bat
 │   └── ./Batch_Windows/重置winsock.bat
 ├── ./C
 │   ├── ./C/ASCII码.c
@@ -1472,4 +1471,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1395 files
+77 directories, 1394 files
