@@ -1,0 +1,9 @@
+1. 复制用户文件夹到目标
+2. 启用 Administrator 账户并进入
+3. 注册表编辑批量修改路径
+4. 修改环境变量
+
+注册表重点：
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Profilelist
+
+批量改注册表可以用 Registry Finder 2.55
