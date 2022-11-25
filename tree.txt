@@ -109,6 +109,7 @@
 │   ├── ./Batch_Windows/使用旧版的图片查看器.reg
 │   ├── ./Batch_Windows/修复EXE文件关联.reg
 │   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
+│   ├── ./Batch_Windows/修改用户文件夹.txt
 │   ├── ./Batch_Windows/共享文件.bat
 │   ├── ./Batch_Windows/关闭MSI信息信号中断模式.md
 │   ├── ./Batch_Windows/创建常用模式启动项.bat
@@ -1471,4 +1472,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1394 files
+77 directories, 1395 files
