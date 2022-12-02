@@ -947,6 +947,7 @@
 │   ├── ./ShellScript_Linux/SSH代理连接.sh
 │   ├── ./ShellScript_Linux/SSH传输文件.sh
 │   ├── ./ShellScript_Linux/SSH证书登录.sh
+│   ├── ./ShellScript_Linux/Unable to locate package ifconfig.sh
 │   ├── ./ShellScript_Linux/V2Ray客户端.txt
 │   ├── ./ShellScript_Linux/VNC-Centos-xfce.sh
 │   ├── ./ShellScript_Linux/VNC-Debian10.sh
@@ -956,8 +957,10 @@
 │   ├── ./ShellScript_Linux/VNC.sh
 │   ├── ./ShellScript_Linux/VirtualBox中的Centos安装增强功能包.sh
 │   ├── ./ShellScript_Linux/VirtualBox压缩磁盘镜像.sh
+│   ├── ./ShellScript_Linux/WSL-Debian无法联网.sh
 │   ├── ./ShellScript_Linux/WSL.txt
 │   ├── ./ShellScript_Linux/apt-install通配符.sh
+│   ├── ./ShellScript_Linux/apt安装通配符.sh
 │   ├── ./ShellScript_Linux/dpkg取回了一个空字符串.sh
 │   ├── ./ShellScript_Linux/dpkg文件名列表文件缺少最后结尾的换行符.sh
 │   ├── ./ShellScript_Linux/dpkg无法找到软件包的文件名列表文件.py
@@ -1293,6 +1296,7 @@
 │   ├── ./Tools_FFmpeg/视频尺寸.sh
 │   └── ./Tools_FFmpeg/转AAC.sh
 ├── ./Tools_Git
+│   ├── ./Tools_Git/Filename too long.txt
 │   ├── ./Tools_Git/Github创建新分支.sh
 │   ├── ./Tools_Git/gitignore忽略规则.md
 │   ├── ./Tools_Git/git常用命令.sh
@@ -1472,4 +1476,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1395 files
+77 directories, 1399 files
