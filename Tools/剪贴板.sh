@@ -1,3 +1,5 @@
+# 复制到剪贴板和从剪贴板粘贴
+
 #Windows
 echo Hello | clip
 dir | clip

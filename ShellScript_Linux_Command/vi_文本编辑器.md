@@ -1,4 +1,4 @@
-# vi (Visual) 文本编辑器
+# vi (Visual) 文本编辑器 、vim配置
 
 启动 vi: `vi [filename]`
 

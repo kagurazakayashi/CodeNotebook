@@ -1,0 +1,5 @@
+# Windows Git Filename too long
+notepad .gitconfig
+
+[core]
+	longpaths = true
