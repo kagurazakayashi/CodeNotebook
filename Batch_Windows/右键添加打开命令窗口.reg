@@ -1,24 +1,24 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHere]
-@="åœ¨æ­¤å¤„æ‰“å¼€å‘½ä»¤æç¤ºç¬¦"
+@="ÔÚ´Ë´¦´ò¿ªÃüÁîÌáÊ¾·û"
 "Icon"="cmd.exe"
 [HKEY_CLASSES_ROOT\Directory\shell\OpenCmdHere\command]
 @="PowerShell -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k, pushd,%V' -Verb RunAs\""
 [HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere]
-@="åœ¨æ­¤å¤„æ‰“å¼€å‘½ä»¤æç¤ºç¬¦"
+@="ÔÚ´Ë´¦´ò¿ªÃüÁîÌáÊ¾·û"
 "Icon"="cmd.exe"
 [HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere\command]
 @="PowerShell -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k, pushd,%V' -Verb RunAs\""
 
 [HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHere]
-@="åœ¨æ­¤å¤„æ‰“å¼€å‘½ä»¤æç¤ºç¬¦"
+@="ÔÚ´Ë´¦´ò¿ªÃüÁîÌáÊ¾·û"
 "Icon"="cmd.exe"
 
 [HKEY_CLASSES_ROOT\Drive\shell\OpenCmdHere\command]
 @="PowerShell -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k, pushd,%V' -Verb RunAs\""
 [HKEY_CLASSES_ROOT\LibraryFolder\background\shell\OpenCmdHere]
-@="åœ¨æ­¤å¤„æ‰“å¼€å‘½ä»¤æç¤ºç¬¦"
+@="ÔÚ´Ë´¦´ò¿ªÃüÁîÌáÊ¾·û"
 "Icon"="cmd.exe"
 [HKEY_CLASSES_ROOT\LibraryFolder\background\shell\OpenCmdHere\command]
 @="PowerShell -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k, pushd,%V' -Verb RunAs\""

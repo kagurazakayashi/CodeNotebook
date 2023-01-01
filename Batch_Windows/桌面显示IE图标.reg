@@ -1,8 +1,8 @@
 Windows Registry Editor Version 5.00
 ;
-;win10 64ä½æ˜¾ç¤ºIEå›¾æ ‡æ³¨å†Œè¡¨
+;win10 64Î»ÏÔÊ¾IEÍ¼±ê×¢²á±í
 ;
-;æ¡Œé¢æ˜¾ç¤ºIEå›¾æ ‡
+;×ÀÃæÏÔÊ¾IEÍ¼±ê
 [-HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
@@ -17,19 +17,19 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns]
-@="åœ¨æ²¡æœ‰åŠ è½½é¡¹çš„æƒ…å†µä¸‹å¯åŠ¨(&N)"
+@="ÔÚÃ»ÓĞ¼ÓÔØÏîµÄÇé¿öÏÂÆô¶¯(&N)"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe about:NoAdd-ons"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open]
-@="æ‰“å¼€ä¸»é¡µ(&H)"
+@="´ò¿ªÖ÷Ò³(&H)"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set]
-@="å±æ€§(&R)"
+@="ÊôĞÔ(&R)"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set\Command]
 @="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
@@ -52,19 +52,19 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns]
-@="åœ¨æ²¡æœ‰åŠ è½½é¡¹çš„æƒ…å†µä¸‹å¯åŠ¨(&N)"
+@="ÔÚÃ»ÓĞ¼ÓÔØÏîµÄÇé¿öÏÂÆô¶¯(&N)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe about:NoAdd-ons"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open]
-@="æ‰“å¼€ä¸»é¡µ(&H)"
+@="´ò¿ªÖ÷Ò³(&H)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set]
-@="å±æ€§(&R)"
+@="ÊôĞÔ(&R)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set\Command]
 @="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
