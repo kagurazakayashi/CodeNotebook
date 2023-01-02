@@ -114,6 +114,7 @@
 │   ├── ./Batch_Windows/关闭MSI信息信号中断模式.md
 │   ├── ./Batch_Windows/创建常用模式启动项.bat
 │   ├── ./Batch_Windows/删除OneDrive.reg
+│   ├── ./Batch_Windows/删除SystemVolumeInformation.bat
 │   ├── ./Batch_Windows/删除内核转储.bat
 │   ├── ./Batch_Windows/删除右键打印.reg
 │   ├── ./Batch_Windows/删除此电脑页上方几个文档文件夹.reg
@@ -682,6 +683,7 @@
 │   ├── ./Other/xmrig配置参数.md
 │   ├── ./Other/切噜.c
 │   ├── ./Other/喵.c
+│   ├── ./Other/屏蔽软件联网hosts.txt
 │   ├── ./Other/常用密码长度.md
 │   ├── ./Other/摩尔斯电码.md
 │   ├── ./Other/正则表达式.md
@@ -1476,4 +1478,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1399 files
+77 directories, 1401 files
