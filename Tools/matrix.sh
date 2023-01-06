@@ -23,6 +23,7 @@ exit
 
 # 修改生成的 /mnt/d/matrix/data/homeserver.yaml
 # 一旦你有了一个有效的配置文件，你就可以按如下方式启动 synapse：
+
 docker run -d --name matrix_synapse -v /mnt/d/matrix/data:/data --net matrix --ip 172.20.0.2 -p 8008:8008 matrixdotorg/synapse:latest
 
 # 生成（管理员）用户
@@ -30,6 +31,13 @@ docker exec -it matrix_synapse register_new_matrix_user http://172.20.0.2:8008 -
 docker exec -it matrix_synapse register_new_matrix_user http://172.20.0.2:8008 -c /data/homeserver.yaml -u 管理员账户名 -p 管理员账户密码 -a
 # 这需要 registration_shared_secret 您的配置文件中。如果不再需要它，请记住删除并重新启动。
 
+# 更新
+docker stop matrix_synapse
+docker stop matrix_db
+docker rm matrix_synapse
+docker rmi matrixdotorg/synapse:latest
+docker start matrix_db
+docker run -d --name matrix_synapse -v /mnt/d/matrix/data:/data --net matrix --ip 172.20.0.2 -p 8448:8008 matrixdotorg/synapse:latest
 
 # nginx 反代
 
