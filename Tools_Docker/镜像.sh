@@ -24,6 +24,8 @@ docker image save -o imageName.tar imageName
 # --output, -o 写入一个文件，而不是STDOUT
 # 压缩导出
 docker image save imageName | xz -z -e -9 -T 0 > imageName.tar.xz
+# 导出备份
+docker image save imageName | xz -z -e -9 > imageName.$(date "+%Y-%m-%d_%H-%M-%S").tar.xz
 
 # 导入镜像
 docker image load -i imageName.tar
