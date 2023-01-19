@@ -1,0 +1,49 @@
+WSL2完整桌面
+
+自动设置 vEthernet (WSL) 网卡 IP：
+主机 192.168.51.1
+虚拟 192.168.51.2
+
+
+wsl.bat:
+
+title Liunx GUI
+COLOR B0
+G:
+cd G:\wsl
+powershell G:\wsl\wsl.ps1
+ping 192.168.51.1 -w 100
+START /MAX /HIGH "C:\Program Files\VcXsrv\xlaunch.exe" C:\wsl\wsl.xlaunch
+bash /home/yashi/ui.sh
+
+
+wsl.ps1 (需允许未签名):
+
+Get-NetAdapter 'vEthernet (WSL)' | Get-NetIPAddress | Remove-NetIPAddress -Confirm:$False
+New-NetIPAddress -IPAddress 192.168.51.1 -PrefixLength 24 -InterfaceAlias 'vEthernet (WSL)'
+Get-NetNat | ? Name -Eq WSLNat | Remove-NetNat -Confirm:$False
+New-NetNat -Name WSLNat -InternalIPInterfaceAddressPrefix 192.168.51.0/24;
+
+
+wsl.xlaunch:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<XLaunch WindowMode="Windowed" ClientMode="NoClient" LocalClient="False" Display="0" LocalProgram="xcalc" RemoteProgram="xterm" RemotePassword="" PrivateKey="" RemoteHost="" RemoteUser="" XDMCPHost="" XDMCPBroadcast="False" XDMCPIndirect="False" Clipboard="True" ClipboardPrimary="True" ExtraParams="" Wgl="True" DisableAC="True" XDMCPTerminate="False"/>
+
+
+ui.sh:
+
+cd ~
+sudo ip addr del $(ip addr show eth0 | grep 'inet\b' | awk '{print $2}' | head -n 1) dev eth0
+sudo ip addr add 192.168.51.2/24 broadcast 192.168.51.255 dev eth0
+sudo ip route add 0.0.0.0/0 via 192.168.51.1 dev eth0
+sudo bash -c 'echo nameserver 223.5.5.5 > /etc/resolv.conf'
+sudo bash -c 'echo nameserver 114.114.114.114 >> /etc/resolv.conf'
+export DISPLAY=192.168.51.1:0
+sleep 3
+sudo startxfce4
+
+
+sudo 不需要密码:
+sudo vim /etc/sudoers:
+yashi   ALL=(ALL)NOPASSWD:ALL

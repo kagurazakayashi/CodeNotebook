@@ -4,6 +4,10 @@ fdisk -l
 # 查看分区大小和文件系统类型
 df -Th
 
+# 所需软件
+sudo apt install cloud-guest-utils
+sudo apt install xfsprogs
+
 # 扩容磁盘：
 # 扩容分区 growpart <DeviceName> <PartionNumber>
 # /dev/vda1 :

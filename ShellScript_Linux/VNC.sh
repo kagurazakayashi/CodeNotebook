@@ -8,6 +8,8 @@ vncviewer xxx:5901
 vncserver -localhost no -geometry 1280x720 -depth 24
 # Close
 vncserver -kill :1
+# 直接启动 xfce4-session
+vncserver -xstartup xfce4-session -geometry 1280x720 -depth 32
 
 # vncserver [:<number>]            启动编号
 # [-dry-run]             不采取实际行动
@@ -26,6 +28,8 @@ vncserver -kill :1
 # [-httpPort     port]   内部HTTP服务器端口
 # [-baseHttpPort port]   从基本端口计算HTTP端口 + display
 
+touch ~/.Xresources
+mkdir ~/.vnc
 vim ~/.vnc/xstartup
 
 #!/bin/sh
@@ -42,4 +46,5 @@ yum install xfce4-*-plugin
 yum install adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme -y
 apt install xfce4-goodies -y
 apt install xfce4-\*-plugin -y
-apt install adwaita-icon-theme-full gnome-themes-extra gnome-themes-extra-data -y
+apt install adwaita-icon-theme gnome-themes-extra gnome-themes-extra-data -y
+apt install gnome-themes-\* -y

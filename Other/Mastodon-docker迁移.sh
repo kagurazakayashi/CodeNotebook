@@ -87,7 +87,7 @@ docker-compose up -d
 # https://pullopen.github.io/%E7%AB%99%E7%82%B9%E7%BB%B4%E6%8A%A4/2020/10/21/migrate-Mastodon-to-Docker.html
 
 
-# 升级
+# mastodon 升级
 cd /home/mastodon/mastodon
 docker pull tootsuite/mastodon:latest #或者将latest改成版本号如v3.2.1
 
