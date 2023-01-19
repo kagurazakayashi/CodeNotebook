@@ -962,6 +962,7 @@
 │   ├── ./ShellScript_Linux/VirtualBox压缩磁盘镜像.sh
 │   ├── ./ShellScript_Linux/WSL-Debian无法联网.sh
 │   ├── ./ShellScript_Linux/WSL.txt
+│   ├── ./ShellScript_Linux/WSL2批处理直接启动完整桌面.txt
 │   ├── ./ShellScript_Linux/apt-install通配符.sh
 │   ├── ./ShellScript_Linux/apt安装通配符.sh
 │   ├── ./ShellScript_Linux/dpkg取回了一个空字符串.sh
@@ -988,6 +989,7 @@
 │   ├── ./ShellScript_Linux/yum安装位置.sh
 │   ├── ./ShellScript_Linux/zsh.sh
 │   ├── ./ShellScript_Linux/主机多终端切换快捷键.txt
+│   ├── ./ShellScript_Linux/修改时区.sh
 │   ├── ./ShellScript_Linux/内存盘.sh
 │   ├── ./ShellScript_Linux/内核升级失败回滚.sh
 │   ├── ./ShellScript_Linux/列出系统服务.sh
@@ -1481,4 +1483,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1404 files
+77 directories, 1406 files
