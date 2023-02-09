@@ -3,19 +3,21 @@ import UIKit
 import Starscream
 
 public class flutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
-    
+    // 接收来自 Flutter 的通知，可以回复该通知
+    var methodChannel : FlutterMethodChannel?
+    // 可以随时发送的通知
+    var eventChannel : FlutterEventChannel?
     var eventChannelSink : FlutterEventSink?
-    var webSocket : YaWebSocket?
     
     // 注册这些通知的名称
     public static func register(with registrar: FlutterPluginRegistrar) {
         let instance = flutterPlugin()
         // 接收来自 Flutter 的通知，可以回复该通知
-        let methodChannel = FlutterMethodChannel(name: "flutter_to_native", binaryMessenger: registrar.messenger())
-        registrar.addMethodCallDelegate(instance, channel: methodChannel)
+        self.methodChannel = FlutterMethodChannel(name: "flutter_to_native", binaryMessenger: registrar.messenger())
+        registrar.addMethodCallDelegate(instance, channel: self.methodChannel)
         // 可以随时发送的通知
-        let eventChannel = FlutterEventChannel(name: "native_to_flutter", binaryMessenger: registrar.messenger())
-        eventChannel.setStreamHandler(instance)
+        self.eventChannel = FlutterEventChannel(name: "native_to_flutter", binaryMessenger: registrar.messenger())
+        self.eventChannel.setStreamHandler(instance)
     }
     
     // 接收 Flutter 的通知，call.method 是通知名称
@@ -29,6 +31,7 @@ public class flutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
             returnVal["f"] = "result"
             returnVal["v"] = UIDevice.current.systemVersion
             result(returnVal)
+            self.pushPlatformVersion();
             break
         default:
             result(FlutterMethodNotImplemented)
@@ -44,6 +47,7 @@ public class flutterPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
             returnVal["k"] = "getPlatformVersion"
             returnVal["f"] = "event"
             returnVal["v"] = UIDevice.current.systemVersion
+            // 【异步】将数据返回给 Flutter ，可以是 Map 也可以是 String 等其他。
             self.eventChannelSink(returnVal)
         }
     }
