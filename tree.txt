@@ -400,8 +400,11 @@
 │   ├── ./Dart_Flutter/常用环境变量.sh
 │   ├── ./Dart_Flutter/推到新页.dart
 │   ├── ./Dart_Flutter/插件与原生交互
+│   │   ├── ./Dart_Flutter/插件与原生交互/Android端Java与Flutter插件交互.java
 │   │   ├── ./Dart_Flutter/插件与原生交互/Android端Kotlin与Flutter插件交互.kt
 │   │   ├── ./Dart_Flutter/插件与原生交互/iOS插件引入pod库.md
+│   │   ├── ./Dart_Flutter/插件与原生交互/iOS端Swift与Flutter插件交互.swift
+│   │   ├── ./Dart_Flutter/插件与原生交互/创建插件.sh
 │   │   └── ./Dart_Flutter/插件与原生交互/插件建立与原生的通知渠道.dart
 │   ├── ./Dart_Flutter/文件读写.dart
 │   ├── ./Dart_Flutter/新建页面.dart
@@ -912,6 +915,7 @@
 │   ├── ./ShellScript/批量序号缓存下载文件.sh
 │   ├── ./ShellScript/文件名改为序号并将原文件名加入到文本文档中.sh
 │   ├── ./ShellScript/显示文件大小.sh
+│   ├── ./ShellScript/替换字符串.sh
 │   ├── ./ShellScript/查找几天前的文件.sh
 │   ├── ./ShellScript/查找文件.sh
 │   ├── ./ShellScript/根据MD5文件批量校验MD5.sh
@@ -972,6 +976,7 @@
 │   ├── ./ShellScript_Linux/exit退出会话.sh
 │   ├── ./ShellScript_Linux/fail2ban-centos7.sh
 │   ├── ./ShellScript_Linux/fail2ban.sh
+│   ├── ./ShellScript_Linux/find批量处理搜索结果.sh
 │   ├── ./ShellScript_Linux/inotifywait监控文件夹变化并采取操作.sh
 │   ├── ./ShellScript_Linux/letsencrypt泛域名证书.sh
 │   ├── ./ShellScript_Linux/letsencrypt自动更新和同步阿里云CDN.sh
@@ -1483,4 +1488,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1406 files
+77 directories, 1411 files
