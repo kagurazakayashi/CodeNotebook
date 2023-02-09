@@ -15,9 +15,9 @@ xz -k -d a.xz
 -k: 保留原文件
 # 多文件压成 tar.xz
 tar -Jcf dir.tar.xz dir
-XZ="-9 -T 0" tar -Jcf dir.tar.xz dir
-tar -c dir | xz -z -9 -e -T 48 -v >dir.tar.xz
-tar -c dir | nice -n 19 xz -z -9 -e -T 48 -v >dir.tar.xz
+XZ="-9 -e -T 0 -v" tar -Jcf dir.tar.xz dir
+tar -c dir | xz -z -9 -e -T 0 -v >dir.tar.xz
+tar -c dir | nice -n 19 xz -z -9 -e -T 0 -v >dir.tar.xz
 # 解压 tar.xz
 tar -Jxf dir.tar.xz
 # 查看 CPU 核心数
@@ -25,6 +25,10 @@ more /proc/cpuinfo |grep "physical id"|uniq|wc -l
 
 # 最低优先级跑压缩
 nice -n 19 ...
+
+# 创建 .iso
+mkisofs -l -o ISO文件名字.iso 要打包的文件夹
+genisoimage -l -o ISO文件名字.iso 要打包的文件夹
 
 # 创建 tar.gz
 tar -czf all.tar.gz *.jpg
