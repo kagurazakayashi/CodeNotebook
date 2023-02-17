@@ -1,11 +1,11 @@
 # git指定日期 git 提交时指定提交时间
 
 # Windows
-set GIT_COMMITTER_DATE="2022-05-23T19:20:51"
+set GIT_COMMITTER_DATE="2022-05-23T18:20:51"
 git commit --date=%GIT_COMMITTER_DATE% -m ""
 
 # Linux
-GIT_COMMITTER_DATE="2022-05-23T19:20:51"
+GIT_COMMITTER_DATE="2022-05-23T18:20:51"
 git commit --date="$GIT_COMMITTER_DATE" -m ""
 
 # 2022-05-23T19:20:51处填写需要指定的提交日期。
