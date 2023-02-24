@@ -1,2 +1,2 @@
-for /F %%i in ('ndatetime.exe') do ( set datetime=%%i)
-echo %datetime%
+FOR /F %%i IN ('ndatetime.exe') DO ( SET datetime=%%i)
+ECHO %datetime%
