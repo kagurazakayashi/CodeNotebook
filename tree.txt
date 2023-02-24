@@ -3,15 +3,16 @@
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
 │   └── ./Algorithm/邻接表表示的无向图每一个连通分量的结点.c
-├── ./Android
-│   ├── ./Android/Gradle打包.sh
-│   ├── ./Android/INSTALL_FAILED_TEST_ONLY.sh
-│   ├── ./Android/ShizukuManager.sh
-│   ├── ./Android/adb命令.sh
-│   ├── ./Android/adb文件双击安装.bat
-│   ├── ./Android/mumu模拟器连接调试.bat
-│   ├── ./Android/使用adb命令取出手机中已安装的apk.sh
-│   └── ./Android/导出游戏数据包.sh
+├── ./Android_Java
+│   ├── ./Android_Java/Gradle打包.sh
+│   ├── ./Android_Java/INSTALL_FAILED_TEST_ONLY.sh
+│   ├── ./Android_Java/ShizukuManager.sh
+│   ├── ./Android_Java/adb命令.sh
+│   ├── ./Android_Java/adb文件双击安装.bat
+│   ├── ./Android_Java/mumu模拟器连接调试.bat
+│   ├── ./Android_Java/主线程Message接收子线程传来的消息.java
+│   ├── ./Android_Java/使用adb命令取出手机中已安装的apk.sh
+│   └── ./Android_Java/导出游戏数据包.sh
 ├── ./Android_Kotlin
 │   ├── ./Android_Kotlin/List.kt
 │   ├── ./Android_Kotlin/Map字典.kt
@@ -57,6 +58,7 @@
 │   ├── ./Batch/创建和显示文本文件.bat
 │   ├── ./Batch/创建随机密码，参数①长度②数量.bat
 │   ├── ./Batch/命令行参数.bat
+│   ├── ./Batch/字符串比对.bat
 │   ├── ./Batch/实现su.bat
 │   ├── ./Batch/将命令结果赋值给变量.bat
 │   ├── ./Batch/循环.bat
@@ -74,6 +76,7 @@
 │   ├── ./Batch/清除字体缓存.bat
 │   ├── ./Batch/环境变量.bat
 │   ├── ./Batch/端口映射.bat
+│   ├── ./Batch/读取文本到变量.bat
 │   ├── ./Batch/过滤掉扩展名.bat
 │   ├── ./Batch/遍历文件.bat
 │   ├── ./Batch/遍历文件夹.bat
@@ -140,6 +143,7 @@
 │   ├── ./Batch_Windows/手动安装CAB和MSU格式更新包.md
 │   ├── ./Batch_Windows/文件是否存在.bat
 │   ├── ./Batch_Windows/桌面显示IE图标.reg
+│   ├── ./Batch_Windows/每天第一次开机时重启.bat
 │   ├── ./Batch_Windows/清理Adobe.bat
 │   ├── ./Batch_Windows/磁盘碎片整理.bat
 │   ├── ./Batch_Windows/禁用文件管理左侧快速访问.reg
@@ -1490,4 +1494,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1413 files
+77 directories, 1417 files
