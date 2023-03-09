@@ -1,9 +1,13 @@
 # 压缩解压缩
 
 # 解 tar
-tar -xf dir.tar
+tar -xvf dir.tar
 # 创建 tar
-tar -cf dir.tar dir
+tar -cvf dir.tar dir
+# -c  将多个文件或目录进行打包。
+# -A  追加 tar 文件到归档文件。
+# -f 包名  指定包的文件名。包的扩展名是用来给管理员识别格式的，所以一定要正确指定扩展名；
+# -v  显示打包文件过程；
 
 # 单文件压成 xz
 xz -k -9 -T 0 -z a.tar
@@ -14,12 +18,12 @@ xz -k -9 -T 0 -z a.tar
 xz -k -d a.xz
 -k: 保留原文件
 # 多文件压成 tar.xz
-tar -Jcf dir.tar.xz dir
-XZ="-9 -e -T 0 -v" tar -Jcf dir.tar.xz dir
-tar -c dir | xz -z -9 -e -T 0 -v >dir.tar.xz
-tar -c dir | nice -n 19 xz -z -9 -e -T 0 -v >dir.tar.xz
+tar -Jcvf dir.tar.xz dir
+XZ="-9 -e -T 0 -v" tar -Jcvf dir.tar.xz dir
+tar -cv dir | xz -z -9 -e -T 0 -v >dir.tar.xz
+tar -cv dir | nice -n 19 xz -z -9 -e -T 0 -v >dir.tar.xz
 # 解压 tar.xz
-tar -Jxf dir.tar.xz
+tar -Jxvf dir.tar.xz
 # 查看 CPU 核心数
 more /proc/cpuinfo |grep "physical id"|uniq|wc -l
 
@@ -31,7 +35,7 @@ mkisofs -l -o ISO文件名字.iso 要打包的文件夹
 genisoimage -l -o ISO文件名字.iso 要打包的文件夹
 
 # 创建 tar.gz
-tar -czf all.tar.gz *.jpg
+tar -czvf all.tar.gz *.jpg
 # 解压 tar.gz
 tar -zxvf ×××.tar.gz
 
@@ -41,14 +45,14 @@ gzip -c -9 a.txt -v > a.txt.gz
 gzip -d a.txt.gz
 
 # 创建 tar.bz2
-tar -cjf all.tar.bz2 *.jpg
+tar -cjvf all.tar.bz2 *.jpg
 # 解压 tar.bz2
 tar -jxvf ×××.tar.bz2
 
 # 创建 tar.Z
-tar -cZf all.tar.Z *.jpg
+tar -cZvf all.tar.Z *.jpg
 # 解压 tar.Z
-tar -xZf all.tar.Z
+tar -xZvf all.tar.Z
 
 # 创建 zip
 zip all.zip *.jpg
