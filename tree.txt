@@ -73,7 +73,6 @@
 │   ├── ./Batch/检查是否有管理员权限.bat
 │   ├── ./Batch/检查是否有管理员权限，否则以管理员运行.bat
 │   ├── ./Batch/清空某个文件夹里的所有内容.bat
-│   ├── ./Batch/清除字体缓存.bat
 │   ├── ./Batch/环境变量.bat
 │   ├── ./Batch/端口映射.bat
 │   ├── ./Batch/读取文本到变量.bat
@@ -111,6 +110,7 @@
 │   ├── ./Batch_Windows/任务栏时间显示秒钟.reg
 │   ├── ./Batch_Windows/使用旧版的图片查看器.reg
 │   ├── ./Batch_Windows/修复EXE文件关联.reg
+│   ├── ./Batch_Windows/修复开始菜单.ps1
 │   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
 │   ├── ./Batch_Windows/修改用户文件夹.txt
 │   ├── ./Batch_Windows/共享文件.bat
@@ -145,6 +145,7 @@
 │   ├── ./Batch_Windows/桌面显示IE图标.reg
 │   ├── ./Batch_Windows/每天第一次开机时重启.bat
 │   ├── ./Batch_Windows/清理Adobe.bat
+│   ├── ./Batch_Windows/清除字体缓存.bat
 │   ├── ./Batch_Windows/磁盘碎片整理.bat
 │   ├── ./Batch_Windows/禁用文件管理左侧快速访问.reg
 │   ├── ./Batch_Windows/移动Outlook数据文件.bat
@@ -426,6 +427,7 @@
 │   ├── ./Dart_Flutter/获取应用版本号.dart
 │   ├── ./Dart_Flutter/获取设备信息.dart
 │   ├── ./Dart_Flutter/获得窗口尺寸.dart
+│   ├── ./Dart_Flutter/错误处理.sh
 │   ├── ./Dart_Flutter/隐藏右上角debug.dart
 │   ├── ./Dart_Flutter/页面布局Container.dart
 │   └── ./Dart_Flutter/预设文字样式.dart
@@ -1233,8 +1235,8 @@
 │   ├── ./Tools/扒京东商品图片和标题.js
 │   ├── ./Tools/检查网站可访问性自动重启服务.sh
 │   ├── ./Tools/清理文件夹信息文件
-│   │   ├── ./Tools/清理文件夹信息文件/清理文件夹信息文件.bat
-│   │   └── ./Tools/清理文件夹信息文件/清理文件夹信息文件.sh
+│   │   ├── ./Tools/清理文件夹信息文件/清理媒体文件缓存临时文件.bat
+│   │   └── ./Tools/清理文件夹信息文件/清理媒体文件缓存临时文件.sh
 │   ├── ./Tools/用OpenCC一键转换剪贴板文本
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.bat
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.mac.sh
@@ -1494,4 +1496,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1417 files
+77 directories, 1419 files
