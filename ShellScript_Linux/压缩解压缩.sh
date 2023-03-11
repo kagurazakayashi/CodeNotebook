@@ -19,7 +19,7 @@ xz -k -d a.xz
 -k: 保留原文件
 # 多文件压成 tar.xz
 tar -Jcvf dir.tar.xz dir
-XZ="-9 -e -T 0 -v" tar -Jcvf dir.tar.xz dir
+XZ="-9 -e -T 0" tar -Jcvf dir.tar.xz dir
 tar -cv dir | xz -z -9 -e -T 0 -v >dir.tar.xz
 tar -cv dir | nice -n 19 xz -z -9 -e -T 0 -v >dir.tar.xz
 # 解压 tar.xz
@@ -122,6 +122,9 @@ unrar e all.rar
 # -x[r[-| 0]]{@listfile |！通配符}：排除文件名
 # -y：假设所有查询都是
 
+# 排除系统图片缓存文件
+7z a -mx9 photo.7z photo/*.ARW '-xr!._*' '-xr!.DS_Store' '-xr!.Thumbs.db'
+
 # 最大压缩
 7za a "yashi.7z" "yashidir" -mx=9 -ms=64g -mf -mhc -mhcf -m0=LZMA2:a=2:d=31:fb=1024 -mmt -r
 # -t7z -- 压缩文件的格式为7z
@@ -136,7 +139,6 @@ unrar e all.rar
 # -- 第一个备选压缩算法为LZMA，压缩等级为最大压缩，LZMA算法使用的字典大小为25(2MB的5次方)32MB，算法的匹配器为bt4b(所需要内存为d×9.5 + 34 MB)，压缩算法的紧凑字节为最大模式的64字节。
 # -mmt -- 开启多线程模式。
 # -r -- 递归到所有的子目录。
-
 
 # 批量解压每个文件夹里的 gz
 find /mnt/d/0 -name "*.gz"|xargs -i gzip -d {}
