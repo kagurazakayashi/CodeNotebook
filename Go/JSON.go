@@ -26,7 +26,7 @@ func main() {
     data, _ := json.Marshal(&p)
     fmt.Println(string(data))
 
-    // 反序列化
+    // 反序列化1
     var p1 personInfo1
     err := json.Unmarshal([]byte(data), &p1) // 貌似这种解析方法需要提前知道 json 结构
     if err != nil {
@@ -36,7 +36,17 @@ func main() {
     }
     fmt.Printf("%+v\n", p1)
 
-    // 反序列化
+    // 反序列化2
+    var p2 map[string]string
+    err := json.Unmarshal([]byte(data), &p2) // 貌似这种解析方法需要提前知道 json 结构
+    if err != nil {
+        fmt.Println("err: ", err)
+    } else {
+        fmt.Printf("name=%s, c=%s, email=%s\n", p2["Name"], p2["C"], p2["Email"])
+    }
+    fmt.Printf("%+v\n", p2)
+
+    // 反序列化3
     res, err := simplejson.NewJson([]byte(data))
     if err != nil {
         fmt.Println("err: ", err)
