@@ -905,6 +905,7 @@
 │   └── ./Ruby/遍历并保存文件列表.rb
 ├── ./ShellScript
 │   ├── ./ShellScript/echo.sh
+│   ├── ./ShellScript/for_f_in空格文件名问题.sh
 │   ├── ./ShellScript/if.txt
 │   ├── ./ShellScript/if比较.sh
 │   ├── ./ShellScript/ls.sh
@@ -915,6 +916,8 @@
 │   ├── ./ShellScript/变量和取消变量.sh
 │   ├── ./ShellScript/命令行参数.sh
 │   ├── ./ShellScript/命令行对话框.sh
+│   ├── ./ShellScript/大小写转换.sh
+│   ├── ./ShellScript/字符串按分隔符取值.sh
 │   ├── ./ShellScript/字符串比较.sh
 │   ├── ./ShellScript/字符串转数组.sh
 │   ├── ./ShellScript/将命令结果赋值给变量.sh
@@ -925,6 +928,7 @@
 │   ├── ./ShellScript/忽略错误输出.sh
 │   ├── ./ShellScript/执行脚本并输出日志文件.sh
 │   ├── ./ShellScript/批量序号缓存下载文件.sh
+│   ├── ./ShellScript/收集所有指定文件可能重名.sh
 │   ├── ./ShellScript/文件名改为序号并将原文件名加入到文本文档中.sh
 │   ├── ./ShellScript/显示文件大小.sh
 │   ├── ./ShellScript/替换字符串.sh
@@ -1501,4 +1505,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-77 directories, 1424 files
+77 directories, 1428 files
