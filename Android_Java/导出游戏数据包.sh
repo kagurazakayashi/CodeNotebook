@@ -38,9 +38,11 @@ adb pull /data/data/com.papegames.nn4.tw
 
 # 导入
 adb push com.papegames.nn4.tw /data/data/
-# mumu模拟器
+
+# 模拟器
 win版
-adb connect 127.0.0.1:7555
+adb connect 127.0.0.1:7555 # mumu
+adb connect 127.0.0.1:5555 # 雷电
 adb shell
 mac版
 adb kill-server && adb server

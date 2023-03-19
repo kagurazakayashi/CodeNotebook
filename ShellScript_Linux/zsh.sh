@@ -62,3 +62,10 @@ apt install locales -y
 # .zshrc添加
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
+
+
+# 代码高亮和自动补全插件
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+vim ~/.zshrc
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
