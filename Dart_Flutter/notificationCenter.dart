@@ -12,20 +12,18 @@ class NotificationCenter {
   }
 
   static NotificationCenter _getInstance() {
-    if (_instance == null) {
-      _instance = new NotificationCenter._internal();
-    }
+    _instance ??= NotificationCenter._internal();
     return _instance!;
   }
 
   //创建Map来记录名称
 
-  Map<String, dynamic> postNameMap = Map<String, dynamic>();
+  Map<String, dynamic> postNameMap = <String, dynamic>{};
 
-  Map<String, GetObject> getObject = Map<String, GetObject>();
+  Map<String, GetObject> getObject = <String, GetObject>{};
 
   //添加监听者方法
-  addObserver(String postName, object(dynamic object)) {
+  addObserver(String postName, Function(dynamic object) object) {
     postNameMap[postName] = null;
     getObject[postName] = object;
   }
@@ -35,7 +33,6 @@ class NotificationCenter {
     //检索Map是否含有postName
     if (postNameMap.containsKey(postName)) {
       postNameMap[postName] = object;
-      // = object;
       getObject[postName]!(postNameMap[postName]);
     }
   }
