@@ -3,16 +3,18 @@
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
 │   └── ./Algorithm/邻接表表示的无向图每一个连通分量的结点.c
+├── ./Android
+│   ├── ./Android/Gradle打包.sh
+│   ├── ./Android/INSTALL_FAILED_TEST_ONLY.sh
+│   ├── ./Android/ShizukuManager.sh
+│   ├── ./Android/adb命令.sh
+│   ├── ./Android/adb文件双击安装.bat
+│   ├── ./Android/使用adb命令取出手机中已安装的apk.sh
+│   ├── ./Android/备份手机.sh
+│   ├── ./Android/导出游戏数据包.sh
+│   └── ./Android/模拟器连接调试.sh
 ├── ./Android_Java
-│   ├── ./Android_Java/Gradle打包.sh
-│   ├── ./Android_Java/INSTALL_FAILED_TEST_ONLY.sh
-│   ├── ./Android_Java/ShizukuManager.sh
-│   ├── ./Android_Java/adb命令.sh
-│   ├── ./Android_Java/adb文件双击安装.bat
-│   ├── ./Android_Java/主线程Message接收子线程传来的消息.java
-│   ├── ./Android_Java/使用adb命令取出手机中已安装的apk.sh
-│   ├── ./Android_Java/导出游戏数据包.sh
-│   └── ./Android_Java/模拟器连接调试.sh
+│   └── ./Android_Java/主线程Message接收子线程传来的消息.java
 ├── ./Android_Kotlin
 │   ├── ./Android_Kotlin/List.kt
 │   ├── ./Android_Kotlin/Map字典.kt
@@ -157,10 +159,12 @@
 │   ├── ./Batch_Windows/自动登录选项消失.reg
 │   ├── ./Batch_Windows/蓝屏允许手动触发.reg
 │   ├── ./Batch_Windows/蓝屏显示详细信息.reg
+│   ├── ./Batch_Windows/蓝牙文件传送.lnk
 │   ├── ./Batch_Windows/虚拟内存.bat
 │   ├── ./Batch_Windows/解禁注册表编辑器.reg
 │   ├── ./Batch_Windows/还原文件权限.bat
-│   └── ./Batch_Windows/重置winsock.bat
+│   ├── ./Batch_Windows/重置winsock.bat
+│   └── ./Batch_Windows/高级系统设置.lnk
 ├── ./C
 │   ├── ./C/ASCII码.c
 │   ├── ./C/ASCII码表.md
@@ -1515,4 +1519,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-80 directories, 1435 files
+81 directories, 1438 files
