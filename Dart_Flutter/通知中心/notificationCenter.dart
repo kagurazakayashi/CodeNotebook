@@ -16,28 +16,28 @@ class NotificationCenter {
     return _instance!;
   }
 
-  //创建Map来记录名称
-
+  /// 记录名称
   Map<String, dynamic> postNameMap = <String, dynamic>{};
 
-  Map<String, GetObject> getObject = <String, GetObject>{};
+  /// 记录方法
+  final Map<String, GetObject> _getObject = <String, GetObject>{};
 
-  //添加监听者方法
+  /// 添加监听者方法
   addObserver(String postName, Function(dynamic object) object) {
     postNameMap[postName] = null;
-    getObject[postName] = object;
+    _getObject[postName] = object;
   }
 
-  //发送通知传值
+  /// 发送通知传值
   postNotification(String postName, dynamic object) {
     //检索Map是否含有postName
     if (postNameMap.containsKey(postName)) {
       postNameMap[postName] = object;
-      getObject[postName]!(postNameMap[postName]);
+      _getObject[postName]!(postNameMap[postName]);
     }
   }
 
-  //移除通知
+  /// 移除通知
   removeNotification(String postName) {
     if (postNameMap.containsKey(postName)) {
       postNameMap.remove(postName);

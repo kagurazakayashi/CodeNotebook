@@ -1,5 +1,3 @@
-// import 'dart:ffi';
-
 typedef GetObject = Function(dynamic object);
 
 class EasyLinkNotification {
@@ -19,32 +17,31 @@ class EasyLinkNotification {
     return _instance;
   }
 
-  //创建Map来记录名称
-  // ignore: prefer_collection_literals
+  /// 记录名称
   Map<String, dynamic> postNameMap = Map<String, dynamic>();
 
-  GetObject getObject;
+  /// 记录方法
+  final Map<String, GetObject> _getObject = <String, GetObject>{};
 
-  //添加监听者方法
+  /// 添加监听者方法
   void addObserver(String postName, object(dynamic object)) {
     postNameMap[postName] = null;
-    getObject = object;
+    _getObject[postName] = object;
   }
 
-  //发送通知传值
+  /// 发送通知传值
   void postNotification(String postName, dynamic object) {
     //检索Map是否含有postName
     if (postNameMap.containsKey(postName)) {
 
       postNameMap[postName] = object;
-      getObject(postNameMap[postName]);
+      _getObject[postName](postNameMap[postName]);
     }
 
   }
-  //移除通知
+  /// 移除通知
   void removeNotification(String postName) {
      if (postNameMap.containsKey(postName)) {
-
         postNameMap.remove(postName);
      }
   }
