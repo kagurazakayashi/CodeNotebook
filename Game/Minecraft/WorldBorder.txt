@@ -1,0 +1,148 @@
+https://www.spigotmc.org/resources/worldborder-1-15.80466/
+
+
+键：主要命令 <必需值> [可选值]
+请注意，如果从服务器控制台运行，下面的命令实际上需要world如果您作为玩家在游戏中运行，则可选如果未指定，则默认为您所在的世界。/wb - 列出可用的命令，如下所示（显示帮助）。权限：worldborder.help /wb set <radiusX> [radiusZ] - 设置指定半径（以块为单位）的世界边界，以您为中心。只能由游戏内玩家运行。如果未指定radiusZradiusX
+
+
+值将用于两者。
+/wb world set <radiusX> [radiusZ] <x> <z> - 使用指定中心的 x 和 z 坐标设置边界。
+/wb world set <radiusX> [radiusZ] spawn - 设置以世界出生点为中心的边界。
+/wb set <radiusX> [radiusZ] player <playername> -为他们当前所在的世界设置以指定玩家为中心的边框。
+/wb world setcorners <x1> <z1> <x2> <z2>- 根据位置 (x1, z1) 到 (x2, z2) 的角坐标设置边框。
+
+权限： worldborder.set （以上所有命令）
+
+
+/wb world radius <radiusX> [radiusZ] - 改变这个世界的边界半径。世界需要已经设置了边界，因为 x 和 z 值没有被修改。如果未指定radiusZ ，则radiusX值将用于两者。可以在radiusX或radiusZ的开头添加“ + ”或“ - ” ，使当前半径增加或减少指定量，例如“+100”
+
+权限： worldborder.radius
+
+
+/wb world clear - 移除这个世界的边界。
+/wb clear all - 移除所有世界的所有边界。
+
+权限： worldborder.clear （以上两个命令）
+
+
+/wb list - 显示所有世界的完整边界信息。
+
+权限： worldborder.list
+
+
+/wb shape <elliptic|round|rectangular|square> - 将主要边框形状设置为椭圆/圆形（默认）或矩形/方形。请注意，“椭圆形”和“圆形”在这里可以互换，“矩形”和“方形”也是如此。
+
+许可： 世界边界。
+
+
+<distance> - 当玩家越过边界时将玩家移回边界内的距离。
+
+权限： worldborder.knockback
+
+
+/wb world fill [freq] [pad] [force] - 为这个世界生成所有缺失的区块，一直到边界。freq值是每秒尝试检查/生成块的次数（默认为 20）。对于有玩家的服务器，您可能应该坚持使用默认值或什至更低的值。如果您只想让它尽快完成，请尝试 1000 左右。pad值是要在边界之外添加多少缓冲区（默认为 208，应防止玩家生成更多块）。为力指定“真”如果你想强制加载所有世界块而不是自动跳过已经完全生成的块，请设置该值。阅读下文了解更多信息。
+
+权限： worldborder.fill
+
+
+/wb world trim [freq] [pad] - 为这个世界剪掉边界以外的额外块。freq值是每秒尝试检查的块数（默认 5000）。pad值是在你的边界之外保留多少缓冲区（默认 208，应该防止玩家生成更多块）。阅读下文了解更多信息。
+
+权限： worldborder.trim
+
+
+/wb bypass [player] [on|off]- 为玩家启用/禁用旁路模式，允许他们越过边界而不会被击退。启用旁路模式的人员列表在服务器重启之间存储。如果在游戏中运行，指定的 [player] 名称是可选的，如果未指定则默认为运行命令的玩家，但如果从控制台运行则为必需。[on|off] 是可选的，如果您不指定“on”或“off”，将简单地切换。
+
+权限： worldborder.bypass
+
+
+/wb bypasslist - 输出所有启用边界旁路的玩家列表。
+
+权限： worldborder.bypasslist
+
+
+/wb fillautosave <seconds>- 设置填充过程中自动保存世界的时间间隔。默认 30 秒，设置为 0 以禁用自动世界保存（不推荐）。
+
+权限： worldborder.fillautosave
+
+
+/wb wshape world <elliptic|round|rectangular|square|default> - 仅覆盖这个世界的形状。世界需要已经设置了边界。其他世界使用的默认形状（通过/wb shape设置）不会因此而改变。请注意，“椭圆形”和“圆形”在这里可以互换，“矩形”和“方形”也是如此。
+
+权限： worldborder.wshape
+
+
+/wb wrap world <on|off>- 切换指定世界的边框环绕（默认关闭）。这将使那个世界中的边界过境点将玩家带到边界的另一边，而不是仅仅将他们击退。
+
+权限： worldborder.wrap
+
+
+/wb getmsg - 显示向过境人员显示的消息。
+
+权限： worldborder.getmsg
+
+
+/wb setmsg <message> - 更改边框消息。
+
+权限： worldborder.setmsg
+
+
+/wb delay <amount> - 在边界检查之间等待的服务器滴答数，默认为 5 滴答（250 毫秒）；每个服务器滴答大约是 50 毫秒。
+
+权限： worldborder.delay
+
+
+/wb 嗖嗖 <on|off> - 打开或关闭击退“嗖”的效果。
+
+权限： worldborder.whoosh
+
+
+/wb portal <on|off> - 打开或关闭门户重定向（默认打开）。确保门户网站是在世界边界内制造/定向的。如果您遇到 Multiverse 无法创建门户或任何其他插件不兼容的问题，通常只需要将其关闭。
+
+权限： worldborder.portal
+
+
+/wb denypearl <on|off> - 取消抛出边界的末影珍珠的切换选项，而不是仅仅调整它们的目标位置。（默认开启）
+
+权限： worldborder.denypearl
+
+
+/wb dynmap <- 启用/禁用 DynMap 集成。这将在 DynMap 中显示您的边界，如果您对边界有任何更改，它们应该几乎立即更新。默认为真。
+
+权限： worldborder.dynmap
+
+
+/wb dynmapmsg <text> - DynMap 中显示的边界将有一个带有此文本的标签。默认为“世界的边界”。
+
+权限： worldborder.dynmapmsg
+
+
+/wb remount <数量>- 在玩家从边界被击退后，在将玩家重新安装到他们的车辆之前设置服务器滴答的延迟。默认为 0，这会禁用重新安装并将车辆留在玩家旁边。在公共服务器上，此值不应设置为低于 10（以前的默认值）的值，因为这会导致客户端故障。据报道，即使是以前的默认值 10 在某些服务器上也很少出现故障，这就是为什么重新挂载现在默认为禁用的原因。
+
+权限： worldborder.remount
+
+
+/wb reload - 从 config.yml 重新加载数据。通常永远不需要，但这里以防万一。
+
+权限： worldborder.reload
+
+
+/wb debug <on|off>- 打开或关闭控制台调试输出。通常也永远不需要。
+
+权限： worldborder.debug
+
+
+注意事项：
+
+/wb命令是主命令/wborder的别名，因此除非另一个插件干扰，否则您可以互换使用/wb和/wborder。在控制台中，您当然需要以任何一种方式取消“/”。
+如果作为玩家你遗漏了world，它将使用你所在的当前世界；然而，控制台需要world 。
+<radiusX> 、<radiusZ>和<amount>值必须是整数（整数），但<x>、<z>和<distance>可以有小数点（它们是双精度数）。
+边界半径是边界在每个方向上距中心（x 和 z）的距离，因此例如 radiusX 为 600 和 radiusZ 为 300 将覆盖 1200x600 的区域。
+示例：
+
+/wb set 2000 - 为当前世界设置一个半径为 2000 的边界（总面积 4000x4000 块），以你所站的位置为中心。
+/wb set 2000 1000 - 同上，但 X 半径为 2000，Z 半径为 1000（总面积 4000x2000 块），使其在 X 轴上比 Z 轴更宽。
+/wb netherworld set 250 -12.5 47.3 - 为名为“netherworld”的世界设置一个边界，半径为 250（区域 500x500），中心为 -12.5 (X) x 47.3 (Z)。
+/wb shape round - 将所有世界的主要边框形状设置为圆形/椭圆形。
+/wb wshape square - 将当前世界的边界形状设置为方形/矩形，不影响其他世界使用的默认形状。
+
+
+使用您选择的权限插件，您还可以使用权限worldborder.*将所有插件命令授予组或玩家。无论您是否使用插件来获得权限，Ops 和有权访问服务器控制台的人都将能够使用所有命令。

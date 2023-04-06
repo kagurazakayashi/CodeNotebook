@@ -1,0 +1,130 @@
+https://www.spigotmc.org/resources/dynmap%C2%AE.274/
+
+https://github.com/webbukkit/dynmap/wiki/Commands
+
+命令
+隐藏和显示玩家
+/dynmap hide：从地图上隐藏玩家。
+/dynmap hide thedude：从地图上隐藏玩家thedude 。
+/dynmap show：再次在地图上显示玩家。
+/dynmap show thedude：再次在地图上显示玩家thedude 。
+渲染
+/dynmap render：渲染您所站地图的一个图块。
+/dynmap fullrender：尝试从您的位置（或从该世界的中心，如果从服务器控制台发出）渲染整个世界的所有地图。
+/dynmap fullrender world：尝试渲染以world该世界的中心命名的所有世界地图。
+/dynmap fullrender world:surface：尝试渲染以世界中心命名的surface世界命名的地图。world
+/dynmap fullrender resume world：恢复世界所有地图的渲染。跳过已经渲染的图块。
+/dynmap fullrender resume world:<map>: 继续渲染世界地图。跳过已经渲染的图块。
+/dynmap radiusrender radius：尝试渲染至少一个radius方块区域，以您当前的位置为中心。
+/dynmap radiusrender radius mapname：尝试渲染至少一个radius方块区域，以您当前地图“mapname”的位置为中心
+/dynmap radiusrender world x z radius：尝试渲染至少一个radius方块区域，以世界“world”上的“x,64,z”为中心。
+/dynmap updaterender：尝试为所有地图渲染需要更新的图块，从当前位置开始。在地图边缘和不需要更新的图块处停止。
+/dynmap updaterender mapname：尝试为给定地图渲染需要更新的图块，从当前位置开始。在地图边缘和不需要更新的图块处停止。
+/dynmap updaterender world x z：尝试为所有地图渲染需要更新的图块，从给定世界的给定位置 <x,z> 开始。在地图边缘和不需要更新的图块处停止。
+/dynmap updaterender world x z mapname：尝试渲染需要更新的图块，从给定世界上给定地图的给定位置 <x,z> 开始。在地图边缘和不需要更新的图块处停止。
+/dynmap cancelrender world：取消给定世界上任何活动的全渲染或半径渲染。
+/dynmap purgequeue: 清除瓦片更新队列
+/dynmap purgeworld world：清除世界“世界”的所有地图文件
+/dynmap purgemap world map: 清除世界 'world' 上地图 'map' 的所有地图文件
+/dynmap pause all：暂停所有地图渲染（更新和完整/半径渲染）
+/dynmap pause none: 恢复所有地图渲染
+/dynmap quiet：切换渲染消息
+统计数据
+/dynmap stats：显示所有世界上所有地图的渲染统计信息。
+/dynmap stats world：显示世界世界地图的渲染统计数据。
+/dynmap triggerstats：显示所有世界的触发渲染统计信息。
+/dynmap resetstats：重置所有世界上所有地图的渲染统计数据。
+/dynmap resetstats world：重置世界世界地图的渲染统计数据。
+标记
+只有启用了标记组件（需要 v0.22 或更高版本），这些命令才可用。
+
+/dmarker add <label> icon:<icon> set:<set-id>: 在玩家的当前位置添加一个新标记，带有给定的标签和可选的图标以及可选的标记集
+/dmarker add id:<id> <label> icon:<icon> set:<set-id>: 在玩家的当前位置添加一个新标记，带有给定的 ID、给定的标签和可选的图标和可选的标记集
+/dmarker add id:<id> <label> icon:<icon> set:<set-id> x:<x-coord> y:<y-coord> z:<z-coord> world:<Worldname>: 在给定位置添加一个新标记，具有给定 ID、给定标签和可选图标和可选标记集
+/dmarker movehere <label>：更新与给定标签匹配的第一个标记的位置以匹配当前玩家的位置
+/dmarker movehere id:<id>: 更新具有给定 ID 的标记的位置以匹配当前玩家的位置
+/dmarker update <label> icon:<newicon> newlabel:<newlabel>：更新与给定标签匹配的第一个标记的图标和/或标签
+/dmarker update id:<id> icon:<newicon> newlabel:<newlabel>: 使用给定的 ID 更新标记的图标和/或标签
+/dmarker delete <label>：删除与给定标签匹配的第一个标记
+/dmarker delete id:<id>: 删除具有给定 ID 的标记
+/dmarker list：列出默认标记集中所有已定义标记的属性
+/dmarker list set:<set-id>：列出给定标记集中所有已定义标记的属性
+/dmarker icons：列出为标记使用而定义的所有图标的属性
+/dmarker addset <label> hide:<hide-by-def> prio:<priority> minzoom:<minzoom>：添加具有给定标签的新标记集（ID =标签）
+/dmarker addset id:<id> <label> hide:<hide-by-def> prio:<priority> minzoom:<minzoom>: 添加具有给定 ID 和标签的新标记集
+/dmarker updateset <label> newlabel:<new-label> hide:<hide-by-def> prio:<priority> minzoom:<minzoom>: 使用给定标签更新标记集 (ID = label)
+/dmarker updateset id:<id> newlabel:<new-label> hide:<hide-by-def> prio:<priority> minzoom:<minzoom>: 使用给定 ID 更新标记集
+/dmarker deleteset <label>：删除具有给定标签的标记集
+/dmarker deleteset id:<id>: 删除具有给定 ID 的标记集
+/dmarker listsets: 列出所有标记
+/dmarker addicon id:<id> <label> file:"filename": 安装新图标，给定 ID 和标签，并使用给定文件（路径相对于 MC 服务器目录处理，文件内容被复制）。
+/dmarker updateicon id:<id> newlabel:<label> file:"filename"：更新图标，用提供的新值替换现有设置。
+/dmarker deleteicon id:<id>: 删除给定ID的图标
+/dmarker addcorner: 使用当前位置将角点添加到角点列表
+/dmarker addcorner <x> <y> <z> world：将给定世界上具有给定 x、y 和 z 坐标的角添加到角列表
+/dmarker clearcorners: 清除角列表
+/dmarker addarea <label>：使用角列表添加具有给定标签的新区域
+/dmarker addarea id:<id> <label>: 使用角列表添加具有给定 ID 的新区域
+/dmarker deletearea <label>: 删除给定标签的区域
+/dmarker deletearea id:<id> <label>: 删除给定ID的区域
+/dmarker listareas: 列出所有区域的详细信息
+/dmarker updatearea <label> <arg>:<value> ...：更新具有给定标签的区域的属性
+/dmarker updatearea <id> <arg>:<value> ...: 更新给定 ID 区域的属性
+/dmarker updatearea <id> label:<label> newlabel:<newlabel>：更新具有给定ID的区域的标记标签
+/dmarker addcircle <label>：使用角列表添加具有给定标签的新圆
+/dmarker addcircle id:<id> <label>：使用角列表添加具有给定 ID 的新圆
+/dmarker deletecircle <label>：删除具有给定标签的圆
+/dmarker deletecircle id:<id> <label>: 删除给定ID的圈子
+/dmarker listcircles: 列出所有圈子的详细信息
+/dmarker updatecircle <label> <arg>:<value> ...：使用给定标签更新圆的属性
+/dmarker updatecircle <id> <arg>:<value> ...: 更新具有给定 ID 的圆的属性
+/dmarker updatecircle <id> label:<label> newlabel:<newlabel>：更新具有给定 ID 的圆的标记标签
+/dmarker addline <label>：使用角列表添加具有给定标签的新行
+/dmarker addline id:<id> <label>: 使用角列表添加具有给定 ID 的新行
+/dmarker deleteline <label>: 删除给定标签的行
+/dmarker deleteline id:<id> <label>: 删除给定 ID 的行
+/dmarker listlines: 列出所有行的详细信息
+/dmarker updateline <label> <arg>:<value> ...：更新具有给定标签的行的属性
+/dmarker updateline id:<id> <arg>:<value> ...: 更新具有给定 ID 的行的属性
+/dmarker appenddesc id:<id> set:<set-id> desc:"<marker-description>"：将给定文本附加到标记上的描述字段
+/dmarker resetdesc id:<id> set:<set-id>: 重置标记的描述
+地图/世界配置命令
+/dmap worldlist：列出所有配置的世界（启用或禁用）
+/dmap worldset worldname enabled:<true|false>: 设置世界 'worldname' 启用或禁用
+/dmap worldset worldname center:<x/y/z|here|default>: 为世界 'worldname' 设置地图中心位置
+/dmap worldset worldname extrazoomout:<N>: 为世界 'worldname' 设置额外的缩小级别
+/dmap worldset worldname title:<label>: 为世界 'worldname' 设置标题
+/dmap worldset worldname sendposition:<true|false> sendhealth:<true|false>：为世界“worldname”设置发送位置和/或发送健康标志
+/dmap worldset worldname order:<N>: 将世界 'worldname' 的位置设置为世界列表中的第 N 个位置
+/dmap worldreset worldname: 将世界“worldname”重置为其默认模板配置
+/dmap worldreset worldname templatename: 将世界 'worldname' 重置为模板 'templatename' 配置
+/dmap maplist worldname: 列出世界“worldname”的所有地图的详细信息
+/dmap mapdelete worldname:mapname: 删除世界“worldname”的地图“mapname”
+/dmap mapadd worldname:mapname attrib:val attrib:val: 在世界“worldname”上创建新地图“mapname”，具有给定的属性（所有“mapset”参数都可用）
+/dmap mapset worldname:mapname order:<N>: 将地图 'mapname' 的位置设置为世界 'worldname' 地图列表中的第 N 个
+/dmap mapset worldname:mapname prefix:<prefix>: 为世界“worldname”的地图“mapname”设置文件名前缀
+/dmap mapset worldname:mapname title:<label>: 为世界“worldname”的地图“mapname”设置标题
+/dmap mapset worldname:mapname icon:<icon-file>: 为世界“worldname”的地图“mapname”设置图标文件名（相对于“webpath”目录）
+/dmap mapset worldname:mapname mapzoomin:<N>: 为世界“worldname”的地图“mapname”设置地图放大级别
+/dmap mapset worldname:mapname perspective:<perspective> shader:<shader> lighting:<lighting>: 为世界“worldname”的地图“mapname”设置透视图、着色器和/或光照
+/dmap mapset worldname:mapname img-format:<format>：设置世界“worldname”的地图“mapname”的图像格式（png、jpg、jpg-q90、jpq-q95 等）。
+/dmap perspectivelist：列出所有定义的透视图
+/dmap shaderlist: 列出所有定义的着色器
+/dmap lightinglist：列出所有定义的照明
+/dmap worldgetlimits world：这将返回一个世界的可见性和隐藏限制，作为具有可见或隐藏的“limittype”的单个列表，以及显示形状属性的设置
+/dmap worldaddlimit world corner1:<x1>/<z1> corner2:<x2>/<z2>：这会添加一个可见性限制，形状为矩形，从块坐标 x1、z1 到 x2、z2。您可以添加任意数量。
+/dmap worldaddlimit world corner1:<x1>/<z1> corner2:<x2>/<z2> limittype:hidden：这添加了一个隐藏的限制，形状为矩形，从块坐标 x1、z1 到 x2、z2。这是正常可见性限制的倒数。
+/dmap worldaddlimit world type:round center:<x>/<z> radius:<radius>：这增加了可见性限制，形状为圆形，以方块 x、z 为中心，半径为 。您可以添加任意数量。
+/dmap worldremovelimit world <index>：这将删除索引的限制（如列表中所示/dmap worldgetlimits）
+/dmap worldaddlimit world style:<air|stone|ocean>默认是'stone'，所以如果你希望隐藏的块被'clipped'（例如，如果你想要在世界边界之外生成的块，例如结构等发生的情况，请务必将其更改为'air' ), 最好改为'air'。
+各种各样的
+各种其他命令。
+
+/dynmap sendtoweb message ...: 仅向 Web UI 发送消息
+/dynmap ids-for-ip ip-address：列出从给定 IP 地址登录的玩家 ID（最近到最少）
+/dynmap ips-for-id player-id: 列出给定玩家 ID 用于连接服务器的 IP 地址
+/dynmap add-id-for-ip player-id ip-address：将给定的播放器 ID 添加到给定 IP 地址的已知 ID 列表的前面
+/dynmap del-id-for-ip player-id ip-address：从给定 IP 地址的已知 ID 列表中删除给定玩家 ID。
+/dynmap webregister: 开始注册自己的账号登录网页界面
+/dynmap webregister player-id: 开始注册其他用户的账号用于网页界面登录
+/dynmap url: 显示已配置的 publicURL（如果已定义）
