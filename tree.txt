@@ -165,6 +165,18 @@
 │   ├── ./Batch_Windows/还原文件权限.bat
 │   ├── ./Batch_Windows/重置winsock.bat
 │   └── ./Batch_Windows/高级系统设置.lnk
+├── ./Build
+│   ├── ./Build/编译ImageMagick.sh
+│   ├── ./Build/编译ffmpeg和vlc.sh
+│   ├── ./Build/编译ffmpeg，RH8可用.sh
+│   ├── ./Build/编译htop.sh
+│   ├── ./Build/编译iptux（Linux飞鸽）.sh
+│   ├── ./Build/编译mosquitto.sh
+│   ├── ./Build/编译openssl库.sh
+│   ├── ./Build/编译p7zip.sh
+│   ├── ./Build/编译php插件.sh
+│   ├── ./Build/编译privoxy.sh
+│   └── ./Build/编译redis库.sh
 ├── ./C
 │   ├── ./C/ASCII码.c
 │   ├── ./C/ASCII码表.md
@@ -263,8 +275,6 @@
 │   ├── ./C/添加ico图标.md
 │   ├── ./C/组装字符串.c
 │   ├── ./C/结构体.c
-│   ├── ./C/编译openssl库.sh
-│   ├── ./C/编译redis库.sh
 │   ├── ./C/自增自减.c
 │   ├── ./C/获取时间日期.c
 │   ├── ./C/运算精度测试.c
@@ -390,6 +400,7 @@
 │   ├── ./Dart_Flutter/ios滚动选择器.dart
 │   ├── ./Dart_Flutter/list显示列表.dart
 │   ├── ./Dart_Flutter/map遍历.dart
+│   ├── ./Dart_Flutter/newclass.dart
 │   ├── ./Dart_Flutter/padding边距.dart
 │   ├── ./Dart_Flutter/setbuttonstyle.dart
 │   ├── ./Dart_Flutter/web编译.bat
@@ -452,6 +463,14 @@
 │   └── ./Dart_Flutter/预设文字样式.dart
 ├── ./Dart_Flutter_Widget
 │   └── ./Dart_Flutter_Widget/ListView.dart
+├── ./Game
+│   └── ./Game/Minecraft
+│       ├── ./Game/Minecraft/Dynmap.txt
+│       ├── ./Game/Minecraft/WorldBorder.txt
+│       ├── ./Game/Minecraft/server.properties
+│       ├── ./Game/Minecraft/填充地图.bat
+│       ├── ./Game/Minecraft/服务端常用指令.md
+│       └── ./Game/Minecraft/难度.txt
 ├── ./Go
 │   ├── ./Go/COM串口通讯.go
 │   ├── ./Go/CTRL+C.go
@@ -770,7 +789,6 @@
 │   ├── ./PHP/是否为数组.php
 │   ├── ./PHP/查询SQL每个值在数组里重复出现两次.txt
 │   ├── ./PHP/用户注册邮箱验证激活帐号.php
-│   ├── ./PHP/编译php插件.sh
 │   ├── ./PHP/获取MIME文件类型.php
 │   ├── ./PHP/获得斜杠类型和换行符.php
 │   ├── ./PHP/输出数组.php
@@ -825,7 +843,6 @@
 │   ├── ./Proxy/gradle代理.txt
 │   ├── ./Proxy/npm代理.sh
 │   ├── ./Proxy/privoxy将socks转为http代理.sh
-│   ├── ./Proxy/privoxy编译安装.sh
 │   ├── ./Proxy/ssh的代理、转发端口、证书登录.sh
 │   ├── ./Proxy/yum代理.sh
 │   ├── ./Proxy/为命令指定代理.md
@@ -974,9 +991,6 @@
 │   │   └── ./ShellScript/重定向和管道/重定向和管道3.c
 │   └── ./ShellScript/顺序和并行执行多个命令.sh
 ├── ./ShellScript_Build
-│   ├── ./ShellScript_Build/编译安装htop.sh
-│   ├── ./ShellScript_Build/编译安装iptux（Linux飞鸽）.sh
-│   ├── ./ShellScript_Build/编译安装p7zip.sh
 │   └── ./ShellScript_Build/编译安装xmrig.sh
 ├── ./ShellScript_Linux
 │   ├── ./ShellScript_Linux/CPU温度.sh
@@ -1341,8 +1355,6 @@
 │   ├── ./Tools_FFmpeg/提取与合并.sh
 │   ├── ./Tools_FFmpeg/旋转视频.sh
 │   ├── ./Tools_FFmpeg/编译configure参数说明.txt
-│   ├── ./Tools_FFmpeg/编译ffmpeg和vlc.sh
-│   ├── ./Tools_FFmpeg/编译ffmpeg，RH8可用.sh
 │   ├── ./Tools_FFmpeg/视频尺寸.sh
 │   └── ./Tools_FFmpeg/转AAC.sh
 ├── ./Tools_Git
@@ -1374,7 +1386,6 @@
 │   ├── ./Tools_IoT/googleiot.md
 │   ├── ./Tools_IoT/mosquitto命令行订阅和发送消息.sh
 │   ├── ./Tools_IoT/mosquitto桥接.md
-│   ├── ./Tools_IoT/mosquitto编译安装.sh
 │   ├── ./Tools_IoT/mosquitto设置用户名和密码.md
 │   ├── ./Tools_IoT/paho.mqtt.c订阅.c
 │   ├── ./Tools_IoT/编译mqtt库.sh
@@ -1531,4 +1542,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-84 directories, 1447 files
+87 directories, 1455 files
