@@ -1,10 +1,23 @@
-#！/bin/sh
-resh=0
+#!/bin/sh
+# sh死循环执行某条命令
+restartl=restart.log
+rm -f $restartl
+restarti=0
 while :
 do
-    echo [进程监视] 第 $resh 次重试 : `date`
-    echo 'code'
-    echo [进程监视] 第 $resh 次中断 : `date`
-    resh=`expr $resh + 1`;
-    sleep 1
+    restarts=`date`
+    restarts="START $restarti : $restarts"
+    echo
+    echo $restarts
+    echo $restarts >>$restartl
+    echo
+    nice -n 19 echo =====COMMAND=====
+    restarts=`date`
+    restarts="STOP $restarti : $restarts"
+    echo
+    echo $restarts
+    echo $restarts >>$restartl
+    echo
+    restarti=`expr $restarti + 1`;
+    sleep 5
 done
