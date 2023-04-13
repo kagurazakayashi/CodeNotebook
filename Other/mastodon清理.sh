@@ -1,4 +1,4 @@
-# mastodon 长毛象清理
+# mastodon 长毛象清理长毛象
 # 进入
 su mastodon # docker: docker exec -it mastodon_streaming_1 /bin/sh
 
@@ -36,15 +36,13 @@ tootctl cache clear
 # docker 上清理
 docker exec -it mastodon_web_1 /bin/bash
 # 移除本地缓存的其它实例媒体附件
-tootctl media remove --days 7 --concurrency 1 --verbose
+tootctl media remove --days 7 --concurrency 1
 # 移除本地预览卡片缩略图
 tootctl preview_cards remove --days 180 --concurrency 1 --verbose
 # 从数据库中删除未被引用的嘟文
 tootctl statuses remove --days 90
 # 彻底清理媒体文件
-tootctl preview_cards remove
-tootctl media remove
-tootctl media remove-orphans
+tootctl preview_cards remove && tootctl media remove && tootctl media remove-orphans
 
 # 定时清理脚本
 docker exec mastodon_web_1 /bin/bash -c "tootctl preview_cards remove --days 180 --concurrency 1 --verbose" >/var/log/yashi/mastodonclean.log

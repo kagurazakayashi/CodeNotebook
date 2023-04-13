@@ -1,5 +1,4 @@
-puts "# Nginx 日志文件解析"
-# 神楽坂雅詩
+puts "# Nginx 日志文件解析 by 神楽坂雅詩"
 puts "- 正在读入Nginx日志文件 #{ARGV[0]} ..."
 if !ARGV[0]
     puts "- 没有指定文件。"

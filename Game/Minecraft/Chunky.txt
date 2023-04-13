@@ -1,0 +1,61 @@
+https://www.spigotmc.org/resources/chunky.81534/
+
+Chunky
+快速、高效、安全地预生成块
+WorldBorder 填充和其他插件中类似功能的更好替代品
+
+特点
+- 同时启动一个或多个块生成任务（如果你想更多地利用你的 CPU）
+- 暂停块生成任务，保存它们供以后使用，例如已处理的块、完成百分比、ETA、块处理率等
+- 自定义世界形状，以及安装了ChunkyBorder
+
+命令：
+
+任务管理
+chunky start 从当前选择开始一个新的块生成任务
+chunky pause 暂停当前的块生成任务，并保存进度
+chunky continue 继续运行当前或保存的块生成任务
+chunky cancel 停止当前的块生成任务，并取消进度
+
+选择
+chunky world [world] 设置当前选择的世界
+chunky shape <shape> 设置要生成的形状
+chunky center [<x> <z>] 设置当前中心块位置
+chunky radius <radius> 设置当前半径
+chunky worldborder 设置中心和半径以匹配所选世界中的 worldborder 边界
+chunky spawn 将中心设置为生成点
+chunky corners <x1> <z1> <x2> <z2> 通过角坐标设置选区
+chunky pattern <pattern> 设置首选生成模式
+chunky selection 显示当前选择
+
+杂项
+chunky silent 切换显示更新消息
+chunky quiet <interval> 以秒为单位设置更新消息的安静间隔
+chunky progress 在游戏中显示所有任务的预生成进度
+chunky reload 重新加载配置
+chunky trim 删除选区外的块
+
+示例：
+
+# 在主世界中生成以 0,0 为中心、半径为 10000 方块的正方形
+chunky radius 10000
+chunky start
+
+# 在下界生成以 100,-100 为中心、半径为 5000 的正方形
+chunky world world_nether
+chunky center 100 -100
+chunky radius 5000
+chunky start
+
+# 最后生成以 spawn 为中心的圆，半径为 5000 方块
+chunky world world_the_end
+chunky shape circle
+chunky spawn
+chunky radius 5000
+chunky start
+
+# 在以 0,0 为中心、半径为 10000 的原版世界边界内生成
+worldborder center 0 0
+worldborder set 20000
+chunky worldborder
+chunky start

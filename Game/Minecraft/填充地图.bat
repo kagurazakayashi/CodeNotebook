@@ -1,19 +1,27 @@
-dynmap fullrender world
-dynmap fullrender resume world
-dynmap updaterender world
+dynmap fullrender 199101241230
+dynmap fullrender resume 199101241230
+dynmap updaterender 199101241230
 wb shape round
-worldborder set 20000
-worldborder set 2500
-wb world set 10000 spawn
-wb world_nether set 1250 spawn
-wb world_the_end set 1250 spawn
+wb 199101241230 set 10000 0 0
+wb 199101241230_nether set 1250 0 0
+wb 199101241230_the_end set 1250 0 0
 wb list
 wb fillautosave 5
-wb world fill
-wb world_nether fill
-wb world_the_end fill
+wb 199101241230 fill
+wb 199101241230_nether fill
+wb 199101241230_the_end fill
 wb fill confirm
 stop
 
 wb fill pause
 wb fill cancel
+
+chunky world yashi
+chunky world yashi_nether
+chunky world yashi_the_end
+chunky shape circle
+chunky center 0 0
+chunky radius 10000
+chunky radius 1250
+chunky selection
+chunky start
