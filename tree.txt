@@ -59,6 +59,7 @@
 │   ├── ./Batch/为所有文件增加扩展名.bat
 │   ├── ./Batch/创建和显示文本文件.bat
 │   ├── ./Batch/创建随机密码，参数①长度②数量.bat
+│   ├── ./Batch/命令结果到变量.bat
 │   ├── ./Batch/命令行参数.bat
 │   ├── ./Batch/字符串比对.bat
 │   ├── ./Batch/实现su.bat
@@ -466,8 +467,10 @@
 │   └── ./Dart_Flutter_Widget/ListView.dart
 ├── ./Game
 │   └── ./Game/Minecraft
+│       ├── ./Game/Minecraft/Chunky.txt
 │       ├── ./Game/Minecraft/Dynmap.txt
 │       ├── ./Game/Minecraft/WorldBorder.txt
+│       ├── ./Game/Minecraft/bukkit安装.sh
 │       ├── ./Game/Minecraft/server.properties
 │       ├── ./Game/Minecraft/填充地图.bat
 │       ├── ./Game/Minecraft/服务端常用指令.md
@@ -927,7 +930,6 @@
 ├── ./Ruby
 │   ├── ./Ruby/Gem命令.sh
 │   ├── ./Ruby/HelloWorld.rb
-│   ├── ./Ruby/nginxlog.rb
 │   ├── ./Ruby/windows-mysql.bat
 │   ├── ./Ruby/以指定编码读取文件.rb
 │   ├── ./Ruby/保留几位小数.rb
@@ -935,7 +937,6 @@
 │   ├── ./Ruby/合并文件夹中的所有文本文件.rb
 │   ├── ./Ruby/字符串处理函数.rb
 │   ├── ./Ruby/字符串截取.rb
-│   ├── ./Ruby/拆分Nginx日志字段.rb
 │   ├── ./Ruby/接收命令行参数.rb
 │   ├── ./Ruby/整数、浮点数、字符串之间转换.rb
 │   ├── ./Ruby/读取文件.rb
@@ -1001,8 +1002,6 @@
 │   ├── ./ShellScript_Linux/LNMP脚本加入直播插件.sh
 │   ├── ./ShellScript_Linux/Linux操作系统.txt
 │   ├── ./ShellScript_Linux/NTP校时服务器.sh
-│   ├── ./ShellScript_Linux/Nginx和Tomcat配置长连接.md
-│   ├── ./ShellScript_Linux/Nginx需要密码访问.sh
 │   ├── ./ShellScript_Linux/RedHat8安装EPEL和RPMf.sh
 │   ├── ./ShellScript_Linux/SSH代理连接.sh
 │   ├── ./ShellScript_Linux/SSH传输文件.sh
@@ -1081,7 +1080,6 @@
 │   ├── ./ShellScript_Linux/最低优先级后台跑并将结果压缩.sh
 │   ├── ./ShellScript_Linux/杀死指定进程名称.sh
 │   ├── ./ShellScript_Linux/查找最大文件夹.sh
-│   ├── ./ShellScript_Linux/检查nginx是否有网页文件访问权.sh
 │   ├── ./ShellScript_Linux/正则表达式.md
 │   ├── ./ShellScript_Linux/正常关闭指定关键字名称进程.sh
 │   ├── ./ShellScript_Linux/测试两个设备之间的网速.sh
@@ -1203,7 +1201,6 @@
 │   ├── ./ShellScript_macOS/Windows_VirtualBox_macOS11.bat
 │   ├── ./ShellScript_macOS/mac安装app转iso.sh
 │   ├── ./ShellScript_macOS/mumu服务启动.sh
-│   ├── ./ShellScript_macOS/nginx-php.sh
 │   ├── ./ShellScript_macOS/ssh报错NoMatchingKeyExchangeMethodFound.sh
 │   ├── ./ShellScript_macOS/vbox引导bootcamp系统.sh
 │   ├── ./ShellScript_macOS/xip解压到指定文件夹.sh
@@ -1310,7 +1307,6 @@
 │   ├── ./Tools_Docker/Firewalld影响Docker容器间通信.sh
 │   ├── ./Tools_Docker/MySQL.sh
 │   ├── ./Tools_Docker/NTP校时服务器.sh
-│   ├── ./Tools_Docker/Nginx.sh
 │   ├── ./Tools_Docker/PHP.sh
 │   ├── ./Tools_Docker/Portainer可视化界面.sh
 │   ├── ./Tools_Docker/Portainer更新.sh
@@ -1414,6 +1410,15 @@
 │   └── ./Tools_Lib/aria2
 │       ├── ./Tools_Lib/aria2/aria2.conf
 │       └── ./Tools_Lib/aria2/aria2下载器命令.sh
+├── ./Tools_Nginx
+│   ├── ./Tools_Nginx/Nginx.sh
+│   ├── ./Tools_Nginx/Nginx和Tomcat配置长连接.md
+│   ├── ./Tools_Nginx/Nginx需要密码访问.sh
+│   ├── ./Tools_Nginx/nginx-php-macos.sh
+│   ├── ./Tools_Nginx/nginxlog.rb
+│   ├── ./Tools_Nginx/云主机反向代理穿透内网（ngin+ssh隧道）.md
+│   ├── ./Tools_Nginx/拆分Nginx日志字段.rb
+│   └── ./Tools_Nginx/检查nginx是否有网页文件访问权.sh
 ├── ./Tools_VSCode
 │   ├── ./Tools_VSCode/F5运行npm命令.md
 │   └── ./Tools_VSCode/vscode格式化文档与eslint冲突.md
@@ -1543,4 +1548,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-87 directories, 1456 files
+88 directories, 1460 files
