@@ -37,7 +37,7 @@ genisoimage -l -o ISO文件名字.iso 要打包的文件夹
 # 创建 tar.gz
 tar -czvf all.tar.gz *.jpg
 # 解压 tar.gz
-tar -zxvf ×××.tar.gz
+tar -zxvf xxx.tar.gz
 
 # 创建 .gz
 gzip -c -9 a.txt -v > a.txt.gz
@@ -47,7 +47,7 @@ gzip -d a.txt.gz
 # 创建 tar.bz2
 tar -cjvf all.tar.bz2 *.jpg
 # 解压 tar.bz2
-tar -jxvf ×××.tar.bz2
+tar -jxvf xxx.tar.bz2
 
 # 创建 tar.Z
 tar -cZvf all.tar.Z *.jpg

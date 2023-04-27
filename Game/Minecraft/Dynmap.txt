@@ -128,3 +128,7 @@ https://github.com/webbukkit/dynmap/wiki/Commands
 /dynmap webregister: 开始注册自己的账号登录网页界面
 /dynmap webregister player-id: 开始注册其他用户的账号用于网页界面登录
 /dynmap url: 显示已配置的 publicURL（如果已定义）
+
+
+plugins\dynmap\configuration.txt:
+parallelrendercnt 并行渲染 最大值为 20

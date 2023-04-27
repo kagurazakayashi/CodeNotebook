@@ -9,7 +9,7 @@ compact /compactos:always
 @REM 关闭CompactOS
 compact /compactos:never
 
-@REM 最高压缩当前文件夹中的所有问题，包括隐藏和系统文件
+@REM 最高压缩当前文件夹中的所有文件，包括隐藏和系统文件
 COMPACT /C /S /A /I /Q /EXE:LZX
 
 @REM COMPACT [/C | /U] [/S[:dir]] [/A] [/I] [/F] [/Q] [/EXE[:algorithm]]

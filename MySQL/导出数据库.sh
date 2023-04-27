@@ -8,8 +8,8 @@ mysqldump -u root -p mysql > mysql.sql
 mysqldump -u root -p performance_schema > performance_schema.sql
 mysqldump -u root -p sys > sys.sql
 # 压缩
-tar -zcvf sql.tar.gz *.sql
-7za a -mx9 sql.7z *.sql -v100m -p1cYnVDicm4FBwOvy
+# 带个最小压缩
+mysqldump -u root -p performance_schema | nice -n 19 xz -z -1 -T 0 -v >performance_schema.sql.xz
 # 恢复
 #mysqldump -u root -p mytongdy < mytongdy.sql
 mysql -uusername -ppassword db1 <tb1tb2.sql

@@ -1,0 +1,39 @@
+# CentOS8本地源 
+
+# CentOS-Media.repo
+#
+#  This repo can be used with mounted DVD media, verify the mount point for
+#  CentOS-8.  You can use this repo and yum to install items directly off the
+#  DVD ISO that we release.
+#
+# To use this repo, put in your DVD and use it with the other repos too:
+#  yum --enablerepo=c8-media [command]
+#
+# or for ONLY the media repo, do this:
+#
+#  yum --disablerepo=\* --enablerepo=c8-media [command]
+#
+#
+# mkdir /mnt/cdrom
+# mount -o loop /root/CentOS-8.5.2111-x86_64-dvd1.iso /mnt/cdrom
+# cp -r /etc/yum.repos.d /etc/yum.repos.d.bak
+# rm -rf /etc/yum.repos.d/*
+# cp /etc/yum.repos.d.bak/*-Media.repo /etc/yum.repos.d/
+# vim /etc/yum.repos.d/CentOS-Linux-Media.repo
+
+[c8-media-BaseOS]
+name=CentOS-BaseOS-$releasever - Media
+baseurl=file:///mnt/cdrom/BaseOS
+gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+[c8-media-AppStream]
+name=CentOS-AppStream-$releasever - Media
+baseurl=file:///mnt/cdrom/AppStream
+gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+# dnf clean all
+# dnf makecache
