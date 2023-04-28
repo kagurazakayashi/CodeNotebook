@@ -59,6 +59,7 @@
 │   ├── ./Batch/为所有文件增加扩展名.bat
 │   ├── ./Batch/创建和显示文本文件.bat
 │   ├── ./Batch/创建随机密码，参数①长度②数量.bat
+│   ├── ./Batch/变量和取消变量.bat
 │   ├── ./Batch/命令结果到变量.bat
 │   ├── ./Batch/命令行参数.bat
 │   ├── ./Batch/字符串比对.bat
@@ -95,12 +96,14 @@
 │   ├── ./Batch_Windows/MSYS2更新.sh
 │   ├── ./Batch_Windows/MSYS2连接串口.sh
 │   ├── ./Batch_Windows/RunDll32.txt
+│   ├── ./Batch_Windows/VisualStudio离线安装.bat
 │   ├── ./Batch_Windows/WSL2.bat
 │   ├── ./Batch_Windows/WSL使用Windows中已安装字体.sh
 │   ├── ./Batch_Windows/Win11绕过硬件检测.bat
 │   ├── ./Batch_Windows/Win11绕过硬件检测iso.txt
 │   ├── ./Batch_Windows/Windows11开启IE.vbs
 │   ├── ./Batch_Windows/WindowsTerminal.md
+│   ├── ./Batch_Windows/Windows端口占用情况.bat
 │   ├── ./Batch_Windows/anyconnect临时开启服务.bat
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
 │   ├── ./Batch_Windows/cygwin-mingw.txt
@@ -132,7 +135,6 @@
 │   ├── ./Batch_Windows/取消磁盘的自动扫描.reg
 │   ├── ./Batch_Windows/取消磁盘空间低提示.reg
 │   ├── ./Batch_Windows/取消禁止显示隐藏文件.reg
-│   ├── ./Batch_Windows/变量和取消变量.bat
 │   ├── ./Batch_Windows/右键复制文件内容到剪贴板.reg
 │   ├── ./Batch_Windows/右键复制路径到剪贴板.reg
 │   ├── ./Batch_Windows/右键添加打开命令窗口.reg
@@ -165,10 +167,12 @@
 │   ├── ./Batch_Windows/虚拟内存.bat
 │   ├── ./Batch_Windows/解禁注册表编辑器.reg
 │   ├── ./Batch_Windows/还原文件权限.bat
+│   ├── ./Batch_Windows/还原系统.bat
 │   ├── ./Batch_Windows/重置winsock.bat
 │   └── ./Batch_Windows/高级系统设置.lnk
 ├── ./Build
 │   ├── ./Build/编译ImageMagick.sh
+│   ├── ./Build/编译exfat.sh
 │   ├── ./Build/编译ffmpeg和vlc.sh
 │   ├── ./Build/编译ffmpeg，RH8可用.sh
 │   ├── ./Build/编译htop.sh
@@ -590,6 +594,7 @@
 │   ├── ./JavaScript/HelloWorld.js
 │   ├── ./JavaScript/JSON编码解码.js
 │   ├── ./JavaScript/Number.js
+│   ├── ./JavaScript/base64.js
 │   ├── ./JavaScript/checkbox是否被选中.js
 │   ├── ./JavaScript/cookie.js
 │   ├── ./JavaScript/div内容的高度.js
@@ -733,6 +738,7 @@
 │   ├── ./Network/IP地址段v6.md
 │   ├── ./Network/修改Linux网卡速率.sh
 │   ├── ./Network/局域网测速.sh
+│   ├── ./Network/自用局域网地址段.ini
 │   └── ./Network/通过IP地址找MAC地址和主机名.sh
 ├── ./Other
 │   ├── ./Other/Mastodon-docker迁移.sh
@@ -1078,6 +1084,7 @@
 │   ├── ./ShellScript_Linux/显示文件最后几行.sh
 │   ├── ./ShellScript_Linux/更改默认shell.sh
 │   ├── ./ShellScript_Linux/最低优先级后台跑并将结果压缩.sh
+│   ├── ./ShellScript_Linux/本地DVD源CentOS8.repo
 │   ├── ./ShellScript_Linux/杀死指定进程名称.sh
 │   ├── ./ShellScript_Linux/查找最大文件夹.sh
 │   ├── ./ShellScript_Linux/正则表达式.md
@@ -1197,6 +1204,7 @@
 │   ├── ./ShellScript_Linux_Command/who_显示当前登录的所有用户.sh
 │   └── ./ShellScript_Linux_Command/whoami_查看当前用户名.sh
 ├── ./ShellScript_macOS
+│   ├── ./ShellScript_macOS/CocoaPods安装.sh
 │   ├── ./ShellScript_macOS/NAS时间机器备份修复.md
 │   ├── ./ShellScript_macOS/Windows_VirtualBox_macOS11.bat
 │   ├── ./ShellScript_macOS/mac安装app转iso.sh
@@ -1548,4 +1556,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-88 directories, 1460 files
+88 directories, 1468 files
