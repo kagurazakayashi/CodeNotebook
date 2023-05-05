@@ -147,6 +147,7 @@
 │   ├── ./Batch_Windows/恢复IcoCurAni文件关联.reg
 │   ├── ./Batch_Windows/恢复新建文本文档.reg
 │   ├── ./Batch_Windows/手动安装CAB和MSU格式更新包.md
+│   ├── ./Batch_Windows/挂载VHD.bat
 │   ├── ./Batch_Windows/文件是否存在.bat
 │   ├── ./Batch_Windows/桌面显示IE图标.reg
 │   ├── ./Batch_Windows/每天第一次开机时重启.bat
@@ -979,6 +980,7 @@
 │   ├── ./ShellScript/文件名改为序号并将原文件名加入到文本文档中.sh
 │   ├── ./ShellScript/显示文件大小.sh
 │   ├── ./ShellScript/替换字符串.sh
+│   ├── ./ShellScript/替换文件中的字符串.sh
 │   ├── ./ShellScript/查找几天前的文件.sh
 │   ├── ./ShellScript/查找文件.sh
 │   ├── ./ShellScript/根据MD5文件批量校验MD5.sh
@@ -1129,6 +1131,7 @@
 │   ├── ./ShellScript_Linux_Command/cat_显示和连接文件.sh
 │   ├── ./ShellScript_Linux_Command/cd_改变工作目录.sh
 │   ├── ./ShellScript_Linux_Command/chgrp_改变文件属于的组.sh
+│   ├── ./ShellScript_Linux_Command/chmod_更改文件权限.md
 │   ├── ./ShellScript_Linux_Command/chmod_更改文件权限.sh
 │   ├── ./ShellScript_Linux_Command/chown_改变文件所有者.sh
 │   ├── ./ShellScript_Linux_Command/clamtk_杀毒.sh
@@ -1556,4 +1559,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-88 directories, 1468 files
+88 directories, 1471 files
