@@ -1,6 +1,7 @@
 # 自签泛域名证书
 # 安装OpenSSL
 apt install openssl openssl-devel -y
+cp /usr/lib/ssl/openssl.cnf /etc/pki/tls/openssl.cnf
 vim /etc/pki/tls/openssl.cnf
 # 将如下配置的注释放开,低版本的OpenSSL不支持，可以不放开注释
 # [ req ]
@@ -42,18 +43,19 @@ openssl req -new -sha256 -key uuu.moe.key -out uuu.moe.csr -config /etc/pki/tls/
 openssl req -in uuu.moe.csr -text
 # 使用自签署的CA，签署crt
 openssl ca -in uuu.moe.csr -md sha256 -days 36500 -out uuu.moe.crt -cert CA.crt -keyfile CA.key -config /etc/pki/tls/openssl.cnf
-# 遇到报错: /etc/pki/CA/index.txt: No such file or directory :
-touch /etc/pki/CA/index.txt
-# 遇到报错: /etc/pki/CA/serial: No such file or directory
-echo "01" > /etc/pki/CA/serial
+# 遇到报错: demoCA/index.txt: No such file or directory :
+# touch demoCA/index.txt
+# 遇到报错: demoCA/serial: No such file or directory
+# echo "01" > demoCA/serial
+# 遇到报错: Unable to load number from ./demoCA/serial
+# echo "01" > demoCA/serial
 
-openssl ca -in uuu.moe.csr -md sha256 -days 36500 -out uuu.moe.crt -cert CA.crt -keyfile CA.key -config /etc/pki/tls/openssl.cnf
 # Sign the certificate? [y/n]:y
 # 1 out of 1 certificate requests certified, commit? [y/n]y
 
 # 检查部署是否正常
-cat /etc/pki/CA/index.txt
-cat /etc/pki/CA/serial
+cat demoCA/index.txt
+cat demoCA/serial
 # 注：同一个域名不能签署多次；由于签署了*.uuu.moe，且已经被记录，因此不能再次被签署。除非删除该记录。
 # 注：注意index.txt文件和serial文件的关系。serial文件内容为index.txt文件内容行数加1。
 
@@ -65,6 +67,9 @@ openssl verify -CAfile CA.crt uuu.moe.crt
 # 转换证书给Nginx使用
 openssl x509 -in uuu.moe.crt -out uuu.moe.pem -outform PEM
 
+# 转 IIS 格式
+openssl pkcs12 -export -out uuu.moe.pfx -inkey uuu.moe.key -in uuu.moe.pem -certfile CA.crt
+
 # ls
 # CA.crt
 # CA.key
@@ -72,5 +77,6 @@ openssl x509 -in uuu.moe.crt -out uuu.moe.pem -outform PEM
 # uuu.moe.csr
 # uuu.moe.key
 # uuu.moe.pem
+# uuu.moe.pfx
 
 # https://www.cnblogs.com/layzer/articles/openssl.html
