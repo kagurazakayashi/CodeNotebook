@@ -1,0 +1,43 @@
+{
+    "FixedFileInfo": {
+        "FileVersion": {
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 0
+        },
+        "ProductVersion": {
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 0
+        },
+        "FileFlagsMask": "3f",
+        "FileFlags ": "00",
+        "FileOS": "040004",
+        "FileType": "01",
+        "FileSubType": "00"
+    },
+    "StringFileInfo": {
+        "Comments": "备注",
+        "CompanyName": "生成文件的公司（例如， Microsoft Corporation 或 Standard Microsystems Corporation, Inc. 此字符串是必需的）。",
+        "FileDescription": "要向用户显示的文件说明。 当用户选择要安装的文件时，此字符串可能会显示在列表框中，例如 Keyboard Driver for AT-Style Keyboards。 此字符串是必需的。",
+        "FileVersion": "文件的版本号，例如或 3.105.00.RC2。 此字符串是必需的。",
+        "InternalName": "文件的内部名称（如果存在），例如，如果文件是动态链接库，则为模块名称。 如果文件没有内部名称，则此字符串应为原始文件名，无需扩展名。 此字符串是必需的。",
+        "LegalCopyright": "适用于文件的版权声明。 这应包括所有通知、法律符号、版权日期等的全文。 此字符串是可选的。",
+        "LegalTrademarks": "适用于文件的商标和注册商标。 这应包括所有声明的完整文本、合法符号、商标号等。 此字符串是可选的。",
+        "OriginalFilename": "文件的原始名称，不包括路径。 此信息使应用程序能够确定文件是否已由用户重命名。 名称的格式取决于为其创建文件的文件系统。 此字符串是必需的。",
+        "PrivateBuild": "有关文件的专用版本的信息，例如 Built by TESTER1 on \\TESTBED。 只有在根块的 fileflags 参数中指定了VS_FF_PRIVATEBUILD 时才应存在此字符串。",
+        "ProductName": "分发文件的产品的名称。 此字符串是必需的。",
+        "ProductVersion": "分发文件的产品版本，例如或 3.105.00.RC2。 此字符串是必需的。",
+        "SpecialBuild": "指定此版本的文件与标准版本有何不同（例如， Private build for TESTER1 solving mouse problems on M250 and M250E computers）的文本。 只有在根块的 fileflags 参数中指定了VS_FF_SPECIALBUILD时，才应存在此字符串。"
+    },
+    "VarFileInfo": {
+        "Translation": {
+            "LangID": "0804",
+            "CharsetID": "04B0"
+        }
+    },
+    "IconPath": "",
+    "ManifestPath": ""
+}
