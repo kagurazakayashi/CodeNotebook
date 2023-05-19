@@ -502,10 +502,13 @@
 │   ├── ./Go/Redis_gopkgv4.go
 │   ├── ./Go/Redis_v8.go
 │   ├── ./Go/Unix的三种输入输出输入模式.go
-│   ├── ./Go/Windows生成带图标的执行文件
-│   │   ├── ./Go/Windows生成带图标的执行文件/manifest.xml
-│   │   ├── ./Go/Windows生成带图标的执行文件/windows-manifest-SupportedOS.txt
-│   │   └── ./Go/Windows生成带图标的执行文件/生成syso文件.bat
+│   ├── ./Go/Windows生成带图标和信息的exe
+│   │   ├── ./Go/Windows生成带图标和信息的exe/langID_charsetID.md
+│   │   ├── ./Go/Windows生成带图标和信息的exe/manifest.xml
+│   │   ├── ./Go/Windows生成带图标和信息的exe/versioninfo.json
+│   │   ├── ./Go/Windows生成带图标和信息的exe/windows-manifest-SupportedOS.txt
+│   │   ├── ./Go/Windows生成带图标和信息的exe/添加exe信息.bat
+│   │   └── ./Go/Windows生成带图标和信息的exe/生成syso文件.bat
 │   ├── ./Go/bad_file_descriptor.md
 │   ├── ./Go/cmap排序.go
 │   ├── ./Go/filepath.go
@@ -1417,6 +1420,7 @@
 │   │   ├── ./Tools_Lib/OpenSSL/SSL证书.sh
 │   │   ├── ./Tools_Lib/OpenSSL/哈希.sh
 │   │   ├── ./Tools_Lib/OpenSSL/自签域名证书.sh
+│   │   ├── ./Tools_Lib/OpenSSL/自签多域名证书.sh
 │   │   ├── ./Tools_Lib/OpenSSL/自签泛域名证书.sh
 │   │   ├── ./Tools_Lib/OpenSSL/证书信息查看.md
 │   │   └── ./Tools_Lib/OpenSSL/证书格式转换.md
@@ -1568,4 +1572,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-89 directories, 1479 files
+89 directories, 1483 files
