@@ -109,9 +109,15 @@ android {
 }
 ```
 
+# 编译 *.aab
+flutter build appbundle
+
 # 原生调试符号文件
 - 使用`flutter build appbundle`打包完成后，进入目录:
 ```
-\build\app\intermediates\merged_native_libs\release\out\lib
+build\app\intermediates\merged_native_libs\release\out\lib
 ```
 将目录中的所有文件夹打包成zip文件
+```
+7z a -tzip -mx9 lib.zip build\app\intermediates\merged_native_libs\release\out\lib\*
+```

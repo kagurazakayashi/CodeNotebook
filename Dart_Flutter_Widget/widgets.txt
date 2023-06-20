@@ -1,0 +1,6 @@
+水平布局 Row
+垂直布局 Column
+堆叠布局 Stack
+矩形元素 Container
+
+https://flutter.cn/docs/development/ui/widgets-intro

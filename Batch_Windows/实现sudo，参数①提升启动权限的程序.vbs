@@ -1,33 +1,33 @@
-'ShellExecute ·½·¨
+'ShellExecute ï¿½ï¿½ï¿½ï¿½
  
-'×÷ÓÃ: ÓÃÓÚÔËÐÐÒ»¸ö³ÌÐò»ò½Å±¾¡£
+'ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½
  
-'Óï·¨
+'ï¿½ï·¨
 '      .ShellExecute "application", "parameters", "dir", "verb", window
 '      .ShellExecute 'some program.exe', '"some parameters with spaces"', , "runas", 1
  
-'¹Ø¼ü×Ö
-'   application   ÒªÔËÐÐµÄ³ÌÐò»ò½Å±¾Ãû³Æ
-'   parameters    ÔËÐÐ³ÌÐò»ò½Å±¾ËùÐèµÄ²ÎÊý
-'   dir           ¹¤×÷Â·¾¶£¬ÈôÎ´Ö¸¶¨ÔòÊ¹ÓÃµ±Ç°Â·¾¶
-'   verb          ÒªÖ´ÐÐµÄ¶¯×÷ (Öµ¿ÉÒÔÊÇ runas/open/edit/print)
-'                   runas ¶¯×÷Í¨³£ÓÃÓÚÌáÉýÈ¨ÏÞ
-'   window        ³ÌÐò»ò½Å±¾Ö´ÐÐÊ±µÄ´°¿ÚÑùÊ½ (normal=1, hide=0, 2=Min, 3=max, 4=restore, 5=current, 7=min/inactive, 10=default)
+'ï¿½Ø¼ï¿½ï¿½ï¿½
+'   application   Òªï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½
+'   parameters    ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+'   dir           ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Ö¸ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½Ç°Â·ï¿½ï¿½
+'   verb          ÒªÖ´ï¿½ÐµÄ¶ï¿½ï¿½ï¿½ (Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ runas/open/edit/print)
+'                   runas ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+'   window        ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½Ö´ï¿½ï¿½Ê±ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ (normal=1, hide=0, 2=Min, 3=max, 4=restore, 5=current, 7=min/inactive, 10=default)
  
  
 Set UAC = CreateObject("Shell.Application")
 Set Shell = CreateObject("WScript.Shell")
 If WScript.Arguments.count<1 Then
-    WScript.echo "Óï·¨:  sudo <command> [args]"
+    WScript.echo "use: sudo <command> [args]"
 ElseIf WScript.Arguments.count=1 Then
     UAC.ShellExecute WScript.arguments(0), "", "", "runas", 1
 '    WScript.Sleep 1500
 '    Dim ret
-'    ret = Shell.Appactivate("ÓÃ»§ÕË»§¿ØÖÆ")
+'    ret = Shell.Appactivate("ï¿½Ã»ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½")
 '    If ret = true Then
 '        Shell.sendkeys "%y"        
 '    Else
-'        WScript.echo "×Ô¶¯»ñÈ¡¹ÜÀíÔ±È¨ÏÞÊ§°Ü£¬ÇëÊÖ¶¯È·ÈÏ¡£"
+'        WScript.echo "ï¿½Ô¶ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ô±È¨ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½È·ï¿½Ï¡ï¿½"
 '    End If
 Else
     Dim ucCount

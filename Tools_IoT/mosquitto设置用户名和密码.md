@@ -25,3 +25,9 @@ mosquitto.exe -v -c mosquitto.conf
 ```
 
 <!-- https://blog.csdn.net/qq_22111417/article/details/84142509 -->
+
+
+<!-- # docker -->
+docker exec -it mosquittoc /bin/sh
+docker stop mosquittoc
+docker start mosquittoc

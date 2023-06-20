@@ -18,6 +18,12 @@ for %%x in (*.ARW) do (
     "magick.exe" "%%x" "%%~nx.png"
 )
 
+# Windows PDF转图片
+choco install ghostscript -y
+mkdir out
+magick.exe "a.pdf" "out\a.png"
+
+
 # 水印
 #图片水印
 convert pic.jpg sy.jpg -gravity southeast -geometry +20+20 -composite ok.jpg
