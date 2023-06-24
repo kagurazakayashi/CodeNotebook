@@ -5,9 +5,11 @@ apt install fuse-devel autoconf automake libtool pkg-config fuse -y
 # https://github.com/relan/exfat
 git clone https://github.com/relan/exfat.git
 cd exfat
-autoreconf --install
-./configure
-make
+mkdir build                              
+cd build
+autoreconf .. --install
+./configure CFLAGS=-D_FILE_OFFSET_BITS=64
+make -j`grep -c ^processor /proc/cpuinfo`
 sudo make install
 # sudo make uninstall # 卸载
 
@@ -27,21 +29,18 @@ make
 sudo make install
 
 # No package 'fuse' found:
-git clone https://github.com/libfuse/libfuse.git
-cd libfuse
-apt install meson ninja -y
-mkdir build
-cd build
-meson setup ..
-ninja
-cd lib
-cp libfuse3.so.3.14.1 /usr/lib/libfuse3.so
-export FUSE_CFLAGS=-lfuse3
-export FUSE_LIBS=/usr/lib/libfuse3.so
-cd ..
-cd ..
-cd ..
-autoreconf --install
-./configure
-make
-sudo make install
+sudo apt install libfuse-dev -y
+# git clone https://github.com/libfuse/libfuse.git
+# cd libfuse
+# apt install meson ninja -y
+# mkdir build
+# cd build
+# meson setup ..
+# ninja
+# cd lib
+# cp libfuse3.so.3.14.1 /usr/lib/libfuse3.so
+# export FUSE_CFLAGS=-lfuse3
+# export FUSE_LIBS=/usr/lib/libfuse3.so
+# export FUSE2_CFLAGS=-lfuse3
+# export FUSE2_LIBS=/usr/lib/libfuse3.so
+# ln -s /usr/lib/libfuse3.so /usr/lib64/libfuse3.so

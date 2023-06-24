@@ -1,14 +1,19 @@
 # 编译ImageMagick
-# ftp://ftp.nluug.nl/pub/ImageMagick/
-wget ftp://ftp.nluug.nl/pub/ImageMagick/ImageMagick-7.0.10-29.tar.gz
-
-sudo apt-get install libmagick++-dev # 不要安装(选择n),把需要的依赖包复制下来,把其中名称中包含magick关键字的依赖包删除
-
-tar -zxvf ImageMagick-7.0.10-29.tar.gz
+# http://ftp.nluug.nl/pub/ImageMagick/
+wget ftp://ftp.nluug.nl/pub/ImageMagick/ImageMagick.tar.xz
+tar -Jxvf ImageMagick.tar.xz
 cd ImageMagick-7.0.10-29
-./configure --prefix=/usr/local/imagemagick
-make
+# sudo apt-get install libmagick++-dev # 不要安装(选择n),把需要的依赖包复制下来,把其中名称中包含magick关键字的依赖包删除
+mkdir build
+cd build
+../configure --prefix=/usr/local/imagemagick
+make -j`grep -c ^processor /proc/cpuinfo`
 sudo make install
+
+rm /usr/bin/convert
+ln -s /usr/local/imagemagick/bin/magick /usr/bin/convert 
+rm /bin/convert
+ln -s /usr/local/imagemagick/bin/magick /bin/convert
 
 # gcc编译时如有警告,需要定义下面的宏
 #  -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16

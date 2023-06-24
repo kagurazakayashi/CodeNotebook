@@ -1,8 +1,7 @@
-yum install -y gcc ncurses-devel
-wget http://sourceforge.net/projects/htop/files/latest/download
-mv download htop.tar.gz
-tar -zxf htop.tar.gz
-cd htop-1.0.2
+sudo apt install libncursesw5-dev autotools-dev autoconf automake build-essential -y
+git clone https://github.com/htop-dev/htop.git
+cd htop
+./autogen.sh
 ./configure
-make
-make install
+make -j`grep -c ^processor /proc/cpuinfo`
+sudo make install
