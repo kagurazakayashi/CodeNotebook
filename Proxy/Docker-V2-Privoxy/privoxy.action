@@ -1,0 +1,63 @@
+{{alias}}
+direct      = +forward-override{forward .}
+#proxy       = +forward-override{forward 127.0.0.1:23333}
+over_wall_proxy       = +forward-override{forward-socks5 127.0.0.1:23332 .}
+block       = +block
+default     = direct
+#==========默认代理==========
+{default}
+/
+#==========直接连接==========
+{direct} 
+127.*
+192.*
+.cn
+#==========屏蔽连接==========
+{block}
+.ad.ad
+#==========梯子代理==========
+{over_wall_proxy}
+.jp
+.us
+.uk
+.me
+.de
+.nz
+.hk
+.tw
+.ph
+.io
+.dev
+.top
+.se
+.cc
+.moe
+.gle
+.pm
+.eu
+.mx
+.exchange
+.city
+.app
+.pm
+.nico
+.zone
+.is
+.ci
+.ca
+.bar
+.br
+.nl
+.online
+.news
+.co
+.wiki
+.page
+.men
+.cl
+.mx
+.it
+.gov
+.pdf
+.pe
+.be

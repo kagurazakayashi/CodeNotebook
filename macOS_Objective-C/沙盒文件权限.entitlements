@@ -1,0 +1,43 @@
+<!-- 下面是设置 app 可以打开 Terminal, 并且有 hosts 文件的读写权限 -->
+<key>com.apple.security.temporary-exception.apple-events</key>
+<array>
+    <string>com.apple.terminal</string>
+</array>
+<key>com.apple.security.temporary-exception.files.absolute-path.read-write</key>
+<array>
+    <string>/private/etc/hosts</string>
+</array>
+
+<!-- 然而基本 temporary-exception 的权限都过不了审核, 基于文件读写的权限只能配置成 -->
+<key>com.apple.security.files.user-selected.read-write</key>
+<true/>
+<key>com.apple.security.files.bookmarks.app-scope</key>
+<true/>
+
+<!-- 用户需要操作的文件通过 NSOpenPanel 打开, 然后创建 bookmark, 以后每次写操作的时候使用 bookmark.
+    typealias URLHandleBlock = (_ url: URL) -> Void
+
+    // 执行
+    func handleFile(bookmarkKey: String, newPath: String, block: URLHandleBlock) {
+        var isStale = false
+        if let bookmarkData = UserDefaults.standard.object(forKey: bookmarkKey) as? Data,
+            let url = try! URL.init(resolvingBookmarkData: bookmarkData, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isStale), url.path == newPath {
+            _ = url.startAccessingSecurityScopedResource()
+            block(url)
+            url.stopAccessingSecurityScopedResource()
+        }
+    }
+
+    // 增加书签
+    private func addBookmark(url: URL, bookmarkKey: String) {
+        let bookmarkData = try! url.bookmarkData(options: .withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+        let defaults = UserDefaults.standard
+        defaults.set(bookmarkData, forKey: bookmarkKey)
+        defaults.synchronize()
+    }
+
+    // startAccessingSecurityScopedResource 和 stopAccessingSecurityScopedResource 必须成对出现
+    // 注意: 创建 withSecurityScope 的 bookmark 时必须拥有文件的读写权限
+ -->
+
+<!-- https://www.jianshu.com/p/678059a45337 -->

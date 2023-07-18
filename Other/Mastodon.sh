@@ -197,7 +197,7 @@ UPDATE `mastodon`.`settings` SET value = 'mastodon-light' WHERE id=9;
 # docker 上清理
 docker exec -it mastodon_web_1 /bin/bash
 # 移除本地缓存的其它实例媒体附件
-tootctl media remove --days 7 --concurrency 1 --verbose
+tootctl media remove --days 7 --concurrency 1
 # 移除本地预览卡片缩略图
 tootctl preview_cards remove --days 180 --concurrency 1 --verbose
 # 从数据库中删除未被引用的嘟文
