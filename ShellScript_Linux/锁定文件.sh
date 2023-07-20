@@ -1,7 +1,11 @@
+# 防止文件被修改 文件无法删除
+
 # 限制：
 chattr +i /home/wwwroot/yoursite/.user.ini
 # 解除：
 chattr -i /home/wwwroot/yoursite/.user.ini
+# 移除所有限制
+chattr -iaR /home/wwwroot/yoursite
 
 chattr [-RV] [-+=AacDdijsSu] [-v version] 文件或目录
 # 参数  描述
