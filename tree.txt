@@ -787,6 +787,7 @@
 │   └── ./Notebook/自用环境变量记录.sh
 ├── ./Other
 │   ├── ./Other/APP图标圆角.txt
+│   ├── ./Other/Mastodon-docker安装.sh
 │   ├── ./Other/Mastodon-docker更新.sh
 │   ├── ./Other/Mastodon-docker迁移.sh
 │   ├── ./Other/Mastodon.sh
@@ -1174,7 +1175,6 @@
 │   ├── ./ShellScript_Linux/远程输出到显示器.sh
 │   ├── ./ShellScript_Linux/配置ssh的超时时间.sh
 │   ├── ./ShellScript_Linux/锁定文件.sh
-│   ├── ./ShellScript_Linux/防止文件被修改.sh
 │   ├── ./ShellScript_Linux/防火墙-firewalld.sh
 │   ├── ./ShellScript_Linux/防火墙-iptables.sh
 │   ├── ./ShellScript_Linux/防火墙-ufw.sh
