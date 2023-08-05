@@ -4,7 +4,7 @@ yum install figlet -y
 vim /etc/profile
 # zsh
 vim ~/.zshrc
-# 如果使用 登录ssh自动进入tmux.sh 则在 export TERM=xterm 之前加
+# 如果使用 [登录ssh自动进入tmux.sh] 则在 export TERM=xterm 之前加
 # LoginInfo
 CNAME="Yashi ECS"
 echo "======== $CNAME ========"

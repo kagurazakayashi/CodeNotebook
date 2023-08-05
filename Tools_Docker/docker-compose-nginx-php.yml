@@ -1,0 +1,43 @@
+# docker-compose.yml
+#定义docker compose yml版本
+version: "3"  
+#定义我们的服务对象
+services:   
+#自定义的服务名称
+  nginx:
+     #镜像名称，默认拉取本地镜像，没有的话从远程获取
+     image: nginx:latest
+     #自定义容器的名称
+     container_name: nginx
+     #将宿主机的80端口映射到容器的80端口
+     ports:
+      - "80:80"
+     #将宿主机的~/lnmp/www目录和容器的/usr/share/nginx/html目录进行绑定，并设置rw权限
+     #将宿主机的~/lnmp/nginx/conf/default.conf和容器的/etc/nginx/conf.d/default.conf进行绑定
+     volumes:
+      - nginx_www:/usr/share/nginx/html/:rw
+      - nginx_conf:/etc/nginx/conf.d
+     #设置环境变量，当前的时区
+     environment:
+      TZ: "Asia/Shanghai"
+     #容器是否随docker服务启动重启
+     restart: always
+     #容器加入名为lnmp的网络
+     networks:
+      work:
+        ipv4_address: 172.18.0.80
+  php :
+    image: php:8.2-fpm
+    container_name: php
+    volumes:
+      - nginx_www:/var/www/html/:rw
+    restart: always
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      work:
+        ipv4_address: 172.18.0.81
+
+volumes:
+  www: {}
+  conf: {}

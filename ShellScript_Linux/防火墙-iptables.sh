@@ -110,6 +110,7 @@ iptables -Z  # 清空计数
 # 配置允许ssh端口连接
 iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
 # 22为你的ssh端口， -s 192.168.1.0/24表示允许这个网段的机器来连接，其它网段的ip地址是登陆不了你的机器的。 -j ACCEPT表示接受这样的请求
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 
 # 允许本地回环地址可以正常使用
 iptables -A INPUT -i lo -j ACCEPT
