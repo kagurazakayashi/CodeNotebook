@@ -1,3 +1,4 @@
+# crontab计划任务
 # 日志
 tail -f /var/log/cron
 # 重启
@@ -6,7 +7,7 @@ systemctl restart crond
 # 编辑
 crontab -e
 
-# 分 时 日 月 星 命令
+# 分 时 日 月 周 命令
 # 59 23 31 12 6 # 0=周日
 * * * * * command
 
