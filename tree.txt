@@ -745,6 +745,7 @@
 │   └── ./Markdown/对错字符.md
 ├── ./MySQL
 │   ├── ./MySQL/DISTINCT返回不重复的数据.sql
+│   ├── ./MySQL/Debian12-MySQL.sh
 │   ├── ./MySQL/HAVING筛选分组后的各组数据.sql
 │   ├── ./MySQL/IN.sql
 │   ├── ./MySQL/IS_NULL.sql
@@ -1119,6 +1120,7 @@
 │   ├── ./ShellScript_Linux/列出系统服务.sh
 │   ├── ./ShellScript_Linux/创建虚拟机和虚拟盘格式转换.sh
 │   ├── ./ShellScript_Linux/删除旧内核.sh
+│   ├── ./ShellScript_Linux/删除旧文件.sh
 │   ├── ./ShellScript_Linux/升级CentOS.sh
 │   ├── ./ShellScript_Linux/升级Ubuntu.sh
 │   ├── ./ShellScript_Linux/压缩解压缩.sh
@@ -1206,6 +1208,7 @@
 │   ├── ./ShellScript_Linux_Command/figlet_艺术字.sh
 │   ├── ./ShellScript_Linux_Command/file_确定文件的类型.sh
 │   ├── ./ShellScript_Linux_Command/find_文件搜索.sh
+│   ├── ./ShellScript_Linux_Command/findstr.sh
 │   ├── ./ShellScript_Linux_Command/free_内存使用查看.sh
 │   ├── ./ShellScript_Linux_Command/ftp_连接FTP服务器.sh
 │   ├── ./ShellScript_Linux_Command/grep_文件中查找匹配指定模式的文本.sh
@@ -1638,4 +1641,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-98 directories, 1540 files
+98 directories, 1543 files
