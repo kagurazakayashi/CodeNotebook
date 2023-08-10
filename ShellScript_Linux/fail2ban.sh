@@ -30,18 +30,28 @@ iptables -L |tail -4 ##查看禁止的IP
 # 查看日志
 vi /var/lo/fail2ban.log
 
+# 服务启动失败：
+vim /etc/fail2ban/jail.conf
+# backend = auto  ->  backend = systemd
+
+# 文件按以下顺序读取应用：
+/etc/fail2ban/jail.conf #包含一个[DEFAULT]部分，后面是各个服务的部分。
+/etc/fail2ban/jail.d/*.conf #按字母顺序排列
+/etc/fail2ban/jail.local
+/etc/fail2ban/jail.d/*.local #按字母顺序排列
+
 # 案例一：ssh远程登录5分钟内3次密码验证失败，禁止用户IP访问主机1小时，1小时后限制自动解除。
 vim /etc/fail2ban/jail.conf
 
 [DEFAULT]
-ignoreip=127.0.0.1/8 ##忽略的IP列表（白名单）
+ignoreip=127.0.0.1/8 ::1 172.31.0.0/24 10.10.0.0/24 192.168.0.0/24 ##忽略的IP列表（白名单）
 bantime=3600 ##屏蔽时间，秒
 findtime=300 ##这个时间段超过规定次数就会被ban掉
 maxretry=3 ##最大尝试次数
-backend=auto ##日志修改检测机制（gamin、polling和auto三种）
+backend=backend #auto
 [ssh-iptables] ##针对各种服务的检查配置，如设置bantime、findtime、maxretry和全局冲突，服务优先级大于全局
 enabled=true ##是否激活此服务
-filter=sshd ##过滤规则filter的名字，对应filter.d目录下的sshd.conf
+filter=sshd ##过滤规则filter的名字，对应/etc/fail2ban/filter.d/目录下的???.conf
 action=iptables[name=SSH,port=sh,protocol=tcp] ##动作的相关参数
 sendmail-whois[name=SSH,dest=xx@example.com,sender=fail2ban@example.com,sendername="Fail2ban"] ##邮件告警配置
 logpath=/var/log/secure ##检测的系统的登陆日志文件

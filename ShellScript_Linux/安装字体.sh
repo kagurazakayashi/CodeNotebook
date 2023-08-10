@@ -1,6 +1,6 @@
-cp *.otf /usr/share/fonts/yashi/
-chmod u+rwx /usr/share/fonts/yashi/*
-cd /usr/share/fonts/yashi
+cp *.otf /usr/share/fonts/add/
+chmod u+rwx /usr/share/fonts/add/*
+cd /usr/share/fonts/add
 mkfontscale
 mkfontdir
 fc-cache -fv
@@ -9,11 +9,11 @@ fc-cache -fv
 # 第一步：将windows下喜欢的字体文件copy到一个文件夹中，例如将XP里WINDOWS/FONTS中的字体文件，然后上传到linux服务器上，在linux中命名为xpfonts。
 
 # 第二步：将copy到的字体文件夹copy到系统字体文件夹中并且修改权限
-cp {存放xpfonts的路径}/xpfonts   /usr/share/fonts/
-chmod u+rwx /usr/share/fonts/yashi/*
+cp {存放xpfonts的路径}/xpfonts /usr/share/fonts/
+chmod u+rwx /usr/share/fonts/add/*
 
 # 第三步：建立字体缓存
-cd /usr/share/fonts/yashi
+cd /usr/share/fonts/add
 mkfontscale
 mkfontdir
 fc-cache -fv

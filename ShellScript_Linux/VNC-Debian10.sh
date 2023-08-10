@@ -37,9 +37,17 @@ WantedBy=multi-user.target
 
 # 重载系统服务
 sudo systemctl daemon-reload
+
 sudo systemctl enable vncserver@1.service
+sudo systemctl start vncserver@1.service
+sudo systemctl stop vncserver@1.service
 
 # 用以下命令设置默认的启动项目：
 update-alternatives --config x-window-manager
 
 # 官方介绍： https://wiki.debian.org/zh_CN/Xfce
+
+# vnc 执行子进程 dbus-launch 失败
+# Failed to execute child process "dbus-launch"
+apt install dbus-x11 -y
+systemctl restart vncserver@1.service

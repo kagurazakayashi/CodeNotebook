@@ -2,7 +2,7 @@
 # 日志
 tail -f /var/log/cron
 # 重启
-systemctl restart crond
+systemctl restart cron
 /etc/init.d/crond restart
 # 编辑
 crontab -e

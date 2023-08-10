@@ -51,13 +51,13 @@ firewall-cmd --set-default-zone=internal
 firewall-cmd --get-active-zones
 # 得到特定区域的所有配置
 firewall-cmd --zone=public --list-all
-# 得到所有区域的配置： 
+# 得到所有区域的配置： 
 firewall-cmd --list-all-zones
 
 # 与服务一起使用
 # 要查看默认的可用服务：
 firewall-cmd --get-services
-# 比如，要启用或禁用 HTTP 服务： 
+# 比如，要启用或禁用 HTTP 服务： 
 firewall-cmd --zone=public --add-service=http --permanent
 firewall-cmd --zone=public --remove-service=http --permanent
 
@@ -123,7 +123,7 @@ firewall-cmd --reload
 firewall-cmd --zone=public --add-rich-rule 'rule family="ipv4" source address=192.168.0.14 accept'
 # 拒绝来自主机 192.168.1.10 到 22 端口的 IPv4 的 TCP 流量。
 firewall-cmd --zone=public --add-rich-rule 'rule family="ipv4" source address="192.168.1.10" port port=22 protocol=tcp reject'
-# 允许来自主机 10.1.0.3 到 80 端口的 IPv4 的 TCP 流量，并将流量转发到 6532 端口上。 
+# 允许来自主机 10.1.0.3 到 80 端口的 IPv4 的 TCP 流量，并将流量转发到 6532 端口上。 
 firewall-cmd --zone=public --add-rich-rule 'rule family=ipv4 source address=10.1.0.3 forward-port port=80 protocol=tcp to-port=6532'
 # 将主机 172.31.4.2 上 80 端口的 IPv4 流量转发到 8080 端口（需要在区域上激活 masquerade）。
 firewall-cmd --zone=public --add-rich-rule 'rule family=ipv4 forward-port port=80 protocol=tcp to-port=8080 to-addr=172.31.4.2'

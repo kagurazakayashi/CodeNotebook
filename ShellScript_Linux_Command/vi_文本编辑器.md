@@ -140,3 +140,35 @@ set expandtab     当设置成 expandtab 时，缩进用空格来表示，noexpa
 
 ## 其他
 禁用鼠标操作（可视）： `set mouse=`
+
+## SpaceVim 整合包  https://spacevim.org/
+curl -sLf https://spacevim.org/install.sh | bash
+
+- h	向左移动光标
+- j	向下移动光标
+- k	向上移动光标
+- l	向右移动光标
+- <Up>,<Down>	智能上下
+- H	将光标移动到屏幕顶部
+- L	将光标移动到屏幕底部
+- <	向左缩进并重新选择
+- >	向右缩进并重新选择
+- }	向前段落
+- {	段落向后
+- Ctrl-f// Shift-Down_<PageDown>	平滑向前滚动
+- Ctrl-b// Shift-Up_<PageUp>	平滑向后滚动
+- Ctrl-d	平滑向下滚动
+- Ctrl-u	平滑向上滚动
+- Ctrl-e	智能向下滚动 ( 3 Ctrl-e/j)
+- Ctrl-y	智能向上滚动 ( 3Ctrl-y/k)
+- Ctrl-a	将光标移至开头
+- Ctrl-b	在命令行中向后移动光标
+- Ctrl-f	在命令行中向前移动光标
+- Ctrl-w	删除整个单词
+- Ctrl-u	删除光标之前的所有文本
+- Ctrl-k	删除光标后的所有文本
+- Ctrl-c/Esc	取消命令行模式
+- Tab	弹出菜单中的下一项
+- Shift-Tab	弹出菜单中的上一项
+
+https://spacevim.org/documentation/#command-line-mode-key-bindings
