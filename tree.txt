@@ -933,6 +933,7 @@
 │   ├── ./Python/ctrl+c.py
 │   ├── ./Python/matplotlib画饼图.py
 │   ├── ./Python/pacman常用命令.md
+│   ├── ./Python/pip换源.py
 │   ├── ./Python/pip无法运行.sh.py
 │   ├── ./Python/redis.py
 │   ├── ./Python/windows安装pycrypto.bat
@@ -1100,6 +1101,7 @@
 │   ├── ./ShellScript_Linux/letsencrypt泛域名证书.sh
 │   ├── ./ShellScript_Linux/letsencrypt自动更新和同步阿里云CDN.sh
 │   ├── ./ShellScript_Linux/nc传输文件.sh
+│   ├── ./ShellScript_Linux/noVNC网页VNC.sh
 │   ├── ./ShellScript_Linux/ps进程查看器.rst
 │   ├── ./ShellScript_Linux/pureFTPd端口范围.sh
 │   ├── ./ShellScript_Linux/rsync文件同步命令.sh
@@ -1250,6 +1252,7 @@
 │   ├── ./ShellScript_Linux_Command/tail_查看文件的最后几行.sh
 │   ├── ./ShellScript_Linux_Command/tar_打包归档文件.sh
 │   ├── ./ShellScript_Linux_Command/tee_从标准输入到2个标准输出.sh
+│   ├── ./ShellScript_Linux_Command/tmux_终端多窗口化.sh
 │   ├── ./ShellScript_Linux_Command/top_动态显示进程状态.sh
 │   ├── ./ShellScript_Linux_Command/touch_改变文件时间或创建空文件.sh
 │   ├── ./ShellScript_Linux_Command/tree_树形列出目录.sh
@@ -1322,6 +1325,7 @@
 │   ├── ./Tools/npm更新.sh
 │   ├── ./Tools/v2ray-docker.txt
 │   ├── ./Tools/virtualbox虚拟磁盘复制.bat
+│   ├── ./Tools/webmin网页管理.sh
 │   ├── ./Tools/youtube-dl.sh
 │   ├── ./Tools/一键收集信息.bat
 │   ├── ./Tools/下载M3U8
@@ -1376,13 +1380,14 @@
 │   └── ./Tools_Aliyun/解压缩下载的当日日志并归档，参数①新文件夹名.sh
 ├── ./Tools_Docker
 │   ├── ./Tools_Docker/CentOS.sh
+│   ├── ./Tools_Docker/DockerPHP.sh
+│   ├── ./Tools_Docker/DockerPHP安装扩展.sh
 │   ├── ./Tools_Docker/Docker_run_命令.sh
 │   ├── ./Tools_Docker/Dockerfile
 │   ├── ./Tools_Docker/Docker宝塔.sh
 │   ├── ./Tools_Docker/Firewalld影响Docker容器间通信.sh
 │   ├── ./Tools_Docker/MySQL.sh
 │   ├── ./Tools_Docker/NTP校时服务器.sh
-│   ├── ./Tools_Docker/PHP.sh
 │   ├── ./Tools_Docker/Portainer可视化界面.sh
 │   ├── ./Tools_Docker/Portainer更新.sh
 │   ├── ./Tools_Docker/RHEL7-8装CE.sh
@@ -1410,6 +1415,20 @@
 │   ├── ./Tools_Docker/登入控制台.sh
 │   ├── ./Tools_Docker/移动数据到其它盘.sh
 │   ├── ./Tools_Docker/端口映射.sh
+│   ├── ./Tools_Docker/自用DockerNginxPHP配置
+│   │   ├── ./Tools_Docker/自用DockerNginxPHP配置/DockerNginxPHP.sh
+│   │   └── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/conf.d
+│   │       │   └── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/conf.d/default.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/deny.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/fastcgi.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/mime.types
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/nginx.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/pathinfo.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/phpconf.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/port.conf
+│   │       ├── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/share.conf
+│   │       └── ./Tools_Docker/自用DockerNginxPHP配置/nginx_conf/ssl.conf
 │   ├── ./Tools_Docker/虚拟盘.sh
 │   └── ./Tools_Docker/镜像.sh
 ├── ./Tools_FFmpeg
@@ -1497,6 +1516,9 @@
 │   ├── ./Tools_Nginx/nginx-php-macos.sh
 │   ├── ./Tools_Nginx/nginxlog.rb
 │   ├── ./Tools_Nginx/云主机反向代理穿透内网（ngin+ssh隧道）.md
+│   ├── ./Tools_Nginx/反代Portainer.conf
+│   ├── ./Tools_Nginx/反代Webmin.conf
+│   ├── ./Tools_Nginx/反代noVNC.conf
 │   ├── ./Tools_Nginx/拆分Nginx日志字段.rb
 │   └── ./Tools_Nginx/检查nginx是否有网页文件访问权.sh
 ├── ./Tools_VSCode
@@ -1641,4 +1663,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-98 directories, 1543 files
+101 directories, 1562 files
