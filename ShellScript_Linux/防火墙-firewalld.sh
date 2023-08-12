@@ -30,6 +30,8 @@ firewall-cmd --zone=public --remove-port=100-500/tcp --permanent
 
 # 开放或限制IP
 # REJECT:回复拒绝  DROP:直接丢弃
+# 允许特定IP访问特定端口
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="127.0.0.1" port protocol="tcp" port="8888" accept"
 #禁止IP(123.56.161.140)访问机器
 firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address="123.56.161.140" drop'
 # 限制IP地址访问 限制IP为192.168.0.200的地址禁止访问80端口

@@ -1,0 +1,4 @@
+修改/etc/my.cnf 文件，找到下面两行并注释
+#log-bin=mysql-bin
+#binlog_format=mixed
+然后重启
