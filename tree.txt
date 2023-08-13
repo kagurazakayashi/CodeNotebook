@@ -771,6 +771,7 @@
 │   ├── ./MySQL/查找指定日期.sql
 │   ├── ./MySQL/根据出生日期计算年龄.sql
 │   ├── ./MySQL/清空表.sql
+│   ├── ./MySQL/禁用二进制日志.txt
 │   ├── ./MySQL/移动数据文件夹.sh
 │   ├── ./MySQL/索引类型.md
 │   ├── ./MySQL/统计不含空和不含重复值的数量.sql
@@ -1663,4 +1664,4 @@
 ├── ./tree.txt
 └── ./web.config
 
-101 directories, 1562 files
+101 directories, 1563 files
