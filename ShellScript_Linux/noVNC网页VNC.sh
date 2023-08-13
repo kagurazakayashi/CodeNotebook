@@ -20,10 +20,9 @@ WORKDIR /root
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk add --no-cache bash curl #git
 RUN pip install numpy -i https://mirrors.aliyun.com/pypi/simple some-package
-# git clone https://github.com/kanaka/noVNC 改为本地拷贝
+# RUN git clone https://github.com/kanaka/noVNC 改为本地拷贝
 # WORKDIR /root/noVNC/utils
 # RUN git clone https://github.com/novnc/websockify
-# RUN openssl req -new -x509 -days 365 -nodes -out self.pem -keyout self.pem
 COPY noVNC ./noVNC
 WORKDIR /root/noVNC
 #COPY noVNC/vnc.html ./index.html
@@ -32,6 +31,7 @@ HEALTHCHECK --interval=600s CMD curl -I --fail "http://127.0.0.1:6080" || exit 1
 ENTRYPOINT ./utils/novnc_proxy --vnc 172.18.0.1:5901
 
 # run.sh
+openssl req -new -x509 -days 365 -nodes -out self.pem -keyout self.pem
 #!/bin/bash
 docker stop novnc_c
 docker rm novnc_c
