@@ -1,3 +1,24 @@
+# Linux系统服务创建
+在 /etc/systemd/system 目录下，系统管理员可以创建自定义的 systemd 服务配置文件，用以控制各种系统服务的启动、停止、重启、维护等行为。例如，管理员可以创建 demo01.service 文件来定义自己的服务，然后通过 systemctl status demo01.service 命令将其注册到 systemd 中，使其能够在系统启动时自动启动。
+
+```ini
+[Unit] #指定服务的基本信息
+Description=Hello World Service #服务的名称
+After=network.target #表示服务在网络启动之后启动
+
+[Service] #定义服务的具体行为
+ExecStart=/root/golang/02_windows_daemon #表示服务启动时需要执行的命令或者路径
+WorkingDirectory=/root/golang/info/ #设置程序执行的工作目录，输出到该目录
+Restart=always #表示服务异常退出后会自动重启
+User=root #表示该服务以root权限运行
+
+[Install] #指定如何安装这个服务
+WantedBy=multi-user.target #表示系统进入多用户模式时，这个服务将被安装并启动
+```
+
+[https://blog.csdn.net/weixin_45671390/article/details/130226972]
+
+
 # CentOS 7 的 服务 systemctl 脚本位置
 系统: `/usr/lib/systemd/system`
 用户: `/usr/lib/systemd/user`
@@ -13,7 +34,7 @@
   - 在此目录下创建 nginx.service.d 目录，在这个目录里面新建任何以.conf 结尾的文件，然后写入我们自己的配置。推荐这种做法。
 
 # 服务配置
-```
+```ini
 [Unit]
 # 服务的简单描述
 Description=nginx - high performance web server
@@ -120,6 +141,5 @@ WantedBy=multi-user.target
 `systemctl reboot`    # 重启
 `systemctl rescue`    # 进入rescue模式
 
-
-[https://learnku.com/articles/34025]
-[https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html]
+- [https://learnku.com/articles/34025]
+- [https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html]

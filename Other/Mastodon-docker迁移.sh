@@ -93,7 +93,7 @@ docker pull tootsuite/mastodon:latest #或者将latest改成版本号如v3.2.1
 
 docker-compose up -d
 docker-compose run --rm web rails db:migrate
-docker system prune -a
+docker system prune -a # 清理docker（小心）
 
 # 如果在操作过程中出现了任何问题……
 docker-compose down

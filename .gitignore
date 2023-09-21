@@ -1,5 +1,8 @@
 ._*
 .DS_Store
+_MACOS*
+.fseventsd
+.Spotlight*
 Thumbs.db
 vendor
 __pycache__
