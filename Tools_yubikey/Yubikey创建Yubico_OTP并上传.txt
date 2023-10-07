@@ -1,0 +1,15 @@
+创建Yubico OTP并上传YubiKey新信息
+
+修改OTP后过不了验证是因为没上传无法三方验证
+
+启动 YubiKey Manager 导入证书, 进入 PIV
+"C:\Program Files\Yubico\YubiKey Manager\ykman-gui.exe"
+
+选要配置的 OTP 槽位, 选 Yubico OTP
+
+打开 https://upload.yubico.com/
+
+YubiKey Manager 生成各种信息
+网站填写各种信息
+
+网站最后一个框是生成好之后再框里按一下 YubiKey 填入

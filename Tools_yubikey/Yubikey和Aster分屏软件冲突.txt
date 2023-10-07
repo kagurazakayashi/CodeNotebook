@@ -1,0 +1,4 @@
+Yubikey 是一个键盘。
+2号机想用 Yubikey:
+如果2号机用 FIDO2/PIV 认证功能，将 Yubikey 分给 1号机，分给2号机会找不到密钥。
+如果2号机用 OTP 功能，将 Yubikey 分给 2号机，防止 Yubikey 此时是模拟键盘状态输入到1号机。

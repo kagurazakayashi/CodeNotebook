@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE]
+"SelfSignedCertificates"=dword:00000001
+"CertificateOID"="1.3.6.1.4.1.311.10.3.4"
