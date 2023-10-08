@@ -59,8 +59,8 @@ jobs:
             git add -A
             git config --global user.name "神楽坂雅絵[bot]"
             git config --global user.email "masae@uuu.moe"
-            git config --global user.signingkey "9A9121AFE0002AB746FB0B1079A9CCDDB8C957F3"
-            git config --global commit.gpgsign true
+            #git config --global user.signingkey "9A9121AFE0002AB746FB0B1079A9CCDDB8C957F3"
+            #git config --global commit.gpgsign true
             git commit -S -m "$h1" -m "$h2"
             git remote set-url origin "$h3"
             git push #master
