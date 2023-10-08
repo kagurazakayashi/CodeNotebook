@@ -35,11 +35,16 @@ jobs:
       - name: ImportGPG
         uses: crazy-max/ghaction-import-gpg@v6
         with:
+          git_config_global: true
           gpg_private_key: ${{ secrets.PGP_PRIVATE_KEY_BLOCK }}
           passphrase: ${{ secrets.PGP_PRIVATE_KEY_PASSPHRASE }}
+          fingerprint: "9A9121AFE0002AB746FB0B1079A9CCDDB8C957F3"
           git_user_signingkey: true
           git_commit_gpgsign: true
           trust_level: 5
+          git_committer_name: "神楽坂雅絵[bot]"
+          git_committer_email: "masae@uuu.moe"
+
       - name: Push
         run: |
           dt=`date +%Y-%m-%d-%H-%M-%S-%s`
@@ -51,18 +56,19 @@ jobs:
             gpg -K
             h1=`git show -s --format='自动更新：为 %H 创建目录文件'`
             h2=`git show -s --format='由 %an(%al) 提交于 %ai'`
-            h3="https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}"
             echo $h1
             echo $h2
-            echo $h3
-            echo "正在提交..."
-            git add -A
-            git config --global user.name "神楽坂雅絵[bot]"
-            git config --global user.email "masae@uuu.moe"
+            echo "添加..."
+            git add .
+            #git config --global user.name "神楽坂雅絵[bot]"
+            #git config --global user.email "masae@uuu.moe"
             #git config --global user.signingkey "9A9121AFE0002AB746FB0B1079A9CCDDB8C957F3"
             #git config --global commit.gpgsign true
+            echo "签名..."
             git commit -S -m "$h1" -m "$h2"
-            git remote set-url origin "$h3"
+            echo "令牌..."
+            git remote set-url origin "https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}"
+            echo "推送..."
             git push #master
             echo "提交完毕。"
           else
