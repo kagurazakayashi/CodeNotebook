@@ -42,8 +42,8 @@ jobs:
           git_user_signingkey: true
           git_commit_gpgsign: true
           trust_level: 5
-          git_committer_name: "神楽坂雅絵[bot]"
-          git_committer_email: "masae@uuu.moe"
+          git_committer_name: "KagurazakaYashi"
+          git_committer_email: "yashi@uuu.moe"
 
       - name: Push
         run: |
@@ -60,8 +60,8 @@ jobs:
             echo $h2
             echo "添加..."
             git add .
-            #git config --global user.name "神楽坂雅絵[bot]"
-            #git config --global user.email "masae@uuu.moe"
+            git config --global user.name "神楽坂雅絵[bot]"
+            git config --global user.email "masae@uuu.moe"
             #git config --global user.signingkey "9A9121AFE0002AB746FB0B1079A9CCDDB8C957F3"
             #git config --global commit.gpgsign true
             echo "签名..."
