@@ -1076,6 +1076,7 @@
 │   ├── ./ShellScript_Linux/CPU温度.sh
 │   ├── ./ShellScript_Linux/CentOS8网络配置.sh
 │   ├── ./ShellScript_Linux/ERR_CERT_INVALID.txt
+│   ├── ./ShellScript_Linux/GRUB2分辨率设置.sh
 │   ├── ./ShellScript_Linux/Gnome美化.sh
 │   ├── ./ShellScript_Linux/LNMP脚本加入直播插件.sh
 │   ├── ./ShellScript_Linux/Linux操作系统.txt
@@ -1098,6 +1099,7 @@
 │   ├── ./ShellScript_Linux/WSL.txt
 │   ├── ./ShellScript_Linux/WSL2批处理直接启动完整桌面.txt
 │   ├── ./ShellScript_Linux/apt-install通配符.sh
+│   ├── ./ShellScript_Linux/apt安装图形画面.sh
 │   ├── ./ShellScript_Linux/apt安装通配符.sh
 │   ├── ./ShellScript_Linux/dpkg取回了一个空字符串.sh
 │   ├── ./ShellScript_Linux/dpkg文件名列表文件缺少最后结尾的换行符.sh
@@ -1696,4 +1698,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-106 directories, 1590 files
+106 directories, 1592 files
