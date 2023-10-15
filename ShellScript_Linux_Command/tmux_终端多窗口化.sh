@@ -93,6 +93,7 @@ cp .tmux/.tmux.conf.local .
 # 鼠标操作      ctrl+b m
 
 # 显示 CPU内存 用量  https://github.com/thewtex/tmux-mem-cpu-load
+sudo apt install cmake -y
 git clone https://github.com/thewtex/tmux-mem-cpu-load.git
 cd tmux-mem-cpu-load
 cmake .
