@@ -1,0 +1,15 @@
+/* CSS判断横屏竖屏 */
+
+
+/* 当屏幕方向变化时，可以通过CSS样式实现相应的横竖屏幕布局。例如，当屏幕为竖屏时，在CSS中设置为： */
+
+@media screen and (orientation: portrait) {
+  /* 竖屏样式 */
+}
+
+
+/* 当屏幕为横屏时，在CSS中设置为： */
+
+@media screen and (orientation: landscape) {
+  /* 横屏样式 */
+}

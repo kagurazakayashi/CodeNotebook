@@ -8,7 +8,7 @@ yum install zsh # CentOS
 brew install zsh # mac安装（已自带）
 
 # 将zsh设置为默认shell
-chsh -s /bin/zsh # CentOS
+chsh -s /bin/zsh
 
 # Mac 如下
 # 在 /etc/shells 文件中加入如下一行

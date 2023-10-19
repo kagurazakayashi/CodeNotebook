@@ -18,6 +18,8 @@ for %%i in (*) do ( echo %%i )
 
 ECHO 无参指定路径：遍历在(匹配符)中指定路径下的以 .url 结尾的文件；
 for %%i in (c:\softwares\VisualBat\*.url) do ( echo %%i )
+ECHO 命令行直接单行输入：
+for %i in (*.vhd) do ( echo %i )
 
 ECHO 带参数 /d 指定路径：遍历指定目录下的所有文件夹，%%i 指向每个子文件夹的绝对路径；
 for /d %%i in (c:\softwares\VisualBat\*) do ( echo %%i )

@@ -53,5 +53,6 @@ vi /etc/ssh/sshd_config
 # ClientAliveCountMax 2           # 2 次
 # 如果客户端处于非活动状态10分钟，则从客户端请求响应。 sshd守护程序将最多发送这些消息两次。 如果在发送客户端活动消息时达到此阈值，sshd将断开客户端的连接。
 
-# Windows SSH 服务器配置文件
-notepad C:\ProgramData\ssh\sshd_config
+# Windows SSH 服务器配置文件（管理员方式运行）
+# https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration
+notepad "%programdata%\ssh\sshd_config"

@@ -12,7 +12,7 @@ docker search httpd
 docker commit -m="has update" -a="runoob" e218edb10161 runoob/ubuntu:v2
 # 导出镜像
 docker save 镜像名（或镜像ID） > 镜像名（自定义）.tar 
-docker save 镜像名 | xz -z -9 -e -T 0 >file.tar.xz
+docker save 镜像名 | xz -z -e -9 -T 0 -v -c >file.tar.xz
 # 删除镜像
 # 先移除WEB应用容器
 docker stop ID/名字

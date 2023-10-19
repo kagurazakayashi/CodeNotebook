@@ -144,6 +144,8 @@ set expandtab     当设置成 expandtab 时，缩进用空格来表示，noexpa
 ## SpaceVim 整合包  https://spacevim.org/
 curl -sLf https://spacevim.org/install.sh | bash
 
+rm -rf ~/.SpaceVim.d && rm -rf ~/.vimrc && rm -rf ~/.config/nvim && rm -rf ~/.SpaceVim && rm -rf ~/.vim && curl -sLf https://spacevim.org/install.sh | bash
+
 - h	向左移动光标
 - j	向下移动光标
 - k	向上移动光标

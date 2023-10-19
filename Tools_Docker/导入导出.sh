@@ -11,6 +11,8 @@ docker commit pyg_nginx mynginx
 docker save -o mynginx.tar mynginx
 # -o 输出到的文件
 # 执行后，运行ls命令即可看到打成的tar包
+# 压缩导出
+docker save 镜像名 | xz -z -e -9 -T 0 -v -c >mynginx.tar.xz
 
 # 镜像恢复与迁移
 # 首先我们先删除掉mynginx镜像
@@ -18,7 +20,6 @@ docker save -o mynginx.tar mynginx
 docker load -i mynginx.tar
 # -i 输入的文件
 # 执行后再次查看镜像，可以看到镜像已经恢复
-
 
 docker container ls -a
 # 1、导出容器
