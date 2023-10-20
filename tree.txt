@@ -341,9 +341,10 @@
 │   ├── ./CSS/sakura-ui-colors.py
 │   ├── ./CSS/下划线删除线上划线.css
 │   ├── ./CSS/仿Windows等待进度条.html
+│   ├── ./CSS/判断横屏竖屏.css
 │   ├── ./CSS/动画animation.css
 │   ├── ./CSS/动画animation结束后停止.css
-│   ├── ./CSS/动画transform.css
+│   ├── ./CSS/动画transform高性能.css
 │   ├── ./CSS/单独设置input的checkbox等外观.css
 │   ├── ./CSS/去掉textarea小三角.css
 │   ├── ./CSS/去除选中时边框.css
@@ -659,6 +660,7 @@
 │   ├── ./JavaScript/创建HTML元素.js
 │   ├── ./JavaScript/判断变量是否已经定义.js
 │   ├── ./JavaScript/判断数据类型.js
+│   ├── ./JavaScript/判断横屏竖屏.js
 │   ├── ./JavaScript/去掉px.js
 │   ├── ./JavaScript/反向遍历和反转数组.js
 │   ├── ./JavaScript/取出所有超链接做下载脚本.js
@@ -913,6 +915,7 @@
 │   ├── ./Proxy/Electron.sh
 │   ├── ./Proxy/GAE.sh
 │   ├── ./Proxy/Maven设置代理.md
+│   ├── ./Proxy/SSH代理连接.sh
 │   ├── ./Proxy/SSH通过代理连接.sh
 │   ├── ./Proxy/VisualStudio设置代理.config
 │   ├── ./Proxy/apt代理.sh
@@ -1075,6 +1078,7 @@
 ├── ./ShellScript_Linux
 │   ├── ./ShellScript_Linux/CPU温度.sh
 │   ├── ./ShellScript_Linux/CentOS8网络配置.sh
+│   ├── ./ShellScript_Linux/Chome添加启动参数.sh
 │   ├── ./ShellScript_Linux/ERR_CERT_INVALID.txt
 │   ├── ./ShellScript_Linux/GRUB2分辨率设置.sh
 │   ├── ./ShellScript_Linux/Gnome美化.sh
@@ -1082,9 +1086,6 @@
 │   ├── ./ShellScript_Linux/Linux操作系统.txt
 │   ├── ./ShellScript_Linux/NTP校时服务器.sh
 │   ├── ./ShellScript_Linux/RedHat8安装EPEL和RPMf.sh
-│   ├── ./ShellScript_Linux/SSH代理连接.sh
-│   ├── ./ShellScript_Linux/SSH传输文件.sh
-│   ├── ./ShellScript_Linux/SSH证书登录.sh
 │   ├── ./ShellScript_Linux/Unable to locate package ifconfig.sh
 │   ├── ./ShellScript_Linux/V2Ray客户端.txt
 │   ├── ./ShellScript_Linux/VNC-Centos-xfce.sh
@@ -1101,6 +1102,8 @@
 │   ├── ./ShellScript_Linux/apt-install通配符.sh
 │   ├── ./ShellScript_Linux/apt安装图形画面.sh
 │   ├── ./ShellScript_Linux/apt安装通配符.sh
+│   ├── ./ShellScript_Linux/dd备份硬盘.sh
+│   ├── ./ShellScript_Linux/dd测速.sh
 │   ├── ./ShellScript_Linux/dpkg取回了一个空字符串.sh
 │   ├── ./ShellScript_Linux/dpkg文件名列表文件缺少最后结尾的换行符.sh
 │   ├── ./ShellScript_Linux/dpkg无法找到软件包的文件名列表文件.py
@@ -1151,6 +1154,7 @@
 │   ├── ./ShellScript_Linux/开机启动图形程序.sh
 │   ├── ./ShellScript_Linux/开机时间.sh
 │   ├── ./ShellScript_Linux/开机显示详细过程.sh
+│   ├── ./ShellScript_Linux/开机自动解密LUKS分区.sh
 │   ├── ./ShellScript_Linux/开机运行一个脚本.sh
 │   ├── ./ShellScript_Linux/开机进命令行还是图形.sh
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
@@ -1191,7 +1195,6 @@
 │   ├── ./ShellScript_Linux/进程优先级.sh
 │   ├── ./ShellScript_Linux/远程XServer.md
 │   ├── ./ShellScript_Linux/远程输出到显示器.sh
-│   ├── ./ShellScript_Linux/配置ssh的超时时间.sh
 │   ├── ./ShellScript_Linux/锁定文件.sh
 │   ├── ./ShellScript_Linux/防火墙-firewalld.sh
 │   ├── ./ShellScript_Linux/防火墙-iptables.sh
@@ -1200,6 +1203,7 @@
 │   └── ./ShellScript_Linux/默认启动项.sh
 ├── ./ShellScript_Linux_Command
 │   ├── ./ShellScript_Linux_Command/alias_设置别名.sh
+│   ├── ./ShellScript_Linux_Command/apt-get_UbuntuDebian包管理器.sh
 │   ├── ./ShellScript_Linux_Command/bg_暂停作业.sh
 │   ├── ./ShellScript_Linux_Command/cal_日历.sh
 │   ├── ./ShellScript_Linux_Command/cat_显示和连接文件.sh
@@ -1286,13 +1290,19 @@
 │   ├── ./ShellScript_Linux_Command/which_找到命令文件位置.sh
 │   ├── ./ShellScript_Linux_Command/who_显示当前登录的所有用户.sh
 │   └── ./ShellScript_Linux_Command/whoami_查看当前用户名.sh
+├── ./ShellScript_SSH
+│   ├── ./ShellScript_SSH/SSH传输文件.sh
+│   ├── ./ShellScript_SSH/SSH证书登录.sh
+│   ├── ./ShellScript_SSH/UNPROTECTED_PRIVATE_KEY_FILE.md
+│   ├── ./ShellScript_SSH/ssh报错NoMatchingKeyExchangeMethodFound.sh
+│   ├── ./ShellScript_SSH/使用不同的SSH密钥.md
+│   └── ./ShellScript_SSH/配置ssh的超时时间.sh
 ├── ./ShellScript_macOS
 │   ├── ./ShellScript_macOS/CocoaPods安装.sh
 │   ├── ./ShellScript_macOS/NAS时间机器备份修复.md
 │   ├── ./ShellScript_macOS/Windows_VirtualBox_macOS11.bat
 │   ├── ./ShellScript_macOS/mac安装app转iso.sh
 │   ├── ./ShellScript_macOS/mumu服务启动.sh
-│   ├── ./ShellScript_macOS/ssh报错NoMatchingKeyExchangeMethodFound.sh
 │   ├── ./ShellScript_macOS/vbox引导bootcamp系统.sh
 │   ├── ./ShellScript_macOS/xip解压到指定文件夹.sh
 │   ├── ./ShellScript_macOS/zsh加入bash环境.sh
@@ -1316,6 +1326,7 @@
 │   ├── ./Tools/7z.md
 │   ├── ./Tools/ACFan连点器.js
 │   ├── ./Tools/CD抓轨.sh
+│   ├── ./Tools/Chrome更换缓存.bat
 │   ├── ./Tools/Coin
 │   │   ├── ./Tools/Coin/bitcoin-cli.sh
 │   │   ├── ./Tools/Coin/bitcoin-cli.txt
@@ -1335,6 +1346,7 @@
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/PhotoGIMP.sh
 │   ├── ./Tools/exiftool.sh
+│   ├── ./Tools/hash校验文件.sh
 │   ├── ./Tools/matrix.sh
 │   ├── ./Tools/npm更新.sh
 │   ├── ./Tools/v2ray-docker.txt
@@ -1370,6 +1382,8 @@
 │   ├── ./Tools/将证书链拆分回单独证书.sh
 │   ├── ./Tools/小米路由器mixbox.sh
 │   ├── ./Tools/扒京东商品图片和标题.js
+│   ├── ./Tools/批量更新多个文件的特定段落.py
+│   ├── ./Tools/替换非ASCII.py
 │   ├── ./Tools/检查网站可访问性自动重启服务.sh
 │   ├── ./Tools/清理文件夹信息文件
 │   │   ├── ./Tools/清理文件夹信息文件/清理媒体文件缓存临时文件.bat
@@ -1536,6 +1550,7 @@
 │   ├── ./Tools_Nginx/反代Portainer.conf
 │   ├── ./Tools_Nginx/反代Webmin.conf
 │   ├── ./Tools_Nginx/反代noVNC.conf
+│   ├── ./Tools_Nginx/常用header标头.ini
 │   ├── ./Tools_Nginx/拆分Nginx日志字段.rb
 │   └── ./Tools_Nginx/检查nginx是否有网页文件访问权.sh
 ├── ./Tools_VSCode
@@ -1698,4 +1713,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-106 directories, 1592 files
+107 directories, 1606 files
