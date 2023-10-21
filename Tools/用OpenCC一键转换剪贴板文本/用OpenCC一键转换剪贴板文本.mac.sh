@@ -1,11 +1,15 @@
 #!/bin/bash
-touch /Volumes/RAMDISK/opencctemp.txt
-chmod 777 /Volumes/RAMDISK/opencctemp.txt
+openccBuildPath=opencc
+tempFilePath=/Volumes/RAMDISK
+touch $tempFilePath/opencctemp.txt
+chmod 777 $tempFilePath/opencctemp.txt
 read str
-echo $str > /Volumes/RAMDISK/opencctemp.txt
+echo $str > $tempFilePath/opencctemp.txt
 echo '->'
-str=`opencc -i /Volumes/RAMDISK/opencctemp.txt -c s2twp.json`
+str=`$openccBuildPath --input $tempFilePath/opencctemp.txt --config $openccBuildPath/share/opencc/s2twp.json`
 echo $str
 echo $str | xargs echo -n | pbcopy
+rm -f $tempFilePath/opencctemp.txt
 unset str
-rm -f /Volumes/RAMDISK/opencctemp.txt
+unset tempFilePath
+unset openccBuildPath

@@ -7,6 +7,7 @@ import sys
 import opencc
 import pyperclip
 
+mode = 's2twp.json' # https://github.com/BYVoid/OpenCC#%E9%A0%90%E8%A8%AD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
 try:
     clipin = pyperclip.paste()
 except pyperclip.PyperclipException:
@@ -18,8 +19,6 @@ if type(clipin) != str:
 if len(clipin) == 0:
     print('E: 剪贴板中没有需要转换的内容')
     quit()
-# https://github.com/BYVoid/OpenCC#%E9%A0%90%E8%A8%AD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
-mode = 's2twp.json'
 if len(sys.argv) > 1:
     mode = sys.argv[1]+'.json'
 converter = opencc.OpenCC(mode)
