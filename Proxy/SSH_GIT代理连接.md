@@ -1,6 +1,13 @@
 # Windows SSH
-`notepad C:\Users\yashi\.ssh\config`
+```bash
+choco install mingw64
+msys2
+pacman -Sy netcat connect-proxy
+exit
+notepad C:\Users\yashi\.ssh\config
 ```
+
+```conf
 Host github.com
   ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 %h %p
 
@@ -11,10 +18,15 @@ Host gitlab.com
 - `%h %p` 意思是 Host 和 Port
 
 # macOS SSH
-`vim ~/.ssh/config`
+```bash
+sudo apt install netcat connect-proxy -y   # Linux
+brew install netcat connect-proxy -y       # macOS
+vim ~/.ssh/config
 ```
+
+```conf
 Host github.com
-   HostName github.com
+   HostName ssh.github.com
    User git
    ProxyCommand nc -v -x 127.0.0.1:6153 %h %p
 
@@ -22,23 +34,3 @@ Host gitlab.com
    ProxyCommand nc -v -x 127.0.0.1:6153 %h %p
 ```
 - `ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=8080` # 走 HTTP 代理
-
-# 全局 HTTP
-
-## 走 HTTP 代理
-```
-git config --global http.proxy "http://127.0.0.1:8080"
-git config --global https.proxy "http://127.0.0.1:8080"
-```
-
-## 走 socks5 代理（如 Shadowsocks）
-```
-git config --global http.proxy "socks5://127.0.0.1:1080"
-git config --global https.proxy "socks5://127.0.0.1:1080"
-```
-
-## 取消设置
-```
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-```

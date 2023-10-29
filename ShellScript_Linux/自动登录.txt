@@ -1,0 +1,12 @@
+Liunx自动登录
+
+Xfce自动登录
+
+sudo nano /etc/lightdm/lightdm.conf
+
+设置以下参数
+
+[Seat:*]
+autologin-session=xubuntu
+autologin-user=YourDesiredAutoLoginUserName # 通常只需要这一行
+autologin-user-timeout=0

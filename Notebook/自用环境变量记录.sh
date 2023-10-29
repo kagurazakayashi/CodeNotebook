@@ -13,6 +13,21 @@ SET GOPATH="D:\c\go"
 SET FLUTTER_ROOT="E:\SDK\flutter"
 SET PATH="%PATH%;C:\Program Files\Git\bin;C:\Program Files\Git\cmd;%JAVA_HOME\jre\bin;%JAVA_HOME\bin;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\build-tools\34.0.0;%GRADLE_HOME%\bin;%FLUTTER_ROOT%\bin;C:\tools\msys64\usr\bin;"
 
+# Linux
+export NO_PROXY=localhost,127.0.0.1,::1
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export ANDROID_HOME=/sdk/android
+export FLUTTER_ROOT=/sdk/flutter
+export DART_ROOT=$FLUTTER_ROOT/bin/cache/dart-sdk
+export GRADLE_HOME=/sdk/gradle
+export GRADLE_USER_HOME=/sdk/gradledata
+export GOROOT=/sdk/go
+export GOPATH=/home/yashi/go
+export PATH="$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$GOROOT/bin:$GOPATH/bin:$FLUTTER_ROOT/bin:$DART_ROOT/bin:$PATH"
+
 # WSL
 export NO_PROXY=localhost,127.0.0.1,::1
 export DISPLAY=127.0.0.1:0

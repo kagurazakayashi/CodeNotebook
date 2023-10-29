@@ -11,4 +11,4 @@ npm config delete https-proxy
 # 默认源
 npm config set registry https://registry.npmjs.org
 # 淘宝源
-npm config set registry http://registry.npm.taobao.org
+npm config set registry http://registry.npmmirror.com

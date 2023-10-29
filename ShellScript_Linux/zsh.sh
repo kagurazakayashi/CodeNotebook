@@ -43,7 +43,7 @@ ls ~/.oh-my-zsh/themes
 
 # OhMyZsh 配置 Agnoster 主题
 vim ~/.zshrc
-# 找到 ZSH_THEME 修改为：ZSH_THEME="agnoster"
+# 找到 ZSH_THEME 修改为： ZSH_THEME="agnoster"
 # 安装Powerline 对应的字体库
 dnf install powerline-fonts
 apt install fonts-powerline -y

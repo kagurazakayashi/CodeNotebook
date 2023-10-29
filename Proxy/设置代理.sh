@@ -1,4 +1,25 @@
+# 全局 HTTP
+
+## 走 HTTP 代理
+```bash
+git config --global http.proxy "http://127.0.0.1:8080"
+git config --global https.proxy "http://127.0.0.1:8080"
+```
+
+## 走 socks5 代理（如 Shadowsocks）
+```bash
+git config --global http.proxy "socks5://127.0.0.1:1080"
+git config --global https.proxy "socks5://127.0.0.1:1080"
+```
+
+## 取消设置
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
 # 设置代理 Windows BAT
+
 set http_proxy=http://127.0.0.1:23333
 set https_proxy=%http_proxy%
 set ftp_proxy=%http_proxy%
@@ -30,9 +51,3 @@ export RSYNC_PROXY=$http_proxy
 export SSH_PROXY=$ssh_proxy
 export ALL_PROXY=$http_proxy
 export NO_PROXY=$no_proxy
-
-# 设置代理 NPM
-npm config set proxy http://127.0.0.1:1080
-npm config set https-proxy http://127.0.0.1:1080
-npm config delete proxy
-npm config delete https-proxy

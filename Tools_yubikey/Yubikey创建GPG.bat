@@ -30,8 +30,12 @@ ECHO Email address: 邮箱
 ECHO Comment: 昵称
 ECHO 晃动鼠标增加随机性
 
-ECHO 添加子密钥
+ECHO 添加子密钥, 要用 rsa4096
 %gpg% --quick-add-key 4C2A05BE0B052815A2CDA4E7384FAFC8A5AF9476 rsa4096 auth
+@REM 签名sign (S)ign: sign some data (like a file) (DSA/RSA/ECC)
+@REM 认证certify (C)ertify: sign a key (this is called certification)
+@REM 验证auth (A)uthenticate: authenticate yourself to a computer (for example, logging in) (rsa4096/ed25519)
+@REM 加密encrypt (E)ncrypt: encrypt data (Elgamal/RSA/ECC)
 
 ECHO 编辑密钥
 %gpg% --edit-key 4C2A05BE0B052815A2CDA4E7384FAFC8A5AF9476

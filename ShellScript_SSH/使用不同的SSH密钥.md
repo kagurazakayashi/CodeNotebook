@@ -25,9 +25,11 @@ Your public key has been saved in /home/yashi/.ssh/id_ed25519_github.pub
 ```conf
 # github
 Host github.com
-HostName github.com
-PreferredAuthentications publickey
-IdentityFile /home/yashi/.ssh/id_ed25519_github
+    HostName ssh.github.com
+    Port 443
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_ed25519_github
 ```
 
 ## 测试连接：
