@@ -915,12 +915,12 @@
 │   ├── ./Proxy/Electron.sh
 │   ├── ./Proxy/GAE.sh
 │   ├── ./Proxy/Maven设置代理.md
+│   ├── ./Proxy/SSH_GIT代理连接.md
 │   ├── ./Proxy/SSH代理连接.sh
-│   ├── ./Proxy/SSH通过代理连接.sh
+│   ├── ./Proxy/SSH代理连接旧.sh
 │   ├── ./Proxy/VisualStudio设置代理.config
 │   ├── ./Proxy/apt代理.sh
 │   ├── ./Proxy/curl和wget代理.sh
-│   ├── ./Proxy/git设置代理.md
 │   ├── ./Proxy/gradle代理.txt
 │   ├── ./Proxy/npm代理.sh
 │   ├── ./Proxy/privoxy将socks转为http代理.sh
@@ -1124,6 +1124,7 @@
 │   ├── ./ShellScript_Linux/smb-samba文件共享.sh
 │   ├── ./ShellScript_Linux/snap安装.sh
 │   ├── ./ShellScript_Linux/ssGUI配置文件转sh脚本.py
+│   ├── ./ShellScript_Linux/virtualbox共享文件夹没权限.sh
 │   ├── ./ShellScript_Linux/vsftpd.md
 │   ├── ./ShellScript_Linux/wifi.sh
 │   ├── ./ShellScript_Linux/xsession-errors文件过大.sh
@@ -1188,6 +1189,7 @@
 │   ├── ./ShellScript_Linux/系统版本.sh
 │   ├── ./ShellScript_Linux/绝对路径和相对路径.md
 │   ├── ./ShellScript_Linux/网络流量命令.sh
+│   ├── ./ShellScript_Linux/自动登录.txt
 │   ├── ./ShellScript_Linux/虚拟内存.sh
 │   ├── ./ShellScript_Linux/设置DNS.sh
 │   ├── ./ShellScript_Linux/语系设置成为中文.sh
@@ -1713,4 +1715,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-107 directories, 1606 files
+107 directories, 1608 files
