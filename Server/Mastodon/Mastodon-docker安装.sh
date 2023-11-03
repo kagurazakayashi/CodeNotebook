@@ -7,7 +7,7 @@ docker pull ghcr.io/mastodon/mastodon:latest     #如果需要升级到某稳定
 wget https://raw.githubusercontent.com/mastodon/mastodon/main/docker-compose.yml
 # 修改配置文件
 vim docker-compose.yml
-vim .env.production
+vim .env.production  # 改 .env.production 要 docker-compose up --build
 # 可以用这个工具建立：
 docker-compose run --rm web bundle exec rake mastodon:setup
 

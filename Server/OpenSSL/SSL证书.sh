@@ -1,10 +1,12 @@
 # SSL 证书 自签名证书
 
 # 1、生成服务器私钥
-openssl genrsa -out client.key 4096
+openssl genrsa -out client.key 4096  # RSA
+openssl ecparam -genkey -name secp384r1 -out client-ecc.key  # ECC
 
 # 2、生成证书签名请求（CSR）
-openssl req -new -key client.key -out client.csr
+openssl req -new -key client.key -out client.csr # RSA
+openssl req -new -sha384 -key client-ecc.key -out client-ecc.csr  # ECC
 # Country Name (2 letter code) [AU]:JP
 # State or Province Name (full name) [Some-State]:Tokyo
 # Locality Name (eg, city) []:Tokyo
@@ -70,4 +72,6 @@ openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -extensio
 # IIS
 openssl pkcs12 -export -out client.pfx -inkey ca.key -in ca.crt
 # 将ca.crt导入进来，这时候你用 https访问openssl.cnf里填写的DNS.XX 或 IP.XX 就不会跳出不安全提示了。
+
 # https://www.cnblogs.com/liqingjht/p/6267563.html
+# https://imlonghao.com/22.html

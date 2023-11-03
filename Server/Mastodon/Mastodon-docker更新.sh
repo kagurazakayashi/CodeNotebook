@@ -40,5 +40,5 @@ vim Dockerfile
 docker build .
 
 # 修改字数上限到 50000
-sed -i 's/500/50000/g' /home/mastodon/mastodon/app/javascript/mastodon/features/compose/components/compose_form.js # /jsx
+sed -i 's/500/50000/g' /home/mastodon/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx # 旧: /js
 sed -i 's/500/50000/g' /home/mastodon/mastodon/app/validators/status_length_validator.rb
