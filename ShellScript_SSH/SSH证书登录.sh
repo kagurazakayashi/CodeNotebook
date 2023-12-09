@@ -41,7 +41,7 @@ RSAAuthentication yes
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 
-# 有了证书登录了，就禁用密码登录吧，安全要紧
+# 有了证书登录了，就禁用密码登录吧（先验证证书方式确实能登录了！）
 PasswordAuthentication no
 
 # 重启SSH服务以生效

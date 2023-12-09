@@ -34,6 +34,9 @@ convert pic.jpg -gravity southeast -fill black -font Arial -pointsize 16 -draw "
 #图片本体调整大小+图片水印+文字水印+调整清晰度
 convert pic.jpg -resize 1000x1000 sy.jpg -gravity southeast -geometry +0+20 -gravity southeast -fill white -font Arial -pointsize 20 -draw "text 5,5 'zeze'" -quality 80% -composite ok.jpg
 
+# 创建空白图片
+magick -size 1280x720 xc:white white.png
+magick -size 1280x720 xc:transparent transparent.png
 
 #将一个巨大图片拆分成一个一个小块：每512px一块
 convert -crop 512x512 +repage product1024.png product_%d.jpg

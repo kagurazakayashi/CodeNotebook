@@ -1,0 +1,43 @@
+# docker-compose.yml
+# docker network create --subnet=172.18.0.0/16 work
+version: "3"      
+services:   
+  nginx: 
+    build: ./nginx
+    image: nginx_i #nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - www:/usr/share/nginx/html:rw
+      - conf:/etc/nginx
+      - log:/var/log
+    environment:
+      TZ: "Asia/Shanghai"
+    restart: always
+    networks:
+      work:
+        ipv4_address: 172.18.0.80
+  php:
+    build: ./php
+    image: php_i #php:8.2-fpm
+    container_name: php
+    volumes:
+      - www:/var/www/html/:rw
+      - php:/usr/local/etc
+      - log:/var/log
+    restart: always
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      work:
+        ipv4_address: 172.18.0.81
+networks:
+  work:
+    external: true
+volumes:
+  www: {}
+  conf: {}
+  log: {}
+  php: {}

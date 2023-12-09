@@ -39,6 +39,8 @@ ECHO 添加子密钥, 要用 rsa4096
 
 ECHO 编辑密钥
 %gpg% --edit-key 4C2A05BE0B052815A2CDA4E7384FAFC8A5AF9476
+ECHO 设置信任等级
+trust
 ECHO 添加其他用户名邮箱
 adduid
 ECHO 添加一个照片(240x288,小于等于5KB,建议10%清晰度压缩)

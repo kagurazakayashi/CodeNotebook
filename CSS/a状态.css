@@ -1,0 +1,41 @@
+/*link:链接正常的样式;*/
+a:link{
+    display:block; 
+    width: 100px;  
+    color:black;
+    background-color:green;
+    text-align:center;
+    font-weight: bold;
+    text-decoration: none;/*不显示下划线*/
+}
+/*鼠标悬停的样式*/
+a:hover{
+    color:blue;
+    text-align:center;
+    text-decoration: none;
+}
+ /*鼠标点击的样式*/
+a:active{
+    color:red;
+    background-color:blue;
+    text-align:center;
+    text-decoration: none;
+}  
+ /*链接访问过的样式*/
+a:visited{
+    text-align:center;
+    color:purple;
+    background-color:green;/*因为如果不设置背景颜色，就会恢复成默认的白色，这里是将背景颜色设置成了最开始的背景颜色*/
+    text-decoration: none;
+}
+
+/* 在这里我设置了表格里的文字设置链接，然后设置：
+链接刚开始的文字颜色：黑色
+链接刚开始的背景颜色：绿色
+鼠标悬停时文字颜色：蓝色（背景颜色不变）
+点击链接时文字颜色：红色
+点击链接时背景颜色：蓝色
+链接访问过之后文字颜色：紫色
+然后又重新设置了一下链接访问过的背景颜色，因为如果不设置背景颜色，就会恢复成默认的白色，这里是将背景颜色设置成了最开始的背景颜色
+
+https://blog.csdn.net/qq_56545699/article/details/129424343 */

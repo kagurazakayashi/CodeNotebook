@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>CSS表格</title>
+    <style>
+        .table-display {
+            display: table;
+            /*设置元素为块级表格元素，类似于HTML的<table>。*/
+            display: inline-table;
+            /*设置元素为行内块表格元素，类似于HTML的<table>。*/
+            display: table-row;
+            /*设置元素为表格的行，类似于HTML的<tr>。*/
+            display: table-cell;
+            /*设置元素为表格的单元格，类似于HTML的<td>、<th>。*/
+            display: table-header-group;
+            /*设置元素为表格的表头行，类似于HTML的<thead>。*/
+            display: table-footer-group;
+            /*设置元素为表格的表尾行，类似于HTML的<tfoot>。*/
+            display: table-row-group;
+            /*设置元素为表格的主体内容，类似于HTML的<tbody>。*/
+            display: table-column;
+            /*设置元素为表格的列，类似于HTML的<col>。*/
+            display: table-column-group;
+            /*设置元素为表格的列组，类似于HTML的<colgroup>。*/
+            display: table-caption;
+            /*设置元素为表格的标题，类似于HTML的<caption>。*/
+        }
+
+        .table {
+            display: table;
+            padding: 50px;
+            margin: 40px;
+            background: pink;
+        }
+
+        .row {
+            display: table-row;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid red;
+        }
+
+        .cell {
+            display: table-cell;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <div class="row row1">
+            <div class="cell cell1">张三</div>
+            <div class="cell cell2">李四</div>
+            <div class="cell cell3">王五</div>
+        </div>
+        <div class="row row2">
+            <div class="cell cell1">张三三</div>
+            <div class="cell cell2">李四四</div>
+            <div class="cell cell3">王五五</div>
+        </div>
+    </div>
+    https://blog.csdn.net/weixin_45092437/article/details/133694782
+</body>
+
+</html>

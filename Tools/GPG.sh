@@ -31,12 +31,13 @@ gpg -o 1.txt.asc.sig -ab 1.txt.asc
 # 验证单独签名：
 gpg --verify 1.txt.asc.sig 1.txt.asc
 
-导入钥：
-# gpg --import --pinentry-mode=loopback mail.key
-删除私钥：
-# gpg --delete-secret-key newkey
-删除公钥：
-# gpg --delete-key newkey
+# 导入钥：
+gpg --import --pinentry-mode=loopback mail.key
+# 非 root 出现 “发送至代理人程序时出现错误：权限不够” 需要加 --pinentry-mode=loopback
+# 删除私钥：
+gpg --delete-secret-key newkey
+# 删除公钥：
+gpg --delete-key newkey
 
 # 更所有钥：
 gpg --refresh-keys --keyserver hkp://hkps.pool.sks-keyservers.net

@@ -10,9 +10,11 @@ vim .env.production
 
 git status
 git restore .
+git checkout main
 git fetch
+git pull
 # git checkout [版本号] , 不 checkout 是 beta 版
-git checkout v4.1.4 
+git checkout v4.2.3
 
 # 还原配置
 cd ..

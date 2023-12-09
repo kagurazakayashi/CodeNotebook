@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="神楽坂雅詩">
+    <meta name="copyright"
+        content='Copyright (c) 2023 KagurazakaYashi NyaNotebook is licensed under Mulan PSL v2. You can use this software according to the terms and conditions of the Mulan PSL v2. You may obtain a copy of Mulan PSL v2 at: http://license.coscl.org.cn/MulanPSL2 THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE. See the Mulan PSL v2 for more details.'>
+    <meta name="version" content="NyaNotebook v2.2">
+    <meta name="keywords" content="notebook, NyaNotebook">
+    <meta name="description"
+        content="一个单文件纯前端的纯文本编辑器，用于需要处理无格式和需要清除格式的文本。原生 JS ，本地存储内容，除手动打开网络内容功能外，无额外资源加载和网络通信。支持只读阅读器参数。">
+    <title>雅诗快捷纯文本编辑器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgb(24, 24, 24);
+            color: rgb(204, 204, 204);
+        }
+
+        textarea {
+            position: absolute;
+            top: 100px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: none;
+            outline: none;
+            resize: none;
+            font-size: 20px;
+            line-height: 1.5;
+            padding: 10px;
+            font-family: '等距更纱黑体 SC', 'Cascadia Code', 'Source Code Pro', 'Source Han Mono', '思源等宽', '黑体', 'Noto Mono', 'Noto Sans Mono', 'Source Han Sans', '思源黑体', 'Menlo', 'Monaco', 'Courier New', monospace;
+            background-color: rgb(31, 31, 31);
+            color: rgb(204, 204, 204);
+        }
+
+        #prn {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            border: none;
+            background-color: #FFF;
+            color: #000;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: rgb(31, 31, 31);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(67, 67, 67);
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            background-color: transparent;
+            color: rgb(204, 204, 204);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #808080;
+        }
+
+        .bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            overflow-y: auto;
+        }
+
+        #b2 {
+            height: 50px;
+            top: 50px;
+        }
+
+        #count {
+            border: none;
+            width: auto;
+            font-size: 18px;
+            text-align: left;
+            display: contents;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar" id="b1">
+        <button id="cache" title="替换保存到浏览器存储">📔</button>
+        <button id="load" title="从浏览器存储加载内容">📖</button>
+        <button id="autosave" title="实时存盘">🎥</button>
+        <button id="open" title="打开一个文本文档">📂</button>
+        <button id="openurl" title="打开一个网址">🌐</button>
+        <button id="save" title="下载编辑的内容到文件">💾</button>
+        <button id="fold" title="折叠输入框到半屏">📱</button>
+        <button id="autowrap" title="自动换行" style="background-color: rgb(67, 67, 67);">↙</button>
+        <button id="selectall" title="全选">🔤</button>
+        <button id="copy" title="复制">📃</button>
+        <button id="cut" title="剪切">✂️</button>
+        <button id="paste" title="粘贴">📋</button>
+        <button id="undo" title="撤销">↩️</button>
+        <button id="redo" title="重做">↪️</button>
+        <button id="datetime" title="插入时间日期">⌚</button>
+        <button id="urlencode" title="URL 编码或解码">🔗</button>
+        <button id="base64encode" title="Base64 编码或解码">🧬</button>
+        <button id="print" title="打印">🖨️</button>
+        <button id="help" title="打开或关闭帮助">❔</button>
+    </div>
+    <div class="bar" id="b2">
+        <button id="clear" title="清空！">🗑️</button>
+        <button id="count" title="字数/行数">0/0</button>
+    </div>
+    <textarea id="txt" placeholder="没有内容"></textarea>
+    <div id="prn"></div>
+    <script>
+        const bname = 'nyaNotebook'
+        function id(id) {
+            return document.getElementById(id)
+        }
+        const textarea = id('txt')
+        const b1 = id('b1')
+        const b2 = id('b2')
+        const cache = id('cache')
+        const load = id('load')
+        const openf = id('open')
+        const save = id('save')
+        const copy = id('copy')
+        const cut = id('cut')
+        const paste = id('paste')
+        const undo = id('undo')
+        const redo = id('redo')
+        const autowrap = id('autowrap')
+        const selectall = id('selectall')
+        const clear = id('clear')
+        const urlencode = id('urlencode')
+        const datetime = id('datetime')
+        const count = id('count')
+        const printtext = id('print')
+        const prn = id('prn')
+        const fold = id('fold')
+        const autosave = id('autosave')
+        const help = id('help')
+        const b64encode = id('base64encode')
+        const openurl = id('openurl')
+        const btnenasty = ['rgb(67, 67, 67)', 'transparent', 'rgb(31, 31, 31)'];
+        const smode = ['none', 'hidden', 'auto', 'block'];
+        const nums = '①②③④⑤⑥⑦⑧⑨⑩'.split('')
+        let tmpview = null
+        let readonly = false
+
+        const hscreen = textarea.clientWidth < textarea.clientHeight
+        for (let i = 0; i < (hscreen ? 5 : nums.length); i++) {
+            const btn = document.createElement('button')
+            btn.innerText = nums[i]
+            btn.id = 'd' + (i + 1).toString()
+            btn.className = 'dbtn'
+            btn.addEventListener('click', () => {
+                dsel(i + 1)
+            })
+            b2.insertBefore(btn, clear)
+        }
+
+        function geturl(url, all = false) {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', url)
+            xhr.onreadystatechange = () => {
+                isOK = false
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 && xhr.responseText.length > 0) {
+                        isOK = true
+                        textarea.value = xhr.responseText
+                        if (readonly) {
+                            tmpview = xhr.responseText
+                        }
+                        chkcount()
+                    }
+                }
+                if (!isOK && all) {
+                    if (xhr.responseText && xhr.responseText.length > 0) {
+                        textarea.value = xhr.responseText
+                    } else {
+                        textarea.value = '加载失败 (' + xhr.readyState + ') : ' + url
+                    }
+                }
+            }
+            xhr.send()
+        }
+
+        function dnow() {
+            const dbtns = document.getElementsByClassName('dbtn')
+            for (let i = 0; i < dbtns.length; i++) {
+                const btn = dbtns[i]
+                if (btn.style.backgroundColor === btnenasty[2]) {
+                    return i + 1
+                }
+            }
+            return 0
+        }
+
+        function dsel(id) {
+            const nowid = dnow()
+            if (nowid === id) {
+                return
+            }
+            if (textarea.value.length > 0) {
+                sessionStorage.setItem(bname + nowid, textarea.value)
+            }
+            const dbtns = document.getElementsByClassName('dbtn')
+            for (let i = 0; i < dbtns.length; i++) {
+                const btn = dbtns[i]
+                if (btn.id === 'd' + id) {
+                    btn.style.color = 'skyblue'
+                    btn.style.backgroundColor = btnenasty[2]
+                    loadnow()
+                } else {
+                    btn.style.color = 'rgb(204, 204, 204)'
+                    btn.style.backgroundColor = btnenasty[1]
+                }
+            }
+            chkcount()
+        }
+
+        function cachenow() {
+            const name = bname + dnow()
+            if (textarea.value.length == 0) {
+                localStorage.removeItem(name)
+            } else {
+                localStorage.setItem(name, textarea.value)
+            }
+        }
+
+        function loadnow() {
+            textarea.value = ''
+            const name = bname + dnow()
+            let mem = sessionStorage.getItem(name)
+            if (mem == null) {
+                mem = localStorage.getItem(name)
+                if (mem != null) {
+                    textarea.value = mem
+                }
+            } else {
+                textarea.value = mem
+            }
+        }
+
+        function foldnow() {
+            const isfold = textarea.style.bottom === '0px' || textarea.style.bottom === ''
+            textarea.style.bottom = isfold ? '50%' : '0px'
+            fold.style.backgroundColor = textarea.style.bottom === '0px' ? btnenasty[1] : btnenasty[0]
+            if (isfold) {
+                textarea.focus()
+            }
+        }
+
+        function chkcount() {
+            const val = textarea.value
+            const len = val.length
+            const linecount = len == 0 ? 0 : val.split('\n').length
+            count.innerText = len + "/" + linecount
+            textarea.focus()
+            const noautosave = autosave.style.backgroundColor.length == 0 || autosave.style.backgroundColor === btnenasty[1]
+            if (!noautosave) {
+                cachenow()
+            }
+        }
+
+        function meta(name) {
+            const metas = document.getElementsByTagName('meta');
+            for (let i = 0; i < metas.length; i++) {
+                if (metas[i].getAttribute('name') === name) {
+                    return metas[i].getAttribute('content');
+                }
+            } return '';
+        }
+
+        function tmpviewmode(tmptxt = null) {
+            const ena = tmptxt != null
+            const btns = document.getElementsByTagName('button')
+            if (ena) {
+                const enabtn = 'save,fold,autowrap,selectall,copy,print' + (readonly ? '' : ',help').split(',')
+                tmpview = textarea.value
+                textarea.value = tmptxt
+                for (let i = 0; i < btns.length; i++) {
+                    if (enabtn.indexOf(btns[i].id) >= 0) {
+                        continue
+                    }
+                    btns[i].disabled = true
+                    btns[i].style.opacity = 0.5
+                    btns[i].style.cursor = 'not-allowed'
+                }
+            } else if (readonly) {
+                textarea.value = tmpview
+            } else if (tmpview !== null) {
+                textarea.value = tmpview
+                tmpview = null
+                chkcount()
+                for (let i = 0; i < btns.length; i++) {
+                    btns[i].disabled = false
+                    btns[i].style.opacity = 1
+                    btns[i].style.cursor = 'pointer'
+                }
+            }
+        }
+
+        function getQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i")
+            if (window.location.hash.indexOf("#") < 0) {
+                return null
+            }
+            let r = window.location.hash.split("#")[1].match(reg)
+            if (r != null) return decodeURIComponent(r[2])
+            return null
+        }
+
+        textarea.addEventListener('input', () => {
+            chkcount()
+            tmpviewmode()
+        })
+
+        textarea.addEventListener('onchange', () => {
+            chkcount()
+            tmpviewmode()
+        })
+
+        cache.addEventListener('click', () => {
+            cachenow()
+        })
+
+        load.addEventListener('click', () => {
+            textarea.value = localStorage.getItem('nyanotebook')
+            chkcount()
+        })
+
+        autosave.addEventListener('click', () => {
+            const isautosave = autosave.style.backgroundColor.length == 0 || autosave.style.backgroundColor === btnenasty[1]
+            autosave.style.backgroundColor = isautosave ? btnenasty[0] : btnenasty[1]
+        })
+
+        openf.addEventListener('click', () => {
+            const input = document.createElement('input')
+            input.type = 'file'
+            input.accept = '.txt,.md,.markdown,.log,.ini,.cfg,.conf,.json,.js,.css,.html,.htm,.xml,.yaml,.yml,.bat,.sh,.py,.php,.java,.c,.cpp,.h,.hpp,.cs,.go,.ts,.tsx,.jsx,.sql,.ps1,.psm1,.psd1,.ps1xml,.pssc,.psc1,.cdxml,.xaml,.msh,.msh1,.msh2,.mshxml,.msh1xml,.msh2xml,.scf,.wsf,.wsh,.psc2,.vbs,.rb,.lua,.pl,.pm,.tcl,.asm,.bas,.clj,.cljs,.cljc,.cljx,.edn,.fs,.fsi,.fsx,.fsscript,.fsproj,.java,.kt,.kts,.ktm,.kts,.groovy,.scala,.sc,.py,.r,.rmd,.cs,.php,.php3,.php4,.php5,.php7,.phps,.phtml,.pht,.phar,.phpt,.js,.jsx,.ts,.tsx,.vue,.c,.h,.cpp,.hpp,.hxx,.cxx,.cc,.hh,.h++,.c++,.cs,.go,.pl,.pm,.t,.pod,.rb,.ru,.gemspec,.rake,.py,.pyw,.pyc,.pyo,.pyd,.pyz,.pywz,.pyc,.pyo,.pyd,.pyz,.pywz,.lua,.sql,.ps1,.psm1,.psd1,.ps1xml,.pssc,.psc1,.cdxml,.xaml,.msh,.msh1,.msh2,.mshxml,.msh1xml,.msh2xml,.scf,.wsf,.wsh,.psc2,.vbs,.rb,.lua,.pl,.pm,.tcl,.asm,.bas,.clj,.cljs,.cljc,.cljx,.edn,.fs,.fsi,.fsx,.fsscript,.fsproj,.java,.kt,.kts,.ktm,.kts,.groovy,.scala,.sc,.py,.r,.rmd,.cs,.php,.php3,.php4,.php5,.php7,.phps,.phtml,.pht,.phar,.phpt,.js,.jsx,.ts,.'
+            input.onchange = () => {
+                const file = input.files[0]
+                const reader = new FileReader()
+                reader.onload = () => {
+                    textarea.value = reader.result
+                    chkcount()
+                }
+                reader.readAsText(file)
+            }
+            input.click()
+        })
+
+        save.addEventListener('click', () => {
+            const blob = new Blob([textarea.value], {
+                type: 'text/plain'
+            })
+            const a = document.createElement('a')
+            a.href = URL.createObjectURL(blob)
+            const nowdate = new Date()
+            a.download = `${nowdate.getFullYear()}-${nowdate.getMonth() + 1}-${nowdate.getDate()}_${nowdate.getHours()}-${nowdate.getMinutes()}-${nowdate.getSeconds()}.txt`;
+            a.click()
+        })
+
+        copy.addEventListener('click', () => {
+            textarea.focus()
+            document.execCommand('copy')
+        })
+
+        cut.addEventListener('click', () => {
+            textarea.focus()
+            document.execCommand('cut')
+        })
+
+        paste.addEventListener('click', () => {
+            textarea.focus()
+            document.execCommand('paste')
+        })
+
+        undo.addEventListener('click', () => {
+            textarea.focus()
+            document.execCommand('undo')
+        })
+
+        redo.addEventListener('click', () => {
+            textarea.focus()
+            document.execCommand('redo')
+        })
+
+        selectall.addEventListener('click', () => {
+            textarea.select()
+        })
+
+        clear.addEventListener('click', () => {
+            textarea.value = ''
+            const name = bname + dnow()
+            sessionStorage.removeItem(name)
+            localStorage.removeItem(name)
+            chkcount()
+        })
+
+        urlencode.addEventListener('click', () => {
+            if (textarea.value.indexOf('%') >= 0) {
+                try {
+                    textarea.value = decodeURIComponent(textarea.value)
+                } catch (e) {
+                    textarea.value = encodeURIComponent(textarea.value)
+                }
+            } else {
+                textarea.value = encodeURIComponent(textarea.value)
+            }
+            chkcount()
+        })
+
+        b64encode.addEventListener('click', () => {
+            let enc = false
+            try {
+                const d = window.atob(textarea.value)
+                if (encodeURIComponent(d) != d && decodeURIComponent(d) == d) {
+                    enc = true
+                } else {
+                    textarea.value = d
+                }
+            } catch (e) {
+                enc = true
+            }
+            if (enc) {
+                try {
+                    textarea.value = window.btoa(textarea.value)
+                } catch (e) {
+                    if (confirm('要 Base64 编码的内容不能有中文等扩展字符，\n是否使用 URL 编码后再使用 Base64 编码？')) {
+                        textarea.value = window.btoa(encodeURIComponent(textarea.value))
+                    } else {
+                        textarea.value = ''
+                    }
+                }
+            }
+            chkcount()
+        })
+
+        datetime.addEventListener('click', () => {
+            const nowdate = new Date()
+            textarea.value += nowdate
+            chkcount()
+        })
+
+        autowrap.addEventListener('click', () => {
+            const preWrap = textarea.style.whiteSpace === '' || textarea.style.whiteSpace === 'pre' ? 'pre' : 'pre-wrap'
+            textarea.style.whiteSpace = textarea.style.whiteSpace === preWrap ? '' : preWrap
+            autowrap.style.backgroundColor = textarea.style.whiteSpace === '' ? btnenasty[0] : btnenasty[1]
+        })
+
+        printtext.addEventListener('click', () => {
+            b1.style.display = smode[0]
+            b2.style.display = smode[0]
+            textarea.style.display = smode[0]
+            document.body.style.height = smode[2]
+            document.body.style.overflow = smode[2]
+            prn.style.display = smode[3]
+            prn.innerText = textarea.value
+            window.print()
+            prn.innerText = ''
+            prn.style.display = smode[0]
+            document.body.style.height = '100%'
+            document.body.style.overflow = smode[1]
+            b1.style.display = smode[3]
+            b2.style.display = smode[3]
+            textarea.style.display = smode[3]
+        })
+
+        help.addEventListener('click', () => {
+            if (tmpview !== null) {
+                tmpviewmode()
+                return
+            }
+            let hitem = ['# ' + document.title + ' (' + meta('version') + ')', meta('description'), '', '## 工具栏说明']
+            const buttons = document.getElementsByTagName('button')
+            for (let i = 0; i < buttons.length; i++) {
+                const btn = buttons[i]
+                const btitle = btn.title
+                if (btitle.length == 0) {
+                    continue
+                }
+                const btext = btn.innerText
+                hitem.push('- ' + btext + ' : ' + btitle)
+            }
+            hitem = hitem.concat(['', '## `#..&..` 参数', '- readonly : 只读模式，多数功能被禁用，配合 view 使用。', '- view : 要显示的内容，支持网址、URI 编码、以及普通内容。', '- page : 进入时开启第几个存档（默认用存档 1，非 readonly 提供 view 默认用隐藏存档 0）。', '', '## LICENSE'])
+            hitem.push(meta('copyright'))
+            const txt = hitem.join('\n')
+            tmpviewmode(txt)
+        })
+
+        fold.addEventListener('click', () => {
+            foldnow()
+        })
+
+        openurl.addEventListener('click', () => {
+            const url = prompt('请输入网址：')
+            if (url == null || url.length == 0) {
+                return
+            }
+            textarea.value = '正在加载 : ' + url
+            try {
+                geturl(new URL(url), true)
+            } catch (e) {
+                textarea.value += '\n' + e.toString()
+            }
+        })
+
+        if (getQueryString('readonly')) {
+            readonly = true;
+            tmpviewmode('')
+        }
+        if (hscreen && !readonly) {
+            foldnow()
+        }
+        let readtxt = getQueryString('view')
+        if (readtxt) {
+            textarea.value = readtxt;
+            try {
+                geturl(new URL(readtxt));
+            } catch (e) {
+                try {
+                    const duri = decodeURIComponent(readtxt)
+                    try {
+                        geturl(new URL(duri));
+                    } catch (e) {
+                        textarea.value = duri;
+                    }
+                } catch (e) {
+                    textarea.value = readtxt;
+                }
+            }
+        } else {
+            dsel(getQueryString('page') ? parseInt(getQueryString('page')) : 1)
+        }
+    </script>
+</body>
+
+</html>

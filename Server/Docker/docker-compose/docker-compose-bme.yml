@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  aistudio:
+    build: ./
+    image: postgres
+    container_name: bme-aistudio
+    volumes:
+      - data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      PGHOST: 172.18.0.4
+      PGPORT: 5432
+      PGDATABASE: bmeaistudio
+      PGUSER: bmeaistudio
+      PORT: 8080
+      PGPASSWORD: password
+      LOG_LEVEL: info
+    ports:
+      - 10200:8080
+    networks:
+      work:
+        ipv4_address: 172.18.0.200
+networks:
+  work:
+    external: true
+volumes:
+  data: {}

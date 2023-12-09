@@ -1,0 +1,25 @@
+将Mastodon的路径uuu.moe转到R2网址m.uuu.moe
+Mastodon和网页共用同一域名
+
+当传入请求匹配时...
+(
+    (http.host eq "uuu.moe") and
+    (
+        starts_with(http.request.uri.path, "/accounts") or 
+        starts_with(http.request.uri.path, "/cache") or 
+        starts_with(http.request.uri.path, "/custom_emojis") or 
+        starts_with(http.request.uri.path, "/media_attachments") or 
+        starts_with(http.request.uri.path, "/site_uploads")
+    )
+)
+则...
+URL 重定向 动态
+concat("https://m.uuu.moe",http.request.uri.path)
+不保留查询字符串 301
+
+当传入请求匹配时...
+(http.host eq "m.uuu.moe" and http.request.uri.path eq "/")
+则...
+URL 重定向 静态
+https://uuu.moe/home
+保留查询字符串 301

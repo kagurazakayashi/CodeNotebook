@@ -1,0 +1,13 @@
+lapptexturemanager.ts:93 Uncaught DOMException: Failed to execute 'texImage2D' on 'WebGLRenderingContext': The image element contains cross-origin data, and may not be loaded.
+
+function loadImageElement(e, t, i) {
+var r = new Image;
+r.crossOrigin = "anonymous"; // 添加这行代码
+r.onload = function () {
+i.resolve(r)
+}, r.onerror = function (e) {
+i.reject(e)
+}, t && (TrustedServers.contains(e) ? r.crossOrigin = "use-credentials" : r.crossOrigin = ""), r.src = e
+}
+
+https://blog.csdn.net/FFFKKC/article/details/123260850

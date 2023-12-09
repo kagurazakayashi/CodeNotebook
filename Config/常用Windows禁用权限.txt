@@ -1,0 +1,34 @@
+文件/文件夹：禁用继承、所有者为低权限用户、拒绝所有操作
+注册表：删除里面的所有内容，本体权限 禁用继承、所有者为低权限用户、拒绝所有操作
+
+C:\ProgramData\Windows Master Setup\
+
+相关服务： AlibabaProtect
+C:\Program Files (x86)\AlibabaProtect\
+
+相关服务： QPCore Service (QPCore)
+C:\Program Files (x86)\Common Files\Tencent\QQProtect\Bin\QQProtect.exe
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\QPCore
+
+相关服务： QQProtect Driver For x64 (QQProtectX64)
+C:\Windows\system32\drivers\QQProtectX64.sys
+C:\Program Files (x86)\Common Files\Tencent\QQProtect\Bin\QQProtectX64.sys 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\QQProtectX64
+
+相关服务： XLServicePlatform
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XLservicePlatform
+C:\Program Files (x86)\Common Files\Thunder Network\ServicePlatform\XLSP.dll
+
+相关服务： XLGuard Driver (XLGuard)
+C:\Windows\system32\drivers\XLGuard.sys
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XLGuard
+
+相关服务： Xunlei WFP Driver (XLWFP)
+C:\Windows\system32\drivers\XLWFP.sys
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XLWFP
+
+相关服务： DriverGenius Core Service (DGPNPSEV)
+C:\Program Files (x86)\MyDrivers\DriverGenius\dgservice.exe
+C:\Program Files (x86)\MyDrivers\DriverGenius\dgprotect.exe
+C:\Program Files (x86)\MyDrivers\DriverGenius\ksoft\kbootopt.exe
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DGPNPSEV

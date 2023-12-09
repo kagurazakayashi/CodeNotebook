@@ -1,0 +1,27 @@
+<!-- 两种方法启用 CSP
+一种是通过 HTTP 响应头信息的Content-Security-Policy字段。
+一种是通过网页的标签。 -->
+
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src example.org third-party.org; child-src https:">
+
+<!-- script-src：脚本：只信任当前域名
+object-src：不信任任何URL，即不加载任何资源
+style-src，样式表：只信任example.org和third-party.org
+child-src：必须使用HTTPS协议加载。这个已从Web标准中删除，新版本浏览器可能不支持。
+其他资源：没有限制其他资源 -->
+
+<meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://uuu.moe https://yashi.moe https://miyabi.moe https://masae.moe http://uuu.moe http://yashi.moe http://miyabi.moe http://masae.moe  https://m.uuu.moe wss://uuu.moe">
+
+<!-- 资源加载限制
+script-src：外部脚本
+style-src：样式表
+img-src：图像
+media-src：媒体文件（音频和视频）
+font-src：字体文件
+object-src：插件（比如 Flash）
+child-src：框架
+frame-ancestors：嵌入的外部资源（比如<frame>、<iframe>、<embed>和<applet>）
+connect-src：HTTP 连接（通过 XHR、WebSockets、EventSource等）
+worker-src：worker脚本
+manifest-src：manifest 文件
+-->

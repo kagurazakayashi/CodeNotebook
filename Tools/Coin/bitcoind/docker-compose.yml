@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  bitcoind:
+    build: ./
+    image: bitcoind
+    container_name: bitcoind
+    volumes:
+      - /mnt/d/btc/BitcoinData:/root/BitcoinData
+    restart: always
+    # ports:
+    #   - 8332:8332
+    networks:
+      work:
+        ipv4_address: 172.18.0.88
+networks:
+  work:
+    external: true
