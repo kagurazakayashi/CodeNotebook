@@ -13,3 +13,7 @@
 [submodule "PHP/libNyaruko_PHP"]
 	path = PHP/libNyaruko_PHP
 	url = https://github.com/kagurazakayashi/libNyaruko_PHP.git
+[submodule "reference"]
+	path = reference
+	url = https://github.com/jaywcjlove/reference.git
+	branch = gh-pages
