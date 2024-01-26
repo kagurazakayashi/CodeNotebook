@@ -1,4 +1,5 @@
 .
+├── ./35LEpre.bat
 ├── ./Algorithm
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
@@ -116,11 +117,13 @@
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
 │   ├── ./Batch_Windows/cygwin-mingw.txt
 │   ├── ./Batch_Windows/fastcopy.txt
+│   ├── ./Batch_Windows/for循环.bat
 │   ├── ./Batch_Windows/if.bat
 │   ├── ./Batch_Windows/makecab.bat
 │   ├── ./Batch_Windows/nircmd关闭显示器.bat
 │   ├── ./Batch_Windows/vbs文件关联恢复.reg
 │   ├── ./Batch_Windows/一键创建还原点.vbs
+│   ├── ./Batch_Windows/不足位补0.bat
 │   ├── ./Batch_Windows/以其他身份运行cmd.txt
 │   ├── ./Batch_Windows/任务栏时间显示秒钟.reg
 │   ├── ./Batch_Windows/使用旧版的图片查看器.reg
@@ -128,6 +131,7 @@
 │   ├── ./Batch_Windows/修复开始菜单.ps1
 │   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
 │   ├── ./Batch_Windows/修改用户文件夹.txt
+│   ├── ./Batch_Windows/允许虚拟内存在非系统盘.reg
 │   ├── ./Batch_Windows/共享文件.bat
 │   ├── ./Batch_Windows/关闭MSI信息信号中断模式.md
 │   ├── ./Batch_Windows/创建常用模式启动项.bat
@@ -376,6 +380,7 @@
 │   │   ├── ./CSS/基线对齐/7.具体的值.jpg
 │   │   ├── ./CSS/基线对齐/基线对齐.css
 │   │   └── ./CSS/基线对齐/文字的顶线、中线、基线.jpg
+│   ├── ./CSS/常量变量.css
 │   ├── ./CSS/拖拽改变分栏大小.html
 │   ├── ./CSS/支持暗色模式.css
 │   ├── ./CSS/文字阴影凹凸发光.css
@@ -1428,6 +1433,7 @@
 │   ├── ./ShellScript_SSH/UNPROTECTED_PRIVATE_KEY_FILE.md
 │   ├── ./ShellScript_SSH/ssh报错NoMatchingKeyExchangeMethodFound.sh
 │   ├── ./ShellScript_SSH/使用不同的SSH密钥.md
+│   ├── ./ShellScript_SSH/连接超时关闭时间.md
 │   ├── ./ShellScript_SSH/配置ssh的超时时间.sh
 │   └── ./ShellScript_SSH/验证证书是否匹配.sh
 ├── ./ShellScript_macOS
@@ -1581,6 +1587,7 @@
 ├── ./Tools_Lib
 │   ├── ./Tools_Lib/ImageMagick
 │   │   ├── ./Tools_Lib/ImageMagick/ImageMagick-GIF.sh
+│   │   ├── ./Tools_Lib/ImageMagick/ImageMagick.bat
 │   │   ├── ./Tools_Lib/ImageMagick/ImageMagick.sh
 │   │   └── ./Tools_Lib/ImageMagick/图片拆分.bat
 │   ├── ./Tools_Lib/Parse
@@ -1722,12 +1729,14 @@
 │   ├── ./icon/icon.ico
 │   └── ./icon/icon.png
 ├── ./macOS_Objective-C
+│   ├── ./macOS_Objective-C/只支持M处理器或Intel处理器.txt
 │   ├── ./macOS_Objective-C/打开终端APP运行一个外部命令.m
 │   ├── ./macOS_Objective-C/执行外部命令.m
 │   ├── ./macOS_Objective-C/沙盒文件权限.entitlements
 │   ├── ./macOS_Objective-C/获取区域和语言.m
 │   ├── ./macOS_Objective-C/退出程序.m
 │   └── ./macOS_Objective-C/针对特定平台编译.md
+├── ./nginx跳转.conf
 ├── ./reference
 ├── ./tree.txt
 ├── ./vue
@@ -1743,4 +1752,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-114 directories, 1629 files
+114 directories, 1638 files
