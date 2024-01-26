@@ -1,0 +1,19 @@
+/* CSS 创建常量变量 */
+
+:root {
+    --session-main-color: #4caf50;
+    --session-main-color-hover: #45a049;
+    --session-content-color: #95ec69;
+}
+
+.icon-button {
+    background-color: var(--session-main-color);
+}
+
+.icon-button:hover { /* 鼠标悬停时的背景颜色 */
+    background-color: var(--session-main-color-hover);
+}
+
+#session-view {
+    border: 1px solid var(--session-main-color);
+}

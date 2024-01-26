@@ -4,6 +4,8 @@ date +%Y-%m-%d
 # 传给变量：
 DATE=$(date +%Y%m%d)
 
+# 当前时间戳
+date +%s
 
 # 获取明天的日期
 date -d next-day +%Y%m%d

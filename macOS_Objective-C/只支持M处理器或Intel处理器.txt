@@ -1,0 +1,6 @@
+编译为只支持M处理器或Intel处理器
+
+在 Build Settings 中将 $(ARCHS_STANDARD) 修改为
+  arm64
+  或者
+  x86_64

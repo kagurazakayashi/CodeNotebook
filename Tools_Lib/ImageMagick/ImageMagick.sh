@@ -1,4 +1,4 @@
-#批量
+# 批量 图片批处理
 for file in *.jfif; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done
 for file in *.png; do echo "$file ${file%%.*}.bmp"; convert "$file" "${file%%.*}.bmp"; done
 for file in *.bmp; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done
@@ -6,23 +6,6 @@ for file in *.png; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}
 for file in *.tif; do echo $file ${file%%.*}.jpg; convert -resize 1024x1024 $file ${file%%.*}.jpg; done
 
 convert fm.jpg -resize 1024x1024 -quality 80% fmz.jpg
-
-# Windows
-setlocal enabledelayedexpansion
-for %%x in (*.tif) do (
-    "magick.exe" "%%x" -rotate 90 "%%~nx.bmp"
-)
-
-setlocal enabledelayedexpansion
-for %%x in (*.ARW) do (
-    "magick.exe" "%%x" "%%~nx.png"
-)
-
-# Windows PDF转图片
-choco install ghostscript -y
-mkdir out
-magick.exe "a.pdf" "out\a.png"
-
 
 # 水印
 #图片水印
@@ -35,8 +18,8 @@ convert pic.jpg -gravity southeast -fill black -font Arial -pointsize 16 -draw "
 convert pic.jpg -resize 1000x1000 sy.jpg -gravity southeast -geometry +0+20 -gravity southeast -fill white -font Arial -pointsize 20 -draw "text 5,5 'zeze'" -quality 80% -composite ok.jpg
 
 # 创建空白图片
-magick -size 1280x720 xc:white white.png
-magick -size 1280x720 xc:transparent transparent.png
+convert -size 1280x720 xc:white white.png
+convert -size 1280x720 xc:transparent transparent.png
 
 #将一个巨大图片拆分成一个一个小块：每512px一块
 convert -crop 512x512 +repage product1024.png product_%d.jpg

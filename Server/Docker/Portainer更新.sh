@@ -4,6 +4,7 @@ docker stop portainer
 docker rm portainer
 # 3. 删除旧的镜像
 docker rmi portainer/portainer-ce
+docker rmi portainer/portainer-ce:2.16.2
 # 4. 拉取新的镜像
 docker pull portainer/portainer-ce
 # 5. 使用新的镜像启动新的容器

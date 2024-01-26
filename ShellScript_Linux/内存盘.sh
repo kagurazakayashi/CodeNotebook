@@ -48,14 +48,14 @@ rm /mnt/ramdisk/zero
 
 # modprobe内核功能方式
 
-# 32MB FAT16
 #!/bin/sh
-/usr/sbin/modprobe brd rd_nr=1 rd_size=32000 max_part=0  
+echo RAMDISK 32MB FAT16
+/usr/sbin/modprobe brd rd_nr=1 rd_size=32000 max_part=0
 /usr/sbin/mkfs.msdos /dev/ram0
 /usr/bin/mount -o rw,uid=1000,gid=1000,x-gvfs-show /dev/ram0 /home/yashi/ramdisk -t msdos
 
-# 8GB EXT4
 #!/bin/sh
+echo RAMDISK 8GB EXT4
 /usr/sbin/modprobe brd rd_nr=1 rd_size=8000000 max_part=0
 /usr/sbin/mkfs.ext4 /dev/ram0
 /usr/bin/mount -o rw,x-gvfs-show /dev/ram0 /r -t ext4
