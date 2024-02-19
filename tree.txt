@@ -309,6 +309,11 @@
 │   ├── ./C/结构体.c
 │   ├── ./C/自增自减.c
 │   ├── ./C/获取时间日期.c
+│   ├── ./C/读写二进制
+│   │   ├── ./C/读写二进制/二进制写入.c
+│   │   ├── ./C/读写二进制/二进制读取.c
+│   │   ├── ./C/读写二进制/十六进制写入.c
+│   │   └── ./C/读写二进制/十六进制读取.c
 │   ├── ./C/运算精度测试.c
 │   ├── ./C/逐行读取文件.c
 │   ├── ./C/递归极限测试.c
@@ -1499,14 +1504,9 @@
 │   ├── ./Tools/下载M3U8
 │   │   ├── ./Tools/下载M3U8/雅诗M3U8下载工具1.sh
 │   │   └── ./Tools/下载M3U8/雅诗M3U8下载工具2.sh
-│   ├── ./Tools/下载mydockfinder所有图标.js
 │   ├── ./Tools/下载xkcd.in用于离线阅读.py
-│   ├── ./Tools/下载微信公众号图片需浏览器不支持webp.js
-│   ├── ./Tools/下载文件.py
 │   ├── ./Tools/临时解b64密码文件并复制到剪贴板，三秒后清除.py
-│   ├── ./Tools/从rediveestertionwin同步资源.js
 │   ├── ./Tools/传统色.md
-│   ├── ./Tools/传统色网站取颜色列表.js
 │   ├── ./Tools/公主连结刷初始.sh
 │   ├── ./Tools/创建指定大小随机内容文本文档.sh
 │   ├── ./Tools/创建虚拟软盘镜像.md
@@ -1523,8 +1523,6 @@
 │   ├── ./Tools/将要下载的文件分成小块依次请求下载.py
 │   ├── ./Tools/将证书链拆分回单独证书.sh
 │   ├── ./Tools/小米路由器mixbox.sh
-│   ├── ./Tools/扒京东商品图片和标题.js
-│   ├── ./Tools/批量下载页面中包含指定字符的链接.js
 │   ├── ./Tools/批量更新多个文件的特定段落.py
 │   ├── ./Tools/替换非ASCII.py
 │   ├── ./Tools/检查网站可访问性自动重启服务.sh
@@ -1536,6 +1534,14 @@
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.mac.sh
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.ps1
 │   │   └── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.py
+│   ├── ./Tools/网页内容抓取
+│   │   ├── ./Tools/网页内容抓取/下载mydockfinder所有图标.js
+│   │   ├── ./Tools/网页内容抓取/下载微信公众号图片-需浏览器不支持webp.js
+│   │   ├── ./Tools/网页内容抓取/下载文件.py
+│   │   ├── ./Tools/网页内容抓取/从rediveestertionwin同步资源.js
+│   │   ├── ./Tools/网页内容抓取/传统色网站取颜色列表.js
+│   │   ├── ./Tools/网页内容抓取/扒京东商品图片和标题.js
+│   │   └── ./Tools/网页内容抓取/批量下载页面中包含指定字符的链接.js
 │   ├── ./Tools/美化curl返回的json.sh
 │   ├── ./Tools/蓝眼云盘服务.service
 │   ├── ./Tools/讯飞输入法敏感词名单转换.py
@@ -1752,4 +1758,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-114 directories, 1638 files
+116 directories, 1642 files
