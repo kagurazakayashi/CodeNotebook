@@ -2,8 +2,8 @@
 sudo apt remove "fcitx*" -y
 sudo apt install fcitx5 fcitx5-chinese-addons fcitx5-frontend-gtk4 fcitx5-frontend-gtk3 fcitx5-frontend-gtk2 fcitx5-frontend-qt5 -y
 mkdir -p ~/.local/share/fcitx5/pinyin/dictionaries/
-cd ~/.local/share/fcitx5/pinyin/dictionaries/
 # https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases 下载最新版的 [.dict] 文件
+cd ~/.local/share/fcitx5/pinyin/dictionaries/
 wget https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20230823.dict
 # 重启
 

@@ -1,4 +1,8 @@
 # 局域网测速
+sudo apt install iperf3 -y
+sudo firewall-cmd --permanent --add-port=5201/tcp
+sudo firewall-cmd --permanent --add-port=5201/udp
+sudo firewall-cmd --reload
 
 ## 服务器
 iperf3 -s

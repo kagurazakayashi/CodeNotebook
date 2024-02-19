@@ -67,3 +67,12 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 #GRUB_INIT_TUNE="480 440 1"
 
 # https://blog.csdn.net/dc_show/article/details/47396649
+
+
+
+# 新系统
+cd /etc/grub.d && ls
+# 修改各个配置
+update-grub
+grub-mkconfig -o /etc/default/grub
+# 以上最终会生成 /etc/default/grub

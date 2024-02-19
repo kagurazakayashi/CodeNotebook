@@ -28,8 +28,8 @@ docker-compose up -d --build # = docker-compose build && docker-compose up -d
 docker-compose down
 docker-compose build
 docker-compose run --rm web rails assets:precompile #编译
-docker-compose run --rm web bin/tootctl feeds build #构建用户首页时间流
 docker-compose run --rm web rails db:migrate
+docker-compose run --rm web bin/tootctl feeds build #构建用户首页时间流
 docker-compose up -d
 
 # ERROR: dockerfile parse error line 8: Unknown flag: link
