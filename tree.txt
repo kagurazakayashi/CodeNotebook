@@ -153,6 +153,7 @@
 │   ├── ./Batch_Windows/启动文件夹.md
 │   ├── ./Batch_Windows/启动项禁用Hyper-V.bat
 │   ├── ./Batch_Windows/备份WSL.bat
+│   ├── ./Batch_Windows/安装旧版本VS.bat
 │   ├── ./Batch_Windows/安装重启挂起.reg
 │   ├── ./Batch_Windows/实现sudo，参数①提升启动权限的程序.vbs
 │   ├── ./Batch_Windows/开机显示详细信息.txt
@@ -1543,6 +1544,7 @@
 │   │   ├── ./Tools/网页内容抓取/扒京东商品图片和标题.js
 │   │   └── ./Tools/网页内容抓取/批量下载页面中包含指定字符的链接.js
 │   ├── ./Tools/美化curl返回的json.sh
+│   ├── ./Tools/自动移走同扩展名的旧文件.py
 │   ├── ./Tools/蓝眼云盘服务.service
 │   ├── ./Tools/讯飞输入法敏感词名单转换.py
 │   ├── ./Tools/雅诗快捷纯文本编辑器.html
@@ -1758,4 +1760,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-116 directories, 1642 files
+116 directories, 1644 files
