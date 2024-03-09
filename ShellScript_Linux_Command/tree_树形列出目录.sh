@@ -23,3 +23,6 @@
 cd ..
 tree -n -f > tree.txt
 cat tree.txt
+
+tree -a -f -n -i -q >~/filelist.txt
+tree -a -D -f -F -g -i -n -p -q -s -u >~/filelist_all.txt
