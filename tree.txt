@@ -1458,6 +1458,7 @@
 │   ├── ./ShellScript_macOS/制作iso文件.sh
 │   ├── ./ShellScript_macOS/启动显示详细过程.sh
 │   ├── ./ShellScript_macOS/屏幕截图路径设置.sh
+│   ├── ./ShellScript_macOS/常用目录移到外置盘.sh
 │   ├── ./ShellScript_macOS/强行安装旧版本Java.scpt
 │   ├── ./ShellScript_macOS/显示隐藏文件.sh
 │   ├── ./ShellScript_macOS/禁止生成sleepimage.sh
@@ -1760,4 +1761,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-116 directories, 1644 files
+116 directories, 1645 files
