@@ -1,4 +1,4 @@
-# 修改默认启动级别
+# 修改默认启动级别 启动到命令行
 
 # 主机默认启用图形模式
 systemctl set-default graphical

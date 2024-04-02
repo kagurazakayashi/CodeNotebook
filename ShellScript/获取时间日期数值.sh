@@ -1,3 +1,4 @@
+# sh时间 sh日期
 date +%Y-%m-%d
 # 2011-07-28
 
@@ -25,6 +26,8 @@ date -d next-year +%Y
 # 生成带日期的文件名
 echo access_`date +%Y-%m-%d_%H-%M-%S`.log
 # access_2019-12-20_00-19-40.log
+echo access_`date +%Y%m%d_%H%M`.log
+# access_20191220_0019.log
 
 # % : 印出
 # % %n : 下一行

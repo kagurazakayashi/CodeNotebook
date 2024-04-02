@@ -56,3 +56,5 @@ vi /etc/ssh/sshd_config
 # Windows SSH 服务器配置文件（管理员方式运行）
 # https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration
 notepad "%programdata%\ssh\sshd_config"
+# 文件权限
+icacls.exe C:\ProgramData\ssh\administrators_authorized_keys /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"

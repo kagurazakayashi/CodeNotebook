@@ -11,7 +11,7 @@ func main() {
     signalch := make(chan os.Signal, 1)
 	// signal.Notify从第二个参数起是可变参数的, 用于指定要过滤的信号. 如果不指定第二个参数, 则默认是过滤全部的信号.
 	// 不同的操作系统信号可能有差异. 不过syscall.SIGINT和syscall.SIGKILL各个系统是一致的, 分别对应os.Interrupt和os.Kill.
-    signal.Notify(signalchc, os.Interrupt, os.Kill)
+    signal.Notify(signalch, os.Interrupt, os.Kill)
     signal := <-signalch
     fmt.Println("Got signal:", signal)
 }

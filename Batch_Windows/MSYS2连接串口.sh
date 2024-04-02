@@ -1,8 +1,8 @@
 pacman -S gcc autoconf automake make ncurses-devel libiconv-devel
 # https://fossies.org/linux/misc/
-wget https://fossies.org/linux/misc/minicom-2.8.tar.bz2
-tar -jxvf minicom-2.8.tar.bz2
-cd minicom-2.8
+wget https://fossies.org/linux/misc/minicom-2.9.tar.bz2
+tar -jxvf minicom-2.9.tar.bz2
+cd minicom-2.9
 mkdir tmp
 ./configure --enable-lock-dir=/tmp
 make -j`grep -c ^processor /proc/cpuinfo`
