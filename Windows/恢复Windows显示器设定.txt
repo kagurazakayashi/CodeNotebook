@@ -1,0 +1,13 @@
+恢复Windows显示器设定 显示器分辨率重启后自动还原问题
+
+显示器配置注册表：
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration
+
+可以直接全删 Configuration 也可以看里面型号修改
+
+PrimSurfSize.cx REG_DWORD 0x00000???(****)
+PrimSurfSize.cy REG_DWORD 0x00000???(****)
+
+?代表的是十六进制数，括号里是当前分辨率
+
+双击最前面的键名，在弹出对话框右下选择“十进制数”，并填入电脑当前分辨率，其中x为横向，y为纵向，常见的有1024x768，1920x1080，2560x1440等。
