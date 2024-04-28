@@ -1,0 +1,99 @@
+id,code,en,chs,cht,es
+1,1,Email verification code,邮件验证码,郵件驗證碼,Código de verificación de correo electrónico
+2,2,Please enter the following verification code in the verification box:,请在验证框输入以下验证码:,請在驗證框輸入以下驗證碼:,Ingrese el siguiente código de verificación en el cuadro de verificación:
+3,3,This code will expire soon. If you can't find the input box,该代码即将过期。 如果找不到输入框,該代碼即將過期。 如果找不到輸入框,Este código caducará pronto. Si no puede encontrar el cuadro de entrada
+4,4,try logging in again.,尝试再次登录。,嘗試再次登錄。,intenta iniciar sesión nuevamente.
+1001,200,options through,Options通过,Options通過,opciones a través de
+2001,405,Not a post request,不是POST请求,不是POST請求,No es una solicitud de publicación
+2011,400,failed to insert row,插入行失败,插入行失敗,no se pudo insertar la fila
+2040,400,missing parameter,缺少参数,缺少參數,parámetro faltante
+2041,400,parameter is incorrect,参数不正确,參數不正確,el parámetro es incorrecto
+2042,400,Username does not match user ID,用户名与用户ID不一致,用戶名與用戶ID不一致,El nombre de usuario no coincide con el ID de usuario
+3000,400,request method is incorrect,请求方式不正确,請求方式不正確,el método de solicitud es incorrecto
+3900,400,The token has expired,token已失效,token已失效,El token ha caducado
+3901,400,"The stored token is incorrect, Please login again",存储的token错误，请重新登录,存儲的token錯誤，請重新登入,El token almacenado es incorrecto. Inicie sesión nuevamente.
+3999,400,user does not exist,用户不存在,用戶不存在,el usuario no existe
+4000,400,please log in first,请先登录,請先登錄,por favor ingresa primero
+4001,400,incorrect user name or password,用户名或密码不正确,用戶名或密碼不正確,Nombre de usuario o contraseña incorrecta
+4002,400,failed to create token,创建令牌失败,創建令牌失敗,no se pudo crear el token
+4003,400,the query did not return a result,查询没有返回结果,查詢沒有返回結果,la consulta no arrojó un resultado
+4004,400,user does not have permission,用户没有权限,用戶沒有許可權,el usuario no tiene permiso
+4005,400,"login status expired, please login again",登录状态过期，请重新登录,登錄狀態過期，請重新登錄,El estado de inicio de sesión expiró, inicie sesión nuevamente.
+4006,400,Logout failed,登出失败,登出失敗,Error al cerrar sesión
+4007,400,Query result error,查询结果错误,查詢結果錯誤,Error en el resultado de la consulta
+4011,400,Incorrect user name,用户名不正确,用戶名不正確,Nombre de usuario incorrecto
+4012,400,Incorrect user password,密码不正确,密碼不正確,Contraseña de usuario incorrecta
+4013,400,Incorrect verification code,验证码不正确,驗證碼不正確,código de verificación incorrecto
+4015,400,User disabled,用户已停用,用戶已停用,Usuario deshabilitado
+4500,400,Access key error,访问密钥错误,訪問密鑰錯誤,Error de clave de acceso
+5000,400,this device is still waiting to respond to the last request. Please try again later.,还在等待此设备响应上次的请求，请稍后再试。,還在等待此設備響應上次的請求，請稍後再試。,Este dispositivo todavía está esperando responder a la última solicitud. Por favor, inténtelo de nuevo más tarde.
+9000,400,database connection failure,数据库连接失败,資料庫連接失敗,fallo de conexión a la base de datos
+9001,400,database query failed,数据库查询失败,資料庫查詢失敗,la consulta de la base de datos falló
+9002,400,database operation failed,数据库操作失败,資料庫操作失敗,la operación de la base de datos falló
+9008,400,The same entry already exists,已存在相同的条目,已存在相同的條目,La misma entrada ya existe.
+9009,400,No changes,没有任何更改,冇有任何更改,Sin cambios
+9010,400,redis database connection failure,redis服务连接失败,redis服務連接失敗,Error de conexión a la base de datos de Redis.
+9011,400,redis database query failed,redis操作失败,redis操作失敗,Error en la consulta de la base de datos de Redis
+9100,400,cache service connection failed,缓存服务连接失败,緩存服務連接失敗,la conexión del servicio de caché falló
+9101,400,cache query failed,缓存查询失败,緩存查詢失敗,La consulta de caché falló
+9200,400,mqtt service connection failed,MQTT服务连接失败,MQTT服務連接失敗,La conexión del servicio mqtt falló
+9201,400,mqtt operation failed,MQTT操作失败,MQTT操作失敗,La operación mqtt falló
+9300,400,Email sending failed,邮件发送失败,郵件發送失敗,Error al enviar correo electrónico
+9400,400,File operation failed,文件操作失败,文件操作失敗,Error en la operación del archivo
+9500,400,oss operation failed,oss操作失败,oss操作失敗,la operación OSS falló
+9501,400,oss query failed,oss查询失败,oss查詢失敗,la consulta oss falló
+9600,400,Post request failed,post请求失败,post請求失敗,Error en la solicitud post
+9999,400,system internal error,系统内部错误,系統內部錯誤,Error interno del sistema
+10000,200,Success,成功,成功,Éxito
+10001,200,Success(null),成功（无数据）,成功（無資料）,Éxito (nulo)
+10002,200,Success (no new content),成功（无新增内容）,成功（無新增內容）,Éxito (sin contenido nuevo)
+10003,200,Success (no changes),成功（没有任何更改）,成功（沒有任何更改）,Éxito (sin cambios)
+10100,100,Continue,继续,繼續,Continuar
+10101,101,Switching Protocols,切换协议,切換協議,Protocolos de conmutación
+10102,102,Processing,正在处理中,正在處理中,Procesando
+10103,103,Early Hints,预先返回的数据,預先返回的資料,Primeros consejos
+10200,200,OK,请求成功,请求成功,DE ACUERDO
+10201,201,Created,已创建,已建立,Creado
+10202,202,Accepted,已接受,已接受,Aceptado
+10203,203,Non-Authoritative Information,非授权信息,非授權資訊,Información no autorizada
+10204,204,No Content,无内容,無內容,Sin contenido
+10205,205,Reset Content,重置內容,重置內容,Restablecer contenido
+10206,206,Partial Content,部分内容,部分內容,Contenido parcial
+10300,300,Multiple Choices,多种选择,多種選擇,Múltiples opciones
+10301,301,Moved Permanently,永久移动,永久移動,Movido permanentemente
+10302,302,Found,临时移动,臨時移動,Encontró
+10303,303,See Other,查看其它地址,檢視其它地址,Ver Otros
+10304,304,Not Modified,未修改,未修改,No modificado
+10305,305,Use Proxy,使用代理,使用代理,Usa proxy
+10307,307,Temporary Redirect,临时重定向,臨時重定向,Redirección temporal
+11101,200,Waiting for user confirmation,等待用户确认,等待用戶確認,Esperando confirmación del usuario
+20000,400,Fail,失败,失敗,Fallar
+20400,400,Bad Request,错误请求,錯誤請求,Solicitud incorrecta
+20401,401,Unauthorized,要求身份认证,要求身份認證,No autorizado
+21000,400,length over 1000,长度超过1000,長度超過1000,longitud superior a 1000
+21001,400,illegal characters,有非法字符,有非法字元,caracteres ilegales
+21002,400,regular judgment failure,正则判断失败,正則判斷失敗,fallo de juicio regular
+20403,403,Forbidden,拒绝执行,拒絕執行,Prohibido
+20404,404,Not Found,找不到,找不到,Extraviado
+20405,405,Method Not Allowed,所请求的方法被禁用,所請求的方法被禁用,Método no permitido
+20406,406,Not Acceptable,无法根据特性完成请求,無法根據特性完成請求,Inaceptable
+20407,407,Proxy Authentication Required,要求代理身份认证,要求代理身份認證,Se requiere autenticación proxy
+20408,408,Request Time-out,请求超时,請求超時,Pide tiempo fuera
+20409,409,Conflict,发生冲突,發生衝突,Conflicto
+20410,410,Gone,已被永久删除,已被永久刪除,Desaparecido
+20411,411,Length Required,需要提供请求长度,需要提供請求長度,Longitud requerida
+20412,412,Precondition Failed,请求不满足先决条件,請求不滿足先決條件,Condición previa Falló
+20413,413,Request Entity Too Large,请求太大,請求太大,Solicitar entidad demasiado grande
+20414,414,Request-URI Too Large,网址过长,網址過長,Solicitud-URI demasiado grande
+20415,415,Unsupported Media Type,不支持的上传文件格式,不支援的上傳檔案格式,Tipo de medio no admitido
+20416,416,Requested range not satisfiable,范围无效,範圍無效,Rango solicitado no satisfactorio
+20417,417,Expectation Failed,无法满足请求头信息,無法滿足請求頭資訊,Expectativa fallida
+20451,451,Unavailable For Legal Reasons,无法满足请求头信息,根據相關法律法規或政策，無法顯示,No disponible por razones legales
+20500,500,Internal Server Error,服务器内部错误,伺服器內部錯誤,Error Interno del Servidor
+20501,501,Not Implemented,不支持请求的功能,不支援請求的功能,No se ha implementado
+20502,502,Bad Gateway,上级服务器处理失败,上級伺服器處理失敗,Mala puerta de enlace
+20503,503,Service Unavailable,系统正在维护,系統正在維護,Servicio No Disponible
+20504,504,Gateway Time-out,上级服务器响应超时,上級伺服器響應超時,Tiempo de espera de puerta de enlace
+20505,505,HTTP Version not supported,不支持的协议版本,不支援的協議版本,Versión HTTP no compatible
+21101,400,The login code is invalid and has been regenerated,登录码已失效，已重新生成,登錄碼已失效，已重新生成,El código de inicio de sesión no es válido y se ha regenerado
+21102,400,QR code generation failed,二维码生成失败,二維碼生成失敗,Falló la generación del código QR
