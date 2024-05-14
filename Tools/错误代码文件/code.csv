@@ -5,6 +5,7 @@ id,code,en,chs,cht,es
 4,4,try logging in again.,尝试再次登录。,嘗試再次登錄。,intenta iniciar sesión nuevamente.
 1001,200,options through,Options通过,Options通過,opciones a través de
 2001,405,Not a post request,不是POST请求,不是POST請求,No es una solicitud de publicación
+2009,405,Request incorrect,请求不正确,請求不正確,Solicitud incorrecta
 2011,400,failed to insert row,插入行失败,插入行失敗,no se pudo insertar la fila
 2040,400,missing parameter,缺少参数,缺少參數,parámetro faltante
 2041,400,parameter is incorrect,参数不正确,參數不正確,el parámetro es incorrecto
@@ -12,6 +13,7 @@ id,code,en,chs,cht,es
 3000,400,request method is incorrect,请求方式不正确,請求方式不正確,el método de solicitud es incorrecto
 3900,400,The token has expired,token已失效,token已失效,El token ha caducado
 3901,400,"The stored token is incorrect, Please login again",存储的token错误，请重新登录,存儲的token錯誤，請重新登入,El token almacenado es incorrecto. Inicie sesión nuevamente.
+3998,400,user does not exist,用户已存在,用戶不存在,el usuario no existe
 3999,400,user does not exist,用户不存在,用戶不存在,el usuario no existe
 4000,400,please log in first,请先登录,請先登錄,por favor ingresa primero
 4001,400,incorrect user name or password,用户名或密码不正确,用戶名或密碼不正確,Nombre de usuario o contraseña incorrecta
@@ -39,15 +41,17 @@ id,code,en,chs,cht,es
 9200,400,mqtt service connection failed,MQTT服务连接失败,MQTT服務連接失敗,La conexión del servicio mqtt falló
 9201,400,mqtt operation failed,MQTT操作失败,MQTT操作失敗,La operación mqtt falló
 9300,400,Email sending failed,邮件发送失败,郵件發送失敗,Error al enviar correo electrónico
+9301,400,Email get failed,邮件获取失败,郵件獲取失敗,Error al obtener correo electrónico
+9302,400,Email password not set,邮件密码未设置,郵件密碼未設定,Contraseña de correo electrónico no establecida
 9400,400,File operation failed,文件操作失败,文件操作失敗,Error en la operación del archivo
 9500,400,oss operation failed,oss操作失败,oss操作失敗,la operación OSS falló
 9501,400,oss query failed,oss查询失败,oss查詢失敗,la consulta oss falló
-9600,400,Post request failed,post请求失败,post請求失敗,Error en la solicitud post
+9601,400,oss query failed,oss查询失败,oss查詢失敗,la consulta oss falló
 9999,400,system internal error,系统内部错误,系統內部錯誤,Error interno del sistema
 10000,200,Success,成功,成功,Éxito
-10001,200,Success(null),成功（无数据）,成功（無資料）,Éxito (nulo)
-10002,200,Success (no new content),成功（无新增内容）,成功（無新增內容）,Éxito (sin contenido nuevo)
-10003,200,Success (no changes),成功（没有任何更改）,成功（沒有任何更改）,Éxito (sin cambios)
+10001,200,No Data,无数据,無資料,Sin datos
+10002,200,no new content,无新增内容,無新增內容,sin contenido nuevo
+10003,200,no changes,没有任何更改,沒有任何更改,sin cambios
 10100,100,Continue,继续,繼續,Continuar
 10101,101,Switching Protocols,切换协议,切換協議,Protocolos de conmutación
 10102,102,Processing,正在处理中,正在處理中,Procesando
