@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Random Pattern Image</title>
+</head>
+<body>
+<canvas id="randomCanvas" width="300" height="200" style="display:none;"></canvas>
+<img id="randomImage" alt="Random Pattern Image"/>
+
+<script>
+function generateRandomPattern() {
+    const canvas = document.getElementById('randomCanvas');
+    const context = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+
+    // 生成随机背景颜色
+    const backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    context.fillStyle = backgroundColor;
+    context.fillRect(0, 0, width, height);
+
+    // 添加随机的形状
+    for (let i = 0; i < 10; i++) {
+        const shapeType = Math.random() < 0.5 ? 'circle' : 'rect';
+        const color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        context.fillStyle = color;
+
+        if (shapeType === 'circle') {
+            const x = Math.random() * width;
+            const y = Math.random() * height;
+            const radius = Math.random() * 30;
+            context.beginPath();
+            context.arc(x, y, radius, 0, 2 * Math.PI);
+            context.fill();
+        } else {
+            const x = Math.random() * width;
+            const y = Math.random() * height;
+            const w = Math.random() * 60;
+            const h = Math.random() * 60;
+            context.fillRect(x, y, w, h);
+        }
+    }
+
+    // 将 Canvas 转为图像 URL
+    const dataURL = canvas.toDataURL('image/png');
+    document.getElementById('randomImage').src = dataURL;
+}
+
+generateRandomPattern();
+</script>
+</body>
+</html>

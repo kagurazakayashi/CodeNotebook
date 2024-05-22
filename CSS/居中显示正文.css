@@ -1,0 +1,53 @@
+/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* 针对大屏幕（桌面设备） */
+@media (min-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+}
+
+/* 针对中等屏幕（平板设备） */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* 针对小屏幕（手机设备） */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+}
+
+/* 示例文章样式 */
+.article {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.article h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.article p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}

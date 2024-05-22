@@ -1,0 +1,4 @@
+select vdisk file="C:\path\to\your\file.vhdx"
+attach vdisk
+list volume
+exit

@@ -10,5 +10,11 @@ sudo vim /etc/crypttab
 sudo vim /etc/fstab
 
 # 配置grub引导菜单
-nano vim /etc/default/grub
-nano vim /boot/grub/grub.cfg
+sudo vim /etc/default/grub
+sudo vim /boot/grub/grub.cfg
+
+# 自动添加的可能会在以下各个脚本中：
+sudo vim /etc/grub.d/proxifiedScripts/custom
+sudo vim /etc/default/grub.ucf-dist
+
+# cryptsetup waiting for encrypted source device uuid

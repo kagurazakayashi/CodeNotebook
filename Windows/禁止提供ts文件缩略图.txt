@@ -1,0 +1,12 @@
+禁止提供ts文件缩略图
+
+注册表
+
+HKEY_CLASSES_ROOT\.ts
+
+在右侧窗格中，右键单击空白处，选择 新建 -> 字符串值。
+命名为 PerceivedType。
+双击新建的 PerceivedType 项，将值数据设置为 text，然后点击 确定。
+
+taskkill /f /im explorer.exe
+start explorer.exe

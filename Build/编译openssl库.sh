@@ -1,9 +1,12 @@
+# Arch
+pacman -S base-devel perl
+
 # 1. 下载zlib库 http://zlib.net/
-wget http://zlib.net/zlib-1.2.13.tar.gz
+wget https://zlib.net/zlib-1.3.1.tar.gz
 
 # 2. 编译安装zlib库
-tar -zxvf zlib-1.2.13.tar.gz
-cd zlib-1.2.13
+tar -zxvf zlib-1.3.1.tar.gz
+cd zlib-1.3.1
 mkdir build
 cd build
 ../configure --prefix=/usr/local

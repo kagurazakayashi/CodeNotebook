@@ -1,3 +1,5 @@
+// 字符串是否包含
+
 // 方法一: indexOf() (推荐)
 var str = "123";
 console.log(str.indexOf("3") >= 0);  // true

@@ -142,3 +142,10 @@ unrar e all.rar
 
 # 批量解压每个文件夹里的 gz
 find /mnt/d/0 -name "*.gz"|xargs -i gzip -d {}
+
+# tar 避免软链接死循环并除去系统目录
+sudo tar -czf root-backup.tar.gz --one-file-system --dereference --exclude=/tmp --exclude=/proc --exclude=/sys --exclude=/dev --exclude=/run --exclude=/mnt /
+# 符号链接:
+# --dereference 或 -h: 当归档符号链接时，归档链接所指向的文件而不是链接本身。这有助于避免链接指向已经被包含在归档中的内容，从而避免潜在的循环。
+# 硬链接:
+# tar 默认会尝试保持硬链接之间的关系。这通常不会造成循环，但在某些情况下，如果你不希望保持这种链接关系，可以选择不特别处理它们。

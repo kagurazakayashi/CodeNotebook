@@ -5,6 +5,9 @@ du -a / 2>/dev/null | sort -n -r | head -n 25
 # sort : 对文件行或者标准输出行记录排序后输出.
 # head : 输出文件内容的前面部分.
 
+# 导出并压缩
+du -a / 2>/dev/null | sort -n -r | xz -z -e -9 -T 0 -v -c >du_sort_`date +%Y-%m-%d-%H-%M-%S-%s`.log.xz
+
 # 输出可读性高的内容：
 # 先进入要统计的文件夹：
 cd /path/to/some/where

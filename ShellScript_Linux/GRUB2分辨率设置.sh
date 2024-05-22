@@ -6,7 +6,9 @@ vbeinfo
  
 # 在grub中设置分辨率
 sudo nano /etc/default/grub
-GRUB_GFXMODE=1920x1080,auto
+GRUB_GFXMODE=1024x768
+GRUB_GFXPAYLOAD_LINUX=keep
+# GRUB_GFXMODE 设置了GRUB菜单的分辨率，而 GRUB_GFXPAYLOAD_LINUX=keep 告诉GRUB保持这个分辨率进入Linux。
 
 # 保存更改
 sudo update-grub

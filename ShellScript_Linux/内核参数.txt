@@ -1,0 +1,31 @@
+下面是一些常用的Linux内核参数：
+
+quiet - 使启动过程中的输出更加简洁，只显示必要的信息。
+
+ro - 启动时将根文件系统挂载为只读。
+
+rw - 启动时将根文件系统挂载为可读写。
+
+root=/dev/sdX - 指定系统启动时使用的根文件系统所在的设备，其中 X 是设备的具体标识。
+
+init=/path/to/init - 指定系统启动后首先执行的程序。
+
+single - 启动到单用户模式。
+
+nomodeset - 禁用内核模式设置，这有助于解决一些图形卡的问题。
+
+noapic - 禁用APIC。
+
+nolapic - 禁用本地 APIC。
+
+maxcpus=num - 限制系统使用的CPU数量。
+
+mem=XXXXm - 限制内核使用的最大内存。
+
+vga=mode - 设置屏幕文本模式的分辨率。
+
+panic=secs - 设置内核在遇到致命错误时，多少秒后重启。
+
+acpi=off 或 noacpi - 禁用ACPI。
+
+pci=nomsi - 禁用MSI中断传送。

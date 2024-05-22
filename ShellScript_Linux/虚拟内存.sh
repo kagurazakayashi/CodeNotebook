@@ -13,7 +13,7 @@ rm -f /pagefile.sys
 vim /etc/fstab
 
 # 1. 添加swap文件大小为2G
-# 默认情况下， of=/swapfile 即swapfile文件创建在/var/目录下。 
+# 默认情况下， of=/swapfile 即swapfile文件创建在/var/目录下。 
 # 若我在创建在/opt/image/目录下， 则下面所有的操作里有/swapfile的都要改为/opt/image/swap
 dd if=/dev/zero of=/swapfile bs=1k count=2048000
 # 2. 创建SWAP文件
@@ -45,32 +45,32 @@ vim /etc/fstab
 # sdb2采用uuid方式挂载
 # sdb3采用label方式挂载
 # 其他分区随意
-fdisk -l  /dev/sdb        fdisk -cu /dev/sdb              :m n  ........
-mkfs -t  ext4 /dev/sdb1
-mkfs -t ext4  /dev/sdb2
+fdisk -l  /dev/sdb        fdisk -cu /dev/sdb              :m n  ........
+mkfs -t  ext4 /dev/sdb1
+mkfs -t ext4  /dev/sdb2
 mkfs -t ext4 -L DADA5 /dev/sdb5
 mkfs -t ext4 /dev/sdb6
 mkfs -t ext4 /dev/sdb7
-mount -t  /dev/sdb1  /mnt/disk1
-mount -t  UUID="......"  /mnt/disk2
-mount -t  label="......"  /mnt/disk3
-mount -t  /dev/sdb6  /mnt/disk4
-mount -t  /dev/sdb7  /mnt/disk5
-#/dev/sdB1      /mnt/disk1     ext4    defaults 0 0
-#UUID=49ede8aa-d8bb-4a59-b436-1f91175e9c94  /mnt/disk2 ext4 defaults 0 0
-#label=data5         /mnt/disk3 ext4 defaults 0 0
-#/dev/sda6       /mnt/disk4      ext4    defaults 0 0
-#/dev/sdb7       /mnt/disk5      ext4    defaults 0 0
-# 回到用户目录：partx -a /dev/sda  两次（仅仅是当sdb中之前有分区时，加入新建的才要输）
+mount -t  /dev/sdb1  /mnt/disk1
+mount -t  UUID="......"  /mnt/disk2
+mount -t  label="......"  /mnt/disk3
+mount -t  /dev/sdb6  /mnt/disk4
+mount -t  /dev/sdb7  /mnt/disk5
+#/dev/sdB1      /mnt/disk1     ext4    defaults 0 0
+#UUID=49ede8aa-d8bb-4a59-b436-1f91175e9c94  /mnt/disk2 ext4 defaults 0 0
+#label=data5         /mnt/disk3 ext4 defaults 0 0
+#/dev/sda6       /mnt/disk4      ext4    defaults 0 0
+#/dev/sdb7       /mnt/disk5      ext4    defaults 0 0
+# 回到用户目录：partx -a /dev/sda  两次（仅仅是当sdb中之前有分区时，加入新建的才要输）
 # 2.扩展系统swap分区,分别采用fdisk和dd做,分区大小500M,文件大小500M
-free  #查看内存和swap的信息
+free  #查看内存和swap的信息
 # 方法1: 使用传统分区fdisk
 # 1.分区
 fdisk -cu /dev/xvdc
 # 2.将分区制作成swap分区
 mkswap /dev/xvdc
-# 3.挂载 
-swapon  /dev/xvdc #挂载
+# 3.挂载 
+swapon  /dev/xvdc #挂载
 swapoff /dev/xvdc #卸载
 # 4.写入 vi /etc/fstab
 # /dev/xvdc swap swap defaults 0 0

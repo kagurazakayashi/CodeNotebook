@@ -164,3 +164,13 @@ var value int = arr1[1][0]
 // https://blog.csdn.net/dupeng0811/article/details/89876287
 // https://www.jianshu.com/p/26ff6e9927e9
 // https://blog.csdn.net/books1958/article/details/21460673
+
+
+// 删除数组前两个值
+slice := []string{"a", "b", "c", "d", "e"}
+// 检查切片长度是否大于等于2，以避免运行时错误
+if len(slice) >= 2 {
+	// 删除前两个元素
+	slice = slice[2:]
+}
+fmt.Println(slice)
