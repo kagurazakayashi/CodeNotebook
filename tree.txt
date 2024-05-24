@@ -98,15 +98,23 @@
 │   ├── ./Batch_IIS/Flarum升级.bat
 │   ├── ./Batch_IIS/Flarum的URL重写.config
 │   └── ./Batch_IIS/WordPress的URL重写web.config
+├── ./Batch_Windows
+│   ├── ./Batch_Windows/挂载vhd
+│   │   ├── ./Batch_Windows/挂载vhd/mount_vhdx.txt
+│   │   └── ./Batch_Windows/挂载vhd/挂载vhd.bat
+│   └── ./Batch_Windows/查看内存是DDR几代.bat
 ├── ./Build
+│   ├── ./Build/Arch安装谷歌浏览器.sh
 │   ├── ./Build/GCC
 │   │   ├── ./Build/GCC/1编译gmp.sh
 │   │   ├── ./Build/GCC/2编译mpfr.sh
 │   │   ├── ./Build/GCC/3编译mpc.sh
 │   │   └── ./Build/GCC/4编译gcc.sh
+│   ├── ./Build/安装btop.sh
 │   ├── ./Build/安装filezilla.sh
 │   ├── ./Build/安装screenfetch.sh
 │   ├── ./Build/编译ImageMagick.sh
+│   ├── ./Build/编译M2Crypto.sh
 │   ├── ./Build/编译exfat.sh
 │   ├── ./Build/编译ffmpeg和vlc.sh
 │   ├── ./Build/编译ffmpeg，RH8可用.sh
@@ -117,7 +125,9 @@
 │   ├── ./Build/编译p7zip.sh
 │   ├── ./Build/编译php插件.sh
 │   ├── ./Build/编译privoxy.sh
-│   └── ./Build/编译redis库.sh
+│   ├── ./Build/编译redis库.sh
+│   ├── ./Build/编译rtl8821ce网卡驱动.sh
+│   └── ./Build/编译xmrig.sh
 ├── ./C
 │   ├── ./C/ASCII码.c
 │   ├── ./C/ASCII码表.md
@@ -294,6 +304,7 @@
 │   │   ├── ./CSS/基线对齐/7.具体的值.jpg
 │   │   ├── ./CSS/基线对齐/基线对齐.css
 │   │   └── ./CSS/基线对齐/文字的顶线、中线、基线.jpg
+│   ├── ./CSS/居中显示正文.css
 │   ├── ./CSS/常量变量.css
 │   ├── ./CSS/拖拽改变分栏大小.html
 │   ├── ./CSS/支持暗色模式.css
@@ -427,6 +438,7 @@
 │       ├── ./Game/Minecraft/bukkit安装.sh
 │       ├── ./Game/Minecraft/server.properties
 │       ├── ./Game/Minecraft/填充地图.bat
+│       ├── ./Game/Minecraft/最高附魔武器.md
 │       ├── ./Game/Minecraft/服务端常用指令.md
 │       └── ./Game/Minecraft/难度.txt
 ├── ./Go
@@ -456,14 +468,22 @@
 │   ├── ./Go/filepath.go
 │   ├── ./Go/get私有库失败.sh
 │   ├── ./Go/int和byte互转.go
+│   ├── ./Go/int最大值.go
 │   ├── ./Go/libNyaruko_Go
 │   ├── ./Go/linux使用最新版本.sh
 │   ├── ./Go/map.go
 │   ├── ./Go/map_concurrent-map.go
 │   ├── ./Go/string和byte互相转换.go
+│   ├── ./Go/tcp加密通信
+│   │   ├── ./Go/tcp加密通信/san.cnf
+│   │   ├── ./Go/tcp加密通信/tcp加密通信-客户端.go
+│   │   ├── ./Go/tcp加密通信/tcp加密通信-服务端.go
+│   │   ├── ./Go/tcp加密通信/tcp多段信息接收.go
+│   │   └── ./Go/tcp加密通信/创建证书.sh
 │   ├── ./Go/uint64转byte保留源数字.go
 │   ├── ./Go/上传和输出某个文件.go
 │   ├── ./Go/内存工具.go
+│   ├── ./Go/几秒后执行.go
 │   ├── ./Go/判断类型.go
 │   ├── ./Go/发送POST请求.go
 │   ├── ./Go/取出map中的所有key.go
@@ -492,6 +512,7 @@
 │   ├── ./Go/彩色输出.go
 │   ├── ./Go/排序数字.go
 │   ├── ./Go/数组.go
+│   ├── ./Go/数组最大能多大.go
 │   ├── ./Go/整数转字符串.go
 │   ├── ./Go/文件读写
 │   │   ├── ./Go/文件读写/读写文本文档1.go
@@ -506,6 +527,7 @@
 │   │   └── ./Go/时间和日期/时间比较.go
 │   ├── ./Go/时间比较.go
 │   ├── ./Go/枚举.go
+│   ├── ./Go/检查byte数组是不是字符串.go
 │   ├── ./Go/混合内容的字典.go
 │   ├── ./Go/环境变量.sh
 │   ├── ./Go/终端彩色输出.go
@@ -583,6 +605,7 @@
 │   ├── ./JavaScript/保留小数位数和四舍五入.js
 │   ├── ./JavaScript/几秒后执行.js
 │   ├── ./JavaScript/创建HTML元素.js
+│   ├── ./JavaScript/创建随机图片.html
 │   ├── ./JavaScript/判断变量是否已经定义.js
 │   ├── ./JavaScript/判断数据类型.js
 │   ├── ./JavaScript/判断横屏竖屏.js
@@ -732,7 +755,6 @@
 │   │   ├── ./Other/Yubikey/Yubikey创建Yubico_OTP并上传.txt
 │   │   ├── ./Other/Yubikey/Yubikey和Aster分屏软件冲突.txt
 │   │   └── ./Other/Yubikey/Yubikey驱动下载.md
-│   ├── ./Other/iOS系统备份文件夹.txt
 │   ├── ./Other/iPhone备份目录.md
 │   ├── ./Other/xmrig配置参数.md
 │   ├── ./Other/切噜.c
@@ -1082,6 +1104,7 @@
 │   ├── ./ShellScript/split分割与合并文件.sh
 │   ├── ./ShellScript/wget递归下载.sh
 │   ├── ./ShellScript/不输出错误.sh
+│   ├── ./ShellScript/全盘搜索字符串.sh
 │   ├── ./ShellScript/判断是否在开机1分钟内.sh
 │   ├── ./ShellScript/变量和取消变量.sh
 │   ├── ./ShellScript/命令行参数.sh
@@ -1097,6 +1120,7 @@
 │   ├── ./ShellScript/循环合并文件.sh
 │   ├── ./ShellScript/循环指定次数.sh
 │   ├── ./ShellScript/忽略错误输出.sh
+│   ├── ./ShellScript/打包创建日期为指定时间段的文件.sh
 │   ├── ./ShellScript/执行脚本并输出日志文件.sh
 │   ├── ./ShellScript/批量序号缓存下载文件.sh
 │   ├── ./ShellScript/收集所有指定文件可能重名.sh
@@ -1123,8 +1147,6 @@
 │   │   ├── ./ShellScript/重定向和管道/重定向和管道2.c
 │   │   └── ./ShellScript/重定向和管道/重定向和管道3.c
 │   └── ./ShellScript/顺序和并行执行多个命令.sh
-├── ./ShellScript_Build
-│   └── ./ShellScript_Build/编译安装xmrig.sh
 ├── ./ShellScript_Linux
 │   ├── ./ShellScript_Linux/CPU温度.sh
 │   ├── ./ShellScript_Linux/CentOS8网络配置.sh
@@ -1152,6 +1174,7 @@
 │   ├── ./ShellScript_Linux/apt-install通配符.sh
 │   ├── ./ShellScript_Linux/apt安装图形画面.sh
 │   ├── ./ShellScript_Linux/apt安装通配符.sh
+│   ├── ./ShellScript_Linux/archlinux安装过程记录.sh
 │   ├── ./ShellScript_Linux/dd备份硬盘.sh
 │   ├── ./ShellScript_Linux/dd测速.sh
 │   ├── ./ShellScript_Linux/dpkg取回了一个空字符串.sh
@@ -1186,7 +1209,9 @@
 │   ├── ./ShellScript_Linux/修改时区.sh
 │   ├── ./ShellScript_Linux/内存盘.sh
 │   ├── ./ShellScript_Linux/内核升级失败回滚.sh
+│   ├── ./ShellScript_Linux/内核参数.txt
 │   ├── ./ShellScript_Linux/列出系统服务.sh
+│   ├── ./ShellScript_Linux/创建用户并给予sudo权限.sh
 │   ├── ./ShellScript_Linux/创建虚拟机和虚拟盘格式转换.sh
 │   ├── ./ShellScript_Linux/删除旧内核.sh
 │   ├── ./ShellScript_Linux/删除旧文件.sh
@@ -1195,6 +1220,7 @@
 │   ├── ./ShellScript_Linux/压缩解压缩.sh
 │   ├── ./ShellScript_Linux/压缩解压缩：7z压缩参数.md
 │   ├── ./ShellScript_Linux/只能开浏览器的账户.sh
+│   ├── ./ShellScript_Linux/右上角网络图标.sh
 │   ├── ./ShellScript_Linux/同步时间.sh
 │   ├── ./ShellScript_Linux/命令行屏保.sh
 │   ├── ./ShellScript_Linux/安装中文输入法.sh
@@ -1203,7 +1229,9 @@
 │   ├── ./ShellScript_Linux/常用目录和配置文件.md
 │   ├── ./ShellScript_Linux/常用路径.md
 │   ├── ./ShellScript_Linux/开启和断开网络连接.sh
+│   ├── ./ShellScript_Linux/开启性能模式.sh
 │   ├── ./ShellScript_Linux/开机启动图形程序.sh
+│   ├── ./ShellScript_Linux/开机时以root权限运行命令.sh
 │   ├── ./ShellScript_Linux/开机时间.sh
 │   ├── ./ShellScript_Linux/开机显示详细过程.sh
 │   ├── ./ShellScript_Linux/开机自动解密LUKS分区.sh
@@ -1229,6 +1257,7 @@
 │   ├── ./ShellScript_Linux/用户列表.sh
 │   ├── ./ShellScript_Linux/用户和组.md
 │   ├── ./ShellScript_Linux/用户登录进去后显示一些信息.sh
+│   ├── ./ShellScript_Linux/用户登录闪退打不开shell.sh
 │   ├── ./ShellScript_Linux/登录ssh自动进入tmux.sh
 │   ├── ./ShellScript_Linux/监视文件改动.sh
 │   ├── ./ShellScript_Linux/磁盘分区扩容.sh
@@ -1243,6 +1272,8 @@
 │   ├── ./ShellScript_Linux/自动登录.txt
 │   ├── ./ShellScript_Linux/虚拟内存.sh
 │   ├── ./ShellScript_Linux/设置DNS.sh
+│   ├── ./ShellScript_Linux/设置命令行下分辨率.sh
+│   ├── ./ShellScript_Linux/设置计算机名称.sh
 │   ├── ./ShellScript_Linux/语系设置成为中文.sh
 │   ├── ./ShellScript_Linux/进程.md
 │   ├── ./ShellScript_Linux/进程优先级.sh
@@ -1408,7 +1439,7 @@
 │   ├── ./Tools/hash校验文件.sh
 │   ├── ./Tools/matrix.sh
 │   ├── ./Tools/npm更新.sh
-│   ├── ./Tools/testrun移动.sh
+│   ├── ./Tools/testrun安装后文件导出导入.sh
 │   ├── ./Tools/v2ray-docker.txt
 │   ├── ./Tools/virtualbox虚拟磁盘复制.bat
 │   ├── ./Tools/webmin网页管理.sh
@@ -1617,6 +1648,7 @@
 │   ├── ./Windows/安装旧版本VS.bat
 │   ├── ./Windows/安装重启挂起.reg
 │   ├── ./Windows/实现sudo，参数①提升启动权限的程序.vbs
+│   ├── ./Windows/将pem和ca等作为crt打开.bat
 │   ├── ./Windows/开机显示详细信息.txt
 │   ├── ./Windows/恢复IcoCurAni文件关联.reg
 │   ├── ./Windows/恢复Windows显示器设定.txt
@@ -1634,6 +1666,7 @@
 │   ├── ./Windows/清除字体缓存.bat
 │   ├── ./Windows/用户.bat
 │   ├── ./Windows/磁盘碎片整理.bat
+│   ├── ./Windows/禁止提供ts文件缩略图.txt
 │   ├── ./Windows/禁用文件管理左侧快速访问.reg
 │   ├── ./Windows/移动Outlook数据文件.bat
 │   ├── ./Windows/移除迅雷xlwfp服务.bat
@@ -1772,4 +1805,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-117 directories, 1655 files
+119 directories, 1686 files
