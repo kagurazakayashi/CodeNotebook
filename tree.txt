@@ -1782,6 +1782,7 @@
 │   ├── ./icon/icon.icns
 │   ├── ./icon/icon.ico
 │   └── ./icon/icon.png
+├── ./linux-command
 ├── ./macOS_Objective-C
 │   ├── ./macOS_Objective-C/只支持M处理器或Intel处理器.txt
 │   ├── ./macOS_Objective-C/打开终端APP运行一个外部命令.m
@@ -1806,4 +1807,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-119 directories, 1687 files
+120 directories, 1687 files
