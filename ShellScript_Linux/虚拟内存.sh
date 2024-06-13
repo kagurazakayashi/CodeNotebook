@@ -87,10 +87,10 @@ vim /etc/fstab
 
 
 # 设置虚拟内存比例：
-# vm.swappiness是Linux内核的一个参数，范围是0～100。它表示实际内存和虚拟内存区域进行数据交换的倾向性大小，数值越大表示倾向性越大，即交换的页面文件越多，反之亦然。一般默认值为60。可用'cat /proc/sys/vm/swappiness’查看。
+# vm.swappiness是Linux内核的一个参数，范围是0～100。它表示实际内存和虚拟内存区域进行数据交换的倾向性大小，**数值越大表示倾向性越大，即交换的页面文件越多**，反之亦然。一般默认值为60。可用'cat /proc/sys/vm/swappiness’查看。
 # 永久配置方法：
 sysctl -w vm.swappiness=100
-echo vm.swappiness = 100 >> /etc/sysctl.conf
+echo vm.swappiness=100 >> /etc/sysctl.conf
 
 # 临时配置方法：
 sysctl -w vm.swappiness=0
