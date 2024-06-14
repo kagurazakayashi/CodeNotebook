@@ -871,6 +871,7 @@
 │   ├── ./Proxy/curl和wget代理.sh
 │   ├── ./Proxy/gradle代理.txt
 │   ├── ./Proxy/npm代理.sh
+│   ├── ./Proxy/pacman设置代理.sh
 │   ├── ./Proxy/privoxy将socks转为http代理.sh
 │   ├── ./Proxy/ssh的代理、转发端口、证书登录.sh
 │   ├── ./Proxy/yum代理.sh
@@ -1240,6 +1241,8 @@
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
 │   ├── ./ShellScript_Linux/挂载U盘.sh
 │   ├── ./ShellScript_Linux/挖矿病毒.sh
+│   ├── ./ShellScript_Linux/文件和网络上限修改.sh
+│   ├── ./ShellScript_Linux/文件和网络是否达到上限查看.sh
 │   ├── ./ShellScript_Linux/文件权限.sh
 │   ├── ./ShellScript_Linux/无法识别软驱.sh
 │   ├── ./ShellScript_Linux/显示文件最后几行.sh
@@ -1376,6 +1379,7 @@
 │   └── ./ShellScript_Linux_Command/whoami_查看当前用户名.sh
 ├── ./ShellScript_SSH
 │   ├── ./ShellScript_SSH/SSH传输文件.sh
+│   ├── ./ShellScript_SSH/SSH启用X11转发.sh
 │   ├── ./ShellScript_SSH/SSH证书登录.sh
 │   ├── ./ShellScript_SSH/UNPROTECTED_PRIVATE_KEY_FILE.md
 │   ├── ./ShellScript_SSH/ssh报错NoMatchingKeyExchangeMethodFound.sh
@@ -1791,7 +1795,6 @@
 │   ├── ./macOS_Objective-C/获取区域和语言.m
 │   ├── ./macOS_Objective-C/退出程序.m
 │   └── ./macOS_Objective-C/针对特定平台编译.md
-├── ./nginx跳转.conf
 ├── ./reference
 ├── ./tree.txt
 ├── ./vue
@@ -1807,4 +1810,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-120 directories, 1687 files
+120 directories, 1690 files
