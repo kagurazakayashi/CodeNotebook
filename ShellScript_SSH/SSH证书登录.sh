@@ -13,7 +13,7 @@ chattr -i ~/.ssh/authorized_keys
 ssh-keygen -m PEM -t rsa -b 8192 -C ssh.rsa
 cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
 
-ssh-keygen -m PEM -t ed25519 -b 4096 -C ssh.ed25519
+ssh-keygen -m PEM -t ed25519 -C ssh.ed25519
 cat ~/.ssh/id_ed25519.pub > ~/.ssh/authorized_keys
 
 chmod 0700 ~/.ssh

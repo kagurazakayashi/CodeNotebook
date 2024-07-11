@@ -1,0 +1,64 @@
+ECHO Visual Studio 2017 Desktop Express
+VisualStudioSetup.exe --channelUri https://aka.ms/vs/15/release/channel --productId Microsoft.VisualStudio.Product.WDExpress
+
+
+Microsoft Visual Studio 2017
+Visual Studio 命令行
+用法：vs_setup.exe [命令[选项]]
+命令行命令	说明
+modify	修改已安装的产品。
+update	更新已安装的产品。
+repair	修复已安装的产品。
+uninstall	卸载已安装的产品。
+
+命令行选项	说明
+--installPath <目录>	要操作的实例的安装目录。对于安装命令，这是指将安装实例的位置。对于其他命令，这是指之前已安装实例所在的位置。
+--productId <id>	将要安装的实例的产品 ID。安装命令需要此值；如果已指定 --installPath，则对其他命令忽略此值。
+--layout <目录>	指定用于创建脱机安装缓存的目录。
+--verify	此选项与 --layout switch 一起使用。它会验证离线缓存目录中是否缺少任何有效负载，以及它们是否有效。
+--fix	此选项与 --layout switch 一起使用。它会执行与“--verify”开关相同的有效性检查，并修复已识别的任何问题。
+--clean <目录清单的文件路径> [<目录清单的文件路径> ...]	此选项与 --layout switch 一起使用。它会清理离线缓存目录，并删除指定目录清单中找到的任何已过时的包。
+--lang <语言-区域设置> [<语言-区域设置> ...]	该命令行配合 --layout switch 使用。指定将按其创建脱机安装缓存的语言。请参阅下方受支持的语言-区域设置的完整列表。
+--add <工作负荷或组件 ID>[<工作负荷或组件 ID> ...]	该命令行定义要添加到安装的项目（组、工作负荷或组件）。可在命令行中多次出现。
+已安装项目的必需组件，但未安装建议的组件或可选组件。可使用 --includeRecommended 和/或 --includeOptional 全局控制其他组件。若要实现更精确的控制，可将“;includeRecommended”和/或“;includeOptional”附加到 artifactId（例如“--add Workload1;includeRecommended”或“--add Workload2;includeOptional;includeRecommended”）。
+对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。
+--remove <工作负荷或组件 ID> [<工作负荷或组件 ID> ...]	该命令行定义要从安装中删除的项目（组、工作负荷或组件）。可在命令行中多次出现。对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。
+--all	是否安装产品的所有工作负荷和组件。
+--includeRecommended	包含已安装的所有工作负荷的推荐组件，但不包含可选组件。可使用 --allWorkloads 或 --add 指定工作负荷。
+--includeOptional	包含已安装的所有工作负荷的可选组件，但不包含推荐组件。可使用 --allWorkloads 或 --add 指定工作负荷。
+--quiet, -q	执行安装时不显示任何用户界面。
+--passive, -p	显示用户界面，但不请求用户进行任何交互。
+--norestart	如果存在，则带有 --passive 或 --quiet 的命令不会自动重启计算机（若需要）。如果未指定 --passive 和 --quiet，则忽略此命令行。
+--locale <语言-区域设置>	更改安装程序用户界面的显示语言。设置将被保留。
+--nickname <名称>	此命令行定义要分配给已安装产品的昵称。昵称长度不能超过 10 个字符。
+--help, --?, -h, -?	显示参数使用情况。
+
+高级命令行选项	说明
+--channelId <id>	将要安装的实例的通道 ID。安装命令需要此值；如果已指定 --installPath，则对其他命令忽略此值。
+--channelUri <uri>	通道清单的 URI。此值可用于安装命令；对于其他命令则可忽略此值。
+--installChannelUri <uri>	用于安装的通道清单的 URI。--channelUri 指定的 URI（必须在指定 --installChannelUri 时指定）将用于检测更新。如果不需要更新，则 --channelUri 必须无参数指定。此值可用于安装命令；对于其他命令则可忽略此值。
+--installCatalogUri <uri>	用于安装的目录清单的 URI。如果已指定，则通道管理器将尝试从此 URI 下载目录清单，然后在安装通道清单中使用 URI。此参数用于支持脱机安装，其中将使用已下载的产品目录创建布局缓存。此值可用于安装命令；对于其他命令则可忽略此值。
+--in <路径>	响应文件的 URI 或路径。
+--addProductLang <语言-区域设置>	该命令行定义要安装的项目（组、工作负荷或组件）的语言。可在命令行中多次出现。对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。如果不存在，则安装将使用计算机区域设置。
+--removeProductLang <语言-区域设置>	该命令行定义要删除的项目（组、工作负荷或组件）的语言。可在命令行中多次出现。对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。
+--wait	返回退出代码之前，该进程会等待安装完成。自动安装过程中，需要等待安装完成以便处理从该安装返回的代码时，此进程非常有用。
+
+语言-区域设置	语言
+cs-CZ	捷克语
+de-DE	德语
+en-US	英语
+es-ES	西班牙语
+fr-FR	法语
+it-IT	意大利语
+ja-JP	日语
+ko-KR	朝鲜语
+pl-PL	波兰语
+pt-BR	葡萄牙语 - 巴西
+ru-RU	俄语
+tr-TR	土耳其语
+zh-CN	简体中文
+zh-TW	繁体中文
+
+有关详细说明，请访问 https://go.microsoft.com/fwlink/?LinkID=838246&clcid=0x804
+
+ 

@@ -1,24 +1,24 @@
 @REM 创建 Visual Studio 本地缓存
 @REM 创建包含所有功能的完整中文版本地缓存
-vs_enterprise.exe --layout vs-D:\VisualStudioEnterprise2022Layout --lang zh-CN --all
+VisualStudioSetup.exe --layout D:\VisualStudioEnterprise2022Layout --lang zh-CN --all
 @REM 包含其他语言
-vs_enterprise.exe --layout D:\VisualStudioEnterprise2022Layout --lang zh-CN --lang zh-TW --lang en-US --lang ja-JP --all
+VisualStudioSetup.exe --layout D:\VisualStudioEnterprise2022Layout --lang zh-CN --lang zh-TW --lang en-US --lang ja-JP --all
 
 @REM 创建后更新
 @REM 出现较新版本时，可以通过互联网再次更新本地缓存，在原参数后面，添加“--useLatestInstaller”参数传递给引导程序，将其配置为最新的可用安装程序。
-vs_enterprise.exe --layout D:\VisualStudioEnterprise2022Layout --lang zh-CN --lang zh-TW --lang en-US --lang ja-JP --useLatestInstaller --all
+VisualStudioSetup.exe --layout D:\VisualStudioEnterprise2022Layout --lang zh-CN --lang zh-TW --lang en-US --lang ja-JP --useLatestInstaller --all
 
 @REM 更新后删除旧版本
 @REM 在“Archive”文件夹中，有一个或多个名为“GUID”的文件夹，其中每个都包含已过时的目录清单。
-vs_enterprise.exe --layout D:\VisualStudioEnterprise2022Layout --clean D:\VisualStudioEnterprise2022Layout\Archive\1cd70189-fc55-4583-8ad8-a2711e928325\Catalog.json
+VisualStudioSetup.exe --layout D:\VisualStudioEnterprise2022Layout --clean D:\VisualStudioEnterprise2022Layout\Archive\1cd70189-fc55-4583-8ad8-a2711e928325\Catalog.json
 
 @REM 修复文件
 @REM 使用 --fix 执行与 --verify 相同的验证，并尝试修复标识的问题。
-vs_enterprise.exe --layout D:\VisualStudioEnterprise2022Layout --fix
+VisualStudioSetup.exe --layout D:\VisualStudioEnterprise2022Layout --fix
 
 
 @REM 非内网环境单机安装
-vs_enterprise.exe --noweb
+VisualStudioSetup.exe --noweb
 
 
 @REM 内网服务器建立安装目录
@@ -29,7 +29,7 @@ vs_enterprise.exe --noweb
 
 @REM 内网安装
 @REM 在客户端计算机以管理员身份运行PowerShell，输入以下命令
-\\server\share\layoutdirectory\vs_enterprise.exe --noweb
+\\server\share\layoutdirectory\VisualStudioSetup.exe --noweb
 @REM 在安装界面的上方最右侧的“安装位置”中，勾选“下载缓存”下方的“安装后保留下载缓存”。
 
 @REM https://blog.csdn.net/weixin_45661908/article/details/123357078

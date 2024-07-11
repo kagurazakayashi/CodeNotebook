@@ -1,5 +1,15 @@
+# 只查询
+## Linux
+ntpdate -q ntp.aliyun.com
+## Windows
+w32tm /stripchart /samples:1 /dataonly /computer:ntp.aliyun.com
+
 # 手动同步一次时间
+## Linux
 ntpdate ntp.aliyun.com
+## Windows
+w32tm /config /manualpeerlist:"time.windows.com" /syncfromflags:manual /reliable:YES /update
+w32tm /resync
 
 # 自动从指定服务器同步时间
 vi /etc/ntp.conf
