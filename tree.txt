@@ -133,6 +133,7 @@
 │   ├── ./C/ASCII码表.md
 │   ├── ./C/C语言基础.c
 │   ├── ./C/HelloWorld.c
+│   ├── ./C/VisualStudio找不到标准库.txt
 │   ├── ./C/clang-format.yaml
 │   ├── ./C/demo
 │   │   ├── ./C/demo/if嵌套求函数.c
@@ -1352,6 +1353,7 @@
 │   ├── ./ShellScript_Linux_Command/screenfetch_显示系统信息.sh
 │   ├── ./ShellScript_Linux_Command/shot_对文件行内容进行排序.sh
 │   ├── ./ShellScript_Linux_Command/shutdown_关机和重启.sh
+│   ├── ./ShellScript_Linux_Command/stty_设置串口参数.sh
 │   ├── ./ShellScript_Linux_Command/su_转换用户身份.sh
 │   ├── ./ShellScript_Linux_Command/sudo_管理员权限运行.sh
 │   ├── ./ShellScript_Linux_Command/tail_查看文件的最后几行.sh
@@ -1599,6 +1601,7 @@
 │   ├── ./Windows/MSYS2更新.sh
 │   ├── ./Windows/MSYS2连接串口.sh
 │   ├── ./Windows/RunDll32.txt
+│   ├── ./Windows/VisualStudio安装旧版本.txt
 │   ├── ./Windows/VisualStudio离线安装.bat
 │   ├── ./Windows/WSL2.bat
 │   ├── ./Windows/WSL使用Windows中已安装字体.sh
@@ -1650,7 +1653,6 @@
 │   ├── ./Windows/启动文件夹.md
 │   ├── ./Windows/启动项禁用Hyper-V.bat
 │   ├── ./Windows/备份WSL.bat
-│   ├── ./Windows/安装旧版本VS.bat
 │   ├── ./Windows/安装重启挂起.reg
 │   ├── ./Windows/实现sudo，参数①提升启动权限的程序.vbs
 │   ├── ./Windows/将pem和ca等作为crt打开.bat
@@ -1810,4 +1812,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-120 directories, 1690 files
+120 directories, 1692 files
