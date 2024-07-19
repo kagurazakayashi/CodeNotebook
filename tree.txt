@@ -1194,6 +1194,7 @@
 │   ├── ./ShellScript_Linux/noVNC网页VNC.sh
 │   ├── ./ShellScript_Linux/ps进程查看器.rst
 │   ├── ./ShellScript_Linux/pureFTPd端口范围.sh
+│   ├── ./ShellScript_Linux/root登录不了sftp.txt
 │   ├── ./ShellScript_Linux/rsync文件同步命令.sh
 │   ├── ./ShellScript_Linux/signal信号列表.md
 │   ├── ./ShellScript_Linux/smb-samba文件共享.sh
@@ -1812,4 +1813,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-120 directories, 1692 files
+120 directories, 1693 files
