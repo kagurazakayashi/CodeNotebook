@@ -13,7 +13,7 @@ docker-compose -v
 
 # docker compose的常用命令
 #启动并后台运行所有的服务 
-docker-compose up  -d 
+docker-compose up -d
 #列出项目中目前的所有容器 
 docker-compose ps 
 #停止某个服务 

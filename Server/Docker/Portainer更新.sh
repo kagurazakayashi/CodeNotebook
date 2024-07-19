@@ -23,7 +23,7 @@ sudo docker run -d --name PortainerCE -p 19800:8000 -p 19900:9000 -p 19943:9443 
 docker stop portainer
 # 导出镜像（普通/压缩）
 docker image save portainer/portainer-ce -o portainer.tar
-docker image save portainer/portainer-ce | xz -z -9 -e -T 0 >portainer.tar.xz
+docker image save portainer/portainer-ce | xz -z -9 -e -T 0 -v >portainer.tar.xz
 # 导入镜像（普通/压缩）
 docker image load -i portainer.tar
 xz -d portainer.tar.xz -c | docker image load

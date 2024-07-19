@@ -1,0 +1,9 @@
+Linux的root用户ssh可以登录, SFTP却不能登录
+
+把 /etc/ssh/sshd_config 文件中的 Subsystem sftp /usr/libexec/openssh/sftp-server 替换为 Subsystem sftp internal-sftp
+
+#Subsystem      sftp    /usr/libexec/openssh/sftp-server
+Subsystem       sftp    internal-sftp
+
+重启shhd服务：
+systemctl restart sshd.service
