@@ -20,7 +20,7 @@ Your public key has been saved in /home/yashi/.ssh/id_ed25519_github.pub
 
 /home/yashi/.ssh/id_ed25519_github.pub
 
-## 编辑 `~/ssh/config` ：
+## 编辑 `~/.ssh/config` ：
 
 ```conf
 # github
