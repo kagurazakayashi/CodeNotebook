@@ -1,0 +1,24 @@
+# https://github.com/acmesh-official/acme.sh/wiki/Run-acme.sh-in-docker
+# https://www.cnblogs.com/WeiyiGeek/p/16127186.html
+services:
+  acme-sh:
+    image: neilpang/acme.sh
+    container_name: acme.sh
+    volumes:
+      - acme:/acme.sh
+    network_mode: host
+    command: daemon
+    stdin_open: true
+    tty: true
+    restart: "no"
+    environment:
+      email: ""
+      CF_Email: ""
+      CF_Key: ""
+      Ali_Key: ""
+      Ali_Secret: ""
+      PATH: "${PATH}:/acme.sh"
+volumes:
+  acme: {}
+# docker exec acme.sh --version
+# docker exec acme.sh --help
