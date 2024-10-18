@@ -106,6 +106,7 @@
 │   │   ├── ./Batch_Windows/挂载vhd/mount_vhdx.txt
 │   │   └── ./Batch_Windows/挂载vhd/挂载vhd.bat
 │   ├── ./Batch_Windows/查看内存是DDR几代.bat
+│   ├── ./Batch_Windows/解压缩WinXP安装包中的文件.bat
 │   └── ./Batch_Windows/重置文件夹权限为只有自己能用.bat
 ├── ./Build
 │   ├── ./Build/Arch安装谷歌浏览器.sh
@@ -1104,6 +1105,8 @@
 │   │   ├── ./Server/Redis/redis-linux-php.sh
 │   │   ├── ./Server/Redis/redis-macos.sh
 │   │   └── ./Server/Redis/redis-windows.md
+│   ├── ./Server/自用脚本
+│   │   └── ./Server/自用脚本/自动压缩日志文件.sh
 │   └── ./Server/跨域问题
 │       ├── ./Server/跨域问题/Access-Control-Allow-Origin.md
 │       ├── ./Server/跨域问题/Content-Security-Policy.md
@@ -1480,6 +1483,7 @@
 │   ├── ./Tools/压缩炸弹.sh
 │   ├── ./Tools/图标转换和压缩
 │   │   ├── ./Tools/图标转换和压缩/Contents.json
+│   │   ├── ./Tools/图标转换和压缩/批量转换为TG贴纸图.bat
 │   │   ├── ./Tools/图标转换和压缩/雅诗GIF表情包压缩.sh
 │   │   └── ./Tools/图标转换和压缩/雅诗批量压缩APP图标.sh
 │   ├── ./Tools/在html中列出系统中的所有等宽字体.py
@@ -1827,4 +1831,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-122 directories, 1705 files
+123 directories, 1708 files
