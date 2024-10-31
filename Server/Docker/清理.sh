@@ -1,6 +1,22 @@
 # Docker清理
 
-# 使用 df 命令查看磁盘的使用情况：
+# 仅清理未使用的缓存和构建数据：这个命令会清理构建过程中产生的缓存。
+docker builder prune
+
+# 全面清理未使用的数据：这个命令会删除未使用的容器、镜像、网络和缓存。
+docker system prune
+
+# 全面清理，包括停止的容器和未挂载的卷：这个命令会删除所有未被容器使用的镜像，以及所有停止的容器、未使用的网络和未挂载的卷。
+docker system prune -a
+
+# 在构建时禁用缓存: --no-cache
+docker build --no-cache -t your_image_name .
+
+# 手动清理特定缓存: 可以结合 docker builder prune 命令的选项：
+# 这个命令会删除过去 24 小时未使用的构建缓存:
+docker builder prune --filter "until=24h"
+
+# 查看缓存占用空间: 使用 df 命令查看磁盘的使用情况：
 docker system df
 
 # 清理停止的容器：使用 docker rm 命令清理停止的容器，命令格式为：
