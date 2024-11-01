@@ -1499,6 +1499,11 @@
 │   ├── ./Tools/清理文件夹信息文件
 │   │   ├── ./Tools/清理文件夹信息文件/清理媒体文件缓存临时文件.bat
 │   │   └── ./Tools/清理文件夹信息文件/清理媒体文件缓存临时文件.sh
+│   ├── ./Tools/满足条件关机
+│   │   ├── ./Tools/满足条件关机/设置倒计时自动关机等.bat
+│   │   ├── ./Tools/满足条件关机/设置倒计时自动关机等.sh
+│   │   ├── ./Tools/满足条件关机/进程结束后自动关机等.bat
+│   │   └── ./Tools/满足条件关机/进程结束后自动关机等.sh
 │   ├── ./Tools/用OpenCC一键转换剪贴板文本
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.bat
 │   │   ├── ./Tools/用OpenCC一键转换剪贴板文本/用OpenCC一键转换剪贴板文本.mac.sh
@@ -1570,6 +1575,7 @@
 │   │   ├── ./Tools_Lib/ImageMagick/ImageMagick-GIF.sh
 │   │   ├── ./Tools_Lib/ImageMagick/ImageMagick.bat
 │   │   ├── ./Tools_Lib/ImageMagick/ImageMagick.sh
+│   │   ├── ./Tools_Lib/ImageMagick/修正EXIF方向.bat
 │   │   └── ./Tools_Lib/ImageMagick/图片拆分.bat
 │   ├── ./Tools_Lib/Parse
 │   │   ├── ./Tools_Lib/Parse/安装控制面板.sh
@@ -1831,4 +1837,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-123 directories, 1708 files
+124 directories, 1713 files
