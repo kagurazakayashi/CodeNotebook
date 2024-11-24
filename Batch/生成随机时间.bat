@@ -1,0 +1,12 @@
+@ECHO OFF
+SET /A HOUR=%random% %% 24
+if %HOUR% lss 10 set HOUR=0%HOUR%
+SET /A MINUTE=%random% %% 60
+if %MINUTE% lss 10 set MINUTE=0%MINUTE%
+SET /A SECOND=%random% %% 60
+if %SECOND% lss 10 set SECOND=0%SECOND%
+ECHO %HOUR%:%MINUTE%:%SECOND%
+SET HOUR=
+SET MINUTE=
+SET SECOND=
+ECHO ON

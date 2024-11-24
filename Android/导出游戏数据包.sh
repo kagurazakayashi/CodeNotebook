@@ -1,4 +1,6 @@
 # 常用位置: apk 和 数据包
+# 查看手机中安装的apk列表
+adb shell pm list package
 # 查看路径
 adb shell pm path com.bilibili.priconne
 

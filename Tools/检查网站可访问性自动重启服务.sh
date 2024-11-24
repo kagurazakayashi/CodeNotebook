@@ -2,7 +2,7 @@
 # 自动检查网站可访问性，出现异常自动重启 tomcat 。
 # by 神楽坂雅詩
 #
-url="http://www.mytongdy.com/observer/client/"
+url="http://uuu.moe/observer/client/"
 log="/var/log/autoRestartTomcat.log"
 #
 proc1stat=$(stat -t /proc/1 | awk '{print $0}')
@@ -29,8 +29,8 @@ then
             sh /server/apache-tomcat-9.0.17/bin/shutdown.sh>>$log
             kill -9 `ps -ef|grep tomcat|awk '{print $2}'`>>$log
             sleep 10
-            echo [`date -R`] "启动 MyTongdy 所有服务 ...">>$log
-            sh /server/StartMyTongdy.sh>>$log
+            echo [`date -R`] "启动所有服务 ...">>$log
+            sh /server/Start.sh>>$log
             sleep 10
             httpRes=`curl -I $url 2>/dev/null | grep 200 | awk '{print $2}'`
             httpGrep=$(echo $httpRes | grep "200")

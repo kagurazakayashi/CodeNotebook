@@ -5,3 +5,9 @@ sudo mount -o uid=pi,gid=pi /dev/sda1 /mnt/usb
 ls /mnt/usb
 # 用完后卸载
 sudo umount /mnt/usb
+
+# 快速挂载
+mkdir /mnt/usb
+ls /dev/sd*
+mount /dev/sdb1 /mnt/usb
+sudo umount /mnt/usb

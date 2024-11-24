@@ -11,7 +11,7 @@ mysqldump -u root -p sys > sys.sql
 # 带个最小压缩
 mysqldump -u root -p performance_schema | nice -n 19 xz -z -1 -T 0 -v >performance_schema.sql.xz
 # 恢复
-#mysqldump -u root -p mytongdy < mytongdy.sql
+#mysqldump -u root -p dbname < dbname.sql
 mysql -uusername -ppassword db1 <tb1tb2.sql
 
 # 备份还原

@@ -4,7 +4,7 @@ ACMEDIR="/var/lib/docker/volumes/ssl_acme/_data"
 NGINXDIR="/var/lib/docker/volumes/nginx_conf/_data/ssl"
 cd "$ACMEDIR"
 docker exec acme.sh --list --debug | tee $LOGFILE
-docker exec acme.sh --cron --force --home "/root/.acme.sh" --dnssleep 300 --debug | tee -a $LOGFILE
+docker exec acme.sh --cron --force --home "/root/.acme.sh" --debug | tee -a $LOGFILE
 7z a -mx9 "uuussl_$(date +%Y-%m-%d_%H-%M-%S).7z" '-xr!*.7z' "$ACMEDIR"
 docker stop nginx
 cp -f "$ACMEDIR/uuu.moe/fullchain.cer" "$NGINXDIR/uuu.moe.rsa.pem" | tee -a $LOGFILE
