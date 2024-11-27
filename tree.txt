@@ -10,7 +10,7 @@
 │   ├── ./Android/ShizukuManager.sh
 │   ├── ./Android/adb命令.sh
 │   ├── ./Android/adb文件双击安装.bat
-│   ├── ./Android/使用adb命令取出手机中已安装的apk.sh
+│   ├── ./Android/从手机中导出apk.sh
 │   ├── ./Android/备份手机.sh
 │   ├── ./Android/导出游戏数据包.sh
 │   └── ./Android/模拟器连接调试.sh
@@ -88,6 +88,7 @@
 │   ├── ./Batch/死循环执行某条命令.bat
 │   ├── ./Batch/清空某个文件夹里的所有内容.bat
 │   ├── ./Batch/环境变量.bat
+│   ├── ./Batch/生成随机时间.bat
 │   ├── ./Batch/端口映射.bat
 │   ├── ./Batch/读取文本到变量.bat
 │   ├── ./Batch/过滤掉扩展名.bat
@@ -1291,6 +1292,7 @@
 │   ├── ./ShellScript_Linux/绝对路径和相对路径.md
 │   ├── ./ShellScript_Linux/网络流量命令.sh
 │   ├── ./ShellScript_Linux/自动登录.txt
+│   ├── ./ShellScript_Linux/获取物理内核和逻辑内核以及内存的数量.sh
 │   ├── ./ShellScript_Linux/虚拟内存.sh
 │   ├── ./ShellScript_Linux/设置DNS.sh
 │   ├── ./ShellScript_Linux/设置命令行下分辨率.sh
@@ -1433,7 +1435,6 @@
 │   ├── ./ShellScript_macOS/连接串口.sh
 │   └── ./ShellScript_macOS/驱动.sh
 ├── ./Tools
-│   ├── ./Tools/7z.md
 │   ├── ./Tools/ACFan连点器.js
 │   ├── ./Tools/CD抓轨.sh
 │   ├── ./Tools/Chrome更换缓存.bat
@@ -1480,6 +1481,9 @@
 │   ├── ./Tools/创建随机IP地址.py
 │   ├── ./Tools/删除注释和空行.txt
 │   ├── ./Tools/剪贴板.sh
+│   ├── ./Tools/压缩
+│   │   ├── ./Tools/压缩/7z.md
+│   │   └── ./Tools/压缩/xz.md
 │   ├── ./Tools/压缩炸弹.sh
 │   ├── ./Tools/图标转换和压缩
 │   │   ├── ./Tools/图标转换和压缩/Contents.json
@@ -1620,6 +1624,8 @@
 │   ├── ./TypeScript/迭代函数、生成器generator.ts
 │   └── ./TypeScript/颜色亮度.ts
 ├── ./Windows
+│   ├── ./Windows/0x80070001更新系统和软件时报错.md
+│   ├── ./Windows/53DNS端口被系统服务占用.md
 │   ├── ./Windows/Administrator帐户设为不隐藏.reg
 │   ├── ./Windows/Alt-code符号输入.md
 │   ├── ./Windows/Compact压缩.bat
@@ -1837,4 +1843,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-124 directories, 1713 files
+125 directories, 1718 files
