@@ -1,3 +1,15 @@
 TITLE 清理媒体文件缓存临时文件
-FOR %%a IN ( C: D: E: F: G: H: I: J: K: L: M: N: O: P: Q: R: S: T: U: V: W: X: Y: Z: ) DO DEL /f/s/q/a "%%a\Thumbs.db" "%%a\.DS_Store" "%%a\._*"
-DEL /f/s/q/a "Thumbs.db" ".DS_Store" "._*"
+del /f /q /s Thumbs.db
+del /f /q /s *.DS_Store
+del /f /q /s desktop.ini
+del /f /q /s ehthumbs.db
+del /f /q /s .AppleDouble
+del /f /q /s .Spotlight-V100
+del /f /q /s .Trashes
+del /f /q /s .TemporaryItems
+del /f /q /s ~$*
+del /f /q /s *.nfs*
+del /f /q /s *.swp
+del /f /q /s *.bak
+del /f /q /s *.tmp
+del /f /q /s *._*

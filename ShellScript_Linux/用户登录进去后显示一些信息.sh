@@ -1,5 +1,5 @@
 # Linux用户登录2
-yum install figlet -y
+yum install figlet sensors -y
 # 用户登录进去后显示一些信息
 vim /etc/profile
 # zsh
@@ -12,6 +12,6 @@ df -hl
 ps -fa
 # sensors
 figlet -c $CNAME
-figlet -c `logname`
+figlet -c $USER
 date
 # (普通用户用 ps -f 不显示root的)

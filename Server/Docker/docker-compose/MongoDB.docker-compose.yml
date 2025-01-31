@@ -1,0 +1,24 @@
+# Docker MongoDB
+version: '3.8' # 指定 Compose 文件的版本
+services:
+  mongodb:
+    image: mongo:latest # MongoDB 官方镜像
+    container_name: mongodb # 容器名称
+    restart: always # 自动重启
+    #ports:
+      # - "27017:27017" # 映射本地端口
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root # MongoDB 管理员用户名
+      MONGO_INITDB_ROOT_PASSWORD: oeth9sai1ohx5eiFai1lo7Eex0Ihooda # MongoDB 管理员密码,推荐长度: 使用 12-32 位
+    volumes:
+      - data:/data/db # 持久化数据存储
+    command: mongod --config /data/db/mongod.conf # 使用挂载的配置文件
+    networks:
+      work:
+        ipv4_address: 172.18.0.50 # 指定固定 IP 地址
+networks:
+  work:
+    external: true # 使用已有的网络
+volumes:
+  data:
+    driver: local

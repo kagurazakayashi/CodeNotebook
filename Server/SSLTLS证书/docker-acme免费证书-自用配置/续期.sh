@@ -1,4 +1,5 @@
 #!/bin/bash
+# docker-acme免费证书-自用配置-续期
 LOGFILE="/mnt/d/server/ssl/logs/uuussl$(date +%Y-%m-%d_%H-%M-%S).log"
 ACMEDIR="/var/lib/docker/volumes/ssl_acme/_data"
 NGINXDIR="/var/lib/docker/volumes/nginx_conf/_data/ssl"

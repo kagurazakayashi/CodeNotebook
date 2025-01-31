@@ -1,4 +1,4 @@
-# apt代理
+# apt代理 apt设置代理
 sudo vim /etc/apt/apt.conf
 sudo vim /etc/apt/apt.conf.d/proxy.conf
 

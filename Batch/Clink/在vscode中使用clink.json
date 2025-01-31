@@ -1,0 +1,14 @@
+// 在vscode中使用clink: 配置文件(JSON) 新增:
+{
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt with Clink": {
+            "path": "cmd.exe",
+            "args": [
+                "/k",
+                "C:\\clink\\.build\\vs2022\\bin\\release\\clink_x64.exe",
+                "inject"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt with Clink",
+}

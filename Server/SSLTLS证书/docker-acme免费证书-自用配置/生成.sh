@@ -1,4 +1,5 @@
 #!/bin/bash
+# docker-acme免费证书-自用配置-生成
 LOGFILE="/mnt/d/server/ssl/logs/uuussl$(date +%Y-%m-%d_%H-%M-%S).log"
 # dns_cf
 STARTCMD="docker exec acme.sh --issue --dns dns_cf --force --debug"

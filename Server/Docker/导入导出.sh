@@ -12,7 +12,7 @@ docker save -o mynginx.tar mynginx
 # -o 输出到的文件
 # 执行后，运行ls命令即可看到打成的tar包
 # 压缩导出
-docker save 镜像名 | xz -z -e -9 -T 0 -v -c >mynginx.tar.xz
+docker save mynginx | xz -z -e -9 -T 0 -v -c >mynginx.tar.xz
 
 # 镜像恢复与迁移
 # 首先我们先删除掉mynginx镜像
@@ -35,3 +35,6 @@ scp backup.tar root@192.168.2.33:/root/
 # docker import [-c|--change[=[]]] [-m|--message[=MESSAGE]] file|URL|-[REPOSITORY[:YAG]]
 docker import backup.tar lnp0
 docker images
+
+# 压缩导入
+xz -d -v -c mynginx.tar.xz | docker load

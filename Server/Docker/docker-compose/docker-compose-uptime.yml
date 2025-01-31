@@ -1,0 +1,43 @@
+services:
+  uptime-kuma:
+    image: docker.1panel.live/louislam/uptime-kuma:1
+    volumes:
+      - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    # ports:
+    #   - 9010:3001
+    environment:
+      - BASE_URL=/kuma
+    restart: unless-stopped
+    labels:
+      - com.centurylinklabs.watchtower.enable=true # 启用 Watchtower 更新该容器
+    # networks:
+      # kuma:
+        # ipv4_address: 172.23.0.10
+    networks:
+      work:
+        ipv4_address: 172.18.0.210
+  watchtower:
+    image: docker.1panel.live/containrrr/watchtower:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_LABEL_ENABLE=true # 启用标签过滤
+      - WATCHTOWER_CLEANUP=true # 启用清理旧容器和镜像
+    restart: unless-stopped
+    command: --interval 300 --label-enable # 启用标签过滤，并设置检查间隔为 5 分钟
+    # networks:
+      # kuma:
+        # ipv4_address: 172.23.0.11
+    networks:
+      work:
+        ipv4_address: 172.18.0.211
+# networks:
+#   kuma:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: 172.23.0.0/16
+networks:
+  work:
+    external: true # 使用已有的网络

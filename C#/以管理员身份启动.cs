@@ -13,42 +13,65 @@
 
 using System;
 using System.Diagnostics;
-using System.Reflection;
 using System.Security.Principal;
+using System.Windows.Forms;
 
-public static class AdminRelauncher
+namespace AdminCheckRestart
 {
-    public static void RelaunchIfNotAdmin()
+    class Program
     {
-        if (!RunningAsAdmin())
+        [STAThread]
+        static void Main(string[] args)
         {
-            Console.WriteLine("Running as admin required!");
-            ProcessStartInfo proc = new ProcessStartInfo();
-            proc.UseShellExecute = true;
-            proc.WorkingDirectory = Environment.CurrentDirectory;
-            proc.FileName = Assembly.GetEntryAssembly().CodeBase;
-            proc.Verb = "runas";
+            if (!IsRunAsAdministrator())
+            {
+                // 重新以管理员身份启动
+                RestartAsAdministrator();
+                return;
+            }
+
+            // 在此执行正常的程序逻辑
+            MessageBox.Show("当前以管理员身份运行！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// 判断当前是否以管理员权限运行
+        /// </summary>
+        /// <returns>是否以管理员权限运行</returns>
+        static bool IsRunAsAdministrator()
+        {
             try
             {
-                Process.Start (proc);
-                Environment.Exit(0);
+                WindowsIdentity identity = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 重新以管理员身份启动自身
+        /// </summary>
+        static void RestartAsAdministrator()
+        {
+            try
+            {
+                ProcessStartInfo processInfo = new ProcessStartInfo
+                {
+                    FileName = Application.ExecutablePath,
+                    UseShellExecute = true,
+                    Verb = "runas" // 指定以管理员权限运行
+                };
+
+                Process.Start(processInfo);
             }
             catch (Exception ex)
             {
-                Console
-                    .WriteLine("This program must be run as an administrator! \n\n" +
-                    ex.ToString());
-                Environment.Exit(0);
+                MessageBox.Show("无法以管理员权限重新启动应用程序。\n\n错误信息：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
-
-    private static bool RunningAsAdmin()
-    {
-        WindowsIdentity id = WindowsIdentity.GetCurrent();
-        WindowsPrincipal principal = new WindowsPrincipal(id);
-        return principal.IsInRole(WindowsBuiltInRole.Administrator);
-    }
 }
-
-// https://blog.51cto.com/u_15383815/4676692
