@@ -1,15 +1,20 @@
 .
-├── ./35LEpre.bat
+├── ./AI
+│   ├── ./AI/Ollama导入导出模型.bat
+│   ├── ./AI/Ollama环境变量.ini
+│   └── ./AI/Windows安装CUDA驱动.md
 ├── ./Algorithm
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
 │   └── ./Algorithm/邻接表表示的无向图每一个连通分量的结点.c
 ├── ./Android
+│   ├── ./Android/Debian安装AndroidStudio.sh
 │   ├── ./Android/Gradle打包.sh
 │   ├── ./Android/INSTALL_FAILED_TEST_ONLY.sh
 │   ├── ./Android/ShizukuManager.sh
 │   ├── ./Android/adb命令.sh
 │   ├── ./Android/adb文件双击安装.bat
+│   ├── ./Android/adb查看版本号.sh
 │   ├── ./Android/从手机中导出apk.sh
 │   ├── ./Android/备份手机.sh
 │   ├── ./Android/导出游戏数据包.sh
@@ -23,7 +28,8 @@
 │       ├── ./Android_GooglePlay/添加混淆/gradle.properties
 │       └── ./Android_GooglePlay/添加混淆/proguard-rules.pro
 ├── ./Android_Java
-│   └── ./Android_Java/主线程Message接收子线程传来的消息.java
+│   ├── ./Android_Java/主线程Message接收子线程传来的消息.java
+│   └── ./Android_Java/决定需要使用的JDK版本.md
 ├── ./Android_Kotlin
 │   ├── ./Android_Kotlin/List.kt
 │   ├── ./Android_Kotlin/Map字典.kt
@@ -63,16 +69,23 @@
 │   └── ./Assembly/循环loop.asm
 ├── ./Batch
 │   ├── ./Batch/7z解压缩所有压缩包.bat
+│   ├── ./Batch/Clink
+│   │   ├── ./Batch/Clink/在vscode中使用clink.json
+│   │   └── ./Batch/Clink/编译Clink.bat
 │   ├── ./Batch/HelloWorld.bat
+│   ├── ./Batch/bat中文乱码.md
 │   ├── ./Batch/exit退出会话.bat
 │   ├── ./Batch/为所有文件增加扩展名.bat
 │   ├── ./Batch/创建和显示文本文件.bat
 │   ├── ./Batch/创建随机密码，参数①长度②数量.bat
+│   ├── ./Batch/去除字符串前9个字.bat
 │   ├── ./Batch/变量和取消变量.bat
+│   ├── ./Batch/后台运行命令.bat
 │   ├── ./Batch/命令结果到变量.bat
 │   ├── ./Batch/命令行参数.bat
 │   ├── ./Batch/字符串比对.bat
 │   ├── ./Batch/实现su.bat
+│   ├── ./Batch/对当前文件夹及其子文件夹中的特定扩展名文件进行操作.bat
 │   ├── ./Batch/将命令结果赋值给变量.bat
 │   ├── ./Batch/循环.bat
 │   ├── ./Batch/文件是否存在.bat
@@ -100,15 +113,125 @@
 │   ├── ./Batch_IIS/Flarum的URL重写.config
 │   └── ./Batch_IIS/WordPress的URL重写web.config
 ├── ./Batch_Windows
+│   ├── ./Batch_Windows/0x80070001更新系统和软件时报错.md
+│   ├── ./Batch_Windows/53DNS端口被系统服务占用.md
+│   ├── ./Batch_Windows/Alt-code符号输入.md
+│   ├── ./Batch_Windows/Compact压缩.bat
+│   ├── ./Batch_Windows/MSYS2
+│   │   ├── ./Batch_Windows/MSYS2/MSYS2更新.sh
+│   │   └── ./Batch_Windows/MSYS2/MSYS2连接串口.sh
+│   ├── ./Batch_Windows/RunDll32.txt
+│   ├── ./Batch_Windows/START命令.txt
+│   ├── ./Batch_Windows/VisualStudio安装旧版本.txt
+│   ├── ./Batch_Windows/VisualStudio离线安装.bat
+│   ├── ./Batch_Windows/WSL
+│   │   ├── ./Batch_Windows/WSL/WSL2.bat
+│   │   ├── ./Batch_Windows/WSL/WSL2导入导出.bat
+│   │   └── ./Batch_Windows/WSL/WSL使用Windows中已安装字体.sh
+│   ├── ./Batch_Windows/Win11绕过硬件检测.bat
+│   ├── ./Batch_Windows/Win11绕过硬件检测iso.txt
+│   ├── ./Batch_Windows/Windows11开启IE.vbs
+│   ├── ./Batch_Windows/WindowsRE恢复分区重建.bat
+│   ├── ./Batch_Windows/WindowsTerminal.md
+│   ├── ./Batch_Windows/Windows端口占用情况.bat
+│   ├── ./Batch_Windows/anyconnect临时开启服务.bat
+│   ├── ./Batch_Windows/cmd映射常用unix命令.bat
+│   ├── ./Batch_Windows/cygwin-mingw.txt
+│   ├── ./Batch_Windows/fastcopy.txt
+│   ├── ./Batch_Windows/for循环.bat
+│   ├── ./Batch_Windows/if.bat
+│   ├── ./Batch_Windows/makecab.bat
+│   ├── ./Batch_Windows/nircmd关闭显示器.bat
+│   ├── ./Batch_Windows/regedit
+│   │   ├── ./Batch_Windows/regedit/Administrator帐户设为不隐藏.reg
+│   │   ├── ./Batch_Windows/regedit/vbs文件关联恢复.reg
+│   │   ├── ./Batch_Windows/regedit/任务栏时间显示秒钟.reg
+│   │   ├── ./Batch_Windows/regedit/使用旧版的图片查看器.reg
+│   │   ├── ./Batch_Windows/regedit/修复EXE文件关联.reg
+│   │   ├── ./Batch_Windows/regedit/允许虚拟内存在非系统盘.reg
+│   │   ├── ./Batch_Windows/regedit/删除OneDrive.reg
+│   │   ├── ./Batch_Windows/regedit/删除右键打印.reg
+│   │   ├── ./Batch_Windows/regedit/删除此电脑页上方几个文档文件夹.reg
+│   │   ├── ./Batch_Windows/regedit/双击使用OpenJDK运行.reg
+│   │   ├── ./Batch_Windows/regedit/取消任务管理器被禁用.reg
+│   │   ├── ./Batch_Windows/regedit/取消磁盘的自动扫描.reg
+│   │   ├── ./Batch_Windows/regedit/取消磁盘空间低提示.reg
+│   │   ├── ./Batch_Windows/regedit/取消禁止显示隐藏文件.reg
+│   │   ├── ./Batch_Windows/regedit/右键复制文件内容到剪贴板.reg
+│   │   ├── ./Batch_Windows/regedit/右键复制路径到剪贴板.reg
+│   │   ├── ./Batch_Windows/regedit/右键添加打开命令窗口.reg
+│   │   ├── ./Batch_Windows/regedit/安装重启挂起.reg
+│   │   ├── ./Batch_Windows/regedit/恢复IcoCurAni文件关联.reg
+│   │   ├── ./Batch_Windows/regedit/恢复新建文本文档.reg
+│   │   ├── ./Batch_Windows/regedit/桌面显示IE图标.reg
+│   │   ├── ./Batch_Windows/regedit/禁用文件管理左侧快速访问.reg
+│   │   ├── ./Batch_Windows/regedit/管理员取得所有权.reg
+│   │   ├── ./Batch_Windows/regedit/自动登录选项消失.reg
+│   │   ├── ./Batch_Windows/regedit/蓝屏允许手动触发.reg
+│   │   ├── ./Batch_Windows/regedit/蓝屏显示详细信息.reg
+│   │   └── ./Batch_Windows/regedit/解禁注册表编辑器.reg
+│   ├── ./Batch_Windows/一键创建还原点.vbs
+│   ├── ./Batch_Windows/不足位补0.bat
+│   ├── ./Batch_Windows/以其他身份运行cmd.txt
+│   ├── ./Batch_Windows/修复开始菜单.ps1
+│   ├── ./Batch_Windows/修复用户文件夹权限.bat
+│   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
 │   ├── ./Batch_Windows/修改密码.bat
+│   ├── ./Batch_Windows/修改用户文件夹.txt
+│   ├── ./Batch_Windows/共享文件.bat
+│   ├── ./Batch_Windows/关闭MSI信息信号中断模式.md
+│   ├── ./Batch_Windows/创建一个所有权仅自己的文件夹-跨用户.bat
+│   ├── ./Batch_Windows/创建一个所有权仅自己的文件夹.bat
+│   ├── ./Batch_Windows/创建常用模式启动项.bat
+│   ├── ./Batch_Windows/删除SystemVolumeInformation.bat
+│   ├── ./Batch_Windows/删除内核转储.bat
 │   ├── ./Batch_Windows/加密或解密文件.bat
+│   ├── ./Batch_Windows/卓越性能模式.bat
+│   ├── ./Batch_Windows/卸载cygwin.bat
+│   ├── ./Batch_Windows/卸载系统组件.bat
+│   ├── ./Batch_Windows/启动文件夹.md
+│   ├── ./Batch_Windows/启动项禁用Hyper-V.bat
+│   ├── ./Batch_Windows/命令行编译sln工程.bat
+│   ├── ./Batch_Windows/备份WSL.bat
 │   ├── ./Batch_Windows/备份文件加密密钥.md
+│   ├── ./Batch_Windows/实现sudo，参数①提升启动权限的程序.vbs
+│   ├── ./Batch_Windows/将pem和ca等作为crt打开.bat
+│   ├── ./Batch_Windows/开机显示详细信息.txt
+│   ├── ./Batch_Windows/快捷方式
+│   │   ├── ./Batch_Windows/快捷方式/环境变量.lnk
+│   │   ├── ./Batch_Windows/快捷方式/蓝牙文件传送.lnk
+│   │   └── ./Batch_Windows/快捷方式/高级系统设置.lnk
+│   ├── ./Batch_Windows/恢复Windows显示器设定.txt
+│   ├── ./Batch_Windows/手动安装CAB和MSU格式更新包.md
+│   ├── ./Batch_Windows/打包IPX协议.bat
+│   ├── ./Batch_Windows/扩展VHD.bat
+│   ├── ./Batch_Windows/挂载VHD.bat
+│   ├── ./Batch_Windows/挂载VHD一键.bat
 │   ├── ./Batch_Windows/挂载vhd
 │   │   ├── ./Batch_Windows/挂载vhd/mount_vhdx.txt
 │   │   └── ./Batch_Windows/挂载vhd/挂载vhd.bat
+│   ├── ./Batch_Windows/文件是否存在.bat
 │   ├── ./Batch_Windows/查看内存是DDR几代.bat
+│   ├── ./Batch_Windows/查看端口占用.bat
+│   ├── ./Batch_Windows/查询虚拟内存用量.bat
+│   ├── ./Batch_Windows/每天第一次开机时重启.bat
+│   ├── ./Batch_Windows/清理Adobe.bat
+│   ├── ./Batch_Windows/清除字体缓存.bat
+│   ├── ./Batch_Windows/用户.bat
+│   ├── ./Batch_Windows/磁盘碎片整理.bat
+│   ├── ./Batch_Windows/禁止提供ts文件缩略图.txt
+│   ├── ./Batch_Windows/移动Outlook数据文件.bat
+│   ├── ./Batch_Windows/移除迅雷xlwfp服务.bat
+│   ├── ./Batch_Windows/系统自带图标.md
+│   ├── ./Batch_Windows/结束进程.bat
+│   ├── ./Batch_Windows/编辑hosts.bat
+│   ├── ./Batch_Windows/虚拟内存.bat
 │   ├── ./Batch_Windows/解压缩WinXP安装包中的文件.bat
-│   └── ./Batch_Windows/重置文件夹权限为只有自己能用.bat
+│   ├── ./Batch_Windows/还原文件权限.bat
+│   ├── ./Batch_Windows/还原系统.bat
+│   ├── ./Batch_Windows/重置winsock.bat
+│   ├── ./Batch_Windows/重置文件夹权限为只有自己能用.bat
+│   └── ./Batch_Windows/隐藏账户.md
 ├── ./Build
 │   ├── ./Build/Arch安装谷歌浏览器.sh
 │   ├── ./Build/GCC
@@ -249,10 +372,16 @@
 │   ├── ./C/链表单向.c
 │   └── ./C/随时接受用户命令.c
 ├── ./C#
+│   ├── ./C#/Bitmap水平翻转.cs
 │   ├── ./C#/CA1305的行为可能因当前用户的区域设置而异.cs
 │   ├── ./C#/Dictionary字典增删查遍历.cs
 │   ├── ./C#/HelloWorld.cs
 │   ├── ./C#/List的增删改查.cs
+│   ├── ./C#/Windows用户账户
+│   │   ├── ./C#/Windows用户账户/列出用户及其信息.cs
+│   │   ├── ./C#/Windows用户账户/列出用户及其信息：使用用户对象.cs
+│   │   ├── ./C#/Windows用户账户/本机都有哪些用户组.cs
+│   │   └── ./C#/Windows用户账户/获取某个用户所属的用户组.cs
 │   ├── ./C#/Winform窗体打开时闪烁问题.cs
 │   ├── ./C#/ref和out将引用传入函数.cs
 │   ├── ./C#/上传文件同时提交参数.cs
@@ -260,10 +389,13 @@
 │   ├── ./C#/以管理员身份启动.cs
 │   ├── ./C#/以管理员身份运行.cs
 │   ├── ./C#/允许运行一个实例.cs
+│   ├── ./C#/固定长度数组.cs
+│   ├── ./C#/多线程
+│   │   ├── ./C#/多线程/子线程更新UI.cs
+│   │   ├── ./C#/多线程/开启子线程.cs
+│   │   └── ./C#/多线程/快速多线程.cs
 │   ├── ./C#/多线程.cs
-│   ├── ./C#/子线程更新UI.cs
 │   ├── ./C#/字符串转数组、数字.cs
-│   ├── ./C#/开启子线程.cs
 │   ├── ./C#/开机启动.cs
 │   ├── ./C#/数组.cs
 │   ├── ./C#/文本文件写入.cs
@@ -708,6 +840,10 @@
 │   └── ./JavaScript_React/鼠标事件和移过提示框.js
 ├── ./Markdown
 │   └── ./Markdown/对错字符.md
+├── ./MongoDB
+│   ├── ./MongoDB/创建数据库和用户.js
+│   ├── ./MongoDB/命令行中运行MongoDB脚本.sh
+│   └── ./MongoDB/客户端工具安装和登录.sh
 ├── ./MySQL
 │   ├── ./MySQL/DISTINCT返回不重复的数据.sql
 │   ├── ./MySQL/Debian12-MySQL.sh
@@ -725,11 +861,13 @@
 │   ├── ./MySQL/全文搜索.sql
 │   ├── ./MySQL/关闭log-bin.sh
 │   ├── ./MySQL/内连接外连接.txt
+│   ├── ./MySQL/列出用户和修复root用户权限.sh
 │   ├── ./MySQL/删除和创建用户.sql
 │   ├── ./MySQL/外键约束.md
 │   ├── ./MySQL/多个表联合查询.sql
 │   ├── ./MySQL/大于或小于当前时间.sql
 │   ├── ./MySQL/大批量数据操作崩溃.sql
+│   ├── ./MySQL/完整导入导出数据库.sh
 │   ├── ./MySQL/导出数据库.sh
 │   ├── ./MySQL/导出数据库中每个表的前100条.sh
 │   ├── ./MySQL/批量修改某列的值.sql
@@ -772,6 +910,7 @@
 │   ├── ./Other/屏蔽软件联网hosts.txt
 │   ├── ./Other/常用密码长度.md
 │   ├── ./Other/摩尔斯电码.md
+│   ├── ./Other/日语假名输入.md
 │   ├── ./Other/正则表达式.md
 │   └── ./Other/生僻字.md
 ├── ./PHP
@@ -857,6 +996,8 @@
 │   └── ./PostgreSQL/重置管理员密码.sh
 ├── ./Powershell
 │   ├── ./Powershell/oh-my-posh.ps1
+│   ├── ./Powershell/倒计时继续.ps1
+│   ├── ./Powershell/到指定时间关机.ps1
 │   ├── ./Powershell/操作剪贴板.ps1
 │   ├── ./Powershell/比较运算符.ps1
 │   └── ./Powershell/读写文本.ps1
@@ -869,6 +1010,7 @@
 │   │   ├── ./Proxy/Docker-V2-Privoxy/privoxy.action
 │   │   ├── ./Proxy/Docker-V2-Privoxy/privoxy.config
 │   │   └── ./Proxy/Docker-V2-Privoxy/run.sh
+│   ├── ./Proxy/Docker设置代理.json
 │   ├── ./Proxy/Docker设置代理.sh
 │   ├── ./Proxy/Electron.sh
 │   ├── ./Proxy/GAE.sh
@@ -1013,9 +1155,11 @@
 │   │   ├── ./Server/Docker/Tomcat.sh
 │   │   ├── ./Server/Docker/WSL2发行版迁移数据文件.bat
 │   │   ├── ./Server/Docker/docker-compose
+│   │   │   ├── ./Server/Docker/docker-compose/MongoDB.docker-compose.yml
 │   │   │   ├── ./Server/Docker/docker-compose/docker-compose-bme.yml
 │   │   │   ├── ./Server/Docker/docker-compose/docker-compose-nginx-php.yml
 │   │   │   ├── ./Server/Docker/docker-compose/docker-compose-postgre-sql.yml
+│   │   │   ├── ./Server/Docker/docker-compose/docker-compose-uptime.yml
 │   │   │   └── ./Server/Docker/docker-compose/docker-compose.sh
 │   │   ├── ./Server/Docker/docker-firewalld允许容器间通信.sh
 │   │   ├── ./Server/Docker/jar包打包Docker.sh
@@ -1027,14 +1171,17 @@
 │   │   ├── ./Server/Docker/修改窗口管理器.sh
 │   │   ├── ./Server/Docker/容器.sh
 │   │   ├── ./Server/Docker/导入导出.sh
+│   │   ├── ./Server/Docker/执行远程服务器Docker容器中的命令.sh
 │   │   ├── ./Server/Docker/批处理.sh
 │   │   ├── ./Server/Docker/拷贝主机和容器之间的文件.sh
 │   │   ├── ./Server/Docker/无损修改端口映射.sh
 │   │   ├── ./Server/Docker/查看状态.sh
 │   │   ├── ./Server/Docker/检查容器健康状态.md
+│   │   ├── ./Server/Docker/添加IPv6.md
 │   │   ├── ./Server/Docker/清理.sh
 │   │   ├── ./Server/Docker/用FTP管理文件.sh
 │   │   ├── ./Server/Docker/登入控制台.sh
+│   │   ├── ./Server/Docker/离线pull.sh
 │   │   ├── ./Server/Docker/移动数据到其它盘.sh
 │   │   ├── ./Server/Docker/端口映射.sh
 │   │   ├── ./Server/Docker/自用DockerNginxPHP配置
@@ -1085,28 +1232,33 @@
 │   │   ├── ./Server/Nginx/反代noVNC.conf
 │   │   ├── ./Server/Nginx/常用header标头.ini
 │   │   ├── ./Server/Nginx/拆分Nginx日志字段.rb
+│   │   ├── ./Server/Nginx/检查docker容器中的nginx配置文件.sh
 │   │   └── ./Server/Nginx/检查nginx是否有网页文件访问权.sh
-│   ├── ./Server/OpenSSL
-│   │   ├── ./Server/OpenSSL/AES加密.sh
-│   │   ├── ./Server/OpenSSL/RSA密钥对生成和加解密.sh
-│   │   ├── ./Server/OpenSSL/SSL证书.sh
-│   │   ├── ./Server/OpenSSL/docker-acme-自用配置
-│   │   │   ├── ./Server/OpenSSL/docker-acme-自用配置/docker-compose.yml
-│   │   │   ├── ./Server/OpenSSL/docker-acme-自用配置/更新阿里云API.sh
-│   │   │   ├── ./Server/OpenSSL/docker-acme-自用配置/生成.sh
-│   │   │   ├── ./Server/OpenSSL/docker-acme-自用配置/管理和删除.sh
-│   │   │   └── ./Server/OpenSSL/docker-acme-自用配置/续期.sh
-│   │   ├── ./Server/OpenSSL/哈希.sh
-│   │   ├── ./Server/OpenSSL/自签域名证书.sh
-│   │   ├── ./Server/OpenSSL/自签多域名证书.sh
-│   │   ├── ./Server/OpenSSL/自签泛域名证书.sh
-│   │   ├── ./Server/OpenSSL/证书信息查看.md
-│   │   └── ./Server/OpenSSL/证书格式转换.md
 │   ├── ./Server/Redis
 │   │   ├── ./Server/Redis/redis-linux-php.sh
 │   │   ├── ./Server/Redis/redis-macos.sh
 │   │   └── ./Server/Redis/redis-windows.md
+│   ├── ./Server/SSLTLS证书
+│   │   ├── ./Server/SSLTLS证书/AES加密.sh
+│   │   ├── ./Server/SSLTLS证书/Nginx同时支持RSA和ECC证书.sh
+│   │   ├── ./Server/SSLTLS证书/RSA密钥对生成和加解密.sh
+│   │   ├── ./Server/SSLTLS证书/SSL证书.sh
+│   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置
+│   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/docker-compose.yml
+│   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/更新阿里云API.sh
+│   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/生成.sh
+│   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/管理和删除.sh
+│   │   │   └── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/续期.sh
+│   │   ├── ./Server/SSLTLS证书/哈希.sh
+│   │   ├── ./Server/SSLTLS证书/自签域名证书.sh
+│   │   ├── ./Server/SSLTLS证书/自签多域名证书.sh
+│   │   ├── ./Server/SSLTLS证书/自签泛域名证书.sh
+│   │   ├── ./Server/SSLTLS证书/证书信息查看.md
+│   │   └── ./Server/SSLTLS证书/证书格式转换.md
 │   ├── ./Server/自用脚本
+│   │   ├── ./Server/自用脚本/服务器A自动同步证书到服务器B.sh
+│   │   ├── ./Server/自用脚本/检查网站证书还有多久到期.ps1
+│   │   ├── ./Server/自用脚本/用跳板机访问远程RDP.bat
 │   │   └── ./Server/自用脚本/自动压缩日志文件.sh
 │   └── ./Server/跨域问题
 │       ├── ./Server/跨域问题/Access-Control-Allow-Origin.md
@@ -1133,6 +1285,7 @@
 │   ├── ./ShellScript/字符串按分隔符取值.sh
 │   ├── ./ShellScript/字符串比较.sh
 │   ├── ./ShellScript/字符串转数组.sh
+│   ├── ./ShellScript/对当前文件夹及其子文件夹中的特定扩展名文件进行操作.sh
 │   ├── ./ShellScript/将命令结果赋值给变量.sh
 │   ├── ./ShellScript/将应用后台运行类似服务.sh
 │   ├── ./ShellScript/循环.sh
@@ -1144,6 +1297,7 @@
 │   ├── ./ShellScript/批量序号缓存下载文件.sh
 │   ├── ./ShellScript/收集所有指定文件可能重名.sh
 │   ├── ./ShellScript/文件名改为序号并将原文件名加入到文本文档中.sh
+│   ├── ./ShellScript/文件批量处理笔记合集.sh
 │   ├── ./ShellScript/显示文件大小.sh
 │   ├── ./ShellScript/替换字符串.sh
 │   ├── ./ShellScript/替换文件中的字符串.sh
@@ -1170,6 +1324,7 @@
 │   ├── ./ShellScript_Linux/CPU温度.sh
 │   ├── ./ShellScript_Linux/CentOS8网络配置.sh
 │   ├── ./ShellScript_Linux/Chome添加启动参数.sh
+│   ├── ./ShellScript_Linux/Debian12阿里云源.list
 │   ├── ./ShellScript_Linux/ERR_CERT_INVALID.txt
 │   ├── ./ShellScript_Linux/GRUB2分辨率设置.sh
 │   ├── ./ShellScript_Linux/Gnome美化.sh
@@ -1225,6 +1380,7 @@
 │   ├── ./ShellScript_Linux/yum安装位置.sh
 │   ├── ./ShellScript_Linux/zsh.sh
 │   ├── ./ShellScript_Linux/主机多终端切换快捷键.txt
+│   ├── ./ShellScript_Linux/从整台电脑中搜索一个字符串.sh
 │   ├── ./ShellScript_Linux/修改命令行模式字体大小.sh
 │   ├── ./ShellScript_Linux/修改时区.sh
 │   ├── ./ShellScript_Linux/内存盘.sh
@@ -1259,6 +1415,7 @@
 │   ├── ./ShellScript_Linux/开机进命令行还是图形.sh
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
 │   ├── ./ShellScript_Linux/挂载U盘.sh
+│   ├── ./ShellScript_Linux/挂载Windows文件共享smb.sh
 │   ├── ./ShellScript_Linux/挖矿病毒.sh
 │   ├── ./ShellScript_Linux/文件和网络上限修改.sh
 │   ├── ./ShellScript_Linux/文件和网络是否达到上限查看.sh
@@ -1401,10 +1558,14 @@
 ├── ./ShellScript_SSH
 │   ├── ./ShellScript_SSH/SSH传输文件.sh
 │   ├── ./ShellScript_SSH/SSH启用X11转发.sh
+│   ├── ./ShellScript_SSH/SSH复制文件.sh
+│   ├── ./ShellScript_SSH/SSH执行远程命令.sh
+│   ├── ./ShellScript_SSH/SSH缓存密钥.sh
 │   ├── ./ShellScript_SSH/SSH证书登录.sh
 │   ├── ./ShellScript_SSH/UNPROTECTED_PRIVATE_KEY_FILE.md
 │   ├── ./ShellScript_SSH/ssh报错NoMatchingKeyExchangeMethodFound.sh
 │   ├── ./ShellScript_SSH/使用不同的SSH密钥.md
+│   ├── ./ShellScript_SSH/创建只能用于端口转发的账户.md
 │   ├── ./ShellScript_SSH/连接超时关闭时间.md
 │   ├── ./ShellScript_SSH/配置ssh的超时时间.sh
 │   └── ./ShellScript_SSH/验证证书是否匹配.sh
@@ -1459,6 +1620,9 @@
 │   ├── ./Tools/GPG.sh
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/PhotoGIMP.sh
+│   ├── ./Tools/SVG转PNG
+│   │   ├── ./Tools/SVG转PNG/svg转png.md
+│   │   └── ./Tools/SVG转PNG/去除png透明空边.py
 │   ├── ./Tools/exiftool.sh
 │   ├── ./Tools/hash校验文件.sh
 │   ├── ./Tools/matrix.sh
@@ -1529,6 +1693,8 @@
 │   │   └── ./Tools/错误代码文件/code.csv
 │   ├── ./Tools/雅诗快捷纯文本编辑器.html
 │   └── ./Tools/雅诗批量文件字符串替换工具.go
+├── ./Tools_AI
+│   └── ./Tools_AI/ollama羊驼本地大模型运行框架.md
 ├── ./Tools_FFmpeg
 │   ├── ./Tools_FFmpeg/IntelQuickSync.sh
 │   ├── ./Tools_FFmpeg/MacOS下安装ffmpeg和ffplay.sh
@@ -1560,6 +1726,8 @@
 │   ├── ./Tools_Git/master分支重命名为main.sh
 │   ├── ./Tools_Git/代码量统计.sh
 │   ├── ./Tools_Git/以指定日期提交.sh
+│   ├── ./Tools_Git/以指定时刻的随机分秒提交.bat
+│   ├── ./Tools_Git/以指定时刻的随机分秒提交.sh
 │   ├── ./Tools_Git/修改已提交的记录.sh
 │   ├── ./Tools_Git/删除所有变更.sh
 │   ├── ./Tools_Git/删除最近几次的提交.sh
@@ -1623,106 +1791,6 @@
 │   ├── ./TypeScript/计算区间.ts
 │   ├── ./TypeScript/迭代函数、生成器generator.ts
 │   └── ./TypeScript/颜色亮度.ts
-├── ./Windows
-│   ├── ./Windows/0x80070001更新系统和软件时报错.md
-│   ├── ./Windows/53DNS端口被系统服务占用.md
-│   ├── ./Windows/Administrator帐户设为不隐藏.reg
-│   ├── ./Windows/Alt-code符号输入.md
-│   ├── ./Windows/Compact压缩.bat
-│   ├── ./Windows/MSYS2更新.sh
-│   ├── ./Windows/MSYS2连接串口.sh
-│   ├── ./Windows/RunDll32.txt
-│   ├── ./Windows/VisualStudio安装旧版本.txt
-│   ├── ./Windows/VisualStudio离线安装.bat
-│   ├── ./Windows/WSL2.bat
-│   ├── ./Windows/WSL使用Windows中已安装字体.sh
-│   ├── ./Windows/Win11绕过硬件检测.bat
-│   ├── ./Windows/Win11绕过硬件检测iso.txt
-│   ├── ./Windows/Windows11开启IE.vbs
-│   ├── ./Windows/WindowsRE恢复分区重建.bat
-│   ├── ./Windows/WindowsTerminal.md
-│   ├── ./Windows/Windows端口占用情况.bat
-│   ├── ./Windows/anyconnect临时开启服务.bat
-│   ├── ./Windows/cmd映射常用unix命令.bat
-│   ├── ./Windows/cygwin-mingw.txt
-│   ├── ./Windows/fastcopy.txt
-│   ├── ./Windows/for循环.bat
-│   ├── ./Windows/if.bat
-│   ├── ./Windows/makecab.bat
-│   ├── ./Windows/nircmd关闭显示器.bat
-│   ├── ./Windows/vbs文件关联恢复.reg
-│   ├── ./Windows/一键创建还原点.vbs
-│   ├── ./Windows/不足位补0.bat
-│   ├── ./Windows/以其他身份运行cmd.txt
-│   ├── ./Windows/任务栏时间显示秒钟.reg
-│   ├── ./Windows/使用旧版的图片查看器.reg
-│   ├── ./Windows/修复EXE文件关联.reg
-│   ├── ./Windows/修复开始菜单.ps1
-│   ├── ./Windows/修复用户文件夹权限.bat
-│   ├── ./Windows/修改NuGet和choco临时文件夹.txt
-│   ├── ./Windows/修改用户文件夹.txt
-│   ├── ./Windows/允许虚拟内存在非系统盘.reg
-│   ├── ./Windows/共享文件.bat
-│   ├── ./Windows/关闭MSI信息信号中断模式.md
-│   ├── ./Windows/创建常用模式启动项.bat
-│   ├── ./Windows/删除OneDrive.reg
-│   ├── ./Windows/删除SystemVolumeInformation.bat
-│   ├── ./Windows/删除内核转储.bat
-│   ├── ./Windows/删除右键打印.reg
-│   ├── ./Windows/删除此电脑页上方几个文档文件夹.reg
-│   ├── ./Windows/卓越性能模式.bat
-│   ├── ./Windows/卸载cygwin.bat
-│   ├── ./Windows/卸载系统组件.bat
-│   ├── ./Windows/双击使用OpenJDK运行.reg
-│   ├── ./Windows/取消任务管理器被禁用.reg
-│   ├── ./Windows/取消磁盘的自动扫描.reg
-│   ├── ./Windows/取消磁盘空间低提示.reg
-│   ├── ./Windows/取消禁止显示隐藏文件.reg
-│   ├── ./Windows/右键复制文件内容到剪贴板.reg
-│   ├── ./Windows/右键复制路径到剪贴板.reg
-│   ├── ./Windows/右键添加打开命令窗口.reg
-│   ├── ./Windows/启动文件夹.md
-│   ├── ./Windows/启动项禁用Hyper-V.bat
-│   ├── ./Windows/备份WSL.bat
-│   ├── ./Windows/安装重启挂起.reg
-│   ├── ./Windows/实现sudo，参数①提升启动权限的程序.vbs
-│   ├── ./Windows/将pem和ca等作为crt打开.bat
-│   ├── ./Windows/开机显示详细信息.txt
-│   ├── ./Windows/恢复IcoCurAni文件关联.reg
-│   ├── ./Windows/恢复Windows显示器设定.txt
-│   ├── ./Windows/恢复新建文本文档.reg
-│   ├── ./Windows/手动安装CAB和MSU格式更新包.md
-│   ├── ./Windows/打包IPX协议.bat
-│   ├── ./Windows/扩展VHD.bat
-│   ├── ./Windows/挂载VHD.bat
-│   ├── ./Windows/挂载VHD一键.bat
-│   ├── ./Windows/文件是否存在.bat
-│   ├── ./Windows/查询虚拟内存用量.bat
-│   ├── ./Windows/桌面显示IE图标.reg
-│   ├── ./Windows/每天第一次开机时重启.bat
-│   ├── ./Windows/清理Adobe.bat
-│   ├── ./Windows/清除字体缓存.bat
-│   ├── ./Windows/用户.bat
-│   ├── ./Windows/磁盘碎片整理.bat
-│   ├── ./Windows/禁止提供ts文件缩略图.txt
-│   ├── ./Windows/禁用文件管理左侧快速访问.reg
-│   ├── ./Windows/移动Outlook数据文件.bat
-│   ├── ./Windows/移除迅雷xlwfp服务.bat
-│   ├── ./Windows/管理员取得所有权.reg
-│   ├── ./Windows/系统自带图标.md
-│   ├── ./Windows/结束进程.bat
-│   ├── ./Windows/编辑hosts.bat
-│   ├── ./Windows/自动登录选项消失.reg
-│   ├── ./Windows/蓝屏允许手动触发.reg
-│   ├── ./Windows/蓝屏显示详细信息.reg
-│   ├── ./Windows/蓝牙文件传送.lnk
-│   ├── ./Windows/虚拟内存.bat
-│   ├── ./Windows/解禁注册表编辑器.reg
-│   ├── ./Windows/还原文件权限.bat
-│   ├── ./Windows/还原系统.bat
-│   ├── ./Windows/重置winsock.bat
-│   ├── ./Windows/隐藏账户.md
-│   └── ./Windows/高级系统设置.lnk
 ├── ./desktop.ini
 ├── ./iOS
 │   ├── ./iOS/Xcode编译脚本变量.sh
@@ -1843,4 +1911,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-125 directories, 1718 files
+136 directories, 1776 files
