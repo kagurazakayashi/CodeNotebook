@@ -9,13 +9,16 @@ ECHO 列出现有密钥
 %gpg% -k
 
 ECHO 编辑卡
-%gpg% --edit-card
+%gpg% gpg
 ECHO 以管理员权限
 admin
 ECHO 清除卡中原来的所有GPG数据和密码
 factory-reset
-ECHO 修改密码(4→3→2→1)
+ECHO 修改密码
 passwd
+REM 2 - unblock PIN : 默认 Admin PIN 12345678 改 PIN
+REM 3 - change Admin PIN : 默认 Admin PIN 12345678
+REM Q
 ECHO 修改持有者
 name
 ECHO 修改网上的这个公钥地址URL

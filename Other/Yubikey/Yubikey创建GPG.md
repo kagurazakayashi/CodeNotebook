@@ -1,0 +1,1 @@
+[->](../../Tools/GPG/Yubikey创建GPG.bat)

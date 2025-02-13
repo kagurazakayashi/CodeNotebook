@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  ollama:
+    container_name: ollama
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "11434:11434"  # 允许外部访问 Ollama API
+    volumes:
+      - ollama_data:/root/.ollama  # 持久化存储 Ollama 数据
+        #- /mnt/usb/AI/OLLAMA_MODELS:/root/.ollama/ext
+      - /server/ollama/ext:/root/.ollama/ext # ollama create ***:*** -f /root/.ollama/ext/***.Modelfile
+    environment:
+      - TZ=Asia/Shanghai  # 设置时区
+      #- OLLAMA_MAX_RAM=18GB # 限制 Ollama 进程最多使用内存 
+    #cpu_quota: 50000 # 限制最大CPU使用率（默认 100000 为 100%, 50000 = 50%）
+    #cpus: 4 # 限制最大CPU核心数
+    mem_limit: 21g # 限制最大内存
+    memswap_limit: 21g # 允许额外使用多少虚拟内存（等于mem_limit即为不用虚拟内存）
+    #cpu_shares: 256 # 容器间优先级（2-262144, 高2048 默认1024 低512 最低256）
+    entrypoint: ["nice", "-n", "19", "ollama", "serve"] # nice设置优先级（-20-19, 最高-20 默认0, 低10, 最低19）
+volumes:
+  ollama_data:
+    driver: local

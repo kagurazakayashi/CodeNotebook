@@ -69,6 +69,8 @@ hkp://keys.gnupg.net
 hkp://pgp.mit.edu
 hkp://pgp.uni-minz.de
 
+# 为别人的密钥签名
+gpg --sign-key 0x12345678
 
 # 语法：gpg [选项] [文件名]
 # 签名、检查、加密或解密

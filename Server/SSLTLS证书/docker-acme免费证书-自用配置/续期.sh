@@ -4,6 +4,7 @@ LOGFILE="/mnt/d/server/ssl/logs/uuussl$(date +%Y-%m-%d_%H-%M-%S).log"
 ACMEDIR="/var/lib/docker/volumes/ssl_acme/_data"
 NGINXDIR="/var/lib/docker/volumes/nginx_conf/_data/ssl"
 cd "$ACMEDIR"
+docker start acme.sh | tee -a $LOGFILE
 docker exec acme.sh --list --debug | tee $LOGFILE
 docker exec acme.sh --cron --force --home "/root/.acme.sh" --debug | tee -a $LOGFILE
 7z a -mx9 "uuussl_$(date +%Y-%m-%d_%H-%M-%S).7z" '-xr!*.7z' "$ACMEDIR"
@@ -27,4 +28,5 @@ cp -f "$ACMEDIR/masae.moe_ecc/masae.moe.key" "$NGINXDIR/masae.moe.ecc.key" | tee
 docker start nginx
 docker exec acme.sh --deploy -d "yoooooooooo.com" --deploy-hook ali_cdn --debug | tee -a $LOGFILE
 docker exec acme.sh --deploy -d "uuumoe.com" --deploy-hook ali_cdn --debug | tee -a $LOGFILE
+docker stop acme.sh | tee -a $LOGFILE
 xz -z -e -9 $LOGFILE

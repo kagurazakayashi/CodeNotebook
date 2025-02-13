@@ -1,10 +1,10 @@
 # 分页文件方式
-dd if=/dev/zero of=/pagefile.sys bs=1k count=4000000 # 4GB整
+dd if=/dev/zero of=/pagefile.sys bs=1M count=2048 # 2GB整
 mkswap /pagefile.sys
 swapon /pagefile.sys
 chmod 0600 /pagefile.sys
 swapon -s
-echo "/pagefile.sys swap swap defaults 0 0" >> /etc/fstab
+echo "/pagefile.sys swap swap defaults,nofail 0 0" >> /etc/fstab
 free -m
 grep SwapTotal /proc/meminfo
 

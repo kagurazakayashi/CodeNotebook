@@ -36,7 +36,7 @@ DELETE PARTITION OVERRIDE
 CREATE PARTITION PRIMARY
 
 @REM 格式化新的空白分区
-FORMAT FAST FS=NTFS LABEL=WinRE
+FORMAT QUICK FS=NTFS LABEL=WinRE
 
 @REM 给新的空白分区设置一个盘符 T
 ASSIGN LETTER=T
@@ -50,7 +50,25 @@ ECHO 创建 WinRE
 ECHO 复制 Windows RE 文件到恢复分区
 @REM https://learn.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/deploy-windows-re?view=windows-11
 MKDIR T:\Recovery\WindowsRE
-COPY /h C:\Windows\System32\Recovery\Winre.wim T:\Recovery\WindowsRE
+COPY C:\Windows\System32\Recovery\Winre.wim T:\Recovery\WindowsRE\
+
+@REM 如果没有 Windows RE 文件可以去 安装光盘:\sources\install.wim 中提取，例如光盘是 E
+@REM 也可以从 OEM 系统提取（如果是 OEM），在 C:\Recovery\OEM 。
+MKDIR T:\Recovery\WindowsRE
+@REM 列出安装包中都有哪些版本系统，根据系统选择SourceIndex：
+dism /Get-WimInfo /WimFile:E:\sources\install.wim
+@REM 提取这个版本的安装包到 D:\install.wim 
+dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:1 /DestinationImageFile:D:\install.wim /Compress:max
+@REM 挂载该 install.wim 到 D:\WinREMnt
+MKDIR D:\WinMnt
+dism /Mount-Image /ImageFile:D:\install.wim /Index:1 /MountDir:D:\WinMnt
+@REM 复制 Winre.wim
+COPY D:\WinMnt\Windows\System32\Recovery\Winre.wim C:\Windows\System32\Recovery\
+@REM 取消挂载该 install.wim
+dism /Unmount-Image /MountDir:D:\WinMnt /Discard
+@REM 然后再试
+COPY C:\Windows\System32\Recovery\Winre.wim T:\Recovery\WindowsRE\
+@REM 
 
 ECHO 配置 Windows RE 所在位置 和 Windows 系统所在位置
 ReAgentc /setreimage /path T:\Recovery\WindowsRE /target C:\Windows
@@ -80,9 +98,16 @@ set id=27
 LIST VOL
 EXIT
 
+@REM 清理
+DEL D:\install.wim
+RD D:\WinMnt
+
 @REM 启用 Windows RE
 ReAgentc /enable
 
 @REM 查看 Windows RE 信息
 ReAgentc /info
 @REM Windows RE 状态: Enabled
+
+@REM 启动 WinRE
+shutdown /r /o /f /t 0
