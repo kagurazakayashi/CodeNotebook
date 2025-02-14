@@ -2,7 +2,8 @@
 ├── ./AI
 │   ├── ./AI/Ollama导入导出模型.bat
 │   ├── ./AI/Ollama环境变量.ini
-│   └── ./AI/Windows安装CUDA驱动.md
+│   ├── ./AI/Windows安装CUDA驱动.md
+│   └── ./AI/ollama.docker-compose.yml
 ├── ./Algorithm
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
@@ -174,6 +175,7 @@
 │   ├── ./Batch_Windows/不足位补0.bat
 │   ├── ./Batch_Windows/以其他身份运行cmd.txt
 │   ├── ./Batch_Windows/修复开始菜单.ps1
+│   ├── ./Batch_Windows/修复引导.bat
 │   ├── ./Batch_Windows/修复用户文件夹权限.bat
 │   ├── ./Batch_Windows/修改NuGet和choco临时文件夹.txt
 │   ├── ./Batch_Windows/修改密码.bat
@@ -899,10 +901,11 @@
 │   ├── ./Other/Yubikey
 │   │   ├── ./Other/Yubikey/Yubikey使用Bitlocker.bat
 │   │   ├── ./Other/Yubikey/Yubikey使用Bitlocker.reg
-│   │   ├── ./Other/Yubikey/Yubikey创建GPG.bat
+│   │   ├── ./Other/Yubikey/Yubikey创建GPG.md
 │   │   ├── ./Other/Yubikey/Yubikey创建Yubico_OTP并上传.txt
 │   │   ├── ./Other/Yubikey/Yubikey和Aster分屏软件冲突.txt
 │   │   └── ./Other/Yubikey/Yubikey驱动下载.md
+│   ├── ./Other/Yubikey使用Bitlocker.md
 │   ├── ./Other/iPhone备份目录.md
 │   ├── ./Other/xmrig配置参数.md
 │   ├── ./Other/切噜.c
@@ -1254,7 +1257,8 @@
 │   │   ├── ./Server/SSLTLS证书/自签多域名证书.sh
 │   │   ├── ./Server/SSLTLS证书/自签泛域名证书.sh
 │   │   ├── ./Server/SSLTLS证书/证书信息查看.md
-│   │   └── ./Server/SSLTLS证书/证书格式转换.md
+│   │   ├── ./Server/SSLTLS证书/证书格式转换.md
+│   │   └── ./Server/SSLTLS证书/还原OpensslCA的index.txt.md
 │   ├── ./Server/自用脚本
 │   │   ├── ./Server/自用脚本/服务器A自动同步证书到服务器B.sh
 │   │   ├── ./Server/自用脚本/检查网站证书还有多久到期.ps1
@@ -1324,6 +1328,7 @@
 │   ├── ./ShellScript_Linux/CPU温度.sh
 │   ├── ./ShellScript_Linux/CentOS8网络配置.sh
 │   ├── ./ShellScript_Linux/Chome添加启动参数.sh
+│   ├── ./ShellScript_Linux/Debian11升级到12.md
 │   ├── ./ShellScript_Linux/Debian12阿里云源.list
 │   ├── ./ShellScript_Linux/ERR_CERT_INVALID.txt
 │   ├── ./ShellScript_Linux/GRUB2分辨率设置.sh
@@ -1379,6 +1384,7 @@
 │   ├── ./ShellScript_Linux/xterm美化.sh
 │   ├── ./ShellScript_Linux/yum安装位置.sh
 │   ├── ./ShellScript_Linux/zsh.sh
+│   ├── ./ShellScript_Linux/为新的硬盘创建FAT分区并开机挂载.sh
 │   ├── ./ShellScript_Linux/主机多终端切换快捷键.txt
 │   ├── ./ShellScript_Linux/从整台电脑中搜索一个字符串.sh
 │   ├── ./ShellScript_Linux/修改命令行模式字体大小.sh
@@ -1399,6 +1405,7 @@
 │   ├── ./ShellScript_Linux/右上角网络图标.sh
 │   ├── ./ShellScript_Linux/同步时间.sh
 │   ├── ./ShellScript_Linux/命令行屏保.sh
+│   ├── ./ShellScript_Linux/复制文件时显示进度.md
 │   ├── ./ShellScript_Linux/安装中文输入法.sh
 │   ├── ./ShellScript_Linux/安装字体.sh
 │   ├── ./ShellScript_Linux/宝塔.sh
@@ -1416,6 +1423,7 @@
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
 │   ├── ./ShellScript_Linux/挂载U盘.sh
 │   ├── ./ShellScript_Linux/挂载Windows文件共享smb.sh
+│   ├── ./ShellScript_Linux/按月份归档每日文件夹.sh
 │   ├── ./ShellScript_Linux/挖矿病毒.sh
 │   ├── ./ShellScript_Linux/文件和网络上限修改.sh
 │   ├── ./ShellScript_Linux/文件和网络是否达到上限查看.sh
@@ -1454,6 +1462,7 @@
 │   ├── ./ShellScript_Linux/设置DNS.sh
 │   ├── ./ShellScript_Linux/设置命令行下分辨率.sh
 │   ├── ./ShellScript_Linux/设置计算机名称.sh
+│   ├── ./ShellScript_Linux/访问windows共享文件夹.md
 │   ├── ./ShellScript_Linux/语系设置成为中文.sh
 │   ├── ./ShellScript_Linux/进程.md
 │   ├── ./ShellScript_Linux/进程优先级.sh
@@ -1617,7 +1626,11 @@
 │   │   ├── ./Tools/Coin/xmrig.md
 │   │   ├── ./Tools/Coin/挖矿.txt
 │   │   └── ./Tools/Coin/门罗币钱包.sh
-│   ├── ./Tools/GPG.sh
+│   ├── ./Tools/GPG
+│   │   ├── ./Tools/GPG/GPG.sh
+│   │   ├── ./Tools/GPG/GPG单独批量压缩并加密当前目录中的所有文件.sh
+│   │   ├── ./Tools/GPG/GPG单独批量解压并解密文件到当前目录.sh
+│   │   └── ./Tools/GPG/Yubikey创建GPG.bat
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/PhotoGIMP.sh
 │   ├── ./Tools/SVG转PNG
@@ -1911,4 +1924,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-136 directories, 1776 files
+137 directories, 1788 files
