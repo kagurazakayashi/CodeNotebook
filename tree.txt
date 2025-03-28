@@ -118,6 +118,7 @@
 │   ├── ./Batch_Windows/53DNS端口被系统服务占用.md
 │   ├── ./Batch_Windows/Alt-code符号输入.md
 │   ├── ./Batch_Windows/Compact压缩.bat
+│   ├── ./Batch_Windows/EFS文件加密证书备份和恢复.bat
 │   ├── ./Batch_Windows/MSYS2
 │   │   ├── ./Batch_Windows/MSYS2/MSYS2更新.sh
 │   │   └── ./Batch_Windows/MSYS2/MSYS2连接串口.sh
@@ -174,6 +175,9 @@
 │   ├── ./Batch_Windows/一键创建还原点.vbs
 │   ├── ./Batch_Windows/不足位补0.bat
 │   ├── ./Batch_Windows/以其他身份运行cmd.txt
+│   ├── ./Batch_Windows/修复ico文件关联.bat
+│   ├── ./Batch_Windows/修复vhd文件关联.bat
+│   ├── ./Batch_Windows/修复vhd文件关联.reg
 │   ├── ./Batch_Windows/修复开始菜单.ps1
 │   ├── ./Batch_Windows/修复引导.bat
 │   ├── ./Batch_Windows/修复用户文件夹权限.bat
@@ -182,6 +186,7 @@
 │   ├── ./Batch_Windows/修改用户文件夹.txt
 │   ├── ./Batch_Windows/共享文件.bat
 │   ├── ./Batch_Windows/关闭MSI信息信号中断模式.md
+│   ├── ./Batch_Windows/关闭浏览器后自动注销.bat
 │   ├── ./Batch_Windows/创建一个所有权仅自己的文件夹-跨用户.bat
 │   ├── ./Batch_Windows/创建一个所有权仅自己的文件夹.bat
 │   ├── ./Batch_Windows/创建常用模式启动项.bat
@@ -384,7 +389,12 @@
 │   │   ├── ./C#/Windows用户账户/列出用户及其信息：使用用户对象.cs
 │   │   ├── ./C#/Windows用户账户/本机都有哪些用户组.cs
 │   │   └── ./C#/Windows用户账户/获取某个用户所属的用户组.cs
-│   ├── ./C#/Winform窗体打开时闪烁问题.cs
+│   ├── ./C#/Winform
+│   │   ├── ./C#/Winform/DataGridView选定第几列是特定内容的行.cs
+│   │   ├── ./C#/Winform/ListBox常用操作.cs
+│   │   ├── ./C#/Winform/Winform窗体打开时闪烁问题.cs
+│   │   ├── ./C#/Winform/把窗口移到前台.cs
+│   │   └── ./C#/Winform/设置全部这种控件的启用.cs
 │   ├── ./C#/ref和out将引用传入函数.cs
 │   ├── ./C#/上传文件同时提交参数.cs
 │   ├── ./C#/代理.cs
@@ -397,15 +407,20 @@
 │   │   ├── ./C#/多线程/开启子线程.cs
 │   │   └── ./C#/多线程/快速多线程.cs
 │   ├── ./C#/多线程.cs
+│   ├── ./C#/字符串忽略大小写替换.cs
 │   ├── ./C#/字符串转数组、数字.cs
 │   ├── ./C#/开机启动.cs
 │   ├── ./C#/数组.cs
+│   ├── ./C#/整数增减千位分隔符.cs
 │   ├── ./C#/文本文件写入.cs
 │   ├── ./C#/文本文件读取.cs
 │   ├── ./C#/编译区别.md
+│   ├── ./C#/自定义对象按其内容排序.cs
 │   ├── ./C#/获取剪贴板.cs
 │   ├── ./C#/获取工作路径.cs
 │   ├── ./C#/获取文件信息.cs
+│   ├── ./C#/获取程序的标题和版本号等.cs
+│   ├── ./C#/规范化文件路径.cs
 │   ├── ./C#/计算时间差.cs
 │   ├── ./C#/访问修饰符.md
 │   ├── ./C#/读写INI文件.cs
@@ -912,6 +927,7 @@
 │   ├── ./Other/喵.c
 │   ├── ./Other/屏蔽软件联网hosts.txt
 │   ├── ./Other/常用密码长度.md
+│   ├── ./Other/打印机协议.md
 │   ├── ./Other/摩尔斯电码.md
 │   ├── ./Other/日语假名输入.md
 │   ├── ./Other/正则表达式.md
@@ -998,8 +1014,10 @@
 │   ├── ./PostgreSQL/记住密码和备份.sh
 │   └── ./PostgreSQL/重置管理员密码.sh
 ├── ./Powershell
+│   ├── ./Powershell/PFX证书清除密码.ps1
 │   ├── ./Powershell/oh-my-posh.ps1
 │   ├── ./Powershell/倒计时继续.ps1
+│   ├── ./Powershell/创建空白文件.ps1
 │   ├── ./Powershell/到指定时间关机.ps1
 │   ├── ./Powershell/操作剪贴板.ps1
 │   ├── ./Powershell/比较运算符.ps1
@@ -1253,7 +1271,7 @@
 │   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/管理和删除.sh
 │   │   │   └── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/续期.sh
 │   │   ├── ./Server/SSLTLS证书/哈希.sh
-│   │   ├── ./Server/SSLTLS证书/自签域名证书.sh
+│   │   ├── ./Server/SSLTLS证书/自签CA并自签证书.sh
 │   │   ├── ./Server/SSLTLS证书/自签多域名证书.sh
 │   │   ├── ./Server/SSLTLS证书/自签泛域名证书.sh
 │   │   ├── ./Server/SSLTLS证书/证书信息查看.md
@@ -1332,6 +1350,7 @@
 │   ├── ./ShellScript_Linux/Debian12阿里云源.list
 │   ├── ./ShellScript_Linux/ERR_CERT_INVALID.txt
 │   ├── ./ShellScript_Linux/GRUB2分辨率设置.sh
+│   ├── ./ShellScript_Linux/GUI分区管理工具.sh
 │   ├── ./ShellScript_Linux/Gnome美化.sh
 │   ├── ./ShellScript_Linux/LNMP脚本加入直播插件.sh
 │   ├── ./ShellScript_Linux/Linux操作系统.txt
@@ -1380,6 +1399,7 @@
 │   ├── ./ShellScript_Linux/virtualbox共享文件夹没权限.sh
 │   ├── ./ShellScript_Linux/vsftpd.md
 │   ├── ./ShellScript_Linux/wifi.sh
+│   ├── ./ShellScript_Linux/x11-apps.md
 │   ├── ./ShellScript_Linux/xsession-errors文件过大.sh
 │   ├── ./ShellScript_Linux/xterm美化.sh
 │   ├── ./ShellScript_Linux/yum安装位置.sh
@@ -1393,6 +1413,7 @@
 │   ├── ./ShellScript_Linux/内核升级失败回滚.sh
 │   ├── ./ShellScript_Linux/内核参数.txt
 │   ├── ./ShellScript_Linux/列出系统服务.sh
+│   ├── ./ShellScript_Linux/创建iso.md
 │   ├── ./ShellScript_Linux/创建用户并给予sudo权限.sh
 │   ├── ./ShellScript_Linux/创建虚拟机和虚拟盘格式转换.sh
 │   ├── ./ShellScript_Linux/删除旧内核.sh
@@ -1454,6 +1475,7 @@
 │   ├── ./ShellScript_Linux/端口.sh
 │   ├── ./ShellScript_Linux/系统服务创建systemctl.md
 │   ├── ./ShellScript_Linux/系统版本.sh
+│   ├── ./ShellScript_Linux/终端软件无法转发X窗口.sh
 │   ├── ./ShellScript_Linux/绝对路径和相对路径.md
 │   ├── ./ShellScript_Linux/网络流量命令.sh
 │   ├── ./ShellScript_Linux/自动登录.txt
@@ -1633,6 +1655,8 @@
 │   │   └── ./Tools/GPG/Yubikey创建GPG.bat
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/PhotoGIMP.sh
+│   ├── ./Tools/RustDesk导出主机目录.md
+│   ├── ./Tools/RustDesk自托管.docker-compose.yml
 │   ├── ./Tools/SVG转PNG
 │   │   ├── ./Tools/SVG转PNG/svg转png.md
 │   │   └── ./Tools/SVG转PNG/去除png透明空边.py
@@ -1652,6 +1676,7 @@
 │   ├── ./Tools/下载xkcd.in用于离线阅读.py
 │   ├── ./Tools/临时解b64密码文件并复制到剪贴板，三秒后清除.py
 │   ├── ./Tools/传统色.md
+│   ├── ./Tools/修复LocalSend套接字没有权限.bat
 │   ├── ./Tools/公主连结刷初始.sh
 │   ├── ./Tools/创建指定大小随机内容文本文档.sh
 │   ├── ./Tools/创建虚拟软盘镜像.md
@@ -1804,7 +1829,6 @@
 │   ├── ./TypeScript/计算区间.ts
 │   ├── ./TypeScript/迭代函数、生成器generator.ts
 │   └── ./TypeScript/颜色亮度.ts
-├── ./desktop.ini
 ├── ./iOS
 │   ├── ./iOS/Xcode编译脚本变量.sh
 │   └── ./iOS/修改iTunes更新和备份目录.bat
@@ -1924,4 +1948,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-137 directories, 1788 files
+138 directories, 1811 files
