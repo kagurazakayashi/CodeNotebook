@@ -1,0 +1,51 @@
+# RustDesk远程桌面自托管.docker-compose
+# https://github.com/rustdesk/rustdesk-server/blob/master/docker-compose.yml
+
+version: '3'
+
+networks:
+  rustdesk-net:
+    external: false
+
+services:
+  hbbs: # 用于管理客户端连接，作为 中继服务器。
+    container_name: hbbs
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs -r 0.0.0.0:21117
+    volumes:
+      - data:/root
+    networks:
+      - rustdesk-net
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr: # 处理 NAT 穿透，作为 信令服务器。
+    container_name: hbbr
+    ports:
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - data:/root
+    networks:
+      - rustdesk-net
+    restart: unless-stopped
+
+volumes:
+  data: {}
+
+# 允许防火墙：
+# firewall-cmd --zone=public --add-port=21114-21119/tcp --permanent && firewall-cmd --zone=public --add-port=21116/udp --permanent
+
+# APP - 设置 - 网络 - ID/中继服务器：
+# ID 服务器: <IP>:21116
+# 中继服务器: <IP>:21117
+# API 服务器: 留空
+# Key 看 Docker 后台输出

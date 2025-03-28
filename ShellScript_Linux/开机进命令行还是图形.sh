@@ -17,7 +17,11 @@ systemctl set-default multi-user
 systemctl get-default
 
 # 暂时切换到图形模式
-systemctl start lightdm
+systemctl isolate graphical.target
+# 如果 isolate graphical.target 无法启动图形界面，可能是图形界面相关的服务（如 gdm 或 sddm）未运行，可以尝试手动启动它：
+systemctl start gdm    # 如果使用 GNOME 桌面
+systemctl start sddm   # 如果使用 KDE Plasma
+systemctl start lightdm  # 如果使用 Xfce、LXQt 或其他桌面环境
 
 # 开机以命令模式启动，执行：
 systemctl set-default multi-user.target

@@ -1,12 +1,29 @@
 # SSL 证书 自签名证书
 
+# 1. 生成CA的私钥
+openssl genrsa -des3 -out ca.key 4096 (弃用des3)
+openssl genrsa -aes256 -out ca.key 4096
+Enter pass phrase for ca.key:(4-1023)
+
+# 2. 生成CA公钥
+openssl req -new -x509 -days 18250 -key ca.key -out ca.crt
+
 # 1、生成服务器私钥
 openssl genrsa -out client.key 4096  # RSA
 openssl ecparam -genkey -name secp384r1 -out client-ecc.key  # ECC
+# secp256k1：比特币和以太坊等区块链系统使用的曲线
+# prime256v1（又名 P-256）: NIST 推荐曲线，广泛用于 TLS 和加密协议
+# secp384r1（又名 P-384）：NIST 推荐的更高安全性曲线
+# secp521r1（又名 P-521）：更高位数的 NIST 曲线(IIS不支持)
+# brainpoolP256r1, brainpoolP384r1, brainpoolP512r1：Brainpool 标准曲线，适用于对 NIST 曲线有信任问题的场景
 
 # 2、生成证书签名请求（CSR）
 openssl req -new -key client.key -out client.csr # RSA
-openssl req -new -sha384 -key client-ecc.key -out client-ecc.csr  # ECC
+openssl req -new -sha256 -key client-ecc.key -out client-ecc.csr  # ECC
+# SHA-256：目前最常用，广泛支持，足够安全。
+# SHA-384/SHA-512：比 SHA-256 更安全，但生成的签名更长，适用于高安全性需求。
+# SHA3 系列：相较于 SHA-2 系列，在某些方面有更好的抗碰撞性，但 OpenSSL 并不总是默认启用。
+# MD5 / SHA-1：已被认为不安全，不建议使用。
 # Country Name (2 letter code) [AU]:JP
 # State or Province Name (full name) [Some-State]:Tokyo
 # Locality Name (eg, city) []:Tokyo
