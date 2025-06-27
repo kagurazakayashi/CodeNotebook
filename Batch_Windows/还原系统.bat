@@ -1,18 +1,18 @@
-@REM 还原系统 修复系统 从安装盘还原
+TITLE 还原系统 修复系统 从安装盘还原
 @REM ISO 需要和修复的系统具有相同的版本和语言
-MKDIR D:\REP
-@REM 创建镜像 D:\REP
-ATTRIB E:\sources\install.wim
-DISM.exe /Mount-Image /ImageFile:E:\sources\install.wim /Index:1 /ReadOnly /MountDir:D:\REP
-@REM 使用“新镜像” REP 修复
-DISM /Online /Cleanup-Image /RestoreHealth /Source:D:\REP\windows /LimitAccess
-@REM 卸载已安装镜像，等待卸载成功后
-DISM.exe /Unmount-Image /MountDir:D:\REP /Discard
-@REM 删除REP文件夹
-RD /S /Q D:\REP
+MKDIR D:\install
+@REM 先查安装源里都有什么
+DISM /Get-WimInfo /WimFile:I:\sources\install.wim
+@REM 挂载需要的子镜像Index
+DISM /Mount-Wim /WimFile:I:\sources\install.wim /Index:4 /MountDir:D:\install /ReadOnly
+@REM 修复 D 中的系统
+DISM /Image:D:\ /Cleanup-Image /RestoreHealth /Source:D:\install\Windows /LimitAccess
+@REM 取消挂载 wim
+DISM /Unmount-Wim /MountDir:D:\install /Discard
+@REM 移除挂载点
+RD D:\install
 
-
-@REM Dism修复步骤
+@REM 当前系统修复步骤
 
 @REM dism扫描全部系统文件
 DISM /Online /Cleanup-image /Scanhealth

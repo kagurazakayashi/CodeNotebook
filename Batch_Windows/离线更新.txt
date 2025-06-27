@@ -1,0 +1,13 @@
+下载最新的离线累积更新包
+
+Windows 10 发布历史记录
+https://learn.microsoft.com/zh-cn/windows/release-health/release-information
+
+Windows 11 发布历史记录
+https://learn.microsoft.com/zh-cn/windows/release-health/windows11-release-information
+
+在Microsoft更新目录网站下载离线更新包
+
+https://www.catalog.update.microsoft.com/Home.aspx
+
+比如填入：KB5028166，找到对应版本的X64版本，这是本人系统是64位系统，然后点击下载。

@@ -1,0 +1,56 @@
+<!-- 骑线文字标签: 这段 HTML 的作用是创建一个表单区域块（<fieldset>），用于对表单中的一组字段进行逻辑分组，并通过 <legend> 元素为这组字段添加一个标题说明。它常用于让表单看起来更整洁、语义更明确，且对屏幕阅读器和可访问性（a11y）更友好。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fieldset Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-top: 0.5em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Registration Form</h1>
+
+  <form>
+    <fieldset>
+      <legend>Personalia:</legend>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname">
+
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname">
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob">
+    </fieldset>
+
+    <fieldset>
+      <legend>Contact Info:</legend>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone">
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

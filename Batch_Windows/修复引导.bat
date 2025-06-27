@@ -4,7 +4,8 @@ TITLE 修复引导 修复Windows引导 修复Boot Manager
 @REM 启动菜单》疑难解答》高级选项》命令提示符
 @REM 或者使用 Windows 安装 U 盘启动，进入 修复计算机 。
 
-@REM 非 UEFI 自动:
+
+@REM 非 UEFI (自动):
 
 @REM 修复主引导记录（MBR）
 bootrec /fixmbr
@@ -20,7 +21,7 @@ attrib C:\Boot\BCD -h -r -s
 del C:\Boot\BCD
 bootrec /rebuildbcd
 
-@REM 非 UEFI 手动：
+@REM 非 UEFI (手动)：
 
 @REM 列出当前的引导信息
 bcdedit /enum

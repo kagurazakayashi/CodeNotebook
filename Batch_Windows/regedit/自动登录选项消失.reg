@@ -1,8 +1,8 @@
-; ÒªÊ¹ÓÃ±¾¼ÆËã»ú,ÓÃ»§±ØĞëÊäÈëÓÃ»§ÃûºÍÃÜÂë Ñ¡Ïî²»¼ûÁËÔõÃ´°ì
+; Windowsè‡ªåŠ¨ç™»å½•é€‰é¡¹æ¶ˆå¤±å¤„ç†
 
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device]
-"DevicePasswordLessBuildVersion"=dword:00000002
+; "DevicePasswordLessBuildVersion"=dword:00000002
 "DevicePasswordLessBuildVersion"=dword:00000000
 
-; control userpasswords2
+; è¿è¡Œ control userpasswords2 æˆ– Netplwiz

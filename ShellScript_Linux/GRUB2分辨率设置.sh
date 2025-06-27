@@ -5,13 +5,18 @@ vbeinfo
 # 会列出所有支持的分辨率
  
 # 在grub中设置分辨率
-sudo nano /etc/default/grub
+vim /etc/default/grub
+# 新版系统
+vim /etc/grub.d/10_linux
+# 改为
 GRUB_GFXMODE=1024x768
 GRUB_GFXPAYLOAD_LINUX=keep
 # GRUB_GFXMODE 设置了GRUB菜单的分辨率，而 GRUB_GFXPAYLOAD_LINUX=keep 告诉GRUB保持这个分辨率进入Linux。
 
 # 保存更改
 sudo update-grub
+# /usr/sbin/grub-mkconfig: 48: /etc/default/grub: function: not found
+rm /etc/default/grub && grub-mkconfig -o /etc/default/grub
 
 # 不要启动图形模式：
 GRUB_TERMINAL=console

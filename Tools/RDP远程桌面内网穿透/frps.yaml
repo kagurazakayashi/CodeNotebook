@@ -1,0 +1,20 @@
+# https://gofrp.org/zh-cn/docs/reference/server-configures/
+auth:
+  method: "token"
+  token: "***"
+log:
+  level: "trace"
+bindAddr: "0.0.0.0"
+bindPort: 7000
+webServer:
+  addr: "127.0.0.1"
+  port: 7500
+  user: yashi
+  password: "***"
+detailedErrorsToClient: true
+allowPorts:
+  - single: 63389
+  - single: 3389
+transport:
+  tls:
+    force: true

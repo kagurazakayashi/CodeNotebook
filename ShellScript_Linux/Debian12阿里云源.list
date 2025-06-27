@@ -1,10 +1,19 @@
-# /etc/apt/sources.list
-#
+# cat /etc/issue
+# vim /etc/apt/sources.list
+
+# GPG error: http://mirrors.aliyun.com/debian-multimedia bookworm InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 5C808C2B65558117, A5D32F012649A5A9
+# sudo apt install gpg -y
+# sudo gpg --keyserver keyserver.ubuntu.com --recv-keys 5C808C2B65558117
+# sudo gpg --export 5C808C2B65558117 | sudo tee /etc/apt/trusted.gpg.d/debian-multimedia.gpg > /dev/null
+# sudo gpg --keyserver keyserver.ubuntu.com --recv-keys A5D32F012649A5A9
+# sudo gpg --export A5D32F012649A5A9 | sudo tee /etc/apt/trusted.gpg.d/debian-multimedia.gpg > /dev/null
+# sudo apt update && sudo apt upgrade -y
+
 #deb http://deb.debian.org/debian bookworm main
 #deb http://deb.debian.org/debian bookworm-updates main
 #deb http://security.debian.org/debian-security bookworm-security main
 #deb http://ftp.debian.org/debian bookworm-backports main
-#
+
 # Debian12阿里云源
 deb http://mirrors.aliyun.com/debian bookworm main non-free non-free-firmware contrib
 deb-src http://mirrors.aliyun.com/debian bookworm-updates main non-free non-free-firmware contrib

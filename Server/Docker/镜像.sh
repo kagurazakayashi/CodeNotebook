@@ -25,11 +25,11 @@ docker image save -o imageName.tar imageName
 # 压缩导出
 docker image save imageName | xz -z -e -9 -T 0 > imageName.tar.xz
 # 导出备份
-docker image save imageName | xz -z -e -9 > imageName.$(date "+%Y-%m-%d_%H-%M-%S").tar.xz
+docker image save imageName | xz -z -e -9 -v > imageName.$(date "+%Y-%m-%d_%H-%M-%S").tar.xz
 
 # 导入镜像
 docker image load -i imageName.tar
 # --input, -i 从tar档案文件(而不是STDIN)读取
 # --quiet, -q 抑制加载输出
 # 解压导入
-xz -d imageName.tar.xz -c | docker image load
+xz -d imageName.tar.xz -v -c | docker image load

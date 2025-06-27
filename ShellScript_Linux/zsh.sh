@@ -57,7 +57,7 @@ cd fonts
 # 更新 oh-my-zsh
 omz update
 
-# (anon):12: character not in range
+# (anon):12: character not in range 或者特殊符号乱码
 apt install locales -y
 # .zshrc添加
 export LC_ALL=C.UTF-8

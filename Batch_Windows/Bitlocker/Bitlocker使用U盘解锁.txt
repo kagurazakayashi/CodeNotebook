@@ -1,0 +1,22 @@
+gpedit.msc
+
+计算机配置 → 管理模板 → Windows 组件 → BitLocker 驱动器加密 → 操作系统驱动器
+
+找到并 启用：
+
+启动时需要附加身份验证 (Require additional authentication at startup)
+
+勾选：允许在不兼容 TPM 的电脑上启用 BitLocker
+（Allow BitLocker without a compatible TPM）
+
+点击确定。
+
+
+启用 BitLocker（使用 USB 启动密钥）
+打开 控制面板 → 系统和安全 → BitLocker 驱动器加密：
+点击【启用 BitLocker】
+系统提示无 TPM，选择 使用 USB 启动密钥（Use a USB flash drive）
+插入 U 盘（此时 BitLocker 会将启动密钥保存在 U 盘根目录）
+选择密钥备份方式（建议保存到 Microsoft 帐户或另存密钥文件）
+选择加密方式（新设备推荐使用 XTS-AES，兼容建议 AES-CBC）
+点击开始加密。

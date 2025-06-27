@@ -1,0 +1,319 @@
+ABC-Update.exe 3.2.3.0
+
+List and Install updates from MSUpdate or from managed Server (WSUS)
+从 MSUpdate 或托管服务器 (WSUS) 列出并安装更新
+
+Documentation: Https://abc-deploy.com/files/ABC-Update.Pdf
+文档：Https://abc-deploy.com/files/ABC-Update.Pdf
+
+Copyright (C) ABC-Deploy  -  Https://abc-deploy.com
+版权所有 (C) ABC-Deploy - Https://abc-deploy.com
+
+ 
+
+Usage:  使用方法
+
+   ABC-Update.exe
+
+   Default is to list applicable missing updates from MS Update
+默认情况下，从 MS Update 列出适用的缺失更新
+
+ 
+
+   [/A:] Action  [/A:] 行动
+
+         Default List  默认列表
+
+         Download | List | Install | Uninstall
+下载 | 列表 | 安装 | 卸载
+
+   [/C:] Category(s)  [/C:] 类别
+
+         Comma separated list of Category Names to include
+以逗号分隔的要包括的类别名称列表
+
+         Default  Include all categories
+默认包括所有类别
+
+         Valid Names:  有效名称：
+
+             Application  应用
+
+             Connectors  连接器
+
+             CriticalUpdates  关键更新
+
+             DefinitionUpdates  定义更新
+
+             DeveloperKits  开发者套件
+
+             FeaturePacks  功能包
+
+             Guidance  指导
+
+             SecurityUpdates  安全更新
+
+             ServicePacks  服务包
+
+             Tools  工具
+
+             UpdateRollups  更新滚动条
+
+             Updates  更新
+
+             Upgrades  升级
+
+   [/D:] Date Interval of update
+[/D:] 更新日期间隔
+
+         Default *,*             Meaning all
+默认 *,* 表示全部
+
+         Format: From-To  格式：从至
+
+         *,dd.mm.yyyy            from anytime     to  dd.mm.yyyy
+*, dd.mm.yyyy from anytime to dd.mm.yyyy
+
+         dd.mm.yyyy,Now          from dd.mm.yyyy  to  Now
+日.月.年,现在 从日.月.年到现在
+
+         dd.mm.yyyy,-30          from dd.mm.yyyy  to  30 days ago
+日.月.年,-30 从日.月.年到 30 天前
+
+   [/Exit:]
+
+         Exit Action  退出行动
+
+         Default  "Nothing"  默认为 "无"
+
+         Valid actions: Nothing | Logoff | Sleep | Hibernate | Restart | Shutdown
+有效操作：无操作 | 注销 | 休眠 | 重启 | 关机
+
+   [/Input:] Also get updates that require user input?
+[/Input:] 还能获得需要用户输入的更新吗？
+
+         Default  /Input:Exclude  默认 /输入：排除
+
+         /Input:Exclude or /Input:Include
+/Input:Exclude 或 /Input:Include
+
+   [/K:] KB Article Number(s)
+[/K:] KB 文章编号
+
+         Default  include all KB's
+默认包括所有 KB
+
+         Comma separated list of KB Article numbers to include or exclude
+以逗号分隔的要包含或排除的 KB 文章编号列表
+
+         Use a "-" sign in front of KB number to exclude an update
+在 KB 编号前使用"-"号排除更新
+
+   [/Log:]
+
+         Filename for logging textual output
+记录文本输出的文件名
+
+         File is overwritten if already exist
+如果文件已经存在，则会被覆盖
+
+   [/Log_Append:]
+
+         Filename for logging textual output
+记录文本输出的文件名
+
+         Log data is appended to file
+日志数据被附加到文件
+
+   [/MailTo:]
+
+         eMail address to receive status when finished
+完成后接收状态信息的电子邮件地址
+
+         Comma separated list accepted
+接受逗号分隔的列表
+
+   [/MailFrom:]
+
+         eMail address to use as originator of status eMails
+用作状态电子邮件发件人的电子邮件地址
+
+   [/MailServ:]
+
+         Sending SMTP server name or IP address
+发送 SMTP 服务器名称或 IP 地址
+
+         Optional specify port number smtp.mydomain.com:25 (Port 25 is default)
+可选项 指定端口号 smtp.mydomain.com:25（默认端口为 25）
+
+   [/MailUser:]
+
+         SMTP Username (If sending SMTP server require authentication)
+SMTP 用户名（如果发送 SMTP 服务器要求验证）
+
+   [/MailPwd:]
+
+         SMTP Password (If sending SMTP server require authentication)
+SMTP 密码（如果发送 SMTP 服务器要求验证）
+
+   [/N:] Name / Title
+[/N:] 姓名/头衔
+
+         Default include all titles
+默认包括所有标题
+
+         Comma separated list of Update Titles to include or exclude
+以逗号分隔的要包括或排除的更新标题列表
+
+         Use a "-" sign in front of Update Title to exclude an update
+在更新标题前使用"-"号来排除更新
+
+         * Anything  * 任何事情
+
+         % One character  % 一个字符
+
+         # One digit  # 一位数
+
+   [/NW:] Network Wait  [网络等待
+
+         Default 30  默认值 30
+
+         /NW:30                         Wait max 30 seconds for DNS services
+/NW:30 DNS 服务最多等待 30 秒
+
+         /NW:30,myserver.mysomain.com   Wait max 30 sec. for Ping answer from myserver.mydomain.com
+/NW:30,myserver.mysomain.com 等待来自 myserver.mydomain.com 的 Ping 回答最多 30 秒
+
+   [/Q:] Query String  [/Q:] 查询字符串
+
+         Default  IsHidden=0 AND Isinstalled=0
+默认 IsHidden=0 和 Isinstalled=0
+
+   [/R:] Reboot If Needed  (Y/N) | Number
+[/R:] 需要时重启（Y/N） | 编号
+
+         Default  N  默认值 N
+
+         /R:Y      to allow one reboot if needed same as /R:1
+/R:Y 允许在需要时重启一次，与 /R:1 相同
+
+         /R:number to allow "count" reboots. Example /R:3
+/R:number 允许 "计数 "重启。示例 /R:3
+
+   [/S:] Server Type  [/S:] 服务器类型
+
+         Default  MSUpdate  默认 MSUpdate
+
+         WSUS | MSUpdate
+
+         or specify WSUS server  /S:WSUS=http://myserver.mydomain.com:8530
+或指定 WSUS 服务器 /S:WSUS=http://myserver.mydomain.com:8530
+
+   [/Schedule:] Service Window where ABC-Update is allowed to run
+[/Schedule:] 允许运行 ABC-Update 的服务窗口
+
+         Default  Run Now  默认立即运行
+
+         /Schedule:Name1; From Time; To Time; Delay Minutes
+
+         Example:  /Schedule:ABC-Update1;2018-12-30 21:00;2018-12-31 22:00;60
+示例： /Schedule:ABC-Update1;2018-12-30 21:00;2018-12-31 22:00;60
+
+         Example:  /Schedule:ABC-Update1;Delete
+示例：/Schedule:ABC-Update1;删除 /Schedule:ABC-Update1;Delete
+
+   [/T:] Type  [/T:] 类型
+
+         Default  /T:Software  默认 /T:Software
+
+         Comma separated list of update types to include
+以逗号分隔的更新类型列表
+
+         /T:Driver or /T:Software or /T:Driver,Software
+/T:Driver 或 /T:Software 或 /T:Driver,Software
+
+   [/TG:] WSUS Target Group
+[/TG:] WSUS 目标组
+
+         Default  "All Computers"
+默认为 "所有计算机
+
+         Name of target group in WSUS
+WSUS 中目标组的名称
+
+         Example:  /TG:Sales Office
+示例： /TG:销售办公室
+
+   [/WUA:] Windows Update Assistant
+[/WUA:] Windows 更新助手
+
+         Name of Windows Update Assistent to use if target not at latest Win10/Win11 version
+如果目标不是最新的 Win10/Win11 版本，要使用的 Windows 更新辅助工具名称
+
+         Default  Not set  默认值 未设置
+
+         Valid values:  /WUA:Win10 | /WUA:Win11
+有效值： /WUA:Win10 | /WUA:Win11
+
+         Example:  /WUA:Win11  示例： /WUA:Win11
+
+ 
+
+Examples:  例如
+
+ 
+
+   ABC-Update.exe
+
+   Default is to list installed and applicable missing updates from MSUpdate
+默认情况下，从 MSUpdate 列出已安装和适用的缺失更新
+
+ 
+
+   ABC-Update.exe /S:WSUS
+
+   List applicable but missing updates from WSUS server
+列出 WSUS 服务器中适用但缺失的更新
+
+ 
+
+   ABC-Update.exe /S:WSUS /A:Install /R:N
+
+   Install all installed and applicable but missing updates from WSUS Server
+从 WSUS 服务器安装所有已安装和适用但缺失的更新
+
+   No reboot  不重启
+
+ 
+
+   ABC-Update.exe /S:WSUS /A:Install /R:3 /C:SecurityUpdates
+
+   Install all applicable but missing SecurityUpdates from WSUS server
+从 WSUS 服务器安装所有适用但缺失的 SecurityUpdates
+
+   Reboot if needed - Max 3 times
+必要时重新启动 - 最多 3 次
+
+ 
+
+   ABC-Update.exe /S:WSUS /A:UnInstall /R:N /K:KB2585542,KB2631813
+
+   Uninstall two specific updates installed from WSUS Server
+卸载从 WSUS 服务器安装的两个特定更新
+
+   No reboot  不重启
+
+ 
+
+   ABC-Update.exe /S:WSUS /Q:IsHidden=0
+
+   List all applicable updates from WSUS server.
+列出 WSUS 服务器中所有适用的更新。
+
+   Both Installed and not installed updates
+已安装和未安装的更新
+
+
+
+Reporting results to MS Update
+向 MS Update 报告结果

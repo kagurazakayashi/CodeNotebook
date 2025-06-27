@@ -1,0 +1,18 @@
+# docker volume create frps-conf
+# cd /var/lib/docker/volumes/frps_conf/_data
+version: "3.7"
+
+services:
+  frps:
+    image: snowdreamtech/frps
+    container_name: frps
+    restart: unless-stopped
+    command: ["-c", "/root/conf/frps.ini"]
+    volumes:
+      - conf:/root/conf
+    ports:
+      - "7000:7000"        # frpc 用
+      - "63389:63389"      # RDP客户端连接到服务器端的端口
+      - "127.0.0.1:7500:7500"  # 控制面板限制仅本地访问
+volumes:
+  conf: {}

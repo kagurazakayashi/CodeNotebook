@@ -1,0 +1,29 @@
+# https://gofrp.org/zh-cn/docs/reference/client-configures/
+auth:
+  method: "token"
+  token: "***"
+user: "studiopcyashi"
+serverAddr: "106.37.225.92"
+serverPort: 7000
+loginFailExit: true
+log:
+  level: "trace"
+webServer:
+  addr: "127.0.0.1"
+  port: 7500
+  user: yashi
+  password: "***"
+transport:
+  tls:
+    enable: true
+proxies:
+  - name: "RDP-TCP"
+    type: "tcp"
+    localIP: "127.0.0.1"
+    localPort: 3389
+    remotePort: 63389
+  - name: "RDP-UDP"
+    type: "udp"
+    localIP: "127.0.0.1"
+    localPort: 3389
+    remotePort: 63389

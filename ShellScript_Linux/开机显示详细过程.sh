@@ -8,14 +8,12 @@ grub2-mkconfig -o /etc/default/grub
 vim /boot/efi/EFI/系统名/grub.cfg
 grub2-mkconfig -o /boot/efi/EFI/系统名/grub.cfg
 
-# 新系统
-cd /etc/grub.d && ls
-# 修改各个配置
-vim 10_linux
-# quiet_boot="0"
-# quick_boot="0"
-# gfxpayload_dynamic="0"
-# vt_handoff="0"
+# 新版系统
+vim /etc/grub.d/10_linux
+quiet_boot="0"
+quick_boot="0"
+gfxpayload_dynamic="0"
+vt_handoff="0"
 # 应用更改
 update-grub
 grub-mkconfig -o /etc/default/grub

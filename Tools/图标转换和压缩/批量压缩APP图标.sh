@@ -1,6 +1,8 @@
 #!/bin/sh
 # by 神楽坂雅詩
 # 在当前文件夹准备好 icon.png
+width=$(identify -format "%w" icon.png)
+radius=$((width / 5))
 # Android
 mkdir AndroidIcons
 mkdir AndroidIcons/mipmap-mdpi
@@ -40,3 +42,5 @@ convert icon.png -resize 180x180 AppIcon.appiconset/Icon-App-20x20@9x.png
 cp AppIcon.appiconset/Icon-App-20x20@9x.png AppIcon.appiconset/Icon-App-60x60@3x.png
 convert icon.png -resize 1024x1024 AppIcon.appiconset/Icon-App-1024x1024@1x.png
 cp Contents.json AppIcon.appiconset/Contents.json
+unset width
+unset radius
