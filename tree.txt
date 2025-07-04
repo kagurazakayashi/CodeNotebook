@@ -117,11 +117,16 @@
 │   ├── ./Batch_Windows/0x80070001更新系统和软件时报错.md
 │   ├── ./Batch_Windows/53DNS端口被系统服务占用.md
 │   ├── ./Batch_Windows/Alt-code符号输入.md
+│   ├── ./Batch_Windows/Bitlocker
+│   │   ├── ./Batch_Windows/Bitlocker/Bitlocker使用U盘解锁.txt
+│   │   ├── ./Batch_Windows/Bitlocker/Bitlocker每次启动都要输入恢复密钥才能进的解决.bat
+│   │   └── ./Batch_Windows/Bitlocker/Bitlocker配置开机输入PIN.bat
 │   ├── ./Batch_Windows/Compact压缩.bat
 │   ├── ./Batch_Windows/EFS文件加密证书备份和恢复.bat
 │   ├── ./Batch_Windows/MSYS2
 │   │   ├── ./Batch_Windows/MSYS2/MSYS2更新.sh
-│   │   └── ./Batch_Windows/MSYS2/MSYS2连接串口.sh
+│   │   ├── ./Batch_Windows/MSYS2/MSYS2连接串口.sh
+│   │   └── ./Batch_Windows/MSYS2/dd备份物理磁盘.sh
 │   ├── ./Batch_Windows/RunDll32.txt
 │   ├── ./Batch_Windows/START命令.txt
 │   ├── ./Batch_Windows/VisualStudio安装旧版本.txt
@@ -134,11 +139,12 @@
 │   ├── ./Batch_Windows/Win11绕过硬件检测iso.txt
 │   ├── ./Batch_Windows/Windows11开启IE.vbs
 │   ├── ./Batch_Windows/WindowsRE恢复分区重建.bat
+│   ├── ./Batch_Windows/WindowsServer安装应用商店.ps1
 │   ├── ./Batch_Windows/WindowsTerminal.md
 │   ├── ./Batch_Windows/Windows端口占用情况.bat
 │   ├── ./Batch_Windows/anyconnect临时开启服务.bat
+│   ├── ./Batch_Windows/chkdsk开机扫描硬盘.bat
 │   ├── ./Batch_Windows/cmd映射常用unix命令.bat
-│   ├── ./Batch_Windows/cygwin-mingw.txt
 │   ├── ./Batch_Windows/fastcopy.txt
 │   ├── ./Batch_Windows/for循环.bat
 │   ├── ./Batch_Windows/if.bat
@@ -166,17 +172,19 @@
 │   │   ├── ./Batch_Windows/regedit/恢复IcoCurAni文件关联.reg
 │   │   ├── ./Batch_Windows/regedit/恢复新建文本文档.reg
 │   │   ├── ./Batch_Windows/regedit/桌面显示IE图标.reg
+│   │   ├── ./Batch_Windows/regedit/禁止自动挂载盘符.reg
+│   │   ├── ./Batch_Windows/regedit/禁用Office硬件加速.reg
 │   │   ├── ./Batch_Windows/regedit/禁用文件管理左侧快速访问.reg
 │   │   ├── ./Batch_Windows/regedit/管理员取得所有权.reg
 │   │   ├── ./Batch_Windows/regedit/自动登录选项消失.reg
 │   │   ├── ./Batch_Windows/regedit/蓝屏允许手动触发.reg
 │   │   ├── ./Batch_Windows/regedit/蓝屏显示详细信息.reg
 │   │   └── ./Batch_Windows/regedit/解禁注册表编辑器.reg
+│   ├── ./Batch_Windows/thunderbird用户数据.md
 │   ├── ./Batch_Windows/一键创建还原点.vbs
 │   ├── ./Batch_Windows/不足位补0.bat
 │   ├── ./Batch_Windows/以其他身份运行cmd.txt
 │   ├── ./Batch_Windows/修复ico文件关联.bat
-│   ├── ./Batch_Windows/修复vhd文件关联.bat
 │   ├── ./Batch_Windows/修复vhd文件关联.reg
 │   ├── ./Batch_Windows/修复开始菜单.ps1
 │   ├── ./Batch_Windows/修复引导.bat
@@ -197,7 +205,6 @@
 │   ├── ./Batch_Windows/卸载cygwin.bat
 │   ├── ./Batch_Windows/卸载系统组件.bat
 │   ├── ./Batch_Windows/启动文件夹.md
-│   ├── ./Batch_Windows/启动项禁用Hyper-V.bat
 │   ├── ./Batch_Windows/命令行编译sln工程.bat
 │   ├── ./Batch_Windows/备份WSL.bat
 │   ├── ./Batch_Windows/备份文件加密密钥.md
@@ -212,6 +219,7 @@
 │   ├── ./Batch_Windows/手动安装CAB和MSU格式更新包.md
 │   ├── ./Batch_Windows/打包IPX协议.bat
 │   ├── ./Batch_Windows/扩展VHD.bat
+│   ├── ./Batch_Windows/批量禁止目录联网.bat
 │   ├── ./Batch_Windows/挂载VHD.bat
 │   ├── ./Batch_Windows/挂载VHD一键.bat
 │   ├── ./Batch_Windows/挂载vhd
@@ -224,15 +232,20 @@
 │   ├── ./Batch_Windows/每天第一次开机时重启.bat
 │   ├── ./Batch_Windows/清理Adobe.bat
 │   ├── ./Batch_Windows/清除字体缓存.bat
+│   ├── ./Batch_Windows/激活.ps1
 │   ├── ./Batch_Windows/用户.bat
 │   ├── ./Batch_Windows/磁盘碎片整理.bat
 │   ├── ./Batch_Windows/禁止提供ts文件缩略图.txt
+│   ├── ./Batch_Windows/离线更新.txt
+│   ├── ./Batch_Windows/离线更新：ABC-Update.txt
 │   ├── ./Batch_Windows/移动Outlook数据文件.bat
+│   ├── ./Batch_Windows/移除自定义权限.bat
 │   ├── ./Batch_Windows/移除迅雷xlwfp服务.bat
 │   ├── ./Batch_Windows/系统自带图标.md
 │   ├── ./Batch_Windows/结束进程.bat
 │   ├── ./Batch_Windows/编辑hosts.bat
 │   ├── ./Batch_Windows/虚拟内存.bat
+│   ├── ./Batch_Windows/解压IntelRST快速存储驱动.bat
 │   ├── ./Batch_Windows/解压缩WinXP安装包中的文件.bat
 │   ├── ./Batch_Windows/还原文件权限.bat
 │   ├── ./Batch_Windows/还原系统.bat
@@ -269,7 +282,7 @@
 │   ├── ./C/ASCII码表.md
 │   ├── ./C/C语言基础.c
 │   ├── ./C/HelloWorld.c
-│   ├── ./C/VisualStudio找不到标准库.txt
+│   ├── ./C/VisualStudio找不到标准库.md
 │   ├── ./C/clang-format.yaml
 │   ├── ./C/demo
 │   │   ├── ./C/demo/if嵌套求函数.c
@@ -613,6 +626,7 @@
 │   ├── ./Go/Redis_v8.go
 │   ├── ./Go/TelegramBot.go
 │   ├── ./Go/Unix的三种输入输出输入模式.go
+│   ├── ./Go/Windows下提示要用MinGW.md
 │   ├── ./Go/Windows生成带图标和信息的exe
 │   │   ├── ./Go/Windows生成带图标和信息的exe/langID_charsetID.md
 │   │   ├── ./Go/Windows生成带图标和信息的exe/manifest.xml
@@ -665,6 +679,7 @@
 │   ├── ./Go/字符串长度.go
 │   ├── ./Go/安装Go.sh
 │   ├── ./Go/安装库到GO_PATH.sh
+│   ├── ./Go/已经get包但是vscode找不到.md
 │   ├── ./Go/引用github私有库报错.md
 │   ├── ./Go/当前时间.go
 │   ├── ./Go/彩色输出.go
@@ -708,7 +723,8 @@
 │   ├── ./HTML/全局属性.txt
 │   ├── ./HTML/在新窗口打开链接方式.html
 │   ├── ./HTML/常见MIME类型.md
-│   └── ./HTML/禁止缓存.md
+│   ├── ./HTML/禁止缓存.md
+│   └── ./HTML/骑线文字标签.html
 ├── ./Hardware
 │   ├── ./Hardware/i系列处理器型号.txt
 │   ├── ./Hardware/macOS开启第三方SSD的Trim功能.sh
@@ -812,6 +828,7 @@
 │   ├── ./JavaScript/模拟点击.js
 │   ├── ./JavaScript/添加删除class.js
 │   ├── ./JavaScript/监控键盘.js
+│   ├── ./JavaScript/禁止IE.js
 │   ├── ./JavaScript/窗口尺寸.js
 │   ├── ./JavaScript/获取网址.js
 │   ├── ./JavaScript/请求数据.html
@@ -1017,12 +1034,17 @@
 │   ├── ./PostgreSQL/记住密码和备份.sh
 │   └── ./PostgreSQL/重置管理员密码.sh
 ├── ./Powershell
+│   ├── ./Powershell/Hyper-V
+│   │   ├── ./Powershell/Hyper-V/Hyper-V未配置为启用处理器资源控制.ps1
+│   │   ├── ./Powershell/Hyper-V/启动项禁用Hyper-V.bat
+│   │   └── ./Powershell/Hyper-V/导出Hyper-V虚拟机.ps1
 │   ├── ./Powershell/PFX证书清除密码.ps1
 │   ├── ./Powershell/oh-my-posh.ps1
 │   ├── ./Powershell/倒计时继续.ps1
 │   ├── ./Powershell/创建空白文件.ps1
 │   ├── ./Powershell/到指定时间关机.ps1
 │   ├── ./Powershell/操作剪贴板.ps1
+│   ├── ./Powershell/查询谁在占用COM串口.ps1
 │   ├── ./Powershell/比较运算符.ps1
 │   └── ./Powershell/读写文本.ps1
 ├── ./Proxy
@@ -1269,7 +1291,6 @@
 │   │   ├── ./Server/SSLTLS证书/SSL证书.sh
 │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置
 │   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/docker-compose.yml
-│   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/更新阿里云API.sh
 │   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/生成.sh
 │   │   │   ├── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/管理和删除.sh
 │   │   │   └── ./Server/SSLTLS证书/docker-acme免费证书-自用配置/续期.sh
@@ -1409,6 +1430,7 @@
 │   ├── ./ShellScript_Linux/zsh.sh
 │   ├── ./ShellScript_Linux/为新的硬盘创建FAT分区并开机挂载.sh
 │   ├── ./ShellScript_Linux/主机多终端切换快捷键.txt
+│   ├── ./ShellScript_Linux/二进制软件安装快捷方式.sh
 │   ├── ./ShellScript_Linux/从整台电脑中搜索一个字符串.sh
 │   ├── ./ShellScript_Linux/修改命令行模式字体大小.sh
 │   ├── ./ShellScript_Linux/修改时区.sh
@@ -1419,6 +1441,7 @@
 │   ├── ./ShellScript_Linux/创建iso.md
 │   ├── ./ShellScript_Linux/创建用户并给予sudo权限.sh
 │   ├── ./ShellScript_Linux/创建虚拟机和虚拟盘格式转换.sh
+│   ├── ./ShellScript_Linux/创建随机内容文件.sh
 │   ├── ./ShellScript_Linux/删除旧内核.sh
 │   ├── ./ShellScript_Linux/删除旧文件.sh
 │   ├── ./ShellScript_Linux/升级CentOS.sh
@@ -1445,6 +1468,7 @@
 │   ├── ./ShellScript_Linux/开机运行一个脚本.sh
 │   ├── ./ShellScript_Linux/开机进命令行还是图形.sh
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
+│   ├── ./ShellScript_Linux/恢复刚删除的文件.sh
 │   ├── ./ShellScript_Linux/挂载U盘.sh
 │   ├── ./ShellScript_Linux/挂载Windows文件共享smb.sh
 │   ├── ./ShellScript_Linux/按月份归档每日文件夹.sh
@@ -1473,8 +1497,8 @@
 │   ├── ./ShellScript_Linux/监视文件改动.sh
 │   ├── ./ShellScript_Linux/磁盘分区扩容.sh
 │   ├── ./ShellScript_Linux/磁盘测速.sh
+│   ├── ./ShellScript_Linux/禁止关屏休眠.sh
 │   ├── ./ShellScript_Linux/禁止黑屏.sh
-│   ├── ./ShellScript_Linux/离线下载镜像.sh
 │   ├── ./ShellScript_Linux/端口.sh
 │   ├── ./ShellScript_Linux/系统服务创建systemctl.md
 │   ├── ./ShellScript_Linux/系统版本.sh
@@ -1658,11 +1682,17 @@
 │   │   └── ./Tools/GPG/Yubikey创建GPG.bat
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/PhotoGIMP.sh
+│   ├── ./Tools/RDP远程桌面内网穿透
+│   │   ├── ./Tools/RDP远程桌面内网穿透/docker-compose.yml
+│   │   ├── ./Tools/RDP远程桌面内网穿透/frpc.yaml
+│   │   ├── ./Tools/RDP远程桌面内网穿透/frps.yaml
+│   │   └── ./Tools/RDP远程桌面内网穿透/客户端.bat
 │   ├── ./Tools/RustDesk导出主机目录.md
 │   ├── ./Tools/RustDesk自托管.docker-compose.yml
 │   ├── ./Tools/SVG转PNG
 │   │   ├── ./Tools/SVG转PNG/svg转png.md
 │   │   └── ./Tools/SVG转PNG/去除png透明空边.py
+│   ├── ./Tools/Windows通过串口提供CMD.md
 │   ├── ./Tools/exiftool.sh
 │   ├── ./Tools/hash校验文件.sh
 │   ├── ./Tools/matrix.sh
@@ -1692,9 +1722,10 @@
 │   ├── ./Tools/压缩炸弹.sh
 │   ├── ./Tools/图标转换和压缩
 │   │   ├── ./Tools/图标转换和压缩/Contents.json
+│   │   ├── ./Tools/图标转换和压缩/批量压缩APP图标.bat
+│   │   ├── ./Tools/图标转换和压缩/批量压缩APP图标.sh
 │   │   ├── ./Tools/图标转换和压缩/批量转换为TG贴纸图.bat
-│   │   ├── ./Tools/图标转换和压缩/雅诗GIF表情包压缩.sh
-│   │   └── ./Tools/图标转换和压缩/雅诗批量压缩APP图标.sh
+│   │   └── ./Tools/图标转换和压缩/雅诗GIF表情包压缩.sh
 │   ├── ./Tools/在html中列出系统中的所有等宽字体.py
 │   ├── ./Tools/宝塔续签LetsEncrypt证书.sh
 │   ├── ./Tools/将文件名写入EXIF标题.sh
@@ -1820,11 +1851,13 @@
 │   ├── ./TypeScript/声明Obejct、新增对象.ts
 │   ├── ./TypeScript/声明变量、确定类型.ts
 │   ├── ./TypeScript/委托.ts
+│   ├── ./TypeScript/子类间读取属性.ts
 │   ├── ./TypeScript/字典.ts
 │   ├── ./TypeScript/建立空项目.sh
 │   ├── ./TypeScript/引入MDUI.ts
 │   ├── ./TypeScript/数组.ts
 │   ├── ./TypeScript/数组_固定长度.ts
+│   ├── ./TypeScript/数组作为每个参数.ts
 │   ├── ./TypeScript/数组遍历、迭代器iterator.ts
 │   ├── ./TypeScript/枚举.ts
 │   ├── ./TypeScript/泛型.ts
@@ -1832,6 +1865,7 @@
 │   ├── ./TypeScript/计算区间.ts
 │   ├── ./TypeScript/迭代函数、生成器generator.ts
 │   └── ./TypeScript/颜色亮度.ts
+├── ./desktop.ini
 ├── ./iOS
 │   ├── ./iOS/Xcode编译脚本变量.sh
 │   └── ./iOS/修改iTunes更新和备份目录.bat
@@ -1951,4 +1985,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-138 directories, 1814 files
+141 directories, 1845 files
