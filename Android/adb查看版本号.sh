@@ -4,7 +4,7 @@
 adb shell getprop ro.build.version.release
 # 13
 
-# 查看 API 版本（即 SDK 版本）
+# 查看 API版本 （即 SDK版本 ）
 adb shell getprop ro.build.version.sdk
 # 33
 

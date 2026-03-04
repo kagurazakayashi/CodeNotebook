@@ -5,5 +5,4 @@ groupadd group01
 groupadd -g 503 group01
 
 # 把用户加入组
-# 没有标准程序可以方便地把用户加入组中。
-# 编辑 /etc/group 文件，把用户名加入到组的成员列表中。
+usermod -aG 组名 用户名

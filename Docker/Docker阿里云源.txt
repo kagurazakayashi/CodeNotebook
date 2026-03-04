@@ -1,0 +1,10 @@
+# Docker阿里云源
+https://help.aliyun.com/zh/acr/user-guide/accelerate-the-pulls-of-docker-official-images
+
+vim /etc/docker/daemon.json
+{
+  "registry-mirrors": ["https://xxxxx.mirror.aliyuncs.com"]
+}
+
+systemctl daemon-reload
+systemctl restart docker

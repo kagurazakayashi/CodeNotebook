@@ -1,3 +1,7 @@
+# 1. 强制将已追踪的文件恢复到 HEAD 状态（包括暂存区和工作区）
+# 2. 删除所有未追踪的文件和文件夹
+git reset --hard HEAD && git clean -fd
+
 # 删除本地所有未提交的更改
 git checkout . && git clean -xdf
 

@@ -1,0 +1,11 @@
+docker build -t darch:latest .
+docker save darch:latest | xz -z -1 -c -v > darch.tar.xz
+openssl sha256 darch.tar.xz
+
+curl --socks5-hostname 127.0.0.1:23332 -o darch.tar.xz "http://103.121.211.126/darch.tar.xz"
+openssl sha256 darch.tar.xz
+xz -d -v -c darch.tar.xz | docker load
+docker compose up -d
+docker attach arch
+exit
+docker compose down

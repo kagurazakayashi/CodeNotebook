@@ -1,0 +1,31 @@
+; 禁止自动挂载盘符.reg
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MountMgr]
+"NoAutoMount"=dword:00000001
+
+; 允许自动挂载盘符.reg
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MountMgr]
+"NoAutoMount"=-
+
+
+; 使用 DiskPart 禁用自动挂载（建议用上面的注册表方式）: 
+; diskpart
+
+; 禁用自动挂载
+; automount disable
+
+; 清除已保存的挂载点（慎用，会删除已存在的挂载记录）
+automount scrub
+
+; 恢复自动挂载
+; automount enable
+
+; 查询
+automount
+
+; 输入 exit 退出 diskpart。

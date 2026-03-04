@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\RunAsCmd]
+"MUIVerb"="以管理员提权运行"
+"HasLUAShield"=""
+"Icon"="cmd.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\RunAsCmd\command]
+@="powershell -Command \"Start-Process -FilePath 'cmd.exe' -Verb RunAs -ArgumentList @('/c','\\\"%1\\\"')\""

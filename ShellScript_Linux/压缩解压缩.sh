@@ -24,6 +24,8 @@ tar -cv dir | xz -z -9 -e -T 0 -v >dir.tar.xz
 tar -cv dir | nice -n 19 xz -z -9 -e -T 0 -v >dir.tar.xz
 # 解压 tar.xz
 tar -Jxvf dir.tar.xz
+# 解压多个xz到另一个文件夹
+for f in *.xz; do xz -dvc "$f" > out/${f%.xz}; done
 # 查看 CPU 核心数
 more /proc/cpuinfo |grep "physical id"|uniq|wc -l
 

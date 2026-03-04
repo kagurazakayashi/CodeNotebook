@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  arch:
+    # 1. 关键改动：去掉 build 段落，改为 image
+    # 请确保这里的镜像名称与你在国外主机构建（及 docker load）时的名称一致
+    image: darch:latest
+    
+    container_name: arch
+    hostname: darch
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=zh_CN.UTF-8
+      - LC_ALL=zh_CN.UTF-8
+      - LANGUAGE=zh_CN:zh
+    
+    # 保持交互模式，配合你的 ENTRYPOINT ["zsh", "-i"]
+    stdin_open: true
+    tty: true
+    
+    volumes:
+      - /root:/root
+      - /home:/home
+      # 注意：挂载宿主机根目录到 /mnt 是高风险操作，请确保你了解其含义
+      - /:/mnt
+    
+    # 建议保留 0:0 以确保对挂载目录有完全访问权
+    user: "0:0"
+    restart: "no"

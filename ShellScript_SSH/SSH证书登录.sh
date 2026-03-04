@@ -14,6 +14,12 @@ ssh-keygen -m PEM -t rsa -b 4096 -C ssh.rsa
 cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
 
 ssh-keygen -m PEM -t ed25519 -C ssh.ed25519
+# ed25519 更新：
+ssh-keygen -t ed25519 -a 128 -C "ssh.ed25519" -f ~/.ssh/id_ed25519
+# -a：提高 KDF 轮数（加密私钥时更抗暴力破解）。默认一般是 16，调高对安全更友好，代价是解锁私钥时慢一点点。
+# -f：显式指定文件名，避免覆盖已有 key。
+# -C：改用 youremail@example.com-MBP2026 这样更具辨识度的标签
+# 不加 -m PEM：保留默认 OpenSSH 私钥格式。
 cat ~/.ssh/id_ed25519.pub > ~/.ssh/authorized_keys
 
 chmod 0700 ~/.ssh

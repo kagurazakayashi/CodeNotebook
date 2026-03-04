@@ -1,0 +1,25 @@
+系统策略禁止安装此设备。请与系统管理员联系。
+
+gpedit.msc
+
+计算机配置 → 管理模板 → 系统 → 设备安装 → 设备安装限制
+
+找到并修改以下策略：
+“禁止安装未由其他策略描述的设备” → 设置为 “未配置” 或 “已禁用”
+“禁止安装与这些设备实例 ID 相匹配的设备” → 设置为 “未配置”
+“允许管理员覆盖这些设备安装限制策略” → 设置为 “已启用”
+
+阻止使用与下列设备安装程序类相匹配的驱动程序安装设备 -> “已禁用”
+
+gpupdate /force
+
+
+
+regedit
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Restrictions
+
+删除以下值（如果存在）：
+DenyDeviceIDs
+DenyDeviceIDsRetroactive
+DenyUnspecified

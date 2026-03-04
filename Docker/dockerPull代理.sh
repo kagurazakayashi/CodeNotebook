@@ -19,3 +19,14 @@ systemctl restart docker
 
 # 验证配置
 systemctl show --property=Environment docker
+
+
+# ASUSTOR NAS 怎样为 docker pull 设置代理？
+vi /etc/docker/daemon.json
+# {
+#   "proxies": {
+#     "http-proxy": "http://192.168.2.200:23334",
+#     "https-proxy": "http://192.168.2.200:23334",
+#     "no-proxy": "localhost,127.0.0.1,localaddress,.localdomain.com"
+#   }
+# }

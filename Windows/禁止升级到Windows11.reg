@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"DisableWindowsUpdateAccess"=dword:00000000
+"TargetReleaseVersion"=dword:00000001
+"ProductVersion"="Windows 10"
+"TargetReleaseVersionInfo"="22H2"
+
+-----
+修改组策略 gpedit.msc
+计算机配置 -> 管理模板 -> Windows组件 -> Windows更新 -> 适用于企业的 Windows 更新 -> 选择目标功能更新版本
+你希望接收哪个 Windows 产品版本的功能更新?   Windows 10
+功能更新的目标版本  22H2

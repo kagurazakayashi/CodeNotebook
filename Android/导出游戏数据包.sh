@@ -42,10 +42,20 @@ adb pull /data/data/com.papegames.nn4.tw
 adb push com.papegames.nn4.tw /data/data/
 
 # 模拟器
-win版
+# win版
 adb connect 127.0.0.1:7555 # mumu
 adb connect 127.0.0.1:5555 # 雷电
 adb shell
-mac版
+# mac版
 adb kill-server && adb server
 adb devices
+
+# 米游
+com.mihoyo.hoyolab # 外服米游社
+com.mihoyo.hyperion # 米游社
+com.miHoYo.enterprise.NGHSoD # 崩坏3
+adb pull /storage/emulated/0/Android/data/com.miHoYo.enterprise.NGHSoD
+com.miHoYo.hkrpg # 崩坏星穹铁道
+com.miHoYo.Yuanshen # 原神国服
+com.miHoYo.GenshinImpact # 原神外服
+com.mihoyo.desktopportal # 人工桌面

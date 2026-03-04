@@ -17,10 +17,8 @@ git pull
 git checkout v4.2.3
 
 # 还原配置
-cd ..
-cat docker-compose.yml >mastodon/docker-compose.yml
-cat env.production >mastodon/.env.production
-cd mastodon
+cat ../docker-compose.yml >docker-compose.yml
+cat ../env.production >.env.production
 
 docker-compose up -d --build # = docker-compose build && docker-compose up -d
 
@@ -28,8 +26,11 @@ docker-compose up -d --build # = docker-compose build && docker-compose up -d
 docker-compose down
 docker-compose build
 docker-compose run --rm web rails assets:precompile #编译
-docker-compose run --rm web rails db:migrate
+docker-compose run --rm -e SKIP_POST_DEPLOYMENT_MIGRATIONS=true web bundle exec rails db:migrate # 数据库迁移
 docker-compose run --rm web bin/tootctl feeds build #构建用户首页时间流
+docker-compose up
+# Ctrl+C
+docker-compose run --rm web bundle exec rails db:migrate # 数据库迁移
 docker-compose up -d
 
 # ERROR: dockerfile parse error line 8: Unknown flag: link

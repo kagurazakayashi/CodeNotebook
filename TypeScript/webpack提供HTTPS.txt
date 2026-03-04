@@ -1,0 +1,44 @@
+webpack提供HTTPS
+
+目录结构（示例）
+project/
+  certs/
+    server.key          # 私钥（PEM）
+    server.crt          # 证书（PEM，含中间证书链更好）
+    ca_bundle.crt       # 可选：中间证书链
+  webpack.config.js
+  src/...
+
+webpack.config.js 中的
+    // 開發伺服器配置，設定開發伺服器的行為
+    devServer: {
+      host: '0.0.0.0', // 需要外网/局域网访问时
+      port: 8443,      // 避免占用 443
+      server: {
+        type: 'https',
+        options: {
+          // .pem/.crt 格式:
+          key: fs.readFileSync(path.resolve(__dirname, 'certs/server.key')),
+          cert: fs.readFileSync(path.resolve(__dirname, 'certs/server.crt')),
+          // 如果有中间证书链（推荐提供，以避免浏览器“链不完整”）
+          ca: fs.existsSync(path.resolve(__dirname, 'certs/ca_bundle.crt'))
+            ? fs.readFileSync(path.resolve(__dirname, 'certs/ca_bundle.crt'))
+            : undefined,
+          // passphrase: '私钥口令',
+          // .pfx/.p12 格式:
+          // pfx: fs.readFileSync(path.resolve(__dirname, 'certs/server.pfx')),
+          // passphrase: '你的PFX口令',
+        },
+      },
+      static: {
+        directory: path.resolve(__dirname, 'dist'),
+        // publicPath: '/',
+        watch: true, // 只監聽這個目錄
+      },
+      watchFiles: ['src/**/*'],
+      compress: true,
+      port: 9000,
+      devMiddleware: {
+        writeToDisk: true,
+      },
+    },

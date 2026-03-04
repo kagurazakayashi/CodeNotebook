@@ -1,0 +1,50 @@
+IIS URL重写: https://www.iis.net/downloads/microsoft/url-rewrite
+IIS反向代理: https://www.iis.net/downloads/microsoft/application-request-routing
+
+配置反向代理步骤
+打开 IIS 管理器，选中你的网站（或默认网站）。
+双击 “URL Rewrite” 图标。
+在右侧操作栏点击 “添加规则...” → “反向代理”（Reverse Proxy）。
+系统会提示你启用 ARR 代理功能，点击 “是”。
+在弹出的窗口中输入目标服务器（即后端服务）的 URL，例如：
+http://localhost:5000
+保存后，IIS 会自动创建对应的 rewrite 规则。
+
+保留原始 Host 头
+在 ARR 服务器上：
+打开 IIS 管理器 → 服务器根节点 → 双击 “Application Request Routing Cache”
+在右侧点击 “Server Proxy Settings...”
+勾选 “Enable Proxy”
+勾选 “Preserve client host header”（保留原始 Host 头）
+
+禁用缓存（用于测试实时页面）
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+Expires: 0
+ETag: no-cache
+
+
+配置一个反向代理： 当我访问 http://localhost/9000 时， 相当于访问 http://127.0.0.1:9000/9000 。
+1. 安装后：
+打开 IIS 管理器 → 点击服务器根节点
+双击 Application Request Routing Cache
+右侧点击 “Server Proxy Settings…”
+勾选 Enable proxy
+2. 配置 web.config 文件
+在你网站的根目录创建或编辑 web.config，添加以下内容：
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="Reverse Proxy to 127.0.0.1:9000" enabled="true" stopProcessing="true">
+          <match url="(.*)" />
+          <action type="Rewrite" url="http://127.0.0.1:9000/{R:1}" />
+        </rule>
+      </rules>
+    </rewrite>
+    <proxy enabled="true" />
+  </system.webServer>
+</configuration>
+

@@ -22,4 +22,3 @@ docker-compose stop 服务名
 docker-compose start 服务名 
 #停止并删除容器、网络、卷、镜像 
 docker-compose down
-

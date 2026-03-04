@@ -3,7 +3,7 @@
 # Debian
 
 apt-get install locales
-dpkg-reconfigure locales # 在界面中钩选上“zh_CN.UTF-8”即可。
+/usr/sbin/dpkg-reconfigure locales # 在界面中钩选上“zh_CN.UTF-8”即可。
 
 
 # Linux

@@ -6,7 +6,9 @@ du -a / 2>/dev/null | sort -n -r | head -n 25
 # head : 输出文件内容的前面部分.
 
 # 导出并压缩
-du -a / 2>/dev/null | sort -n -r | xz -z -e -9 -T 0 -v -c >du_sort_`date +%Y-%m-%d-%H-%M-%S-%s`.log.xz
+du -a / 2>/dev/null | sort -n -r | nice -n 19 xz -z -e -9 -T 0 -v -c >du_sort_`date +%Y-%m-%d-%H-%M-%S-%s`.log.xz
+# 排序压缩包
+xz -d $file -v -c | head -n 25
 
 # 输出可读性高的内容：
 # 先进入要统计的文件夹：

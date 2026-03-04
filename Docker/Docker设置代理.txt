@@ -1,0 +1,11 @@
+# Docker设置代理
+
+vim /etc/docker/daemon.json
+
+{
+  "proxies": {
+    "http-proxy": "http://192.168.1.45:23334",
+    "https-proxy": "http://192.168.1.45:23334",
+    "no-proxy": "127.0.0.0/8,192.0.0.0/8,106.37.225.0/2,39.96.223.224"
+  }
+}
