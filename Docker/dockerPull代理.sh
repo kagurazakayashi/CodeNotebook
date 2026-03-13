@@ -30,3 +30,14 @@ vi /etc/docker/daemon.json
 #     "no-proxy": "localhost,127.0.0.1,localaddress,.localdomain.com"
 #   }
 # }
+
+vim ~/.docker/config.json
+# {
+#  "proxies": {
+#    "default": {
+#      "httpProxy": "http://192.168.255.1:23334",
+#      "httpsProxy": "http://192.168.255.1:23334",
+#      "noProxy": "localhost,127.0.0.1"
+#    }
+#  }
+# }

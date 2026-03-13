@@ -1,3 +1,6 @@
+# 检查最新版本
+# https://github.com/mastodon/mastodon/releases
+
 # 更新Mastodon更新
 cd /home/mastodon/mastodon
 
@@ -45,3 +48,15 @@ docker build .
 # 修改字数上限到 50000
 sed -i 's/500/50000/g' /home/mastodon/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx # 旧: /js
 sed -i 's/500/50000/g' /home/mastodon/mastodon/app/validators/status_length_validator.rb
+
+# 清理构建缓存
+docker builder prune
+# 更彻底地清理（包括那些被其他镜像引用的缓存）
+docker builder prune -a
+
+# 清理悬空镜像
+# 每次重新构建镜像时，旧的镜像标签会被移动到新镜像上，导致旧镜像变成没有标签的“悬空镜像”（显示为 <none>:<none>）。清理它们能释放大量空间：
+docker image prune
+
+# 一键清理(停止的容器也会遭到清理)
+docker system prune
