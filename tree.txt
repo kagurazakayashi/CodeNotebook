@@ -1483,6 +1483,8 @@
 │   ├── ./ShellScript_macOS/CocoaPods安装.sh
 │   ├── ./ShellScript_macOS/NAS时间机器备份修复.md
 │   ├── ./ShellScript_macOS/Windows_VirtualBox_macOS11.bat
+│   ├── ./ShellScript_macOS/hdiutil_create命令详解.md
+│   ├── ./ShellScript_macOS/hdiutil从文件夹创建dmg高压缩.sh
 │   ├── ./ShellScript_macOS/mac安装app转iso.sh
 │   ├── ./ShellScript_macOS/mumu服务启动.sh
 │   ├── ./ShellScript_macOS/vbox引导bootcamp系统.sh
@@ -1502,6 +1504,7 @@
 │   ├── ./ShellScript_macOS/禁用休眠文件.sh
 │   ├── ./ShellScript_macOS/禁用虚拟内存.sh
 │   ├── ./ShellScript_macOS/第二个管理员账户没有usr_local权限.sh
+│   ├── ./ShellScript_macOS/编译dislocker挂载BitLocker.sh
 │   ├── ./ShellScript_macOS/获取当前语言.sh
 │   ├── ./ShellScript_macOS/连接串口.sh
 │   └── ./ShellScript_macOS/驱动.sh
@@ -1746,6 +1749,7 @@
 │   ├── ./Windows/53DNS端口被系统服务占用.md
 │   ├── ./Windows/Alt-code符号输入.md
 │   ├── ./Windows/Bitlocker
+│   │   ├── ./Windows/Bitlocker/BitLockerPE.bat
 │   │   ├── ./Windows/Bitlocker/Bitlocker使用U盘解锁.txt
 │   │   ├── ./Windows/Bitlocker/Bitlocker每次启动都要输入恢复密钥才能进的解决.bat
 │   │   ├── ./Windows/Bitlocker/Bitlocker解锁.bat
@@ -2070,4 +2074,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-147 directories, 1924 files
+147 directories, 1928 files
