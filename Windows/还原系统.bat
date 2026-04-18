@@ -28,3 +28,23 @@ DISM /Online /Cleanup-image /Checkhealth
 
 @REM 修复损坏的系统文件
 DISM /Online /Cleanup-image /Restorehealth
+
+
+@REM 扫描USB连接的系统盘
+
+@REM 扫描健康状况（仅检查，不修复）：
+dism /Image:D:\ /Cleanup-Image /ScanHealth
+@REM 检查损坏程度（查看是否可以修复）：
+dism /Image:D:\ /Cleanup-Image /CheckHealth
+@REM 执行修复操作：
+dism /Image:D:\ /Cleanup-Image /RestoreHealth
+@REM 辅助修复（SFC 扫描）
+@REM DISM 修复的是系统组件库（WinSxS），而 SFC 修复的是具体的系统文件。在完成 DISM 修复后，建议运行脱机 SFC 扫描：
+sfc /scannow /offbootdir=D:\ /offwindir=D:\windows
+@REM /offbootdir：指向引导分区（通常和系统分区一致）。
+@REM /offwindir：指向 Windows 目录的具体路径。
+
+@REM 如果修复提示“找不到源文件”，执行带源修复命令：
+dism /Image:D:\ /Cleanup-Image /RestoreHealth /Source:WIM:E:\sources\install.wim:1 /LimitAccess
+@REM 先查安装源里都有什么
+DISM /Get-WimInfo /WimFile:E:\sources\install.wim

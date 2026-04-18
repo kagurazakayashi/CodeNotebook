@@ -1,4 +1,4 @@
-Flutter窗口大小调整为手机比例
+Flutter窗口尺寸窗口大小调整为手机比例
 
 
 example\macos\Runner\MainFlutterWindow.swift:
@@ -7,7 +7,7 @@ example\macos\Runner\MainFlutterWindow.swift:
 + self.setContentSize(NSSize(width: 414, height: 736))
 
 
-example\linux\my_application.cc:
+example\linux\runner\my_application.cc:
 
 - gtk_window_set_default_size(window, 1280, 720);
 + gtk_window_set_default_size(window, 414, 736);
