@@ -3,6 +3,7 @@
 │   ├── ./AI/Ollama导入导出模型.bat
 │   ├── ./AI/Ollama环境变量.ini
 │   ├── ./AI/Windows安装CUDA驱动.md
+│   ├── ./AI/modelcontextprotocol-MCP包.bat
 │   ├── ./AI/ollama.docker-compose.yml
 │   ├── ./AI/yolo.bat
 │   └── ./AI/yolo_cam.py
@@ -10,6 +11,8 @@
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
 │   └── ./Algorithm/邻接表表示的无向图每一个连通分量的结点.c
+├── ./All
+│   └── ./All/常见语言的代码检查静态分析命令.md
 ├── ./Android
 │   ├── ./Android/Debian安装AndroidStudio.sh
 │   ├── ./Android/Gradle打包.sh
@@ -313,7 +316,6 @@
 ├── ./Config
 │   ├── ./Config/常用Windows禁用权限.txt
 │   └── ./Config/火绒设置
-│       ├── ./Config/火绒设置/Huorong-Rules
 │       ├── ./Config/火绒设置/IP协议控制
 │       │   └── ./Config/火绒设置/IP协议控制/飞秋仅允许局域网通信.json
 │       ├── ./Config/火绒设置/IP黑名单.json
@@ -535,7 +537,6 @@
 │   ├── ./Go/get私有库失败.sh
 │   ├── ./Go/int和byte互转.go
 │   ├── ./Go/int最大值.go
-│   ├── ./Go/libNyaruko_Go
 │   ├── ./Go/linux使用最新版本.sh
 │   ├── ./Go/map.go
 │   ├── ./Go/map_concurrent-map.go
@@ -606,6 +607,8 @@
 │   ├── ./Go/读写文本文档1.go
 │   ├── ./Go/读写文本文档2.go
 │   ├── ./Go/运行外部程序.go
+│   ├── ./Go/配置专用环境变量.bat
+│   ├── ./Go/配置临时文件路径.bat
 │   ├── ./Go/键盘输入.go
 │   └── ./Go/随机数.go
 ├── ./HTML
@@ -757,7 +760,10 @@
 │   └── ./JavaScript_Electron/编译到out文件夹.sh
 ├── ./JavaScript_Node
 │   ├── ./JavaScript_Node/Mac上完整卸载nodejs.sh
-│   └── ./JavaScript_Node/npm检查包更新.sh
+│   ├── ./JavaScript_Node/npm检查包更新.sh
+│   ├── ./JavaScript_Node/卸载所有npm-g包.bat
+│   ├── ./JavaScript_Node/卸载所有npm-g包.sh
+│   └── ./JavaScript_Node/配置npm-g包的存放路径.bat
 ├── ./JavaScript_React
 │   ├── ./JavaScript_React/react-native-cli.sh
 │   ├── ./JavaScript_React/修改CSS样式.js
@@ -864,7 +870,6 @@
 │   ├── ./PHP/Redis_PHP.php
 │   ├── ./PHP/ctype字符串检测.php
 │   ├── ./PHP/function模板.php
-│   ├── ./PHP/libNyaruko_PHP
 │   ├── ./PHP/从数组中删除元素.php
 │   ├── ./PHP/保留两位小数.php
 │   ├── ./PHP/函数输入不定数量参数.php
@@ -1034,7 +1039,6 @@
 │   ├── ./Q/按键精灵小说刷屏.Q
 │   └── ./Q/按键精灵微信自动退群.Q
 ├── ./README.md
-├── ./RaspberryPi
 ├── ./RegularExpression
 │   ├── ./RegularExpression/取得页面所有的图片地址.php
 │   ├── ./RegularExpression/常用正则表达式.md
@@ -1124,6 +1128,7 @@
 │   │   ├── ./Server/SSLTLS证书/自签CA并自签证书.sh
 │   │   ├── ./Server/SSLTLS证书/自签多域名证书.sh
 │   │   ├── ./Server/SSLTLS证书/自签泛域名证书.sh
+│   │   ├── ./Server/SSLTLS证书/自签证书.sh
 │   │   ├── ./Server/SSLTLS证书/证书信息查看.md
 │   │   ├── ./Server/SSLTLS证书/证书格式转换.md
 │   │   └── ./Server/SSLTLS证书/还原OpensslCA的index.txt.md
@@ -1308,6 +1313,7 @@
 │   ├── ./ShellScript_Linux/开机自动解密LUKS分区.sh
 │   ├── ./ShellScript_Linux/开机运行一个脚本.sh
 │   ├── ./ShellScript_Linux/开机进命令行还是图形.sh
+│   ├── ./ShellScript_Linux/强行重启命令.sh
 │   ├── ./ShellScript_Linux/志愿计算：FAHClient.sh
 │   ├── ./ShellScript_Linux/恢复刚删除的文件.sh
 │   ├── ./ShellScript_Linux/挂载
@@ -1545,6 +1551,7 @@
 │   │   ├── ./Tools/ImageMagick/ImageMagick.sh
 │   │   ├── ./Tools/ImageMagick/修正EXIF方向.bat
 │   │   ├── ./Tools/ImageMagick/图片拆分-长图分割为等份小图.bat
+│   │   ├── ./Tools/ImageMagick/复制EXIF.bat
 │   │   └── ./Tools/ImageMagick/拼接图片-小图拼接成长图.bat
 │   ├── ./Tools/JSON转XLS.py
 │   ├── ./Tools/Parse
@@ -1699,6 +1706,7 @@
 │   ├── ./Tools_Git/修改已提交的记录.sh
 │   ├── ./Tools_Git/删除所有变更.sh
 │   ├── ./Tools_Git/删除最近几次的提交.sh
+│   ├── ./Tools_Git/取出某个文件的历史版本.sh
 │   ├── ./Tools_Git/子模块.sh
 │   ├── ./Tools_Git/常用设置.sh
 │   ├── ./Tools_Git/彻底删除某文件包括历史版本中.sh
@@ -1720,7 +1728,6 @@
 │   ├── ./TypeScript/eslintrc.js
 │   ├── ./TypeScript/guard-for-in.txt
 │   ├── ./TypeScript/interface接口.ts
-│   ├── ./TypeScript/libNyaruko_TS
 │   ├── ./TypeScript/tsconfig.json
 │   ├── ./TypeScript/webpack.config.js
 │   ├── ./TypeScript/webpack参数.txt
@@ -2056,7 +2063,6 @@
 │   ├── ./icon/icon.icns
 │   ├── ./icon/icon.ico
 │   └── ./icon/icon.png
-├── ./linux-command
 ├── ./macOS_Objective-C
 │   ├── ./macOS_Objective-C/只支持M处理器或Intel处理器.txt
 │   ├── ./macOS_Objective-C/打开终端APP运行一个外部命令.m
@@ -2065,7 +2071,6 @@
 │   ├── ./macOS_Objective-C/获取区域和语言.m
 │   ├── ./macOS_Objective-C/退出程序.m
 │   └── ./macOS_Objective-C/针对特定平台编译.md
-├── ./reference
 ├── ./tree.txt
 ├── ./vue
 │   ├── ./vue/TinyMCE
@@ -2080,4 +2085,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-147 directories, 1934 files
+141 directories, 1945 files
