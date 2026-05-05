@@ -2,14 +2,14 @@
 
 ## 走 HTTP 代理
 ```bash
-git config --global http.proxy "http://127.0.0.1:8080"
-git config --global https.proxy "http://127.0.0.1:8080"
+git config --global http.proxy "http://127.0.0.1:23333"
+git config --global https.proxy "http://127.0.0.1:23333"
 ```
 
-## 走 socks5 代理（如 Shadowsocks）
+## 走 socks5 代理
 ```bash
-git config --global http.proxy "socks5://127.0.0.1:1080"
-git config --global https.proxy "socks5://127.0.0.1:1080"
+git config --global http.proxy "socks5://127.0.0.1:23333"
+git config --global https.proxy "socks5://127.0.0.1:23333"
 ```
 
 ## 取消设置
@@ -20,7 +20,7 @@ git config --global --unset https.proxy
 
 # 设置代理 Windows BAT
 
-SET http_proxy=http://127.0.0.1:23333
+SET http_proxy=socks5://127.0.0.1:23333
 SET https_proxy=%http_proxy%
 SET ftp_proxy=%http_proxy%
 SET rsync_proxy=%http_proxy%
@@ -37,7 +37,7 @@ SET NO_PROXY=%no_proxy%
 
 # 设置代理 Linux macOS BASH
 
-export http_proxy=http://127.0.0.1:23333
+export http_proxy=socks5://127.0.0.1:23333
 export https_proxy=$http_proxy
 export ftp_proxy=$http_proxy
 export rsync_proxy=$http_proxy
@@ -51,3 +51,8 @@ export RSYNC_PROXY=$http_proxy
 export SSH_PROXY=$ssh_proxy
 export ALL_PROXY=$http_proxy
 export NO_PROXY=$no_proxy
+
+# 设置代理 PowerShell
+$env:HTTP_PROXY = "http://127.0.0.1:23332"
+$env:HTTPS_PROXY = "http://127.0.0.1:23332"
+dir env: | Move-String "PROXY"
