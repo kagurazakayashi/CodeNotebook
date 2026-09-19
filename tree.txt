@@ -1,12 +1,27 @@
 .
+├── ./AGENTS.md
 ├── ./AI
+│   ├── ./AI/DeepSeekHarness
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarnessCLI参数.md
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarnessIIS反向代理配置.md
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarnessProfile插件管理.md
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarnessWeb启动参数.md
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarness配置导入导出.py
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarness配置文件指南.md
+│   │   ├── ./AI/DeepSeekHarness/DeepSeekHarness配置文件指南.yaml
+│   │   ├── ./AI/DeepSeekHarness/OSS同步所需权限.json
+│   │   └── ./AI/DeepSeekHarness/dsh-tui常用切换.md
 │   ├── ./AI/Ollama导入导出模型.bat
 │   ├── ./AI/Ollama环境变量.ini
+│   ├── ./AI/OpenCodeTUI常用命令和快捷键.md
 │   ├── ./AI/Windows安装CUDA驱动.md
+│   ├── ./AI/YOLO实时摄像头检测.py
+│   ├── ./AI/YOLO摄像头检测环境搭建与运行.bat
 │   ├── ./AI/modelcontextprotocol-MCP包.bat
 │   ├── ./AI/ollama.docker-compose.yml
-│   ├── ./AI/yolo.bat
-│   └── ./AI/yolo_cam.py
+│   ├── ./AI/清除OpenCodeDesktop数据.bat
+│   ├── ./AI/百炼视频.py
+│   └── ./AI/管理OpenCode项目.md
 ├── ./Algorithm
 │   ├── ./Algorithm/冒泡排序.c
 │   ├── ./Algorithm/得到数字中的每一位数字.c
@@ -18,6 +33,10 @@
 │   ├── ./Android/Gradle打包.sh
 │   ├── ./Android/INSTALL_FAILED_TEST_ONLY.sh
 │   ├── ./Android/ShizukuManager.sh
+│   ├── ./Android/Termux电脑SSH连接.md
+│   ├── ./Android/Termux电脑执行命令.md
+│   ├── ./Android/Termux运行DeepSeekHarness.md
+│   ├── ./Android/VisualStudio默认AndroidSDK安装路径.md
 │   ├── ./Android/adb命令.sh
 │   ├── ./Android/adb文件双击安装.bat
 │   ├── ./Android/adb查看版本号.sh
@@ -395,8 +414,9 @@
 │   │   ├── ./Dart_Flutter/插件与原生交互/创建插件.sh
 │   │   └── ./Dart_Flutter/插件与原生交互/插件建立与原生的通知渠道.dart
 │   ├── ./Dart_Flutter/文件读写.dart
+│   ├── ./Dart_Flutter/新建Flutter项目.sh
 │   ├── ./Dart_Flutter/新建页面.dart
-│   ├── ./Dart_Flutter/新建项目.sh
+│   ├── ./Dart_Flutter/新拟物化.dart
 │   ├── ./Dart_Flutter/方法接受传值.dart
 │   ├── ./Dart_Flutter/时间戳.dart
 │   ├── ./Dart_Flutter/是否包含某个字符串或第一次出现位置.dart
@@ -465,6 +485,7 @@
 │   ├── ./Docker/runoob-test-php.conf
 │   ├── ./Docker/修改存储位置.sh
 │   ├── ./Docker/修改窗口管理器.sh
+│   ├── ./Docker/升级Nginx和PHP.md
 │   ├── ./Docker/容器.sh
 │   ├── ./Docker/导入导出.sh
 │   ├── ./Docker/执行远程服务器Docker容器中的命令.sh
@@ -497,17 +518,29 @@
 │   │       └── ./Docker/自用DockerNginxPHP配置/nginx_conf/ssl.conf
 │   ├── ./Docker/虚拟盘.sh
 │   └── ./Docker/镜像.sh
+├── ./Dress
+│   └── ./Dress/反重力假发.md
 ├── ./Game
-│   └── ./Game/Minecraft
-│       ├── ./Game/Minecraft/Chunky.txt
-│       ├── ./Game/Minecraft/Dynmap.txt
-│       ├── ./Game/Minecraft/WorldBorder.txt
-│       ├── ./Game/Minecraft/bukkit安装.sh
-│       ├── ./Game/Minecraft/server.properties
-│       ├── ./Game/Minecraft/填充地图.bat
-│       ├── ./Game/Minecraft/最高附魔武器.md
-│       ├── ./Game/Minecraft/服务端常用指令.md
-│       └── ./Game/Minecraft/难度.txt
+│   ├── ./Game/Genshin
+│   │   └── ./Game/Genshin/千星像素猫
+│   │       ├── ./Game/Genshin/千星像素猫/商店三选一.bat
+│   │       ├── ./Game/Genshin/千星像素猫/商店三选金.bat
+│   │       └── ./Game/Genshin/千星像素猫/挂机摸宝.bat
+│   ├── ./Game/Minecraft
+│   │   ├── ./Game/Minecraft/Chunky.txt
+│   │   ├── ./Game/Minecraft/Dynmap.txt
+│   │   ├── ./Game/Minecraft/WorldBorder.txt
+│   │   ├── ./Game/Minecraft/bukkit安装.sh
+│   │   ├── ./Game/Minecraft/server.properties
+│   │   ├── ./Game/Minecraft/填充地图.bat
+│   │   ├── ./Game/Minecraft/最高附魔武器.md
+│   │   ├── ./Game/Minecraft/服务端常用指令.md
+│   │   └── ./Game/Minecraft/难度.txt
+│   ├── ./Game/adb_random_tap.bat
+│   └── ./Game/飘流幻境
+│       ├── ./Game/飘流幻境/飘流幻境_商人装备.md
+│       ├── ./Game/飘流幻境/飘流幻境_炼金装备.md
+│       └── ./Game/飘流幻境/飘流幻境新世界电脑版数据导入导出.bat
 ├── ./Go
 │   ├── ./Go/COM串口通讯.go
 │   ├── ./Go/CTRL+C.go
@@ -859,10 +892,12 @@
 │   ├── ./Other/正则表达式.md
 │   ├── ./Other/生僻字.md
 │   ├── ./Other/绒问卷.md
+│   ├── ./Other/网络规则.md
 │   └── ./Other/顺丰纸箱.md
 ├── ./PHP
 │   ├── ./PHP/HTTP错误代码.php
 │   ├── ./PHP/HelloWorld.php
+│   ├── ./PHP/IIS安装PHP.md
 │   ├── ./PHP/PEAR_PECL.sh
 │   ├── ./PHP/PHP7构造析构.php
 │   ├── ./PHP/PHP双版本系统服务.sh
@@ -1083,7 +1118,12 @@
 │   │   ├── ./Server/Mastodon/Mastodon.sh
 │   │   ├── ./Server/Mastodon/Mastodon管理命令.sh
 │   │   ├── ./Server/Mastodon/Misskey安装.sh
-│   │   └── ./Server/Mastodon/mastodon清理.sh
+│   │   └── ./Server/Mastodon/mastodon清理
+│   │       ├── ./Server/Mastodon/mastodon清理/mastodon-clean-daily.sh
+│   │       ├── ./Server/Mastodon/mastodon清理/mastodon-clean-monthly.sh
+│   │       ├── ./Server/Mastodon/mastodon清理/mastodon-clean-weekly.sh
+│   │       ├── ./Server/Mastodon/mastodon清理/mastodon清理.sh
+│   │       └── ./Server/Mastodon/mastodon清理/日志轮转.txt
 │   ├── ./Server/Mosquitto
 │   │   ├── ./Server/Mosquitto/COM口的数据不换行.md
 │   │   ├── ./Server/Mosquitto/CentOS7安装MQTT协议服务器mosquitto.sh
@@ -1095,6 +1135,7 @@
 │   │   ├── ./Server/Mosquitto/paho.mqtt.c订阅.c
 │   │   ├── ./Server/Mosquitto/编译mqtt库.sh
 │   │   └── ./Server/Mosquitto/证书.sh
+│   ├── ./Server/MySQL-Windows安装.md
 │   ├── ./Server/Nginx
 │   │   ├── ./Server/Nginx/Nginx.sh
 │   │   ├── ./Server/Nginx/Nginx和Tomcat配置长连接.md
@@ -1110,10 +1151,31 @@
 │   │   ├── ./Server/Nginx/拆分Nginx日志字段.rb
 │   │   ├── ./Server/Nginx/检查docker容器中的nginx配置文件.sh
 │   │   └── ./Server/Nginx/检查nginx是否有网页文件访问权.sh
+│   ├── ./Server/PM2
+│   │   ├── ./Server/PM2/PM2安装.sh
+│   │   ├── ./Server/PM2/PM2配置示例.config.js
+│   │   └── ./Server/PM2/pm2-status.bat
 │   ├── ./Server/Redis
 │   │   ├── ./Server/Redis/redis-linux-php.sh
 │   │   ├── ./Server/Redis/redis-macos.sh
 │   │   └── ./Server/Redis/redis-windows.md
+│   ├── ./Server/SSH
+│   │   ├── ./Server/SSH/SSH两步验证.sh
+│   │   ├── ./Server/SSH/SSH传输文件.sh
+│   │   ├── ./Server/SSH/SSH启用X11转发.sh
+│   │   ├── ./Server/SSH/SSH复制文件.sh
+│   │   ├── ./Server/SSH/SSH执行远程命令.sh
+│   │   ├── ./Server/SSH/SSH缓存密钥.sh
+│   │   ├── ./Server/SSH/SSH证书登录.sh
+│   │   ├── ./Server/SSH/UNPROTECTED_PRIVATE_KEY_FILE.md
+│   │   ├── ./Server/SSH/WindowsSSH服务.md
+│   │   ├── ./Server/SSH/ssh报错NoMatchingKeyExchangeMethodFound.sh
+│   │   ├── ./Server/SSH/使用不同的SSH密钥.md
+│   │   ├── ./Server/SSH/创建只能用于端口转发的账户.md
+│   │   ├── ./Server/SSH/将命令结果输出到本地剪贴板.sh
+│   │   ├── ./Server/SSH/连接超时关闭时间.md
+│   │   ├── ./Server/SSH/配置ssh的超时时间.sh
+│   │   └── ./Server/SSH/验证证书是否匹配.sh
 │   ├── ./Server/SSLTLS证书
 │   │   ├── ./Server/SSLTLS证书/AES加密.sh
 │   │   ├── ./Server/SSLTLS证书/Nginx同时支持RSA和ECC证书.sh
@@ -1141,6 +1203,10 @@
 │       ├── ./Server/跨域问题/Access-Control-Allow-Origin.md
 │       ├── ./Server/跨域问题/Content-Security-Policy.md
 │       └── ./Server/跨域问题/The image element contains cross-origin data and may not be loaded.txt
+├── ./Server_Protocol
+│   ├── ./Server_Protocol/PASETO内容构成.md
+│   ├── ./Server_Protocol/PASETO内容构成.py
+│   └── ./Server_Protocol/PASETO内容构成库.py
 ├── ./ShellScript
 │   ├── ./ShellScript/GUI硬盘管理软件.sh
 │   ├── ./ShellScript/cp自动重命名.sh
@@ -1336,6 +1402,8 @@
 │   ├── ./ShellScript_Linux/本地DVD源CentOS8.repo
 │   ├── ./ShellScript_Linux/杀死指定进程名称.sh
 │   ├── ./ShellScript_Linux/查找最大文件夹.sh
+│   ├── ./ShellScript_Linux/查看端口占用.sh
+│   ├── ./ShellScript_Linux/桌面入口Categories分类.md
 │   ├── ./ShellScript_Linux/检查硬盘SMART.sh
 │   ├── ./ShellScript_Linux/检查谁在占用U盘.sh
 │   ├── ./ShellScript_Linux/正则表达式.md
@@ -1471,22 +1539,6 @@
 │   ├── ./ShellScript_Linux_Command/which_找到命令文件位置.sh
 │   ├── ./ShellScript_Linux_Command/who_显示当前登录的所有用户.sh
 │   └── ./ShellScript_Linux_Command/whoami_查看当前用户名.sh
-├── ./ShellScript_SSH
-│   ├── ./ShellScript_SSH/SSH两步验证.sh
-│   ├── ./ShellScript_SSH/SSH传输文件.sh
-│   ├── ./ShellScript_SSH/SSH启用X11转发.sh
-│   ├── ./ShellScript_SSH/SSH复制文件.sh
-│   ├── ./ShellScript_SSH/SSH执行远程命令.sh
-│   ├── ./ShellScript_SSH/SSH缓存密钥.sh
-│   ├── ./ShellScript_SSH/SSH证书登录.sh
-│   ├── ./ShellScript_SSH/UNPROTECTED_PRIVATE_KEY_FILE.md
-│   ├── ./ShellScript_SSH/ssh报错NoMatchingKeyExchangeMethodFound.sh
-│   ├── ./ShellScript_SSH/使用不同的SSH密钥.md
-│   ├── ./ShellScript_SSH/创建只能用于端口转发的账户.md
-│   ├── ./ShellScript_SSH/将命令结果输出到本地剪贴板.sh
-│   ├── ./ShellScript_SSH/连接超时关闭时间.md
-│   ├── ./ShellScript_SSH/配置ssh的超时时间.sh
-│   └── ./ShellScript_SSH/验证证书是否匹配.sh
 ├── ./ShellScript_macOS
 │   ├── ./ShellScript_macOS/CocoaPods安装.sh
 │   ├── ./ShellScript_macOS/NAS时间机器备份修复.md
@@ -1506,6 +1558,7 @@
 │   ├── ./ShellScript_macOS/启动显示详细过程.sh
 │   ├── ./ShellScript_macOS/屏幕截图路径设置.sh
 │   ├── ./ShellScript_macOS/常用目录移到外置盘.sh
+│   ├── ./ShellScript_macOS/应用程序类别LSApplicationCategoryType.md
 │   ├── ./ShellScript_macOS/强行安装旧版本Java.scpt
 │   ├── ./ShellScript_macOS/显示隐藏文件.sh
 │   ├── ./ShellScript_macOS/禁止生成sleepimage.sh
@@ -1542,7 +1595,8 @@
 │   │   ├── ./Tools/GPG/GPG.sh
 │   │   ├── ./Tools/GPG/GPG单独批量压缩并加密当前目录中的所有文件.sh
 │   │   ├── ./Tools/GPG/GPG单独批量解压并解密文件到当前目录.sh
-│   │   └── ./Tools/GPG/Yubikey创建GPG.bat
+│   │   ├── ./Tools/GPG/Yubikey创建GPG.bat
+│   │   └── ./Tools/GPG/备份和恢复GPG数据库.bat
 │   ├── ./Tools/IDM安装报RUNDLL32错误.bat
 │   ├── ./Tools/ImageMagick
 │   │   ├── ./Tools/ImageMagick/512x512贴纸包.bat
@@ -1550,6 +1604,11 @@
 │   │   ├── ./Tools/ImageMagick/ImageMagick.bat
 │   │   ├── ./Tools/ImageMagick/ImageMagick.sh
 │   │   ├── ./Tools/ImageMagick/修正EXIF方向.bat
+│   │   ├── ./Tools/ImageMagick/图片均分批处理
+│   │   │   ├── ./Tools/ImageMagick/图片均分批处理/split3h.bat
+│   │   │   ├── ./Tools/ImageMagick/图片均分批处理/split3v.bat
+│   │   │   ├── ./Tools/ImageMagick/图片均分批处理/split4h.bat
+│   │   │   └── ./Tools/ImageMagick/图片均分批处理/split4v.bat
 │   │   ├── ./Tools/ImageMagick/图片拆分-长图分割为等份小图.bat
 │   │   ├── ./Tools/ImageMagick/复制EXIF.bat
 │   │   └── ./Tools/ImageMagick/拼接图片-小图拼接成长图.bat
@@ -1709,6 +1768,7 @@
 │   ├── ./Tools_Git/取出某个文件的历史版本.sh
 │   ├── ./Tools_Git/子模块.sh
 │   ├── ./Tools_Git/常用设置.sh
+│   ├── ./Tools_Git/强制更新某条分支.sh
 │   ├── ./Tools_Git/彻底删除某文件包括历史版本中.sh
 │   ├── ./Tools_Git/换行符控制.sh
 │   ├── ./Tools_Git/换行符控制gitattributes.txt
@@ -1786,6 +1846,7 @@
 │   ├── ./Windows/WindowsRE恢复分区重建.bat
 │   ├── ./Windows/WindowsServer安装应用商店.ps1
 │   ├── ./Windows/WindowsTerminal.md
+│   ├── ./Windows/Windows使用dnscrypt-proxy配置DoH.md
 │   ├── ./Windows/Windows端口占用情况.bat
 │   ├── ./Windows/anyconnect临时开启服务.bat
 │   ├── ./Windows/chkdsk开机扫描硬盘.bat
@@ -1801,6 +1862,7 @@
 │   │   ├── ./Windows/regedit/vbs文件关联恢复.reg
 │   │   ├── ./Windows/regedit/以管理员独立提权运行右键菜单.reg
 │   │   ├── ./Windows/regedit/任务栏时间显示秒钟.reg
+│   │   ├── ./Windows/regedit/使用所选项目新建文件夹.reg
 │   │   ├── ./Windows/regedit/使用旧版的图片查看器.reg
 │   │   ├── ./Windows/regedit/修复EXE文件关联.reg
 │   │   ├── ./Windows/regedit/允许虚拟内存在非系统盘.reg
@@ -1815,7 +1877,6 @@
 │   │   ├── ./Windows/regedit/右键复制文件内容到剪贴板.reg
 │   │   ├── ./Windows/regedit/右键复制路径到剪贴板.reg
 │   │   ├── ./Windows/regedit/右键添加打开命令窗口.reg
-│   │   ├── ./Windows/regedit/安装重启挂起.reg
 │   │   ├── ./Windows/regedit/恢复IcoCurAni文件关联.reg
 │   │   ├── ./Windows/regedit/恢复新建文本文档.reg
 │   │   ├── ./Windows/regedit/桌面显示IE图标.reg
@@ -1831,6 +1892,7 @@
 │   ├── ./Windows/一键创建还原点.vbs
 │   ├── ./Windows/不足位补0.bat
 │   ├── ./Windows/以其他身份运行cmd.txt
+│   ├── ./Windows/以特定用户注册系统服务.md
 │   ├── ./Windows/修复ico文件关联.bat
 │   ├── ./Windows/修复vhd文件关联.reg
 │   ├── ./Windows/修复开始菜单.ps1
@@ -1966,6 +2028,8 @@
 │   ├── ./WindowsPowerShell/比较运算符.ps1
 │   ├── ./WindowsPowerShell/清理所有空文件夹.ps1
 │   └── ./WindowsPowerShell/读写文本.ps1
+├── ./cad
+│   └── ./cad/使用python创建原理图.md
 ├── ./iOS
 │   ├── ./iOS/Xcode编译脚本变量.sh
 │   ├── ./iOS/修改iTunes更新和备份目录.bat
@@ -2085,4 +2149,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-141 directories, 1945 files
+151 directories, 1999 files
