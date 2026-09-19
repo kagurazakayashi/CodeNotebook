@@ -14,9 +14,9 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 @REM YOLO & CAM
 pip install ultralytics opencv-python
 
-@REM （可选）为将来导出/部署预埋组件(CPU/GPU)
+@REM （可选）为将来部署预埋组件(CPU/GPU)
 pip install onnx onnxruntime
 pip install onnxruntime-gpu
 
 
-python yolo_cam.py --cam 2 --device cuda:0 --model yolov8n.pt --imgsz 1088 --width 1920 --height 1080 --conf 0.2
+python YOLO实时摄像头检测.py --cam 2 --device cuda:0 --model yolov8n.pt --imgsz 1088 --width 1920 --height 1080 --conf 0.2

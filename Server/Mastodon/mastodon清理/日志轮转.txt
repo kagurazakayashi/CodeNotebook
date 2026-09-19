@@ -1,0 +1,35 @@
+# Mastodon 自动清理日志
+# /etc/logrotate.d/mastodon-clean
+# 每周轮转一次；
+# 保留最近 12 个历史日志；
+# 历史日志自动 gzip 压缩。
+
+/var/log/yashi/mastodonclean.log {
+    weekly
+    rotate 12
+    compress
+    delaycompress
+
+    # 日志不存在时不要报错
+    missingok
+
+    # 空日志不轮转
+    notifempty
+
+    # 不需要通知脚本重新打开日志文件
+    copytruncate
+}
+
+# 每天凌晨 03:30 清理 mastodon: 7 天远程媒体, 7 天远程头像Header, 30 天 Preview Card, 7 天 Backup
+# 30 3 * * * /home/mastodon/corn/mastodon-clean-daily.sh >/dev/null 2>&1
+# 每周日凌晨 05:00 清理 mastodon: 365 天远程 Content Cache, Content 清理产生的孤立媒体记录
+# 0 5 * * 0 /home/mastodon/corn/mastodon-clean-weekly.sh >/dev/null 2>&1
+# 每月 1 日凌晨 07:00 清理 mastodon: 远程 Custom Emoji, 无用远程账号记录
+# 0 7 1 * * /home/mastodon/corn/mastodon-clean-monthly.sh >/dev/null 2>&1
+
+# tail -n 200 /var/log/yashi/mastodonclean.log
+# 仍然建议保持手动的两个命令
+# 孤儿文件
+# docker exec -e RAILS_ENV=production mastodon-web-1 bin/tootctl media remove-orphans --dry-run
+# 已失效远程账号，可能造成大量远程 HTTP 请求。
+# docker exec -e RAILS_ENV=production mastodon-web-1 bin/tootctl accounts cull

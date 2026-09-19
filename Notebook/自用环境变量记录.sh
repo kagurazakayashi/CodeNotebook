@@ -10,7 +10,7 @@ SET GRADLE_HOME="C:\ProgramData\chocolatey\lib\gradle\tools\gradle-9.1.0"
 SET GRADLE_USER_HOME="D:\Android\gradle"
 SET GOROOT="C:\SDK\Go"
 SET GOPATH="P:\go"
-SET FLUTTER_ROOT="C:\SDK\flutter"
+SET FLUTTER_ROOT="C:\tools\flutter"
 SET PATH="%PATH%;C:\Program Files\Git\bin;C:\Program Files\Git\cmd;%JAVA_HOME%\jre\bin;%JAVA_HOME%\bin;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;%ANDROID_HOME%\build-tools\36.1.0;%GRADLE_HOME%\bin;%FLUTTER_ROOT%\bin;%GOPATH%\bin;C:\tools\msys64\clang64\bin;C:\tools\msys64\usr\bin;"
 
 # Linux

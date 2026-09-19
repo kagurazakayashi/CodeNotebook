@@ -1,7 +1,6 @@
-# yolo_cam.py
+# YOLO实时摄像头检测.py
 # Windows + Ultralytics YOLO + OpenCV 实时摄像头检测
 # 环境前置：pip install ultralytics opencv-python （已在上一条消息配置）
-# 用法示例会在下一段发（你说“继续”我就给）
 
 import argparse
 import time
@@ -93,7 +92,7 @@ def open_camera(index: int, width: int, height: int, window_title: str):
 def init_writer(save_dir: Path, fps: float, width: int, height: int):
     save_dir.mkdir(parents=True, exist_ok=True)
     ts = time.strftime("%Y%m%d-%H%M%S")
-    out_path = save_dir / f"yolo_cam_{ts}.mp4"
+    out_path = save_dir / f"YOLO实时摄像头检测_{ts}.mp4"
     writer = cv2.VideoWriter(
         str(out_path),
         cv2.VideoWriter_fourcc(*"mp4v"),

@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
-;;导入导出环境为Windows 7 x64专业版
-;;导入注册表后恢复为vbs可以运行
+;;Import/Export Environment: Windows 7 x64 Professional
+;;After importing, restore VBS file association to runnable state
 
 
 [HKEY_CLASSES_ROOT\.vbs]

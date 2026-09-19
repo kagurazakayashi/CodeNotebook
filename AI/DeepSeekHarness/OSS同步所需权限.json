@@ -1,0 +1,20 @@
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "oss:HeadBucket",
+        "oss:GetObject",
+        "oss:PutObject",
+        "oss:DeleteObject",
+        "oss:ListObjects",
+        "oss:GetBucketInfo"
+      ],
+      "Resource": [
+        "acs:oss:*:*:yashi-config-dsh",
+        "acs:oss:*:*:yashi-config-dsh/*"
+      ]
+    }
+  ]
+}

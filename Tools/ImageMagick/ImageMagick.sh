@@ -3,6 +3,7 @@ for file in *.jfif; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*
 for file in *.png; do echo "$file ${file%%.*}.bmp"; convert "$file" "${file%%.*}.bmp"; done
 for file in *.bmp; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done
 for file in *.png; do echo "$file ${file%%.*}.jpg"; convert "$file" "${file%%.*}.jpg"; done
+for file in *.tif; do echo "$file ${file%%.*}.png"; convert "$file" "${file%%.*}.png"; done
 for file in *.tif; do echo $file ${file%%.*}.jpg; convert -resize 1024x1024 $file ${file%%.*}.jpg; done
 
 convert fm.jpg -resize 1024x1024 -quality 80% fmz.jpg

@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\RunAsCmd]
-"MUIVerb"="以管理员提权运行"
+"MUIVerb"="Run with Elevated Privileges"
 "HasLUAShield"=""
 "Icon"="cmd.exe"
 

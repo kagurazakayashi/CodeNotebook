@@ -1,8 +1,16 @@
-; Windows自动登录选项消失处理
+
+
+
 
 Windows Registry Editor Version 5.00
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device]
+
 ; "DevicePasswordLessBuildVersion"=dword:00000002
+
 "DevicePasswordLessBuildVersion"=dword:00000000
 
-; 运行 control userpasswords2 或 Netplwiz
+
+; Fix for Windows Auto-login Option Disappearing
+; Run control userpasswords2 or Netplwiz
+

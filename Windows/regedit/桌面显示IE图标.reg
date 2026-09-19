@@ -1,8 +1,8 @@
 Windows Registry Editor Version 5.00
 ;
-;win10 64位显示IE图标注册表
+;Show IE icon on Windows 10/11 64-bit desktop
 ;
-;桌面显示IE图标
+;Show Internet Explorer icon on desktop
 [-HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}]
@@ -17,19 +17,19 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns]
-@="在没有加载项的情况下启动(&N)"
+@="Start without add-ons (&N)"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe about:NoAdd-ons"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open]
-@="打开主页(&H)"
+@="Open Home Page (&H)"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set]
-@="属性(&R)"
+@="Properties (&R)"
 
 [HKEY_CLASSES_ROOT\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set\Command]
 @="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
@@ -52,19 +52,19 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns]
-@="在没有加载项的情况下启动(&N)"
+@="Start without add-ons (&N)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\NoAddOns\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe about:NoAdd-ons"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open]
-@="打开主页(&H)"
+@="Open Home Page (&H)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Open\Command]
 @="C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set]
-@="属性(&R)"
+@="Properties (&R)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}\Shell\Set\Command]
 @="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"

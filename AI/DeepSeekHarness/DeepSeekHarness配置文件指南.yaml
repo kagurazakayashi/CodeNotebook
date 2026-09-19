@@ -1,0 +1,339 @@
+# =====================================================================
+# DeepSeek Harness 配置文件指南（YAML 版）
+#
+# 本文件本身是一个合法 YAML 文档：
+#   - 注释（# 开头）= 逐项讲解
+#   - 值（映射 / 列表 / 块字符串）= 可复制的真实配置示例
+#
+# 对应 Markdown 版：AI/DeepSeekHarness/DeepSeekHarness配置文件指南.md
+# 信息取自本机安装的 @deepseek-ai/dsh@0.1.0-rc.6 源码。
+# =====================================================================
+
+# ---- 元信息 --------------------------------------------------------
+meta:
+  title: DeepSeek Harness 配置文件指南
+  dshVersion: 0.1.0-rc.6
+  # 所有用户数据都在 $DSH_HOME 下（默认 ~/.dsh，可用环境变量 DSH_HOME 覆盖）
+  harnessHome: $DSH_HOME
+  defaultHome: ~/.dsh
+
+# ---- 文件清单 --------------------------------------------------------
+# path 中的 <name> 是 profile 名（web / headless / tui / 自定义名）
+files:
+  - path: $DSH_HOME/profiles/<name>/cordis.yml
+    purpose: 空根配置，组合的起点
+    editable: false        # dsh 每次启动自动重写，不要手动编辑
+    hotReload: false
+  - path: $DSH_HOME/profiles/<name>/package.json
+    purpose: profile 清单：dependencies + dsh.profile.bundles（配置层顺序）
+    editable: false        # 由 dsh plugin 自动维护
+    hotReload: false
+  - path: $DSH_HOME/profiles/<name>/cordis.patch.yml
+    purpose: profile 用户 patch 层（本指南核心）
+    editable: true
+    hotReload: true        # 长驻界面（web）下热重载
+  - path: $DSH_HOME/profiles/<name>/pnpm-workspace.yaml
+    purpose: pnpm 设置（插件安装用）
+    editable: true
+    hotReload: false
+  - path: $DSH_HOME/cordis.patch.yml
+    purpose: home 级 patch 层：对所有 profile 生效，优先级高于 profile 层
+    editable: true
+    hotReload: true
+  - path: $DSH_HOME/settings.yaml
+    purpose: 用户设置文档（模型、提供商等）
+    editable: true
+    hotReload: true        # 外部编辑约 100ms debounce 后热发布
+  - path: $DSH_HOME/.credentials.yaml
+    purpose: 凭据库（API Key），权限 0600
+    editable: true
+    hotReload: true
+  - path: <cwd>/.env 与 $DSH_HOME/.env
+    purpose: 环境变量层（dotenv 格式，有 bootstrap 保护名单，见 dotenvExample）
+    editable: true
+    hotReload: false
+
+# ---- 配置层叠加顺序（由低到高，后者覆盖前者） --------------------------
+layering:
+  - 1. dsh.profile.bundles 中各组合包的 patch 层（随安装，不可直接改）
+  - 2. profile 的 cordis.patch.yml（用户 patch 层）
+  - 3. $DSH_HOME/cordis.patch.yml（home 级，机器级偏好）
+  - 4. --patch <path> 启动参数覆盖层（一次性）
+
+# ---- cordis.patch.yml 完整示例 ----------------------------------------
+# 顶层必须是一个数组；每个条目对「行」（row）做覆盖 / 禁用 / 插入三种操作。
+# 匹配不到任何行的条目只告警并跳过（patch: entry "xxx" not found）。
+cordisPatchExample: |-
+  # ──────────────────────────────────────────────────────────────
+  # cordis.patch.yml —— 用户 patch 层
+  # 位置：$DSH_HOME/profiles/<name>/cordis.patch.yml（单 profile）
+  #       $DSH_HOME/cordis.patch.yml（所有 profile 生效，优先级更高）
+  # ──────────────────────────────────────────────────────────────
+
+  # ── 操作 1：覆盖一行配置 ──────────────────────────────────────
+  # 定位：id 必须是组合树中已存在的行 id。
+  # 重要：config 是「整块替换」，不是深合并！
+  #   例如覆盖 agent-default-model 时，config 里必须写全所有想保留的键。
+  - id: agent-default-model          # 目标行 id
+    name: '@deepseek-ai/dsh-agent-default-model'   # 可选：校验名字一致，不一致则跳过
+    config:                          # 替换该行的整个 config
+      provider: deepseek-official
+      model: deepseek-v4-pro         # 把默认模型从 flash 换成 pro
+
+  # ── 操作 2：禁用（或启用）一行 ────────────────────────────────
+  # disabled 也是「覆盖」的一种：其他键保持不变，仅翻转开关。
+  - id: skill-badge                  # 例如启用一个默认禁用的行
+    disabled: false
+
+  - id: web                          # 禁用整个 web 搜索能力（连工具都会失效）
+    disabled: true
+
+  # ── 操作 3：插入新行（顶层） ──────────────────────────────────
+  # insert 数组里的每个条目：id 必须全局唯一，name 是 npm 包名。
+  - insert:
+      - id: my-extra-tool            # 新行 id（供后续层继续 patch）
+        name: '@my-scope/my-bundle-plugin'   # 插件包名（bundles 中需已安装）
+        config:
+          someOption: true
+
+  # ── 操作 4：插入到 group 内部 ─────────────────────────────────
+  # 某些行是 group（其 config 是子行数组）。
+  # 用法：给 insert 条目同时写 id，指向一个 group 行。
+  - id: tools                        # 目标 group 行 id
+    insert:
+      - id: my-tool-extra
+        name: '@deepseek-ai/dsh-tool-web'
+        config: {}
+
+  # ── !!js 表达式 ────────────────────────────────────────────────
+  # config 的值可以用 !!js 写 JS 表达式，条目激活时求值一次：
+  #   可用：process.env、dshHomePath()、ctx.<service>、process.platform、process.cwd()
+  - id: sandbox-policy
+    config:
+      mode: !!js process.env.DSH_PERMISSION_MODE ?? 'workspace-write'
+      workspaceRoot: !!js process.cwd()
+
+  - id: session-persistence-jsonl
+    config:
+      root: !!js dshHomePath('sessions')   # 展开为 $DSH_HOME/sessions
+
+  - id: bash-sandbox
+    disabled: !!js process.platform === 'win32'   # 平台条件开关
+
+  # 注：--dump-config 输出中 !!js 原样打印、不求值，方便检查表达式本身。
+
+# ---- patch 三条规则（文字版速记） -------------------------------------
+patchRules:
+  - 顶层必须是 YAML 数组；每条 entry 必须是映射（mapping），否则启动报错
+  - 非 insert 条目必须有 id；带 name 时与目标行名字不一致会跳过并告警
+  - insert 条目可以带 id 指向 group 行（组内插入），不带 id 则插入顶层
+
+# ---- 常用行 id 速查 ----------------------------------------------------
+# 完整列表：跑 dsh --profile <name> --dump-default-config 查看
+rowIds:
+  agent-default-model:
+    package: '@deepseek-ai/dsh-agent-default-model'
+    use: 默认 provider / model
+  system-prompt:
+    package: '@deepseek-ai/dsh-system-prompt'
+    use: persona 文本
+  sandbox-policy:
+    package: '@deepseek-ai/dsh-sandbox-policy'
+    use: 文件沙箱模式、workspace 根
+  approval:
+    package: '@deepseek-ai/dsh-user-approval'
+    use: 审批策略（ask / never）
+  permission:
+    package: '@deepseek-ai/dsh-permission-presets'
+    use: 三档权限预设（read-only / workspace-write / danger-full-access）
+  webserver:
+    package: '@deepseek-ai/dsh-host-webserver'
+    use: host / port（web 模式）
+  session-query-sqlite:
+    package: '@deepseek-ai/dsh-session-query-sqlite'
+    use: '全文搜索开关（openAt: never / first-search / startup）'
+  tool-web:
+    package: '@deepseek-ai/dsh-tool-web'
+    use: web 搜索/抓取工具开关
+  web:
+    package: '@deepseek-ai/dsh-web'
+    use: web 能力服务（searchProvider / fetchProvider）
+  session-telemetry-otel:
+    package: '@deepseek-ai/dsh-session-telemetry-otel'
+    use: 遥测（默认 DISABLED）
+  llm-deepseek:
+    package: '@deepseek-ai/dsh-llm-deepseek'
+    use: DeepSeek 适配器入口行
+  agent-loop:
+    package: '@deepseek-ai/dsh-agent-loop'
+    use: 启动时自动创建的 agents（base 默认为空数组）
+  fs-sandbox:
+    package: '@deepseek-ai/dsh-fs-sandbox'
+    use: 沙箱文件系统 provider（可钉住 workspace）
+  tools:
+    package: '@deepseek-ai/dsh-tools'
+    use: 工具呈现模式（native / code / both）
+
+# ---- profile 清单 package.json 示例 ------------------------------------
+profileManifestExample: |-
+  // $DSH_HOME/profiles/<name>/package.json
+  // 由 `dsh plugin` 自动维护；一般不需要手改。
+  {
+    "name": "dsh-profile-tui",            // 自动生成：dsh-profile-<name>
+    "private": true,
+    "dependencies": {
+      // 树外插件依赖，由 `dsh plugin add` 写入
+      "@my-scope/my-bundle-plugin": "^1.0.0"
+    },
+    "dsh": {
+      "profile": {
+        "bundles": [
+          // 配置层顺序（先列先应用，后面覆盖前面）：
+          "@deepseek-ai/dsh-base",        // 内置基础层
+          "@my-scope/my-bundle-plugin"    // 声明了 dsh.bundle 的插件自动加入
+        ]
+      }
+    }
+  }
+
+# ---- settings.yaml 示例 -------------------------------------------------
+# 每个顶层键是一个「命名空间段落」，由对应插件注册。
+# 外部编辑热发布；web 的 Models 页面也写这个文件。
+# 解析失败时保留上一次的好文档并告警，不会拖垮进程。
+settingsExample:
+  # 段落 1：DeepSeek 官方适配器（行 id: llm-deepseek 的注册段）
+  # 所有字段均可选；缺省用包内默认值。
+  llm-deepseek:
+    apiKeyEnv: DEEPSEEK_API_KEY        # 凭据引用名（对应 .credentials.yaml 或环境变量）
+    baseURL: https://api.deepseek.com  # 端点覆盖（默认即此值；$DEEPSEEK_BASE_URL 环境变量优先）
+    thinking: enabled                  # enabled / disabled
+    reasoningEffort: high              # off / high / max（thinking: disabled 时只能 off）
+    maxTokens: 8192                    # 单次请求最大输出 token
+    defaultContextWindow: 131072       # 上下文窗口（决定自动压缩阈值）
+    models:                            # 模型目录（id 唯一；决定选择器里能选哪些模型）
+      - id: deepseek-v4-flash
+        name: DeepSeek-V4-Flash
+        contextWindow: 131072
+      - id: deepseek-v4-pro
+        name: DeepSeek-V4-Pro
+        contextWindow: 131072
+        description: 更强的推理模型
+    streamIdleTimeoutMs: 120000        # 流式空闲超时（毫秒）
+    retryPolicy:                       # 重试策略（缺省用内置默认值）
+      mode: normal                     # normal / always
+      maxRetries: 2                    # 默认 2（仅 normal 模式）
+      retryableCodes:                  # 默认值如下（仅 normal 模式）
+        - EMPTY_RESPONSE
+        - RATE_LIMIT
+        - SERVER
+        - TIMEOUT
+        - TRANSPORT
+      backoff:
+        initialDelayMs: 500            # 默认 500
+        maxDelayMs: 10000              # 默认 10000
+        jitterRatio: 0.1               # 默认 0.1，取值 0~1
+  # 段落 2：pi-ai 多提供商（行 id: llm-pi-ai；未配置时零路由、选择器里不出现）
+  # 本段结构为示例性质（未从本机源码逐字段验证），以 Models 页面实际写出的为准：
+  llm-pi-ai:
+    providers:
+      - id: my-provider
+        # ... 提供商档案与凭据引用
+
+# ---- .credentials.yaml 示例 ---------------------------------------------
+# 严格「凭据引用 -> 非空字符串」映射，不是 dotenv。
+# 权限必须是 0600（POSIX 下 group/other 有位会被拒绝启动；Windows 跳过检查）。
+# 写操作只 patch 自己那一个 key，注释与其余格式保留。
+credentialsExample:
+  DEEPSEEK_API_KEY: sk-xxxxxxxx        # 供 llm-deepseek 段 apiKeyEnv 引用（示例占位值）
+  # MY_OTHER_KEY: xxx                  # 移除某个凭据：删掉这行即可
+
+# ---- 凭据解析优先级（高 → 低） ------------------------------------------
+credentialsPrecedence:
+  - 1. 继承的进程环境（只读，最高：CI secret、容器 -e）
+  - 2. $DSH_HOME/.credentials.yaml（可写，Models 页面写这里）
+  - 3. <cwd>/.env（项目回退）
+  - 4. $DSH_HOME/.env（用户回退）
+credentialsNote: 环境变量被继承层占用时，往凭据文件写同名 key 会报错（防止「写了却没效果」）。
+
+# ---- .env 文件示例 -------------------------------------------------------
+# 加载顺序：继承环境 > 项目 .env > home .env；已存在的变量不被覆盖。
+# 格式是 dotenv，不是 YAML。
+dotenvExample: |-
+  # <cwd>/.env 与 $DSH_HOME/.env
+
+  # 可以放：API Key、普通业务变量
+  DEEPSEEK_API_KEY=sk-xxxx
+
+  # 不可以放（bootstrap 保护名单，放了会启动报错）：
+  #   见下方 dotenvBanned；这些只能从「启动进程的继承环境」提供。
+
+dotenvBanned:
+  - 所有 DSH_ 前缀变量（DSH_HOME、DSH_PERMISSION_MODE 等）
+  - PATH / HOME / USERPROFILE / SHELL / NODE_OPTIONS / EDITOR / VISUAL / PAGER
+  - HTTP_PROXY / HTTPS_PROXY / ALL_PROXY / NO_PROXY
+  - DEEPSEEK_BASE_URL / DEEPSEEK_SEARCH_BASE_URL
+  - SSL_CERT_FILE / SSL_CERT_DIR / NODE_TLS_REJECT_UNAUTHORIZED
+  - XDG_ 前缀、DYLD_ 前缀、GIT_SSH / GIT_EDITOR 等 GIT_* 系列、JAVA_TOOL_OPTIONS 等
+
+# ---- pnpm-workspace.yaml 示例（profile 目录内） ----------------------------
+pnpmWorkspaceExample: |-
+  # $DSH_HOME/profiles/<name>/pnpm-workspace.yaml
+  # 由 dsh 首次初始化自动生成；一般不用改。
+  packages:
+    - .
+
+  nodeLinker: hoisted
+  autoInstallPeers: false
+
+  # git 托管插件（git+ / github: / .git）需要构建时，把 pnpm 报错
+  # 打印的精确 key 加到下面（allowBuilds 是 pnpm 10 的写法示例）：
+  # onlyBuiltDependencies:
+  #   - some-native-package
+
+# ---- 环境变量速查（env seams） -------------------------------------------
+envSeams:
+  DSH_HOME: 覆盖 Harness home（默认 ~/.dsh）
+  DSH_PERMISSION_MODE: 权限档 read-only / workspace-write / danger-full-access（sandbox-policy / approval 行）
+  DSH_TOOLS_MODE: 工具呈现 native / code / both（临时 seam，tools 行）
+  DSH_TELEMETRY_MODE: FULL / FEEDBACK_ONLY（默认 DISABLED）
+  DSH_TELEMETRY_OTLP_URL: 覆盖遥测上报端点
+  DSH_TELEMETRY_DISABLED: 任意非空值（含 '0'）即禁用遥测
+  DSH_WEB_SEARCH_PROVIDER: 指定 web 搜索提供商（dsh-web 服务）
+  DSH_WEB_FETCH_PROVIDER: 指定 web 抓取提供商（dsh-web 服务）
+  DEEPSEEK_API_KEY: DeepSeek API Key（也可存凭据库）
+  DEEPSEEK_BASE_URL: 覆盖聊天端点（仅继承环境可用，.env 禁止）
+  DEEPSEEK_SEARCH_BASE_URL: 覆盖搜索端点（仅继承环境可用，.env 禁止）
+  DSH_WEB_URL: 运行时注入 bash 的 Web 地址（模型可见，web-runtime 提供）
+  DSH_WEB_MODE: 运行时注入 bash 的 Web 模式标记（shell-env 提供）
+
+# ---- 验证与调试 ----------------------------------------------------------
+verify: |-
+  # 只打印 bundle 层（不含用户层；cordis.patch.yml 坏了时的恢复诊断）
+  dsh --profile web --dump-default-config
+
+  # 打印完整组合结果（含 profile/home 用户层与 --patch）
+  # 输出是带 `# == 来源文件` 注释分组的合法 YAML，!!js 原样打印
+  dsh --profile web --dump-config
+
+  # 启动器逐层告警：某条 patch 匹配不到任何行时打印
+  #   dsh: [<layer>] patch: entry "xxx" not found
+
+verifyNotes:
+  - 组合结果 = 生效配置；改完 cordis.patch.yml 后长驻界面（web）热重载
+  - settings.yaml 与 .credentials.yaml 同样热发布，无需重启
+  - 配错语法时：patch 文件解析失败 = 启动失败（fail loud），不会被静默跳过
+
+# ---- 来源 ---------------------------------------------------------------
+sources:
+  - path: B:\TMP\_npx\1e7f6d9597241db0\node_modules\@deepseek-ai\dsh-app-boot\lib\index.js
+    note: patch 算法、dump 渲染、环境分层加载与 bootstrap 保护名单
+  - path: B:\TMP\_npx\1e7f6d9597241db0\node_modules\@deepseek-ai\dsh-base\cordis.patch.yml
+    note: 行 id 全表（dsh-web-app\cordis.patch.yml 为 web 模式补充）
+  - path: B:\TMP\_npx\1e7f6d9597241db0\node_modules\@deepseek-ai\dsh-settings-file\lib\index.js
+    note: settings 文档格式与热发布
+  - path: B:\TMP\_npx\1e7f6d9597241db0\node_modules\@deepseek-ai\dsh-credentials-local\lib\index.js
+    note: 凭据文档格式与解析优先级
+  - path: B:\TMP\_npx\1e7f6d9597241db0\node_modules\@deepseek-ai\dsh-llm-deepseek\lib\index.js
+    note: llm-deepseek 设置段 schema
+  - path: B:\TMP\_npx\1e7f6d9597241db0\node_modules\@deepseek-ai\dsh-llm\lib\types\retry-policy.js
+    note: retryPolicy schema（mode / maxRetries / retryableCodes / backoff）

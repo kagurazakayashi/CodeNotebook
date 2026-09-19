@@ -6,5 +6,5 @@ Windows Registry Editor Version 5.00
 
 
 
-ÓĞºÜ¶à²¡¶¾£¬ÎªÁËÒş²Ø×Ô¼º£¬¾ÍĞŞ¸ÄÏµÍ³ÎÄ¼ş¼ĞÉèÖÃ£¬Ê¹ÄãÓÃ³£¹æ·½·¨²»ÄÜ¿´µ½Òş²ØÎÄ¼ş¡£
-ÇëÈ·±£ÔÚ¡°ÎÄ¼ş¼ĞÑ¡Ïî¡±ÖĞÈ¥µô¡°Òş²ØÒÑÖªÎÄ¼şÀàĞÍµÄÀ©Õ¹Ãû¡±£¬Ë«»÷ÔËĞĞ´ËÎÄ¼ş£¬ÔÙÖØĞÂµ½¡°ÎÄ¼ş¼ĞÑ¡Ïî¡±ÖĞÉèÖÃÏÔÊ¾Òş²ØÎÄ¼ş¡£
+Many viruses modify system folder settings to hide themselves, preventing you from seeing hidden files through normal means.
+Please ensure in â€œFolder Optionsâ€ that you uncheck â€œHide extensions for known file typesâ€, double-click to run this file, then go back to â€œFolder Optionsâ€ to set Show hidden files.

@@ -16,7 +16,7 @@ manage-bde -on M: -RecoveryPassword -RecoveryKey D:\RecoveryKeys
 @REM     xts_aes128 → XTS-AES 128 位（Win10/2016+ 默认推荐）
 @REM     xts_aes256 → XTS-AES 256 位（安全性最高，稍慢）
 @REM -TPM: 使用硬件 TPM 芯片 解锁。
-manage-bde -on M: -TPM
+manage-bde -on C: -TPM
 @REM -StartupKey <路径> 把 USB 当作启动密钥。
 manage-bde -on M: -StartupKey F:\
 @REM -RecoveryKey <路径> 生成一个 USB 恢复密钥文件。
@@ -24,7 +24,7 @@ manage-bde -on M: -RecoveryKey F:\
 @REM -PasswordProtector 添加额外的密码保护器（驱动器已加密时也能追加）。
 
 @REM 加密系统驱动器，要 TPM + PIN + 恢复代码 ：
-manage-bde -on M: -RecoveryPassword -TPMAndPIN -EncryptionMethod xts_aes256 -used
+manage-bde -on C: -RecoveryPassword -TPMAndPIN -EncryptionMethod xts_aes256 -used
 
 @REM 在现有加密卷上添加新的保护器: 把 -on 换成 -protectors -add
 @REM 添加密码保护器
@@ -49,8 +49,18 @@ manage-bde -protectors -disable M:
 manage-bde -protectors -enable M:
 @REM 关闭 BitLocker 并开始解密过程
 manage-bde -off M:
-@REM 使用 manage-bde 工具备份 BitLocker 恢复代码（48 位恢复密码）
+
+@REM 备份 / 查看 BitLocker 恢复密钥
+manage-bde -status C:
+@REM 查看所有保护器（含 48 位恢复密码）
 manage-bde -protectors -get C:
+@REM 只导出恢复密码（字符串形式）到文件
+manage-bde -protectors -get C: ^| findstr /C:"ID:" /C:"Password:" ^> C:\RecoveryKey.txt
+@REM PowerShell 提取恢复密码到文件（更简洁）
+powershell -Command "(Get-BitLockerVolume -MountPoint C).KeyProtector | Where-Object KeyProtectorType -eq RecoveryPassword | ForEach-Object { 'ID: {0}' -f $_.KeyProtectorId; 'Recovery Password: {0}' -f $_.KeyProtector } | Out-File C:\RecoveryKey.txt"
+@REM 备份恢复密钥到 AD DS（域环境，需先获取 ID）
+@REM manage-bde -protectors -get C: 先查出恢复密码的 ID（类似 {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}）
+manage-bde -protectors -adbackup C: -id "{恢复密钥标识符}"
 
 ECHO 总结：
 ECHO 第一次加密 → 用 manage-bde -on ...

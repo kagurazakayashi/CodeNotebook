@@ -2,7 +2,8 @@ TITLE Windows 图片批处理
 
 @REM 单行
 
-for %x in (*.HEIC) do ("magick.exe" "%x" "%~nx.jpg")
+for %x in (*.HEIC) do ("magick.exe" "%x" -quality 100 "%~nx.jpg")
+for %x in (*.tif) do ("magick.exe" "%x" -quality 100 "%~nx.png")
 
 @REM bat 用
 

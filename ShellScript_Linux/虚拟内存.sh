@@ -1,8 +1,8 @@
 # 分页文件方式
 dd if=/dev/zero of=/pagefile.sys bs=1M count=2048 # 2GB整
+chmod 0600 /pagefile.sys
 mkswap /pagefile.sys
 swapon /pagefile.sys
-chmod 0600 /pagefile.sys
 swapon -s
 echo "/pagefile.sys swap swap defaults,nofail 0 0" >> /etc/fstab
 free -m
@@ -11,6 +11,9 @@ grep SwapTotal /proc/meminfo
 swapoff /pagefile.sys
 rm -f /pagefile.sys
 vim /etc/fstab
+
+# 看当前路径
+swapon -s
 
 # 1. 添加swap文件大小为2G
 # 默认情况下， of=/swapfile 即swapfile文件创建在/var/目录下。 

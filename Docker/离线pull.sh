@@ -1,6 +1,6 @@
 cd /var/lib/docker/volumes/nginx_www/_data/ip
 
-DOCKERIMAGE="archlinux:latest"
+DOCKERIMAGE="nginx:latest"
 DOCKERSAVEF="${DOCKERIMAGE//[\/:\\]/_}"
 echo "$DOCKERIMAGE" "$DOCKERSAVEF"
 
@@ -17,8 +17,9 @@ unset DOCKERIMAGE
 unset DOCKERSAVEF
 
 # 接收
-DOCKERIMAGE="archlinux:latest"
+DOCKERIMAGE="nginx:latest"
 DOCKERSAVEF="${DOCKERIMAGE//[\/:\\]/_}"
+echo "$DOCKERIMAGE" "$DOCKERSAVEF"
 curl --socks5 "192.168.1.45:23334" -o "$DOCKERSAVEF.tar.xz" "http://103.121.211.126/$DOCKERSAVEF.tar.xz"
 # 导入 
 xz -d -c $DOCKERSAVEF.tar.xz | docker load

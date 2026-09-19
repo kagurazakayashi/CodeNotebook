@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\MoveToFolder]
+@="Create New Folder from Selected Items"
+"Icon"="C:\\bat\\mvtodir.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\MoveToFolder\command]
+@="\"C:\\bat\\mvtodir.exe\" \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\MoveToFolder]
+@="Create New Folder from Selected Items"
+"Icon"="C:\\bat\\mvtodir.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\MoveToFolder\command]
+@="\"C:\\bat\\mvtodir.exe\" \"%1\""

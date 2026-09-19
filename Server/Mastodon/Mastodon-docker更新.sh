@@ -19,11 +19,74 @@ git pull
 # git checkout [版本号] , 不 checkout 是 beta 版
 git checkout v4.2.3
 
+# 对比配置(镜像版本有无变动)
+mousepad ../docker-compose.yml & mousepad docker-compose.yml
+
 # 还原配置
 cat ../docker-compose.yml >docker-compose.yml
 cat ../env.production >.env.production
 
-docker-compose up -d --build # = docker-compose build && docker-compose up -d
+# 修改字数上限到 50000
+sed -i 's/500/50000/g' /home/mastodon/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx # 旧: /js
+sed -i 's/500/50000/g' /home/mastodon/mastodon/app/validators/status_length_validator.rb
+
+# 下载不了镜像：开代理
+curl -I -x http://192.168.255.1:23334 https://registry-1.docker.io/v2/
+curl -I -x http://192.168.255.1:23334 https://auth.docker.io/
+# 有 401 404 之类的表示连上了
+sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
+# 没有则创建，内容：
+[Service]
+Environment="HTTP_PROXY=http://192.168.255.1:23334"
+Environment="HTTPS_PROXY=http://192.168.255.1:23334"
+Environment="NO_PROXY=localhost,127.0.0.1"
+# 结束编辑，重载服务
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl show docker --property=Environment
+
+# 编译时传入外部代理
+# 卡在 Get:38 http://deb.debian.org/debian 时
+export HTTP_PROXY=http://192.168.255.1:23334
+export HTTPS_PROXY=http://192.168.255.1:23334
+export NO_PROXY=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8
+
+BUILDKIT_PROGRESS=plain docker compose build \
+  --build-arg HTTP_PROXY="$HTTP_PROXY" \
+  --build-arg HTTPS_PROXY="$HTTPS_PROXY" \
+  --build-arg NO_PROXY="$NO_PROXY" \
+  --build-arg http_proxy="$HTTP_PROXY" \
+  --build-arg https_proxy="$HTTPS_PROXY" \
+  --build-arg no_proxy="$NO_PROXY"
+
+# 不需要代理用普通编译
+docker-compose build
+
+# 导出到生产服务器
+mkdir -p ~/md
+docker save yashi/mastodon-web | xz -z -1 -T 0 -v -c >~/md/yashi_mastodon-web.tar.xz
+docker save yashi/mastodon-streaming | xz -z -1 -T 0 -v -c >~/md/yashi_mastodon-streaming.tar.xz
+docker save yashi/mastodon-sidekiq | xz -z -1 -T 0 -v -c >~/md/yashi_mastodon-sidekiq.tar.xz
+xz -z -e -9 docker-compose.yml -c >~/md/docker-compose.yml.xz
+xz -z -e -9 .env.production -c >~/md/env.production.xz
+
+# 生产服务器
+cd /home/mastodon/mastodon
+# 上传文件，解压导入
+xz -d -v -c yashi_mastodon-web.tar.xz | docker load
+xz -d -v -c yashi_mastodon-streaming.tar.xz | docker load
+xz -d -v -c yashi_mastodon-sidekiq.tar.xz | docker load
+# 启动看看输出
+docker-compose up
+
+# 故障.gif + web_1 | Information for: ActionView::Template::Error (undefined method 'collection_limit' for an instance of UserRole) ...
+# 在生产服务器上升级数据库
+cd /home/mastodon/mastodon
+docker-compose down
+# 执行全部数据库迁移
+docker-compose run --rm web bundle exec rails db:migrate
+# 启动看看输出
+docker-compose up
 
 # 故障.gif
 docker-compose down
@@ -45,10 +108,6 @@ cd buildx
 vim Dockerfile
 docker build .
 
-# 修改字数上限到 50000
-sed -i 's/500/50000/g' /home/mastodon/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx # 旧: /js
-sed -i 's/500/50000/g' /home/mastodon/mastodon/app/validators/status_length_validator.rb
-
 # 清理构建缓存
 docker builder prune
 # 更彻底地清理（包括那些被其他镜像引用的缓存）
@@ -60,3 +119,5 @@ docker image prune
 
 # 一键清理(停止的容器也会遭到清理)
 docker system prune
+
+# 更新 Nginx: Docker/升级Nginx和PHP.md

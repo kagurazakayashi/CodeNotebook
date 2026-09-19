@@ -1,20 +1,20 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\*\shell\copypath]
-@="复制路径"
+@="Copy Path"
 [HKEY_CLASSES_ROOT\*\shell\copypath\command]
 @="cmd /c echo %1 | clip"
 
 [HKEY_CLASSES_ROOT\*\shell\copypathwithquote]
-@="复制路径(带引号)"
+@="Copy Path (with Quotes)"
 [HKEY_CLASSES_ROOT\*\shell\copypathwithquote\command]
 @="cmd /c echo \"%1\" | clip"
 
 [HKEY_CLASSES_ROOT\Directory\shell\copypath]
-@="复制路径"
+@="Copy Path"
 [HKEY_CLASSES_ROOT\Directory\shell\copypath\command]
 @="cmd /c echo %1 | clip"
 [HKEY_CLASSES_ROOT\Directory\shell\copypathwithquote]
-@="复制路径(带引号)"
+@="Copy Path (with Quotes)"
 [HKEY_CLASSES_ROOT\Directory\shell\copypathwithquote\command]
 @="cmd /c echo \"%1\" | clip"
