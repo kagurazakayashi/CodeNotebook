@@ -1821,13 +1821,17 @@
 │   ├── ./Windows/Alt-code符号输入.md
 │   ├── ./Windows/Bitlocker
 │   │   ├── ./Windows/Bitlocker/BitLockerPE.bat
-│   │   ├── ./Windows/Bitlocker/Bitlocker使用U盘解锁.txt
+│   │   ├── ./Windows/Bitlocker/BitLocker从TPM自动解锁改为USB解锁.md
+│   │   ├── ./Windows/Bitlocker/Bitlocker使用U盘解锁.md
+│   │   ├── ./Windows/Bitlocker/Bitlocker加密开启.bat
 │   │   ├── ./Windows/Bitlocker/Bitlocker每次启动都要输入恢复密钥才能进的解决.bat
 │   │   ├── ./Windows/Bitlocker/Bitlocker解锁.bat
-│   │   ├── ./Windows/Bitlocker/Bitlocker配置开机输入PIN.bat
-│   │   └── ./Windows/Bitlocker/开启Bitlocker加密.bat
+│   │   └── ./Windows/Bitlocker/Bitlocker配置开机输入PIN.bat
 │   ├── ./Windows/Compact压缩.bat
+│   ├── ./Windows/EFI启动修复与重建.md
 │   ├── ./Windows/EFS文件加密证书备份和恢复.bat
+│   ├── ./Windows/FAT最大格式化大小.md
+│   ├── ./Windows/MBR转GPT并切换UEFI.md
 │   ├── ./Windows/MSYS2
 │   │   ├── ./Windows/MSYS2/MSYS2更新.sh
 │   │   ├── ./Windows/MSYS2/MSYS2连接串口.sh
@@ -1953,6 +1957,7 @@
 │   ├── ./Windows/移动Outlook数据文件.bat
 │   ├── ./Windows/移除自定义权限.bat
 │   ├── ./Windows/移除迅雷xlwfp服务.bat
+│   ├── ./Windows/端口转发远程桌面.ps1
 │   ├── ./Windows/系统策略禁止安装此设备.txt
 │   ├── ./Windows/系统自带图标.md
 │   ├── ./Windows/结束进程.bat
@@ -2149,4 +2154,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-151 directories, 1999 files
+151 directories, 2004 files
