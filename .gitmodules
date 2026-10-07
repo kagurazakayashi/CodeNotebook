@@ -21,3 +21,6 @@
 # 	path = linux-command
 # 	url = https://github.com/jaywcjlove/linux-command.git
 # 	branch = gh-pages
+[submodule ".agents"]
+	path = .agents
+	url = https://github.com/kagurazakayashi/yashi-skills.git
