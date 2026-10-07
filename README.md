@@ -40,8 +40,14 @@
 # 其他
 
 - 更新时请同时更新子模块:
-  - `git submodule init` (第一次下载子模块)
-  - `git submodule update --remote`
+  - 克隆后第一次初始化（只需一次）：`git submodule update --init --recursive`，也可以分两步 `git submodule init` → `git submodule update`。
+  - 日常更新：`git submodule update --remote`；只更新某一个子模块时在末尾加路径，例如 `git submodule update --remote .agents`。
+  - 当前生效的子模块：
+    - [.agents](.agents) → `https://github.com/kagurazakayashi/yashi-skills.git`，个人 skill 集合，skill 位于 `.agents/skills/yashi-*`。
+      - 想改用 SSH 地址（需要先配好 GitHub SSH 密钥）：`git submodule set-url .agents git@github.com:kagurazakayashi/yashi-skills.git`，改完把 [.gitmodules](.gitmodules) 一并提交。
+      - 本仓库记录的是子模块的**锁定提交**，默认不跟随它的分支；要跟随 main 就在 [.gitmodules](.gitmodules) 该段里加一行 `branch = main`。
+      - 在 `.agents` 里修改 skill 后，要在**子模块自己的仓库**里提交并推送，本仓库只会更新它指向的提交号。
+  - 推送本仓库：`git push origin master`。
   - 详细见 [Tools_Git/子模块.sh](Tools_Git/子模块.sh) 和 [.gitmodules](.gitmodules) 文件。
 - 换行符规则:
   - Windows 上专用格式使用 `crlf`，其他均使用 `lf` 。

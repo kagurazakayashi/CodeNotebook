@@ -24,8 +24,9 @@ jobs:
         uses: actions/checkout@v2
 
       # 使用 shell 运行命令
+      # --init：checkout 默认不拉子模块，未初始化时 --remote 会静默跳过，tree.txt 就会缺 .agents/skills/**
       - name: UpdateSubmodule
-        run: git submodule update --remote
+        run: git submodule update --init --recursive --remote
         working-directory: ./
 
       - name: BuildTree

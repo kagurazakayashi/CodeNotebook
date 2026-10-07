@@ -11,6 +11,8 @@ npm config set cache "B:\TMP"
 REM 对应的 bash 环境变量
 @REM export NPM_CONFIG_PREFIX=`npm config get prefix`
 @REM export NPM_CONFIG_CACHE=`npm config get cache`
+ECHO %NPM_CONFIG_PREFIX%
+ECHO %NPM_CONFIG_CACHE%
 
 REM 确认路径是否已更新
 npm config list
