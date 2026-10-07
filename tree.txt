@@ -19,6 +19,7 @@
 │   ├── ./AI/YOLO摄像头检测环境搭建与运行.bat
 │   ├── ./AI/modelcontextprotocol-MCP包.bat
 │   ├── ./AI/ollama.docker-compose.yml
+│   ├── ./AI/杀毒软件白名单.md
 │   ├── ./AI/清除OpenCodeDesktop数据.bat
 │   ├── ./AI/百炼视频.py
 │   └── ./AI/管理OpenCode项目.md
@@ -421,6 +422,7 @@
 │   ├── ./Dart_Flutter/时间戳.dart
 │   ├── ./Dart_Flutter/是否包含某个字符串或第一次出现位置.dart
 │   ├── ./Dart_Flutter/显示网络图片带缓存，圆角.dart
+│   ├── ./Dart_Flutter/更新Flutter.sh
 │   ├── ./Dart_Flutter/正则表达式.dart
 │   ├── ./Dart_Flutter/毛玻璃.dart
 │   ├── ./Dart_Flutter/添加图片.dart
@@ -793,6 +795,7 @@
 │   └── ./JavaScript_Electron/编译到out文件夹.sh
 ├── ./JavaScript_Node
 │   ├── ./JavaScript_Node/Mac上完整卸载nodejs.sh
+│   ├── ./JavaScript_Node/npm更新.sh
 │   ├── ./JavaScript_Node/npm检查包更新.sh
 │   ├── ./JavaScript_Node/卸载所有npm-g包.bat
 │   ├── ./JavaScript_Node/卸载所有npm-g包.sh
@@ -1636,6 +1639,7 @@
 │   ├── ./Tools/SVG转PNG
 │   │   ├── ./Tools/SVG转PNG/svg转png.md
 │   │   └── ./Tools/SVG转PNG/去除png透明空边.py
+│   ├── ./Tools/VSCode在浏览器中登录.md
 │   ├── ./Tools/Windows通过串口提供CMD.md
 │   ├── ./Tools/aria2
 │   │   ├── ./Tools/aria2/aria2.conf
@@ -1643,7 +1647,6 @@
 │   ├── ./Tools/exiftool.sh
 │   ├── ./Tools/hash校验文件.sh
 │   ├── ./Tools/matrix.sh
-│   ├── ./Tools/npm更新.sh
 │   ├── ./Tools/testrun安装后文件导出导入.sh
 │   ├── ./Tools/v2ray-docker.txt
 │   ├── ./Tools/virtualbox虚拟磁盘复制.bat
@@ -2154,4 +2157,4 @@
 │           └── ./vue/Tiptap/tiptapPlus/findColors.ts
 └── ./web.config
 
-151 directories, 2004 files
+151 directories, 2007 files
